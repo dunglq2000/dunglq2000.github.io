@@ -277,7 +277,7 @@ if __name__ == '__main__':
 - Decrypt 1 số bất kì (hàm decrypt bị giấu đi)
 - Lấy flag bị mã hóa
 
-Key là 1 cặp khóa công khai-bí mật $$(pubkey, privkey)$$, trong đó $$pubkey = p^2q$$ còn $$privkey = p$$ với $$p$$ và $$q$$ là 2 số nguyên tố 1024 bit và đồng dư 3 modulo 4. Hàm **encrypt** thực hiện mã hóa số $$m$$ bằng cách trả về $$m^2 \pmod{pubkey}$$. Còn hàm **decrypt** thực hiện giải mã chỉ cần $$privkey$$.
+Key là 1 cặp khóa công khai-bí mật $$(pubkey, privkey)$$, trong đó $$pubkey = p^2q$$ còn $$privkey = p^2$$, với $$p$$ và $$q$$ là 2 số nguyên tố 1024 bit và đồng dư 3 modulo 4. Hàm **encrypt** thực hiện mã hóa số $$m$$ bằng cách trả về $$m^2 \pmod{pubkey}$$. Còn hàm **decrypt** thực hiện giải mã chỉ cần $$privkey$$.
 
 Kì cục ..............
 
@@ -286,7 +286,7 @@ Thế quái nào ..............
 Mà **encrypt** cần cả $$p$$ và $$q$$ còn **decrypt** chỉ cần $$p$$?
 
 Thật ra là vì nếu $$c \equiv m^2 \pmod{pubkey}$$ thì $$c \equiv m^2 \pmod{p^2}$$, như vậy giải thích cho việc $$m$$ không được vượt quá 2048-2 bit và việc giải mã chỉ cần $$p$$. Như vậy cách attack của mình như sau:
-- Chọn ngẫu nhiên các ciphertext, gửi lên để server decrypt và nhận lại các plaintext tương ứng. Ta biết rằng $$c \ m^2 \pmod{p^2}$$ nên $$p^2 = \gcd(m_1^2 - c_1, m_2^2 - c_2)$$, từ đó lấy căn bậc 2 là có $$p$$.
+- Chọn ngẫu nhiên các ciphertext, gửi lên để server decrypt và nhận lại các plaintext tương ứng. Ta biết rằng $$c \equiv m^2 \pmod{p^2}$$ nên $$p^2 = \gcd(m_1^2 - c_1, m_2^2 - c_2)$$, từ đó lấy căn bậc 2 là có $$p$$.
 - Tiếp theo, chọn ngẫu nhiên các plaintext, gửi lên server encrypt và nhận lại ciphertext tươngg ứng. Do $$c \equiv m^2 \pmod{pubkey} \equiv m^2 \pmod{p^2q}$$, khi đó $$p^2q = \gcd(m_1^2 - c_1, m_2^2 - c_2)$$. Việc này ngược lại quá trình trên vì như nãy mình đã nói, **encrypt** sử dụng $$p^2q$$ còn **decrypt** thì chỉ cần $$p^2$$.
 - Và bây giờ $$p$$ và $$q$$ đã có đủ, ta decrypt và có flag thôi
 
@@ -415,9 +415,9 @@ if __name__ == '__main__':
 
 ```
 
-Ở bài này khá có khá nhiều thứ linh tinh nhưng chung quy lại là mình cần nhập vào 2 số $$m_1$$ và $$m_2$$ sao cho kết quả hàm **improve** với 2 số này là giống nhau.
+Ở bài này khá có khá nhiều thứ linh tinh nhưng chung quy lại là mình cần nhập vào 2 số khác nhau $$m_1$$ và $$m_2$$ khác $$n$$ sao cho kết quả hàm **improve** với 2 số này là giống nhau.
 
-Các tham số sẽ là $$n$$ làm chặn trên cho 2 số nhập vào (không vượt quá $$n^2$$, $$f$$ có tính chất quan trọng là luôn chẵn, đây là tiền đề để mình giải bài này.
+Các tham số sẽ là $$n$$ làm chặn trên cho 2 số nhập vào (không vượt quá $$n^2$$, và $$f$$ có tính chất quan trọng là luôn chẵn, đây là tiền đề để mình giải bài này.
 
 Hàm **improve** mình để ý rằng $$L$$ được tạo ra sau vài biến đổi từ $$e=m^f \pmod{n^2}$$, mà mình cần 2 số $$m$$ cho cùng $$L$$, vậy chỉ cần cho ra cùng $$e$$ là xong. Mà như hồi nãy mình có đề cập là $$f$$ luôn chẵn, vậy chỉ cần chọn $$m$$ và $$n^2-m$$ là xong :))
 
@@ -491,7 +491,7 @@ Lấy $$LUL$$ nhân với $$T$$ mình có $$LUL \cdot (UL)^2 = L(UL)^3$$. Khi đ
 
 Quay lại $$E=U(A+R)$$, khi đó $$R=U^{-1}E-A$$, nhân bên phải của 2 vế với $$W$$ thì $$R \cdot R^{-1} S^8 = (U^{-1} E - A) W = S^8 = (LU)^8$$
 
-Quay lại 1 chút, $$(LUL) \cdot T^3 = (LUL) \cdot (L^{-1}S^6L) = (LU)^7 \cdot L$$, suy ra (LUL) \cdot T^3 \cdot U = (LU)^8$$
+Quay lại 1 chút, $$(LUL) \cdot T^3 = (LUL) \cdot (L^{-1}S^6L) = (LU)^7 \cdot L$$, suy ra $$(LUL) \cdot T^3 \cdot U = (LU)^8$$
 
 Từ đó mình dễ dàng tìm lại được $$A = U^{-1}E - (LU)^8 W^{-1}$$
 

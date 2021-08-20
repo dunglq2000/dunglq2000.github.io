@@ -1,0 +1,133 @@
+---
+layout: post
+title: Quyển 1A - Luyện khí cơ bản - Khái niệm sơ cấp
+categories: crypto
+---
+# Tập hợp và các cấu trúc rời rạc
+## 1. Tập hợp
+Một **tập hợp** bao gồm các phần tử khác nhau. Ví dụ với tập hợp các số nguyên dương nhỏ hơn 5 ta viết như sau: $$\{1, 2, 3, 4\}$$. Ví dụ khác, tập hợp các chữ cái latin là $$\{a, b, c, \cdots, x, y, z\}$$
+
+Các tập hợp số thông dụng:
+- Tập hợp số tự nhiên, ký hiệu là $$\mathbb{N} = \{0, 1, 2, \cdots\}$$. Tập hợp số tự nhiên không có số 0 ký hiệu là $$\mathbb{N}^*$$
+- Tập hợp số nguyên, ký hiệu là $$\mathbb{Z} = \{ \cdots, -2, -1, 0, 1, 2, \cdots\}$$
+- Tập hợp số hữu tỉ, ký hiệu là $$\mathbb{Q} = \{\frac{a}{b} : a \in \mathbb{Z}, b \in \mathbb{N}^*, \gcd(a, b) = 1\}$$. Trong đó $$\gcd(a, b)=1$$ nghĩa là $$a$$ và $$b$$ không có ước chung nào ngoài 1. Nói cách khác $$\frac{a}{b}$$ là phân số tối giản.
+- Tập hợp số thực, ký hiệu là $$\mathbb{R}$$
+
+Để biểu diễn tập hợp ta có 2 cách
+- Liệt kê tất cả phần tử của tập hợp: $$A = \{1, 2, 3, 4\}$$. $$A$$ là tên tập hợp.
+- Dùng tính chất đặc trưng: $$A = \{x \in \mathbb{N}^*: x < 5\}$$
+
+**Tập hợp rỗng** (**empty set**) là tập hợp không có phần tử nào. Ký hiệu $$\emptyset$$
+
+**Tập hợp con** (**subset**): nếu tất cả phần tử của tập hợp $$B$$ thuộc tập hợp $$A$$ thì $$B$$ được gọi là **tập hợp con** của tập hợp $$A$$. Ký hiệu $$B \subset A$$. Ví dụ $$A = \{1, 2, 3, 4\}$$ và $$B = \{1, 3, 4\}$$. Như vậy, tập hợp rỗng là tập hợp con của *mọi tập hợp*
+
+**Số lượng phần tử của tập hợp** (**lực lượng của tập hợp**) ký hiệu là $$\#A$$. Với ví dụ trên $$A = \{1, 2, 3, 4\}$$ thì $$\#A = 4$$
+
+**Tập hữu hạn** và **tập vô hạn**: ở ví dụ trên tập hợp $$A = \{1, 2, 3, 4\}$$ là tập hữu hạn có 4 phần tử. Còn các tập hợp $$\mathbb{N}$$, $$\mathbb{Z}$$, $$\mathbb{Q}$$, $$\mathbb{R}$$ là các tập hợp vô hạn
+
+**Định lý**: tập hợp có $$n$$ phần tử thì có $$2^n$$ tập con
+
+**Chứng minh**: mình có 2 cách
+- Cách 1: dùng quy nạp. Với $$n=1$$, tập hợp có 1 phần tử sẽ có 2 tập con là tập con có phần tử đó và tập rỗng. Giả sử tính chất đúng tới $$n=k \geq 1$$. Ta đặt $$A$$ là tập hợp có $$k$$ phần tử, giả thiết quy nạp là $$A$$ có $$2^k$$ tập con. Xét $$n=k+1$$, tập $$B$$ mới có $$n$$ phần tử từ tập $$A$$ và 1 phần tử $$x$$. Mỗi tập con của $$B$$ sẽ có từ các tập con của $$A$$ với việc thêm hoặc không thêm phần tử $$x$$. Như vậy mỗi tập con của $$A$$ có 2 lựa chọn, suy ra $$2^k \cdot 2 = 2^{k+1}$$ tập con. Điều phải chứng minh
+- Cách 2: dùng song ánh. Hiện tại mình chưa đề cập tới ánh xạ nên các bạn cứ nghĩ song ánh là một phương pháp đưa bài toán ban đầu thành bài toán có mô hình dễ tính hơn. Ở đây, xét một tập con bất kì của tập $$A = \{x_1, x_2, \cdots, x_n\}$$ có $$n$$ phần tử. Mình xét dãy $$n$$ số như sau: nếu phần tử $$x_i$$ nằm trong tập con thì đặt là 1, không thuộc thì là 0. Như vậy mình sẽ có dãy bit độ dài $$n$$, và số dãy bit chính là số tập con. Mình có $$2^n$$ dãy bit. Điều phải chứng minh
+
+## 2. Ánh xạ (map)
+
+Xét 2 tập hợp $$X$$ và $$Y$$. Một **ánh xạ** $$f$$ biến một phần tử $$x \in X$$ thành một và chỉ một phần tử $$y \in Y$$. Ví dụ xét ánh xạ $$f$$ từ tập $$X = \{1, 2, 3, 4\}$$ đến tập $$Y = \{a, b, c\}$$ như sau:
+
+$$f(1) = a$$, $$f(2) = b$$, $$f(3) = a$$, $$f(4) = c$$
+
+Tập $$X$$ gọi là **tập nguồn** (tập gốc). Tập $$Y$$ gọi là **tập đích** (tập ảnh). Ở ví dụ trên $$b$$ được gọi là **ảnh của 2 qua ánh xạ $$f$$**.
+
+**Lưu ý**: theo định nghĩa ánh xạ, 2 phần tử có thể có cùng ảnh qua ánh xạ (1 và 3) nhưng 1 phần tử không được phép có 2 ảnh
+
+Tiếp theo mình sẽ giới thiệu 3 loại ánh xạ là **đơn ánh**, **toàn ánh**, **song ánh**.
+
+### a. Đơn ánh
+
+Với 2 phần tử phân biệt $$x_1$$ và $$x_2$$ sẽ cho ra 2 ảnh phân biệt $$y_1$$ và $$y_2$$. Nghĩa là $$\forall x_1 \neq x_2$$, $$f(x_1) \neq f(x_2)$$. Ví dụ:
+
+![Đơn ánh](/assets/crypto-01-01.jpg)
+
+**Nhận xét**: do tất cả phần tử của tập nguồn đều có ảnh ở tập đích nên số lượng phần tử của tập nguồn nhỏ hơn hoặc bằng số lượng phần tử của tập đích. $$\# X \leq \#Y$$.
+
+### b. Toàn ánh
+
+Với mỗi phần tử $$y$$ từ tập $$Y$$ luôn có thể tìm được phần tử $$x$$ ở tập $$X$$ mà $$f(x) = y$$. Ví dụ:
+
+![Toàn ánh](/assets/crypto-01-02.jpg)
+
+**Nhận xét**: do tất cả phần tử của tập $$Y$$ đều có "nguồn", tuy nhiên có thể có những phần tử của $$X$$ không biến thành bất kì phần tử nào của $$Y$$, do đó $$\# X \geq \#Y$$.
+
+### c. Song ánh
+
+Ánh xạ được gọi là song ánh nếu nó vừa là đơn ánh vừa là toàn ánh. Ví dụ:
+
+![Song ánh](/assets/crypto-01-03.jpg)
+
+**Nhận xét**: $$\#X = \#Y$$
+
+## 3. Hàm số và một số bài toán bất ngờ
+
+Hàm số thực chất là một ánh xạ cho bởi công thức. 
+
+**Ví dụ 1**, xét hàm số $$f: \mathbb{R} \rightarrow \mathbb{R}$$ với $$ y = f(x) = x^2 + 1$$. Đây là hàm số có đồ thị là parabol. Dễ thấy $$f$$ không là đơn ánh vì với 2 phần tử phân biệt $$x$$ và $$-x$$ ta có cùng giá trị $$y = x^2 = (-x)^2$$. $$f$$ cũng không phải toàn ánh vì $$f(x) \geq 0$$,  $$\forall x \in \mathbb{R}$$, nghĩa là các phần tử nhỏ hơn 0 sẽ không có phần tử nào biến thành nó qua $$f$$.
+
+**Ví dụ 2**, xét hàm số $$f: \mathbb{R} \rightarrow \mathbb{R}$$, $$y = f(x) = x^3$$. Ta chứng minh $$f$$ là song ánh
+
+Với mọi $$x_1$$, $$x_2$$ mà $$f(x_1) = f(x_2)$$, ta có $$x_1^3 = x_2^3 \Rightarrow x_1 = x_2$$, như vậy $$f$$ là đơn ánh.
+
+Xét phần tử $$y = x^3 \in \mathbb{R}$$, như vậy $$x = \sqrt[3]{y}$$. Như vậy với mọi $$y \in \mathbb{R}$$ ta sẽ có $$x = \sqrt[3]{y}$$ là phần tử biến thành $$y$$, do đó $$f$$ là toàn ánh.
+
+Kết luận: $$f$$ là song ánh.
+
+Tiếp theo chúng ta sẽ xem hết những bài toán hết sức thú vị cùng những lập luận cũng thú vị không kém để thấy rằng có nhiều điều bất ngờ sẽ xảy ra nếu vận dụng những lý luận chặt chẽ
+
+### a. Nghịch lý Zeno
+Zeno là nhà triết học cổ Hy Lạp nổi tiếng với bài toán *Achilles và rùa* (Achilles là anh hùng trong thần thoại Hy Lạp). Bài toán được phát biểu đơn giản như sau: nếu Achilles chạy đua và xuất phát sau con rùa thì Achilles sẽ không bao giờ bắt kịp con rùa.
+
+Bài toán nghe thật nực cười nhưng dưới lập luận của Zeno thì bài toán sẽ trở nên "có lý". Zeno lập luận như sau: gọi $$d_1$$ là khoảng cách ban đầu giữa Achilles và con rùa. Achilles sẽ mất một khoảng thời gian $$t_1$$ để đặt tới vị trí con rùa. Tuy nhiên trong khoảng thời gian $$t_1$$ đó con rùa cũng đã đi 1 đoạn $$d_2$$ nào đó rồi. Dĩ nhiên $$d_2$$ sẽ ngắn hơn $$d_1$$. Nhưng nếu quá trình này lặp đi lặp lại, $$d_n$$ sẽ trở nên càng ngày càng nhỏ, tuy nhiên không bao giờ bằng 0. Nói cách khác, Achilles không bao giờ bắt kịp con rùa.
+
+Dưới góc nhìn của toán học hiện đại, điều này chưa hẳn đúng. Vì thời Zeno chưa có nhiều khái niệm lẫn công cụ về vô cực, nên người ta đã công nhận tổng vô hạn sẽ là vô hạn. Học sinh lớp 11 hiện nay khi học tới cấp số nhân lùi vô hạn sẽ biết cách tính tổng $$\frac{1}{10} + \frac{1}{100} + \cdots \frac{1}{10^n} = \frac{1}{9}$$ là hữu hạn :)) rất thú vị đúng không nào?
+
+Tiếp theo chúng ta sẽ đến với một nhà toán học được mệnh danh là *người chế ngự vô cực* là Georg Cantor (1845 - 1918)
+
+### b. So sánh $$\mathbb{N}$$ và $$\mathbb{Z}$$
+
+Câu hỏi: cả 2 tập hợp $$\mathbb{N}$$ và $$\mathbb{Z}$$ là các tập vô hạn, như vậy số phần tử của tập hợp nào lớn hơn? Câu hỏi tưởng chừng như vô vị vì nhìn vào mọi người đều thấy rằng $$\mathbb{Z}$$ "bao trọn" $$\mathbb{N}$$ (số nguyên kéo dài vô hạn về bên trái lẫn phải trong khi số tự nhiên chỉ kéo dài vô hạn về bên phải). Tuy nhiên, nhà toán học Cantor đã tìm ra một lý luận đầy *tính thuyết phục* để chứng minh rằng số phần tử của 2 tập là bằng nhau.
+
+Ta xét ánh xạ $$f: \mathbb{Z} \rightarrow \mathbb{N}$$ như sau: $$f(0) = 0$$, các số âm của $$\mathbb{Z}$$ biến thành các số lẻ của $$\mathbb{N}$$, còn các số dương của $$\mathbb{Z}$$ thì biến thành các số chẵn của $$\mathbb{N}$$. Ví dụ $$f(-1) = 1$$, $$f(-2) = 3$$, $$f(-3) = 5$$ và cứ như vậy tăng lên. Tương tự với số âm. Ta có công thức
+
+$$z = f(n) = \begin{cases} & 2n, \quad \text{nếu } n \geq 0 \\ & -1-2n, \quad \text{nếu } n < 0\end{cases}$$
+
+Như vậy $$f$$ là đơn ánh vì 2 phần tử khác nhau của $$\mathbb{Z}$$ sẽ cho ra 2 phần tử khác nhau thuộc $$\mathbb{N}$$. Tương tự $$f$$ cũng là toàn ánh vì mọi phần tử thuộc $$\mathbb{N}$$ đều có 1 phần tử từ $$\mathbb{Z}$$ biến thành. Như vậy $$f$$ là song ánh. Vậy số phần tử của $$\mathbb{N}$$ và $$\mathbb{Z}$$ bằng nhau.
+
+Bằng lập luận tương tự cũng có thể chứng minh số phần tử của $$\mathbb{Q}$$ bằng số phần tử của $$\mathbb{N}$$. Những lập luận này đã gây ra tiếng vang lớn vào thời đó.
+
+**Dừng lại một chút**, chúng ta đã nói qua về tập hợp hữu hạn và vô hạn. Tuy nhiên tập hợp lại có thể chia ra **đếm được** (countable) và **không đếm được** (uncountable).
+
+- Tập đếm được khi nó là tập hữu hạn hoặc có song ánh từ nó tới $$\mathbb{N}$$ (vì là song ánh nên từ $$S$$ tới $$\mathbb{N}$$ hay ngược lại đều như nhau).
+- Tập không đếm được khi nó không phải là tập đếm được
+
+Từ đây mình có thêm có thêm định lý
+
+### c. Định lý về $$\mathbb{R}$$
+**Định lý**: tập hợp số thực $$\mathbb{R}$$ là tập không đếm được
+
+**Chứng minh**: Cantor đưa ra 2 phương pháp chứng minh và cả 2 đều độc đáo. Chúng ta cần một nhận xét sau: *Khoảng $$(0, 1)$$ là tương đương với tập $$\mathbb{R}$$*. Các bạn có thể xây dựng một song ánh từ $$(0, 1)$$ tới $$\mathbb{R}$$, ví dụ $$f(x) = \frac{e^x}{e^x+1}$$.
+
+- Phương án 1: phương pháp chéo hóa ()
+
+Xét ánh xạ
+
+$$0 \rightarrow 0.a_{0, 0}a_{0, 1}a_{0, 2} \cdots$$
+
+$$1 \rightarrow 0.a_{1, 0}a_{1, 1}a_{1, 2} \cdots$$
+
+Vân vân
+
+Ta chứng minh ánh xạ này không phải toàn ánh. Xét số $$y = 0.b_0 b_1 b_2 \cdots$$, với $$b_i \neq a_{i, i}$ với mọi $$i$$, tức là trên đường chéo của các số trên ta chọn số $$b_i$$ khác với số trên đường chéo. Như vậy số $$y$$ này có chữ số ở vị trí 0 khác $$f(0)$$, chữ số ở vị trí 1 khác $$f(1)$$, vân vân, nên không tìm được số $$n$$ nào mà $$f(n) = y$$. Suy ra $$f$$ không phải toàn ánh và từ đó không phải song ánh.
+
+- Phương án 2: phương pháp dãy các đoạn thẳng đóng bị chặn lồng vào nhau (sequence of closed bounded nested). Ở đây mình không đưa ra chứng minh vì mình chưa hiểu rõ phương pháp này. Sau này sẽ nghiên cứu thêm :))))
+
+Bằng những lý luận chặt chẽ, các nhà toán học đã đưa chúng ta đi từ hết bất ngờ này sang bất ngờ khác, khiến toán học không chỉ là môn học khô khan mà còn giàu tính "giải trí" cao, đúng không nào? :))))
