@@ -126,7 +126,7 @@ $$1 \rightarrow 0.a_{1, 0}a_{1, 1}a_{1, 2} \cdots$$
 
 Vân vân
 
-Ta chứng minh ánh xạ này không phải toàn ánh. Xét số $$y = 0.b_0 b_1 b_2 \cdots$$, với $$b_i \neq a_{i, i}$ với mọi $$i$$, tức là trên đường chéo của các số trên ta chọn số $$b_i$$ khác với số trên đường chéo. Như vậy số $$y$$ này có chữ số ở vị trí 0 khác $$f(0)$$, chữ số ở vị trí 1 khác $$f(1)$$, vân vân, nên không tìm được số $$n$$ nào mà $$f(n) = y$$. Suy ra $$f$$ không phải toàn ánh và từ đó không phải song ánh.
+Ta chứng minh ánh xạ này không phải toàn ánh. Xét số $$y = 0.b_0 b_1 b_2 \cdots$$, với $$b_i \neq a_{i, i}$$ với mọi $$i$$, tức là trên đường chéo của các số trên ta chọn số $$b_i$$ khác với số trên đường chéo. Như vậy số $$y$$ này có chữ số ở vị trí 0 khác $$f(0)$$, chữ số ở vị trí 1 khác $$f(1)$$, vân vân, nên không tìm được số $$n$$ nào mà $$f(n) = y$$. Suy ra $$f$$ không phải toàn ánh và từ đó không phải song ánh.
 
 - Phương án 2: phương pháp dãy các đoạn thẳng đóng bị chặn lồng vào nhau (sequence of closed bounded nested). Ở đây mình không đưa ra chứng minh vì mình chưa hiểu rõ phương pháp này. Sau này sẽ nghiên cứu thêm :))))
 
