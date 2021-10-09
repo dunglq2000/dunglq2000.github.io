@@ -1,0 +1,77 @@
+---
+layout: post
+title: Quyển 1C - Nhập môn lý thuyết số
+categories: crypto
+---
+
+## 1. Các khái niệm cơ bản về lý thuyết số
+
+- Chia hết: số nguyên $$a$$ được gọi là bị chia hết bởi số nguyên $$b$$ nếu tồn tại số nguyên $$c$$ sao cho $$a = bc$$. Ví dụ 4 bị chia hết bởi 2, 9 bị chia hết bởi 3. Khi đó ta còn nói $$b$$ chia hết $$a$$ và kí hiệu $$a \vdots b$$ hoặc $$b \lvert a$$
+- Ước và bội: nếu số $$a$$ bị chia hết bởi số $$b$$ thì $$b$$ được gọi là ước của $$a$$, và $$a$$ là bội của $$b$$. Ví dụ các ước dương của 15 là {1, 3, 5, 15}, các bội của 3 là {3, 6, 9, 12, ...}. Như vậy số lượng bội là vô hạn
+- Ước chung và bội chung: nếu số $$a$$ và $$b$$ có cùng ước là $$d$$ thì $$d$$ được gọi là ước chung. Trong các ước chung ta quan tâm ước chung lớn nhất (greatest common divisor - gcd). Tương tự bội chung của 2 số $$a$$ và $$b$$ là số chia hết cho cả $$a$$ và $$b$$. Trong các bội chung ta quan tâm bội chung nhỏ nhất (least common multipler - lcm). Ví dụ 4 và 6 có các ước chung là {1, 2}, do đó 2 là ước chung lớn nhất. Ví dụ 3 và 5 có các bội chung là {15, 30, 45, ...}, do đó 15 là bội chung nhỏ nhất.
+- Đồng dư: cho số nguyên $$m$$. Số $$a$$ và $$b$$ được gọi là *đồng dư thức* modulo $$m$$ nếu $$a-b \vdots m$$. Ta ký hiệu $$a \equiv m \pmod m$$
+
+## 2. Hệ mật mã RSA
+
+Hệ mật mã đầu tiên mình tiếp xúc (và có lẽ nhiều người khác cũng vậy) là RSA (đặt tên theo 3 nhà khoa học tạo ra nó là Rivest, Shamir và Adleman). Hệ mật mã này là loại *bất đối xứng*, ngược lại là loại *đối xứng* mình sẽ đề cập sau.
+
+Hãy tưởng tượng mã hóa *bất đối xứng* như một hộp khóa trái (giống cửa phòng khóa chốt sẵn, ra khỏi phòng và đóng cửa lại thì cửa bị khóa trái và chỉ mở được bằng chìa khóa). Một người sở hữu chìa khóa cho chiếc hộp đó và đưa chiếc hộp ra giữa chợ cho mọi người dùng. Bất kì ai muốn gửi tin nhắn tới người này chỉ cần viết giấy bỏ vào hộp, đóng lại và đưa lại hộp cho người này. Do hộp đã bị khóa trái nên dù có ai lấy được chiếc hộp cũng không thể mở ra, duy nhất người sở hữu chìa khóa mới mở được.
+
+Ở đây RSA hoạt động (tương tự) như sau:
+
+- người nhận tạo 1 **private key** (khóa bí mật) và từ khóa bí mật đó tính toán **public key** (khóa công khai). Điều đặc biệt ở đây là từ private key dễ dàng tính được public key, nhưng ngược lại từ public key tính lại private key rất khó (về mặt thời gian). Hàm như vậy gọi là hàm 1 chiều.
+- **public key** được dùng để mã hóa (chiếc hộp) và chỉ có sủ dụng **private key** (chìa khóa) mới có thể giải mã
+- **public key** được công khai trên mạng và ai muốn gửi tin nhắn cho người nhận sử dụng khóa này để mã hóa và gửi tin nhắn đã mã hóa về người nhận.
+- người nhận (người duy nhất giữ **private key**) sử dụng nó để giải mã.
+
+Về mặt toán học, RSA hoạt động như sau:
+
+- người nhận chọn một số $$i$$ là số bit cho **private key**. Sau đó chọn 2 số nguyên tố $$p$$ và $$q$$ mà $$2^i \leq p, q < 2^{i+1}$$ và tính tích $$n=pq$$.
+- Tính $$\phi(n) = (p-1)(q-1)$$ ($$\phi(n)$$ được gọi là phi hàm Euler của số $$n$$ sẽ được giải thích sau) và chọn số $$e$$ sao cho $$\gcd(e, \phi(n)) = 1$$. Người nhận tính $$d = e^{-1} \pmod{\phi(n)}$$. Khi đó **private key** là bộ số $$(p, q, d)$$, và **public key** là cặp $$(n, e)$$. Sau đó **public key** được công khai trên mạng.
+- người gửi muốn gửi tin nhắn $$m < n$$ tới người nhận. Khi đó người gửi tính $$c = m^e \pmod n$$ và gửi $$c$$ cho người nhận qua mạng.
+- Sau khi nhận được $$c$$, người nhận tiến hành giải mã bằng cách tính $$m' = c^d = m \pmod n$$. Lúc này $$m'$$ bằng chính xác $$m$$. Thật ảo ma :))
+
+Thật ra thì cũng không ảo ma tới vậy. Bây giờ mình sẽ nói lý do tại sao việc tính toán như trên sẽ khôi phục lại $$m$$ ban đầu, và mình cần phi hàm Euler (Euler's totient function) đã nói ở trên, cộng thêm định lý cũng mang tên Euler.
+
+### a) Phi hàm Euler
+
+Khi ước chung lớn nhất của hai số bằng 1, tức là $$\gcd(a, b) = 1$$, ta nói $$a$$ và $$b$$ nguyên tố cùng nhau (coprime). Phi hàm Euler của số nguyên dương $$n$$ được định nghĩa là *tập hợp các số dương nhỏ hơn $$n$$ và nguyên tố cùng nhau với $$n$$*. Tức là $$\phi(n) = \{x \lvert 1 \leq x < n, \gcd(x, n) = 1\}$$. 
+
+Dễ thấy rằng nếu $$n$$ là số nguyên tố thì $$\phi(n) = n-1$$. Vậy nếu $$n$$ không nguyên tố thì sao?
+
+Một tính chất thú vị của phi hàm Euler là nhân tính, tức là $$\phi(mn) = \phi(m)\phi(n)$$ với $$\gcd(m, n) = 1$$. Mình sẽ chứng minh sơ lược tính chất này.
+
+Mình viết bảng $$m \times n$$ số sau:
+
+| $$1 + 0 m$$ | $$2 + 0 m$$ | $$\cdots$$ | $$m + 0 m$$ |
+| $$1 + 1 m$$ | $$2 + 1 m$$ | $$\cdots$$ | $$m + 1 m$$ |
+| $$\cdots$$ | $$\cdots$$ | $$\cdots$$ | $$\cdots$$ |
+| $$1 + (n-2)m$$ | $$2 + (n-2)m$$ | $$\cdots$$ | $$m + (n-2)m$$ |
+| $$1 + (n-1)m$$ | $$2 + (n-1)m$$ | $$\cdots$$ | $$m + (n-1)m$$ |
+
+Ở đây, phần tử ở **hàng thứ $$k$$** sẽ có dạng $$r + km$$ ($$1 \leq r \leq m$$). Như vậy số phần tử nguyên tố cùng nhau với $$m$$ trên mỗi hàng là $$\phi(m)$$ (tức là chỉ lấy các số $$r$$ mà $$\gcd(r, m) = 1$$). Và mình có $$n$$ hàng như vậy, mình sẽ chỉ lấy hàng $$k$$ mà $$\gcd(k, n) = 1$$ (do $$\gcd(m, n) = 1$$ nên chỉ cần lấy ra các hàng nguyên tố cùng nhau với $$n$$), như vậy có $$\phi(n)$$ hàng như vậy.
+
+Mỗi hàng trong $$\phi(n)$$ hàng có $$\phi(m)$$ phần tử nguyên tố cùng nhau với $$m \times n$$, như vậy $$\phi(m) \phi(n) = \phi(mn)$$. Điều phải chứng minh
+
+Vừa rồi là trường hợp $$\gcd(m, n) = 1$$. Vậy nếu là lũy thừa của số nguyên tố thì sao? ($$n = p^e$$ với $$p$$ là số nguyên tố và $$e \geq 2$$ là số nguyên dương).
+
+Với $$p^e$$ số từ 1 tới $$p^e$$, mình bỏ đi các số là bội của $$p$$ là $$\{1, p, 2p, \cdots, p^{e-1}p\}$$. Tập hợp này có $$p^{e-1}$$ phần tử. Vậy $$\phi(p^e) = p^e - p^{e-1} = p^{e-1}(p-1)$$.
+
+Tổng quát: nếu mình biết phân tích thừa số nguyên tố của $$n$$ là $$p_1^{e_1} p_2^{e^2} \cdots p_k^{e_k}$$ thì mình tính được $$\phi(n) = \phi(p_1^{e_1}) \phi(p_2^{e_2}) \cdots \phi(p_k^{e_k})$$ và $$\phi(p_i^{e_i})$$. Sử dụng khai triển $$\phi(p_i^{e_i})$$ như trên thì mình có $$\phi(n) = n (1-\frac{1}{p_1})(1 - \frac{1}{p_2}) \cdots (1-\frac{1}{p_k})$$.
+
+### b) Định lý Euler
+
+Cho $$n$$ là số nguyên dương. Xét tập hợp tất cả đồng dư thức của $$n$$ là $$S = \{a_1, a_2, \cdots, a_m\}$$.
+
+**Định lý Euler**: cho $$g$$ và $$n$$ là 2 số nguyên dương và $$\gcd(g, n)=1$$. Khi đó $$g^{\phi(n)} = 1 \pmod n$$.
+
+Để chứng minh định lý mình cần:
+
+- Nếu $$m = \phi(n)$$ thì tập các đồng dư thức trên gọi là **hệ thặng dư thu gọn modulo $$n$$**.
+- Mình có nhận xét sau: nếu $$g$$ là số nguyên sao cho $$\gcd(g, n)=1$$ thì khi nhân $$g$$ với tất cả phần tử của tập $$S$$ trên, mình sẽ có lại đúng $$\phi(n)$$ phần tử của tập đó theo thứ tự khác (hoán vị của $$S$$). Tức là nếu $$a_i \neq a_j \pmod n$$ thì $$g a_i \neq g a_j \pmod n$$. Bây giờ mình giả sử ngược lại, nếu $$g a_i \equiv g a_j \pmod n$$, do $$\gcd(g, n) = 1$$, mình nhân số nghịch đảo của $$g$$ cho 2 vế và thu được $$a_i \equiv a_j \pmod n$$.
+
+Lúc này, $$\{g a_1, g a_2, \cdots, g a_{\phi(n)}\}$$ là một hoán vị của $$\{a_1, a_2, \cdots, a_{\phi(n)}\}$$. Nhân tất cả phần tử của tập trước với nhau, tất cả phần tử tập sau với nhau mình được
+
+$$g a_1 \cdot g a_2 \cdots g a_{\phi(n)} \equiv a_1 \cdot a_2 \cdots a_{\phi(n)} \pmod n \Leftrightarrow g^{\phi(n)} \cdot a_1 a_2 \cdots a_{\phi(n)} \equiv a_1 a_2 \cdots a_{\phi(n)}$$. Giờ thì giản lược tất cả $$a_i$$ và thu được kết quả thôi. :))
+
+Đến đây bài viết đã hơi dài nên mình sẽ tiếp tục giải thích sự "ảo ma" của RSA ở phần sau. Cám ơn các bạn đã đọc.

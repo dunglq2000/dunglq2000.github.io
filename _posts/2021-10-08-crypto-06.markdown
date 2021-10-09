@@ -1,0 +1,36 @@
+---
+layout: post
+title: Quyển 2A - Hình học và hệ tọa độ Descartes
+categories: crypto
+---
+
+Các con số thì trừu tượng, nhưng các tòa nhà lại là thực tế. Các bản vẽ (chi tiết máy, nhà, công trình, ...) là các dạng hình học quan trọng trong đời sống. Bây giờ mình sẽ chém gió về cái thời xa xửa xa xưa của mình, cũng như hình học.
+
+## 1. Yếu tố của hình học
+
+**Điểm**, một chấm, một cục, một giọt, một gì nữa mình hết từ rồi :(( nói chung, điểm là cơ sở của hình học. **Tất cả đối tượng hình học đều là tập hợp điểm**.
+
+**Đường thẳng**, ông Euclid hồi xưa nói rằng, cho trước 2 điểm, lấy cây thước kẻ qua 2 điểm đó ta có đường thẳng. Và đường thẳng thì dài vô hạn về cả 2 phía (của 2 điểm). Như vậy, đường thẳng là tập hợp vô số điểm thẳng hàng, và mình chỉ cần 2 trong số đó để xác định đường thẳng (lấy xa xa tí cho dễ vẽ :v).
+
+**Đoạn thẳng**, lần này cũng lấy cây thước, kẻ qua 2 điểm nhưng chỉ vẽ giữa 2 điểm thôi, ta có đoạn thẳng. Lần này, đoạn thẳng vẫn là tập hợp vô số điểm :)) nhưng bị giới hạn. Trên trục số thực $$\mathbb{R}$$ có vô số điểm, và đoạn [0, 1] cũng vậy. Ở bài 1A mình có để hàm $$f(x)=\frac{e^x}{e^x+1}$$ là song ánh từ [0, 1] tới $$\mathbb{R}$$ ấy.
+
+**Tia**, cũng là lấy cây thước, vẽ từ 1 điểm đi ra :)) như vậy tia kéo dài vô hạn về 1 đầu mút, và cũng vô số điểm @@@
+
+Vuông tròn tam giác cũng là tập hợp các điểm. Hình $$\mathcal{H}$$ bất kì cũng là tập hợp các điểm.
+
+## 2. Phép biến hình
+
+Vector là khái niệm quan trọng trong toán học, vật lý, hóa học, cùng các bà con cô dì chú bác của tụi nó :)) Vector là đoạn thẳng có hướng. Tức là từ khái niệm đoạn thẳng, ta quy định đi từ đầu này tới đầu kia -> có vector. Các đại lượng vật lý có hướng đều biểu diễn bằng vector.
+
+Phép biến hình mà mình biết gồm *phép dời hình* và *phép đồng dạng* (vị tự).
+
+**Định nghĩa**: phép biến hình sẽ biến mỗi điểm $$A$$ của hình $$\mathcal{H}$$ thành điểm $$A'$$ của hình $$\mathcal{H}'$$ sao cho khoảng cách giữa 2 điểm bất kì bảo toàn. Tức là với mọi $$A, B \in \mathcal{H}$$ biến thành $$A', B' \in \mathcal{H}'$$ thì $$AB = A'B'$$.
+
+Các phép dời hình cơ bản gồm: phép tịnh tiến theo vector $$\overrightarrow{v}$$, phép đối xứng trục, phép đối xứng tâm, phép quay (thực chất là đối xứng trục 2 lần).
+
+**Định nghĩa**: phép đồng dạng (phép vị tự) theo tỉ số $$k$$ và tâm $$O$$ biến hình $$\mathcal{H}$$ thành hình $$\mathcal{H}'$$ sẽ biến điểm $$A \in \mathcal{H}$$ bất kì thành điểm $$A' \in \mathcal{H}'$$ thỏa mãn $$\overrightarrow{OA'} = k \overrightarrow{OA}$$. Nói đơn giản là phóng to ($$\lvert k \rvert > 1$$), thu nhỏ ($$\lvert k \rvert < 1$$) hoặc giữ nguyên. Lưu ý rằng $$k$$ dương hay âm cũng làm ảnh hưởng chiều của hình sau khi biến đối. Dưới đây là ví dụ biến tam giác $$ABC$$ thành $$FDE$$ theo thứ tự.
+
+![Ví dụ](/assets/img-2a-1.png)
+
+
+

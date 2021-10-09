@@ -1,13 +1,29 @@
 ---
 layout: post
-title: Quyển 1B - Nội công nhập môn - Lý thuyết số
+title: Quyển 1B - Bổ túc (chém gió) về ánh xạ
 categories: crypto
 ---
 
-Nội công nhập môn cho phép người học vận dụng kiến thức cơ bản để học tập các phần nâng cao tốt hơn, không có chống chỉ định từ bác sĩ .......... :))))
+Quay lại ánh xạ, xét $$\phi : X \mapsto Y, x \mapsto y$$
 
-## 1. Các khái niệm cơ bản về lý thuyết số
-- Chia hết: số nguyên $$a$$ được gọi là bị chia hết bởi số nguyên $$b$$ nếu tồn tại số nguyên $$c$$ sao cho $$a = bc$$. Ví dụ 4 bị chia hết bởi 2, 9 bị chia hết bởi 3. Khi đó ta còn nói $$b$$ chia hết $$a$$ và kí hiệu $$a \vdots b$$ hoặc $$b \| a$$
-- Ước và bội: nếu số $$a$$ bị chia hết bởi số $$b$$ thì $$b$$ được gọi là ước của $$a$$, và $$a$$ là bội của $$b$$. Ví dụ các ước dương của 15 là {1, 3, 5, 15}, các bội của 3 là {3, 6, 9, 12, ...}. Như vậy số lượng bội là vô hạn
-- Ước chung và bội chung: nếu số $$a$$ và $$b$$ có cùng ước là $$d$$ thì $$d$$ được gọi là ước chung. Trong các ước chung ta quan tâm ước chung lớn nhất (greatest common divisor - gcd). Tương tự bội chung của 2 số $$a$$ và $$b$$ là số chia hết cho cả $$a$$ và $$b$$. Trong các bội chung ta quan tâm bội chung nhỏ nhất (least common multipler - lcm). Ví dụ 4 và 6 có các ước chung là {1, 2}, do đó 2 là ước chung lớn nhất. Ví dụ 3 và 5 có các bội chung là {15, 30, 45, ...}, do đó 15 là bội chung nhỏ nhất.
-- Đồng dư: cho số nguyên $$m$$. Số $$a$$ và $$b$$ được gọi là *đồng dư thức* modulo $$m$$ nếu $$a-b \vdots m$$. Ta ký hiệu $$a \equiv m \pmod m$$
+**Ánh xạ ngược** của $$\phi$$, thường được ký hiệu là $$\phi^{-1}$$ là ánh xạ biến phần tử từ tập $$Y$$ vào tập $$X$$, tức là $$\phi^{-1}: Y \mapsto X$$, $$y \mapsto x$$. Tuy nhiên cần lưu ý khi này tập xác định đã trở thành $$Y$$ nên phải giới hạn lại các phần tử làm giá trị $$\phi^{-1}(y)$$ xác định.
+
+Ví dụ, xét hàm số $$f: \mathbb{R} \mapsto \mathbb{R}$$, $$x \mapsto y=f(x)=x^2$$
+
+Lúc này, $$y \geq 0$$ với mọi $$x$$ và mình có thể biểu diễn hàm ngược là $$x=\sqrt{y}$$. Lúc này ánh xạ ngược sẽ trở thành $$f^{-1}: \mathbb{R}^{+} \mapsto \mathbb{R}^{+}$$
+
+**Ánh xạ hợp**, xét 2 ánh xạ $$f: X \mapsto Y$$, $$f(x) = y$$ và $$g: Y \mapsto Z$$, $$z = g(y)$$. Ánh xạ hợp của $$g$$ và $$f$$ được ký hiệu là $$g \circ f: X \mapsto Z$$, $$z = g(y) = g(f(x))$$.
+
+Cho đến lúc này, tất cả ánh xạ mình đề cập chỉ là 1 biến, ví dụ như $$y=f(x)$$ thì chỉ có 1 tham số cho hàm $$f$$ là $$x$$ thôi. Tổng quát, tham số cho hàm số (hay ánh xạ) có thể có nhiều biến.
+
+**Tích Descartes** của 2 tập hợp $$A = \{a_1, a_2, \cdots, a_n\}$$ và $$B = \{b_1, b_2, \cdots, b_m\}$$ là tập hợp $$S A \times B = \{(a_i, b_j) \lvert a_i \in A, b_j \in B\}$$. Ví dụ với $$A = \{1, 2, 3\}$$, $$B = \{4, 5\}$$ thì tích Descartes là $$S = A \times B = \{(1, 4), (1, 5), (2, 4), (2, 5), (3, 4), (3, 5)\}$$. Với nhiều tập hợp thì định nghĩa tương tự.
+
+Như vậy, xét 3 tập nguồn $$X$$, $$Y$$ và $$Z$$ và tập đích là $$T$$, ánh xạ $$\phi : X \times Y \times Z \mapsto T$$, $$\phi(x, y, z) \mapsto t$$ là ánh xạ 3 biến, tập nguồn của ánh xạ khi này là tích Descartes $$X \times Y \times Z$$.
+
+Câu hỏi: **Tại sao mình lại chém gió nhiều về ánh xạ như vậy?**
+
+Trả lời: vì ánh xạ xuất hiện mọi nơi, trong toán lẫn lập trình, và ứng dụng trong hầu hết các nhánh toán học (hình học, đại số, ...)
+
+Phần sau sẽ là câu chuyện nhập môn mật mã học của mình, và cũng là mở đầu cho hành trình "đau khổ" về sau. :))
+
+P/s: Descartes (1596 - 1650) là triết gia, nhà khoa học, nhà toán học người Pháp. Hệ trục tọa độ vuông góc Oxy mà chúng ta học ở phổ thông còn được gọi là hệ tọa độ Descartes, khi đó các tính chất về khoảng cách sẽ đúng nhờ vào định lý Pythagoras. Tức là với 2 điểm $$A(x_A, y_A)$$ và $$B(x_B, y_B)$$, $$AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}$$. Hệ tọa độ tổng quát khi 2 trục tọa độ hợp với nhau góc bất kì gọi là hệ tọa độ Affine cũng được sử dụng trong nhiều lĩnh vực (ít nhất thì mình biết vậy). :))

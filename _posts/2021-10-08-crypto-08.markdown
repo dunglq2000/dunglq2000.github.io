@@ -1,0 +1,10 @@
+---
+layout: post
+title: Quyển 2C - Đường cong elliptic
+categories: crypto
+---
+
+Khi một hàm số được vẽ lên đồ thị, có rất nhiều hàm số tạo thành "đường cong" rất đẹp :)) nhớ bài hát ghê. Trong số các đường cong thì có một đường cong được sử dụng nhiều trong mật mã học (và hình như cũng để giải định lý lớn Fermat) là đường cong elliptic.
+
+**Định nghĩa**: đường cong elliptic (dạng Weiertrass) là đường cong có phương trình $$y^2 = x^3 + ax + b$$, trong đó $$4a^3 + 27b^2 \neq 0$$.
+
