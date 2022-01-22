@@ -12,7 +12,7 @@ Các con số thì trừu tượng, nhưng các tòa nhà lại là thực tế.
 
 **Đường thẳng**, ông Euclid hồi xưa nói rằng, cho trước 2 điểm, lấy cây thước kẻ qua 2 điểm đó ta có đường thẳng. Và đường thẳng thì dài vô hạn về cả 2 phía (của 2 điểm). Như vậy, đường thẳng là tập hợp vô số điểm thẳng hàng, và mình chỉ cần 2 trong số đó để xác định đường thẳng (lấy xa xa tí cho dễ vẽ :v).
 
-**Đoạn thẳng**, lần này cũng lấy cây thước, kẻ qua 2 điểm nhưng chỉ vẽ giữa 2 điểm thôi, ta có đoạn thẳng. Lần này, đoạn thẳng vẫn là tập hợp vô số điểm :)) nhưng bị giới hạn. Trên trục số thực $$\mathbb{R}$$ có vô số điểm, và đoạn [0, 1] cũng vậy. Ở bài 1A mình có để hàm $$f(x)=\frac{e^x}{e^x+1}$$ là song ánh từ [0, 1] tới $$\mathbb{R}$$ ấy.
+**Đoạn thẳng**, lần này cũng lấy cây thước, kẻ qua 2 điểm nhưng chỉ vẽ giữa 2 điểm thôi, ta có đoạn thẳng. Lần này, đoạn thẳng vẫn là tập hợp vô số điểm :)) nhưng bị giới hạn. Trên trục số thực $$\mathbb{R}$$ có vô số điểm, và đoạn [0, 1] cũng vậy. Ở bài 1A mình có để hàm $$f(x)=\frac{e^x}{e^x+1}$$ là song ánh từ (0, 1) tới $$\mathbb{R}$$ ấy.
 
 **Tia**, cũng là lấy cây thước, vẽ từ 1 điểm đi ra :)) như vậy tia kéo dài vô hạn về 1 đầu mút, và cũng vô số điểm @@@
 
@@ -32,5 +32,24 @@ Các phép dời hình cơ bản gồm: phép tịnh tiến theo vector $$\overr
 
 ![Ví dụ](/assets/img-2a-1.png)
 
+Tại sao mình lại đề cập tới hình học? Lý do là vì hình học giúp mình trực quan các khái niệm trừu tượng hoặc chỉ đơn giản là nhìn được mô hình. Trong thực tế, hình học giúp giải quyết các bài toán về hình ảnh hiển thị, ví dụ như đồ họa, game, ...
 
+Tuy nhiên, nếu chỉ là một điểm hay một hình thì vẫn còn hạn chế, như việc thực hiện phép biến hình sẽ được thực hiện như thế nào trên máy tính, nơi mà thước và compa không có? Rất may là trước khi máy tính ra đời đã có một phát minh thiên tài là **hệ tọa độ trên mặt phẳng** :))))
 
+Dừng lại một chút, các bạn chơi game 2D, 3D và gọi một hình là hình 2 chiều (hình vuông) hay hình 3 chiều (hình lập phương), vậy **chiều** là gì????
+
+Khi nhìn vào đường thẳng ở đầu bài, nếu mình chọn 1 điểm làm gốc là **$$O$$**, và quy định 1 hướng là chiều dương. Như vậy bất kì điểm nào nằm trên đường thẳng đó, tùy vào vị trí so với điểm $$O$$ mà xác định **tọa độ**. Ví dụ như 3, -2, 10, -10000, bla bla, ...
+
+![Ví dụ](/assets/img-2a-2.png)
+
+Nếu mình chọn 2 đường thằng trên mặt phẳng và gọi giao điểm của chúng là $$O$$ làm gốc, đồng thời quy định chiều dương cho mỗi đường thẳng thì mình có một **hệ tọa độ 2 chiều**. Hình dưới là một hệ tọa độ 2 chiều với trục là đường thẳng $$Ox$$ và $$Oy$$. Hệ tọa độ này gọi là **hệ tọa độ Affine**. Khi $$Ox$$ và $$Oy$$ vuông góc ta có hệ tọa độ quen thuộc học từ nhỏ: **hệ tọa độ Descartes**. Khi đó mỗi điểm $$A$$ được xác định bởi cặp số $$(x, y)$$ bằng việc vẽ các đường song song với 2 trục tọa độ như hình sau:
+
+![Ví dụ](/assets/img-2a-3.png)
+
+Trong không gian, mình chọn 3 đường thẳng đồng quy tại điểm $$O$$ và 3 đường thẳng là 3 trục $$Ox$$, $$Oy$$ và $$Oz$$. Thực hiện tương tự mình sẽ có mỗi điểm $$A$$ trong không gian được xác định bởi bộ 3 số $$(x, y, z)$$. Nói tóm lại, trong không gian 1 chiều ta biểu diễn điểm bằng 1 số, trong không gian 2 chiều cần 2 số và trong không gian 3 chiều cần 3 số. Như vậy, trong không gian **$$n$$-chiều** thì cần $$n$$ điểm để biểu diễn?!?!
+
+Việc này, đúng, nhưng chưa đầy đủ!!!! Trong các bài viết sau mình sẽ giải thích **chiều** là như thế nào dựa trên đại số tuyến tính và tổng quát cho trường hợp này.
+
+Quay lại vấn đề, khi đã có hệ tọa độ, chúng ta có thể dựa trên tọa độ, vốn dĩ là các con số, mà tính toán. Từ đó các phép biến hình mình đã đề cập sẽ dễ dàng được thực hiện trên máy tính tự động và chính xác: định vị GPS, mô hình hóa các hệ thống công nghiệp lên máy tính, xử lý ảnh, thị giác máy tính, game, ...
+
+Bài viết này đề cập sơ lược về hình học để làm tiền đề cho các bài viết sau nên mình xin phép dừng tại đây!

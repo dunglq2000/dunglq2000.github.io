@@ -1,0 +1,49 @@
+---
+layout: post
+title: Quyển 3A - Đại số tuyến tính - Mở đầu
+categories: crypto
+---
+
+Môn học ở Đại học mà nhiều người đều nghe tới: Đại số tuyến tính (Linear Algebra) =)))
+
+2 khái niệm cơ bản của đại số tuyến tính là ma trận (matrix) và vector.
+
+Với **vector**: Ở cấp 3 mình được học về tích vô hướng của 2 vector trong $$Oxy$$ và $$Oxyz$$. Tổng quát lên cho bộ $$n$$ số, giả sử $$\vec{a} = (a_1, a_2, \cdots, a_n)$$ và $$\vec{b} = (b_1, b_2, \cdots, b_n)$$. Khi đó tích của 2 vector trên là $$\vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 + \cdots a_n b_n$$. Trong một số sách, tác giả chỉ in đậm để biểu diễn vector, ví dụ $$\textbf{a} = (a_1, a_2, \cdots, a_n)$$, hoặc in đậm và gạch chân, ví dụ $$\underline{\textbf{a}} = (a_1, a_2, \cdots, a_n)$$ (sao mấy bác không thống nhất cách viết đi huhu)
+
+Với **ma trận**, một ma trận $$a_{m \times n}$$ là một bảng $$m$$ hàng và $$n$$ cột.
+
+$$\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \cdots & \cdots & \cdots & \cdots \\ a_{m1} & a_{m2} & \cdots & a_{mn}\end{pmatrix}$$
+
+Trong đó $$a_{ij}$$ biểu diễn phần tử tại hàng $$i$$ và cột $$j$$. Khi $$m=n$$ thì ta gọi là ma trận vuông. Các khái niệm về ma trận đơn vị, ma trận tam giác trên/dưới, ma trận bậc thang, ... đều dễ dàng tìm thấy ở các giáo trình nên mình xin phép không nhắc đến.
+
+Về **phép cộng** ma trận, để cộng/trừ 2 ma trận $$a_{m \times n}$$ và $$b_{m \times n}$$ thì ta cộng/trừ các phần tử tương ứng, tức là $$a_{ij} \pm b_{ij}$$. Như vậy để cộng 2 ma trận thì **KÍCH THƯỚC** phải bằng nhau.
+
+Về **phép nhân** ma trận, giả sử $$c_{m \times p} = a_{m \times n} \cdot b_{n \times p}$$ (chú ý rằng để nhân ma trận thì **số cột ma trận trước phải bằng số hàng ma trận sau**, lý do thì sau đây mình sẽ giải thích)
+
+Phần tử $$c_{ij}$$ được tính như sau: $$c_{\textbf{ij}} = \sum_{k=1}^{n}a_{\textbf{i}k} b_{k\textbf{j}}$$. Nghĩa là phần tử ở hàng $$i$$ và cột $$j$$ của $$c$$ là tích vector hàng $$i$$ của $$a$$ và vector cột $$j$$ của $$b$$.
+
+$$\begin{pmatrix}\cdots & \cdots & \cdots \\ \cdots & c_{ij} & \cdots \\ \cdots & \cdots & \cdots\end{pmatrix} = \begin{pmatrix}\cdots & \cdots & \cdots & \cdots \\ a_{i1} & a_{i2} & \cdots & a_{in} \\ \cdots & \cdots & \cdots & \cdots\end{pmatrix} \cdot \begin{pmatrix}\cdots & b_{1j} & \cdots \\ \cdots & b_{2j} & \cdots \\ \cdots & \cdots & \cdots \\ \cdots & b_{nj} & \cdots\end{pmatrix}$$
+
+Bây giờ mình sẽ đi vào phần quan trọng: **hạng** của ma trận.
+
+## 1. Hạng của ma trận
+
+Định nghĩa: cho ma trận $$A_{m \times n}$$. **Hạng** của ma trận là cấp của ma trận con lớn nhất có định thức khác 0. Nghĩa là một ma trận vuông mà là ma trận con (lấy 1 phần của ma trận gốc) kích thước $$r \times r$$ mà có định thức khác 0, thì hạng của ma trận khi đó là $$r$$. Dễ thấy do là ma trận con, và vuông, nên $$r \leq \min(m, n)$$.
+
+Ví dụ, ma trận $$A = \begin{pmatrix}1 & 2 & 3 \\ 2 & 4 & 6 \\ 1 & 2 & 4\end{pmatrix}$$ có định thức $$\det(A) = 0$$. Nhưng ma trận con của $$A$$ là $$B = \begin{pmatrix}2 & 3 \\ 2 & 4\end{pmatrix}$$ (lấy dòng 1 và 3, lấy cột 2 và 3) có định thức $$\det(B) = 2 \neq 0$$, do đó $$r = \text{rank}(A) = 2$$ ($$\text{rank}(A)$$ nghĩa là hạng của $$A$$).
+
+Tuy nhiên với ma trận cỡ lớn thì không dễ gì tìm được ma trận con như vậy. Thông thường chúng ta sẽ đưa về ma trận bậc thang để biết được hạng ma trận. **Số dòng** khác $$\vec{0}$$ của ma trận bậc thang chính là hạng của ma trận ban đầu.
+
+Tại sao hạng lại quan trọng? Vì hạng sẽ cho chúng ta biết nhiều thông tin hơn và làm được nhiều thứ hơn. Ví dụ biết bên kia Kim cương còn mình Đồng thì đừng solo Q làm gì cho mệt :))))
+
+## 2. Hệ phương trình tuyến tính
+
+Giả sử ta cần tìm các biến $$(x_1, x_2, \cdots, x_n)$$ trong hệ phương trình tuyến tính:
+
+$$\begin{gather*}& a_{11} x_1 + & a_{12} x_2 + & \cdots + & a_{1n} x_n = & b_1 \\ & a_{21} x_1 + & a_{22} x_2 + & \cdots + & a_{2n} x_n = & b_2 \\ & a_{i1} x_1 + & a_{i2} x_2 + & \cdots + & a_{in} x_n = & b_i \\ & a_{m1} x_1 + & a_{m2} x_2 + & \cdots + & a_{mn} x_n = & b_m\end{gather*}$$
+
+Đặt 
+
+$$\textbf{A} = \begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \cdots & \cdots & \cdots & \cdots \\ a_{m1} & a_{m2} & \cdots & a_{mn}\end{pmatrix}$$, $$\textbf{x} = \begin{pmatrix}x_1 \\ x_2 \\ \cdots \\ x_n\end{pmatrix}$$ và $$\textbf{b} = \begin{pmatrix}b_1 \\ b_2 \\ \cdots \\ b_n\end{pmatrix}$$
+
+Như vậy hệ phương trình tuyến tính trên có thể được viết dưới dạng: $$\textbf{A} \cdot \textbf{x} = \textbf{b}$$

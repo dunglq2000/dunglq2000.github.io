@@ -18,7 +18,7 @@ Cho đến lúc này, tất cả ánh xạ mình đề cập chỉ là 1 biến,
 
 **Tích Descartes** của 2 tập hợp $$A = \{a_1, a_2, \cdots, a_n\}$$ và $$B = \{b_1, b_2, \cdots, b_m\}$$ là tập hợp $$S A \times B = \{(a_i, b_j) \lvert a_i \in A, b_j \in B\}$$. Ví dụ với $$A = \{1, 2, 3\}$$, $$B = \{4, 5\}$$ thì tích Descartes là $$S = A \times B = \{(1, 4), (1, 5), (2, 4), (2, 5), (3, 4), (3, 5)\}$$. Với nhiều tập hợp thì định nghĩa tương tự.
 
-Như vậy, xét 3 tập nguồn $$X$$, $$Y$$ và $$Z$$ và tập đích là $$T$$, ánh xạ $$\phi : X \times Y \times Z \mapsto T$$, $$\phi(x, y, z) \mapsto t$$ là ánh xạ 3 biến, tập nguồn của ánh xạ khi này là tích Descartes $$X \times Y \times Z$$.
+Như vậy, xét 3 tập nguồn $$X$$, $$Y$$, $$Z$$, và tập đích là $$T$$, ánh xạ $$\phi : X \times Y \times Z \mapsto T$$, với $$\phi(x, y, z) \mapsto t$$ là ánh xạ 3 biến, tập nguồn của ánh xạ khi này là tích Descartes $$X \times Y \times Z$$.
 
 Câu hỏi: **Tại sao mình lại chém gió nhiều về ánh xạ như vậy?**
 

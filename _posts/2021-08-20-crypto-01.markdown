@@ -2,9 +2,26 @@
 layout: post
 title: Toán học truyền kì
 categories: crypto
+tags: mainpage
 ---
 *"Toán học cung cấp công cụ cho các ngành khoa học khác, do đó nội tại toán học phải đúng đắn, nếu không sẽ dẫn đến những sai lầm nghiêm trọng"* - Cauchy Augustin, nhà toán học Pháp
 
 Trước thời Cauchy, toán học chỉ là công cụ giúp cho các khoa học khác như vật lý, hóa học, kiến trúc, cầu đường, ..... do đó mang tính thực hành là chính. Tuy nhiên đến thời Cauchy thì toán học được định nghĩa lại một cách hệ thống bằng các ký hiệu và các khái niệm trừu tượng. Tuy nhiên lịch sử đã cho thấy rằng toán học phát triển theo nhiều phương hướng khác nhau nhưng vẫn giữ được sự thống nhất và liên quan chặt chẽ đến nhau.
 
 Đam mê của mình trong những năm tháng học Đại học là mật mã học, tuy nhiên blog này sẽ tập trung vào các lý thuyết toán mà mình học được trong quá trình học mật mã học, cùng các câu chuyện về các nhà toán học mà mình sưu tầm được. Các nhà toán học có nhiều tính cách và cuộc đời khác nhau, nhưng sự đóng góp của họ cho sự phát triển của toán học đều rất quan trọng. Có người vì niềm tin chính trị trong thời kì nội chiến mà không ngần ngại đối đầu với định chế khoa học cao nhất nước lúc bấy giờ (Cauchy), có người phân biệt rạch ròi đúng - sai mà bạo động quá khích để rồi ra đi khi tuổi đời còn rất trẻ (Galois), có người bệnh tật vẫn không ngăn cản bản thân sáng tạo và cống hiến cho toán học đến cuối đời (Euler bị mù về sau) và còn rất nhiều câu chuyện khác, tất cả đều truyền cảm hứng lẫn động lực để mình học tập và nghiên cứu. Hy vọng blog này sẽ là nơi giao lưu, chia sẻ về toán học, về mật mã học, cũng như là những câu chuyện về các nhà toán học với các bạn học sinh, sinh viên.
+
+[Quyển 1A]({% post_url 2021-08-20-crypto-02 %})
+
+[Quyển 1B]({% post_url 2021-08-20-crypto-03 %})
+
+[Quyển 1C]({% post_url 2021-09-20-crypto-04 %})
+
+[Quyển 1D]({% post_url 2021-10-08-crypto-05 %})
+
+[Quyển 2A]({% post_url 2021-10-08-crypto-06 %})
+
+[Quyển 2B]({% post_url 2021-10-08-crypto-07 %})
+
+[Quyển 2C]({% post_url 2021-10-08-crypto-08 %})
+
+[Quyển 3A]({% post_url 2022-01-05-crypto-09 %})
