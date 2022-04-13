@@ -23,7 +23,7 @@ jobs:
         with: 
           tag: 'v${{ steps.gemspec_fetch.outputs.version }}'
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_CREDENTIALS }}
+          GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
       - name: 🔖Build tag
         if: ${{ steps.tag-check.outputs.exists == 'false' }}
         id: tag_version
