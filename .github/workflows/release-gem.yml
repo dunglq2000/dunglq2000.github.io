@@ -14,5 +14,5 @@ jobs:
       - name: 🚀 Release gem
         uses: dawidd6/action-publish-gem@v1
         with:
-          github_token: ${{secrets.GH_CREDENTIALS}}
+          github_token: ${{secrets.CUSTOM_GITHUB_TOKEN}}
           api_key: ${{secrets.RUBYGEMS_API_KEY}}
