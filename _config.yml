@@ -78,7 +78,8 @@ dash:
   show_author: true
 
 markdown: kramdown
-theme: jekyll-dash
+# theme: jekyll-dash
+remote_theme: bitbrain/jekyll-dash
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
