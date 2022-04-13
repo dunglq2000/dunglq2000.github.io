@@ -64,6 +64,7 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.7)
+    rake (13.0.6)
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -80,10 +81,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bundler (~> 2.2.28)
   jekyll-dash!
   jekyll-tagging
   kramdown-parser-gfm
   liquid-md5
+  rake (~> 13.0.6)
 
 BUNDLED WITH
    2.2.28
