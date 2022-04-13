@@ -1,0 +1,139 @@
+---
+layout: post
+title: Quyển 3 - Hình học. Hệ tọa độ Descartes. Phép biến hình.
+usemathjax: true
+---
+
+Các con số thì trừu tượng, nhưng các tòa nhà lại là thực tế. Các bản vẽ (chi tiết máy, nhà, công trình, ...) là các dạng hình học quan trọng trong đời sống. Bây giờ mình sẽ chém gió về cái thời xa xửa xa xưa của mình, cũng như hình học.
+
+## 1. Yếu tố của hình học
+
+**Điểm**, một chấm, một cục, một giọt, một gì nữa mình hết từ rồi :(( nói chung, điểm là cơ sở của hình học. **Tất cả đối tượng hình học đều là tập hợp điểm**.
+
+**Đường thẳng**, ông Euclid hồi xưa nói rằng, cho trước 2 điểm, lấy cây thước kẻ qua 2 điểm đó ta có đường thẳng. Và đường thẳng thì dài vô hạn về cả 2 phía (của 2 điểm). Như vậy, đường thẳng là tập hợp vô số điểm thẳng hàng, và mình chỉ cần 2 trong số đó để xác định đường thẳng (lấy xa xa tí cho dễ vẽ :v).
+
+**Đoạn thẳng**, lần này cũng lấy cây thước, kẻ qua 2 điểm nhưng chỉ vẽ giữa 2 điểm thôi, ta có đoạn thẳng. Lần này, đoạn thẳng vẫn là tập hợp vô số điểm :)) nhưng bị giới hạn. Trên trục số thực $$\mathbb{R}$$ có vô số điểm, và đoạn [0, 1] cũng vậy. Ở bài 1A mình có để hàm $$f(x)=\frac{e^x}{e^x+1}$$ là song ánh từ (0, 1) tới $$\mathbb{R}$$ ấy.
+
+**Tia**, cũng là lấy cây thước, vẽ từ 1 điểm đi ra :)) như vậy tia kéo dài vô hạn về 1 đầu mút, và cũng vô số điểm @@@
+
+Vuông tròn tam giác cũng là tập hợp các điểm. Hình $$\mathcal{H}$$ bất kì cũng là tập hợp các điểm.
+
+## 2. Phép biến hình
+
+Vector là khái niệm quan trọng trong toán học, vật lý, hóa học, cùng các bà con cô dì chú bác của tụi nó :)) Vector là đoạn thẳng có hướng. Tức là từ khái niệm đoạn thẳng, ta quy định đi từ đầu này tới đầu kia -> có vector. Các đại lượng vật lý có hướng đều biểu diễn bằng vector.
+
+Phép biến hình mà mình biết gồm *phép dời hình* và *phép đồng dạng* (vị tự).
+
+**Định nghĩa**: phép biến hình sẽ biến mỗi điểm $$A$$ của hình $$\mathcal{H}$$ thành điểm $$A'$$ của hình $$\mathcal{H}'$$ sao cho khoảng cách giữa 2 điểm bất kì bảo toàn. Tức là với mọi $$A, B \in \mathcal{H}$$ biến thành $$A', B' \in \mathcal{H}'$$ thì $$AB = A'B'$$.
+
+Các phép dời hình cơ bản gồm: phép tịnh tiến theo vector $$\overrightarrow{v}$$, phép đối xứng trục, phép đối xứng tâm, phép quay (thực chất là đối xứng trục 2 lần).
+
+**Định nghĩa**: phép đồng dạng (phép vị tự) theo tỉ số $$k$$ và tâm $$O$$ biến hình $$\mathcal{H}$$ thành hình $$\mathcal{H}'$$ sẽ biến điểm $$A \in \mathcal{H}$$ bất kì thành điểm $$A' \in \mathcal{H}'$$ thỏa mãn $$\overrightarrow{OA'} = k \overrightarrow{OA}$$. Nói đơn giản là phóng to ($$\lvert k \rvert > 1$$), thu nhỏ ($$\lvert k \rvert < 1$$) hoặc giữ nguyên. Lưu ý rằng $$k$$ dương hay âm cũng làm ảnh hưởng chiều của hình sau khi biến đối. Dưới đây là ví dụ biến tam giác $$ABC$$ thành $$FDE$$ theo thứ tự.
+
+![Ví dụ](/assets/img-2a-1.png)
+
+Tại sao mình lại đề cập tới hình học? Lý do là vì hình học giúp mình trực quan các khái niệm trừu tượng hoặc chỉ đơn giản là nhìn được mô hình. Trong thực tế, hình học giúp giải quyết các bài toán về hình ảnh hiển thị, ví dụ như đồ họa, game, ...
+
+Tuy nhiên, nếu chỉ là một điểm hay một hình thì vẫn còn hạn chế, như việc thực hiện phép biến hình sẽ được thực hiện như thế nào trên máy tính, nơi mà thước và compa không có? Rất may là trước khi máy tính ra đời đã có một phát minh thiên tài là **hệ tọa độ trên mặt phẳng** :))))
+
+Dừng lại một chút, các bạn chơi game 2D, 3D và gọi một hình là hình 2 chiều (hình vuông) hay hình 3 chiều (hình lập phương), vậy **chiều** là gì????
+
+Khi nhìn vào đường thẳng ở đầu bài, nếu mình chọn 1 điểm làm gốc là **$$O$$**, và quy định 1 hướng là chiều dương. Như vậy bất kì điểm nào nằm trên đường thẳng đó, tùy vào vị trí so với điểm $$O$$ mà xác định **tọa độ**. Ví dụ như 3, -2, 10, -10000, bla bla, ...
+
+![Ví dụ](/assets/img-2a-2.png)
+
+Nếu mình chọn 2 đường thằng trên mặt phẳng và gọi giao điểm của chúng là $$O$$ làm gốc, đồng thời quy định chiều dương cho mỗi đường thẳng thì mình có một **hệ tọa độ 2 chiều**. Hình dưới là một hệ tọa độ 2 chiều với trục là đường thẳng $$Ox$$ và $$Oy$$. Hệ tọa độ này gọi là **hệ tọa độ Affine**. Khi $$Ox$$ và $$Oy$$ vuông góc ta có hệ tọa độ quen thuộc học từ nhỏ: **hệ tọa độ Descartes**. Khi đó mỗi điểm $$A$$ được xác định bởi cặp số $$(x, y)$$ bằng việc vẽ các đường song song với 2 trục tọa độ như hình sau:
+
+![Ví dụ](/assets/img-2a-3.png)
+
+Trong không gian, mình chọn 3 đường thẳng đồng quy tại điểm $$O$$ và 3 đường thẳng là 3 trục $$Ox$$, $$Oy$$ và $$Oz$$. Thực hiện tương tự mình sẽ có mỗi điểm $$A$$ trong không gian được xác định bởi bộ 3 số $$(x, y, z)$$. Nói tóm lại, trong không gian 1 chiều ta biểu diễn điểm bằng 1 số, trong không gian 2 chiều cần 2 số và trong không gian 3 chiều cần 3 số. Như vậy, trong không gian **$$n$$-chiều** thì cần $$n$$ điểm để biểu diễn?!?!
+
+Việc này, đúng, nhưng chưa đầy đủ!!!! Trong các bài viết sau mình sẽ giải thích **chiều** là như thế nào dựa trên đại số tuyến tính và tổng quát cho trường hợp này.
+
+Quay lại vấn đề, khi đã có hệ tọa độ, chúng ta có thể dựa trên tọa độ, vốn dĩ là các con số, mà tính toán. Từ đó các phép biến hình mình đã đề cập sẽ dễ dàng được thực hiện trên máy tính tự động và chính xác: định vị GPS, mô hình hóa các hệ thống công nghiệp lên máy tính, xử lý ảnh, thị giác máy tính, game, ...
+
+Trong bài này mình giới thiệu cách tính toán cho ra ảnh của một số phép biến hình thông dụng, nhắc lại đạo hàm và ý nghĩa hình học của đạo hàm, cụ thể là hệ số góc, để làm tiền đề cho việc giải thích các bài sau.
+
+## . Một số phép biến hình trên mặt phẳng $$Oxy$$
+
+### a. Phép tịnh tiến theo vector $$\overrightarrow{v}=(v_1, v_2)$$
+
+Nhắc lại định nghĩa: phép tịnh tiến theo vector $$\overrightarrow{v}$$ biến điểm $$A \in \mathcal{H}$$ thành điểm $$A' \in \mathcal{H}'$$ thỏa $$\overrightarrow{AA'}=\overrightarrow{v}$$.
+
+Như vậy khi gán tọa độ vào, giả sử $$A = (x, y)$$ và $$A'=(x', y')$$ mình có $$\overrightarrow{AA'}=(x'-x,y'-y)$$. Từ định nghĩa thì $$\overrightarrow{AA'}=\overrightarrow{v}$$ nên $$\begin{cases}x'-x=v_1 \\ y'-y=v_2\end{cases}$$. Như vậy $$\begin{cases}x'=v_1+x \\ y'= v_2+y\end{cases}$$ là tọa độ của $$A'$$.
+
+Theo mình đây là phép dời hình dễ nhất và rất quan trọng, vì nó bê nguyên xi hình đi theo 1 hướng :))
+
+### b. Phép đồng dạng (vị tự) tâm $$A(x,y)$$ tỉ số $$k$$
+
+Phép đồng dạng tâm $$A$$ tỉ số $$k \in \mathbb{R}$$ biến điểm $$P \in \mathcal{H}$$ thành điểm $$P' \in \mathcal{H}'$$ thỏa mãn $$\overrightarrow{AP'}=k \overrightarrow{AP}$$
+
+Tương tự bên trên, mình gắn tọa độ vào, giả sử $$A=(a_1, a_2)$$, $$P=(x, y)$$ và $$P'=(x',y')$$ và mình có $$\begin{cases}\overrightarrow{AP'}=(x'-a_1,y'-a_2) \\ \overrightarrow{AP}=(x-a_1,y-a_2)\end{cases}$$. Theo định nghĩa $$\overrightarrow{AP'}=k\overrightarrow{AP}$$ nên $$\begin{cases}x'-a_1 = k(x-a_1) \\ y'-a_2 = k(y-a_2)\end{cases}$$. 
+
+Như vậy $$\begin{cases}x'=kx+(1-k)a_1 \\ y'=ky+(1-k)a_2\end{cases}$$.
+
+Trường hợp này *khoai* hơn trường hợp trước *CHÚT XÍU* :)) Và như mình đã nói ở bài trước, phép đồng dạng rất quan trọng vì nó giúp phóng to, thu nhỏ và thậm chí lật ngược hình (khi $$k=-1$$ hoặc các số âm khác).
+
+### c. Phép quay quanh tâm $$C(x, y)$$ góc $$\phi$$
+
+Mình đã nói về phép tịnh tiến theo vector, nhưng lại không có phép tịnh tiến theo đoạn thẳng. Tại sao? Đơn giản là vì vector là đoạn thẳng có hướng, với một hướng xác định thì mình sẽ tính toán được, trong khi đoạn thẳng có 2 hướng (đi ngược đi xuôi) dễ làm con người *mất phương hướng* :v
+
+Sử dụng cùng lý luận củ chuối như trên, khi quay một hình $$\mathcal{H}$$ bất kì chúng ta phải quy ước rằng quay theo chiều nào (cùng chiều, ngược chiều kim đồng hồ). Do đó, tương tự việc gắn thêm *hướng* cho đoạn thẳng tạo thành vector, ở đây mình giới thiệu khái niệm **góc định hướng** từ việc gắn thêm *hướng* cho góc.
+
+Định nghĩa: Cho 2 tia $$OA$$ và $$OB$$, **góc định hướng $$AOB$$** với tia đầu $$OA$$ và tia cuối $$OB$$ là góc quét từ $$OA$$ tới $$OB$$ và ký hiệu là $$(OA, OB)$$.
+
+Hình sau mình vẽ các góc định hướng $$(OA, OB)$$, $$(OA, OC)$$, $$(OC, OD)$$ và $$(OA, OD)$$.
+
+![Ví dụ](/assets/img-2b-1.png)
+
+Tương tự như vector, mình có một số tính chất cho góc định hướng.
+
+**Hệ thức Charles**:
+
+- Cho $$a, b, c$$ là 3 đường thẳng bất kì. Khi đó $$(a, b) = (a, c) + (c, b) \pmod \pi$$. Lý do modulo $$\pi$$ là vì theo định nghĩa, góc giữa 2 đường thằng không vượt quá 180 độ.
+- Cho $$OA, OB, OC$$ là 3 tia thì $$(OA, OB) = (OA, OC) + (OC, OB) \pmod{2\pi}$$. Lý do modulo $$2\pi$$ là vì ở đây là góc lượng giác và khi quay một bội của $$2\pi$$ thì tia quay lại vị trí ban đầu.
+
+Theo như hình trên:
+
+- $$(OA, OC) + (OC, OD) = (OA, OD) \pmod{2\pi}$$
+- $$(OA, OD) - (OA, OB) = \pi \pmod{2\pi}$$
+
+**Định nghĩa phép quay** tâm $$C$$ góc $$\phi$$: cho điểm $$P \in \mathcal{H}$$. Phép quay tâm $$C$$ góc $$\phi$$ biến điểm $$P \in \mathcal{H}$$ thành điểm $$P' \in \mathcal{H}'$$ thỏa mãn $$(CP, CP') = \phi \pmod{2\pi}$$.
+
+Hình bên dưới mô tả phép quay góc $$\pi=180$$ độ quanh tâm $$O$$ biến tam giác $$\triangle ABC$$ thành tam giác $$\triangle DEF$$ (các điểm được biến hình theo thứ tự).
+
+![Ví dụ](/assets/img-2b-2.png)
+
+Bây giờ chúng ta bước vào phần hardcore: gắn tọa độ :)) Lý do mình nói là hardcore vì bây giờ đòi hỏi các kiến thức lượng giác và xử lý *tinh tế*, nhưng không quá khó nên đừng quá lo lắng :v :v
+
+Trên mặt phẳng tọa độ $$Oxy$$ mình lấy tia $$Ox$$ làm chuẩn. Với điểm $$A=(x,y)$$ thì $$\overrightarrow{OA}=(x,y)$$, vector này hợp với $$Ox$$ góc $$\tan \frac{y}{x}$$. Quay lại bài toán, theo định nghĩa:
+
+Cho tâm $$C=(c_1, c_2)$$ và góc quay $$\phi$$. Khi đó $$P=(x, y)$$ biến thành $$P'=(x',y')$$ thỏa $$(CP, CP') = \phi \pmod{2\pi}$$
+
+Để ý rằng $$\phi = (CP, CP') = (Ox, CP') - (Ox, CP) \pmod {2\pi}$$ (tương tự phép trừ vector). Đặt $$(Ox, CP) = \alpha$$ và $$(Ox, CP')=\alpha '$$. Lần lượt lấy sin và cosin của biểu thức phép quay mình thu được:
+
+$$\begin{cases}\sin\phi = \sin(\alpha ' - \alpha) = \sin\alpha '\cos \alpha - \cos\alpha '\sin\alpha \\ \cos\phi = \cos(\alpha ' - \alpha) = \cos\alpha '\cos\alpha + \sin\alpha '\sin\alpha \end{cases}$$
+
+Theo *"thần chú"* hồi xưa mình học, **có cô thì nằm, không cô thì đứng** :)) thì đường nằm ngang $$Ox$$ là $$\cos$$ (côsin) còn đường đứng $$Oy$$ là $$\sin$$ (sin). Như vậy dễ thấy $$\begin{cases}\sin\alpha ' = y' \\ \cos\alpha ' = x'\end{cases}$$ và $$\begin{cases}\sin\alpha = y \\ \cos\alpha = x\end{cases}$$.
+
+Thay vào mớ bòng bong vừa khai triển lúc nãy:
+
+$$\begin{cases}\sin\phi = y'x - x'y \\ \cos\phi = x'x + y'y\end{cases}$$
+
+Hệ phương trình bậc nhất 2 ẩn số $$x'$$ và $$y'$$ có thể được giải dễ dàng bằng đủ loại phương pháp. Bài toán solved! :v :v Thầy mình lúc trước bảo rằng phép quay tương đương với phép đối xứng trục 2 lần. Nếu hứng thú các bạn có thể tìm hiểu.
+
+## 4. Đạo hàm và ý nghĩa hình học của nó
+
+Nhắc lại định nghĩa, đạo hàm của hàm số $$y=f(x)$$ tại điểm $$x=x_0$$ là giới hạn:
+
+$$f'(x_0) = \lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$$
+
+Chúng ta cũng có thể biểu diễn giới hạn này bằng 1 số cách khác như:
+
+- Đặt $$\Delta x = x-x_0$$ và $$\Delta y = y - y_0 = f(x)-f(x_0)$$, khi đó:
+
+$$f'(x) = \lim_{\Delta x\to 0}\frac{\Delta y}{\Delta x}$$
+
+- Hoặc cũng đặt $$\Delta x$$ và $$\Delta y$$ như trên, khi đó:
+
+$$f'(x) = \lim_{\Delta x\to 0}\frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}$$

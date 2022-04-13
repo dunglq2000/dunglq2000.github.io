@@ -1,0 +1,68 @@
+---
+layout: post
+title: Quyển 4 - Lý thuyết nhóm.
+usemathjax: true
+---
+
+Tuy toán học phân thành các phân nhánh nhỏ như đại số, hình học, tổ hợp, lý thuyết số, ... nhưng luôn phải thống nhất về mặt logic và thỏa mãn các quy tắc đại số. Trong mật mã học, một phương pháp tính toán có thể áp dụng cho nhiều dạng biểu diễn khác nhau (Diffie-Hellman có thể dùng cho cả 2 **nhóm** discrete logarithm và elliptic curve). Các phần tử và toán tử thỏa mãn các điều kiện nhất định đều dùng được phương pháp đó. Toán trừu tượng ra đời, định nghĩa các khái niệm **nhóm**, **vành** và **trường** sẽ được trình bày ở bài này.
+
+## 1. Nhóm (Group)
+
+Xét tập hợp $$G$$ gồm các phần tử và phép toán 2 ngôi $$\star$$ trên $$G$$: 
+
+$$G \times G \mapsto G$$, $$a \times b \mapsto a \star b$$ (phép toán đóng trên $$G$$).
+
+Một **nhóm** $$(G, \star)$$ phải thỏa mãn:
+
+- Tính kết hợp: $$\forall a, b, c \in G$$, $$a \star (b \star c) = (a \star b) \star c$$
+- Tồn tại phần tử đơn vị: tồn tại phần tử $$e \in G$$ sao cho, với mọi $$g \in F$$ thì $$g \star e = e \star g = g$$. Ta còn có thể ký hiệu phần tử đơn vị của nhóm $$G$$ là $$e_G$$.
+- Tồn tại phần tử nghịch đảo: với mọi $$g \in G$$, tồn tại $$g' \in F$$ sao cho $$g \star g' = g' \star g = e$$. Ta còn có thể ký hiệu nghịch đảo của phần tử $$g$$ là $$g^{-1}$$.
+
+**Lưu ý**: trong định nghĩa của nhóm **không có tính giao hoán**.
+
+Ví dụ về nhóm
+
+1. Xét nhóm $$G=(\mathbb{Z}, +)$$ gồm các số nguyên và phép cộng thông thường
+	- Tính kết hợp: với mọi $$a, b, c \in \mathbb{Z}$$, ta đã quá quen thuộc $$(a + b) + c = a + (b + c)$$
+	- Phần tử đơn vị là 0 vì $$\forall a \in \mathbb{Z}$$, $$a + 0 = 0 + a = a$$.
+	- Phần tử nghịch đảo của $$a \in \mathbb{Z}$$ là $$-a$$, vì $$a + (-a) = (-a) + a = 0$$.
+	- Nhóm này có tính **giao hoán**, vì $$\forall a, b \in \mathbb{Z}$$, $$a + b = b + a$$. Nhóm có tính giao hoán được gọi là **nhóm giao hoán** hoặc **nhóm Abel** (Abel group).
+2. Xét nhóm Dihedral. Nhóm Dihedral được biểu diễn bởi $$n$$-giác và có $$2n$$ phần tử. Để gọn nhẹ mình xét $$n=3$$.
+	- Nhóm Dihedral lúc này gồm các phần tử $$\{e, r, r^2, s, sr, sr^2\}$$ với toán tử $$\star$$ được định nghĩa là: phần tử đơn vị là $$e$$, $$r^3=s^2=e$$ và $$rs = sr^{-1}$$
+	- Sử dụng định nghĩa với toán tử như trên ta có thể tính được như:
+		* Với $$r$$ và $$r^2$$ thì $$(r)(r^2) = r^3 = e$$. Như vậy $$r^2$$ là nghịch đảo của $$r$$ và ngược lại.
+		* Với $$r$$ và $$s$$ thì $$(r)(s) = sr^{-1} = sr^{-1}r^{-2}r^2 = sr^{-3}r^2 = sr^2$$, nhưng $$(s)(r)=sr \neq sr^2$$. Do đó nhóm Dihedral không có tính giao hoán.
+
+Một số tính chất của nhóm mình đã sử dụng ở trên:
+- Trong nhóm có duy nhất một phần tử đơn vị. Nói cách khác, nếu $$e$$ và $$e'$$ là hai phần tử đơn vị của nhóm thì $$e=e'$$.
+- Với mọi $$g \in G$$, tồn tại duy nhất một phần tử nghịch đảo của $$g$$.
+- Nếu $$g^{-1}$$ là nghịch đảo của $$g$$ thì $$(g^{-1})^{-1} = g$$
+- Với $$a$$, $$b \in G$$, $$(ab)^{-1} = b^{-1} a^{-1}$$.
+- Phép lũy thừa: ta thực hiện toán tử $$k$$ lần $$\underbrace{g \star g \star \cdots \star g}_{k \text{ lần}} = g^k$$
+
+## 2. Vành (Ring)
+
+Một vành $$(R, +, \times)$$ gồm **hai** phép toán **cộng** và **nhân** (lưu ý hai phép toán này không nhất thiết là cộng và nhân thông thường), cụ thể như sau:
+
+1. Phép cộng:
+	- $$(R, +)$$ là **nhóm Abel**.
+	- Phần tử đơn vị là $$0_R$$ hoặc $$0$$.
+	- Phần tử đối của $$g$$ được ký hiệu là $$-g$$ (không gọi là phần tử nghịch đảo vì sẽ dùng cho phép nhân ở **trường**).
+	- Phép trừ được định nghĩa là phép cộng cho phần tử đối: $$a - b = a + (-b)$$.
+2. Phép nhân:
+	- $$\times$$ có tính kết hợp: $$\forall a, b, c \in R$$, $$(a \times b) \times c = a \times (b \times c)$$
+	- Phần tử đơn vị của phép nhân: tồn tại $$1_R \in R$$ sao cho $$\forall g \in R$$, $$g \times 1_R = 1 \times g = g$$. Ta có thể ký hiệu ngắn gọn là $$1$$.
+	- Tính giao hoán của phép nhân: $$\forall a, b \in R$$, $$a \times b = b \times a$$.
+3. Tính phân phối giữa phép nhân và phép cộng:
+	- $$\forall a, b, c \in R$$, $$a \times (b + c) = a \times b + a \times c$$
+
+Phần sau mình sẽ nói về **vành đa thức** (Polynomial Ring) được sử dụng khá nhiều trong mật mã học.
+
+## 3. Trường (Field)
+
+Một trường $$(F, +, \times)$$ là **vành** đối với 2 phép toán cộng và nhân, đồng thời thêm tính chất:
+
+- Với mọi $$g \in F$$, tồn tại phần tử nghịch đảo của $$g$$ đối với **phép nhân**, ký hiệu là $$g^{-1}$$. Nghĩa là $$g \times g^{-1} = g^{-1} \times g = 1$$
+- Phép chia được định nghĩa là phép nhân cho phần tử nghịch đảo: $$a / b = a \times b^{-1}$$.
+
+Như vậy, trên trường ta có thể thực hiện cả 4 phép tính cộng, trừ, nhân, chia.
