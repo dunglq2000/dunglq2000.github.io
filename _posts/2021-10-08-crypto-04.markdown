@@ -1,12 +1,60 @@
 ---
 layout: post
-title: Quyển 2B - Phép biến hình trên mặt phẳng và ý nghĩa hình học của đạo hàm
-categories: crypto
+title: Quyển 3 - Hình học. Hệ tọa độ Descartes. Phép biến hình.
+usemathjax: true
 ---
+
+Các con số thì trừu tượng, nhưng các tòa nhà lại là thực tế. Các bản vẽ (chi tiết máy, nhà, công trình, ...) là các dạng hình học quan trọng trong đời sống. Bây giờ mình sẽ chém gió về cái thời xa xửa xa xưa của mình, cũng như hình học.
+
+## 1. Yếu tố của hình học
+
+**Điểm**, một chấm, một cục, một giọt, một gì nữa mình hết từ rồi :(( nói chung, điểm là cơ sở của hình học. **Tất cả đối tượng hình học đều là tập hợp điểm**.
+
+**Đường thẳng**, ông Euclid hồi xưa nói rằng, cho trước 2 điểm, lấy cây thước kẻ qua 2 điểm đó ta có đường thẳng. Và đường thẳng thì dài vô hạn về cả 2 phía (của 2 điểm). Như vậy, đường thẳng là tập hợp vô số điểm thẳng hàng, và mình chỉ cần 2 trong số đó để xác định đường thẳng (lấy xa xa tí cho dễ vẽ :v).
+
+**Đoạn thẳng**, lần này cũng lấy cây thước, kẻ qua 2 điểm nhưng chỉ vẽ giữa 2 điểm thôi, ta có đoạn thẳng. Lần này, đoạn thẳng vẫn là tập hợp vô số điểm :)) nhưng bị giới hạn. Trên trục số thực $$\mathbb{R}$$ có vô số điểm, và đoạn [0, 1] cũng vậy. Ở bài 1A mình có để hàm $$f(x)=\frac{e^x}{e^x+1}$$ là song ánh từ (0, 1) tới $$\mathbb{R}$$ ấy.
+
+**Tia**, cũng là lấy cây thước, vẽ từ 1 điểm đi ra :)) như vậy tia kéo dài vô hạn về 1 đầu mút, và cũng vô số điểm @@@
+
+Vuông tròn tam giác cũng là tập hợp các điểm. Hình $$\mathcal{H}$$ bất kì cũng là tập hợp các điểm.
+
+## 2. Phép biến hình
+
+Vector là khái niệm quan trọng trong toán học, vật lý, hóa học, cùng các bà con cô dì chú bác của tụi nó :)) Vector là đoạn thẳng có hướng. Tức là từ khái niệm đoạn thẳng, ta quy định đi từ đầu này tới đầu kia -> có vector. Các đại lượng vật lý có hướng đều biểu diễn bằng vector.
+
+Phép biến hình mà mình biết gồm *phép dời hình* và *phép đồng dạng* (vị tự).
+
+**Định nghĩa**: phép biến hình sẽ biến mỗi điểm $$A$$ của hình $$\mathcal{H}$$ thành điểm $$A'$$ của hình $$\mathcal{H}'$$ sao cho khoảng cách giữa 2 điểm bất kì bảo toàn. Tức là với mọi $$A, B \in \mathcal{H}$$ biến thành $$A', B' \in \mathcal{H}'$$ thì $$AB = A'B'$$.
+
+Các phép dời hình cơ bản gồm: phép tịnh tiến theo vector $$\overrightarrow{v}$$, phép đối xứng trục, phép đối xứng tâm, phép quay (thực chất là đối xứng trục 2 lần).
+
+**Định nghĩa**: phép đồng dạng (phép vị tự) theo tỉ số $$k$$ và tâm $$O$$ biến hình $$\mathcal{H}$$ thành hình $$\mathcal{H}'$$ sẽ biến điểm $$A \in \mathcal{H}$$ bất kì thành điểm $$A' \in \mathcal{H}'$$ thỏa mãn $$\overrightarrow{OA'} = k \overrightarrow{OA}$$. Nói đơn giản là phóng to ($$\lvert k \rvert > 1$$), thu nhỏ ($$\lvert k \rvert < 1$$) hoặc giữ nguyên. Lưu ý rằng $$k$$ dương hay âm cũng làm ảnh hưởng chiều của hình sau khi biến đối. Dưới đây là ví dụ biến tam giác $$ABC$$ thành $$FDE$$ theo thứ tự.
+
+![Ví dụ](/assets/img-2a-1.png)
+
+Tại sao mình lại đề cập tới hình học? Lý do là vì hình học giúp mình trực quan các khái niệm trừu tượng hoặc chỉ đơn giản là nhìn được mô hình. Trong thực tế, hình học giúp giải quyết các bài toán về hình ảnh hiển thị, ví dụ như đồ họa, game, ...
+
+Tuy nhiên, nếu chỉ là một điểm hay một hình thì vẫn còn hạn chế, như việc thực hiện phép biến hình sẽ được thực hiện như thế nào trên máy tính, nơi mà thước và compa không có? Rất may là trước khi máy tính ra đời đã có một phát minh thiên tài là **hệ tọa độ trên mặt phẳng** :))))
+
+Dừng lại một chút, các bạn chơi game 2D, 3D và gọi một hình là hình 2 chiều (hình vuông) hay hình 3 chiều (hình lập phương), vậy **chiều** là gì????
+
+Khi nhìn vào đường thẳng ở đầu bài, nếu mình chọn 1 điểm làm gốc là **$$O$$**, và quy định 1 hướng là chiều dương. Như vậy bất kì điểm nào nằm trên đường thẳng đó, tùy vào vị trí so với điểm $$O$$ mà xác định **tọa độ**. Ví dụ như 3, -2, 10, -10000, bla bla, ...
+
+![Ví dụ](/assets/img-2a-2.png)
+
+Nếu mình chọn 2 đường thằng trên mặt phẳng và gọi giao điểm của chúng là $$O$$ làm gốc, đồng thời quy định chiều dương cho mỗi đường thẳng thì mình có một **hệ tọa độ 2 chiều**. Hình dưới là một hệ tọa độ 2 chiều với trục là đường thẳng $$Ox$$ và $$Oy$$. Hệ tọa độ này gọi là **hệ tọa độ Affine**. Khi $$Ox$$ và $$Oy$$ vuông góc ta có hệ tọa độ quen thuộc học từ nhỏ: **hệ tọa độ Descartes**. Khi đó mỗi điểm $$A$$ được xác định bởi cặp số $$(x, y)$$ bằng việc vẽ các đường song song với 2 trục tọa độ như hình sau:
+
+![Ví dụ](/assets/img-2a-3.png)
+
+Trong không gian, mình chọn 3 đường thẳng đồng quy tại điểm $$O$$ và 3 đường thẳng là 3 trục $$Ox$$, $$Oy$$ và $$Oz$$. Thực hiện tương tự mình sẽ có mỗi điểm $$A$$ trong không gian được xác định bởi bộ 3 số $$(x, y, z)$$. Nói tóm lại, trong không gian 1 chiều ta biểu diễn điểm bằng 1 số, trong không gian 2 chiều cần 2 số và trong không gian 3 chiều cần 3 số. Như vậy, trong không gian **$$n$$-chiều** thì cần $$n$$ điểm để biểu diễn?!?!
+
+Việc này, đúng, nhưng chưa đầy đủ!!!! Trong các bài viết sau mình sẽ giải thích **chiều** là như thế nào dựa trên đại số tuyến tính và tổng quát cho trường hợp này.
+
+Quay lại vấn đề, khi đã có hệ tọa độ, chúng ta có thể dựa trên tọa độ, vốn dĩ là các con số, mà tính toán. Từ đó các phép biến hình mình đã đề cập sẽ dễ dàng được thực hiện trên máy tính tự động và chính xác: định vị GPS, mô hình hóa các hệ thống công nghiệp lên máy tính, xử lý ảnh, thị giác máy tính, game, ...
 
 Trong bài này mình giới thiệu cách tính toán cho ra ảnh của một số phép biến hình thông dụng, nhắc lại đạo hàm và ý nghĩa hình học của đạo hàm, cụ thể là hệ số góc, để làm tiền đề cho việc giải thích các bài sau.
 
-## 1. Một số phép biến hình trên mặt phẳng $$Oxy$$
+## . Một số phép biến hình trên mặt phẳng $$Oxy$$
 
 ### a. Phép tịnh tiến theo vector $$\overrightarrow{v}=(v_1, v_2)$$
 
@@ -74,7 +122,7 @@ $$\begin{cases}\sin\phi = y'x - x'y \\ \cos\phi = x'x + y'y\end{cases}$$
 
 Hệ phương trình bậc nhất 2 ẩn số $$x'$$ và $$y'$$ có thể được giải dễ dàng bằng đủ loại phương pháp. Bài toán solved! :v :v Thầy mình lúc trước bảo rằng phép quay tương đương với phép đối xứng trục 2 lần. Nếu hứng thú các bạn có thể tìm hiểu.
 
-## 2. Đạo hàm và ý nghĩa hình học của nó
+## 4. Đạo hàm và ý nghĩa hình học của nó
 
 Nhắc lại định nghĩa, đạo hàm của hàm số $$y=f(x)$$ tại điểm $$x=x_0$$ là giới hạn:
 

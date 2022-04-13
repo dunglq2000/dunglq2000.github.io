@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Quyển 1A - Tập hợp và các khái niệm mở đầu
-categories: crypto
+title: Quyển 1 - Tập hợp. Ánh xạ. Hàm số.
+usemathjax: true
 ---
 
 ## 1. Tập hợp
@@ -141,3 +141,29 @@ Ta chứng minh ánh xạ này không phải toàn ánh. Xét số $$y = 0.b_0 b
 - Phương án 2: phương pháp dãy các đoạn thẳng đóng bị chặn lồng vào nhau (sequence of closed bounded nested). Ở đây mình không đưa ra chứng minh vì mình chưa hiểu rõ phương pháp này. Sau này sẽ nghiên cứu thêm :))))
 
 Bằng những lý luận chặt chẽ, các nhà toán học đã đưa chúng ta đi từ hết bất ngờ này sang bất ngờ khác, khiến toán học không chỉ là môn học khô khan mà còn giàu tính "giải trí" cao, hoặc ít nhất mình cũng thấy "giải trí" :))))
+
+## 4. Các khái niệm về ánh xạ
+
+Xét $$\phi : X \mapsto Y, x \mapsto y$$
+
+**Ánh xạ ngược** của $$\phi$$, thường được ký hiệu là $$\phi^{-1}$$ là ánh xạ biến phần tử từ tập $$Y$$ vào tập $$X$$, tức là $$\phi^{-1}: Y \mapsto X$$, $$y \mapsto x$$. Tuy nhiên cần lưu ý khi này tập xác định đã trở thành $$Y$$ nên phải giới hạn lại các phần tử làm giá trị $$\phi^{-1}(y)$$ xác định.
+
+Ví dụ, xét hàm số $$f: \mathbb{R} \mapsto \mathbb{R}$$, $$x \mapsto y=f(x)=x^2$$
+
+Lúc này, $$y \geq 0$$ với mọi $$x$$ và mình có thể biểu diễn hàm ngược là $$x=\sqrt{y}$$. Lúc này ánh xạ ngược sẽ trở thành $$f^{-1}: \mathbb{R}^{+} \mapsto \mathbb{R}^{+}$$
+
+**Ánh xạ hợp**, xét 2 ánh xạ $$f: X \mapsto Y$$, $$f(x) = y$$ và $$g: Y \mapsto Z$$, $$z = g(y)$$. Ánh xạ hợp của $$g$$ và $$f$$ được ký hiệu là $$g \circ f: X \mapsto Z$$, $$z = g(y) = g(f(x))$$.
+
+Cho đến lúc này, tất cả ánh xạ mình đề cập chỉ là 1 biến, ví dụ như $$y=f(x)$$ thì chỉ có 1 tham số cho hàm $$f$$ là $$x$$ thôi. Tổng quát, tham số cho hàm số (hay ánh xạ) có thể có nhiều biến.
+
+**Tích Descartes** của 2 tập hợp $$A = \{a_1, a_2, \cdots, a_n\}$$ và $$B = \{b_1, b_2, \cdots, b_m\}$$ là tập hợp $$S A \times B = \{(a_i, b_j) \lvert a_i \in A, b_j \in B\}$$. Ví dụ với $$A = \{1, 2, 3\}$$, $$B = \{4, 5\}$$ thì tích Descartes là $$S = A \times B = \{(1, 4), (1, 5), (2, 4), (2, 5), (3, 4), (3, 5)\}$$. Với nhiều tập hợp thì định nghĩa tương tự.
+
+Như vậy, xét 3 tập nguồn $$X$$, $$Y$$, $$Z$$, và tập đích là $$T$$, ánh xạ $$\phi : X \times Y \times Z \mapsto T$$, với $$\phi(x, y, z) \mapsto t$$ là ánh xạ 3 biến, tập nguồn của ánh xạ khi này là tích Descartes $$X \times Y \times Z$$.
+
+Câu hỏi: **Tại sao mình lại chém gió nhiều về ánh xạ như vậy?**
+
+Trả lời: vì ánh xạ xuất hiện mọi nơi, trong toán lẫn lập trình, và ứng dụng trong hầu hết các nhánh toán học (hình học, đại số, ...)
+
+Phần sau sẽ là câu chuyện nhập môn mật mã học của mình, và cũng là mở đầu cho hành trình "đau khổ" về sau. :))
+
+P/s: Descartes (1596 - 1650) là triết gia, nhà khoa học, nhà toán học người Pháp. Hệ trục tọa độ vuông góc Oxy mà chúng ta học ở phổ thông còn được gọi là hệ tọa độ Descartes, khi đó các tính chất về khoảng cách sẽ đúng nhờ vào định lý Pythagoras. Tức là với 2 điểm $$A(x_A, y_A)$$ và $$B(x_B, y_B)$$, $$AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}$$. Hệ tọa độ tổng quát khi 2 trục tọa độ hợp với nhau góc bất kì gọi là hệ tọa độ Affine cũng được sử dụng trong nhiều lĩnh vực (ít nhất thì mình biết vậy). :))

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Quyển 1C - Nhập môn lý thuyết số
-categories: crypto
+title: Quyển 2 - Lý thuyết số. Nhập môn RSA.
+usemathjax: true
 ---
 
 ## 1. Các khái niệm cơ bản về lý thuyết số
@@ -74,4 +74,46 @@ Lúc này, $$\{g a_1, g a_2, \cdots, g a_{\phi(n)}\}$$ là một hoán vị củ
 
 $$g a_1 \cdot g a_2 \cdots g a_{\phi(n)} \equiv a_1 \cdot a_2 \cdots a_{\phi(n)} \pmod n \Leftrightarrow g^{\phi(n)} \cdot a_1 a_2 \cdots a_{\phi(n)} \equiv a_1 a_2 \cdots a_{\phi(n)}$$. Giờ thì giản lược tất cả $$a_i$$ và thu được kết quả thôi. :))
 
-Đến đây bài viết đã hơi dài nên mình sẽ tiếp tục giải thích sự "ảo ma" của RSA ở phần sau. Cám ơn các bạn đã đọc.
+## 3. Thuật toán Euclid mở rộng
+
+Ở phần mô tả thuật toán RSA ở bài trước mình có nói về việc tính số $$d=e^{-1} \pmod{\phi(n)}$$. Vậy chính xác thì tính như thế nào?
+
+Ở đây $$e^{-1}$$ là ký hiệu nghịch đảo của $$e$$ trong modulo $$\phi(n)$$. Như vậy số $$d$$ là số thỏa mãn $$ed \equiv 1 \pmod \phi(n)$$. Để tính giá trị này mình sử dụng thuật toán Euclid mở rộng.
+
+**Phương trình Diophantine**: với 2 số nguyên $$a$$ và $$b$$, đặt $$d = \gcd(a, b)$$. Khi đó tồn tại 2 số $$x$$ và $$y$$ sao cho $$ax + by = d$$. Thuật toán Euclid mở rộng giúp mình tìm 2 số $$x$$ và $$y$$ này. Lưu ý rằng có nhiều cặp $$(x, y)$$ thỏa mãn phương trình trên nhưng mình chỉ cần 1 cặp là đủ.
+
+Một trong các bài tập lập trình nhập môn là tìm ước chung lớn nhất của 2 số và có thể viết gọn bằng Python như sau
+
+```python
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+```
+
+Thuật toán Euclid mở rộng ngoài việc tìm ước chung lớn nhất, còn tìm ra 2 số thỏa yêu cầu phương trình trên. Thuật toán như sau (cú pháp Python cho việc gán biến gọn hơn):
+
+```
+Đặt x_0 = 1, x_1 = 0, y_0 = 1, y_1 = 0
+while b != 0 do
+    q = a div b
+    a, b = b, a - qb // thuật toán Euclid chuẩn
+    x_0, x_1 = x_1, x_0 - q x_1 // 
+    y_0, y_1 = y_1, y_0 - q y_1
+Output (a, x_1, y_1)
+```
+
+Các output lần lượt là $$\gcd(a, b)$$ và cặp $$(x, y)$$ cần tìm.
+
+Áp dụng thuật toán cho $$e$$ và $$\phi(n)$$, do $$\gcd(e, \phi(n))=1$$ nên mình sẽ có $$(x, y)$$ thỏa $$xe + y\phi(n)=1$$. Bây giờ lấy modulo $$\phi(n)$$ cho 2 vế thì $$xe \equiv 1 \pmod{\phi(n)}$$. Tuy nhiên $$x$$ tìm được có thể âm nên mình lấy modulo cho $$\phi(n)$$ thì nó sẽ dương thôi không sao cả. :))
+
+Bây giờ, do $$ed \equiv 1 \pmod{\phi(n)}$$ thì $$ed = 1 + k\phi(n)$$ với $$k \in \mathbb{Z}$$. Khi đó phép tính $$c^d = (m^e)^d = m^{ed} = m^{1 + k\phi(n)} = m \cdot m^{\phi(n)} = m \pmod n$$ do định lý Euler và $$m < n$$. Vì vậy chính xác $$m$$ đã được khôi phục.
+
+## 4. Tấn công RSA
+
+Dựa trên mô hình RSA, chỉ cần tìm được $$p$$, $$q$$ để tính $$\phi(n)$$ là xong chuyện. Và từ đó 7749 các tấn công RSA ra đời :))
+
+Mình xin lỗi, vụ 7749 là chém gió thôi, nhưng thực chất là có rất nhiều phương pháp tấn công RSA như phân tích $$n$$ ngược lại thành $$p$$ và $$q$$, tấn công số $$e$$, vân vân và mây mây.
+
+Các kỹ thuật đòi hỏi nền tảng toán học không ít thì nhiều. Ở những bài viết sau mình sẽ đề cập 1 số loại theo hiểu biết của mình. Rất mong được học hỏi thêm.
+

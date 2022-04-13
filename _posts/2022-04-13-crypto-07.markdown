@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Quyển 3A - Đại số tuyến tính - Mở đầu
-categories: crypto
+title: Quyển 6 - Đại số tuyến tính
+usemathjax: true
 ---
 
 Môn học ở Đại học mà nhiều người đều nghe tới: Đại số tuyến tính (Linear Algebra) =)))
