@@ -79,7 +79,7 @@ dash:
 
 markdown: kramdown
 # theme: jekyll-dash
-remote_theme: bitbrain/jekyll-dash
+remote_theme: dunglq2000/jekyll-dash
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
