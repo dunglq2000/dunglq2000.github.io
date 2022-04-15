@@ -15,8 +15,8 @@ $$G \times G \mapsto G$$, $$a \times b \mapsto a \star b$$ (phép toán đóng t
 Một **nhóm** $$(G, \star)$$ phải thỏa mãn:
 
 - Tính kết hợp: $$\forall a, b, c \in G$$, $$a \star (b \star c) = (a \star b) \star c$$
-- Tồn tại phần tử đơn vị: tồn tại phần tử $$e \in G$$ sao cho, với mọi $$g \in F$$ thì $$g \star e = e \star g = g$$. Ta còn có thể ký hiệu phần tử đơn vị của nhóm $$G$$ là $$e_G$$.
-- Tồn tại phần tử nghịch đảo: với mọi $$g \in G$$, tồn tại $$g' \in F$$ sao cho $$g \star g' = g' \star g = e$$. Ta còn có thể ký hiệu nghịch đảo của phần tử $$g$$ là $$g^{-1}$$.
+- Tồn tại phần tử đơn vị: tồn tại phần tử $$e \in G$$ sao cho, với mọi $$g \in G$$ thì $$g \star e = e \star g = g$$. Ta còn có thể ký hiệu phần tử đơn vị của nhóm $$G$$ là $$e_G$$.
+- Tồn tại phần tử nghịch đảo: với mọi $$g \in G$$, tồn tại $$g' \in G$$ sao cho $$g \star g' = g' \star g = e$$. Ta còn có thể ký hiệu nghịch đảo của phần tử $$g$$ là $$g^{-1}$$.
 
 **Lưu ý**: trong định nghĩa của nhóm **không có tính giao hoán**.
 
@@ -51,12 +51,12 @@ Một vành $$(R, +, \times)$$ gồm **hai** phép toán **cộng** và **nhân*
 	- Phép trừ được định nghĩa là phép cộng cho phần tử đối: $$a - b = a + (-b)$$.
 2. Phép nhân:
 	- $$\times$$ có tính kết hợp: $$\forall a, b, c \in R$$, $$(a \times b) \times c = a \times (b \times c)$$
-	- Phần tử đơn vị của phép nhân: tồn tại $$1_R \in R$$ sao cho $$\forall g \in R$$, $$g \times 1_R = 1 \times g = g$$. Ta có thể ký hiệu ngắn gọn là $$1$$.
+	- Phần tử đơn vị của phép nhân: tồn tại $$1_R \in R$$ sao cho $$\forall g \in R$$, $$g \times 1_R = 1_R \times g = g$$. Ta có thể ký hiệu ngắn gọn là $$1$$.
 	- Tính giao hoán của phép nhân: $$\forall a, b \in R$$, $$a \times b = b \times a$$.
 3. Tính phân phối giữa phép nhân và phép cộng:
 	- $$\forall a, b, c \in R$$, $$a \times (b + c) = a \times b + a \times c$$
 
-Phần sau mình sẽ nói về **vành đa thức** (Polynomial Ring) được sử dụng khá nhiều trong mật mã học.
+Về sau mình sẽ nói về **vành đa thức** (Polynomial Ring) được sử dụng khá nhiều trong mật mã học.
 
 ## 3. Trường (Field)
 
@@ -66,3 +66,159 @@ Một trường $$(F, +, \times)$$ là **vành** đối với 2 phép toán cộ
 - Phép chia được định nghĩa là phép nhân cho phần tử nghịch đảo: $$a / b = a \times b^{-1}$$.
 
 Như vậy, trên trường ta có thể thực hiện cả 4 phép tính cộng, trừ, nhân, chia.
+
+Tùy vào tập phần tử của nhóm, vành, trường là hữu hạn hay vô hạn mà ta gọi là nhóm hữu hạn, nhóm vô hạn, trường hữu hạn, trường vô hạn. Trong 2 ví dụ về nhóm ở trên:
+
+- nhóm $$(\mathbb{Z}, +)$$ là nhóm vô hạn.
+- nhóm Dihedral $$n$$-giác là nhóm hữu hạn có $$2n$$ phần tử.
+
+Phần sau mình sẽ trình bày về các nhóm, vành hoặc trường được sử dụng trong tính toán cũng như mật mã học, cũng như lý do việc chọn đó.
+
+## 4. Vành modulo $$n$$ hay $$\mathbb{Z}/n\mathbb{Z}$$
+
+Tập hợp các phần tử $$\{0, 1, \cdots, n-1\}$$ với phép cộng và phép nhân số nguyên tạo thành vành $$\mathbb{Z}/n\mathbb{Z}$$. Một số tác giả ký hiệu là $$\mathbb{Z}_n$$.
+
+Vành này có $$n$$ phần tử và có đặc trưng (**characteristic**) $$n=0$$. Nghĩa là chỗ nào có $$n$$ thì mình cứ đổi thành 0 hết cho khỏe :)))) Ví dụ, xét $$n=8$$, khi đó biểu thức $$x + 12 = x + 8 + 4 = x + 4$$ vì $$8 = 0$$.
+
+Hệ RSA sử dụng vành modulo $$n=p \cdot q$$ với $$p$$, $$q$$ là 2 số nguyên tố lớn. Tuy nhiên nhiều hệ mật mã khác đòi hỏi sự tồn tại của phần tử nghịch đảo phép nhân như Elgamal, ECC nên vành này không thỏa mãn (ví du, không tồn tại nghịch đảo của 3 trong modulo $$n = 3 \cdot 5$$). Trong trường hợp này, chúng ta sẽ *nâng cấp* vành này lên!!!
+
+## 5. Trường hữu hạn GF(p)
+
+Ở vành $$\mathbb{Z}/n\mathbb{Z}$$, nếu $$n$$ là số nguyên tố thì sẽ luôn tồn tại phần tử nghịch đảo khác 0. Khi đó chúng ta vành trở thành **trường** và ký hiệu là $$\mathbb{F}_p$$ hoặc $$GF(p)$$ (Galois Field).
+
+Galois Field không chỉ đơn giản là modulo nguyên tố $$p$$ nhưng thời điểm viết bài này mình chưa nghiên cứu nên mạn phép bỏ qua.
+
+Trên Sagemath, để biểu diễn vành $$\mathbb{Z}/n\mathbb{Z}$$ và $$\mathbb{F}_p$$ mình viết như sau:
+
+```python
+Z = Zmod(15) # print(Z) -> Ring of integers modulo 15
+F = GF(17) # print(F) -> Finite Field of size 17
+```
+
+Tuy luôn tồn tại nghịch đảo thỏa mãn yêu cầu ban nãy, thì trường hữu hạn $$\mathbb{F}_p$$ vẫn có nhược điểm. Để đảm bảo an toàn ta thường chọn $$p$$ khá lớn (hơn 200 bit), do đó khiến việc tính toán bị chậm vì các phép tính trong modulo đều là lũy thừa.
+
+Để khắc phục việc này ta sử dụng **vành đa thức** và **trường đa thức**.
+
+## 6. Vành đa thức
+
+Well các nhà toán học giỏi hơn người khác ở chỗ là thích sáng tạo ra nhiều thứ để hành xác người khác :)))) ở đây là vành đa thức.
+
+Nhắc lại đa thức, một đa thức theo biến $$x$$ là một hàm số $$f(x)$$ có dạng:
+
+$$f(x)=a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0$$
+
+Trong đó, $$a_i$$ gọi là hệ số, có thể thuộc $$\mathbb{Z}$$, $$\mathbb{Q}$$, $$\mathbb{R}$$, ... Trong mật mã anh em bè bạn thường hay dùng đa thức với hệ số nguyên :))))
+
+Mình thấy rằng việc cộng, trừ, nhân 2 đa thức hệ số nguyên sẽ cho kết quả là đa thức cũng là hệ số nguyên. Thật vậy, xét 2 đa thức:
+
+$$f(x) = \sum_{i=1}^{n} a_i x^i$$ và $$g(x) = \sum_{j=1}^{m} b_j x^j$$
+
+Khi đó phép cộng, trừ, nhân 2 đa thức là:
+
+$$\begin{align*}
+	f(x) + g(x) & = \sum_{i=1}^{\max (m, n)}(a_i + b_i) x^i \\
+	f(x) - g(x) & = \sum_{i=1}^{\max (m, n)}(a_i - b_i) x^i \\
+	f(x) \times g(x) & = \sum_{i=1}^{n} \sum_{j=1}^{m} a_i b_j x^{i+j}
+\end{align*}$$
+
+Do đó, tập hợp các đa thức có hệ số nguyên với phép cộng và nhân 2 đa thức tạo thành vành. Tuy nhiên phép chia 2 đa thức hệ số nguyên có khả năng cho kết quả là đa thức không có hệ số nguyên, do đó không là trường. Xét ví dụ sau:
+
+Với $$f(x) = 2x^3 + x + 4$$ và $$g(x) = 3x^2 + 3x + 5$$. Thực hiện cộng trừ nhân chia (lấy thương) 2 đa thức trên:
+
+$$\begin{align*}
+	f(x) + g(x) & = 2x^3 + 3x^2 + 4x + 9 \\
+	f(x) - g(x) & = 2x^3 - 3x^2 - 2x - 1 \\
+	f(x) \times g(x) & = 6x^5 + 6x^4 + 13x^3 + 15x^2 + 17x + 20 \\
+	f(x) / g(x) & = \frac{2}{3} x 
+\end{align*}$$
+
+Thương của phép chia có hệ số là $$\frac{2}{3}$$ là số hữu tỉ nằm ngoài vành $$\mathbb{Z}/n\mathbb{Z}$$, do đó không tồn tại phép chia với mọi đa thức hệ số nguyên.
+
+Trong Sagemath, để định nghĩa **vành đa thức** với hệ số thuộc vành nào đó ta dùng lệnh:
+
+```python
+P.<x> = PolynomialRing(ZZ)
+Q.<x> = PolynomialRing(QQ)
+R.<x> = PolynomialRing(RR)
+```
+
+Ở đây **P** là vành đa thức trên $$\mathbb{Z}$$, **Q** là vành đa thức trên $$\mathbb{Q}$$ còn **R** là vành đa thức trên $$\mathbb{R}$$. **ZZ**, **QQ** và **RR** là các hằng số của Sagemath biểu diễn $$\mathbb{Z}$$, $$\mathbb{Q}$$ và $$\mathbb{R}$$.
+
+Hiện tại chúng ta gặp phải 2 vấn đề:
+
+1. Hệ số trong kết quả của phép chia đa thức không nằm trong vành
+2. Cũng giống 2 phần trước, bất lợi của vành $$\mathbb{Z}/n\mathbb{Z}$$ là không tồn tại nghịch đảo cho mọi phần tử. Với ví dụ trên hẳn các bạn cũng đã thấy, không phải phép chia lúc nào cũng xảy ra do việc chia sẽ khiến hệ số ra khỏi vành.
+
+### 6.1. Vấn đề 1
+
+Với $$\mathbb{Z}$$ thì không phải lúc nào cũng thực hiện được phép chia (ở ví dụ trên $$\frac{2}{3}$$). Tuy nhiên ở phần trên đã có 1 giải pháp cho chuyện này, các bạn nhớ không?? :))
+
+Đúng rồi đó, chính là $$\mathbb{F}_p$$. Việc giới hạn hệ số lại chỉ nằm trong $$\mathbb{F}_p$$ gồm $$\{0, 1, \cdots, p-1\}$$ khiến mọi hệ số khác 0 đều có nghịch đảo.
+
+Ví dụ với $$f(x)$$ và $$g(x)$$ như trên, mình xét trên $$\mathbb{F}_5$$.
+
+Khi đó hệ số khi tính cộng, trừ, nhân phải modulo 5. Đoạn code sau trên Sagemath khai báo vành đa thức trên $$\mathbb{F}_5$$ với 4 phép tính cộng, trừ, nhân, chia (lấy thương):
+
+```python
+P.<x> = PolynomialRing(GF(5))
+f = 2*x^3 + x + 4
+g = 3*x^2 + 3*x + 5
+print(f + g)
+# 2*x^3 + 3*x^2 + 4*x + 4
+print(f - g)
+# 2*x^3 + 2*x^2 + 3*x + 4
+print(f * g)
+# x^5 + x^4 + 3*x^3 + 2*x
+print(f // g)
+# 4*x + 1
+```
+
+Do các hệ số đều được modulo 5 nên bạn sẽ chẳng thấy dấu trừ nào :)))) tuy nhiên phải nhớ rằng $$-1 = 4 - 5 = 4 \pmod{5}$$ (**characteristic** là 5). Thêm nữa, ở phép chia, mình biết rằng nghịch đảo của 3 trong modulo 5 là 2 ($$3 \cdot 2 \equiv 1 \pmod{5}$$) nên $$2/3 = 2 \cdot 3^{-1} = 2 \cdot 2 = 4 \pmod{5}$$).
+
+Như vậy mình đã có thể tính 4 phép tính trên các đa thức bằng việc xét hệ số thuộc 1 trường nào đó (ở ví dụ trên là $$\mathbb{F}_5$$). Mình cũng có thể khai báo cho vành đa thức như trên bằng đoạn code sau. Vậy là xong vấn đề **1**
+
+```python
+P.<x> = GF(5)[]
+print(P)
+# Univariate Polynomial Ring in x over Finite Field of size 5
+```
+
+### 6.2. Vấn đề 2
+
+Ta cần giới hạn không gian của các đa thức. Chuyện này cũng easy thui. Các bạn hãy nhớ lại lúc nãy, khi $$\mathbb{Z}$$ là 1 vành vô hạn, và có 1 vành là tập hợp con của nó lại hữu hạn... Yeah chính là $$\mathbb{Z}/n\mathbb{Z}$$. Bằng việc modulo $$n$$ ta đã giới hạn lại các phần tử chỉ nằm trong tập $$\{0, 1, \cdots, n-1\}$$.
+
+Bắt chước ý tưởng này mình sẽ dùng 1 đa thức $$g(x)$$ nào đó để làm modulo. Như vậy tất cả đa thức trong vành sau khi tính toán phải được modulo $$g(x)$$. Lưu ý rằng, nếu $$g(x)$$ có bậc là $$n$$ thì tất cả đa thức trong vành có bậc nhỏ hơn $$n$$ (do phép modulo là phần dư trong phép chia cho $$g(x)$$, mà phần dư có bậc nhỏ hơn số chia).
+
+Đoạn code sau thực hiện tính toán trên modulo $$g(x)=x^2+x+1$$
+
+```python
+P.<x> = GF(5)[]
+# Univariate Polynomial Ring in x over Finite Field of size 5
+Q = GF(5^2, name='x', modulus=x^2+x+1)
+# Finite Field in x of size 5^2
+
+f = 2*x^3 + x + 4
+g = 3*x^2 + 3*x + 5
+print(Q(f + g))
+print(Q(f - g))
+print(Q(f * g))
+print(Q(f % g))
+```
+
+Ở đây xuất hiện $$GF(5^2)$$ hay viết như trên là $$\mathbb{F}_{5^2}$$. Phần tiếp theo mình sẽ giải thích cái này.
+
+## 7. Trường hữu hạn $$GF(p^n)$$
+
+Xét vành đa thức $$\{f(x) = \sum_{i=1}^{n-1}a_i x^i \mod g(x)\}$$, trong đó $$a_i \in GF(p)$$ với $$p$$ là số nguyên tố, và $$g(x)$$ là đa thức bậc $$n$$. Giống như phía trên khi vành $$\mathbb{Z}/n\mathbb{Z}$$ không có nghịch đảo cho mọi phần tử khác 0, thì vành đa thức ở trên cũng bị như vậy. Đối với đa thức, nghịch đảo cũng tuân theo định nghĩa trường: $$n(x)$$ là nghịch đảo của $$m(x)$$ nếu $$n(x) \cdot m(x) = 1 \mod g(x)$$
+
+Để mọi phần tử trong vành có nghịch đảo thì modulo phải nguyên tố. Đối với đa thức thì gọi là đa thức tối giản (không thể phân tích thành tích của 2 đa thức nhỏ hơn). Tuy nhiên cần cẩn thận xét hệ số thuộc vành nào, vì hệ số ở trong vành này khiến đa thức tối giản nhưng ở vành khác thì không. Ví dụ trên $$\mathbb{Z}$$ thì $$x^2+1$$ tối giản, nhưng trên $$GF(2)$$ thì $$x^2+1=x^2+2x+1=(x+1)^2$$ không tối giản.
+
+Khi đã có modulo $$g(x)$$ tối giản rồi thì mọi phần tử trong vành đều có nghịch đảo, từ đó trở thành trường. Do bậc của hệ số từ $$n-1$$ tới $$0$$, mà mỗi hệ số có $$p$$ trường hợp (thuộc $$GF(p)$$), do đó có tất cả $$p^n$$ đa thức. Trường này cũng từ đó mà gọi là **trường hữu hạn $$GF(p^n)$$**.
+
+Nói tóm lại, trường hữu hạn $$GF(p^n)$$ được biểu diễn bằng tập hợp đa thức bậc $$n-1$$, với hệ số thuộc $$GF(p)$$ và modulo cho 1 đa thức tối giản bậc $$n$$.
+
+Ví dụ, thực hiện tính toán trong thuật toán AES sử dụng trường hữu hạn $$GF(2^8)$$ với đa thức modulo là $$x^8+x^4+x^3+x^2+1$$.
+
+Ví dụ gọn hơn, đối với $$GF(2^3)$$ thì đa thức tối giản là $$x^3+x+1$$. Trường này có 8 phần tử là $$\{0, 1, x, x+1, x^2, x^2 + 1, x^2+x, x^2+x+1\}$$. Lấy hệ số của $$x^2$$, $$x$$ và hệ số tự do mình sẽ có 8 phần tử này lần lượt là biểu diễn nhị phân của 0 tới 7.
+
+Xong 1 bài sớ dài ngoằn về lý thuyết nhóm, và cả cách code trên Sagemath. Hy vọng không bạn nào mất ngủ sau khi đọc như mình :(((( Cám ơn các bạn đã đọc.
