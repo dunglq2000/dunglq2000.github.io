@@ -1,0 +1,162 @@
+---
+layout: post
+title:  "Ngày 3. Các bước render hình ảnh"
+tags: gamedev DirextX
+---
+
+Well học tí lý thuyết đã rồi mới code :)))) Mệt vl
+
+## 1. Biểu diễn model
+
+Scene (Cảnh) căn bản chứa nhiều object hoặc model (ví dụ khi đi cảnh trong Mario thì các object hay model sẽ là cục gạch, con rùa, ...). Các model thực chất được biểu diễn bởi nhiều hình tam giác (triangle mesh) một cách xấp xỉ. Càng nhiều tam giác, hình ảnh càng chi tiết và đẹp hơn, và tất nhiên cũng tốn tài nguyên hơn. Chắc vậy nên mới GPU mới hot vậy :)))) chơi game cho Fe.
+
+Lý do của việc biểu diễn model bằng các tam giác là vì trong không gian 3 chiều Oxyz, các đường cong phức tạp đòi hỏi các phương trình toán học phức tạp để biểu diễn hoặc thậm chí không thể biểu diễn bằng phương trình sơ cấp. Bằng việc ghép các tam giác lại, ta có thể xấp xỉ đường cong bởi nhiều đọan thẳng liền kề.
+
+### a. Cấu trúc đỉnh (Vertex Format)
+Với mỗi đỉnh của tam giác ta cần định nghĩa cấu trúc của nó:
+
+1. Cách 1: tọa độ (x, y, z) và màu tại đỉnh đó. Với cách này, khi khai báo 3 đỉnh của tam giác thì màu được tô bên trong tam giác có thể là màu của đỉnh đầu tiên hoặc trung bình của 3 màu tùy theo thiết lập.
+```cpp
+struct ColorVertex
+{
+	float _x, _y, _z;
+	DWORD _color;
+}
+```
+2. Cách 2: tọa độ (x, y, z), pháp tuyến tại đó và tọa độ texture. Với cách này ta xác định pháp tuyến tại vị đỉnh, thường dùng khi có ánh sáng để tính toán độ sáng tối, và tọa độ texture thuộc khoảng \[0, 1\] để xác định texture khi load lên sẽ có 4 góc tương ứng thế nào với hình chữ nhật (ghép 2 tam giác).
+```cpp
+struct NormalTexVertex
+{
+	float x, y, z;
+	float nx, ny, nz;
+	float u, v;
+}
+```
+
+Sau đó ta cần khai báo cách vertex được vẽ bằng **FVF** (flexible vertex format). Ví dụ
+
+1. Với cách 1 ở trên: để vẽ màu theo kiểu lan ra (diffuse) thì dùng:
+```cpp
+#define FVF_COLOR (D3DFVF_XYZ | D3DFVF_DIFFUSE)
+```
+2. Với cách 2 ở trên: dùng toán tử OR cho 3 cái sau:
+```cpp
+D3DFVF_XYZ 		// tọa độ
+D3DFVF_NORMAL 	// pháp tuyến
+D3DFVF_TEX1 	// vẽ texture
+```
+
+### b. Tam giác (Triangle)
+
+Để định nghĩa một hình chữ nhật với 4 đỉnh theo chiều kim đồng hồ là v0->v1->v2->v3 ta cần định nghĩa 2 tam giác, ứng với mảng sau:
+
+```cpp
+Vertex rect[6] = {	v0, v1, v2, // tam giác 1
+					v0, v2, v3 // tam giác 2
+				}
+```
+
+**Lưu ý**: thứ tự của đỉnh quan trọng và được gọi là **winding order**.
+
+### c. Chỉ số (Index - Indices)
+
+Việc khai báo 6 vertext như trước gây lãng phí bộ nhớ (v0 và v2 khai báo 2 lần). Do đó mình sẽ dùng 1 mảng liệt kê danh sách các vertices, và 1 mảng xác định chỉ số của vertex cấu thành tam giác:
+
+```cpp
+Vertex vertexList[4] = {v0, v1, v2, v3};
+WORD indexList[6] = {	0, 1, 2, // tam giác 1
+						0, 2, 3 // tam giác 2
+					}
+```
+
+Lúc này, dùng **WORD** tiết kiệm bộ nhớ hơn.
+
+## 2. Virtual Camera
+
+Lấy 1 điểm nằm ngoài màn hình máy tính làm gốc. Mình chọn góc dọc và ngang về hướng màn hình, khi đó vùng nhìn thấy sẽ có dạng hình chóp vô hạn. Mình tiếp tục giới hạn lại vùng này bằng mặt phẳng xa và mặt phẳng gần. Khoảng không gian có dạng nón cụt này sẽ được thể hiện trên màn hình khi render game và được gọi là **frustum**. Quá trình loại bỏ mọi thứ bên ngoài vùng này khi render gọi là **clipping**.
+
+## 3. Rendering Pipeline (Quy trình render)
+
+Local Space -> World Space -> View Space -> Backface culling -> Lighting -> Clipping -> Projection -> View Point Space -> Rasterization
+
+Mình sẽ ngâm cứu về từng bước trong quy trình này ở các bài sau. Bây giờ mình ngâm cứu mỗi bước làm qq gì đã :((((
+
+### a. Local space
+
+Hay còn gọi là modeling space, khi 1 model đứng riêng lẻ, ta có thể chọn một hệ tọa độ lấy tâm là tâm của chính model đó. Trên hệ tọa độ này hiện tại chỉ có duy nhất 1 model.
+
+### b. World space
+
+Trên thực tế có rất nhiều object trong không gian. Mỗi object là một local space với gốc ở (x, y, z). Quá trình chuyển từ local space sang world space được gọi là **transform**, bao gồm: dời (**translation**), quay (**rotation**) và co dãn (**scaling**).
+
+### c. View space
+
+Ta cần đặt góc nhìn (camera) ở đâu? Thông thường các phép tính sẽ khá phức tạp nên ta thường đưa về gốc tọa độ và hướng (trục) theo chiều dương của trục z. Đồng thời cũng tính toán lại vị trí của object theo camera mới này. Toàn bộ quá trình này gọi là **view space transformation**. Ma trận của view space sẽ được tính nhờ hàm:
+
+```cpp
+D3DXMATRIX* D3DXMatrixLookAtLH(
+  _Inout_		D3DXMATRIX 	*pOut,
+  _In_    const D3DXVECTOR3 *pEye,
+  _In_    const D3DXVECTOR3 *pAt,
+  _In_    const D3DXVECTOR3 *pUp
+);
+```
+
+Tham số đầu tiên là kết quả. Tham số thứ 2 là vị trí camera. Tham số thứ 3 là điểm mà camera nhìn tới. Tham số thứ 4 là vector up (0, 1, 0). Sau khi tính xong view space với ma trận **V**, ta thiết lập bằng hàm:
+
+```cpp
+d3ddv->SetTransform(D3DTS_VIEW, &V);
+```
+
+### d. Backface culling
+
+Một đa giác có 2 mặt và ta định nghĩa một mặt là frontface còn mặt kia là backface. Direct3D sẽ bỏ đi backface khi render (không nhìn thấy) và việc này được gọi là **backface culling**
+
+```cpp
+d3ddv->SetRenderState(D3DRS_CULLMODE, Value);
+```
+
+Ở đây, **Value** là culling mode (xem docs để biết thêm).
+
+### e. Lighting
+
+Phía sau sẽ nghiên cứu kỹ hơn.
+
+### f. Clipping
+
+Ta cần cull (bỏ đi khi render trên view space) các phần nằm trong frustum. Việc này được gọi là **clipping**. Có 3 trường hợp:
+
+- object hoàn toàn nằm trong frustum
+- object hoàn toàn nằm ngoài frustum
+- object nằm trong 1 phần và nằm ngoài 1 phần. Khi đó chỉ render phần nằm trong.
+
+### g. Projection (Chiếu)
+
+Vùng nhìn thấy là 1 khoảng không gian 3D. Việc thể hiện không gian 3D lên cái màn hình 2D được gọi là **projection** (chiếu). Có nhiều cách chiếu nhưng ta quan tâm phép chiếu tâm (**perspective projection**). Lúc này vật càng xa thì càng nhỏ, càng gần thì càng lớn.
+
+Ta dùng hàm sau với tỉ số Aspect thường dùng là **rộng/cao**:
+```cpp
+D3DXMATRIX* D3DXMatrixPerspectiveFovLH(
+  _Inout_   D3DXMATRIX 	*pOut,
+  _In_ 			FLOAT				fovy,
+  _In_      FLOAT 			Aspect,
+  _In_      FLOAT 			zn,
+  _In_      FLOAT 			zf
+);
+```
+
+### h. Viewport transform
+
+Đôi khi ta không render trên cả window mà chỉ 1 phần của nó. Ví dụ như 1 cảnh trong Megaman rất lớn, khi di chuyển ta dời vị trí đi thì cũng dời không gian được render. Việc đưa từ tọa độ projection lên 1 vùng hình chữ nhật trên màn gọi là **viewport**
+
+### i. Rasterization
+
+Sau khi tất cả vertices đã được chiếu lên màn, ta có 1 danh sách tam giác 2D. **Rasterization** sẽ tính toán màu sắc của mỗi pixel và vẽ từng tam giác cho tới khi render xong.
+
+## Tài liệu tham khảo
+
+[[1] D3DXMatrixLookAtLH](https://docs.microsoft.com/en-us/windows/win32/direct3d9/d3dxmatrixlookatlh)
+
+[[2] IDirect3DDevice9::SetTransform](https://docs.microsoft.com/en-us/windows/win32/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-settransform)
+
+[[3] D3DXMatrixPerspectiveFovLH](https://docs.microsoft.com/en-us/windows/win32/direct3d9/d3dxmatrixperspectivefovlh)

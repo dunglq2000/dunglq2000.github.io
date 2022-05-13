@@ -2,6 +2,7 @@
 layout: post
 title: Quyển 1 - Tập hợp. Ánh xạ. Hàm số.
 usemathjax: true
+tags: cryptography
 ---
 
 ## 1. Tập hợp

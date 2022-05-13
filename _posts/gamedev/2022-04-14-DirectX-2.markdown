@@ -1,0 +1,185 @@
+---
+layout: post
+title:  "Ngày 2. Module hóa Game"
+tags: gamedev DirextX
+---
+
+Hôm nay mình sẽ tạo 1 class riêng để điều hành toàn bộ game (như bao người khác thôi).
+
+```cpp
+// GGame.h
+#pragma once
+
+#include <d3d9.h>
+
+class GGame
+{
+private:
+	static GGame* __instance;
+	LPDIRECT3D9 d3d = NULL;
+	LPDIRECT3DDEVICE9 d3ddv = NULL;
+public:
+	int Init(HWND hwnd);
+	LPDIRECT3DDEVICE9 GetDirect3DDevice() { return d3ddv; }
+	static GGame* GetInstance();
+	void Run();
+	~GGame();
+};
+```
+
+Do mình chỉ cần 1 đối tượng duy nhất của class này để điều hành toàn bộ game nên mình dùng kỹ thuật single instance với con trỏ **__instance**.
+
+```cpp
+// GGame.cpp
+#include "GGame.h"
+
+GGame* GGame::__instance = NULL;
+
+GGame* GGame::GetInstance()
+{
+	if (__instance == NULL) __instance = new GGame();
+	return __instance;
+}
+
+int GGame::Init(HWND hwnd)
+{
+	d3d = Direct3DCreate9(D3D_SDK_VERSION);
+
+	D3DPRESENT_PARAMETERS d3dpp;
+	ZeroMemory(&d3dpp, sizeof(D3DPRESENT_PARAMETERS));
+	d3dpp.Windowed = TRUE;
+	d3dpp.hDeviceWindow = hwnd;
+	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
+	d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
+
+	d3d->CreateDevice(
+		D3DADAPTER_DEFAULT,
+		D3DDEVTYPE_HAL,
+		hwnd,
+		D3DCREATE_SOFTWARE_VERTEXPROCESSING,
+		&d3dpp,
+		&d3ddv);
+	if (d3ddv == NULL)
+		return 0;
+	return 1;
+}
+
+GGame::~GGame()
+{
+	if (d3ddv)
+		d3ddv->Release();
+	if (d3d)
+		d3d->Release();
+}
+
+void GGame::Run()
+{
+	if (d3ddv == NULL)
+		return;
+	d3ddv->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0, 255, 255), 1.0f, 0);
+
+	if (d3ddv->BeginScene())
+	{
+		// Do something here
+		d3ddv->EndScene();
+	}
+	d3ddv->Present(NULL, NULL, NULL, NULL);
+}
+```
+
+Sau đó sửa **main.cpp** lại "sương sương" là xong.
+
+```cpp
+#include <Windows.h>
+#include "GGame.h"
+
+#define APPTITLE L"Sample Window"
+
+GGame* game = NULL;
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+INT WINAPI wWinMain(
+	HINSTANCE hInstance,
+	HINSTANCE hPrevInstance,
+	LPTSTR lpCmdLine,
+	int nCmdShow)
+{
+	HWND hwnd = 0;
+	WNDCLASSEX wc;
+	ZeroMemory(&wc, sizeof(WNDCLASSEX));
+	wc.cbSize = sizeof(WNDCLASSEX);
+	wc.hInstance = hInstance;
+	wc.lpszClassName = APPTITLE;
+	wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+	wc.lpfnWndProc = WndProc;
+	wc.style = CS_HREDRAW | CS_VREDRAW;
+
+	RegisterClassEx(&wc);
+
+	hwnd = CreateWindowExW(
+		0,
+		APPTITLE,
+		APPTITLE,
+		WS_OVERLAPPEDWINDOW,
+		CW_USEDEFAULT,
+		CW_USEDEFAULT,
+		640,
+		480,
+		NULL,
+		NULL,
+		hInstance,
+		NULL);
+
+	if (hwnd == 0)
+	{
+		return FALSE;
+	}
+	UpdateWindow(hwnd);
+	ShowWindow(hwnd, nCmdShow);
+
+	game = GGame::GetInstance();
+	if (!game->Init(hwnd))
+		return FALSE;
+
+	MSG msg = { 0 };
+	int done = 0;
+
+	while (!done)
+	{
+		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
+		{
+			if (msg.message == WM_QUIT)
+			{
+				done = 1;
+			}
+			TranslateMessage(&msg);
+			DispatchMessageW(&msg);
+		}
+		else
+		{
+			game->Run();
+		}
+	}
+
+	return msg.wParam;
+}
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+	switch (msg)
+	{
+	case WM_DESTROY:
+		delete game;
+		PostQuitMessage(0);
+		break;
+	default:
+		return DefWindowProc(hwnd, msg, wParam, lParam);
+		break;
+	}
+	return 0;
+}
+```
+
+Bắt đầu từ bài sau mình sẽ ngâm cứu lý thuyết trong lập trình game, cũng như cài đặ thành các class để dễ quản lý, mở rộng sau này. Hy vọng thế :))))

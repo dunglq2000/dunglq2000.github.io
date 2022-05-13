@@ -1,3 +1,4 @@
+{% comment %}
 {% if site.dash.avatar_source == "github" and site.dash.github_username %}
 {% capture avatar_image %}
     https://github.com/{{ site.dash.github_username }}.png
@@ -14,3 +15,4 @@
 {% if avatar_image %}
 <img src="{{ avatar_image }}" class="author-avatar" alt="Avatar" />
 {% endif %}
+{% endcomment %}

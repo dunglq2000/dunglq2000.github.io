@@ -2,6 +2,7 @@
 layout: post
 title: Quyển 6 - Đại số tuyến tính
 usemathjax: true
+tags: cryptography
 ---
 
 Môn học ở Đại học mà nhiều người đều nghe tới: Đại số tuyến tính (Linear Algebra) =)))

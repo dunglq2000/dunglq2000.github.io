@@ -2,6 +2,7 @@
 layout: post
 title:  "Crypto CTF 2021"
 usemathjax: true
+tags: cryptography ctf
 ---
 Chào mọi người, lại một mùa Crypto CTF nữa đã qua và lần này mình có khá khẩm hơn năm ngoái một chút, và sau đây là writeup các challenge mình đã làm được
 

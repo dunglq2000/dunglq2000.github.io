@@ -2,6 +2,7 @@
 layout: post
 title: Quyển 3 - Hình học. Hệ tọa độ Descartes. Phép biến hình.
 usemathjax: true
+tags: cryptography
 ---
 
 Các con số thì trừu tượng, nhưng các tòa nhà lại là thực tế. Các bản vẽ (chi tiết máy, nhà, công trình, ...) là các dạng hình học quan trọng trong đời sống. Bây giờ mình sẽ chém gió về cái thời xa xửa xa xưa của mình, cũng như hình học.

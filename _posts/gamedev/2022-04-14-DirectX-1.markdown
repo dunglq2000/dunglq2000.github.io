@@ -1,0 +1,339 @@
+---
+layout: post
+title:  "Ngày 1. Mở đầu với lập trình Windows và DirectX"
+tags: gamedev DirextX
+---
+Một chuỗi nhật ký học lập trình game đầy gian nan của mình :)))) không phải tutorial, không phải kiến thức, chỉ là nhật ký để sau về già đọc lại cho vui :))))
+
+## 1. Gà mờ Windows Programming
+
+Khi viết bài này mình dùng Visual Studio 2022. Chọn **System** là **WINDOWS** thay vì **Console**. Lúc này, hàm chính của chương trình không phải là **main** nữa mà là **wWinMain** có prototype như sau:
+
+```cpp
+INT WINAPI wWinMain(
+  HINSTANCE hInstance,
+  HINSTANCE hPrevInstance,
+  LPTSTR lpCmdLine,
+  int nCmdShow);
+```
+
+Ở đây có 2 tham số cần lưu ý là **hInstance** và **nCmdShow**. Trong đó **hInstance** chỉ bản thân process, tức "thể hiện" của nó, còn **nCmdShow** chỉ việc window khi được tạo sẽ hiện hay không. Trong nhiều trường hợp, để xem trước đó chương trình đã được chạy hay chưa chúng ta dùng **hPrevInstance**. Ví dụ, chúng ta sẽ không muốn file game bị chạy nhiều lần, nên cần kiểm tra xem trước đó file exe đã được load lên chưa để lỡ load 2 lần thì RAM nào chịu cho nổi :)) thông qua **hPrevInstance**. Ở đây mình chưa đụng tới.
+
+Lập trình Windows, là tạo cửa sổ :)))) Ở đây, để điều khiển cửa sổ mình thực hiện 3 bước:
+
+1. Tạo <span style="color:red">WNDCLASSEX</span>
+  - Có nhiều *biến dạng* khác của thằng này như <span style="color:red">WNDCLASS</span>, ... Thằng này có cái là mình phải set trường **cbSize** của nó thành **sizeof(WNDCLASS)**.
+  - Cần chú ý trường **lpfnWndProc**. Trường này là con trỏ tới hàm WndProc nào đó mình sẽ code sau (windows process) sẽ xử lý các sự kiện của cửa sổ window.
+2. Sử dụng kiểu dữ liệu <span style="color:red">HWND</span> để *handle* tới cửa sổ (HWND - handle window). Còn nhiều đối tượng khác cũng có thể handle nhưng sau này học tới rồi tính :))))
+3. Xử lý các message (sự kiện) được truyền vào cửa sổ (nhấn nút tắt, gõ phím, click chuột, ...)
+
+Templete sau định nghĩa hàm **WndProc** sẽ kết thúc chương trình khi click vào nút tắt (x).
+
+```cpp
+#include <Windows.h>
+
+#define APPTITLE L"Sample Window"
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+INT WINAPI wWinMain(
+  HINSTANCE hInstance,
+  HINSTANCE hPrevInstance,
+  LPTSTR lpCmdLine,
+  int nCmdShow)
+{
+  HWND hwnd = 0;
+  WNDCLASSEX wc;
+  ZeroMemory(&wc, sizeof(WNDCLASSEX));
+  wc.cbSize = sizeof(WNDCLASSEX);
+  wc.hInstance = hInstance;
+  wc.lpszClassName = APPTITLE;
+  wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+  wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+  wc.lpfnWndProc = WndProc;
+  wc.style = CS_HREDRAW | CS_VREDRAW;
+
+  RegisterClassEx(&wc);
+
+  hwnd = CreateWindowExW(
+    0,
+    APPTITLE,
+    APPTITLE,
+    WS_OVERLAPPEDWINDOW,
+    CW_USEDEFAULT,
+    CW_USEDEFAULT,
+    640,
+    480,
+    NULL,
+    NULL,
+    hInstance,
+    NULL);
+
+  if (hwnd == 0)
+  {
+    return FALSE;
+  }
+  UpdateWindow(hwnd);
+  ShowWindow(hwnd, nCmdShow);
+
+  MSG msg = { 0 };
+  while (GetMessage(&msg, NULL, NULL, NULL))
+  {
+    TranslateMessage(&msg);
+    DispatchMessageW(&msg);
+  }
+  return msg.wParam;
+}
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+  switch (msg)
+  {
+  case WM_DESTROY:
+    PostQuitMessage(0);
+    break;
+  default:
+    return DefWindowProc(hwnd, msg, wParam, lParam);
+    break;
+  }
+  return 0;
+}
+```
+
+## 2. Gà mờ DirectX 9.0
+
+Để sử dụng DirectX cần download SDK về máy, xong config path (Include và Library) và project.
+
+Ta cần khai báo thư viện **d3d9.h** và 2 biến con trỏ như sau:
+
+```cpp
+#include <d3d9.b>
+
+LPDIRECT3D9       d3d = NULL;
+LPDIRECT3DDEVICE9 d3ddv = NULL;
+```
+
+Ở đây, <span style="color:red">LPDIRECT3D9</span> là con trỏ tới interface <span style="color:red">IDirect3D9</span> (Rất nhiều API của Windows làm giống vậy, LP nghĩa là long pointer). Mình cần chú ý tới con trỏ thứ 2, được sử dụng mọi nơi trong game. Đó là <span style="color:red">LPDIRECT3DDEVICE9</span>. Đây là con trỏ tới device, tức thiết bị để render hình ảnh. Thằng này sẽ xử lý các nhiệm vụ về đồ họa như: thiết lập vị trí nguồn sáng, hướng ánh sáng, độ sáng, render các thành phần trong game lên màn hình, .... Nói chung là làm mọi thứ :))))
+
+Mình bổ sung vào chương trình trên 3 hàm để khởi tạo, chạy và dọn dẹp game.
+
+```cpp
+int GameInit(HWND hwnd)
+{
+  d3d = Direct3DCreate9(D3D_SDK_VERSION);
+
+  D3DPRESENT_PARAMETERS d3dpp;
+  ZeroMemory(&d3dpp, sizeof(D3DPRESENT_PARAMETERS));
+  d3dpp.Windowed = TRUE;
+  d3dpp.hDeviceWindow = hwnd;
+  d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
+  d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
+
+  d3d->CreateDevice(
+    D3DADAPTER_DEFAULT,
+    D3DDEVTYPE_HAL,
+    hwnd,
+    D3DCREATE_SOFTWARE_VERTEXPROCESSING,
+    &d3dpp,
+    &d3ddv);
+  if (d3ddv == NULL)
+    return 0;
+  return 1;
+}
+
+void GameRun(HWND hwnd)
+{
+  if (d3ddv == NULL)
+    return;
+
+  d3ddv->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0, 255, 255), 1.0f, 0);
+
+  if (d3ddv->BeginScene())
+  {
+    // Do something here
+    d3ddv->EndScene();
+  }
+
+  d3ddv->Present(NULL, NULL, NULL, NULL);
+}
+
+void GameEnd(HWND hwnd)
+{
+  if (d3ddv)
+    d3ddv->Release();
+  if (d3d)
+    d3d->Release();
+}
+```
+
+Một số lưu ý:
+1. Ở hàm **GameInit**:
+  - Tham số truyền vào **Direct3DCreate** phải để là **D3D_SDK_VERSION**, nó phụ thuộc vào phiên bản SDK mình cài.
+  - Kiểu dữ liệu **D3DPRESENT_PARAMETERS** xác định các thuộc tính của DirectX. Ở đây, **Windowed = TRUE** nghĩa là dạng cửa sổ, không phải dạng fullscreen. Muốn fullscreen ngoài đổi thằng này thành **FALSE** thì cần đổi tham số **style** khi tạo window trên kia.
+  - **SwapEffect**: <span style="color:green">(Không sure lắm)</span> quá trình swap frame từ buffer sau lên buffer trước sẽ bỏ đi buffer cũ nếu dùng **DISCARD**.
+2. Ở hàm **GameRun**:
+  - Hàm **Clear** sẽ fill background với cái màu ở tham số thứ 4. Tham số thứ 2 là structure **D3DRECT**, chỉ phần hình chữ nhật sẽ đc fill, nếu là **NULL** thì fill hết. Mấy cái còn lại ..... chịu.
+  - Trước khi render thì cần báo cho **d3ddv** bằng hàm **BeginScene**
+  - Sau khi render xong thì phải **EndScene**
+  - Cuối cùng, *quăng mọi thứ lên màn hình* bằng **Present** (**NULL** hết :v)
+3. Ở hàm **GameEnd**:
+  - **IDirect3D9** và **IDirect3DDevice9** là các kiểu dữ liệu **COM** của Windows. **COM** là gì thì mình cũng chưa hiểu lắm, hiểu sơ là nó xử lý các tài nguyên máy tính. Do đó không thể xóa như heap (dùng **free** hoặc **delete**) mà phải gọi **Release**.
+
+## Tài liệu tham khảo:
+
+[[1] IDirect3D9](https://docs.microsoft.com/en-us/windows/win32/api/d3d9helper/nn-d3d9helper-idirect3d9)
+
+[[2] IDirect3DDevice9](https://docs.microsoft.com/en-us/windows/win32/api/d3d9helper/nn-d3d9helper-idirect3ddevice9)
+
+[[3] CreateDevice](https://docs.microsoft.com/en-us/windows/win32/api/d3d9/nf-d3d9-idirect3d9-createdevice)
+
+[[4] **D3DPRESENT_PARAMETERS**](https://docs.microsoft.com/en-us/windows/win32/direct3d9/d3dpresent-parameters)
+
+[[5] Clear](https://docs.microsoft.com/en-us/windows/win32/api/d3d9/nf-d3d9-idirect3ddevice9-clear)
+
+## Code hoàn chỉnh
+```cpp
+// main.cpp
+#include <Windows.h>
+#include <d3d9.h>
+
+#define APPTITLE L"Sample Window"
+
+LPDIRECT3D9     d3d = NULL;
+LPDIRECT3DDEVICE9 d3ddv = NULL;
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+int GameInit(HWND);
+void GameRun(HWND);
+void GameEnd(HWND);
+
+INT WINAPI wWinMain(
+  HINSTANCE hInstance,
+  HINSTANCE hPrevInstance,
+  LPTSTR lpCmdLine,
+  int nCmdShow)
+{
+  HWND hwnd = 0;
+  WNDCLASSEX wc;
+  ZeroMemory(&wc, sizeof(WNDCLASSEX));
+  wc.cbSize = sizeof(WNDCLASSEX);
+  wc.hInstance = hInstance;
+  wc.lpszClassName = APPTITLE;
+  wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+  wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+  wc.lpfnWndProc = WndProc;
+  wc.style = CS_HREDRAW | CS_VREDRAW;
+
+  RegisterClassEx(&wc);
+
+  hwnd = CreateWindowExW(
+    0,
+    APPTITLE,
+    APPTITLE,
+    WS_OVERLAPPEDWINDOW,
+    CW_USEDEFAULT,
+    CW_USEDEFAULT,
+    640,
+    480,
+    NULL,
+    NULL,
+    hInstance,
+    NULL);
+
+  if (hwnd == 0)
+  {
+    return FALSE;
+  }
+  UpdateWindow(hwnd);
+  ShowWindow(hwnd, nCmdShow);
+
+  if (!GameInit(hwnd))
+  {
+    return FALSE;
+  }
+
+  MSG msg = { 0 };
+  int done = 0;
+
+  while (!done)
+  {
+    if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
+    {
+      if (msg.message == WM_QUIT)
+      {
+        done = 1;
+      }
+      TranslateMessage(&msg);
+      DispatchMessageW(&msg);
+    }
+    else
+    {
+      GameRun(hwnd);
+    }
+  }
+
+  return msg.wParam;
+}
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+  switch (msg)
+  {
+  case WM_DESTROY:
+    GameEnd(hwnd);
+    PostQuitMessage(0);
+    break;
+  default:
+    return DefWindowProc(hwnd, msg, wParam, lParam);
+    break;
+  }
+  return 0;
+}
+
+int GameInit(HWND hwnd)
+{
+  d3d = Direct3DCreate9(D3D_SDK_VERSION);
+
+  D3DPRESENT_PARAMETERS d3dpp;
+  ZeroMemory(&d3dpp, sizeof(D3DPRESENT_PARAMETERS));
+  d3dpp.Windowed = TRUE;
+  d3dpp.hDeviceWindow = hwnd;
+  d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
+  d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
+
+  d3d->CreateDevice(
+    D3DADAPTER_DEFAULT,
+    D3DDEVTYPE_HAL,
+    hwnd,
+    D3DCREATE_SOFTWARE_VERTEXPROCESSING,
+    &d3dpp,
+    &d3ddv);
+  if (d3ddv == NULL)
+    return 0;
+  return 1;
+}
+
+void GameRun(HWND hwnd)
+{
+  if (d3ddv == NULL)
+    return;
+
+  d3ddv->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0, 255, 255), 1.0f, 0);
+
+  if (d3ddv->BeginScene())
+  {
+
+    d3ddv->EndScene();
+  }
+
+  d3ddv->Present(NULL, NULL, NULL, NULL);
+}
+
+void GameEnd(HWND hwnd)
+{
+  if (d3ddv)
+    d3ddv->Release();
+  if (d3d)
+    d3d->Release();
+}
+```

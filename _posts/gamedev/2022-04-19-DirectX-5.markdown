@@ -1,0 +1,435 @@
+---
+layout: post
+title:  "Ngày 5. Code thiết lập ban đầu cho game. Render mesh được hỗ trợ sẵn."
+tags: gamedev DirextX
+---
+
+Học lý thuyết mãi cũng chán, code thực nghiệm nào!!! :v
+
+Ở bài này mình sẽ tạo 1 mesh được support sẵn trong DirectX là **Teapot**. Mình sẽ vẽ 1 cái ấm trà và làm nó xoay vòng quanh trục Oy.
+
+**HEY YO. TỪ NAY VỀ SAU, TÊN HÀM MÌNH SẼ BÔI ĐẬM, CÒN TÊN BIẾN MÌNH SẼ VIẾT MÀU ĐỎ CHO MÁU LỬA** :v
+
+Lưu ý rằng khác với hình học Oxyz là trục Oz hướng lên trên, thì ở trên máy tính, trục Oz vuông góc với màn hình. Nói cách khác, hình ảnh được hiển thị, theo hướng ngang là Ox **từ trái qua phải** và Oy **từ trên xuống dưới** (ngược Oxy thông thường).
+
+
+## 1. Debug
+
+Bắt chước các cao thủ khác, mình code 1 hàm để xuất các thông tin debug. Trong **Windows.h** có hỗ trợ hàm **OutputDebugString** để xuất chuỗi debug. Tuy nhiên hàm này chỉ nhận vào chuỗi, chứ không có tham số như **printf** hay **scanf**. Do đó cần code 1 hàm riêng để nhận các tham số, ví dụ như **GetLastError** =)))) thiệt là fức tạp.
+
+```cpp
+// debug.h
+#pragma once
+
+void DebugOut(const wchar_t* fmt, ...);
+
+// debug.cpp
+#include "debug.h"
+#include <Windows.h>
+#include <stdio.h>
+#include <stdarg.h>
+
+void DebugOut(const wchar_t* fmt, ...)
+{
+	wchar_t debug[2048];
+	va_list args;
+	va_start(args, fmt);
+	vswprintf_s(debug, fmt, args);
+	OutputDebugString(debug);
+	va_end(args);
+}
+```
+
+Ở đây cần lưu ý:
+
+- Để định nghĩa các tham số cho format string cần mấy đứa sau: <span style="color: red">va_list</span>, <span style="color: red">va_start</span> và <span style="color: red">va_end</span>
+- Lúc này tập hợp các tham số cho format string sẽ là <span style="color: red">args</span>
+- Mình dùng hàm **vswprintf_s** để chép format string đã có tham số vào mảng <span style="color: red">debug</span>
+- Dùng **OutputDebugString** để xuất nó ra.
+
+Ví dụ, để quăng lỗi từ hàm **GetLastError** thì mình dùng như sau:
+
+```cpp
+DebugOut(L"An error has occurred with code: %l\n", GetLastError());
+```
+
+## 2. Định nghĩa delta time. Cài đặt main.cpp
+
+Ý tưởng là trong 1 đơn vị thời gian thì mình sẽ render 1 lượng frame nhất định. Ở đây mình viết lại vòng lặp xử lý message. Trong game có 2 hàm cực kì quan trọng là:
+
+- **Update(DWORD dt)**: hàm này chịu trách nhiệm update các thông tin cần thiết để chuẩn bị render, ví dụ như vị trí, vận tốc, xử lý va chạm, chuyển vị trí camera (đối với camera), nhận input từ bàn phím và chuột. Nói chung là tất cả những thông tin được xử lý trước khi render.
+- **Render()**: render hình ảnh lên vị trí đã update trước đó, chọn các dạng subset sẽ render, .... Thằng này xử lý các vấn đề đồ họa.
+
+Các hàm cần định nghĩa gồm:
+
+```cpp
+HWND CreateGameWindow(HINSTANCE hIntance, int nCmdShow, int ScreenWidth, int ScreenHeight);
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+int Run();
+void Update(DWORD dt);
+void Render();
+```
+
+Trong đó:
+
+- **CreateGameWindow**: tạo window hiển thị game. Cái này tạo window rồi trả về <span style="color: red">HWND</span> đó thôi.
+- **WndProc**: WinProc như cũ.
+- **Run**: định nghĩa vòng lặp xử lý message như bài trước, thêm vào việc xử lý update và render trong delta time nhất định.
+- **Update(DWORD dt)**: update tất cả phần tử trong game.
+- **Render**: render tất cả phần tử trong game.
+
+Đối với 2 hàm đầu thì những bài trước đã code rồi nên chỉ cần làm đơn giản
+
+```cpp
+HWND CreateGameWindow(HINSTANCE hInstance, int nCmdShow, int ScreenWidth, int ScreenHeight)
+{
+	WNDCLASSEX wc;
+	ZeroMemory(&wc, sizeof(WNDCLASSEX));
+	wc.cbSize = sizeof(WNDCLASSEX);
+	wc.hInstance = hInstance;
+	wc.lpszClassName = APPTITLE;
+	wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+	wc.lpfnWndProc = WndProc;
+	wc.style = CS_HREDRAW | CS_VREDRAW;
+
+	RegisterClassEx(&wc);
+
+	HWND hwnd = CreateWindowExW(
+		0,
+		APPTITLE,
+		APPTITLE,
+		WS_OVERLAPPEDWINDOW,
+		CW_USEDEFAULT,
+		CW_USEDEFAULT,
+		ScreenWidth,
+		ScreenHeight,
+		NULL,
+		NULL,
+		hInstance,
+		NULL);
+
+	if (hwnd == 0)
+		return NULL;
+
+	UpdateWindow(hwnd);
+	ShowWindow(hwnd, nCmdShow);
+
+	return hwnd;
+}
+
+LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+	switch (msg)
+	{
+	case WM_DESTROY:
+		delete game;
+		PostQuitMessage(0);
+		break;
+	default:
+		return DefWindowProc(hwnd, msg, wParam, lParam);
+		break;
+	}
+	return 0;
+}
+```
+
+Đối với hàm **Run**, mình định nghĩa hằng số <span style="color: red">FRAME_PER_SECOND</span> và dùng nó để tính toán delta time giữa 2 lần **Update** (cũng là **Render**). Và khi delta time giữa <span style="color: red">start</span> và <span style="color: red">now</span> đủ lớn (vượt không nhiều <span style="color: red">tickPerFrame</span>) thì tiến hành **Update** và **Render**.
+
+```cpp
+#define FRAME_PER_SECOND	60
+
+int Run()
+{
+	MSG msg = { 0 };
+	int done = 0;
+	DWORD start = GetTickCount();
+	DWORD tickPerFrame = 1000 / FRAME_PER_SECOND;
+
+	while (!done)
+	{
+		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
+		{
+			if (msg.message == WM_QUIT)
+			{
+				done = 1;
+			}
+			TranslateMessage(&msg);
+			DispatchMessageW(&msg);
+		}
+		else
+		{
+			DWORD now = GetTickCount();
+
+			DWORD dt = now - start;
+			if (dt >= tickPerFrame)
+			{
+				start = now;
+
+				Update(dt);
+				Render();
+			}
+			else
+				Sleep(tickPerFrame - dt);
+		}
+	}
+
+	return 1;
+}
+```
+
+Còn 2 hàm **Update(DWORD dt)** và **Render()** thì mình nói sau vì nó sẽ update cái ấm trà của mình. Giờ đi định nghĩa ấm trà đã.
+
+## 3. GameObject
+
+Tận dụng khả năng của lập trình hướng đối tượng, mọi người (kể cả mình) dùng 1 base class cho mọi đối tượng trong game là **GameObject**.
+
+```cpp
+// GameObject.h
+#pragma once
+
+#include <d3d9.h>
+#include <d3dx9.h>
+
+class GameObject
+{
+protected:
+	float _x, _y, _z;
+public:
+	GameObject(float x = 0, float y = 0, float z = 0);
+	virtual void Update(DWORD dt) = 0;
+	virtual void Render() = 0;
+};
+
+// GameObject.cpp
+#include "GameObject.h"
+
+GameObject::GameObject(float x, float y, float z)
+{
+	_x = x;
+	_y = y;
+	_z = z;
+}
+```
+
+Do code của mình còn trong thời kì sơ khai, ăn lông ở lỗ húp hủ tiếu bún riêu sống qua ngày, nên ở đây chỉ xác định tọa độ của object.
+
+## 4. Game Manager
+
+Giống như bài trước mình cũng định nghĩa 1 single-instance class là **GGame** để quản lý các cơ chế và biến toàn cục của game như <span style="color: red">d3d</span>, <span style="color: red">d3ddv</span>, ...
+
+Đối với header thì mình bổ sung define độ rộng và cao của cửa sổ.
+
+```cpp
+// GGame.h
+#pragma once
+
+#include <d3d9.h>
+#include <d3dx9.h>
+
+#define SCREEN_WIDTH	640
+#define SCREEN_HEIGHT	480
+
+class GGame
+{
+private:
+	static GGame* __instance;
+	LPDIRECT3D9 d3d = NULL;
+	LPDIRECT3DDEVICE9 d3ddv = NULL;
+public:
+	int Init(HWND hwnd);
+	LPDIRECT3DDEVICE9 GetDirect3DDevice() { return d3ddv; }
+	static GGame* GetInstance();
+	~GGame();
+};
+```
+
+Đối với source, trong hàm **Init** thêm vào view point và thiết lập projection
+
+```cpp
+// GGame.cpp
+#include "GGame.h"
+
+GGame* GGame::__instance = NULL;
+
+GGame* GGame::GetInstance()
+{
+	if (__instance == NULL) __instance = new GGame();
+	return __instance;
+}
+
+int GGame::Init(HWND hwnd)
+{
+	d3d = Direct3DCreate9(D3D_SDK_VERSION);
+
+	D3DPRESENT_PARAMETERS d3dpp;
+	ZeroMemory(&d3dpp, sizeof(D3DPRESENT_PARAMETERS));
+	d3dpp.Windowed = TRUE;
+	d3dpp.hDeviceWindow = hwnd;
+	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
+	d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
+
+	d3d->CreateDevice(
+		D3DADAPTER_DEFAULT,
+		D3DDEVTYPE_HAL,
+		hwnd,
+		D3DCREATE_SOFTWARE_VERTEXPROCESSING,
+		&d3dpp,
+		&d3ddv);
+	if (d3ddv == NULL)
+		return 0;
+
+	D3DXMATRIX V;
+	D3DXVECTOR3 eye(5.0f, 5.0f, 7.5f);
+	D3DXVECTOR3 target(0.0f, 0.0f, 0.0f);
+	D3DXVECTOR3 up(0.0f, 1.0f, 0.0f);
+	D3DXMatrixLookAtLH(
+		&V,
+		&eye,
+		&target,
+		&up);
+
+	d3ddv->SetTransform(D3DTS_VIEW, &V);
+
+	D3DXMATRIX proj;
+	D3DXMatrixPerspectiveFovLH(
+		&proj,
+		D3DXToRadian(90),
+		(float)SCREEN_WIDTH / (float)SCREEN_HEIGHT,
+		1,
+		1000);
+
+	d3ddv->SetTransform(D3DTS_PROJECTION, &proj);
+	return 1;
+}
+
+GGame::~GGame()
+{
+	if (d3ddv)
+		d3ddv->Release();
+	if (d3d)
+		d3d->Release();
+}
+```
+
+## 5. Teapot
+
+Từ class **GameObject** trên mình tạo 1 class là **GTeapot** (quy ước đặt tên cho class là thêm chữ **G** phía trước, chỉ game).
+
+```cpp
+// GTeapot.h
+#pragma once
+
+#include "GGame.h"
+#include "GameObject.h"
+#include "debug.h"
+
+class GTeapot :
+    public GameObject
+{
+protected:
+    LPD3DXMESH pMesh;
+    float rotY = 0;
+    LPDIRECT3DDEVICE9 d3ddv;
+public:
+    GTeapot();
+    virtual void Update(DWORD dt);
+    virtual void Render();
+};
+```
+
+Mục tiêu của chương trình này là:
+
+- Tạo 1 cái ấm trà ở tọa độ (x, y, z) nào đó.
+- Xoay quanh trục Oy 1 góc <span style="color: red">rotY</span> theo radian.
+- Nghiên cứu 1 số vấn đề khi thực hiện translation, rotation và scaling.
+
+```cpp
+// GTeapot.cpp
+#include "GTeapot.h"
+
+GTeapot::GTeapot(float x, float y, float z) : GameObject(x, y, z)
+{
+	pMesh = NULL;
+	d3ddv = GGame::GetInstance()->GetDirect3DDevice();
+	HRESULT hr = D3DXCreateTeapot(
+		d3ddv,
+		&pMesh,
+		NULL);
+	if (hr != D3D_OK)
+	{
+		DebugOut(L"D3DXCreateTeapot faild: %lu\n", hr);
+		return;
+	}
+}
+
+void GTeapot::Update(DWORD dt)
+{
+	D3DXMATRIX mat;
+	D3DXMATRIX matTrans;
+	D3DXMATRIX matRot;
+	if (rotY >= 6.28)
+	{
+		rotY -= 6.28;
+	}
+	rotY += 0.01 * dt;
+
+	D3DXMatrixTranslation(&matTrans, _x, _y, _z);
+	D3DXMatrixRotationY(&matRot, rotY);
+	mat = matRot;
+
+	d3ddv->SetTransform(D3DTS_WORLD, &mat);
+}
+
+void GTeapot::Render()
+{
+	if (pMesh)
+		pMesh->DrawSubset(0);
+}
+```
+
+Trong khai báo của **GTeapot** có 1 con trỏ tới interface **ID3DXMesh** là con trỏ tới mesh dùng cho ấm trà. Trong constructor dùng hàm **D3DXCreateTeapot** để tạo mesh. Tham số cuối và **adjBuf** hiện tại mình bỏ qua nên để NULL.
+
+Đối với hàm **Update**, nó sẽ xác định góc quay và thiết lập vị trí quay. Mình cho tốc độ quay là 0.01, khi đó góc quay sẽ bằng tốc độ góc nhân delta time (**0.01 * dt**). **QUAN TRỌNG** là phải phải set transform để DirectX hiểu là sẽ render ở đâu, như thế nào.
+
+**Lưu ý**: ở dòng code **mat = matRot**:
+
+- nếu thay bằng **mat = matRot * matTrans** thì hình ảnh **sau khi xoay** được render tại (\_x, \_y, \_z). Nếu không nhân thêm **matTrans** thì render tại gốc.
+- nếu thay bằng **mat = matTrans * matRot** thì ấm trà không chỉ tự quay quanh chính nó mà còn quay quanh trục Oy. Đơn giản là vì trong công thức toán học về phép quay quanh 1 trục, thì **tất cả các điểm** của object sẽ quay theo. Do đó toàn bộ hình hiện tại đã được dời tới (\_x, \_y, \_z) sẽ được quay lấy trục Oy làm tâm và kết quả như mình đã thấy. Để hiểu thêm vấn đề này mình đã viết 1 bài về phép quay tại [đây]( {% post_url 2021-10-08-crypto-04 %})
+
+**KẾT LUẬN**: thứ tự của phép nhân có ảnh hưởng đến việc render như thế nào. Ma trận nào xuất hiện trước thì thực hiện trước. Ma trận nào xuất hiện sau thì thực hiện sau.
+
+Đối với hàm **Render** thì cũng không có gì, dùng hàm **DrawSubset** có sẵn thôi. Tham số 0 ở đây là index của subset, sẽ được nghiên cứu sau.
+
+## 6. Gom hết mọi thứ lại
+
+Giờ mọi thứ đều đầy đủ, thiếu hàm main thui :))))
+
+```cpp
+INT WINAPI wWinMain(
+	HINSTANCE hInstance,
+	HINSTANCE hPrevInstance,
+	LPTSTR lpCmdLine,
+	int nCmdShow)
+{
+	HWND hwnd = CreateGameWindow(hInstance, nCmdShow, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+	if (hwnd == 0)
+	{
+		return FALSE;
+	}
+
+	game = GGame::GetInstance();
+
+	if (!game->Init(hwnd))
+		return FALSE;
+
+	teapot = new GTeapot(3, 3, 3);
+
+	Run();
+
+	return 0;
+}
+```
+
+Hôm sau code template nhé. Giờ mà ngồi chép hết code lên đây repo nào chịu cho nổi :))))

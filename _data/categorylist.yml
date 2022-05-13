@@ -1,0 +1,14 @@
+docs_list_title: Phân loại tài liệu
+docs:
+
+- title: About
+  url: about
+
+- title: Game
+  url: gamediary
+
+- title: Programming
+  url: programming
+
+- title: Cryptography
+  url: crypto

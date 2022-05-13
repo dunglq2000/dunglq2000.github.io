@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Toán học truyền kì
+tags: cryptography
 ---
 *"Toán học cung cấp công cụ cho các ngành khoa học khác, do đó nội tại toán học phải đúng đắn, nếu không sẽ dẫn đến những sai lầm nghiêm trọng"* - Cauchy Augustin, nhà toán học Pháp
 

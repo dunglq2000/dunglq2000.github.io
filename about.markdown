@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Sinh viên.
+Để viết sau :))

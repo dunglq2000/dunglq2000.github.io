@@ -2,6 +2,7 @@
 layout: post
 title: Quyển 2 - Lý thuyết số. Nhập môn RSA.
 usemathjax: true
+tags: cryptography
 ---
 
 ## 1. Các khái niệm cơ bản về lý thuyết số

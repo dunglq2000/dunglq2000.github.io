@@ -1,0 +1,126 @@
+---
+layout: post
+title:  "Ngày 4. Vertex/Index Buffer. Render State"
+tags: gamedev DirextX
+---
+
+Uầy, lại tiếp tục lý thuyết :(( cơ mà khác bài trước, bài này được ứng dụng ngay và luôn.
+
+
+## 1. Vertex/Index Buffer
+
+Trong DirectX ta sử dụng **LPDIRECT3DVERTEXTBUFFER9** và **LPDIRECT3DINDEXBUFFER9**.
+
+### 1.1. Tạo vertex và index buffer
+
+Ta dùng hàm **CreateVertexBuffer** của **d3ddv** (tương tự với **CreateIndexBuffer**)
+
+```cpp
+HRESULT CreateVertexBuffer(
+  [in]          UINT                   Length,
+  [in]          DWORD                  Usage,
+  [in]          DWORD                  FVF,
+  [in]          D3DPOOL                Pool,
+  [out, retval] IDirect3DVertexBuffer9 **ppVertexBuffer,
+  [in]          HANDLE                 *pSharedHandle
+);
+```
+
+Cần chú ý: tham số đầu **Length** là kích thước buffer theo byte; tham số thứ 3 **FVF** là cái tổ hợp **D3DFVF** mà mình định nghĩa lúc tạo structure vertex í, có thể là 0 nếu buffer không dùng FVF; tham số thứ 5 **\*\*ppVertextBuffer** là con trỏ tới buffer. Đối với **CreateIndexBuffer** cũng tương tự.
+
+### 1.2. Truy cập bộ nhớ của buffer
+
+Để truy cập tới bộ nhớ của buffer thì ta cần **Lock** nó lại, sau đó mới sao chép, ghi gì đó lên, rồi **Unlock** để buffer quay lại ban đầu.
+
+### 1.3. Lấy thông tin về buffer
+
+Ta dùng hàm **GetDesc** và **D3DVERTEX_BUFFER_DESC**
+
+## 2. Render States
+
+Để thiết lập giá trị cho trạng thái render nào đó ta dùng hàm sau:
+
+```cpp
+HRESULT SetRenderState(
+  [in] D3DRENDERSTATETYPE State,
+  [in] DWORD              Value
+);
+```
+
+Render state có thể là translation, light, ... sẽ được ngâm cứu sau.
+
+## 3. Drawing Preparation
+
+Khi đã có vertex buffer ta cần làm 3 việc trước khi render:
+
+1. Đặt stream source với đầu vào là vertex bufer
+```cpp
+HRESULT SetStreamSource(
+  [in] UINT                   StreamNumber,
+  [in] IDirect3DVertexBuffer9 *pStreamData,
+  [in] UINT                   OffsetInBytes,
+  [in] UINT                   Stride
+);
+```
+2. Cài đặt format (FVF ở bài trước ấy)
+```cpp
+HRESULT SetFVF(
+  [in] DWORD FVF
+);
+```
+3. Đặt index buffer (nếu dùng)
+```cpp
+HRESULT SetIndices(
+  [in] IDirect3DIndexBuffer9 *pIndexData
+);
+```
+
+## 4. Vẽ thôi!!!
+
+Ở đây ta có thể vẽ bằng:
+
+1. Cách 1:
+```cpp
+HRESULT DrawPrimitive(
+  [in] D3DPRIMITIVETYPE PrimitiveType,
+  [in] UINT             StartVertex,
+  [in] UINT             PrimitiveCount
+);
+```
+2. Cách 2:
+```cpp
+HRESULT DrawIndexedPrimitive(
+  [in] D3DPRIMITIVETYPE unnamedParam1,
+  [in] INT              BaseVertexIndex,
+  [in] UINT             MinVertexIndex,
+  [in] UINT             NumVertices,
+  [in] UINT             startIndex,
+  [in] UINT             primCount
+);
+```
+**Lưu ý**: Thằng đầu vẽ theo vertex buffer, còn thằng sau vẽ theo vertex và index buffer :))))
+3. Nhớ bỏ vào cặp **BeginScene** và **EndScene** nhé bạn trẻ.
+```cpp
+d3ddv->BeginScene();
+d3ddv->DrawPrimitive()
+// d3ddv->DrawIndexedPrimitive()
+d3ddv->EndScene()
+```
+
+## 5. Mesh
+
+Mesh giống như kiểu dữ liệu lưu trữ thông tin đồ họa, sau này sẽ tìm hiểu sâu hơn và là phần **cực kì quan trọng**. D3DX hỗ trợ sẵn 5 loại là Box, Sphere, Cylinder, Teapot và Polygon. Mỗi loại có thể vẽ bằng hàm **DrawSubset** của lớp Mesh.
+
+## Tài liệu tham khảo:
+
+[[1] IDirect3DDevice9::SetRenderState](https://docs.microsoft.com/en-us/windows/win32/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-setrenderstate)
+
+[[2] IDirect3DDevice9::SetStreamSource](https://docs.microsoft.com/en-us/windows/win32/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-setstreamsource)
+
+[[3] IDirect3DDevice9::SetFVF](https://docs.microsoft.com/en-us/windows/win32/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-setfvf)
+
+[[4] IDirect3DDevice9::SetIndices](https://docs.microsoft.com/en-us/windows/win32/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-setindices)
+
+[[5] IDirect3DDevice9::DrawPrimitive](https://docs.microsoft.com/en-us/windows/win32/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-drawprimitive)
+
+[[6] IDirect3DDevice9::DrawIndexedPrimitive](https://docs.microsoft.com/en-us/windows/win32/api/d3d9helper/nf-d3d9helper-idirect3ddevice9-drawindexedprimitive)
