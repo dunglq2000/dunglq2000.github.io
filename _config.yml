@@ -56,7 +56,7 @@ dash:
   # wether the author box should be displayed or not
   show_author: true
 
-#markdown: kramdown
+markdown: kramdown
 remote_theme: bitbrain/jekyll-dash
 plugins:
   - jekyll-feed
