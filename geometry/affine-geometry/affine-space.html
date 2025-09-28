@@ -1,0 +1,1430 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Tìm Kiếm" href="../../search.html" /><link rel="next" title="4. Hình học phi Euclid" href="../noneuclidean.html" /><link rel="prev" title="3. Hình học affine" href="index.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>3.1. Không gian affine - Math Book</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=4c010e0d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystyles.css?v=fd3ba0dd" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Math Book</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/Euler_Stamp.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Math Book</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../introduction/index.html">Những lời nói đầu</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Những lời nói đầu</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/about-maths.html">Toán học là gì với mình?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/about-notebook.html">Cơ sở xây dựng notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/about-quotations.html">Những lời răn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/about-notation.html">Kí hiệu và công thức toán trong mật mã</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algebra/index.html">Đại số</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Đại số</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../algebra/set/index.html">1. Đại cương về tập hợp</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1. Đại cương về tập hợp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/set/set.html">1.1. Tập hợp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/set/cadinality.html">1.2. Lực lượng của tập hợp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/set/map.html">1.3. Ánh xạ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/set/function.html">1.4. Hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/set/infinity.html">1.5. Các nghịch lý về tập vô hạn</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../algebra/polynomial/index.html">2. Đa thức</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2. Đa thức</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc">2.2. So sánh, cộng, trừ và nhân hai đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/lagrange-interpolation.html">2.3. Đa thức nội suy Lagrange</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/proof.html">3. Phương pháp chứng minh toán học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/glossary.html">4. Bảng thuật ngữ đại số</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../abstract-algebra/index.html">Lý thuyết nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Lý thuyết nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/groups/index.html">1. Lý thuyết nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of 1. Lý thuyết nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/groups/group.html">1.1. Nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/groups/symmetric-group.html">1.2. Nhóm hoán vị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/groups/quasigroup.html">1.3. Quasigroup</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/homomorphisms/index.html">2. Homomorphisms</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of 2. Homomorphisms</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/homomorphisms/group-homomorphism.html">2.1. Group homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/group-action/index.html">3. Tác động nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of 3. Tác động nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/group-action/group-action.html">3.1. Tác động nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/group-action/burnside.html">3.2. Bổ đề Burnside</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/rings/index.html">4. Vành</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of 4. Vành</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/rings/ring.html">4.1. Vành</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/fields/index.html">5. Trường</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of 5. Trường</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/fields/field.html">5.1. Trường</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/fields/ideal.html">5.2. Ideal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/fields/ring-homomorphism.html">5.3. Ring kernel và ring homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/galois-theory/index.html">6. Lý thuyết Galois</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of 6. Lý thuyết Galois</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/galois-theory/extension-field.html">6.1. Extension Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../abstract-algebra/glossary.html">7. Bảng thuật ngữ lý thuyết nhóm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Hình học</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Hình học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../analytic-geometry/index.html">1. Hình học giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of 1. Hình học giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../analytic-geometry/intro.html">1.1. Theo dòng lịch sử</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../analytic-geometry/analytic-geometry.html">1.2. Phương pháp tọa độ trong mặt phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../analytic-geometry/analytic-geometry.html#dao-ham">1.3. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../analytic-geometry/analytic-geometry.html#tich-phan">1.4. Tích phân</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../analytic-geometry/conics.html">1.5. Ba đường Conic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../analytic-geometry/transformation.html">1.6. Phép biến hình</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../brachistochrone/brachistochrone.html">2. Đường đoản thời</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">3. Hình học affine</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of 3. Hình học affine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">3.1. Không gian affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phang">3.2. Phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#doc-lap-affine-va-phu-thuoc-affine">3.3. Độc lập affine và phụ thuộc affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#giao-cua-cac-phang-bao-affine">3.4. Giao của các phẳng. Bao affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vi-tri-tuong-doi">3.5. Vị trí tương đối</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#muc-tieu-va-toa-do-affine">3.6. Mục tiêu và tọa độ affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cong-thuc-doi-muc-tieu">3.7. Công thức đổi mục tiêu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phuong-trinh-cua-m-phang">3.8. Phương trình của <span class="math notranslate nohighlight">\(m\)</span>-phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tam-ti-cu-va-ti-so-don">3.9. Tâm tỉ cự và tỉ số đơn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anh-xa-affine">3.10. Ánh xạ affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#su-xac-dinh-anh-xa-affine">3.11. Sự xác định ánh xạ affine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../noneuclidean.html">4. Hình học phi Euclid</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../calculus/index.html">Giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../calculus/calculus/index.html">1. Giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of 1. Giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/limits.html">1.1. Giới hạn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/continuity.html">1.2. Tính liên tục của hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/monotone.html">1.3. Tính đơn điệu và cực trị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/derivative.html">1.4. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/avarage-value.html">1.5. Một số định lí về giá trị trung bình</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/concave.html">1.6. Tính lồi, lõm và điểm uốn của đồ thị</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../calculus/differential-equation/index.html">2. Phương trình vi phân</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../calculus/series/index.html">3. Chuỗi số</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../calculus/derivative/index.html">4. Đạo hàm</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of 4. Đạo hàm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/derivative/partial-derivative.html">4.1. Đạo hàm một số hàm nhiều biến</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../calculus/integral/index.html">5. Tích phân</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of 5. Tích phân</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/integral/line-integral.html">5.1. Tích phân đường</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../probability/index.html">Xác suất thống kê</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Xác suất thống kê</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../probability/intro.html">Xác suất thống kê</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../probability/ML/index.html">Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Machine Learning</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/linear-regression.html">Linear Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/kmeans.html">K-Means clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/gradient-descent.html">Gradient Descent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/perceptron.html">Perceptron Learning Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../linalg/index.html">Đại số tuyến tính</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of Đại số tuyến tính</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../linalg/matrix/index.html">1. Ma trận</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 1. Ma trận</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linalg/matrix/matrix-determinant.html">1.1. Định thức ma trận</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linalg/matrix/matrix-inversion.html">1.2. Ma trận nghịch đảo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linalg/matrix/matrix-rank.html">1.3. Hạng của ma trận</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/linear-operator.html">2. Toán tử tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/eigen.html">3. Trị riêng và vector riêng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/linear-combination.html">4. Tổ hợp tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/vector-space.html">5. Không gian vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/euclidean-space.html">6. Không gian Euclide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/hilbert-space.html">7. Không gian Hilbert</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../number-theory/index.html">Lý thuyết số</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Lý thuyết số</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/euclidean.html">1. Phép chia Euclid. Thuật toán Euclid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/linear-congruence.html">2. Phương trình đồng dư tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/euler.html">3. Hàm Euler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/quadratic-residue.html">4. Thặng dư chính phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/mobius.html">5. Hàm Möbius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/chinese-remainder-theorem.html">6. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/exercises.html">7. Bài tập số học sưu tầm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/index.html">Toán rời rạc</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Toán rời rạc</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/binary-relation.html">Quan hệ hai ngôi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/partition.html">Phân hoạch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/discrete-fourier-transform.html">Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/combinatoric.html">Đại cương tổ hợp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/recurrence-relation.html">Công thức truy hồi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/graph/index.html">Lý thuyết đồ thị</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topology/index.html">Topology</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../boolean/index.html">Đại số Bool và mật mã học</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Đại số Bool và mật mã học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../boolean/intro.html">1. Giới thiệu</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/boolean-algebra/index.html">2. Đại số Boolean</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 2. Đại số Boolean</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/boolean-function.html">2.1. Hàm boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/boolean-affine.html">2.2. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/boolean-monotone.html">2.3. Hàm đơn điệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/boolean-dnf-cnf.html">2.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/boolean-weight.html">2.5. Khoảng cách Hamming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/walsh-hadamard-spectre.html">2.6. Nonlinearity của hàm boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/block/block-cipher.html">3. Block cipher</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 3. Block cipher</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/spnet.html">3.1. SP network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/AES.html">3.2. AES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/kuznyechik.html">3.3. Kuznyechik</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/present.html">3.4. PRESENT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/feistel.html">3.5. Mô hình Feistel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/magma.html">3.6. Magma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/sms4.html">3.7. SMS4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/arx.html">3.8. ARX</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/stream/stream-cipher.html">4. Stream cipher</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of 4. Stream cipher</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/stream/linear-feedback-shift-register.html">4.1. Linear Feedback Shift Register</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../boolean/mac.html">5. Message Authentication Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptanalysis/index.html">Phá mã</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of Phá mã</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cryptanalysis/differential-attack/index.html">1. Phá mã vi sai</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of 1. Phá mã vi sai</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptanalysis/differential-attack/toycipher.html">1.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptanalysis/differential-attack/tinydes.html">1.2. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptanalysis/differential-attack/difference-and-differential.html">1.3. Difference và differential</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cryptanalysis/linear-attack/index.html">2. Phá mã tuyến tính</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of 2. Phá mã tuyến tính</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptanalysis/linear-attack/tinydes.html">2.1. Phá mã tuyến tính trên TinyDES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptanalysis/slide-attack/index.html">3. Slide attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptanalysis/algebraic-attack/index.html">4. Algebraic cryptanalysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/index.html">Mật mã học</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Mật mã học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cryptography/lattice-based/index.html">1. Lattice-based cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of 1. Lattice-based cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/intro.html">1.1. Nhập môn mật mã dựa trên lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/congruential-pubkey.html">1.2. Congruential public key cryptosystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/ntru.html">1.3. NTRU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/falcon.html">1.4. FALCON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/lattice-reduction-algorithms.html">1.5. Thuật toán rút gọn lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/coppersmith.html">1.6. Phương pháp Coppersmith</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cryptography/code-based/index.html">2. Code-based cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of 2. Code-based cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/intro.html">2.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/decode-problem.html">2.2. Bài toán decode tổng quát</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/linear-code.html">2.3. Linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/weight.html">2.4. Bài toán phổ trọng số của mã tuyến tính</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/decode-on-linear-code.html">2.5. Bài toán decode trên linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/equivalence.html">2.6. Bài toán tương đương các linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/cryptosystem.html">2.7. Ý tưởng xây dựng các hệ mật mã dựa trên mã sửa sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/pubkey-algo.html">2.8. Các hệ mật mã khóa công khai dựa trên lý thuyết code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/goppa-code.html">2.9. Goppa Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/elliptic/index.html">3. Đường cong elliptic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/Kerckhoffs-principle/index.html">4. Nguyên tắc Kerckhoffs và mật mã học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/examen.html">5. Câu hỏi ôn thi mật mã học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/quantum-computing.html">6. Quantum computing</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cryptography/zero-knowledge-proof/index.html">7. Zero Knowledge Proof</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of 7. Zero Knowledge Proof</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/zero-knowledge-proof/intro.html">7.1. Giới thiệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/zero-knowledge-proof/plonk.html">7.2. Plonk Protocol</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../solutions/index.html">Lời giải các bài tập trong sách tham khảo</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle navigation of Lời giải các bài tập trong sách tham khảo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/Judson.html">Abstract Algebra: Theory and Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/Petrushko/index.html">Курс высшей математики: Теория вероятностей</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/index.html">An Introduction to Mathematical Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle navigation of An Introduction to Mathematical Cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/chapter-2.html">Chapter 2. Discrete Logarithms and Diffie-Hellman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/chapter-3.html">Chapter 3. Integer Factorization and RSA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/chapter-4.html">Chapter 4. Digital Signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/chapter-7.html">Chapter 7. Lattices and Cryptography</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/collection.html">Các bài toán sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/cryptohack/index.html">Wargame chill chill</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2020/index.html">Các cuộc thi năm 2020</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2020</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/nsucrypto-2020.html">NSUCRYPTO 2020</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2021/index.html">Các cuộc thi năm 2021</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" role="switch" type="checkbox"/><label for="toctree-checkbox-39"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2021</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/CryptoCTF/index.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/GoogleCTF/index.html">Google CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/nsucrypto.html">NSUCRYPTO 2021</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/index.html">Các cuộc thi năm 2022</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2022</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/downunderCTF/index.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/nsucrypto.html">NSUCRYPTO 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sekaiCTF/index.html">Sekai CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/isitdtu/index.html">ISITDTU Quals 2022</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2023/index.html">Các cuộc thi năm 2023</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2023</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/nsucrypto/index.html">NSUCRYPTO 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/siberian-maths-contest/index.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/amateursCTF.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/backdoorCTF.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/googleCTF.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/diceCTF.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/UTCTF.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/wolvCTF.html">Wolv CTF 2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2024/index.html">Các cuộc thi năm 2024</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" role="switch" type="checkbox"/><label for="toctree-checkbox-42"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2024</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/nsucrypto/index.html">NSUCRYPTO 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/internet-olympiad/index.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/0xL4ughCTF-2024/index.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/ASISCTF-2024/index.html">ASIS CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/TJCTF.html">TJCTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/cryptofox/index.html">CryptoFox 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/isitdtu.html">ISITDTU Quals 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2025/index.html">Các cuộc thi năm 2025</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2025</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/cryptofox/index.html">CryptoFox 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/tjctf.html">TJCTF 2025</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../stuff/index.html">Ngoài lề</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle navigation of Ngoài lề</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/game/index.html">Lý thuyết trò chơi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/graphics.html">Một số đồ thị hàm số sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/about-godel.html">Về một vị giáo sư và định lý Godel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/about-education.html">Nhìn lại giáo dục từ 2018 về trước</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/about-stoicism.html">Chủ nghĩa khắc kỷ và phân phối nhị thức</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/latex/index.html">Trải nghiệm người dùng với LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../russia/index.html">Nước Nga du kí</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle navigation of Nước Nga du kí</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../russia/intro.html">Giới thiệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../russia/good-or-bad.html">Đi học ở Nga tốt hay xấu?</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../russia/criticism/index.html">Góc khẩu nghiệp</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of Góc khẩu nghiệp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../russia/criticism/criticism-2.html">Phần 2. Sinh viên Việt Nam tại Moscow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../russia/contests.html">Các cuộc thi toán ở Nga</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathematicians/index.html">Sưu tầm những câu chuyện về các nhà toán học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../men-of-mathematics/index.html">Men of Mathematics</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" role="switch" type="checkbox"/><label for="toctree-checkbox-47"><div class="visually-hidden">Toggle navigation of Men of Mathematics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../men-of-mathematics/dedicate.html">Lời nói đầu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../men-of-mathematics/00-acknowledgement.html">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/geometry/affine-geometry/affine-space.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="khong-gian-affine">
+<h1><span class="section-number">3.1. </span>Không gian affine<a class="headerlink" href="#khong-gian-affine" title="Link to this heading">¶</a></h1>
+<p>Cho <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> là một không gian vector trên trường <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> và <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> là một tập khác rỗng mà các phần tử của nó gọi là <strong>điểm</strong>.</p>
+<p>Giả sử ta có ánh xạ <span class="math notranslate nohighlight">\(\varphi\)</span> sao cho:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\varphi: \mathcal{A} \times \mathcal{A} \to \mathcal{V}, \ (M, N) \mapsto \varphi(M, N)\]</div>
+</div>
+<p>thỏa hai điều kiện sau:</p>
+<ol class="arabic simple">
+<li><p>Với mọi điểm <span class="math notranslate nohighlight">\(M \in \mathcal{A}\)</span> và vector <span class="math notranslate nohighlight">\(\vec{v} \in \mathcal{V}\)</span>, có duy nhất một điểm <span class="math notranslate nohighlight">\(N \in \mathcal{A}\)</span> sao cho <span class="math notranslate nohighlight">\(\varphi(M, N) = \vec{v}\)</span>.</p></li>
+<li><p>Với ba điểm <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(P\)</span> bất kì ta có</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\varphi(M, N) + \varphi(N, P) = \varphi(M, P).\]</div>
+</div>
+<p>Khi đó, ta nói <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> là một <strong>không gian affine</strong>. Nếu ta nói đầy đủ thì <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> là không gian affine trên trường <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> liên kết với không gian vector <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> bởi ánh xạ liên kết <span class="math notranslate nohighlight">\(\varphi\)</span>.</p>
+<p>Khi đó, <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> được gọi là <strong>không gian vector liên kết</strong> với <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> (hay <strong>không gian nền</strong> của <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>) và kí hiệu là <span class="math notranslate nohighlight">\(\vec{\mathcal{A}}\)</span>.</p>
+<p>Ánh xạ <span class="math notranslate nohighlight">\(\varphi\)</span> được gọi là <strong>ánh xạ liên kết</strong>. Ta kí hiệu <span class="math notranslate nohighlight">\(\varphi(M, N) = \overrightarrow{MN}\)</span>. Khi đó hai điều kiện trên được viết lại thành:</p>
+<ol class="arabic simple">
+<li><p>Với mọi điểm <span class="math notranslate nohighlight">\(M \in \mathcal{A}\)</span> và vector <span class="math notranslate nohighlight">\(\vec{v} \in \vec{\mathcal{A}}\)</span> thì tồn tại duy nhất một điểm <span class="math notranslate nohighlight">\(N \in \mathcal{A}\)</span> sao cho <span class="math notranslate nohighlight">\(\overrightarrow{MN} = \vec{v}\)</span>.</p></li>
+<li><p>Với ba điểm <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(P\)</span> bất kì ta có</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{MN} + \overrightarrow{NP} = \overrightarrow{MP}.\]</div>
+</div>
+<p>Biểu thức ở điều kiện 2 được gọi là <strong>hệ thức Chales</strong>. Hệ thức này đóng vai trò quan trọng trong các đại lượng có hướng (vector, góc định hướng, ...).</p>
+<p>Nếu <span class="math notranslate nohighlight">\(\mathbb{F} = \mathbb{R}\)</span> thì ta gọi là không gian affine thực.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(\mathbb{F} = \mathbb{C}\)</span> thì ta gọi là không gian affine phức.</p>
+<p>Nếu cần nhấn mạnh trường <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> thì ta gọi là <span class="math notranslate nohighlight">\(\mathbb{F}\)</span>-không gian affine.</p>
+<p>Kí hiệu một không gian affine là <span class="math notranslate nohighlight">\((\mathcal{A}, \vec{\mathcal{A}}, \varphi)\)</span>.</p>
+<p>Ta có thể ghi tắt là <span class="math notranslate nohighlight">\(\mathcal{A}(\mathbb{F})\)</span> hoặc <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(\vec{\mathcal{A}}\)</span> là không gian vector <span class="math notranslate nohighlight">\(n\)</span> chiều thì ta nói <span class="math notranslate nohighlight">\(A\)</span> là không gian affine <span class="math notranslate nohighlight">\(n\)</span> chiều và kí hiệu là <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span>. Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\dim \mathcal{A} = \dim \vec{\mathcal{A}}.\]</div>
+</div>
+<div class="proof example admonition" id="exp-affine-space">
+<p class="admonition-title"><span class="caption-number">Ví dụ 3.8 </span></p>
+<section class="example-content" id="proof-content">
+<p>Hệ tọa độ trong không gian <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> mà chúng ta học ở phổ thông. Khi đó:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{A} = \mathbb{R}^3\)</span> là tập hợp tất cả điểm trong không gian.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{\mathcal{A}}\)</span> là tập các vector trong <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>. Về mặt hình học thì vector từ điểm <span class="math notranslate nohighlight">\(A\)</span> tới điểm <span class="math notranslate nohighlight">\(B\)</span> là mũi tên có hướng từ <span class="math notranslate nohighlight">\(A\)</span> tới <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+</ol>
+</section>
+</div><div class="proof example admonition" id="chinh-tac">
+<p class="admonition-title"><span class="caption-number">Ví dụ 3.9 </span></p>
+<section class="example-content" id="proof-content">
+<p>Gọi <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> là không gian vector trên trường <span class="math notranslate nohighlight">\(\mathbb{F}\)</span>. Ánh xạ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\varphi: \mathcal{V} \times \mathcal{V} \to \mathcal{V}, \ (\vec{u}, \vec{v}) \mapsto \varphi(\vec{u}, \vec{v}) = \vec{v} - \vec{u}\]</div>
+</div>
+<p>thỏa mãn định nghĩa vì:</p>
+<ol class="arabic simple">
+<li><p>Với mọi vector <span class="math notranslate nohighlight">\(\vec{u} \in \mathcal{V}\)</span> và <span class="math notranslate nohighlight">\(\vec{w} \in \mathcal{V}\)</span>, tồn tại duy nhất vector <span class="math notranslate nohighlight">\(\vec{v}\)</span> sao cho <span class="math notranslate nohighlight">\(\varphi(\vec{u}, \vec{v}) = \vec{w}\)</span>, tương đương với <span class="math notranslate nohighlight">\(\vec{v} - \vec{u} = \vec{w}\)</span>, hay <span class="math notranslate nohighlight">\(\vec{v} = \vec{u} + \vec{w}\)</span>.</p></li>
+<li><p>Với ba vector <span class="math notranslate nohighlight">\(\vec{u}\)</span>, <span class="math notranslate nohighlight">\(\vec{v}\)</span>, <span class="math notranslate nohighlight">\(\vec{w}\)</span> bất kì thuộc <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> ta có</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\varphi(\vec{u}, \vec{v}) + \varphi(\vec{v}, \vec{w}) = \vec{v} - \vec{u} + \vec{w} - \vec{v} = \vec{w} - \vec{v} = \varphi(\vec{v}, \vec{w}).\]</div>
+</div>
+</section>
+</div><p>Ở <a class="reference internal" href="#chinh-tac">Ví dụ 3.9</a>, <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> là không gian vector liên kết với chính nó nên ta nói <span class="math notranslate nohighlight">\(\varphi\)</span> xác định một <strong>cấu trúc affine chính tắc</strong> trên không gian vector <span class="math notranslate nohighlight">\(\mathcal{V}\)</span>, hay <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> là <strong>không gian affine với cấu trúc affine chính tắc</strong>.</p>
+<p><strong>Tính chất của không gian affine.</strong> Với mọi điểm <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(N\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> bất kì thuộc <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> ta có:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{MN} = \vec{0}\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(M \equiv N\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{MN} = -\overrightarrow{NM}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{MN} = \overrightarrow{PQ}\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(\overrightarrow{MP} = \overrightarrow{NQ}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{MN} = \overrightarrow{PN} - \overrightarrow{PM}\)</span>.</p></li>
+</ol>
+<p>Đây là các công thức cơ bản được học ở phổ thông và ở đây cũng áp dụng.</p>
+</section>
+<section id="phang">
+<h1><span class="section-number">3.2. </span>Phẳng<a class="headerlink" href="#phang" title="Link to this heading">¶</a></h1>
+<p>Một số khái niệm ở phổ thông dưới dạng phẳng:</p>
+<ol class="arabic simple">
+<li><p>Điểm là <span class="math notranslate nohighlight">\(0\)</span>-phẳng.</p></li>
+<li><p>Đường thẳng là <span class="math notranslate nohighlight">\(1\)</span>-phẳng.</p></li>
+<li><p>Mặt phẳng là <span class="math notranslate nohighlight">\(2\)</span>-phẳng.</p></li>
+<li><p>Không gian ba chiều là <span class="math notranslate nohighlight">\(3\)</span>-phẳng.</p></li>
+</ol>
+<p>Chúng ta sẽ định nghĩa <strong>phẳng</strong> là mở rộng cho các khái niệm trên.</p>
+<p>Đầu tiên chúng ta cần một vài nhận xét từ hình học phổ thông.</p>
+<p>Trong mặt phẳng <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, mỗi đường thẳng được xác định khi biết một điểm thuộc nó và một vector chỉ phương <span class="math notranslate nohighlight">\(\vec{v}\)</span>. Khi đó đường thẳng đi qua điểm <span class="math notranslate nohighlight">\(M_0\)</span> và nhận <span class="math notranslate nohighlight">\(\vec{v}\)</span> làm vector chỉ phương là tập các điểm <span class="math notranslate nohighlight">\(M \in \mathbb{R}^2\)</span> sao cho <span class="math notranslate nohighlight">\(\overrightarrow{MM_0} = \alpha \vec{v}\)</span> với <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span>. Nói cách khác là vector <span class="math notranslate nohighlight">\(\overrightarrow{MM_0}\)</span> cùng phương với vector <span class="math notranslate nohighlight">\(\vec{v}\)</span>.</p>
+<div class="proof remark admonition" id="rmk-line-oxy">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.7 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Trên mặt phẳng, đường thẳng đi qua điểm <span class="math notranslate nohighlight">\(M_0\)</span> và nhận <span class="math notranslate nohighlight">\(\vec{v}\)</span> làm vector chỉ phương là tập hợp</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[d = \{ M \in \mathbb{R}^2 : \overrightarrow{MM_0} = \alpha \cdot \vec{v} \ \text{với} \ \alpha \in \mathbb{R} \}.\]</div>
+</div>
+</section>
+</div><p>Trong không gian <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, tương tự, một đường thẳng xác định khi biết một điểm thuộc nó và một vector chỉ phương của nó.</p>
+<div class="proof remark admonition" id="rmk-line-oxyz">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.8 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Trong không gian <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, đường thẳng đi qua điểm <span class="math notranslate nohighlight">\(M_0\)</span> và nhận <span class="math notranslate nohighlight">\(\vec{v}\)</span> làm vector chỉ phương là tập hợp</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[d = \{ M \in \mathbb{R}^2 : \overrightarrow{MM_0} = \alpha \cdot \vec{v} \ \text{với} \ \alpha \in \mathbb{R} \}.\]</div>
+</div>
+</section>
+</div><p>Chúng ta đã biết ở phổ thông rằng, qua ba điểm không thẳng hàng có duy nhất một mặt phẳng đi qua. Ba điểm không thẳng hàng thì tạo thành tam giác, giả sử là <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(N\)</span> và <span class="math notranslate nohighlight">\(P\)</span>. Ta lấy hai cạnh làm hai đường thẳng cho mặt phẳng. Khi đó mặt phẳng trong không gian được xác định bởi điểm <span class="math notranslate nohighlight">\(M\)</span> và hai vector <span class="math notranslate nohighlight">\(\overrightarrow{MN}\)</span> và <span class="math notranslate nohighlight">\(\overrightarrow{MP}\)</span>.</p>
+<div class="proof remark admonition" id="rmk-plane-oxyz">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.9 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Một mặt phẳng trong <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> xác định khi biết một điểm <span class="math notranslate nohighlight">\(M_0\)</span> thuộc nó và một cặp vector <span class="math notranslate nohighlight">\(\vec{u}\)</span>, <span class="math notranslate nohighlight">\(\vec{v}\)</span> của nó. Khi đó mặt phẳng là tập hợp</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[p = \{ M \in \mathbb{R}^3 : \overrightarrow{MM_0} = \alpha \cdot \vec{u} + \beta \cdot \vec{v} \ \text{với} \ \alpha, \beta \in \mathbb{R} \}.\]</div>
+</div>
+</section>
+</div><p>Ta định nghĩa tổng quát cho phẳng</p>
+<div class="proof definition admonition" id="def-plane">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 3.5 </span> (Phẳng)</p>
+<section class="definition-content" id="proof-content">
+<p>Cho <span class="math notranslate nohighlight">\((\mathcal{A}, \vec{\mathcal{A}}, \varphi)\)</span> là một không gian affine, <span class="math notranslate nohighlight">\(M_0\)</span> là một điểm thuộc <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> và <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span> là một không gian vector con của <span class="math notranslate nohighlight">\(\vec{\mathcal{A}}\)</span>. Tập hợp</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\alpha = \{ M \in \mathcal{A} : \overrightarrow{MM_0} \in \vec{\alpha} \}\]</div>
+</div>
+<p>được gọi <strong>phẳng</strong> (hay <strong>plane</strong>) đi qua <span class="math notranslate nohighlight">\(M_0\)</span> với không gian chỉ phương <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span>, hoặc phương <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span>.</p>
+</section>
+</div><p>Nếu <span class="math notranslate nohighlight">\(\dim \vec{\alpha} = m\)</span> thì ta nói <span class="math notranslate nohighlight">\(\alpha\)</span> là <strong>phẳng</strong> <span class="math notranslate nohighlight">\(m\)</span> <strong>chiều</strong> hay <span class="math notranslate nohighlight">\(m\)</span>-<strong>phẳng</strong> và viết <span class="math notranslate nohighlight">\(\dim \alpha = m\)</span>. Như vậy <span class="math notranslate nohighlight">\(\dim \alpha = \dim \vec{\alpha}\)</span>.</p>
+<p>Trước đây chúng ta gọi điểm, đường, mặt phẳng, nhưng khi số chiều cao hơn thì chúng ta không thể &quot;chế&quot; từ vựng mãi được. Khi đó chúng ta quy về khái niệm phẳng, <span class="math notranslate nohighlight">\(1\)</span>-phẳng là đường thẳng, <span class="math notranslate nohighlight">\(2\)</span>-phẳng là mặt phẳng.</p>
+<p><strong>Siêu phẳng</strong> (hay <strong>hyperplane</strong>) là tên gọi của phẳng có đối chiều là <span class="math notranslate nohighlight">\(1\)</span>, tức là nếu số chiều của không gian là <span class="math notranslate nohighlight">\(n\)</span> thì số chiều của siêu phẳng là <span class="math notranslate nohighlight">\(n-1\)</span>.</p>
+<div class="proof remark admonition" id="rmk-plane">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.10 </span></p>
+<section class="remark-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>Nếu <span class="math notranslate nohighlight">\(\alpha\)</span> là phẳng đi qua điểm <span class="math notranslate nohighlight">\(M\)</span> thì <span class="math notranslate nohighlight">\(M \in \alpha\)</span> và với mọi <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> thuộc <span class="math notranslate nohighlight">\(\alpha\)</span> ta có <span class="math notranslate nohighlight">\(\overrightarrow{PQ} = \overrightarrow{MQ} - \overrightarrow{MP}\)</span> thuộc <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(0\)</span>-phẳng là tập chỉ gồm một điểm. Do đó ta có thể xem một điểm là một <span class="math notranslate nohighlight">\(0\)</span>-phẳng.</p></li>
+<li><p>Điểm <span class="math notranslate nohighlight">\(M_0\)</span> trong định nghĩa phẳng có vai trò tổng quát, nghĩa là mọi điểm <span class="math notranslate nohighlight">\(M_0\)</span> trong <span class="math notranslate nohighlight">\(\alpha\)</span> có ý nghĩa như nhau trong định nghĩa phẳng.</p></li>
+<li><p>Giả sử <span class="math notranslate nohighlight">\(\alpha\)</span> là phẳng đi qua <span class="math notranslate nohighlight">\(M\)</span> với phương <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span> là phẳng đi qua <span class="math notranslate nohighlight">\(N\)</span> với phương <span class="math notranslate nohighlight">\(\vec{\beta}\)</span>. Khi đó <span class="math notranslate nohighlight">\(\alpha \subset \beta\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(M \in \beta\)</span> và <span class="math notranslate nohighlight">\(\vec{\alpha} \subset \vec{\beta}\)</span>. Suy ra <span class="math notranslate nohighlight">\(\alpha \equiv \beta\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(P \in \beta\)</span> (hoặc <span class="math notranslate nohighlight">\(Q \in \alpha\)</span>) và <span class="math notranslate nohighlight">\(\vec{\alpha} \equiv \vec{\beta}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(\alpha\)</span> là phẳng với phương <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span> thì <span class="math notranslate nohighlight">\(\alpha\)</span> là không gian affine liên kết với <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span> bởi ánh xạ liên kết</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\varphi_{\alpha \times \alpha} : \alpha \times \alpha \to \vec{\alpha}.\]</div>
+</div>
+<p>Vì vậy ta có thể xem phẳng là không gian affine con.</p>
+</section>
+</div><p>Để xác định một không gian vector thì ta chỉ cần một cơ sở của nó. Do đó để xác định phương <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span> của <span class="math notranslate nohighlight">\(m\)</span>-phẳng <span class="math notranslate nohighlight">\(\alpha\)</span> thì ta cũng chỉ cần biết một cơ sở là đủ.</p>
+<p>Do một không gian vector có thể có nhiều cơ sở khác nhau, một <span class="math notranslate nohighlight">\(m\)</span>-phẳng chỉ có một không gian chỉ phương duy nhất nhưng có thể có nhiều cơ sở khác nhau.</p>
+</section>
+<section id="doc-lap-affine-va-phu-thuoc-affine">
+<h1><span class="section-number">3.3. </span>Độc lập affine và phụ thuộc affine<a class="headerlink" href="#doc-lap-affine-va-phu-thuoc-affine" title="Link to this heading">¶</a></h1>
+<div class="proof definition admonition" id="def-depend-independ-affine">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 3.6 </span> (Độc lập và phụ thuộc affine)</p>
+<section class="definition-content" id="proof-content">
+<p>Hệ <span class="math notranslate nohighlight">\(m+1\)</span> điểm</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\{ A_0, A_1, \ldots, A_m \}\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(m \geqslant 1\)</span> của không gian affine <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> được gọi là <strong>độc lập affine</strong> nếu hệ <span class="math notranslate nohighlight">\(m\)</span> vector</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\{ \overrightarrow{A_0 A_1}, \overrightarrow{A_0 A_2}, \ldots, \overrightarrow{A_0 A_m} \}\]</div>
+</div>
+<p>của <span class="math notranslate nohighlight">\(\vec{\mathcal{A}}\)</span> là một hệ vector độc lập tuyến tính.</p>
+<p>Ngược lại, hệ điểm không độc lập affine được gọi là <strong>phụ thuộc affine</strong>.</p>
+</section>
+</div><ol class="arabic simple">
+<li><p>Tập chỉ gồm một điểm <span class="math notranslate nohighlight">\(A_0\)</span> được quy ước là luôn độc lập affine.</p></li>
+<li><p>Trong định nghĩa điểm <span class="math notranslate nohighlight">\(A_0\)</span> bình đẳng như các điểm khác vì hệ vector</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\{ \overrightarrow{A_0 A_1}, \overrightarrow{A_0, A_1}, \ldots, \overrightarrow{A_0 A_m} \}\]</div>
+</div>
+<p>độc lập affine thì hệ vector</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\{ \overrightarrow{A_i A_0}, \overrightarrow{A_i A_{i-1}}, \overrightarrow{A_i A_{i+1}}, \ldots, \overrightarrow{A_i A_m} \}\]</div>
+</div>
+<p>cũng độc lập affine.</p>
+<div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Xét tổ hợp tuyến tính</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[I = \lambda_1 \overrightarrow{A_0 A_1} + \lambda_2 \overrightarrow{A_0 A_2} + \cdots + \lambda_m \overrightarrow{A_0 A_m} = \vec{0}.\]</div>
+</div>
+<p>Do hệ vector độc lập tuyến tính nên <span class="math notranslate nohighlight">\(\lambda_1 = \lambda_2 = \cdots = \lambda_m = 0\)</span>. Khi đó, biến đổi <span class="math notranslate nohighlight">\(I\)</span> ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}I &amp; = \lambda_1 (\overrightarrow{A_i A_1} - \overrightarrow{A_i A_0}) + \lambda_2 (\overrightarrow{A_i A_2} - \overrightarrow{A_i A_0}) + \cdots + \lambda_{i-1} (\overrightarrow{A_i A_{i-1}} - \overrightarrow{A_i A_0}) \\ &amp; + \lambda_i \overrightarrow{A_0 A_i} + \lambda_{i+1} (\overrightarrow{A_i A_{i+1}} - \overrightarrow{A_i A_0}) + \cdots + \lambda_m (\overrightarrow{A_i A_m} - \overrightarrow{A_i A_0}) \\
+&amp; = \lambda_1 \overrightarrow{A_i A_1} + \lambda_2 \overrightarrow{A_i A_2} + \cdots + \lambda_m \overrightarrow{A_i A_m} \\
+&amp; - \underbrace{(\lambda_1 + \cdots + \lambda_m) \overrightarrow{A_i A_0}}_{\vec{0}} \\
+&amp; = \lambda_1 \overrightarrow{A_i A_1} + \lambda_2 \overrightarrow{A_i A_2} + \cdots + \lambda_m \overrightarrow{A_i A_m} = \vec{0}\end{split}\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(\lambda_1 = \cdots = \lambda_m = 0\)</span>. Như vậy hệ vector mới cũng độc lập tuyến tính.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Hệ điểm <span class="math notranslate nohighlight">\(\{ A_0, \ldots, A_m \}\)</span> phụ thuộc affine khi và chỉ khi hệ vector</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\{ \overrightarrow{A_0 A_1}, \cdots, \overrightarrow{A_0 A_m} \}\]</div>
+</div>
+<p>phụ thuộc tuyến tính.</p>
+<ol class="arabic simple" start="4">
+<li><p>Hệ con của một hệ độc lập thì độc lập, nhưng hệ con của một hệ phụ thuộc chưa chắc phụ thuộc.</p></li>
+</ol>
+<div class="proof theorem admonition" id="thm-n-1-dependence">
+<p class="admonition-title"><span class="caption-number">Định lí 3.1 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Trong không gian affine <span class="math notranslate nohighlight">\(n\)</span> chiều <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span>, với <span class="math notranslate nohighlight">\(0 &lt; m \leqslant n+1\)</span> thì luôn tồn tại các hệ <span class="math notranslate nohighlight">\(m\)</span> điểm độc lập. Mọi hệ gồm hơn <span class="math notranslate nohighlight">\(n+1\)</span> điểm đều phụ thuộc.</p>
+</section>
+</div></section>
+<section id="giao-cua-cac-phang-bao-affine">
+<h1><span class="section-number">3.4. </span>Giao của các phẳng. Bao affine<a class="headerlink" href="#giao-cua-cac-phang-bao-affine" title="Link to this heading">¶</a></h1>
+<p>Cho <span class="math notranslate nohighlight">\(\{ \alpha_i : i \in I \}\)</span> là một họ không rỗng các phẳng trong không gian affine <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>.</p>
+<div class="proof theorem admonition" id="phuong-giao">
+<p class="admonition-title"><span class="caption-number">Định lí 3.2 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(\bigcap\limits_{i \in I} \alpha_i \neq \emptyset\)</span> thì <span class="math notranslate nohighlight">\(\bigcap\limits_{i \in I} \alpha_i\)</span> là một phẳng có phương là <span class="math notranslate nohighlight">\(\bigcap\limits_{i \in I} \vec{\alpha}_i\)</span>.</p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Vì <span class="math notranslate nohighlight">\(\bigcap\limits_{i \in I} \alpha_i \neq \emptyset\)</span> nên tồn tại điểm <span class="math notranslate nohighlight">\(M\)</span> thuộc <span class="math notranslate nohighlight">\(\bigcap\limits_{i \in I} \alpha_i\)</span>, như vậy <span class="math notranslate nohighlight">\(M \in \alpha_i\)</span> với mọi <span class="math notranslate nohighlight">\(i \in I\)</span>.</p>
+<p>Nếu ta có điểm <span class="math notranslate nohighlight">\(N \in \bigcap\limits_{i \in I} \alpha_i\)</span> thì <span class="math notranslate nohighlight">\(N \in \alpha_i\)</span> với mọi <span class="math notranslate nohighlight">\(i \in I\)</span>. Suy ra <span class="math notranslate nohighlight">\(\overrightarrow{MN} \in \vec{\alpha}_i\)</span> với mọi <span class="math notranslate nohighlight">\(i \in I\)</span>. Từ đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{MN} \in \bigcap_{i \in I} \vec{\alpha}_i \Longleftrightarrow \bigcap_{i \in I} \alpha_i = \{ N \in \mathcal{A} : \overrightarrow{MN} \in \bigcap_{i \in I} \vec{\alpha}_i \},\]</div>
+</div>
+<p>nghĩa là <span class="math notranslate nohighlight">\(\bigcap\limits_{i \in I} \alpha_i\)</span> là phẳng đi qua <span class="math notranslate nohighlight">\(M\)</span> với không gian chỉ phương là <span class="math notranslate nohighlight">\(\bigcap\limits_{i \in I} \vec{\alpha}_i\)</span>.</p>
+</div>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 3.7 </span> (Phẳng giao)</p>
+<section class="definition-content" id="proof-content">
+<p>Phẳng <span class="math notranslate nohighlight">\(\bigcap\limits_{i \in I} \alpha_i\)</span> trong định lí trên được gọi là <strong>phẳng giao</strong> của các phẳng <span class="math notranslate nohighlight">\(\alpha_i\)</span>.</p>
+</section>
+</div><p>Từ định nghĩa ta thấy rằng <span class="math notranslate nohighlight">\(\bigcap\limits_{i \in I} \alpha_i\)</span> là phẳng lớn nhất (theo nghĩa quan hệ bao hàm) chứa trong tất cả các phẳng <span class="math notranslate nohighlight">\(\alpha_i\)</span> với <span class="math notranslate nohighlight">\(i \in I\)</span>.</p>
+<div class="proof definition admonition" id="def-bao-affine">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 3.8 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Cho <span class="math notranslate nohighlight">\(X\)</span> là một tập con khác rỗng của không gian affine <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>. Khi đó giao của mọi phẳng chứa <span class="math notranslate nohighlight">\(X\)</span> trong <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> sẽ là một phẳng, gọi là <strong>bao affine</strong> của <span class="math notranslate nohighlight">\(X\)</span>. Kí hiệu là <span class="math notranslate nohighlight">\(\langle X \rangle\)</span>.</p>
+</section>
+</div><p>Bao affine <span class="math notranslate nohighlight">\(\langle X \rangle\)</span>, theo quan hệ bao hàm, của tập <span class="math notranslate nohighlight">\(X\)</span> là phẳng bé nhất chứa <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<div class="proof definition admonition" id="def-phang-tong">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 3.9 </span> (Phẳng tổng)</p>
+<section class="definition-content" id="proof-content">
+<p>Cho <span class="math notranslate nohighlight">\(\{ \alpha_i : i \in I \}\)</span> là một họ không rỗng các phẳng. Bao affine của tập hợp <span class="math notranslate nohighlight">\(\bigcup\limits_{i \in I} \alpha_i\)</span> được gọi là <strong>phẳng tổng</strong> (hay <strong>tổng</strong>) của các phẳng <span class="math notranslate nohighlight">\(\alpha_i\)</span>. Kí hiệu là <span class="math notranslate nohighlight">\(\sum\limits_{i \in I} \alpha_i\)</span>.</p>
+</section>
+</div><p>Phẳng tổng là phẳng bé nhất (có số chiều nhỏ nhất) chứa tất cả <span class="math notranslate nohighlight">\(\alpha_i\)</span> với <span class="math notranslate nohighlight">\(i \in I\)</span>. Khi <span class="math notranslate nohighlight">\(I\)</span> là tập hữu hạn, giả sử <span class="math notranslate nohighlight">\(I = \{ 1, 2, \ldots, n \}\)</span> thì ta viết</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\alpha_1 + \alpha_2 + \cdots + \alpha_n \ \text{hay} \ \sum_{i=1}^n \alpha_i\]</div>
+</div>
+<p>để biểu diễn tổng của các phẳng <span class="math notranslate nohighlight">\(\alpha_i\)</span>.</p>
+<div class="proof remark admonition" id="rmk-tong-0-phang">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.11 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(X\)</span> là một hệ hữu hạn điểm</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[X = \{ M_0, M_1, \ldots, M_n \}\]</div>
+</div>
+<p>thì tổng <span class="math notranslate nohighlight">\(M_0 + \cdots + M_n\)</span> là phẳng có số chiều nhỏ nhất đi qua các điểm này. Ở đây ta xem mỗi điểm <span class="math notranslate nohighlight">\(M_i\)</span> là <span class="math notranslate nohighlight">\(0\)</span>-phẳng. Hơn nữa</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\dim (M_0 + M_1 + \cdots + M_n) = \mathrm{rank} (\overrightarrow{M_0 M_1}, \ldots, \overrightarrow{M_0 M_n}).\]</div>
+</div>
+<p>Do đó nếu hệ điểm <span class="math notranslate nohighlight">\(\{ M_0, \ldots, M_n \}\)</span> độc lập thì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\boxed{\dim(M_0 + M_1 + \cdots + M_n) = n.}\]</div>
+</div>
+</section>
+</div><div class="proof theorem admonition" id="thm-giao-2-phang">
+<p class="admonition-title"><span class="caption-number">Định lí 3.3 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Cho <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> là hai phẳng. Nếu <span class="math notranslate nohighlight">\(\alpha \cap \beta \neq \emptyset\)</span> thì với mọi điểm <span class="math notranslate nohighlight">\(M\)</span> thuộc <span class="math notranslate nohighlight">\(\alpha\)</span> và với mọi điểm <span class="math notranslate nohighlight">\(N\)</span> thuộc <span class="math notranslate nohighlight">\(\beta\)</span> ta có <span class="math notranslate nohighlight">\(\overrightarrow{MN} = \vec{\alpha} + \vec{\beta}\)</span>.</p>
+<p>Ngược lại, nếu ta có điểm <span class="math notranslate nohighlight">\(M \in \alpha\)</span> và điểm <span class="math notranslate nohighlight">\(N \in \beta\)</span> sao cho <span class="math notranslate nohighlight">\(\overrightarrow{MN} = \vec{\alpha} + \vec{\beta}\)</span> thì <span class="math notranslate nohighlight">\(\alpha \cap \beta \neq \emptyset\)</span>.</p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Giả sử <span class="math notranslate nohighlight">\(\alpha \cap \beta \neq \emptyset\)</span>. Khi đó tồn tại điểm <span class="math notranslate nohighlight">\(P \in \alpha \cap \beta\)</span>. Với mọi điểm <span class="math notranslate nohighlight">\(M \in \alpha\)</span> ta có <span class="math notranslate nohighlight">\(\overrightarrow{MP} \in \vec{\alpha}\)</span>, tương tự với mọi điểm <span class="math notranslate nohighlight">\(N \in \beta\)</span> ta có <span class="math notranslate nohighlight">\(\overrightarrow{PN} \in \vec{\beta}\)</span>. Suy ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{MP} + \overrightarrow{PN} = \overrightarrow{MN} = \vec{\alpha} + \vec{\beta}.\]</div>
+</div>
+<p>Ngược lại, giả sử có điểm <span class="math notranslate nohighlight">\(M \in \alpha\)</span> và điểm <span class="math notranslate nohighlight">\(N \in \beta\)</span> sao cho <span class="math notranslate nohighlight">\(\overrightarrow{MN} = \vec{\alpha} + \vec{\beta}\)</span>. Khi đó <span class="math notranslate nohighlight">\(\overrightarrow{MN} = \vec{u} + \vec{v}\)</span> với <span class="math notranslate nohighlight">\(\vec{u} \in \vec{\alpha}\)</span> và <span class="math notranslate nohighlight">\(\vec{v} \in \vec{\beta}\)</span>. Điều này xảy ra nếu tồn tại duy nhất điểm <span class="math notranslate nohighlight">\(P \in \alpha\)</span> sao cho <span class="math notranslate nohighlight">\(\overrightarrow{MP} = \vec{u}\)</span>, tương tự tồn tại duy nhất điểm <span class="math notranslate nohighlight">\(Q \in \beta\)</span> sao cho <span class="math notranslate nohighlight">\(\overrightarrow{QN} = \vec{v}\)</span>.</p>
+<p>Khi đó, vì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{MN} = \vec{u} + \vec{v} = \overrightarrow{MP} + \overrightarrow{QN} = \overrightarrow{MP} - \overrightarrow{NQ}.\]</div>
+</div>
+<p>Chuyển vế và đổi dấu ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{MP} = \overrightarrow{MN} + \overrightarrow{NQ} = \overrightarrow{MQ}\]</div>
+</div>
+<p>nên <span class="math notranslate nohighlight">\(P \equiv Q\)</span>. Như vậy <span class="math notranslate nohighlight">\(\alpha \cap \beta \neq \emptyset\)</span> vì có ít nhất một điểm <span class="math notranslate nohighlight">\(P \equiv Q\)</span> thuộc giao của hai phẳng.</p>
+</div>
+<div class="proof theorem admonition" id="theo-dim">
+<p class="admonition-title"><span class="caption-number">Định lí 3.4 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Giả sử <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> là hai phẳng với phương lần lượt là <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span> và <span class="math notranslate nohighlight">\(\vec{\beta}\)</span>. Khi đó:</p>
+<ol class="arabic simple">
+<li><p>Nếu <span class="math notranslate nohighlight">\(\alpha \cap \beta \neq \emptyset\)</span> thì</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\dim (\alpha + \beta) = \dim \alpha + \dim \beta = \dim (\alpha \cap \beta).\]</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Nếu <span class="math notranslate nohighlight">\(\alpha \cap \beta = \emptyset\)</span> thì</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\dim (\alpha + \beta) = \dim \alpha + \dim \beta = \dim (\vec{\alpha} + \vec{\beta}) + 1.\]</div>
+</div>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh công thức 1</p>
+<p>Nếu <span class="math notranslate nohighlight">\(\alpha \cap \beta \neq \emptyset\)</span> thì theo <a class="reference internal" href="#phuong-giao">Định lí 3.2</a> ta có <span class="math notranslate nohighlight">\(\alpha \cap \beta\)</span> là một phẳng có phương <span class="math notranslate nohighlight">\(\vec{\alpha} \cap \vec{\beta}\)</span>.</p>
+<p>Lấy điểm <span class="math notranslate nohighlight">\(M \in \alpha \cap \beta\)</span> và gọi <span class="math notranslate nohighlight">\(\gamma\)</span> là phẳng đi qua <span class="math notranslate nohighlight">\(M\)</span> với phương <span class="math notranslate nohighlight">\(\vec{\gamma} = \vec{\alpha} + \vec{\beta}\)</span>. Ta có <span class="math notranslate nohighlight">\(\alpha \subset \gamma\)</span> và <span class="math notranslate nohighlight">\(\beta \subset \gamma\)</span>.</p>
+<p>Ngoài ra nếu có phẳng <span class="math notranslate nohighlight">\(\gamma'\)</span> chứa <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> thì <span class="math notranslate nohighlight">\(M \in \gamma'\)</span> và phương của <span class="math notranslate nohighlight">\(\gamma'\)</span> phải chứa <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span> và <span class="math notranslate nohighlight">\(\vec{\beta}\)</span>. Nói cách khác ta có <span class="math notranslate nohighlight">\(\gamma \subset \gamma'\)</span>.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(\gamma\)</span> là phẳng nhỏ nhất chứa <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span>, tức là <span class="math notranslate nohighlight">\(\gamma = \alpha + \beta\)</span>. Do đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\dim (\alpha + \beta) &amp; = \dim \gamma = \dim \vec{\gamma} \\
+&amp; = \dim(\vec{\alpha} + \vec{\beta}) = \dim \vec{\alpha} + \dim \vec{\beta} \\
+&amp; = \dim \alpha + \dim \beta \stackrel{?}{=} \dim(\alpha \cap \beta).\end{split}\]</div>
+</div>
+</div>
+<div class="danger dropdown admonition">
+<p class="admonition-title">[TODO] Chứng minh công thức 2</p>
+<p>[TODO]</p>
+</div>
+</section>
+<section id="vi-tri-tuong-doi">
+<h1><span class="section-number">3.5. </span>Vị trí tương đối<a class="headerlink" href="#vi-tri-tuong-doi" title="Link to this heading">¶</a></h1>
+<div class="proof definition admonition" id="def-equiv-position">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 3.10 </span> (Vị trí tương đối giữa hai phẳng)</p>
+<section class="definition-content" id="proof-content">
+<p>Hai phẳng <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> được gọi là <strong>cắt nhau cấp</strong> <span class="math notranslate nohighlight">\(r\)</span> nếu <span class="math notranslate nohighlight">\(\alpha \cap \beta\)</span> là một <span class="math notranslate nohighlight">\(r\)</span>-phẳng.</p>
+<p>Hai phẳng <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> được gọi là <strong>chéo nhau cấp</strong> <span class="math notranslate nohighlight">\(r\)</span> nếu <span class="math notranslate nohighlight">\(\alpha \cap \beta = \emptyset\)</span> và <span class="math notranslate nohighlight">\(\dim (\vec{\alpha} \cap \vec{\beta}) = r\)</span>.</p>
+<p>Hai phẳng <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> được gọi là <strong>song song</strong> (với nhau) nếu <span class="math notranslate nohighlight">\(\vec{\alpha} \subset \vec{\beta}\)</span> hoặc <span class="math notranslate nohighlight">\(\vec{\beta} \subset \vec{\alpha}\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="exp-equiv-pos-3d">
+<p class="admonition-title"><span class="caption-number">Ví dụ 3.10 </span></p>
+<section class="example-content" id="proof-content">
+<p>Xét không gian ba chiều <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Hai đường thẳng &quot;cắt nhau&quot; là hai <span class="math notranslate nohighlight">\(1\)</span>-phẳng cắt nhau cấp <span class="math notranslate nohighlight">\(0\)</span> (tại một điểm). Tổng của chúng là mặt phẳng duy nhất xác định bởi hai đường thẳng đó.</p></li>
+<li><p>Hai mặt phẳng &quot;cắt nhau&quot; là hai <span class="math notranslate nohighlight">\(2\)</span>-phẳng cắt nhau cấp <span class="math notranslate nohighlight">\(1\)</span> (đường thẳng chung). Tổng của chúng là toàn bộ <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>.</p></li>
+</ol>
+</section>
+</div><p>Theo <a class="reference internal" href="#theo-dim">Định lí 3.4</a>, trong <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> không tồn tại hai mặt phẳng chéo nhau cấp <span class="math notranslate nohighlight">\(0\)</span> hoặc <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<div class="proof theorem admonition" id="parallel">
+<p class="admonition-title"><span class="caption-number">Định lí 3.5 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Cho hai phẳng song song <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span>. Nếu <span class="math notranslate nohighlight">\(\alpha \cap \beta \neq \emptyset\)</span> thì <span class="math notranslate nohighlight">\(\alpha \subset \beta\)</span> hoặc <span class="math notranslate nohighlight">\(\beta \subset \alpha\)</span>.</p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Do <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> có điểm chung nên theo <a class="reference internal" href="#phuong-giao">Định lí 3.2</a> <span class="math notranslate nohighlight">\(\alpha \cap \beta\)</span> là một phẳng có phương <span class="math notranslate nohighlight">\(\vec{\alpha} \cap \vec{\beta}\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(\alpha\)</span> song song <span class="math notranslate nohighlight">\(\beta\)</span> nên <span class="math notranslate nohighlight">\(\vec{\alpha} \subset \vec{\beta}\)</span> hoặc <span class="math notranslate nohighlight">\(\vec{\beta} \subset \vec{\alpha}\)</span>.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(\vec{\alpha} \subset \vec{\beta}\)</span> thì <span class="math notranslate nohighlight">\(\vec{\alpha} \cap \vec{\beta} = \vec{\alpha}\)</span>, suy ra <span class="math notranslate nohighlight">\(\alpha \cap \beta = \alpha\)</span>, hay <span class="math notranslate nohighlight">\(\alpha \subset \beta\)</span>.</p>
+<p>Tương tự, nếu <span class="math notranslate nohighlight">\(\vec{\beta} \subset \vec{\alpha}\)</span> thì <span class="math notranslate nohighlight">\(\beta \subset \alpha\)</span>.</p>
+</div>
+<div class="proof theorem admonition" id="thm-phang-ss">
+<p class="admonition-title"><span class="caption-number">Định lí 3.6 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Qua một điểm <span class="math notranslate nohighlight">\(M\)</span> có một và chỉ một <span class="math notranslate nohighlight">\(m\)</span>-phẳng song song với <span class="math notranslate nohighlight">\(m\)</span>-phẳng <span class="math notranslate nohighlight">\(\alpha\)</span> đã cho.</p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Gọi <span class="math notranslate nohighlight">\(\beta\)</span> là <span class="math notranslate nohighlight">\(m\)</span>-phẳng đi qua điểm <span class="math notranslate nohighlight">\(M\)</span> với phương <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span>.</p>
+<p>Khi đó <span class="math notranslate nohighlight">\(\beta\)</span> là phẳng <span class="math notranslate nohighlight">\(m\)</span> chiều song song với <span class="math notranslate nohighlight">\(\alpha\)</span>. Nếu <span class="math notranslate nohighlight">\(\beta'\)</span> cũng là <span class="math notranslate nohighlight">\(m\)</span>-phẳng đi qua <span class="math notranslate nohighlight">\(A\)</span> và song song với <span class="math notranslate nohighlight">\(\alpha\)</span> thì suy ra <span class="math notranslate nohighlight">\(\vec{\beta} = \vec{\beta}'\)</span> (và cũng bằng <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span>).</p>
+<p>Do <span class="math notranslate nohighlight">\(\beta\)</span> và <span class="math notranslate nohighlight">\(\beta'\)</span> có điểm chung nên theo <a class="reference internal" href="#parallel">Định lí 3.5</a> ta có <span class="math notranslate nohighlight">\(\beta \equiv \beta'\)</span>.</p>
+</div>
+<div class="proof theorem admonition" id="thm-phang-ss-x">
+<p class="admonition-title"><span class="caption-number">Định lí 3.7 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Trong không gian affine <span class="math notranslate nohighlight">\(n\)</span> chiều <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span> cho một siêu phẳng <span class="math notranslate nohighlight">\(\alpha\)</span> và một <span class="math notranslate nohighlight">\(m\)</span>-phẳng <span class="math notranslate nohighlight">\(\beta\)</span> với <span class="math notranslate nohighlight">\(1 \leqslant m \leqslant n-1\)</span>. Khi đó <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> hoặc song song, hoặc cắt nhau theo một <span class="math notranslate nohighlight">\((m-1)\)</span>-phẳng.</p>
+</section>
+</div></section>
+<section id="muc-tieu-va-toa-do-affine">
+<h1><span class="section-number">3.6. </span>Mục tiêu và tọa độ affine<a class="headerlink" href="#muc-tieu-va-toa-do-affine" title="Link to this heading">¶</a></h1>
+<div class="proof definition admonition" id="def-target-affine">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 3.11 </span> (Mục tiêu affine)</p>
+<section class="definition-content" id="proof-content">
+<p>Cho <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span> là một không gian affine <span class="math notranslate nohighlight">\(n\)</span> chiều. Hệ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\{ O, \vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n \}\]</div>
+</div>
+<p>gồm một điểm <span class="math notranslate nohighlight">\(O \in \mathcal{A}^n\)</span> và một cơ sở <span class="math notranslate nohighlight">\(\{ \vec{e}_1, \ldots, \vec{e}_n \}\)</span> của <span class="math notranslate nohighlight">\(\vec{\mathcal{A}}^n\)</span> được gọi là <strong>mục tiêu affine</strong> (hay <strong>mục tiêu</strong>) của <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span>.</p>
+<p>Điểm <span class="math notranslate nohighlight">\(O\)</span> được gọi là <strong>gốc</strong>, các vector <span class="math notranslate nohighlight">\(\vec{e}_i\)</span> được gọi là <strong>vector cơ sở thứ</strong> <span class="math notranslate nohighlight">\(i\)</span> với <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>.</p>
+</section>
+</div><p>Giả sử <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span> là một mục tiêu của không gian affine <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span>.</p>
+<p>Khi đó với mọi điểm <span class="math notranslate nohighlight">\(M \in \mathcal{A}^n\)</span>, vector <span class="math notranslate nohighlight">\(\overrightarrow{OM} \in \mathcal{A}^n\)</span> nên ta có biểu diễn tuyến tính của <span class="math notranslate nohighlight">\(\overrightarrow{OM}\)</span> qua cơ sở <span class="math notranslate nohighlight">\(\{ \vec{e}_i \}\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{OM} = \sum_{i=1}^n x_i \vec{e}_i.\]</div>
+</div>
+<p>Khi đó, nhắc lại kiến thức đại số tuyến tính, vector <span class="math notranslate nohighlight">\(\overrightarrow{OM}\)</span> có tọa độ <span class="math notranslate nohighlight">\((x_1, \ldots, x_n)\)</span> đối với cơ sở <span class="math notranslate nohighlight">\(\{ \vec{e}_i \}\)</span>, <span class="math notranslate nohighlight">\(x_i\)</span> là các phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> với <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span>.</p>
+<p>Bộ <span class="math notranslate nohighlight">\((x_1, \ldots, x_n)\)</span> được gọi là <strong>tọa độ</strong> của <span class="math notranslate nohighlight">\(M\)</span> trong mục tiêu <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span>, và <span class="math notranslate nohighlight">\(x_i\)</span> được gọi là <strong>tọa độ thứ</strong> <span class="math notranslate nohighlight">\(i\)</span>. Kí hiệu là <span class="math notranslate nohighlight">\(M(x_i)\)</span>.</p>
+<p>Giả sử <span class="math notranslate nohighlight">\(M\)</span> có tọa độ <span class="math notranslate nohighlight">\((x_i)\)</span> và <span class="math notranslate nohighlight">\(N\)</span> có tọa độ <span class="math notranslate nohighlight">\((y_i)\)</span> thì đối với mục tiêu <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span> ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{MN} = \overrightarrow{ON} - \overrightarrow{OM} = (y_i - x_i).\]</div>
+</div>
+<p>Đây là tọa độ của <span class="math notranslate nohighlight">\(\overrightarrow{MN}\)</span> trong mục tiêu <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span>.</p>
+<div class="proof remark admonition" id="rmk-geo-to-alg">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.12 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Giả sử trên <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span> đã chọn được mục tiêu cố định <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span>. Xét ánh xạ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\varphi : A \to \mathbb{F}^n, \ M \to (x_i)\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\((x_i)\)</span> là tọa độ của <span class="math notranslate nohighlight">\(M\)</span> trong mục tiêu. Khi đó <span class="math notranslate nohighlight">\(\varphi\)</span> là song ánh và mỗi điểm được đồng nhất với một phần tử của <span class="math notranslate nohighlight">\(\mathbb{F}^n\)</span>. Lúc này chúng ta đã đại số hóa hình học.</p>
+</section>
+</div><div class="proof remark admonition" id="rmk-target-affine">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.13 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Xét mục tiêu affine <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span> của <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span> và gọi <span class="math notranslate nohighlight">\(E_i \in \mathcal{A}\)</span> là các điểm sao cho <span class="math notranslate nohighlight">\(\overrightarrow{OE_i} = \vec{e}_i\)</span>.</p>
+<p>Khi đó hệ điểm <span class="math notranslate nohighlight">\(\{ O, E_1, \ldots, E_n \}\)</span> độc lập affine. Ngược lại, một hệ điểm gồm <span class="math notranslate nohighlight">\(n+1\)</span> độc lập <span class="math notranslate nohighlight">\(\{ O, E_1, \ldots, E_n \}\)</span> độc lập affine xác định một mục tiêu affine <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span> với <span class="math notranslate nohighlight">\(\vec{e}_i = \overrightarrow{OE_i}\)</span>.</p>
+<p>Theo định nghĩa ta có <span class="math notranslate nohighlight">\(O = (0, \ldots, 0)\)</span> và <span class="math notranslate nohighlight">\(E_i = (0, \ldots, 0, 1, 0, \ldots, 0)\)</span> với số <span class="math notranslate nohighlight">\(1\)</span> ở vị trí <span class="math notranslate nohighlight">\(i\)</span>.</p>
+</section>
+</div><div class="proof remark admonition" id="rmk-hyperplane-i">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.14 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Siêu phẳng đi qua <span class="math notranslate nohighlight">\(n\)</span> điểm độc lập <span class="math notranslate nohighlight">\(O\)</span>, <span class="math notranslate nohighlight">\(E_1\)</span>, ..., <span class="math notranslate nohighlight">\(E_{i-1}\)</span>, <span class="math notranslate nohighlight">\(E_{i+1}\)</span>, ..., <span class="math notranslate nohighlight">\(E_n\)</span> được gọi là <strong>siêu phẳng tọa độ thứ</strong> <span class="math notranslate nohighlight">\(i\)</span>. Dễ thấy <span class="math notranslate nohighlight">\(M\)</span> thuộc siêu phẳng tọa độ thứ <span class="math notranslate nohighlight">\(i\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(x_i = 0\)</span> với <span class="math notranslate nohighlight">\(x_i\)</span> là tọa độ thứ <span class="math notranslate nohighlight">\(i\)</span> của <span class="math notranslate nohighlight">\(M\)</span>.</p>
+</section>
+</div></section>
+<section id="cong-thuc-doi-muc-tieu">
+<h1><span class="section-number">3.7. </span>Công thức đổi mục tiêu<a class="headerlink" href="#cong-thuc-doi-muc-tieu" title="Link to this heading">¶</a></h1>
+<p>Giả sử trong không gian affine <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span> có hai mục tiêu <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span> và <span class="math notranslate nohighlight">\(\{ O', \vec{e}_i' \}\)</span>.</p>
+<p>Mỗi điểm <span class="math notranslate nohighlight">\(M\)</span> sẽ có tọa độ khác nhau ứng với mỗi mục tiêu <span class="math notranslate nohighlight">\((x_i)\)</span> và <span class="math notranslate nohighlight">\((x_i')\)</span>. Ta cần tìm mối liên hệ giữa chúng.</p>
+<p>Do <span class="math notranslate nohighlight">\(\vec{e}_i\)</span> là cơ sở của không gian vector nên mọi vector trong không gian vector có thể biểu diễn dưới dạng tổ hợp tuyến tính của các vector trong cơ sở, như vậy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{OO'} = \sum_{i=1}^n b_i \vec{e}_i\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(b_i \in \mathbb{F}\)</span>.</p>
+<p>Biểu diễn các vector trong cơ sở <span class="math notranslate nohighlight">\(\vec{e}_i'\)</span> bởi tổ hợp tuyến tính các vector trong cơ sở <span class="math notranslate nohighlight">\(\vec{e}_i\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    \vec{e}_1' = c_{11} \vec{e}_1 + c_{12} \vec{e}_2 + \cdots + c_{1n} \vec{e}_n \\
+    \vec{e}_2' = c_{21} \vec{e}_1 + c_{22} \vec{e}_2 + \cdots + c_{2n} \vec{e}_n \\
+    \vdots \\
+    \vec{e}_n' = c_{n1} \vec{e}_1 + c_{n2} \vec{e}_2 + \cdots + c_{nn} \vec{e}_n
+\end{cases}\end{split}\]</div>
+</div>
+<p>hay viết ngắn gọn là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\vec{e}_i' = \sum_{j=1}^n c_{ij} \vec{e}_j\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>.</p>
+<p>Điểm <span class="math notranslate nohighlight">\(M\)</span> có tọa độ trong hai mục tiêu trên lần lượt là <span class="math notranslate nohighlight">\((x_i)\)</span> và <span class="math notranslate nohighlight">\((x_i')\)</span>, nghĩa là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{OM} = \sum_{i=1}^n x_i \vec{e}_i, \ \overrightarrow{O'M} = \sum_{i=1}^n x_i' \vec{e}_i'.\]</div>
+</div>
+<p>Ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum_{i=1}^n x_i \vec{e}_i &amp; = \overrightarrow{OM} = \overrightarrow{OO'} + \overrightarrow{O'M} \\
+&amp; = \sum_{i=1}^n b_i \vec{e}_i + \sum_{i=1}^n x_i' \vec{e}_i' \\
+&amp; = \sum_{i=1}^n b_i \vec{e}_i + \sum_{i=1}^n x_i' \sum_{j=1}^n c_{ij} \vec{e}_j \\
+&amp; = \sum_{i=1}^n b_i \vec{e}_i + \sum_{i=1}^n x_i' \sum_{j=1}^n c_{ji} x_j' \\
+&amp; = \sum_{i=1}^n \left(\sum_{j=1}^n c_{ji} x_j' + b_i\right) \vec{e}_i.\end{split}\]</div>
+</div>
+<p>Ở đây mình biến đổi</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^n x_i' \sum_{j=1}^n c_{ij} \vec{e}_j = \sum_{i=1}^n \sum_{j=1}^n x_i' c_{ij} \vec{e}_j = \sum_{j=1}^n \vec{e}_j \sum_{i=1}^n c_{ij} x_i',\]</div>
+</div>
+<p>và để đồng bộ với tổng phía trước là <span class="math notranslate nohighlight">\(\sum\limits_{i=1}^n b_i \vec{e}_i\)</span> thì mình đổi <span class="math notranslate nohighlight">\(j\)</span> thành <span class="math notranslate nohighlight">\(i\)</span> và <span class="math notranslate nohighlight">\(j\)</span> thành <span class="math notranslate nohighlight">\(i\)</span> nên sẽ có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^n x_i' \sum_{j=1}^n c_{ij} \vec{e}_j = \sum_{i=1}^n \vec{e}_i \sum_{j=1}^n c_{ji} x_j'.\]</div>
+</div>
+<p>Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x_i = \sum_{j=1}^n c_{ji} x_j' + b_i\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, n\)</span>. Điều này tương đương với</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}x_1 = c_{11} x_1' + c_{21} x_2' + \cdots + c_{n1} x_n' + b_1 \\
+x_2 = c_{12} x_1' + c_{22} x_2' + \cdots + c_{n2} x_n' + b_2 \\
+\cdots \\
+x_n = c_{1n} x_1' + c_{2n} x_2' + \cdots + c_{nn} x_n' + b_n\end{split}\]</div>
+</div>
+<p>Chúng ta có thể viết dưới dạng ma trận là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(x_1, \ldots, x_n) = (x_1', \ldots, x_n') \cdot C + (b_1, \ldots, b_n)\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(C\)</span> là ma trận</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}C = \begin{pmatrix} c_{11} &amp; c_{12} &amp; \cdots &amp; c_{1n} \\ c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2n} \\ \ddots &amp; \ddots &amp; \ddots &amp; \ddots \\ c_{n1} &amp; c_{n2} &amp; \cdots &amp; c_{nn} \end{pmatrix}.\end{split}\]</div>
+</div>
+<p>Hệ phương trình tuyến tính có nghiệm khi <span class="math notranslate nohighlight">\(\det C \neq 0\)</span>.</p>
+<p>Các công thức trên được gọi là công thức đổi tọa độ (hay công thức đổi mục tiêu) và ma trận đổi tọa độ <span class="math notranslate nohighlight">\(C\)</span> từ mục tiêu <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span> sang <span class="math notranslate nohighlight">\(\{ O', \vec{e}_i' \}\)</span>.</p>
+</section>
+<section id="phuong-trinh-cua-m-phang">
+<h1><span class="section-number">3.8. </span>Phương trình của <span class="math notranslate nohighlight">\(m\)</span>-phẳng<a class="headerlink" href="#phuong-trinh-cua-m-phang" title="Link to this heading">¶</a></h1>
+<section id="phuong-trinh-tham-so">
+<h2><span class="section-number">3.8.1. </span>Phương trình tham số<a class="headerlink" href="#phuong-trinh-tham-so" title="Link to this heading">¶</a></h2>
+<p>Cho <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span> là một không gian affine <span class="math notranslate nohighlight">\(n\)</span> chiều với mục tiêu <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span> cho trước, và <span class="math notranslate nohighlight">\(\alpha\)</span> là một <span class="math notranslate nohighlight">\(m\)</span>-phẳng đi qua điểm <span class="math notranslate nohighlight">\(M\)</span> với phương <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span> sao cho <span class="math notranslate nohighlight">\(0 &lt; m &lt; n\)</span>.</p>
+<p>Giả sử</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{OP} = \sum_{i=1}^n b_i \vec{e}_i\]</div>
+</div>
+<p>và <span class="math notranslate nohighlight">\(\{ \vec{\alpha}_1, \ldots, \vec{\alpha}_m \}\)</span> là một cơ sở của <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span> với</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\vec{\alpha}_j = \sum_{i=1}^n a_{ij} \vec{e}_i, \quad j = 1, \ldots, m.\]</div>
+</div>
+<p>Điểm <span class="math notranslate nohighlight">\(P\)</span> có tọa độ <span class="math notranslate nohighlight">\((x_i)\)</span> đối với mục tiêu <span class="math notranslate nohighlight">\(\{ O, \vec{e}_i \}\)</span> thuộc <span class="math notranslate nohighlight">\(\alpha\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(\overrightarrow{MP} \in \vec{\alpha}\)</span>, tức là có các số <span class="math notranslate nohighlight">\(t_j \in \mathbb{F}\)</span> sao cho</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{MP} = \sum_{j=1}^m t_j \vec{\alpha}_j.\]</div>
+</div>
+<p>Ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{MP} = \overrightarrow{OP} - \overrightarrow{OM} = \sum_{i=1}^n x_i \vec{e}_i - \sum_{i=1}^n b_i \vec{e}_i = \sum_{i=1}^n (x_i - b_i) \vec{e}_i.\]</div>
+</div>
+<p>Ta cũng có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\overrightarrow{MP} &amp; = \sum_{j=1}^m t_j \vec{\alpha}_j = \sum_{j=1}^m t_j \sum_{i=1}^n a_{ij} \vec{e}_i \\
+&amp; = \sum_{i=1}^n \left(\sum_{j=1}^m t_j a_{ij} \right) \vec{e}_i \\
+&amp; \Rightarrow x_i = \sum_{j=1}^m t_j a_{ij} + b_i.\end{split}\]</div>
+</div>
+<p>Hệ phương trình trở thành</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    x_1 = a_{11} t_1 + a_{12} t_2 + \cdots + a_{1m} t_m + b_1 \\
+    x_2 = a_{21} t_1 + a_{22} t_2 + \cdots + a_{2m} t_m + b_2 \\
+    \vdots \\
+    x_n = a_{n1} t_1 + a_{n2} t_2 + \cdots + a_{nm} t_m + b_n
+\end{cases}\end{split}\]</div>
+</div>
+<p>hay dưới dạng ma trận là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(x_1, \ldots, x_n) = A \cdot (t_1, \ldots, t_m) + (b_1, \ldots, b_n).\]</div>
+</div>
+<p>Khi đó ta có thể viết phương trình tham số dưới dạng vector</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\vec{x} = t_1 \vec{a}_1 + t_2 \vec{a}_2 + \cdots + t_m \vec{a}_m + \vec{b}.\]</div>
+</div>
+<p>Các công thức trên tương đương nhau và được gọi là phương trình tham số của <span class="math notranslate nohighlight">\(m\)</span>-phẳng <span class="math notranslate nohighlight">\(\alpha\)</span>, còn các phần tử <span class="math notranslate nohighlight">\(t_j\)</span> với <span class="math notranslate nohighlight">\(j = 1, \ldots, m\)</span> được gọi là các tham số.</p>
+</section>
+<section id="todo-phuong-trinh-tong-quat">
+<h2><span class="section-number">3.8.2. </span>[TODO] Phương trình tổng quát<a class="headerlink" href="#todo-phuong-trinh-tong-quat" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+<section id="tam-ti-cu-va-ti-so-don">
+<h1><span class="section-number">3.9. </span>Tâm tỉ cự và tỉ số đơn<a class="headerlink" href="#tam-ti-cu-va-ti-so-don" title="Link to this heading">¶</a></h1>
+<p>Cho họ điểm</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\{ M_1, M_2, \ldots, M_n \} \subset \mathcal{A}^n\]</div>
+</div>
+<p>và họ hệ số <span class="math notranslate nohighlight">\(\{ \lambda_1, \lambda_2, \ldots, \lambda_n \}\)</span> với <span class="math notranslate nohighlight">\(\lambda \in \mathbb{F}\)</span> thỏa điều kiện</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lambda = \lambda_1 + \lambda_2 + \cdots + \lambda_n \neq 0.\]</div>
+</div>
+<p>Khi đó với điểm <span class="math notranslate nohighlight">\(O\)</span> tùy ý của <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span> ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\dfrac{1}{\lambda} \left(\lambda_1 \overrightarrow{OM_1} + \lambda_2 \overrightarrow{OM_2} + \cdots + \lambda_n \overrightarrow{OM_n}\right)\]</div>
+</div>
+<p>là một vector xác định của <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span>. Do đó tồn tại duy nhất một điểm <span class="math notranslate nohighlight">\(G \in \mathcal{A}^n\)</span> sao cho</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{OG} = \dfrac{1}{\lambda} \left(\lambda_1 \overrightarrow{OM_1} + \lambda_2 \overrightarrow{OM_2} + \cdots + \lambda_n \overrightarrow{OM_n} \right).\]</div>
+</div>
+<p>Khi đó điểm <span class="math notranslate nohighlight">\(G\)</span> được gọi <strong>tâm tỉ cự</strong> của họ điểm <span class="math notranslate nohighlight">\(\{ M_1, M_2, \ldots, M_ n \}\)</span> gắn với hệ số <span class="math notranslate nohighlight">\(\{ \lambda_1, \lambda_2, \ldots, \lambda_n \}\)</span>.</p>
+<div class="proof theorem admonition" id="thm-tam-ti-cu">
+<p class="admonition-title"><span class="caption-number">Định lí 3.8 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Điểm <span class="math notranslate nohighlight">\(G\)</span> là tâm tỉ cự của họ điểm <span class="math notranslate nohighlight">\(\{ M_1, M_2, \ldots, M_ n \}\)</span> gắn với hệ số <span class="math notranslate nohighlight">\(\{ \lambda_1, \lambda_2, \ldots, \lambda_n \}\)</span> khi và chỉ khi <span class="math notranslate nohighlight">\(G\)</span> thỏa mãn hệ thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lambda_1 \overrightarrow{GM_1} + \lambda_2 \overrightarrow{GM_2} + \cdots + \lambda_n \overrightarrow{GM_n} = \vec{0}.\]</div>
+</div>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Từ định nghĩa tâm tỉ cự ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\overrightarrow{OG} &amp; = \dfrac{1}{\lambda} \left( \lambda_1 \overrightarrow{OM_1} + \lambda_2 \overrightarrow{OM_2} + \cdots + \lambda_n \overrightarrow{OM_n} \right) \\
+&amp; = \dfrac{1}{\lambda} \left[\lambda_1 \left(\overrightarrow{OG} + \overrightarrow{GM_1}\right) + \lambda_2 \left(\overrightarrow{OG} + \overrightarrow{GM_2}\right) + \cdots + \lambda_n \left(\overrightarrow{OG} + \overrightarrow{GM_n}\right)\right] \\
+&amp; = \dfrac{\lambda_1 + \lambda_2 + \cdots + \lambda_n}{\lambda} \overrightarrow{OG} + \dfrac{1}{\lambda} \left(\lambda_1 \overrightarrow{GM_1} + \overrightarrow{GM_2} + \cdots + \overrightarrow{GM_n}\right),\end{split}\]</div>
+</div>
+<p>mà <span class="math notranslate nohighlight">\(\lambda_1 + \lambda_2 + \cdots + \lambda_n = \lambda\)</span> nên tối giản <span class="math notranslate nohighlight">\(\overrightarrow{OG}\)</span> hai vế ta có điều phải chứng minh.</p>
+</div>
+<div class="proof remark admonition" id="rmk-property-tam-ti-cu">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.15 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Từ định lí trên ta cũng chứng minh được hai hệ quả sau:</p>
+<ol class="arabic simple">
+<li><p>Tâm tỉ cự không phụ thuộc điểm <span class="math notranslate nohighlight">\(O\)</span> được chọn mà phụ thuộc họ điểm <span class="math notranslate nohighlight">\(\{ M_1, M_2, \ldots, M_n \}\)</span> và họ hệ số <span class="math notranslate nohighlight">\(\{ \lambda_1, \lambda_2, \ldots, \lambda_n \}\)</span>.</p></li>
+<li><p>Khi thay họ hệ số <span class="math notranslate nohighlight">\(\{ \lambda_1, \lambda_2, \ldots, \lambda_n \}\)</span> bởi <span class="math notranslate nohighlight">\(\{ k\lambda_1, k\lambda_2, \ldots, k\lambda_n \}\)</span> với <span class="math notranslate nohighlight">\(k \neq 0\)</span> thì tâm tỉ cự không thay đổi.</p></li>
+</ol>
+</section>
+</div><div class="proof definition admonition" id="def-trong-tam">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 3.12 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Tâm tỉ cự <span class="math notranslate nohighlight">\(G\)</span> của hệ điểm <span class="math notranslate nohighlight">\(\{ M_1, M_2, \ldots, M_n \}\)</span> gắn với họ hệ số <span class="math notranslate nohighlight">\(\{ \lambda_1, \lambda_2, \ldots, \lambda_n \}\)</span> mà</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lambda_1 = \lambda_2 = \cdots = \lambda_n = 1\]</div>
+</div>
+<p>thì <span class="math notranslate nohighlight">\(G\)</span> được gọi là <strong>trọng tâm</strong> của hệ điểm.</p>
+</section>
+</div><p>Khi đó, với mọi điểm <span class="math notranslate nohighlight">\(O \in \mathcal{A}^n\)</span> ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{OG} = \dfrac{1}{n} \sum_{i=1}^n \overrightarrow{OM_i},\]</div>
+</div>
+<p>hay</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^n \overrightarrow{GM_i} = \vec{0}.\]</div>
+</div>
+<div class="proof remark admonition" id="rmk-trong-tam">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.16 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Mọi hệ <span class="math notranslate nohighlight">\(m\)</span> điểm có trọng tâm khi và chỉ khi <strong>đặc số</strong> (<strong>characteristic</strong>) của trường <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> phải khác <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p>Khi <span class="math notranslate nohighlight">\(\mathbb{F} = \mathbb{R}\)</span> hoặc <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> thì mọi hệ hữu hạn điểm đều có trọng tâm.</p>
+</section>
+</div><div class="proof theorem admonition" id="thm-tam-ti-cu-coeff">
+<p class="admonition-title"><span class="caption-number">Định lí 3.9 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Tập hợp tất cả các tâm tỉ cự với họ các hệ số khác nhau của hệ điểm <span class="math notranslate nohighlight">\(\{ M_1, \ldots, M_n \}\)</span> trong không gian affine <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span> chính là phẳng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\alpha = M_1 + M_2 + \cdots + M_n.\]</div>
+</div>
+</section>
+</div></section>
+<section id="anh-xa-affine">
+<h1><span class="section-number">3.10. </span>Ánh xạ affine<a class="headerlink" href="#anh-xa-affine" title="Link to this heading">¶</a></h1>
+<div class="proof definition admonition" id="def-affine-map">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 3.13 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Cho hai không gian affine <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> và <span class="math notranslate nohighlight">\(\mathcal{A}'\)</span> trên cùng trường <span class="math notranslate nohighlight">\(\mathbb{F}\)</span> và ánh xạ <span class="math notranslate nohighlight">\(\varphi: \vec{\mathcal{A}} \to \vec{\mathcal{A}'}\)</span> sao cho với mọi <span class="math notranslate nohighlight">\(M, N \in \mathcal{A}\)</span> ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{f(M) f(N)} = \varphi(\overrightarrow{MN})\]</div>
+</div>
+<p>thì <span class="math notranslate nohighlight">\(f\)</span> được gọi là <strong>ánh xạ affine</strong> liên kết với <span class="math notranslate nohighlight">\(\varphi\)</span>.</p>
+<p>Ánh xạ <span class="math notranslate nohighlight">\(\varphi\)</span> được gọi là <strong>ánh xạ tuyến tính liên kết</strong> hay <strong>ánh xạ nền</strong> của ánh xạ affine <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</section>
+</div><p>Theo định nghĩa, mỗi ánh xạ affine chỉ có một ánh xạ tuyến tính liên kết. Tuy nhiên một ánh xạ tuyến tính có thể liên kết với nhiều ánh xạ affine.</p>
+<div class="proof example admonition" id="exp-affine-map-id">
+<p class="admonition-title"><span class="caption-number">Ví dụ 3.11 </span></p>
+<section class="example-content" id="proof-content">
+<p>Ánh xạ đồng nhất <span class="math notranslate nohighlight">\(\mathrm{Id}_\mathcal{A}: \mathcal{A} \to \mathcal{A}\)</span>, <span class="math notranslate nohighlight">\(f(M) = M\)</span> với mọi <span class="math notranslate nohighlight">\(M \in \mathcal{A}\)</span> của không gian affine là một ánh xạ affine. Ánh xạ tuyến tính liên kết với <span class="math notranslate nohighlight">\(\mathrm{Id}_\mathcal{A}\)</span> chính là ánh xạ đồng nhất <span class="math notranslate nohighlight">\(\mathrm{Id}_{\vec{\mathcal{A}}}\)</span> của <span class="math notranslate nohighlight">\(\vec{\mathcal{A}}\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="exp-affine-map-fixed">
+<p class="admonition-title"><span class="caption-number">Ví dụ 3.12 </span></p>
+<section class="example-content" id="proof-content">
+<p>Ánh xạ hằng <span class="math notranslate nohighlight">\(f: \mathcal{A} \to \mathcal{A}'\)</span> biến mọi điểm của <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> thành một điểm cố định nào đó của <span class="math notranslate nohighlight">\(\mathcal{A}'\)</span> là một ánh xạ affine. Ánh xạ tuyến tính liên kết <span class="math notranslate nohighlight">\(\vec{f}\)</span> của <span class="math notranslate nohighlight">\(f\)</span> là ánh xạ không <span class="math notranslate nohighlight">\(\mathcal{O}\)</span>, biến mọi vector thành vector <span class="math notranslate nohighlight">\(\vec{0}\)</span>.</p>
+</section>
+</div><div class="proof example admonition" id="exp-affine-map-parallel">
+<p class="admonition-title"><span class="caption-number">Ví dụ 3.13 </span></p>
+<section class="example-content" id="proof-content">
+<p>Phép chiếu song song: trong không gian affine <span class="math notranslate nohighlight">\(n\)</span> chiều <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span> cho <span class="math notranslate nohighlight">\(m\)</span>-phẳng <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\((n-m)\)</span>-phẳng <span class="math notranslate nohighlight">\(\beta\)</span> sao cho <span class="math notranslate nohighlight">\(\vec{\alpha} \cap \vec{\beta} = \{ \vec{0} \}\)</span>.</p>
+<p>Dựa vào định lí về số chiều của phẳng tổng ta chứng minh được rằng <span class="math notranslate nohighlight">\(\alpha \cap \beta \neq \emptyset\)</span>. Do <span class="math notranslate nohighlight">\(\vec{\alpha} \cap \vec{\beta} = \{ \vec{0} \}\)</span> ta suy ra <span class="math notranslate nohighlight">\(\alpha \cap \beta\)</span> là <span class="math notranslate nohighlight">\(0\)</span>-phẳng, tức là giao của <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> là tập chỉ có một điểm.</p>
+<p>Giả sử <span class="math notranslate nohighlight">\(M\)</span> là một điểm bất kì của <span class="math notranslate nohighlight">\(\mathcal{A}^n\)</span>. Gọi <span class="math notranslate nohighlight">\(\alpha'\)</span> là <span class="math notranslate nohighlight">\(m\)</span>-phẳng đi qua <span class="math notranslate nohighlight">\(M\)</span> và song song <span class="math notranslate nohighlight">\(\alpha\)</span>, gọi <span class="math notranslate nohighlight">\(\beta'\)</span> là <span class="math notranslate nohighlight">\((n-m)\)</span>-phẳng đi qua <span class="math notranslate nohighlight">\(M\)</span> và song song với <span class="math notranslate nohighlight">\(\beta\)</span>. Theo lập luận trên, <span class="math notranslate nohighlight">\(\alpha'\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> giao nhau tại một điểm duy nhất là <span class="math notranslate nohighlight">\(M_\beta\)</span>, tương tự <span class="math notranslate nohighlight">\(\beta'\)</span> cắt <span class="math notranslate nohighlight">\(\alpha\)</span> tại một điểm duy nhất là <span class="math notranslate nohighlight">\(M_\alpha\)</span>. Các ánh xạ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\rho_\alpha : \mathcal{A}^n \to \alpha, \ M \to M_\alpha\]</div>
+</div>
+<p>và</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\rho_\beta : \mathcal{A}^n \to \beta, \ M \to M_\beta\]</div>
+</div>
+<p>lần lượt được gọi là <strong>phép chiếu song song</strong> lên phẳng <span class="math notranslate nohighlight">\(\alpha\)</span> theo phương <span class="math notranslate nohighlight">\(\beta\)</span> và phép chiếu song song lên phẳng <span class="math notranslate nohighlight">\(\beta\)</span> theo phương <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+</section>
+</div><p>Ta gọi <span class="math notranslate nohighlight">\(\alpha\)</span> là cơ sở và <span class="math notranslate nohighlight">\(\beta\)</span> là phương chiếu của phép chiếu <span class="math notranslate nohighlight">\(\rho_\alpha\)</span>.</p>
+<p>Ta gọi <span class="math notranslate nohighlight">\(\beta\)</span> là cơ sở và <span class="math notranslate nohighlight">\(\alpha\)</span> là phương chiếu của phép chiếu <span class="math notranslate nohighlight">\(\rho_\beta\)</span>.</p>
+<p>Ta sẽ chứng minh <span class="math notranslate nohighlight">\(\rho_\alpha\)</span> là ánh xạ affine.</p>
+<div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Từ giả thiết <span class="math notranslate nohighlight">\(\vec{\alpha} \cup \vec{\beta} = \vec{\mathcal{A}}\)</span>, gọi <span class="math notranslate nohighlight">\(\rho_{\vec{\alpha}}\)</span> là phép chiếu lên thành phần thứ nhất</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\rho_{\vec{\alpha}} : \vec{\mathcal{A}} \to \vec{\alpha}.\]</div>
+</div>
+<p>Với mọi <span class="math notranslate nohighlight">\(M, N \in \mathcal{A}\)</span> ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{\rho_\alpha(M) \rho_\alpha(N)} = \overrightarrow{M_\alpha N_\alpha}.\]</div>
+</div>
+<p>Hơn nữa</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\rho_{\vec{\alpha}} (\overrightarrow{MN}) = \rho_{\vec{\alpha}}(\overrightarrow{MM_\alpha}) + \rho_{\vec{\alpha}} (\overrightarrow{M_\alpha N_\alpha}) + \rho_{\vec{\alpha}}(\overrightarrow{N_\alpha N}) = \overrightarrow{M_\alpha N_\alpha}.\]</div>
+</div>
+<p>Từ đây suy ra <span class="math notranslate nohighlight">\(\rho_\alpha\)</span> là ánh xạ liên kết với <span class="math notranslate nohighlight">\(\rho_{\vec{\alpha}}\)</span>. Dễ thấy (?) <span class="math notranslate nohighlight">\(\rho_\alpha\)</span> và <span class="math notranslate nohighlight">\(\rho_\beta\)</span> có tính chất</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\rho_\alpha^2 = \rho_\alpha, \ \rho_\beta^2 = \rho_\beta, \ \rho_\alpha \rho_\beta = \rho_\beta \rho_\alpha = h\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(h\)</span> là ánh xạ hẳng, biến mọi điểm thành giao điểm của <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+</div>
+<div class="proof definition admonition" id="def-affine-homomorphism">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 3.14 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Nếu ánh xạ affine <span class="math notranslate nohighlight">\(f\)</span> là một đơn ánh thì ta nói <span class="math notranslate nohighlight">\(f\)</span> là <strong>đơn cấu affine</strong>. Tương tự cho <strong>toàn cấu affine</strong> và <strong>đẳng cấu affine</strong>.</p>
+</section>
+</div><p>Khi <span class="math notranslate nohighlight">\(\mathcal{A} = \mathcal{A}'\)</span>, tức là <span class="math notranslate nohighlight">\(f: \mathcal{A} \to \mathcal{A}\)</span> thì ta nói <span class="math notranslate nohighlight">\(f\)</span> là một <strong>tự đồng cấu affine</strong> (hay <strong>automorphism</strong>) của <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>.</p>
+<p>Nếu có một đẳng cấu affine từ <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> vào <span class="math notranslate nohighlight">\(\mathcal{A}'\)</span> thì ta nói <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> và <span class="math notranslate nohighlight">\(\mathcal{A}'\)</span> đẳng cấu affine với nhau và kí hiệu là <span class="math notranslate nohighlight">\(\mathcal{A} \cong \mathcal{A}'\)</span>.</p>
+<p>Quan hệ đẳng cấu giữa các không gian affine là quan hệ tương đương và hai không gian affine đẳng cấu khi và chỉ khi chúng có cùng số chiều.</p>
+<div class="proof theorem admonition" id="thm-affine-homomorphism">
+<p class="admonition-title"><span class="caption-number">Định lí 3.10 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Cho <span class="math notranslate nohighlight">\(f: \mathcal{A} \to \mathcal{A}'\)</span> là ánh xạ affine. Khi đó</p>
+<ol class="arabic simple">
+<li><p>Nếu <span class="math notranslate nohighlight">\(f\)</span> là đơn cấu, toàn cấu hoặc đẳng cấu affine thì ánh xạ liên kết:math:<cite>vec{f}</cite> theo thứ tự là đơn cấu, toàn cấu và dẳng cấu tuyến tính.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(f\)</span> là đẳng cấu affine thì ánh xạ ngược <span class="math notranslate nohighlight">\(f^{-1} : \mathcal{A}' \to \mathcal{A}\)</span> cũng là đẳng cấu affine và <span class="math notranslate nohighlight">\(\overrightarrow{f^{-1}} = (\vec{f})^{-1}\)</span>.</p></li>
+</ol>
+</section>
+</div><div class="proof theorem admonition" id="thm-affine-map-comb">
+<p class="admonition-title"><span class="caption-number">Định lí 3.11 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(f: \mathcal{A} \to \mathcal{A}'\)</span> và <span class="math notranslate nohighlight">\(g: \mathcal{A}' \to \mathcal{A}''\)</span> là các ánh xạ affine lần lượt liên kết với các ánh xạ tuyến tính <span class="math notranslate nohighlight">\(\vec{f}\)</span> và <span class="math notranslate nohighlight">\(\vec{g}\)</span> thì <span class="math notranslate nohighlight">\(g \circ f\)</span> là ánh xạ affine liên kết với <span class="math notranslate nohighlight">\(\vec{g} \circ \vec{f}\)</span>, tức là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overrightarrow{g \circ f} = \vec{g} \circ \vec{f}.\]</div>
+</div>
+</section>
+</div><div class="proof theorem admonition" id="thm-linear-map">
+<p class="admonition-title"><span class="caption-number">Định lí 3.12 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Cho <span class="math notranslate nohighlight">\(f: \mathcal{A} \to \mathcal{A}'\)</span> là ánh xạ affine liên kết với ánh xạ tuyến tính <span class="math notranslate nohighlight">\(\vec{f}\)</span>. Khi đó</p>
+<ol class="arabic simple">
+<li><p>Nếu <span class="math notranslate nohighlight">\(\alpha\)</span> là một phẳng trong <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> với phương <span class="math notranslate nohighlight">\(\vec{\alpha}\)</span> thì <span class="math notranslate nohighlight">\(f(\alpha)\)</span> là một phẳng trong <span class="math notranslate nohighlight">\(\mathcal{A}'\)</span> với phương <span class="math notranslate nohighlight">\(\vec{f}(\vec{\alpha})\)</span> và <span class="math notranslate nohighlight">\(\dim f(\alpha) \geqslant \dim\alpha\)</span>. Trong trường hợp <span class="math notranslate nohighlight">\(f\)</span> là đơn cấu thì <span class="math notranslate nohighlight">\(\dim f(\alpha) = \dim \alpha\)</span>.</p></li>
+<li><p>Giả sử <span class="math notranslate nohighlight">\(\alpha'\)</span> là một phẳng trong <span class="math notranslate nohighlight">\(\mathcal{A}'\)</span> với phương <span class="math notranslate nohighlight">\(\vec{\alpha}'\)</span>. Nếu <span class="math notranslate nohighlight">\(f^{-1}(\alpha')\)</span> khác rỗng thì <span class="math notranslate nohighlight">\(f^{-1}(\alpha')\)</span> là một phương trong <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> với phương <span class="math notranslate nohighlight">\(\overrightarrow{f^{-1}}(\vec{\alpha}')\)</span>.</p></li>
+</ol>
+</section>
+</div></section>
+<section id="su-xac-dinh-anh-xa-affine">
+<h1><span class="section-number">3.11. </span>Sự xác định ánh xạ affine<a class="headerlink" href="#su-xac-dinh-anh-xa-affine" title="Link to this heading">¶</a></h1>
+<p>Ánh xạ tuyến tính hoàn toàn xác định nếu biết được ảnh của một cơ sở. Ánh xạ affine cũng vậy, nó hoàn toàn xác định nếu biết được ảnh của một mục tiêu.</p>
+<div class="proof theorem admonition" id="thm-define-affine">
+<p class="admonition-title"><span class="caption-number">Định lí 3.13 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Cho <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> và <span class="math notranslate nohighlight">\(\mathcal{A}'\)</span> là các <span class="math notranslate nohighlight">\(\mathbb{F}\)</span>-không gian affine, <span class="math notranslate nohighlight">\(\varphi: \vec{\mathcal{A}} \to \vec{\mathcal{A}'}\)</span> là ánh xạ tuyến tính, <span class="math notranslate nohighlight">\(M \in \mathcal{A}\)</span> và <span class="math notranslate nohighlight">\(M' \in \mathcal{A}'\)</span>. Khi đó tồn tại duy nhất một ánh xạ affine <span class="math notranslate nohighlight">\(f: \mathcal{A} \to \mathcal{A}'\)</span> sao cho <span class="math notranslate nohighlight">\(f(M) = M'\)</span> và <span class="math notranslate nohighlight">\(\vec{f} = \varphi\)</span>.</p>
+</section>
+</div><p>Nói cách khác, ánh xạ affine hoàn toàn xác định khi biết ánh xạ tuyến tính liên kết và một cặp điểm tương ứng.</p>
+<div class="proof remark admonition" id="rmk-isomorphism">
+<p class="admonition-title"><span class="caption-number">Nhận xét 3.17 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(\dim \mathcal{A} = \dim \mathcal{A}'\)</span> và <span class="math notranslate nohighlight">\(\varphi\)</span> là đẳng cấu tuyến tính thì <span class="math notranslate nohighlight">\(f\)</span> là một đẳng cấu affine.</p>
+</section>
+</div><div class="proof corollary admonition" id="cor-exist-map">
+<p class="admonition-title"><span class="caption-number">Hệ quả 3.1 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Cho <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> và <span class="math notranslate nohighlight">\(\mathcal{A}'\)</span> là hai <span class="math notranslate nohighlight">\(\mathbb{F}\)</span>-không gian affine, <span class="math notranslate nohighlight">\(\{ O, \vec{e}_1, \ldots, \vec{e}_n \}\)</span> là mục tiêu của <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>, <span class="math notranslate nohighlight">\(O' \in \mathcal{A}'\)</span> và <span class="math notranslate nohighlight">\(\{ \vec{e}_1', \ldots, \vec{e}_n' \}\)</span> là một hệ vector trong <span class="math notranslate nohighlight">\(\vec{\mathcal{A}'}\)</span>. Khi đó tồn tại duy nhất một ánh xạ affine <span class="math notranslate nohighlight">\(f: \mathcal{A} \to \mathcal{A}'\)</span> sao cho</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f(O) = O', \ \text{và} \ \vec{f}(\vec{e}_i) = \vec{e}_i'\]</div>
+</div>
+<p>với mọi <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span>.</p>
+</section>
+</div><p>Nói cách khác, ánh xạ affine hoàn toàn được xác định bởi ảnh của một mục tiêu.</p>
+<p>Hơn nữa, nếu <span class="math notranslate nohighlight">\(\dim\mathcal{A} = \dim \mathcal{A}'\)</span> và <span class="math notranslate nohighlight">\(\{ \vec{e}_1', \ldots, \vec{e}_n' \}\)</span> là một cơ sở của <span class="math notranslate nohighlight">\(\mathcal{A}'\)</span> thì <span class="math notranslate nohighlight">\(f\)</span> là một đẳng cấu affine.</p>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../noneuclidean.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><span class="section-number">4. </span>Hình học phi Euclid</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><span class="section-number">3. </span>Hình học affine</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1]}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

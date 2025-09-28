@@ -1,0 +1,1013 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Tìm Kiếm" href="../search.html" /><link rel="next" title="6. Quantum computing" href="quantum-computing.html" /><link rel="prev" title="4. Nguyên tắc Kerckhoffs và mật mã học" href="Kerckhoffs-principle/index.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>5. Câu hỏi ôn thi mật mã học - Math Book</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=4c010e0d" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyles.css?v=fd3ba0dd" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Math Book</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/Euler_Stamp.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Math Book</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/index.html">Những lời nói đầu</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Những lời nói đầu</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-maths.html">Toán học là gì với mình?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-notebook.html">Cơ sở xây dựng notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-quotations.html">Những lời răn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-notation.html">Kí hiệu và công thức toán trong mật mã</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algebra/index.html">Đại số</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Đại số</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../algebra/set/index.html">1. Đại cương về tập hợp</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1. Đại cương về tập hợp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/set/set.html">1.1. Tập hợp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/set/cadinality.html">1.2. Lực lượng của tập hợp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/set/map.html">1.3. Ánh xạ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/set/function.html">1.4. Hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/set/infinity.html">1.5. Các nghịch lý về tập vô hạn</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../algebra/polynomial/index.html">2. Đa thức</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2. Đa thức</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc">2.2. So sánh, cộng, trừ và nhân hai đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/lagrange-interpolation.html">2.3. Đa thức nội suy Lagrange</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/proof.html">3. Phương pháp chứng minh toán học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/glossary.html">4. Bảng thuật ngữ đại số</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../abstract-algebra/index.html">Lý thuyết nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Lý thuyết nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/groups/index.html">1. Lý thuyết nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of 1. Lý thuyết nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/group.html">1.1. Nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/symmetric-group.html">1.2. Nhóm hoán vị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/quasigroup.html">1.3. Quasigroup</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/homomorphisms/index.html">2. Homomorphisms</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of 2. Homomorphisms</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/homomorphisms/group-homomorphism.html">2.1. Group homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/group-action/index.html">3. Tác động nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of 3. Tác động nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/group-action/group-action.html">3.1. Tác động nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/group-action/burnside.html">3.2. Bổ đề Burnside</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/rings/index.html">4. Vành</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of 4. Vành</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/rings/ring.html">4.1. Vành</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/fields/index.html">5. Trường</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of 5. Trường</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/field.html">5.1. Trường</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/ideal.html">5.2. Ideal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/ring-homomorphism.html">5.3. Ring kernel và ring homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/galois-theory/index.html">6. Lý thuyết Galois</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of 6. Lý thuyết Galois</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/galois-theory/extension-field.html">6.1. Extension Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../abstract-algebra/glossary.html">7. Bảng thuật ngữ lý thuyết nhóm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../geometry/index.html">Hình học</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Hình học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../geometry/analytic-geometry/index.html">1. Hình học giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of 1. Hình học giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/intro.html">1.1. Theo dòng lịch sử</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/analytic-geometry.html">1.2. Phương pháp tọa độ trong mặt phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/analytic-geometry.html#dao-ham">1.3. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/analytic-geometry.html#tich-phan">1.4. Tích phân</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/conics.html">1.5. Ba đường Conic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/transformation.html">1.6. Phép biến hình</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../geometry/brachistochrone/brachistochrone.html">2. Đường đoản thời</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../geometry/affine-geometry/index.html">3. Hình học affine</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of 3. Hình học affine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html">3.1. Không gian affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#phang">3.2. Phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#doc-lap-affine-va-phu-thuoc-affine">3.3. Độc lập affine và phụ thuộc affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#giao-cua-cac-phang-bao-affine">3.4. Giao của các phẳng. Bao affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#vi-tri-tuong-doi">3.5. Vị trí tương đối</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#muc-tieu-va-toa-do-affine">3.6. Mục tiêu và tọa độ affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#cong-thuc-doi-muc-tieu">3.7. Công thức đổi mục tiêu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#phuong-trinh-cua-m-phang">3.8. Phương trình của <span class="math notranslate nohighlight">\(m\)</span>-phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#tam-ti-cu-va-ti-so-don">3.9. Tâm tỉ cự và tỉ số đơn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#anh-xa-affine">3.10. Ánh xạ affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#su-xac-dinh-anh-xa-affine">3.11. Sự xác định ánh xạ affine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../geometry/noneuclidean.html">4. Hình học phi Euclid</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/index.html">Giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/calculus/index.html">1. Giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of 1. Giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/limits.html">1.1. Giới hạn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/continuity.html">1.2. Tính liên tục của hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/monotone.html">1.3. Tính đơn điệu và cực trị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/derivative.html">1.4. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/avarage-value.html">1.5. Một số định lí về giá trị trung bình</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/concave.html">1.6. Tính lồi, lõm và điểm uốn của đồ thị</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/differential-equation/index.html">2. Phương trình vi phân</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series/index.html">3. Chuỗi số</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/derivative/index.html">4. Đạo hàm</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of 4. Đạo hàm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/derivative/partial-derivative.html">4.1. Đạo hàm một số hàm nhiều biến</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/integral/index.html">5. Tích phân</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of 5. Tích phân</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/integral/line-integral.html">5.1. Tích phân đường</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../probability/index.html">Xác suất thống kê</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Xác suất thống kê</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../probability/intro.html">Xác suất thống kê</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../probability/ML/index.html">Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Machine Learning</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/linear-regression.html">Linear Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/kmeans.html">K-Means clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/gradient-descent.html">Gradient Descent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/perceptron.html">Perceptron Learning Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linalg/index.html">Đại số tuyến tính</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of Đại số tuyến tính</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../linalg/matrix/index.html">1. Ma trận</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 1. Ma trận</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-determinant.html">1.1. Định thức ma trận</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-inversion.html">1.2. Ma trận nghịch đảo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-rank.html">1.3. Hạng của ma trận</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/linear-operator.html">2. Toán tử tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/eigen.html">3. Trị riêng và vector riêng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/linear-combination.html">4. Tổ hợp tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/vector-space.html">5. Không gian vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/euclidean-space.html">6. Không gian Euclide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/hilbert-space.html">7. Không gian Hilbert</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../number-theory/index.html">Lý thuyết số</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Lý thuyết số</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/euclidean.html">1. Phép chia Euclid. Thuật toán Euclid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/linear-congruence.html">2. Phương trình đồng dư tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/euler.html">3. Hàm Euler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/quadratic-residue.html">4. Thặng dư chính phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/mobius.html">5. Hàm Möbius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/chinese-remainder-theorem.html">6. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/exercises.html">7. Bài tập số học sưu tầm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/index.html">Toán rời rạc</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Toán rời rạc</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">Quan hệ hai ngôi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/partition.html">Phân hoạch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/discrete-fourier-transform.html">Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">Đại cương tổ hợp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/recurrence-relation.html">Công thức truy hồi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/graph/index.html">Lý thuyết đồ thị</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../topology/index.html">Topology</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../boolean/index.html">Đại số Bool và mật mã học</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Đại số Bool và mật mã học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/intro.html">1. Giới thiệu</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/boolean-algebra/index.html">2. Đại số Boolean</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 2. Đại số Boolean</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/boolean-function.html">2.1. Hàm boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/boolean-affine.html">2.2. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/boolean-monotone.html">2.3. Hàm đơn điệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/boolean-dnf-cnf.html">2.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/boolean-weight.html">2.5. Khoảng cách Hamming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/walsh-hadamard-spectre.html">2.6. Nonlinearity của hàm boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/block/block-cipher.html">3. Block cipher</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 3. Block cipher</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/spnet.html">3.1. SP network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/AES.html">3.2. AES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/kuznyechik.html">3.3. Kuznyechik</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/present.html">3.4. PRESENT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/feistel.html">3.5. Mô hình Feistel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/magma.html">3.6. Magma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/sms4.html">3.7. SMS4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/arx.html">3.8. ARX</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/stream/stream-cipher.html">4. Stream cipher</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of 4. Stream cipher</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/stream/linear-feedback-shift-register.html">4.1. Linear Feedback Shift Register</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/mac.html">5. Message Authentication Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptanalysis/index.html">Phá mã</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of Phá mã</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cryptanalysis/differential-attack/index.html">1. Phá mã vi sai</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of 1. Phá mã vi sai</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cryptanalysis/differential-attack/toycipher.html">1.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptanalysis/differential-attack/tinydes.html">1.2. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptanalysis/differential-attack/difference-and-differential.html">1.3. Difference và differential</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cryptanalysis/linear-attack/index.html">2. Phá mã tuyến tính</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of 2. Phá mã tuyến tính</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cryptanalysis/linear-attack/tinydes.html">2.1. Phá mã tuyến tính trên TinyDES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptanalysis/slide-attack/index.html">3. Slide attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptanalysis/algebraic-attack/index.html">4. Algebraic cryptanalysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Mật mã học</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Mật mã học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="lattice-based/index.html">1. Lattice-based cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of 1. Lattice-based cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="lattice-based/intro.html">1.1. Nhập môn mật mã dựa trên lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lattice-based/congruential-pubkey.html">1.2. Congruential public key cryptosystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lattice-based/ntru.html">1.3. NTRU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lattice-based/falcon.html">1.4. FALCON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lattice-based/lattice-reduction-algorithms.html">1.5. Thuật toán rút gọn lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lattice-based/coppersmith.html">1.6. Phương pháp Coppersmith</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="code-based/index.html">2. Code-based cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of 2. Code-based cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="code-based/intro.html">2.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code-based/decode-problem.html">2.2. Bài toán decode tổng quát</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code-based/linear-code.html">2.3. Linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code-based/weight.html">2.4. Bài toán phổ trọng số của mã tuyến tính</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code-based/decode-on-linear-code.html">2.5. Bài toán decode trên linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code-based/equivalence.html">2.6. Bài toán tương đương các linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code-based/cryptosystem.html">2.7. Ý tưởng xây dựng các hệ mật mã dựa trên mã sửa sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code-based/pubkey-algo.html">2.8. Các hệ mật mã khóa công khai dựa trên lý thuyết code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="code-based/goppa-code.html">2.9. Goppa Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elliptic/index.html">3. Đường cong elliptic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Kerckhoffs-principle/index.html">4. Nguyên tắc Kerckhoffs và mật mã học</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">5. Câu hỏi ôn thi mật mã học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quantum-computing.html">6. Quantum computing</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="zero-knowledge-proof/index.html">7. Zero Knowledge Proof</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of 7. Zero Knowledge Proof</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="zero-knowledge-proof/intro.html">7.1. Giới thiệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zero-knowledge-proof/plonk.html">7.2. Plonk Protocol</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../solutions/index.html">Lời giải các bài tập trong sách tham khảo</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle navigation of Lời giải các bài tập trong sách tham khảo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/Judson.html">Abstract Algebra: Theory and Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/Petrushko/index.html">Курс высшей математики: Теория вероятностей</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/index.html">An Introduction to Mathematical Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle navigation of An Introduction to Mathematical Cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/chapter-2.html">Chapter 2. Discrete Logarithms and Diffie-Hellman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/chapter-3.html">Chapter 3. Integer Factorization and RSA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/chapter-4.html">Chapter 4. Digital Signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/chapter-7.html">Chapter 7. Lattices and Cryptography</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/collection.html">Các bài toán sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/cryptohack/index.html">Wargame chill chill</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2020/index.html">Các cuộc thi năm 2020</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2020</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2020/nsucrypto-2020.html">NSUCRYPTO 2020</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2021/index.html">Các cuộc thi năm 2021</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" role="switch" type="checkbox"/><label for="toctree-checkbox-39"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2021</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2021/CryptoCTF/index.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2021/GoogleCTF/index.html">Google CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2021/nsucrypto.html">NSUCRYPTO 2021</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2022/index.html">Các cuộc thi năm 2022</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2022</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/downunderCTF/index.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/nsucrypto.html">NSUCRYPTO 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/sekaiCTF/index.html">Sekai CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/isitdtu/index.html">ISITDTU Quals 2022</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2023/index.html">Các cuộc thi năm 2023</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2023</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2023/nsucrypto/index.html">NSUCRYPTO 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/siberian-maths-contest/index.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/amateursCTF.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/backdoorCTF.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/googleCTF.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/diceCTF.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/UTCTF.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/wolvCTF.html">Wolv CTF 2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2024/index.html">Các cuộc thi năm 2024</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" role="switch" type="checkbox"/><label for="toctree-checkbox-42"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2024</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/nsucrypto/index.html">NSUCRYPTO 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/internet-olympiad/index.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/0xL4ughCTF-2024/index.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/ASISCTF-2024/index.html">ASIS CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF.html">TJCTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/cryptofox/index.html">CryptoFox 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/isitdtu.html">ISITDTU Quals 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2025/index.html">Các cuộc thi năm 2025</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2025</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2025/cryptofox/index.html">CryptoFox 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2025/tjctf.html">TJCTF 2025</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../stuff/index.html">Ngoài lề</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle navigation of Ngoài lề</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/game/index.html">Lý thuyết trò chơi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/graphics.html">Một số đồ thị hàm số sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/about-godel.html">Về một vị giáo sư và định lý Godel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/about-education.html">Nhìn lại giáo dục từ 2018 về trước</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/about-stoicism.html">Chủ nghĩa khắc kỷ và phân phối nhị thức</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/latex/index.html">Trải nghiệm người dùng với LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../russia/index.html">Nước Nga du kí</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle navigation of Nước Nga du kí</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../russia/intro.html">Giới thiệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../russia/good-or-bad.html">Đi học ở Nga tốt hay xấu?</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../russia/criticism/index.html">Góc khẩu nghiệp</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of Góc khẩu nghiệp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../russia/criticism/criticism-2.html">Phần 2. Sinh viên Việt Nam tại Moscow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../russia/contests.html">Các cuộc thi toán ở Nga</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mathematicians/index.html">Sưu tầm những câu chuyện về các nhà toán học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../men-of-mathematics/index.html">Men of Mathematics</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" role="switch" type="checkbox"/><label for="toctree-checkbox-47"><div class="visually-hidden">Toggle navigation of Men of Mathematics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../men-of-mathematics/dedicate.html">Lời nói đầu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../men-of-mathematics/00-acknowledgement.html">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/cryptography/examen.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="cau-hoi-on-thi-mat-ma-hoc">
+<h1><span class="section-number">5. </span>Câu hỏi ôn thi mật mã học<a class="headerlink" href="#cau-hoi-on-thi-mat-ma-hoc" title="Link to this heading">¶</a></h1>
+<section id="mon-cac-phuong-phap-bao-ve-thong-tin-bang-mat-ma">
+<h2><span class="section-number">5.1. </span>Môn &quot;Các phương pháp bảo vệ thông tin bằng mật mã&quot;<a class="headerlink" href="#mon-cac-phuong-phap-bao-ve-thong-tin-bang-mat-ma" title="Link to this heading">¶</a></h2>
+<section id="id1">
+<h3><span class="section-number">5.1.1. </span>Задачи криптографической защиты информации и средства их решения<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>В криптографических исследованиях разрабатываются средства и методы решения следующих задач:</p>
+<ol class="arabic simple">
+<li><p><strong>Конфиденциальность</strong>. Защита от ознакомления с содержанием информации (сообщения) лицами, не обладающими правом доступа. При этом:</p>
+<ul class="simple">
+<li><p>не скрывается сам факт передачи сообщения;</p></li>
+<li><p>зашифрованное сообщение передается по открытому каналу связи.</p></li>
+</ul>
+</li>
+<li><p><strong>Целостность</strong>. Обеспечение невозможности несанкционированного изменения исходной информации.</p></li>
+<li><p><strong>Аутентификации</strong>. Доказательное подтверждение подлинности сторон и передаваемой информации в процессе информационного взаимодействия.</p></li>
+<li><p><strong>Невозможность отказа от авторства</strong>. Разработка методов предотвращения возможности отказа от ранее совершенных действий.</p></li>
+</ol>
+</section>
+<section id="id2">
+<h3><span class="section-number">5.1.2. </span>Симметричные, асимметричные и комбинированные криптосистемы<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<p><strong>Симметричные криптосистемы</strong> - данные криптосистемы построены на основе сохранения в тайне ключа шифрования. Процессы зашифрования и расшифрования используют <strong>один и тот же ключ</strong>. Секретность ключа является постулатом. <strong>Основная проблема</strong> при применении симметричных криптосистем для связи заключается в сложности <strong>передачи</strong> обоим сторонам <strong>секретного ключа</strong>.</p>
+<p>Однако данны раскрытие ключа злоумышленником грозит раскрытием только той информации, что была зашифрована на этом ключе. Эти системы обладают высоким быстродействием.</p>
+<p><strong>Асимметричные криптосистемы</strong> - смысл данных криптосистем состоит в том, что для зашифрования и расшифрования используются разные преобразования. Одно из них - зашифрование - является абсолютно открытым для всех. Друго же - расшифрование - остается секретным. Таким образом, любой, кто хочет что-либо зашифровать, пользуется открытым преобразованием. Но расшифровать и прочитать это сможет лишь тот, кто владеет секретным преобразованием.</p>
+<p>Комбинированное - совместное использование этих криптосистем позволяет эффективно реализовывать такую базовую функцию защиты, как криптографическое закрытие передаваемой информации с целью обеспечения ее конфиденциальности.</p>
+<p>Комбинированное применение симметричного и асимметричного шифрования устраняет основные недостатки, присущие обоим методам, и позволяет сочетать преимущества высокой секретности, предоставляемые асимметричными криптосистемами с открытым ключом, с преимуществами высокой скорости работы, присущими симметричным криптосистемам с секретным ключом.</p>
+<p>Метод комбинированного использования симметричного и асимметричного шифрования заключается в следующем.</p>
+<p>Симметричную криптосистему применяют для шифрования исходного открытого текста, а асимметричную криптосистему с открытым ключом применяют только для шифрования секретного ключа симметричной криптосистемы. В результате асимметричная криптосистема с открытым ключом не заменяет, а лишь дополняет симметричную криптосистему с секретным ключом, позволяя повысить в целом защищенность передаваемой информации. Такой подход иногда называют схемой электронного &quot;цифрового конверта&quot;.</p>
+</section>
+<section id="id3">
+<h3><span class="section-number">5.1.3. </span>Шифры, алгебраическая модель шифра, примеры<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>Пусть:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathcal{X}\)</span> -- пространство открытых текстов;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{Y}\)</span> -- пространство шифротекстов;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{K}\)</span> -- пространство ключей;</p></li>
+<li><p>функцию зашифрования <span class="math notranslate nohighlight">\(y = E(x,k)\)</span>, переводящую открытый текст <span class="math notranslate nohighlight">\(x \in \mathcal{X}\)</span> на ключе шифрования <span class="math notranslate nohighlight">\(k \in \mathcal{K}\)</span> в шифротекст <span class="math notranslate nohighlight">\(y \in \mathcal{Y}\)</span>;</p></li>
+<li><p>функцию расшифрования <span class="math notranslate nohighlight">\(x = D(y, k)\)</span>.</p></li>
+</ol>
+<p>Тройка множеств, <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>, <span class="math notranslate nohighlight">\(\mathcal{K}\)</span>, <span class="math notranslate nohighlight">\(\mathcal{Y}\)</span> с введенными функциями называется шифром по Шеннону, если каждый шифротекст есть результат шифрования одного из открытых текстов(т.е. функция <span class="math notranslate nohighlight">\(y = E(x, k)\)</span> сюрьективна), а разным открытым текстам отвечают разные шифротексты(т.е. функция <span class="math notranslate nohighlight">\(y = E(x, k)\)</span> инъективна).
+Алгебраическая модель предложена Шенноном.</p>
+</section>
+<section id="id4">
+<h3><span class="section-number">5.1.4. </span>Шифры, вероятностная модель шифра, примеры<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<p>Вероятностной моделью шифра называется его алгебраическая модель, дополненная известными независимыми распределениями вероятностей <span class="math notranslate nohighlight">\(P(\mathcal{X})\)</span> и <span class="math notranslate nohighlight">\(P(\mathcal{K})\)</span>.</p>
+<p>Вероятность появления шифротекста <span class="math notranslate nohighlight">\(y\)</span> равна:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(y) = \sum_{E(x, k) = y} p(x) \cdot p(k)\]</div>
+</div>
+<p>В тех случаях, когда требуется знание распределений <span class="math notranslate nohighlight">\(P(\mathcal{X})\)</span> и <span class="math notranslate nohighlight">\(P(\mathcal{K})\)</span>, мы будем пользоваться вероятностной моделью <span class="math notranslate nohighlight">\(\Sigma_B\)</span>, состоящей из пяти множеств, связанных условиями 1 и 2 предыдущего определения алгебраической модели шифра, и двух вероятностных распределений:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Sigma_B = (\mathcal{X}, \mathcal{K}, \mathcal{Y}, E, D, P(\mathcal{X}), P(\mathcal{K}))\]</div>
+</div>
+</section>
+<section id="id5">
+<h3><span class="section-number">5.1.5. </span>Модели и критерии распознавания открытых текстов<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id6">
+<h3><span class="section-number">5.1.6. </span>Криптоанализ классических шифров. Дешифрование шифра Виженера<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id7">
+<h3><span class="section-number">5.1.7. </span>Классификации шифров<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p>По особенностям алгоритмы шифрования</p>
+<ol class="arabic simple">
+<li><p>Симметричные</p></li>
+<li><p>Асимметричные</p></li>
+<li><p>Комбинированные</p></li>
+</ol>
+<p>По количеству символов сообщения шифруемых или расшифровываемых по однотипной процедуре преобразования</p>
+<ol class="arabic simple">
+<li><p>Потоковые</p></li>
+<li><p>Блочные</p></li>
+</ol>
+</section>
+<section id="id8">
+<h3><span class="section-number">5.1.8. </span>Теоретическая и практическая стойкость шифров<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id9">
+<h3><span class="section-number">5.1.9. </span>Совершенные шифры<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p>Пусть <span class="math notranslate nohighlight">\(\Sigma_B = (\mathcal{X}, \mathcal{Y}, \mathcal{K}, \mathcal{E}, \mathcal{D}, P(\mathcal{X}), P(\mathcal{Y}))\)</span> - вероятностная модель шифра. Шифр <span class="math notranslate nohighlight">\(\Sigma_B\)</span> называется <strong>совершенным</strong>, если для любого <span class="math notranslate nohighlight">\(x\)</span> из <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> и любого <span class="math notranslate nohighlight">\(y\)</span> из <span class="math notranslate nohighlight">\(\mathcal{Y}\)</span> выполняется равенство</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[p(x) = p(x | y)\]</div>
+</div>
+<p>Назовем шифр <span class="math notranslate nohighlight">\(\Sigma_B\)</span> совершенным, если для любых <span class="math notranslate nohighlight">\(x \in \mathcal{X}\)</span>, <span class="math notranslate nohighlight">\(y \in \mathcal{Y}\)</span> выполняется равенство <span class="math notranslate nohighlight">\(p(x | y) = p(x)\)</span>.</p>
+</section>
+<section id="id10">
+<h3><span class="section-number">5.1.10. </span>Шифры замены и их криптоанализ<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>Шифр простой замены — класс методов шифрования, которые сводятся к созданию по определённому алгоритму таблицы шифрования, в которой для каждой буквы открытого текста существует единственная сопоставленная ей буква шифр-текста.</p>
+</section>
+<section id="id11">
+<h3><span class="section-number">5.1.11. </span>Шифры перестановки и их криптоанализ<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<p>Шифр перестановки — это метод симметричного шифрования, в котором элементы исходного открытого текста меняют местами.</p>
+</section>
+<section id="id12">
+<h3><span class="section-number">5.1.12. </span>Шифрование методом гаммирования и его криптоанализ<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<p>Это метод симметричного шифрования, заключающийся в «наложении» последовательности, состоящей из случайных чисел, на открытый текст. Последовательность случайных чисел называется гаммапоследовательностью и используется для зашифровывания и расшифровывания данных. Суммированиеобычно выполняется в каком-либо конечном поле.</p>
+<p>Например, в поле Галуа <span class="math notranslate nohighlight">\(\mathrm{GF}(2)\)</span> суммирование принимает вид операции «исключающее ИЛИ (XOR)». Взлом шифра невозможен т.к. по Шеннону он является совершенным.</p>
+</section>
+<section id="id13">
+<h3><span class="section-number">5.1.13. </span>Криптоаналитические атаки и их классификация<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
+<p><strong>Криптоаналитическая атака при наличии только известного шифртекста</strong> (known-plaintext). Криптоаналитик имеет только шифртексты <span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span>, ..., <span class="math notranslate nohighlight">\(C_i\)</span> нескольких сообщений, причем все они зашифрованы с использованием одного и того же алгоритма шифрования <span class="math notranslate nohighlight">\(E\)</span>. Работа криптоаналитика заключается в том, чтобы раскрыть исходные тексты <span class="math notranslate nohighlight">\(M_1\)</span>, <span class="math notranslate nohighlight">\(M_2\)</span>, ..., <span class="math notranslate nohighlight">\(M_i\)</span>.</p>
+<p><strong>Криптоаналитическая атака при наличии известного открытого текста.</strong> Криптоаналитик имеет доступ не только к шифртекстам <span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span>, ..., <span class="math notranslate nohighlight">\(C_i\)</span> и нескольких сообщений, но также к открытым текстам <span class="math notranslate nohighlight">\(M_1\)</span>, <span class="math notranslate nohighlight">\(M_2\)</span>, ..., <span class="math notranslate nohighlight">\(M_i\)</span> этих сообщений. Его работа заключается в нахождении ключа <span class="math notranslate nohighlight">\(k\)</span>, используемого при шифровании этих сообщений, или алгоритма расшифрования любых новых сообщений, зашифрованных тем же ключом.</p>
+<p><strong>Криптоаналитическая атака при возможности выбора открытого текста</strong> (chosen-plaintext). Крипто-аналитик не только имеет доступ к шифртекстам <span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span>, ..., <span class="math notranslate nohighlight">\(C_i\)</span> и связанным с ними открытым текстам <span class="math notranslate nohighlight">\(M_1\)</span>, <span class="math notranslate nohighlight">\(M_2\)</span>, ..., <span class="math notranslate nohighlight">\(M_i\)</span> этих сообщений, но и может по желанию выбирать открытые тексты, которые затем получает в зашифрованном виде.</p>
+<p><strong>Криптоаналитическая атака методом полного перебора всех возможных ключей</strong> (bruteforce).</p>
+</section>
+<section id="id14">
+<h3><span class="section-number">5.1.14. </span>Блочные шифры. Принципы построения симметричных блочных шифров<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
+<p>Блочный шифр — разновидность симметричного шифра, оперирующего группами бит фиксированной длины — блоками.</p>
+<p>Если исходный текст (или его остаток) меньше размера блока, перед шифрованием его дополняют. Фактически, блочный шифр представляет собой подстановку на алфавите блоков, которая, как следствие, может быть моно- или полиалфавитной.</p>
+<p>Принципы построения:</p>
+<ol class="arabic simple">
+<li><p>SP-сети: AES, Кузнечик</p></li>
+<li><p>Сеть Фейстеля: DES, Магма</p></li>
+</ol>
+</section>
+<section id="id15">
+<h3><span class="section-number">5.1.15. </span>Режимы работы блочных шифров и их сравнение<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h3>
+<p>В ГОСТ 28147—89 этот режим называется режимом простой замены.</p>
+<div class="admonition note">
+<p class="admonition-title">Ghi chú</p>
+<p>Простая замена (thay thế đơn giản) là cách gọi mode ECB trong các tài liệu tiếng Nga.</p>
+</div>
+<p>Сообщение делится на блоки одинакового размера.</p>
+<p>Размер (длина) блока равен <span class="math notranslate nohighlight">\(n\)</span> и измеряется в битах. В результате получается последовательность блоков <span class="math notranslate nohighlight">\(P_1\)</span>, <span class="math notranslate nohighlight">\(P_2\)</span>, ..., <span class="math notranslate nohighlight">\(P_m\)</span>.</p>
+<p>Последний блок при необходимости дополняется до длины <span class="math notranslate nohighlight">\(n\)</span>. Каждый блок <span class="math notranslate nohighlight">\(P_i\)</span> шифруется алгоритмом шифрования <span class="math notranslate nohighlight">\(E_k\)</span> с использованием ключа <span class="math notranslate nohighlight">\(k\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[C_i = E_k(P_i, k).\]</div>
+</div>
+</section>
+<section id="id16">
+<h3><span class="section-number">5.1.16. </span>Методы анализа алгоритмов блочного шифрования<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Атака полным перебором</p></li>
+<li><p>Дифференциальный криптоанализ</p></li>
+<li><p>Линейный криптоанализ (поиск аффинных приближений)</p></li>
+</ol>
+</section>
+<section id="des">
+<h3><span class="section-number">5.1.17. </span>Стандарт шифрования данных DES<a class="headerlink" href="#des" title="Link to this heading">¶</a></h3>
+<p>DES (англ. Data Encryption Standard) — алгоритм для симметричного шифрования, утверждённый правительством США в 1977 году как официальный стандарт (FIPS 46-3).</p>
+<p>Размер блока для DES равен <span class="math notranslate nohighlight">\(64\)</span> битам. В основе алгоритма лежит сеть Фейстеля с <span class="math notranslate nohighlight">\(16\)</span> циклами (раундами) и ключом, имеющим длину <span class="math notranslate nohighlight">\(56\)</span> бит. Алгоритм использует комбинацию нелинейных (S-блоки) и линейных преобразований.</p>
+</section>
+<section id="id17">
+<h3><span class="section-number">5.1.18. </span>Развертывание раундовых ключей в DES<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
+<p>Ключи <span class="math notranslate nohighlight">\(k_i\)</span> получаются из начального ключа <span class="math notranslate nohighlight">\(k\)</span> (56 бит) следующим образом.</p>
+<p>Добавляются биты в позиции 8, 16, 24, 32, 40, 48, 56, 64 ключа <span class="math notranslate nohighlight">\(k\)</span> таким образом, чтобы каждый байт содержал нечетное число единиц. Это используется для обнаружения ошибок при обмене и хранении ключей.</p>
+<p>Затем делают перестановку для расширенного ключа (кроме добавляемых битов 8, 16, 24, 32, 40, 48, 56, 64)</p>
+<p>Эта перестановка определяется двумя блоками <span class="math notranslate nohighlight">\(C_{0}\)</span> и <span class="math notranslate nohighlight">\(D_0\)</span> по 28 бит каждый. Первые 3 бита <span class="math notranslate nohighlight">\(C_{0}\)</span> есть биты 57, 49, 41 расширенного ключа. А первые три бита <span class="math notranslate nohighlight">\(D_0\)</span> есть биты 63, 55, 47 расширенного ключа <span class="math notranslate nohighlight">\(C_i\)</span>, <span class="math notranslate nohighlight">\(D_i\)</span>, <span class="math notranslate nohighlight">\(i=1,2,3,\ldots\)</span> получаются из <span class="math notranslate nohighlight">\(C_{i-1}\)</span>, <span class="math notranslate nohighlight">\(D_{i-1}\)</span> одним или двумя левыми циклическими сдвигами.</p>
+<p>Ключ <span class="math notranslate nohighlight">\(k_i\)</span>, <span class="math notranslate nohighlight">\(i=1,\ldots,16\)</span> состоит из 48 бит, выбранных из битов вектора <span class="math notranslate nohighlight">\(C_i \Vert D_i\)</span> (56 бит) согласно таблице. Ппример, первый и второй биты <span class="math notranslate nohighlight">\(k_i\)</span> есть биты 14, 17 вектора <span class="math notranslate nohighlight">\(C_i \Vert D_i\)</span>.</p>
+</section>
+<section id="cbc-des">
+<h3><span class="section-number">5.1.19. </span>Режим сцепления блоков шифра (CBC) на примере DES<a class="headerlink" href="#cbc-des" title="Link to this heading">¶</a></h3>
+</section>
+<section id="ofb-des">
+<h3><span class="section-number">5.1.20. </span>Режим обратной связи по выходу (OFB) на примере DES<a class="headerlink" href="#ofb-des" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id18">
+<h3><span class="section-number">5.1.21. </span>Режим сцепления блоков шифра (CBC) на примере DES<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id19">
+<h3><span class="section-number">5.1.22. </span>Имитостойкость шифров<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h3>
+<p><strong>Имитостойкость</strong> шифра определим как его способность противостоять попыткам противника по имитации или подмене.</p>
+<p><strong>Имитозащита</strong> — защита системы шифровальной связи или другой криптосистемы от навязывания ложных данных. Защита данных от внесения в них несанкционированных изменений, другими словами, защита целостности сообщения.</p>
+<p>Реализуется с помощью добавления к сообщению дополнительного кода (добавление битов четности, контрольной суммы), имитовставки, зависящей от содержания сообщения и секретного элемента, известного только отправителю и получателю (ключа).</p>
+<p>Закладка избыточности позволяет обнаружить внесённые в сообщение несанкционированные изменения.</p>
+</section>
+<section id="aes">
+<h3><span class="section-number">5.1.23. </span>Стандарт шифрования данных AES<a class="headerlink" href="#aes" title="Link to this heading">¶</a></h3>
+<p>Xem bài viết về AES.</p>
+</section>
+<section id="id20">
+<h3><span class="section-number">5.1.24. </span>Развертывание раундовых ключей в AES<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h3>
+<p>Xem bài viết về AES.</p>
+</section>
+<section id="id21">
+<h3><span class="section-number">5.1.25. </span>Российский стандарт шифрования данных МАГМА (ГОСТ Р 34.12-2015)<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h3>
+<p>Xem bài viết về Magma.</p>
+</section>
+<section id="id22">
+<h3><span class="section-number">5.1.26. </span>Развертывание раундовых ключей в стандарте МАГМА, количество слабых и 2-слабых ключей<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id23">
+<h3><span class="section-number">5.1.27. </span>Российский стандарт шифрования данных КУЗНЕЧИК (ГОСТ Р 34.12-2015)<a class="headerlink" href="#id23" title="Link to this heading">¶</a></h3>
+<p>Xem bài viết về Kuznyechik.</p>
+</section>
+<section id="id24">
+<h3><span class="section-number">5.1.28. </span>Развертывание раундовых ключей в стандарте КУЗНЕЧИК<a class="headerlink" href="#id24" title="Link to this heading">¶</a></h3>
+<p>Xem bài viết về Kuznyechik.</p>
+</section>
+<section id="id25">
+<h3><span class="section-number">5.1.29. </span>Поточные шифры. Принципы их построения<a class="headerlink" href="#id25" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id26">
+<h3><span class="section-number">5.1.30. </span>Методы генерации и анализа псевдослучайных последовательностей<a class="headerlink" href="#id26" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id27">
+<h3><span class="section-number">5.1.31. </span>Регистры сдвига, критерий регулярности<a class="headerlink" href="#id27" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id28">
+<h3><span class="section-number">5.1.32. </span>Регистры сдвига максимального периода<a class="headerlink" href="#id28" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id29">
+<h3><span class="section-number">5.1.33. </span>Криптоанализ поточных шифров<a class="headerlink" href="#id29" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id30">
+<h3><span class="section-number">5.1.34. </span>Системы шифрования с открытыми ключами. Принципы их построения<a class="headerlink" href="#id30" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id31">
+<h3><span class="section-number">5.1.35. </span>Анализ асимметричных криптосистем<a class="headerlink" href="#id31" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id32">
+<h3><span class="section-number">5.1.36. </span>Атаки на асимметричные криптосистемы<a class="headerlink" href="#id32" title="Link to this heading">¶</a></h3>
+</section>
+<section id="rsa">
+<h3><span class="section-number">5.1.37. </span>Системы шифрования с открытыми ключами Криптосистема RSA<a class="headerlink" href="#rsa" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id33">
+<h3><span class="section-number">5.1.38. </span>Системы шифрования с открытыми ключами. Криптосистема Эль-Гамаля<a class="headerlink" href="#id33" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id34">
+<h3><span class="section-number">5.1.39. </span>Управление ключами. Открытое распределение ключей Диффи - Хеллмана<a class="headerlink" href="#id34" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id35">
+<h3><span class="section-number">5.1.40. </span>Электронная подпись. Принципы ее формирования<a class="headerlink" href="#id35" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id36">
+<h3><span class="section-number">5.1.41. </span>Электронная подпись на базе криптосистемы RSA<a class="headerlink" href="#id36" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id37">
+<h3><span class="section-number">5.1.42. </span>Электронная подпись на базе криптосистемы Эль Гамаля<a class="headerlink" href="#id37" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id38">
+<h3><span class="section-number">5.1.43. </span>Российский стандарт электронной подписи ГОСТ Р 34.10-2012<a class="headerlink" href="#id38" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id39">
+<h3><span class="section-number">5.1.44. </span>Хэш-функции, требования к ним<a class="headerlink" href="#id39" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id40">
+<h3><span class="section-number">5.1.45. </span>Методы построения функций хэширования<a class="headerlink" href="#id40" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id41">
+<h3><span class="section-number">5.1.46. </span>Российский стандарт хэш-функции ГОСТ Р 34.11-2012<a class="headerlink" href="#id41" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id42">
+<h3><span class="section-number">5.1.47. </span>Криптографические протоколы и их классификация<a class="headerlink" href="#id42" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id43">
+<h3><span class="section-number">5.1.48. </span>Системы аутентификации<a class="headerlink" href="#id43" title="Link to this heading">¶</a></h3>
+</section>
+<section id="lightweight">
+<h3><span class="section-number">5.1.49. </span>Алгоритмы «облегченной» (lightweight) криптографии и их предназначение<a class="headerlink" href="#lightweight" title="Link to this heading">¶</a></h3>
+</section>
+<section id="windows">
+<h3><span class="section-number">5.1.50. </span>Криптографические средства защиты информации в ОС Windows<a class="headerlink" href="#windows" title="Link to this heading">¶</a></h3>
+</section>
+<section id="msdn">
+<h3><span class="section-number">5.1.51. </span>Криптографические средства защиты информации в MSDN<a class="headerlink" href="#msdn" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id44">
+<h3><span class="section-number">5.1.52. </span>Реализация операций над байтами в стандарте AES<a class="headerlink" href="#id44" title="Link to this heading">¶</a></h3>
+</section>
+<section id="subbytes-aes">
+<h3><span class="section-number">5.1.53. </span>Реализация преобразования SubBytes в стандарте AES<a class="headerlink" href="#subbytes-aes" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id45">
+<h3><span class="section-number">5.1.54. </span>Реализация нелинейного узла замены в стандарте DES<a class="headerlink" href="#id45" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id46">
+<h3><span class="section-number">5.1.55. </span>Вычисления в группе точек эллиптических кривых<a class="headerlink" href="#id46" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id47">
+<h3><span class="section-number">5.1.56. </span>Криптосистемы на эллиптических кривых. Принципы их построения<a class="headerlink" href="#id47" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id48">
+<h3><span class="section-number">5.1.57. </span>Распределение ключей с использованием эллиптических кривых. Протокол Диффи-Хеллмана<a class="headerlink" href="#id48" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id49">
+<h3><span class="section-number">5.1.58. </span>Криптосистема Эль-Гамаля на эллиптических кривых<a class="headerlink" href="#id49" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id50">
+<h3><span class="section-number">5.1.59. </span>Электронная подпись Эль-Гамаля на эллиптических кривых<a class="headerlink" href="#id50" title="Link to this heading">¶</a></h3>
+</section>
+<section id="id51">
+<h3><span class="section-number">5.1.60. </span>Квантовая криптография, протоколы открытого распределения ключей<a class="headerlink" href="#id51" title="Link to this heading">¶</a></h3>
+<p>HẾT.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="quantum-computing.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><span class="section-number">6. </span>Quantum computing</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="Kerckhoffs-principle/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><span class="section-number">4. </span>Nguyên tắc Kerckhoffs và mật mã học</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">5. Câu hỏi ôn thi mật mã học</a><ul>
+<li><a class="reference internal" href="#mon-cac-phuong-phap-bao-ve-thong-tin-bang-mat-ma">5.1. Môn &quot;Các phương pháp bảo vệ thông tin bằng mật mã&quot;</a><ul>
+<li><a class="reference internal" href="#id1">5.1.1. Задачи криптографической защиты информации и средства их решения</a></li>
+<li><a class="reference internal" href="#id2">5.1.2. Симметричные, асимметричные и комбинированные криптосистемы</a></li>
+<li><a class="reference internal" href="#id3">5.1.3. Шифры, алгебраическая модель шифра, примеры</a></li>
+<li><a class="reference internal" href="#id4">5.1.4. Шифры, вероятностная модель шифра, примеры</a></li>
+<li><a class="reference internal" href="#id5">5.1.5. Модели и критерии распознавания открытых текстов</a></li>
+<li><a class="reference internal" href="#id6">5.1.6. Криптоанализ классических шифров. Дешифрование шифра Виженера</a></li>
+<li><a class="reference internal" href="#id7">5.1.7. Классификации шифров</a></li>
+<li><a class="reference internal" href="#id8">5.1.8. Теоретическая и практическая стойкость шифров</a></li>
+<li><a class="reference internal" href="#id9">5.1.9. Совершенные шифры</a></li>
+<li><a class="reference internal" href="#id10">5.1.10. Шифры замены и их криптоанализ</a></li>
+<li><a class="reference internal" href="#id11">5.1.11. Шифры перестановки и их криптоанализ</a></li>
+<li><a class="reference internal" href="#id12">5.1.12. Шифрование методом гаммирования и его криптоанализ</a></li>
+<li><a class="reference internal" href="#id13">5.1.13. Криптоаналитические атаки и их классификация</a></li>
+<li><a class="reference internal" href="#id14">5.1.14. Блочные шифры. Принципы построения симметричных блочных шифров</a></li>
+<li><a class="reference internal" href="#id15">5.1.15. Режимы работы блочных шифров и их сравнение</a></li>
+<li><a class="reference internal" href="#id16">5.1.16. Методы анализа алгоритмов блочного шифрования</a></li>
+<li><a class="reference internal" href="#des">5.1.17. Стандарт шифрования данных DES</a></li>
+<li><a class="reference internal" href="#id17">5.1.18. Развертывание раундовых ключей в DES</a></li>
+<li><a class="reference internal" href="#cbc-des">5.1.19. Режим сцепления блоков шифра (CBC) на примере DES</a></li>
+<li><a class="reference internal" href="#ofb-des">5.1.20. Режим обратной связи по выходу (OFB) на примере DES</a></li>
+<li><a class="reference internal" href="#id18">5.1.21. Режим сцепления блоков шифра (CBC) на примере DES</a></li>
+<li><a class="reference internal" href="#id19">5.1.22. Имитостойкость шифров</a></li>
+<li><a class="reference internal" href="#aes">5.1.23. Стандарт шифрования данных AES</a></li>
+<li><a class="reference internal" href="#id20">5.1.24. Развертывание раундовых ключей в AES</a></li>
+<li><a class="reference internal" href="#id21">5.1.25. Российский стандарт шифрования данных МАГМА (ГОСТ Р 34.12-2015)</a></li>
+<li><a class="reference internal" href="#id22">5.1.26. Развертывание раундовых ключей в стандарте МАГМА, количество слабых и 2-слабых ключей</a></li>
+<li><a class="reference internal" href="#id23">5.1.27. Российский стандарт шифрования данных КУЗНЕЧИК (ГОСТ Р 34.12-2015)</a></li>
+<li><a class="reference internal" href="#id24">5.1.28. Развертывание раундовых ключей в стандарте КУЗНЕЧИК</a></li>
+<li><a class="reference internal" href="#id25">5.1.29. Поточные шифры. Принципы их построения</a></li>
+<li><a class="reference internal" href="#id26">5.1.30. Методы генерации и анализа псевдослучайных последовательностей</a></li>
+<li><a class="reference internal" href="#id27">5.1.31. Регистры сдвига, критерий регулярности</a></li>
+<li><a class="reference internal" href="#id28">5.1.32. Регистры сдвига максимального периода</a></li>
+<li><a class="reference internal" href="#id29">5.1.33. Криптоанализ поточных шифров</a></li>
+<li><a class="reference internal" href="#id30">5.1.34. Системы шифрования с открытыми ключами. Принципы их построения</a></li>
+<li><a class="reference internal" href="#id31">5.1.35. Анализ асимметричных криптосистем</a></li>
+<li><a class="reference internal" href="#id32">5.1.36. Атаки на асимметричные криптосистемы</a></li>
+<li><a class="reference internal" href="#rsa">5.1.37. Системы шифрования с открытыми ключами Криптосистема RSA</a></li>
+<li><a class="reference internal" href="#id33">5.1.38. Системы шифрования с открытыми ключами. Криптосистема Эль-Гамаля</a></li>
+<li><a class="reference internal" href="#id34">5.1.39. Управление ключами. Открытое распределение ключей Диффи - Хеллмана</a></li>
+<li><a class="reference internal" href="#id35">5.1.40. Электронная подпись. Принципы ее формирования</a></li>
+<li><a class="reference internal" href="#id36">5.1.41. Электронная подпись на базе криптосистемы RSA</a></li>
+<li><a class="reference internal" href="#id37">5.1.42. Электронная подпись на базе криптосистемы Эль Гамаля</a></li>
+<li><a class="reference internal" href="#id38">5.1.43. Российский стандарт электронной подписи ГОСТ Р 34.10-2012</a></li>
+<li><a class="reference internal" href="#id39">5.1.44. Хэш-функции, требования к ним</a></li>
+<li><a class="reference internal" href="#id40">5.1.45. Методы построения функций хэширования</a></li>
+<li><a class="reference internal" href="#id41">5.1.46. Российский стандарт хэш-функции ГОСТ Р 34.11-2012</a></li>
+<li><a class="reference internal" href="#id42">5.1.47. Криптографические протоколы и их классификация</a></li>
+<li><a class="reference internal" href="#id43">5.1.48. Системы аутентификации</a></li>
+<li><a class="reference internal" href="#lightweight">5.1.49. Алгоритмы «облегченной» (lightweight) криптографии и их предназначение</a></li>
+<li><a class="reference internal" href="#windows">5.1.50. Криптографические средства защиты информации в ОС Windows</a></li>
+<li><a class="reference internal" href="#msdn">5.1.51. Криптографические средства защиты информации в MSDN</a></li>
+<li><a class="reference internal" href="#id44">5.1.52. Реализация операций над байтами в стандарте AES</a></li>
+<li><a class="reference internal" href="#subbytes-aes">5.1.53. Реализация преобразования SubBytes в стандарте AES</a></li>
+<li><a class="reference internal" href="#id45">5.1.54. Реализация нелинейного узла замены в стандарте DES</a></li>
+<li><a class="reference internal" href="#id46">5.1.55. Вычисления в группе точек эллиптических кривых</a></li>
+<li><a class="reference internal" href="#id47">5.1.56. Криптосистемы на эллиптических кривых. Принципы их построения</a></li>
+<li><a class="reference internal" href="#id48">5.1.57. Распределение ключей с использованием эллиптических кривых. Протокол Диффи-Хеллмана</a></li>
+<li><a class="reference internal" href="#id49">5.1.58. Криптосистема Эль-Гамаля на эллиптических кривых</a></li>
+<li><a class="reference internal" href="#id50">5.1.59. Электронная подпись Эль-Гамаля на эллиптических кривых</a></li>
+<li><a class="reference internal" href="#id51">5.1.60. Квантовая криптография, протоколы открытого распределения ключей</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1]}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1091 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Tìm Kiếm" href="../../search.html" /><link rel="next" title="An Introduction to Mathematical Cryptography" href="../an-introduction-to-mathematical-cryptography/index.html" /><link rel="prev" title="Abstract Algebra: Theory and Applications" href="../Judson.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>Курс высшей математики: Теория вероятностей - Math Book</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=4c010e0d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystyles.css?v=fd3ba0dd" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Math Book</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/Euler_Stamp.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Math Book</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../introduction/index.html">Những lời nói đầu</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Những lời nói đầu</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/about-maths.html">Toán học là gì với mình?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/about-notebook.html">Cơ sở xây dựng notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/about-quotations.html">Những lời răn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/about-notation.html">Kí hiệu và công thức toán trong mật mã</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algebra/index.html">Đại số</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Đại số</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../algebra/set/index.html">1. Đại cương về tập hợp</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1. Đại cương về tập hợp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/set/set.html">1.1. Tập hợp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/set/cadinality.html">1.2. Lực lượng của tập hợp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/set/map.html">1.3. Ánh xạ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/set/function.html">1.4. Hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/set/infinity.html">1.5. Các nghịch lý về tập vô hạn</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../algebra/polynomial/index.html">2. Đa thức</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2. Đa thức</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc">2.2. So sánh, cộng, trừ và nhân hai đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/lagrange-interpolation.html">2.3. Đa thức nội suy Lagrange</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/proof.html">3. Phương pháp chứng minh toán học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/glossary.html">4. Bảng thuật ngữ đại số</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../abstract-algebra/index.html">Lý thuyết nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Lý thuyết nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/groups/index.html">1. Lý thuyết nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of 1. Lý thuyết nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/groups/group.html">1.1. Nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/groups/symmetric-group.html">1.2. Nhóm hoán vị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/groups/quasigroup.html">1.3. Quasigroup</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/homomorphisms/index.html">2. Homomorphisms</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of 2. Homomorphisms</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/homomorphisms/group-homomorphism.html">2.1. Group homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/group-action/index.html">3. Tác động nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of 3. Tác động nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/group-action/group-action.html">3.1. Tác động nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/group-action/burnside.html">3.2. Bổ đề Burnside</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/rings/index.html">4. Vành</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of 4. Vành</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/rings/ring.html">4.1. Vành</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/fields/index.html">5. Trường</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of 5. Trường</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/fields/field.html">5.1. Trường</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/fields/ideal.html">5.2. Ideal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/fields/ring-homomorphism.html">5.3. Ring kernel và ring homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/galois-theory/index.html">6. Lý thuyết Galois</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of 6. Lý thuyết Galois</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/galois-theory/extension-field.html">6.1. Extension Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../abstract-algebra/glossary.html">7. Bảng thuật ngữ lý thuyết nhóm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../geometry/index.html">Hình học</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Hình học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../geometry/analytic-geometry/index.html">1. Hình học giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of 1. Hình học giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/analytic-geometry/intro.html">1.1. Theo dòng lịch sử</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/analytic-geometry/analytic-geometry.html">1.2. Phương pháp tọa độ trong mặt phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/analytic-geometry/analytic-geometry.html#dao-ham">1.3. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/analytic-geometry/analytic-geometry.html#tich-phan">1.4. Tích phân</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/analytic-geometry/conics.html">1.5. Ba đường Conic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/analytic-geometry/transformation.html">1.6. Phép biến hình</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../geometry/brachistochrone/brachistochrone.html">2. Đường đoản thời</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../geometry/affine-geometry/index.html">3. Hình học affine</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of 3. Hình học affine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html">3.1. Không gian affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html#phang">3.2. Phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html#doc-lap-affine-va-phu-thuoc-affine">3.3. Độc lập affine và phụ thuộc affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html#giao-cua-cac-phang-bao-affine">3.4. Giao của các phẳng. Bao affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html#vi-tri-tuong-doi">3.5. Vị trí tương đối</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html#muc-tieu-va-toa-do-affine">3.6. Mục tiêu và tọa độ affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html#cong-thuc-doi-muc-tieu">3.7. Công thức đổi mục tiêu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html#phuong-trinh-cua-m-phang">3.8. Phương trình của <span class="math notranslate nohighlight">\(m\)</span>-phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html#tam-ti-cu-va-ti-so-don">3.9. Tâm tỉ cự và tỉ số đơn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html#anh-xa-affine">3.10. Ánh xạ affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../geometry/affine-geometry/affine-space.html#su-xac-dinh-anh-xa-affine">3.11. Sự xác định ánh xạ affine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../geometry/noneuclidean.html">4. Hình học phi Euclid</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../calculus/index.html">Giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../calculus/calculus/index.html">1. Giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of 1. Giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/limits.html">1.1. Giới hạn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/continuity.html">1.2. Tính liên tục của hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/monotone.html">1.3. Tính đơn điệu và cực trị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/derivative.html">1.4. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/avarage-value.html">1.5. Một số định lí về giá trị trung bình</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/concave.html">1.6. Tính lồi, lõm và điểm uốn của đồ thị</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../calculus/differential-equation/index.html">2. Phương trình vi phân</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../calculus/series/index.html">3. Chuỗi số</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../calculus/derivative/index.html">4. Đạo hàm</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of 4. Đạo hàm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/derivative/partial-derivative.html">4.1. Đạo hàm một số hàm nhiều biến</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../calculus/integral/index.html">5. Tích phân</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of 5. Tích phân</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/integral/line-integral.html">5.1. Tích phân đường</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../probability/index.html">Xác suất thống kê</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Xác suất thống kê</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../probability/intro.html">Xác suất thống kê</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../probability/ML/index.html">Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Machine Learning</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/linear-regression.html">Linear Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/kmeans.html">K-Means clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/gradient-descent.html">Gradient Descent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/perceptron.html">Perceptron Learning Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../linalg/index.html">Đại số tuyến tính</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of Đại số tuyến tính</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../linalg/matrix/index.html">1. Ma trận</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 1. Ma trận</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linalg/matrix/matrix-determinant.html">1.1. Định thức ma trận</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linalg/matrix/matrix-inversion.html">1.2. Ma trận nghịch đảo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linalg/matrix/matrix-rank.html">1.3. Hạng của ma trận</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/linear-operator.html">2. Toán tử tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/eigen.html">3. Trị riêng và vector riêng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/linear-combination.html">4. Tổ hợp tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/vector-space.html">5. Không gian vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/euclidean-space.html">6. Không gian Euclide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/hilbert-space.html">7. Không gian Hilbert</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../number-theory/index.html">Lý thuyết số</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Lý thuyết số</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/euclidean.html">1. Phép chia Euclid. Thuật toán Euclid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/linear-congruence.html">2. Phương trình đồng dư tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/euler.html">3. Hàm Euler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/quadratic-residue.html">4. Thặng dư chính phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/mobius.html">5. Hàm Möbius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/chinese-remainder-theorem.html">6. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/exercises.html">7. Bài tập số học sưu tầm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/index.html">Toán rời rạc</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Toán rời rạc</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/binary-relation.html">Quan hệ hai ngôi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/partition.html">Phân hoạch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/discrete-fourier-transform.html">Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/combinatoric.html">Đại cương tổ hợp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/recurrence-relation.html">Công thức truy hồi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/graph/index.html">Lý thuyết đồ thị</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topology/index.html">Topology</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../boolean/index.html">Đại số Bool và mật mã học</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Đại số Bool và mật mã học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../boolean/intro.html">1. Giới thiệu</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/boolean-algebra/index.html">2. Đại số Boolean</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 2. Đại số Boolean</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/boolean-function.html">2.1. Hàm boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/boolean-affine.html">2.2. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/boolean-monotone.html">2.3. Hàm đơn điệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/boolean-dnf-cnf.html">2.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/boolean-weight.html">2.5. Khoảng cách Hamming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-algebra/walsh-hadamard-spectre.html">2.6. Nonlinearity của hàm boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/block/block-cipher.html">3. Block cipher</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 3. Block cipher</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/spnet.html">3.1. SP network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/AES.html">3.2. AES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/kuznyechik.html">3.3. Kuznyechik</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/present.html">3.4. PRESENT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/feistel.html">3.5. Mô hình Feistel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/magma.html">3.6. Magma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/sms4.html">3.7. SMS4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block/arx.html">3.8. ARX</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/stream/stream-cipher.html">4. Stream cipher</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of 4. Stream cipher</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/stream/linear-feedback-shift-register.html">4.1. Linear Feedback Shift Register</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../boolean/mac.html">5. Message Authentication Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptanalysis/index.html">Phá mã</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of Phá mã</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cryptanalysis/differential-attack/index.html">1. Phá mã vi sai</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of 1. Phá mã vi sai</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptanalysis/differential-attack/toycipher.html">1.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptanalysis/differential-attack/tinydes.html">1.2. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptanalysis/differential-attack/difference-and-differential.html">1.3. Difference và differential</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cryptanalysis/linear-attack/index.html">2. Phá mã tuyến tính</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of 2. Phá mã tuyến tính</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptanalysis/linear-attack/tinydes.html">2.1. Phá mã tuyến tính trên TinyDES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptanalysis/slide-attack/index.html">3. Slide attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptanalysis/algebraic-attack/index.html">4. Algebraic cryptanalysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cryptography/index.html">Mật mã học</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Mật mã học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cryptography/lattice-based/index.html">1. Lattice-based cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of 1. Lattice-based cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/intro.html">1.1. Nhập môn mật mã dựa trên lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/congruential-pubkey.html">1.2. Congruential public key cryptosystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/ntru.html">1.3. NTRU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/falcon.html">1.4. FALCON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/lattice-reduction-algorithms.html">1.5. Thuật toán rút gọn lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/lattice-based/coppersmith.html">1.6. Phương pháp Coppersmith</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cryptography/code-based/index.html">2. Code-based cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of 2. Code-based cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/intro.html">2.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/decode-problem.html">2.2. Bài toán decode tổng quát</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/linear-code.html">2.3. Linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/weight.html">2.4. Bài toán phổ trọng số của mã tuyến tính</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/decode-on-linear-code.html">2.5. Bài toán decode trên linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/equivalence.html">2.6. Bài toán tương đương các linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/cryptosystem.html">2.7. Ý tưởng xây dựng các hệ mật mã dựa trên mã sửa sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/pubkey-algo.html">2.8. Các hệ mật mã khóa công khai dựa trên lý thuyết code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/code-based/goppa-code.html">2.9. Goppa Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/elliptic/index.html">3. Đường cong elliptic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/Kerckhoffs-principle/index.html">4. Nguyên tắc Kerckhoffs và mật mã học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/examen.html">5. Câu hỏi ôn thi mật mã học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cryptography/quantum-computing.html">6. Quantum computing</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../cryptography/zero-knowledge-proof/index.html">7. Zero Knowledge Proof</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of 7. Zero Knowledge Proof</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/zero-knowledge-proof/intro.html">7.1. Giới thiệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cryptography/zero-knowledge-proof/plonk.html">7.2. Plonk Protocol</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Lời giải các bài tập trong sách tham khảo</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle navigation of Lời giải các bài tập trong sách tham khảo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Judson.html">Abstract Algebra: Theory and Applications</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Курс высшей математики: Теория вероятностей</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../an-introduction-to-mathematical-cryptography/index.html">An Introduction to Mathematical Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle navigation of An Introduction to Mathematical Cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../an-introduction-to-mathematical-cryptography/chapter-2.html">Chapter 2. Discrete Logarithms and Diffie-Hellman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../an-introduction-to-mathematical-cryptography/chapter-3.html">Chapter 3. Integer Factorization and RSA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../an-introduction-to-mathematical-cryptography/chapter-4.html">Chapter 4. Digital Signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../an-introduction-to-mathematical-cryptography/chapter-7.html">Chapter 7. Lattices and Cryptography</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../collection.html">Các bài toán sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptohack/index.html">Wargame chill chill</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2020/index.html">Các cuộc thi năm 2020</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2020</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/nsucrypto-2020.html">NSUCRYPTO 2020</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2021/index.html">Các cuộc thi năm 2021</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" role="switch" type="checkbox"/><label for="toctree-checkbox-39"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2021</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/CryptoCTF/index.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/GoogleCTF/index.html">Google CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/nsucrypto.html">NSUCRYPTO 2021</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/index.html">Các cuộc thi năm 2022</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2022</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/downunderCTF/index.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/nsucrypto.html">NSUCRYPTO 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sekaiCTF/index.html">Sekai CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/isitdtu/index.html">ISITDTU Quals 2022</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2023/index.html">Các cuộc thi năm 2023</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2023</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/nsucrypto/index.html">NSUCRYPTO 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/siberian-maths-contest/index.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/amateursCTF.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/backdoorCTF.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/googleCTF.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/diceCTF.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/UTCTF.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/wolvCTF.html">Wolv CTF 2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2024/index.html">Các cuộc thi năm 2024</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" role="switch" type="checkbox"/><label for="toctree-checkbox-42"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2024</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/nsucrypto/index.html">NSUCRYPTO 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/internet-olympiad/index.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/0xL4ughCTF-2024/index.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/ASISCTF-2024/index.html">ASIS CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/TJCTF.html">TJCTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/cryptofox/index.html">CryptoFox 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/isitdtu.html">ISITDTU Quals 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2025/index.html">Các cuộc thi năm 2025</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2025</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/cryptofox/index.html">CryptoFox 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/tjctf.html">TJCTF 2025</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../stuff/index.html">Ngoài lề</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle navigation of Ngoài lề</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/game/index.html">Lý thuyết trò chơi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/graphics.html">Một số đồ thị hàm số sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/about-godel.html">Về một vị giáo sư và định lý Godel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/about-education.html">Nhìn lại giáo dục từ 2018 về trước</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/about-stoicism.html">Chủ nghĩa khắc kỷ và phân phối nhị thức</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../stuff/latex/index.html">Trải nghiệm người dùng với LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../russia/index.html">Nước Nga du kí</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle navigation of Nước Nga du kí</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../russia/intro.html">Giới thiệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../russia/good-or-bad.html">Đi học ở Nga tốt hay xấu?</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../russia/criticism/index.html">Góc khẩu nghiệp</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of Góc khẩu nghiệp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../russia/criticism/criticism-2.html">Phần 2. Sinh viên Việt Nam tại Moscow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../russia/contests.html">Các cuộc thi toán ở Nga</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathematicians/index.html">Sưu tầm những câu chuyện về các nhà toán học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../men-of-mathematics/index.html">Men of Mathematics</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" role="switch" type="checkbox"/><label for="toctree-checkbox-47"><div class="visually-hidden">Toggle navigation of Men of Mathematics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../men-of-mathematics/dedicate.html">Lời nói đầu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../men-of-mathematics/00-acknowledgement.html">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/solutions/Petrushko/index.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="id1">
+<h1>Курс высшей математики: Теория вероятностей<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+<p>Lời giải cho quyển sách <span id="id2">[<a class="reference internal" href="../../index.html#id26" title="И.М. Петрушко. Курс высшей математики. Теория вероятностей. Лекции и практикум : учебное пособие. Издательство &quot;Лань&quot;, 3 edition, 2008. ISBN 978-5-8114-0728-6. URL: https://e.lanbook.com/book/497.">39</a>]</span>. Đây là quyển mình được học trên trường.</p>
+<section id="xac-suat-khong-lien-tuc">
+<h2>Xác suất không liên tục<a class="headerlink" href="#xac-suat-khong-lien-tuc" title="Link to this heading">¶</a></h2>
+<p><strong>Bài 1.</strong> Có <span class="math notranslate nohighlight">\(10\)</span> đội được chia ngẫu nhiên làm hai nhóm. Tính xác xuất để hai đội mạnh nhất vào hai nhóm khác nhau? ... cùng một nhóm? ... cùng vào nhóm thứ nhất?</p>
+<p><strong>Giải.</strong></p>
+<ol class="arabic simple">
+<li><p>Một đội mạnh có <span class="math notranslate nohighlight">\(C^1_2\)</span> cách chọn, đội còn lại
+sẽ vào nhóm còn lại. Tiếp theo, chọn <span class="math notranslate nohighlight">\(4\)</span> đội cho
+nhóm đầu có <span class="math notranslate nohighlight">\(C^4_8\)</span> cách, <span class="math notranslate nohighlight">\(4\)</span> đội cho nhóm
+còn lại có <span class="math notranslate nohighlight">\(C^4_4\)</span> cách. Không gian mẫu là
+<span class="math notranslate nohighlight">\(C^5_{10} \cdot C^5_5\)</span>. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{5}{9}\)</span>.</p></li>
+<li><p>Hai đội mạnh vào cùng một nhóm, có <span class="math notranslate nohighlight">\(C^1_2\)</span> cách.
+Chọn <span class="math notranslate nohighlight">\(3\)</span> đội cho nhóm đó có <span class="math notranslate nohighlight">\(C^3_8\)</span> cách.
+Nhóm còn lại sẽ có <span class="math notranslate nohighlight">\(C^5_5\)</span> cách. Không gian mẫu
+là <span class="math notranslate nohighlight">\(C^5_{10} \cdot C^5_5\)</span>. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{4}{9}\)</span>.</p></li>
+<li><p>Hai đội mạnh đều vào nhóm đầu nên chỉ có <span class="math notranslate nohighlight">\(1\)</span>
+cách chọn. Chọn <span class="math notranslate nohighlight">\(3\)</span> đội còn lại của nhóm đầu
+có <span class="math notranslate nohighlight">\(C^3_8\)</span> cách. Chọn <span class="math notranslate nohighlight">\(5\)</span> đội cho nhóm
+còn lại có <span class="math notranslate nohighlight">\(C^5_5\)</span> cách. Không gian mẫu là
+<span class="math notranslate nohighlight">\(C^5_{10} \cdot C^5_5\)</span>. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{2}{9}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 2.</strong> Một bộ bài đầy đủ có <span class="math notranslate nohighlight">\(52\)</span> lá. Lấy ngẫu nhiên
+ra ba lá. Tính xác suất để ba lá đó là <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(7\)</span> và át?
+Tính xác suất để ba lá đó được lấy theo thứ tự trên?</p>
+<p><strong>Giải.</strong></p>
+<ol class="arabic simple">
+<li><p>Không gian mẫu là <span class="math notranslate nohighlight">\(C^3_{52}\)</span>. Lấy một trong bốn
+con <span class="math notranslate nohighlight">\(3\)</span> có <span class="math notranslate nohighlight">\(C^1_4\)</span> cách, tương tự cho lấy
+con <span class="math notranslate nohighlight">\(7\)</span> có <span class="math notranslate nohighlight">\(C^1_4\)</span> cách và lấy con át
+có <span class="math notranslate nohighlight">\(C^1_4\)</span> cách. Vậy đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{4 \cdot 4 \cdot 4}{C^3_{52}} = \dfrac{16}{5525}\)</span>.</p></li>
+<li><p>Không gian mẫu là <span class="math notranslate nohighlight">\(A^3_{52}\)</span> vì có xét thứ tự.
+Cách chọn ba lá bài vẫn như trước. Vậy đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{4 \cdot 4 \cdot 4}{A^3_{52}} = \dfrac{8}{16575}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 3.</strong> Trên đoạn thẳng <span class="math notranslate nohighlight">\(OA\)</span> độ dài <span class="math notranslate nohighlight">\(L\)</span> chọn
+ngẫu nhiên hai điểm <span class="math notranslate nohighlight">\(B\)</span> và <span class="math notranslate nohighlight">\(C\)</span>, điều kiện là <span class="math notranslate nohighlight">\(C\)</span>
+nằm bên phải so với <span class="math notranslate nohighlight">\(B\)</span>. Tính xác suất để độ dài <span class="math notranslate nohighlight">\(BC\)</span>
+nhỏ hơn độ dài <span class="math notranslate nohighlight">\(OB\)</span>.</p>
+<p><strong>Giải.</strong></p>
+<figure class="align-default">
+<img alt="../../_images/ch01-ex03.jpg" src="../../_images/ch01-ex03.jpg" />
+</figure>
+<p>Gọi <span class="math notranslate nohighlight">\(L\)</span> là độ dài đoạn <span class="math notranslate nohighlight">\(OA\)</span>. Đặt <span class="math notranslate nohighlight">\(x\)</span> là
+độ dài <span class="math notranslate nohighlight">\(OB\)</span> và <span class="math notranslate nohighlight">\(y\)</span> là độ dài <span class="math notranslate nohighlight">\(BC\)</span>. Khi đó
+các độ dài này phải thỏa mãn các phương trình</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    y &lt; x \\
+    0 &lt; x + y &lt; L \\
+    x &gt; 0, y &gt; 0
+\end{cases}\end{split}\]</div>
+</div>
+<p>Xác suất trên tương ứng biểu diễn hình học. Khi đó
+xác suất là tỉ lệ diện tích:</p>
+<ol class="arabic simple">
+<li><p>Không gian mẫu là tam giác vuông nên diện tích
+là <span class="math notranslate nohighlight">\(\dfrac{L^2}{2}\)</span>.</p></li>
+<li><p>Vùng giới hạn bởi các đường thẳng <span class="math notranslate nohighlight">\(y = 0\)</span>,
+<span class="math notranslate nohighlight">\(y = x\)</span> và <span class="math notranslate nohighlight">\(x + y = L\)</span> là tam giác
+với diện tích là <span class="math notranslate nohighlight">\(\dfrac{L \cdot \dfrac{L}{2}}{2} = \dfrac{L^2}{4}\)</span>.</p></li>
+</ol>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{1}{2}\)</span>.</p>
+<p><strong>Bài 4.</strong> Có <span class="math notranslate nohighlight">\(10\)</span> bilet nằm trên bàn giám thị
+được đánh số từ <span class="math notranslate nohighlight">\(1\)</span> tới <span class="math notranslate nohighlight">\(10\)</span>. Tính xác suất
+để các sinh viên lấy bilet theo thứ tự từ <span class="math notranslate nohighlight">\(1\)</span> tới
+<span class="math notranslate nohighlight">\(10\)</span>.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(10!\)</span> cách lấy <span class="math notranslate nohighlight">\(10\)</span>
+bilet theo tứ tự bất kì.</p>
+<p>Để lấy <span class="math notranslate nohighlight">\(10\)</span> bilet theo thứ tự, chỉ có
+duy nhất một cách lấy lần lượt <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, ...</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{1}{10!}\)</span>.</p>
+<p><strong>Bài 5.</strong> Bốn người vào thang máy ở tầng <span class="math notranslate nohighlight">\(1\)</span> của
+tòa nhà <span class="math notranslate nohighlight">\(9\)</span> tầng. Biết rằng xác suất mỗi người
+rời khỏi thang máy là như nhau cho các tầng từ <span class="math notranslate nohighlight">\(2\)</span>
+tới <span class="math notranslate nohighlight">\(9\)</span>. Tính xác suất để: a) mọi người rời thang máy
+ở các tầng khác nhau; b) mọi người rời thang máy cao hơn
+tầng <span class="math notranslate nohighlight">\(5\)</span>; c) ở tầng <span class="math notranslate nohighlight">\(3\)</span> không ai rời thang máy.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(8^4\)</span> vì mỗi người
+đều có <span class="math notranslate nohighlight">\(8\)</span> cách chọn ra các tầng từ <span class="math notranslate nohighlight">\(2\)</span>
+tới <span class="math notranslate nohighlight">\(9\)</span>.</p>
+<ol class="loweralpha simple">
+<li><p>Chọn <span class="math notranslate nohighlight">\(4\)</span> tầng mà mỗi người sẽ ra, có <span class="math notranslate nohighlight">\(A^4_8\)</span>
+cách vì thứ tự có thể khác nhau. Đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{A^4_8}{8^4} = \dfrac{105}{256}\)</span>.</p></li>
+<li><p>Tầng cao hơn <span class="math notranslate nohighlight">\(5\)</span> có <span class="math notranslate nohighlight">\(4\)</span> phương án <span class="math notranslate nohighlight">\(6\)</span>,
+<span class="math notranslate nohighlight">\(7\)</span>, <span class="math notranslate nohighlight">\(8\)</span>, <span class="math notranslate nohighlight">\(9\)</span>. Khi đó mỗi người có
+<span class="math notranslate nohighlight">\(4\)</span> cách chọn nên bốn người có <span class="math notranslate nohighlight">\(4^4\)</span> cách chọn.
+Đáp án là <span class="math notranslate nohighlight">\(\dfrac{4^4}{8^4} = \dfrac{1}{16}\)</span>.</p></li>
+<li><p>Do không ai rời thang máy tầng <span class="math notranslate nohighlight">\(3\)</span> nên mỗi người
+có <span class="math notranslate nohighlight">\(7\)</span> cách chọn là <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(5\)</span>,
+<span class="math notranslate nohighlight">\(6\)</span>, <span class="math notranslate nohighlight">\(7\)</span>, <span class="math notranslate nohighlight">\(8\)</span> và <span class="math notranslate nohighlight">\(9\)</span>. Do đó
+số cách chọn của bốn người là <span class="math notranslate nohighlight">\(7^4\)</span>. Đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{7^4}{8^4} = \dfrac{2401}{4096}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 6.</strong> Lấy ngẫu nhiên bốn chữ số và xếp chúng theo vị trí
+bất kì. Tính xác suất để thu được số có <span class="math notranslate nohighlight">\(4\)</span> chữ số? Tính
+xác suất để thu được số có <span class="math notranslate nohighlight">\(4\)</span> chữ số chia hết cho <span class="math notranslate nohighlight">\(5\)</span>?</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(10^4\)</span> vì có <span class="math notranslate nohighlight">\(10\)</span>
+chữ số từ <span class="math notranslate nohighlight">\(0\)</span> tới <span class="math notranslate nohighlight">\(9\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Để tạo thành số có <span class="math notranslate nohighlight">\(4\)</span> chữ số thì chữ số đầu phải
+khác <span class="math notranslate nohighlight">\(0\)</span> nên có <span class="math notranslate nohighlight">\(9\)</span> cách chọn. Ba vị trí
+còn lại mỗi vị trí <span class="math notranslate nohighlight">\(10\)</span> cách chọn. Như vậy số
+cách chọn là <span class="math notranslate nohighlight">\(9 \cdot 10^3\)</span> nên đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{9}{10}\)</span>.</p></li>
+<li><p>Tương tự, để tạo thành số có <span class="math notranslate nohighlight">\(4\)</span> chữ số thì chữ số
+đầu có <span class="math notranslate nohighlight">\(9\)</span> cách chọn. Vị trí cuối phải là <span class="math notranslate nohighlight">\(0\)</span>
+hoặc <span class="math notranslate nohighlight">\(5\)</span> để chia hết cho <span class="math notranslate nohighlight">\(5\)</span>. Hai chữ số ở
+giữa tùy ý nên có <span class="math notranslate nohighlight">\(10^2\)</span> cách. Như vậy số cách chọn
+là <span class="math notranslate nohighlight">\(9 \cdot 2 \cdot 10^2\)</span>, nên đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{9}{50}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 7.</strong> Có <span class="math notranslate nohighlight">\(20\)</span> bilet exam trên bàn giám thị theo
+thứ tự ngẫu nhiên. <span class="math notranslate nohighlight">\(10\)</span> sinh viên lần lượt bốc bilet
+ngẫu nhiên. Tính xác suất để bilet số <span class="math notranslate nohighlight">\(1\)</span> và <span class="math notranslate nohighlight">\(2\)</span>
+không được chọn.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(A^{10}_{20}\)</span> do các sinh viên
+bốc lần lượt nên sẽ có thứ tự.</p>
+<p>Biến cố bilet số <span class="math notranslate nohighlight">\(1\)</span> và <span class="math notranslate nohighlight">\(2\)</span> không được chọn, như vậy
+sẽ còn <span class="math notranslate nohighlight">\(18\)</span> trường hợp và <span class="math notranslate nohighlight">\(10\)</span> sinh viên sẽ bốc
+ngẫu nhiên <span class="math notranslate nohighlight">\(10\)</span> bilet trong này. Do đó có <span class="math notranslate nohighlight">\(A^{10}_{18}\)</span> cách.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{A^{10}_{18}}{A^{10}_{20}} = \dfrac{9}{38}\)</span>.</p>
+<p><strong>Bài 8.</strong> Trong hộp có <span class="math notranslate nohighlight">\(6\)</span> quả bóng trắng, <span class="math notranslate nohighlight">\(4\)</span> quả bóng
+đen và <span class="math notranslate nohighlight">\(2\)</span> quả bóng đỏ. Lấy ngẫu nhiên <span class="math notranslate nohighlight">\(4\)</span> quả bóng. Tính
+xác suất để trong số <span class="math notranslate nohighlight">\(4\)</span> quả đó chỉ có bóng đen và bóng đỏ.</p>
+<p><strong>Giải.</strong> Có tất cả <span class="math notranslate nohighlight">\(6+4+2 = 12\)</span> quả bóng. Không gian mẫu
+là <span class="math notranslate nohighlight">\(C^4_{12}\)</span>.</p>
+<p>Bóng đen và bóng đỏ có tất cả <span class="math notranslate nohighlight">\(4+2 = 6\)</span> quả. Lấy <span class="math notranslate nohighlight">\(4\)</span> trong số
+đó có <span class="math notranslate nohighlight">\(C^4_6\)</span> cách.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{C^4_6}{C^4_{12}} = \dfrac{1}{33}\)</span>.</p>
+<p><strong>Bài 9.</strong> Có <span class="math notranslate nohighlight">\(10\)</span> quyển sách, trong đó có <span class="math notranslate nohighlight">\(3\)</span> quyển màu đỏ,
+được xếp theo thứ tự ngẫu nhiên trên kệ. Tính xác suất để <span class="math notranslate nohighlight">\(3\)</span>
+quyển màu đỏ nằm liền kề nhau.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(10!\)</span>.</p>
+<p>Nếu xem <span class="math notranslate nohighlight">\(3\)</span> quyển đỏ là cùng một khối thì lúc này trên kệ
+có <span class="math notranslate nohighlight">\(8\)</span> quyển. Số cách chọn là <span class="math notranslate nohighlight">\(8!\)</span>. Bên trong khối đó,
+<span class="math notranslate nohighlight">\(3\)</span> quyển màu đỏ có thể xếp theo thứ tự bất kì nên có <span class="math notranslate nohighlight">\(3!\)</span>
+hoán vị. Như vậy tổng số cách xếp là <span class="math notranslate nohighlight">\(8! \cdot 3!\)</span>.</p>
+<p>Đáp án là <span class="math notranslate nohighlight">\(\dfrac{8! \cdot 3!}{10!} = \dfrac{1}{15}\)</span>.</p>
+<p><strong>Bài 10.</strong> Gieo ba con súc sắc. Tính xác suất các biến cố: <span class="math notranslate nohighlight">\(A\)</span> -
+các súc sắc cho các số khác nhau; <span class="math notranslate nohighlight">\(B\)</span> - các súc sắc ra cùng số.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(6^3\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Các súc sắc cho số khác nhau nên có <span class="math notranslate nohighlight">\(A^3_6\)</span> cách chọn
+vì có tính hoán vị. Đáp án là <span class="math notranslate nohighlight">\(P(A) = \dfrac{A^3_6}{6^3} = \dfrac{5}{9}\)</span>.</p></li>
+<li><p>Các súc sắc ra cùng số có <span class="math notranslate nohighlight">\(6\)</span> trường hợp. Đáp án
+là <span class="math notranslate nohighlight">\(P(B) = \dfrac{6}{6^3} = \dfrac{1}{36}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 11.</strong> Trong tủ có <span class="math notranslate nohighlight">\(5\)</span> đôi tất. Lấy ngẫu nhiên <span class="math notranslate nohighlight">\(2\)</span>
+chiếc tất. Tính xác suất để <span class="math notranslate nohighlight">\(2\)</span> chiếc tất đó cùng đôi.</p>
+<p><strong>Giải.</strong> Không gian mẫu <span class="math notranslate nohighlight">\(C^2_{10}\)</span>.</p>
+<p>Lấy <span class="math notranslate nohighlight">\(2\)</span> chiếc cùng đôi nghĩa là lấy một trong <span class="math notranslate nohighlight">\(5\)</span>
+đôi. Vậy có <span class="math notranslate nohighlight">\(5\)</span> cách chọn.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{5}{C^2_{10}} = \dfrac{1}{9}\)</span>.</p>
+<p><strong>Bài 13.</strong> Trong nhóm có <span class="math notranslate nohighlight">\(4\)</span> nam và <span class="math notranslate nohighlight">\(4\)</span> nữ được chia thành
+hai nhóm nhỏ, mỗi nhóm <span class="math notranslate nohighlight">\(4\)</span> người. Tính xác suất để ở mỗi nhóm nhỏ
+có <span class="math notranslate nohighlight">\(2\)</span> nam và <span class="math notranslate nohighlight">\(2\)</span> nữ.</p>
+<p><strong>Giải.</strong> Do có tất cả <span class="math notranslate nohighlight">\(8\)</span> người nên để chia thành hai nhóm nhỏ
+thì ta chọn <span class="math notranslate nohighlight">\(4\)</span> người cho nhóm đầu, có <span class="math notranslate nohighlight">\(C^4_8\)</span> cách. Nhóm thứ hai
+có <span class="math notranslate nohighlight">\(C^4_4\)</span> cách. Tuy nhiên có khả năng bị lặp (chọn A-B rồi C-D hoàn toàn
+giống chọn C-D rồi A-B). Do đó không gian mẫu cần chia <span class="math notranslate nohighlight">\(2!\)</span>, nên suy ra
+<span class="math notranslate nohighlight">\(\lvert \Omega \rvert = \dfrac{C^4_8 \cdot C^4_4}{2!} = 35\)</span> cách.</p>
+<p>Tương tự, ta chọn <span class="math notranslate nohighlight">\(2\)</span> nam cho nhóm đầu thì có <span class="math notranslate nohighlight">\(C^2_4\)</span> cách
+và cho nhóm thứ hai có <span class="math notranslate nohighlight">\(C^2_2\)</span> cách. Như vậy có <span class="math notranslate nohighlight">\(6\)</span> cách
+chia <span class="math notranslate nohighlight">\(4\)</span> nam vào <span class="math notranslate nohighlight">\(2\)</span> nhóm. Nữ cũng vậy, có <span class="math notranslate nohighlight">\(6\)</span> cách.
+Theo bên trên, hai nhóm này có thể bị lặp nên cần phải chia <span class="math notranslate nohighlight">\(2!\)</span>,
+suy ra số cách chia mỗi nhóm <span class="math notranslate nohighlight">\(2\)</span> nam <span class="math notranslate nohighlight">\(2\)</span> nữ
+là <span class="math notranslate nohighlight">\(\dfrac{6 \cdot 6}{2!} = 18\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{18}{35}\)</span>.</p>
+<p><strong>Bài 14.</strong> Bên trong hình tròn bán kính <span class="math notranslate nohighlight">\(R\)</span> chọn ngẫu nhiên một điểm.
+Tính xác suất để điểm đó: a) nằm bên trong hình vuông nội tiếp; b) nằm bên
+trong tam giác đều nội tiếp.</p>
+<p><strong>Giải.</strong> Bài này sử dụng xác suất hình học. Khi đó không gian mẫu là
+diện tích hình tròn bán kính <span class="math notranslate nohighlight">\(R\)</span>, hay <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = \pi R^2\)</span>.</p>
+<ol class="loweralpha simple">
+<li><p>Biến cố điểm nằm trong hình vuông nội tiếp có xác suất bằng diện tích
+hình vuông chia diện tích hình tròn. Hình vuông nội tiếp đường tròn
+bán kính <span class="math notranslate nohighlight">\(R\)</span> có đường chéo bằng <span class="math notranslate nohighlight">\(2R\)</span> nên cạnh là <span class="math notranslate nohighlight">\(R \sqrt{2}\)</span>.
+Đáp án là <span class="math notranslate nohighlight">\(\dfrac{2R^2}{\pi R^2} = \dfrac{2}{\pi}\)</span>.</p></li>
+<li><p>Tương tự, tam giác nội tiếp thì cạnh nối từ tâm tới đỉnh là <span class="math notranslate nohighlight">\(R\)</span>,
+bằng <span class="math notranslate nohighlight">\(2R/3\)</span> độ dài đường cao nên suy ra đường cao là <span class="math notranslate nohighlight">\(3R/2\)</span>,
+suy ra cạnh là <span class="math notranslate nohighlight">\(R \sqrt{3}\)</span>. Diện tích tam giác nội tiếp là
+<span class="math notranslate nohighlight">\(\dfrac{R \sqrt{3} \cdot 3R/2}{2} = \dfrac{3\sqrt{3} \cdot R^2}{4}\)</span>
+nên đáp án là <span class="math notranslate nohighlight">\(\dfrac{3\sqrt{3}}{4 \pi}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 15.</strong> Trong một ngày có hai chuyến tàu cập cảng để dỡ hàng.
+Chuyến tàu thứ nhất cần <span class="math notranslate nohighlight">\(6\)</span> tiếng để dỡ hàng, trong khi chuyến tàu
+thứ hai cần <span class="math notranslate nohighlight">\(8\)</span> tiếng. Hai chuyến tàu đến cảng không phụ thuộc
+vào nhau. Tính xác suất để không chuyến tàu nào phải chờ chuyến tàu kia
+dỡ hàng xong mới được cập cảng.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(x\)</span> là thời gian chuyến tàu đầu cập cảng. Do mất <span class="math notranslate nohighlight">\(6\)</span>
+giờ để dỡ hàng nên tàu phải cập cảng trước <span class="math notranslate nohighlight">\(18\)</span> giờ. Như vậy <span class="math notranslate nohighlight">\(0 \leqslant x \leqslant 18\)</span>.</p>
+<p>Tương tự, gọi <span class="math notranslate nohighlight">\(y\)</span> là thời gian chuyến tàu thứ hai cập cảng, suy
+ra <span class="math notranslate nohighlight">\(0 \leqslant y \leqslant 16\)</span>.</p>
+<p>Đến đây ta có hai trường hợp:</p>
+<ol class="arabic simple">
+<li><p>Chuyến tàu đầu cập cảng trước. Khi đó chuyến tàu thứ hai phải đến
+sau khi chuyến tàu đầu dỡ hàng xong. Do đó <span class="math notranslate nohighlight">\(y \geqslant x + 6\)</span>.</p></li>
+<li><p>Chuyến tàu thứ hai cập cảng trước. Tương tự, chuyến tàu đầu phải
+cập cảng sau khi chuyến thứ hai dỡ hàng xong. Do đó <span class="math notranslate nohighlight">\(x \geqslant y + 8\)</span>.</p></li>
+</ol>
+<p>Không gian mẫu là diện tích hình chữ nhật giới hạn bởi <span class="math notranslate nohighlight">\(x=0\)</span>,
+<span class="math notranslate nohighlight">\(x=18\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span> và <span class="math notranslate nohighlight">\(y=16\)</span>.</p>
+<p>Không gian biến cố nằm trong hình giới hạn bởi các đường thẳng <span class="math notranslate nohighlight">\(x=0\)</span>,
+<span class="math notranslate nohighlight">\(x=18\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span>, <span class="math notranslate nohighlight">\(y=16\)</span>, <span class="math notranslate nohighlight">\(x+6=y\)</span> và <span class="math notranslate nohighlight">\(x-8=y\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{25}{72}\)</span>.</p>
+</section>
+<section id="quy-tac-cong-va-nhan-xac-suat">
+<h2>Quy tắc cộng và nhân xác suất<a class="headerlink" href="#quy-tac-cong-va-nhan-xac-suat" title="Link to this heading">¶</a></h2>
+<p><strong>Bài 1.</strong> Xác suất bóng đèn hoạt động tốt trong khoảng thời gian xác định
+của mỗi phần tử là <span class="math notranslate nohighlight">\(0,8\)</span>. Một hệ thống có ba phần tử như hình. Tính độ
+hoạt động tốt trong mỗi phần tử.</p>
+<p><strong>Giải.</strong> Nào vẽ hình rồi giải sau :)))</p>
+<p><strong>Bài 2.</strong> Trong hộp có <span class="math notranslate nohighlight">\(7\)</span> quả bóng trắng và <span class="math notranslate nohighlight">\(3\)</span> quả bóng đen.
+Lấy ngẫu nhiên lần lượt từng quả đến khi lấy được bóng đen. Tính xác suất
+đến khi dừng lại lấy được <span class="math notranslate nohighlight">\(4\)</span> quả bóng nếu: a) lấy có trả lại; b) lấy
+không trả lại.</p>
+<p><strong>Giải.</strong> Không gian mẫu gồm các cách lấy ra <span class="math notranslate nohighlight">\(4\)</span> quả bóng.</p>
+<ol class="loweralpha simple">
+<li><p>Khi lấy có trả lại, ở mỗi lần lấy có 10 cách chọn nên không gian mẫu
+<span class="math notranslate nohighlight">\(\lvert \Omega \rvert = 10^4\)</span>. Theo đề bài, nếu lấy có trả lại
+<span class="math notranslate nohighlight">\(4\)</span> quả bóng, <span class="math notranslate nohighlight">\(3\)</span> quả đầu là bóng trắng và có <span class="math notranslate nohighlight">\(7^3\)</span>
+cách chọn. Quả bóng cuối màu đen, có <span class="math notranslate nohighlight">\(3\)</span> cách chọn. Như vậy có
+<span class="math notranslate nohighlight">\(7^3 \cdot 3\)</span> cách chọn. Đáp án là <span class="math notranslate nohighlight">\(\dfrac{1029}{10000}\)</span>.</p></li>
+<li><p>Khi lấy không trả lại, không gian mẫu là số cách lấy <span class="math notranslate nohighlight">\(4\)</span> quả bóng
+từ <span class="math notranslate nohighlight">\(10\)</span> quả bóng có thứ tự nên <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = A^4_{10}\)</span>.
+Số cách chọn <span class="math notranslate nohighlight">\(4\)</span> quả sao cho <span class="math notranslate nohighlight">\(3\)</span> quả đầu màu trắng là
+<span class="math notranslate nohighlight">\(A^3_7\)</span>, và quả cuối màu đen là <span class="math notranslate nohighlight">\(A^1_3\)</span>. Đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{A^3_7 \cdot A^1_3}{A^4_{10}} = \dfrac{1}{8}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 3.</strong> Trong một bộ domino có <span class="math notranslate nohighlight">\(28\)</span> quân lấy ngẫu nhiên <span class="math notranslate nohighlight">\(7\)</span>
+quân. Tính xác suất có ít nhất một quân có nút <span class="math notranslate nohighlight">\(6\)</span>.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố ít nhất một quân có nút <span class="math notranslate nohighlight">\(6\)</span>.
+Khi đó <span class="math notranslate nohighlight">\(\bar{A}\)</span> là biến cố không có quân nào có nút <span class="math notranslate nohighlight">\(6\)</span>.</p>
+<p>Không gian mẫu là <span class="math notranslate nohighlight">\(A^7_{28}\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(\bar{A}\)</span> không chứa các quân có nút <span class="math notranslate nohighlight">\(6\)</span> nên sẽ có
+<span class="math notranslate nohighlight">\(28-7 = 21\)</span> quân (bỏ các cặp <span class="math notranslate nohighlight">\(0\)</span>-<span class="math notranslate nohighlight">\(6\)</span>,
+<span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(6\)</span>, ..., <span class="math notranslate nohighlight">\(6\)</span>-<span class="math notranslate nohighlight">\(6\)</span>).</p>
+<p>Suy ra <span class="math notranslate nohighlight">\(P(\bar{A}) = \dfrac{A^7_{21}}{A^7_{28}} = \dfrac{323}{3289}\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(P(A) = 1 - P(\bar{A}) = \dfrac{2966}{3289}\)</span>.</p>
+<p><strong>Bài 4.</strong> Tung <span class="math notranslate nohighlight">\(4\)</span> cục súc sắc. Tính xác suất để chúng ra các mặt khác nhau.</p>
+<p><strong>Giải.</strong> Đáp án: <span class="math notranslate nohighlight">\(\dfrac{A^4_6}{6^4} = \dfrac{5}{18}\)</span>.</p>
+<p><strong>Bài 5.</strong> Trong hộp có <span class="math notranslate nohighlight">\(5\)</span> quả bóng trắng, <span class="math notranslate nohighlight">\(7\)</span> quả bóng đỏ
+và <span class="math notranslate nohighlight">\(8\)</span> quả bóng xanh. Lấy ngẫu nhiên ra <span class="math notranslate nohighlight">\(2\)</span> quả. Tính xác suất
+để hai quả đó cùng màu.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(A\)</span> - biến cố lấy hai quả bóng cùng màu.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(A_1, A_2, A_3\)</span> lần lượt là biến cố lấy hai quả bóng trắng,
+hai quả bóng đỏ và hai quả bóng xanh.</p>
+<p>Khi đó <span class="math notranslate nohighlight">\(A = A_1 \cup A_2 \cup A_3\)</span>.</p>
+<p>Đáp án:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A) = P(A_1) + P(A_2) + P(A_3) = \dfrac{C^2_5 + C^2_7 + C^2_8}{C^2_{5+7+8}} = \dfrac{59}{190}.\]</div>
+</div>
+<p><strong>Bài 6.</strong> Hai cung thủ bắn tên đồng thời độc lập nhau. Xác suất mỗi người
+bắn trúng là <span class="math notranslate nohighlight">\(0,2\)</span>. Tính xác suất để chỉ một người bắn trúng.</p>
+<p><strong>Giải.</strong> Chọn một trong hai người bắn trúng, có <span class="math notranslate nohighlight">\(2\)</span> cách.</p>
+<p>Nếu một người bắn trúng thì xác suất là <span class="math notranslate nohighlight">\(0,2\)</span>. Người còn lại sẽ
+bắn trượt với xác suất <span class="math notranslate nohighlight">\(0,8\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(2 \cdot 0,2 \cdot 0,8 = 0,32\)</span>.</p>
+<p><strong>Bài 7.</strong> <span class="math notranslate nohighlight">\(20\)</span> đội bóng tham gia giải đấu. Trong giải đấu có
+<span class="math notranslate nohighlight">\(4\)</span> giải thưởng sẽ được trao cho <span class="math notranslate nohighlight">\(4\)</span> đội xuất sắc nhất.
+Giả sử <span class="math notranslate nohighlight">\(20\)</span> đội được chia thành <span class="math notranslate nohighlight">\(4\)</span> nhóm được đánh số,
+mỗi nhóm <span class="math notranslate nohighlight">\(5\)</span> đội. Tính xác suất để mỗi nhóm có một đội đạt
+giải? Tính xác suất để nhóm đầu không có đội nào đạt giải.</p>
+<p><strong>Giải.</strong> Số cách chọn <span class="math notranslate nohighlight">\(5\)</span> đội cho nhóm đầu là <span class="math notranslate nohighlight">\(C^5_{20}\)</span>,
+cho nhóm thứ hai là <span class="math notranslate nohighlight">\(C^5_{15}\)</span>, cho nhóm thứ ba là <span class="math notranslate nohighlight">\(C^5_{10}\)</span>
+và nhóm cuối là <span class="math notranslate nohighlight">\(C^5_5\)</span>. Do có xét thứ tự nhóm nên vẫn tính các
+hoán vị. Ta suy ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lvert \Omega \rvert = C^5_{20} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_5.\]</div>
+</div>
+<p>Trong <span class="math notranslate nohighlight">\(4\)</span> đội đạt giải, chọn một đội cho vào nhóm <span class="math notranslate nohighlight">\(1\)</span> thì
+có <span class="math notranslate nohighlight">\(4\)</span> cách chọn. Tiếp theo chọn <span class="math notranslate nohighlight">\(4\)</span> đội trong <span class="math notranslate nohighlight">\(16\)</span>
+đội không đạt giải vào nhóm <span class="math notranslate nohighlight">\(1\)</span> thì có <span class="math notranslate nohighlight">\(C^4_{16}\)</span> cách.
+Tương tự cho các nhóm <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(4\)</span> nên đáp án là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A) = \dfrac{4 \cdot C^4_{16} \cdot 3 \cdot C^4_{12} \cdot 2 \cdot C^4_8 \cdot 1 \cdot C^4_4}{C^5_{20} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_5} = \dfrac{125}{969}\]</div>
+</div>
+<p>Nếu nhóm đầu không có đội nào đạt giải, chọn <span class="math notranslate nohighlight">\(5\)</span> trong số <span class="math notranslate nohighlight">\(16\)</span>
+đội không đạt giải thì có <span class="math notranslate nohighlight">\(C^5_{16}\)</span> cách. Lúc này còn lại <span class="math notranslate nohighlight">\(15\)</span> đội.
+Chọn <span class="math notranslate nohighlight">\(5\)</span> đội cho nhóm thứ <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(5\)</span> đội cho nhóm thứ <span class="math notranslate nohighlight">\(3\)</span>
+và <span class="math notranslate nohighlight">\(5\)</span> đội cho nhóm thứ <span class="math notranslate nohighlight">\(4\)</span> có <span class="math notranslate nohighlight">\(C^5_{15} \cdot C^5_{10} \cdot C^5_5\)</span>
+cách. Đáp án câu (b) là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B) = \dfrac{C^5_{16} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_{5}}{C^5_{20} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_5} = \dfrac{91}{323}\]</div>
+</div>
+<p><strong>Bài 8.</strong> Trong hộp đầu có <span class="math notranslate nohighlight">\(2\)</span> quả bóng trắng và <span class="math notranslate nohighlight">\(3\)</span> quả bóng đen,
+trong hộp thứ hai có <span class="math notranslate nohighlight">\(1\)</span> trắng và <span class="math notranslate nohighlight">\(2\)</span> xanh, trong hộp thứ ba có <span class="math notranslate nohighlight">\(3\)</span>
+trắng và <span class="math notranslate nohighlight">\(1\)</span> đỏ. Từ mỗi hộp lấy ngẫu nhiên một quả bóng. Tính xác suất
+các biến số sau: <span class="math notranslate nohighlight">\(A\)</span> - { chỉ lấy ra một bóng trắng }; <span class="math notranslate nohighlight">\(B\)</span> - { lấy ít nhất
+một bóng trắng }; <span class="math notranslate nohighlight">\(C\)</span> - { lấy ra các màu khác nhau }.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = (2 + 3) \cdot (1 + 2) \cdot (3 + 1) = 60\)</span>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(A_1, A_2, A_3\)</span> lần lượt là biến cố quả bóng trắng lấy từ hộp <span class="math notranslate nohighlight">\(1\)</span>,
+<span class="math notranslate nohighlight">\(2\)</span> và <span class="math notranslate nohighlight">\(3\)</span>. Khi đó <span class="math notranslate nohighlight">\(A = A_1 \cup A_2 \cup A_3\)</span>.</p>
+<ul class="simple">
+<li><p>Nếu quả bóng trắng lấy từ hộp <span class="math notranslate nohighlight">\(1\)</span> thì có <span class="math notranslate nohighlight">\(2\)</span> cách chọn. Ở hộp
+thứ hai và thứ ba phải lấy ra quả khác màu trắng nên có <span class="math notranslate nohighlight">\(2 \cdot 1\)</span>
+cách chọn. Suy ra <span class="math notranslate nohighlight">\(P(A_1) = \dfrac{2 \cdot 2 \cdot 1}{60} = \dfrac{1}{15}\)</span>.</p></li>
+<li><p>Nếu quả bóng trắng lấy từ hộp <span class="math notranslate nohighlight">\(2\)</span> thì có <span class="math notranslate nohighlight">\(1\)</span> cách chọn. Ở hộp
+đầu và hộp thứ ba phải lấy ra quả khác màu trắng nên có <span class="math notranslate nohighlight">\(3 \cdot 1\)</span>
+cách. Vậy <span class="math notranslate nohighlight">\(P(A_2) = \dfrac{1 \cdot 3 \cdot 1}{60} = \dfrac{1}{20}\)</span>.</p></li>
+<li><p>Nếu quả bóng trắng lấy từ hộp <span class="math notranslate nohighlight">\(3\)</span> thì có <span class="math notranslate nohighlight">\(3\)</span> cách chọn. Ở hộp đầu
+và hộp thứ hai lấy ra quả khác màu trắng có <span class="math notranslate nohighlight">\(3 \cdot 2\)</span> cách chọn.
+Vậy <span class="math notranslate nohighlight">\(P(A_3) = \dfrac{3 \cdot 3 \cdot 2}{60} = \dfrac{3}{10}\)</span>.</p></li>
+</ul>
+<p>Như vậy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A) = P(A_1) + P(A_2) + P(A_3) = \dfrac{1}{15} + \dfrac{1}{20} + \dfrac{3}{10} = \dfrac{5}{12}.\]</div>
+</div>
+<p>Do <span class="math notranslate nohighlight">\(B\)</span> là biến cố lấy ít nhất một bóng trắng nên <span class="math notranslate nohighlight">\(\bar{B}\)</span> là biến cố
+không lấy ra bóng trắng nào. Khi đó ở hộp <span class="math notranslate nohighlight">\(1\)</span> có <span class="math notranslate nohighlight">\(3\)</span> cách chọn (đen),
+hộp <span class="math notranslate nohighlight">\(2\)</span> có <span class="math notranslate nohighlight">\(2\)</span> cách chọn (xanh) và hộp <span class="math notranslate nohighlight">\(3\)</span> có <span class="math notranslate nohighlight">\(1\)</span> cách chọn
+(đỏ), suy ra <span class="math notranslate nohighlight">\(P(\bar{B}) = \dfrac{3 \cdot 2 \cdot 1}{60} = \dfrac{1}{10}\)</span>.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(P(B) = 1 - P(\bar{B}) = \dfrac{9}{10}\)</span>.</p>
+<p>Khi lấy ra ba quả bóng khác màu nhau có các trường hợp theo thứ tự hộp là:</p>
+<ul class="simple">
+<li><p>trắng-xanh-đỏ: có <span class="math notranslate nohighlight">\(2 \cdot 2 \cdot 1\)</span> cách chọn</p></li>
+<li><p>đen-trắng-đỏ: có <span class="math notranslate nohighlight">\(3 \cdot 1 \cdot 1\)</span> cách chọn</p></li>
+<li><p>đen-xanh-trắng: có <span class="math notranslate nohighlight">\(3 \cdot 2 \cdot 3\)</span> cách chọn</p></li>
+<li><p>đen-xanh-đỏ: có <span class="math notranslate nohighlight">\(3 \cdot 2 \cdot 1\)</span> cách chọn</p></li>
+</ul>
+<p>Như vậy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(C) = \dfrac{2 \cdot 2 \cdot 1 + 3 \cdot 1 \cdot 1 + 3 \cdot 2 \cdot 3 + 3 \cdot 2 \cdot 1}{60} = \dfrac{31}{60}.\]</div>
+</div>
+<p><strong>Bài 9.</strong> Một bộ bài gồm <span class="math notranslate nohighlight">\(36\)</span> lá. Lấy ngẫu nhiên hai lá. Tính xác suất
+để hai lá đó có màu đỏ.</p>
+<p><strong>Giải.</strong> Không gian mẫu <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = C^2_{26}\)</span>.</p>
+<p>Lấy hai trong <span class="math notranslate nohighlight">\(36/2=18\)</span> lá đỏ có <span class="math notranslate nohighlight">\(C^2_{18}\)</span> cách.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{C^2_{18}}{C^2_{26}} = \dfrac{17}{70}\)</span>.</p>
+<p><strong>Bài 10.</strong> Trong thùng có <span class="math notranslate nohighlight">\(3\)</span> bóng đèn hỏng và <span class="math notranslate nohighlight">\(7\)</span> bóng đèn tốt.
+Lấy ngẫu nhiên các bóng lần lượt đến khi lấy được <span class="math notranslate nohighlight">\(2\)</span> bóng tốt thì dừng.
+Tính xác suất để lấy một nửa số bóng đèn.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(A^5_{10}\)</span>.</p>
+<p>Trong số bốn bóng đèn đầu sẽ có một bóng tốt và <span class="math notranslate nohighlight">\(3\)</span> bóng hỏng. Bóng đèn
+thứ <span class="math notranslate nohighlight">\(5\)</span> sẽ là bóng tốt. Như vậy ta chọn vị trí cho bóng tốt trong <span class="math notranslate nohighlight">\(4\)</span>
+vị trí đầu, có <span class="math notranslate nohighlight">\(4\)</span> cách chọn. Chọn bóng tốt cho vị trí đó có <span class="math notranslate nohighlight">\(7\)</span>
+cách chọn. Chọn <span class="math notranslate nohighlight">\(3\)</span> bóng hỏng cho <span class="math notranslate nohighlight">\(3\)</span> vị trí còn lại có thứ tự,
+có <span class="math notranslate nohighlight">\(A^3_3\)</span> cách.</p>
+<p>Chọn bóng đèn tốt cho vị trí thứ <span class="math notranslate nohighlight">\(5\)</span> có <span class="math notranslate nohighlight">\(6\)</span> cách chọn.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{4 \cdot 7 \cdot A^3_3 \cdot 6}{A^5_{10}} = \dfrac{1}{30}\)</span>.</p>
+</section>
+<section id="quy-tac-cong-va-nhan-xac-suat-tiep-theo">
+<h2>Quy tắc cộng và nhân xác suất (tiếp theo)<a class="headerlink" href="#quy-tac-cong-va-nhan-xac-suat-tiep-theo" title="Link to this heading">¶</a></h2>
+<p><strong>Bài 1.</strong> Từ một bộ bài lấy ngẫu nhiên lần lượt bốn lá. Tính xác suất
+để tất cả các lá khác chất nhau? Tính xác suất để tất cả các lá khác số nhau?</p>
+<p><strong>Giải.</strong> Bộ bài có <span class="math notranslate nohighlight">\(36\)</span> lá (bài Nga) nên có không gian
+mẫu <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = A^4_{36}\)</span>.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố tất cả các lá khác chất nhau.</p>
+<ul class="simple">
+<li><p>Chọn chất cho lá thứ nhất có <span class="math notranslate nohighlight">\(4\)</span> cách chọn. Chọn lá thứ nhất
+có <span class="math notranslate nohighlight">\(9\)</span> cách chọn (trong chất đó).</p></li>
+<li><p>Chọn chất cho lá thứ hai có <span class="math notranslate nohighlight">\(4\)</span> cách chọn. Chọn lá thứ hai
+có <span class="math notranslate nohighlight">\(9\)</span> cách chọn (trong chất đó).</p></li>
+<li><p>Tương tự cho lá thứ ba và thứ tư.</p></li>
+</ul>
+<p>Như vậy <span class="math notranslate nohighlight">\(\lvert \Omega_A \rvert = 4! \cdot 9^4\)</span>.</p>
+<p>Đáp án là <span class="math notranslate nohighlight">\(P(A) = \dfrac{\lvert \Omega_A \rvert}{\lvert \Omega \rvert} = \dfrac{729}{6545}\)</span>.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(B\)</span> là biến cố tất cả các lá có số khác nhau.</p>
+<ul class="simple">
+<li><p>Chọn số cho lá thứ nhất có <span class="math notranslate nohighlight">\(9\)</span> cách chọn. Chọn chất cho lá đó có <span class="math notranslate nohighlight">\(4\)</span> cách chọn.</p></li>
+<li><p>Chọn số cho lá thứ hai có <span class="math notranslate nohighlight">\(8\)</span> cách chọn. Chọn chất cho lá đó có <span class="math notranslate nohighlight">\(4\)</span> cách chọn.</p></li>
+<li><p>Tương tự cho lá thứ ba và thứ tư.</p></li>
+</ul>
+<p>Như vậy <span class="math notranslate nohighlight">\(\lvert \Omega_B \rvert = A^4_9 \cdot 4^4\)</span>.</p>
+<p>Đáp án là <span class="math notranslate nohighlight">\(P(B) = \dfrac{\lvert \Omega_B \rvert}{\lvert \Omega \rvert} = \dfrac{512}{935}\)</span>.</p>
+<p><strong>Bài 2.</strong> Trong rổ có <span class="math notranslate nohighlight">\(10\)</span> quả bóng tennis, <span class="math notranslate nohighlight">\(7\)</span> quả mới
+và <span class="math notranslate nohighlight">\(3\)</span> quả đã qua sử dụng. Lấy ngẫu nhiên <span class="math notranslate nohighlight">\(2\)</span> quả từ rổ
+cho trận đấu rồi trả lại. Tới trận đấu thứ hai cũng lấy ngẫu nhiên
+<span class="math notranslate nohighlight">\(2\)</span> quả. Tính xác suất để ở trận thứ hai lấy được <span class="math notranslate nohighlight">\(2\)</span> quả mới.</p>
+<p><strong>Giải.</strong> Sau khi chơi xong trận đầu thì những quả bóng mới sẽ
+trở thành bóng đã qua sử dụng.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(B\)</span> là biến cố trận thứ hai lấy được <span class="math notranslate nohighlight">\(2\)</span> quả mới.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_2\)</span> và <span class="math notranslate nohighlight">\(A_3\)</span> lần lượt là biến cố
+trận đầu lấy được <span class="math notranslate nohighlight">\(2\)</span> quả bóng mới, <span class="math notranslate nohighlight">\(1\)</span> mới <span class="math notranslate nohighlight">\(1\)</span>
+đã qua sử dụng, và <span class="math notranslate nohighlight">\(2\)</span> quả đã qua sử dụng. Ba biến cố này
+hợp thành biến cố đầy đủ cho việc lấy <span class="math notranslate nohighlight">\(2\)</span> quả ở trận đầu.</p>
+<p>Theo công thức xác suất toàn phần:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B) = P(A_1) P(B \vert A_1) + P(A_2) P(B \vert A_2) + P(A_3) P(B \vert A_3).\]</div>
+</div>
+<p>Nếu ở trận đầu lấy <span class="math notranslate nohighlight">\(2\)</span> quả mới, ta có <span class="math notranslate nohighlight">\(P(A_1) = \dfrac{C^2_7}{C^2_{10}} = \dfrac{7}{15}\)</span>.
+Sau khi trận đầu kết thúc, số bóng mới là <span class="math notranslate nohighlight">\(7-2=5\)</span> và số bóng đã qua sử dụng là <span class="math notranslate nohighlight">\(3+2=5\)</span>
+nên <span class="math notranslate nohighlight">\(P(B \vert A_1) = \dfrac{C^2_5}{C^2_{10}} = \dfrac{2}{9}\)</span>.</p>
+<p>Nếu ở trận đầu lấy <span class="math notranslate nohighlight">\(1\)</span> quả mới và <span class="math notranslate nohighlight">\(1\)</span> quả đã qua sử dụng, ta có
+<span class="math notranslate nohighlight">\(P(A_2) = \dfrac{C^1_7 \cdot C^1_3}{C^2_{10}} = \dfrac{7}{15}\)</span>. Sau khi trận đầu
+kết thúc, số bóng mới là <span class="math notranslate nohighlight">\(6\)</span> và số bóng đã qua sử dụng là <span class="math notranslate nohighlight">\(4\)</span> nên
+<span class="math notranslate nohighlight">\(P(B \vert A_2) = \dfrac{C^2_6}{C^2_{10}} = \dfrac{1}{3}\)</span>.</p>
+<p>Nếu ở trận đầu lấy <span class="math notranslate nohighlight">\(2\)</span> quả đã qua sử dụng thì <span class="math notranslate nohighlight">\(P(A_3) = \dfrac{C^2_3}{C^2_{10}} = \dfrac{1}{15}\)</span>.
+Sau khi trận đầu kết thúc, số bóng mới vẫn là <span class="math notranslate nohighlight">\(7\)</span> và số bóng đã qua sử dụng vẫn là <span class="math notranslate nohighlight">\(3\)</span>
+nên <span class="math notranslate nohighlight">\(P(B \vert A_3) = \dfrac{C^2_7}{C^2_{10}} = \dfrac{7}{15}\)</span>.</p>
+<p>Đáp án:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B) = \dfrac{7}{15} \cdot \dfrac{2}{9} + \dfrac{7}{15} \cdot \dfrac{1}{3} + \dfrac{1}{15} \cdot \dfrac{7}{15} = \dfrac{196}{675} \approx 0,29.\]</div>
+</div>
+<p><strong>Bài 3.</strong> Trên mỗi cánh máy bay có <span class="math notranslate nohighlight">\(2\)</span> động cơ. Xác suất bị lỗi của
+mỗi động cơ trong một chuyến bay là <span class="math notranslate nohighlight">\(p\)</span>. Chuyến bay sẽ thành công nếu
+ở mỗi cánh có ít nhất một động cơ hoạt động bình thường. Tính xác suất chuyến
+bay thành công.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố ở một cánh có ít nhất một động cơ hoạt động,
+suy ra <span class="math notranslate nohighlight">\(\bar{A}\)</span> là biến cố không động cơ nào hoạt động ở cả một cánh.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(P(\bar{A}) = p^2\)</span> nên <span class="math notranslate nohighlight">\(P(A) = 1-p^2\)</span>. Áp dụng cho hai bên
+cánh (theo quy tắc nhân) ta có đáp án là <span class="math notranslate nohighlight">\((1-p^2)^2\)</span>.</p>
+<p><strong>Bài 4.</strong> Sinh viên biết <span class="math notranslate nohighlight">\(20\)</span> trong <span class="math notranslate nohighlight">\(30\)</span> câu hỏi. Để qua bài thi
+cần trả lời đúng <span class="math notranslate nohighlight">\(2\)</span> câu hỏi bắt buộc hoặc trả lời đúng <span class="math notranslate nohighlight">\(1\)</span> trong
+<span class="math notranslate nohighlight">\(2\)</span> câu bắt buộc cộng thêm <span class="math notranslate nohighlight">\(1\)</span> câu hỏi phụ. Tính xác suất để
+sinh viên vượt qua bài thi?</p>
+<p><strong>Giải.</strong> Ở đây cần hiểu là sinh viên biết <span class="math notranslate nohighlight">\(20\)</span> câu trong số <span class="math notranslate nohighlight">\(30\)</span> câu,
+<span class="math notranslate nohighlight">\(10\)</span> câu kia là câu hỏi phụ. Khi đó có hai trường hợp:</p>
+<p>Trường hợp 1 là sinh viên trả lời đúng <span class="math notranslate nohighlight">\(2\)</span> câu trong số <span class="math notranslate nohighlight">\(20\)</span> câu
+sinh viên biết nên xác suất là <span class="math notranslate nohighlight">\(\dfrac{A^2_{20}}{A^2_{30}}\)</span>.</p>
+<p>Trường hợp 2 là sinh viên trả lời đúng <span class="math notranslate nohighlight">\(1\)</span> trong <span class="math notranslate nohighlight">\(2\)</span> câu bắt buộc
+(có <span class="math notranslate nohighlight">\(A^2_{20} \cdot 2\)</span> cách chọn) và <span class="math notranslate nohighlight">\(1\)</span> câu hỏi phụ (<span class="math notranslate nohighlight">\(10\)</span> cách chọn)
+nên xác suất là <span class="math notranslate nohighlight">\(\dfrac{A^2_{20} \cdot 2 \cdot 10}{A^3_{30}}\)</span>. Tổng số
+câu sinh viên trả lời là <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{A^2_{20}}{A^2_{30}} + \dfrac{A^2_{20} \cdot 2 \cdot 10}{A^3_{30}} = \dfrac{152}{203}\)</span>.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../an-introduction-to-mathematical-cryptography/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">An Introduction to Mathematical Cryptography</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../Judson.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Abstract Algebra: Theory and Applications</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Курс высшей математики: Теория вероятностей</a><ul>
+<li><a class="reference internal" href="#xac-suat-khong-lien-tuc">Xác suất không liên tục</a></li>
+<li><a class="reference internal" href="#quy-tac-cong-va-nhan-xac-suat">Quy tắc cộng và nhân xác suất</a></li>
+<li><a class="reference internal" href="#quy-tac-cong-va-nhan-xac-suat-tiep-theo">Quy tắc cộng và nhân xác suất (tiếp theo)</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1]}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

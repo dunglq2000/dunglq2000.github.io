@@ -1,0 +1,1612 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Tìm Kiếm" href="../search.html" /><link rel="next" title="Đại cương tổ hợp" href="combinatoric.html" /><link rel="prev" title="Phân hoạch" href="partition.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>Biến đổi Fourier rời rạc - Math Book</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=4c010e0d" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyles.css?v=fd3ba0dd" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Math Book</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/Euler_Stamp.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Math Book</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/index.html">Những lời nói đầu</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Những lời nói đầu</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-maths.html">Toán học là gì với mình?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-notebook.html">Cơ sở xây dựng notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-quotations.html">Những lời răn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-notation.html">Kí hiệu và công thức toán trong mật mã</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algebra/index.html">Đại số</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Đại số</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../algebra/set/index.html">1. Đại cương về tập hợp</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1. Đại cương về tập hợp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/set/set.html">1.1. Tập hợp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/set/cadinality.html">1.2. Lực lượng của tập hợp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/set/map.html">1.3. Ánh xạ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/set/function.html">1.4. Hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/set/infinity.html">1.5. Các nghịch lý về tập vô hạn</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../algebra/polynomial/index.html">2. Đa thức</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2. Đa thức</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc">2.2. So sánh, cộng, trừ và nhân hai đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/lagrange-interpolation.html">2.3. Đa thức nội suy Lagrange</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/proof.html">3. Phương pháp chứng minh toán học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/glossary.html">4. Bảng thuật ngữ đại số</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../abstract-algebra/index.html">Lý thuyết nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Lý thuyết nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/groups/index.html">1. Lý thuyết nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of 1. Lý thuyết nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/group.html">1.1. Nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/symmetric-group.html">1.2. Nhóm hoán vị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/quasigroup.html">1.3. Quasigroup</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/homomorphisms/index.html">2. Homomorphisms</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of 2. Homomorphisms</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/homomorphisms/group-homomorphism.html">2.1. Group homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/group-action/index.html">3. Tác động nhóm</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of 3. Tác động nhóm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/group-action/group-action.html">3.1. Tác động nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/group-action/burnside.html">3.2. Bổ đề Burnside</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/rings/index.html">4. Vành</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of 4. Vành</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/rings/ring.html">4.1. Vành</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/fields/index.html">5. Trường</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of 5. Trường</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/field.html">5.1. Trường</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/ideal.html">5.2. Ideal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/ring-homomorphism.html">5.3. Ring kernel và ring homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/galois-theory/index.html">6. Lý thuyết Galois</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of 6. Lý thuyết Galois</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/galois-theory/extension-field.html">6.1. Extension Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../abstract-algebra/glossary.html">7. Bảng thuật ngữ lý thuyết nhóm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../geometry/index.html">Hình học</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Hình học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../geometry/analytic-geometry/index.html">1. Hình học giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of 1. Hình học giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/intro.html">1.1. Theo dòng lịch sử</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/analytic-geometry.html">1.2. Phương pháp tọa độ trong mặt phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/analytic-geometry.html#dao-ham">1.3. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/analytic-geometry.html#tich-phan">1.4. Tích phân</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/conics.html">1.5. Ba đường Conic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/analytic-geometry/transformation.html">1.6. Phép biến hình</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../geometry/brachistochrone/brachistochrone.html">2. Đường đoản thời</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../geometry/affine-geometry/index.html">3. Hình học affine</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of 3. Hình học affine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html">3.1. Không gian affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#phang">3.2. Phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#doc-lap-affine-va-phu-thuoc-affine">3.3. Độc lập affine và phụ thuộc affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#giao-cua-cac-phang-bao-affine">3.4. Giao của các phẳng. Bao affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#vi-tri-tuong-doi">3.5. Vị trí tương đối</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#muc-tieu-va-toa-do-affine">3.6. Mục tiêu và tọa độ affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#cong-thuc-doi-muc-tieu">3.7. Công thức đổi mục tiêu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#phuong-trinh-cua-m-phang">3.8. Phương trình của <span class="math notranslate nohighlight">\(m\)</span>-phẳng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#tam-ti-cu-va-ti-so-don">3.9. Tâm tỉ cự và tỉ số đơn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#anh-xa-affine">3.10. Ánh xạ affine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../geometry/affine-geometry/affine-space.html#su-xac-dinh-anh-xa-affine">3.11. Sự xác định ánh xạ affine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../geometry/noneuclidean.html">4. Hình học phi Euclid</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/index.html">Giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/calculus/index.html">1. Giải tích</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of 1. Giải tích</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/limits.html">1.1. Giới hạn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/continuity.html">1.2. Tính liên tục của hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/monotone.html">1.3. Tính đơn điệu và cực trị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/derivative.html">1.4. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/avarage-value.html">1.5. Một số định lí về giá trị trung bình</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/concave.html">1.6. Tính lồi, lõm và điểm uốn của đồ thị</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/differential-equation/index.html">2. Phương trình vi phân</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series/index.html">3. Chuỗi số</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/derivative/index.html">4. Đạo hàm</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of 4. Đạo hàm</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/derivative/partial-derivative.html">4.1. Đạo hàm một số hàm nhiều biến</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/integral/index.html">5. Tích phân</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of 5. Tích phân</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/integral/line-integral.html">5.1. Tích phân đường</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../probability/index.html">Xác suất thống kê</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Xác suất thống kê</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../probability/intro.html">Xác suất thống kê</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../probability/ML/index.html">Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Machine Learning</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/linear-regression.html">Linear Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/kmeans.html">K-Means clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/gradient-descent.html">Gradient Descent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/perceptron.html">Perceptron Learning Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linalg/index.html">Đại số tuyến tính</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of Đại số tuyến tính</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../linalg/matrix/index.html">1. Ma trận</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 1. Ma trận</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-determinant.html">1.1. Định thức ma trận</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-inversion.html">1.2. Ma trận nghịch đảo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-rank.html">1.3. Hạng của ma trận</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/linear-operator.html">2. Toán tử tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/eigen.html">3. Trị riêng và vector riêng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/linear-combination.html">4. Tổ hợp tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/vector-space.html">5. Không gian vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/euclidean-space.html">6. Không gian Euclide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/hilbert-space.html">7. Không gian Hilbert</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../number-theory/index.html">Lý thuyết số</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Lý thuyết số</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/euclidean.html">1. Phép chia Euclid. Thuật toán Euclid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/linear-congruence.html">2. Phương trình đồng dư tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/euler.html">3. Hàm Euler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/quadratic-residue.html">4. Thặng dư chính phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/mobius.html">5. Hàm Möbius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/chinese-remainder-theorem.html">6. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/exercises.html">7. Bài tập số học sưu tầm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Toán rời rạc</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Toán rời rạc</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binary-relation.html">Quan hệ hai ngôi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="partition.html">Phân hoạch</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="combinatoric.html">Đại cương tổ hợp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recurrence-relation.html">Công thức truy hồi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph/index.html">Lý thuyết đồ thị</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../topology/index.html">Topology</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../boolean/index.html">Đại số Bool và mật mã học</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Đại số Bool và mật mã học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/intro.html">1. Giới thiệu</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/boolean-algebra/index.html">2. Đại số Boolean</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of 2. Đại số Boolean</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/boolean-function.html">2.1. Hàm boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/boolean-affine.html">2.2. Hàm affine và hàm tuyến tính</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/boolean-monotone.html">2.3. Hàm đơn điệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/boolean-dnf-cnf.html">2.4. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/boolean-weight.html">2.5. Khoảng cách Hamming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-algebra/walsh-hadamard-spectre.html">2.6. Nonlinearity của hàm boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/block/block-cipher.html">3. Block cipher</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of 3. Block cipher</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/spnet.html">3.1. SP network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/AES.html">3.2. AES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/kuznyechik.html">3.3. Kuznyechik</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/present.html">3.4. PRESENT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/feistel.html">3.5. Mô hình Feistel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/magma.html">3.6. Magma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/sms4.html">3.7. SMS4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/block/arx.html">3.8. ARX</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/stream/stream-cipher.html">4. Stream cipher</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of 4. Stream cipher</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/stream/linear-feedback-shift-register.html">4.1. Linear Feedback Shift Register</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/mac.html">5. Message Authentication Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptanalysis/index.html">Phá mã</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of Phá mã</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cryptanalysis/differential-attack/index.html">1. Phá mã vi sai</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of 1. Phá mã vi sai</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cryptanalysis/differential-attack/toycipher.html">1.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptanalysis/differential-attack/tinydes.html">1.2. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptanalysis/differential-attack/difference-and-differential.html">1.3. Difference và differential</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cryptanalysis/linear-attack/index.html">2. Phá mã tuyến tính</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of 2. Phá mã tuyến tính</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cryptanalysis/linear-attack/tinydes.html">2.1. Phá mã tuyến tính trên TinyDES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptanalysis/slide-attack/index.html">3. Slide attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptanalysis/algebraic-attack/index.html">4. Algebraic cryptanalysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cryptography/index.html">Mật mã học</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Mật mã học</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cryptography/lattice-based/index.html">1. Lattice-based cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of 1. Lattice-based cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/lattice-based/intro.html">1.1. Nhập môn mật mã dựa trên lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/lattice-based/congruential-pubkey.html">1.2. Congruential public key cryptosystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/lattice-based/ntru.html">1.3. NTRU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/lattice-based/falcon.html">1.4. FALCON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/lattice-based/lattice-reduction-algorithms.html">1.5. Thuật toán rút gọn lattice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/lattice-based/coppersmith.html">1.6. Phương pháp Coppersmith</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cryptography/code-based/index.html">2. Code-based cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of 2. Code-based cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/code-based/intro.html">2.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/code-based/decode-problem.html">2.2. Bài toán decode tổng quát</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/code-based/linear-code.html">2.3. Linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/code-based/weight.html">2.4. Bài toán phổ trọng số của mã tuyến tính</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/code-based/decode-on-linear-code.html">2.5. Bài toán decode trên linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/code-based/equivalence.html">2.6. Bài toán tương đương các linear code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/code-based/cryptosystem.html">2.7. Ý tưởng xây dựng các hệ mật mã dựa trên mã sửa sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/code-based/pubkey-algo.html">2.8. Các hệ mật mã khóa công khai dựa trên lý thuyết code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/code-based/goppa-code.html">2.9. Goppa Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/elliptic/index.html">3. Đường cong elliptic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/Kerckhoffs-principle/index.html">4. Nguyên tắc Kerckhoffs và mật mã học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/examen.html">5. Câu hỏi ôn thi mật mã học</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cryptography/quantum-computing.html">6. Quantum computing</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../cryptography/zero-knowledge-proof/index.html">7. Zero Knowledge Proof</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of 7. Zero Knowledge Proof</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/zero-knowledge-proof/intro.html">7.1. Giới thiệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cryptography/zero-knowledge-proof/plonk.html">7.2. Plonk Protocol</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../solutions/index.html">Lời giải các bài tập trong sách tham khảo</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle navigation of Lời giải các bài tập trong sách tham khảo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/Judson.html">Abstract Algebra: Theory and Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/Petrushko/index.html">Курс высшей математики: Теория вероятностей</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/index.html">An Introduction to Mathematical Cryptography</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle navigation of An Introduction to Mathematical Cryptography</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/chapter-2.html">Chapter 2. Discrete Logarithms and Diffie-Hellman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/chapter-3.html">Chapter 3. Integer Factorization and RSA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/chapter-4.html">Chapter 4. Digital Signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/chapter-7.html">Chapter 7. Lattices and Cryptography</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/collection.html">Các bài toán sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/cryptohack/index.html">Wargame chill chill</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2020/index.html">Các cuộc thi năm 2020</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2020</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2020/midnightsunCTF-2020.html">Midnight Sun CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2020/nsucrypto-2020.html">NSUCRYPTO 2020</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2021/index.html">Các cuộc thi năm 2021</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" role="switch" type="checkbox"/><label for="toctree-checkbox-39"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2021</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2021/CryptoCTF/index.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2021/GoogleCTF/index.html">Google CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2021/nsucrypto.html">NSUCRYPTO 2021</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2022/index.html">Các cuộc thi năm 2022</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2022</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2022/downunderCTF/index.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/nsucrypto.html">NSUCRYPTO 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/sekaiCTF/index.html">Sekai CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2022/isitdtu/index.html">ISITDTU Quals 2022</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2023/index.html">Các cuộc thi năm 2023</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2023</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2023/nsucrypto/index.html">NSUCRYPTO 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/siberian-maths-contest/index.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/amateursCTF.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/backdoorCTF.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/googleCTF.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/diceCTF.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/UTCTF.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023/wolvCTF.html">Wolv CTF 2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2024/index.html">Các cuộc thi năm 2024</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" role="switch" type="checkbox"/><label for="toctree-checkbox-42"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2024</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/nsucrypto/index.html">NSUCRYPTO 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/internet-olympiad/index.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/0xL4ughCTF-2024/index.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/ASISCTF-2024/index.html">ASIS CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/TJCTF.html">TJCTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/cryptofox/index.html">CryptoFox 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/isitdtu.html">ISITDTU Quals 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2025/index.html">Các cuộc thi năm 2025</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle navigation of Các cuộc thi năm 2025</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2025/cryptofox/index.html">CryptoFox 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2025/tjctf.html">TJCTF 2025</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../stuff/index.html">Ngoài lề</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle navigation of Ngoài lề</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/game/index.html">Lý thuyết trò chơi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/graphics.html">Một số đồ thị hàm số sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/about-godel.html">Về một vị giáo sư và định lý Godel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/about-education.html">Nhìn lại giáo dục từ 2018 về trước</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/about-stoicism.html">Chủ nghĩa khắc kỷ và phân phối nhị thức</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stuff/latex/index.html">Trải nghiệm người dùng với LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../russia/index.html">Nước Nga du kí</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle navigation of Nước Nga du kí</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../russia/intro.html">Giới thiệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../russia/good-or-bad.html">Đi học ở Nga tốt hay xấu?</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../russia/criticism/index.html">Góc khẩu nghiệp</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of Góc khẩu nghiệp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../russia/criticism/criticism-2.html">Phần 2. Sinh viên Việt Nam tại Moscow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../russia/contests.html">Các cuộc thi toán ở Nga</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mathematicians/index.html">Sưu tầm những câu chuyện về các nhà toán học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../men-of-mathematics/index.html">Men of Mathematics</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" role="switch" type="checkbox"/><label for="toctree-checkbox-47"><div class="visually-hidden">Toggle navigation of Men of Mathematics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../men-of-mathematics/dedicate.html">Lời nói đầu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../men-of-mathematics/00-acknowledgement.html">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/discrete-mathematics/discrete-fourier-transform.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="bien-doi-fourier-roi-rac">
+<h1>Biến đổi Fourier rời rạc<a class="headerlink" href="#bien-doi-fourier-roi-rac" title="Link to this heading">¶</a></h1>
+<p>Phần này mình dịch từ <span id="id1">[<a class="reference internal" href="../index.html#id9" title="О.Н. Василенко. Теоретико-числовые алгоритмы в криптографии. МЦНМО, 2003.">12</a>]</span>.</p>
+<section id="gioi-thieu">
+<h2>Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Link to this heading">¶</a></h2>
+<p>Cho số <span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span> và <span class="math notranslate nohighlight">\(n = 2^t\)</span>.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(R\)</span> là vành với đơn vị <span class="math notranslate nohighlight">\(1\)</span>. Vành <span class="math notranslate nohighlight">\(R\)</span>
+chứa phần tử <span class="math notranslate nohighlight">\(2^{-1}\)</span> là nghịch đảo của phần tử <span class="math notranslate nohighlight">\(2\)</span>.
+Hơn nữa vành <span class="math notranslate nohighlight">\(R\)</span> cũng chứa phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> là
+một nghiệm cố định nào đó của phương trình <span class="math notranslate nohighlight">\(x^n + 1 = 0\)</span>.
+Đặt <span class="math notranslate nohighlight">\(\zeta_n = \zeta_{2n}^2\)</span>.</p>
+<div class="proof example admonition" id="DFT-exp-ring">
+<p class="admonition-title"><span class="caption-number">Ví dụ 13 </span></p>
+<section class="example-content" id="proof-content">
+<p>Trên <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> thì <span class="math notranslate nohighlight">\(\zeta_{2n} = e^{\pi i/n}\)</span>
+là một nghiệm của phương trình <span class="math notranslate nohighlight">\(x^n + 1 = 0\)</span>. Khi đó
+<span class="math notranslate nohighlight">\(\zeta_n = \zeta_{2n}^2 = e^{2\pi i /n}\)</span>.</p>
+</section>
+</div><div class="proof lemma admonition" id="DFT-lem-z2n">
+<p class="admonition-title"><span class="caption-number">Bổ đề 1 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>Phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> sinh ra một nhóm vòng (cyclic group)
+với order <span class="math notranslate nohighlight">\(2n\)</span> trong nhóm nhân của vành <span class="math notranslate nohighlight">\(R\)</span>.</p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Do <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> là nghiệm của phương trình <span class="math notranslate nohighlight">\(x^n + 1 = 0\)</span>
+nên <span class="math notranslate nohighlight">\(\zeta_{2n}^n = -1\)</span>, hay <span class="math notranslate nohighlight">\(\zeta_{2n}^{2^t} = -1\)</span>.
+Từ đó suy ra <span class="math notranslate nohighlight">\(\left(\zeta_{2n}^{2^t}\right)^2 = 1\)</span>
+nên order của phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> là <span class="math notranslate nohighlight">\(2^{t+1} = 2n\)</span>.</p>
+</div>
+<p>Giả sử <span class="math notranslate nohighlight">\((f_0, \ldots, f_{n-1}) \in R^n\)</span> là vector bất kì.
+Khi đó:</p>
+<p><strong>Biến đổi Fourier loại 1</strong> của vector trên là vector <span class="math notranslate nohighlight">\(n\)</span>
+chiều <span class="math notranslate nohighlight">\((\hat f_0, \ldots, \hat f_{n-1})\)</span> thuộc <span class="math notranslate nohighlight">\(R^n\)</span>
+xác định bởi:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\hat f_i = \sum_{j=0}^{n-1} \zeta_n^{ij} f_j, \quad i = 0, 1, \ldots, n-1.\]</div>
+</div>
+<p><strong>Biến đổi Fourier loại 2</strong> của vector trên là vector <span class="math notranslate nohighlight">\(n\)</span>
+chiều <span class="math notranslate nohighlight">\((\check f_1, \check f_3, \ldots, \check f_{2n-1})\)</span>
+thuộc <span class="math notranslate nohighlight">\(R^n\)</span> xác định bởi:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\check f_i = \sum_{j=0}^{n-1} \zeta_{2n}^{ij} f_j, \quad i = 1, 3, \ldots, 2n-1.\]</div>
+</div>
+<div class="proof example admonition" id="exp-DFT-3">
+<p class="admonition-title"><span class="caption-number">Ví dụ 14 </span></p>
+<section class="example-content" id="proof-content">
+<p>Mình lấy ví dụ với vector <span class="math notranslate nohighlight">\((f_0, f_1, f_2) = (1, 2, 3)\)</span> thuộc
+<span class="math notranslate nohighlight">\(\mathbb{C}^3\)</span>.</p>
+<p>Chọn nghiệm <span class="math notranslate nohighlight">\(\zeta_{2n} = e^{\pi i / 3}\)</span> của
+phương trình <span class="math notranslate nohighlight">\(x^3 + 1 = 0\)</span>. Khi đó
+<span class="math notranslate nohighlight">\(\zeta_n = \zeta_{2n}^2 = e^{2\pi i / 3}\)</span>.</p>
+<p>Biến đổi Fourier loại 1 lúc này là:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{f}_0 &amp; = \left(e^{2\pi i/3}\right)^{0 \cdot 0} \cdot 1 + \left(e^{2\pi i/3}\right)^{0 \cdot 1} \cdot 2 + \left(e^{2\pi i/3}\right)^{0 \cdot 2} \cdot 3 \\
+&amp; = 1 + 2 + 3 = 6. \\
+\hat{f}_1 &amp; = \left(e^{2\pi i/3}\right)^{1 \cdot 0} \cdot 1 + \left(e^{2\pi i/3}\right)^{1 \cdot 1} \cdot 2 + \left(e^{2\pi i/3}\right)^{1 \cdot 2} \cdot 3 \\
+&amp; = 1 + 2 \cdot e^{2\pi i/3} + 3 \cdot 3 \cdot e^{4\pi i/3} \\
+\hat{f}_2 &amp; = \left(e^{2\pi i/3}\right)^{2 \cdot 0} \cdot 1 + \left(e^{2\pi i/3}\right)^{2 \cdot 1} \cdot 2 + \left(e^{2\pi i/3}\right)^{2 \cdot 2} \cdot 3 \\
+&amp; = 1 + 2 \cdot e^{4\pi i/3} + 3 \cdot e^{2\pi i/3}.\end{split}\]</div>
+</div>
+<p>Chú ý rằng <span class="math notranslate nohighlight">\(e^{2\pi i} = 1\)</span> nên biểu thức cuối
+của <span class="math notranslate nohighlight">\(\hat{f}_2\)</span> rút gọn còn <span class="math notranslate nohighlight">\(e^{2\pi i / 3}\)</span> (<span class="math notranslate nohighlight">\(8 \equiv 2 \bmod 3\)</span>).</p>
+<p>Tiếp theo ta biểu diễn <span class="math notranslate nohighlight">\(e^{4\pi i / 3}\)</span>
+theo <span class="math notranslate nohighlight">\(e^{2\pi i / 3}\)</span> như sau. Ta xét</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}e^{2zi} &amp; = \cos 2z + i\sin 2z \\
+&amp; = 2\cos^2 z - 1 + 2i \sin z \cos z \\
+&amp; = 2\cos z (\cos z + i\sin z) - 1 \\
+&amp; = 2\cos z \cdot e^{zi} - 1.\end{split}\]</div>
+</div>
+<p>Thay <span class="math notranslate nohighlight">\(z = 2\pi / 3\)</span> vào kết quả trên
+ta được</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[e^{4\pi i / 3} = 2\cos \frac{2\pi}{3} \cdot e^{2\pi i/3} - 1 = -e^{2\pi i / 3} - 1.\]</div>
+</div>
+<p>Như vậy kết quả của biến đổi Fourier rời rạc
+bên trên là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(\hat{f}_0, \hat{f}_1, \hat{f}_2) =  (6, -e^{2\pi i / 3} - 2, e^{2\pi i / 3} - 1).\]</div>
+</div>
+</section>
+</div><p>Ở ví dụ trên chúng ta tính biến đổi Fourier cho
+vector có độ dài không phải lũy thừa của <span class="math notranslate nohighlight">\(2\)</span>.
+Sau đây chúng ta sẽ xem xét một ví dụ với vector
+có độ dài là lũy thừa của <span class="math notranslate nohighlight">\(2\)</span> và ở phần sau
+sẽ tối ưu tính toán với biến đổi Fourier nhanh.</p>
+<div class="proof example admonition" id="exp-DFT-4">
+<p class="admonition-title"><span class="caption-number">Ví dụ 15 </span></p>
+<section class="example-content" id="proof-content">
+<p>Mình lấy ví dụ với vector <span class="math notranslate nohighlight">\((f_0, f_1, f_2, f_3) = (1, 2, 3, 4)\)</span>
+thuộc <span class="math notranslate nohighlight">\(\mathbb{C}^4\)</span>.</p>
+<p>Chọn nghiệm <span class="math notranslate nohighlight">\(\zeta_{2n} = e^{i\pi / 4}\)</span> của phương
+trình <span class="math notranslate nohighlight">\(x^4 + 1 = 0\)</span>. Khi đó <span class="math notranslate nohighlight">\(\zeta_n = \zeta_{2n}^2 = e^{i \pi / 2} = i\)</span>.</p>
+<p>Biến đổi Fourier loại 1 lúc này là:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{f}_0 &amp; = 1 \cdot 1 + 2 \cdot 1 + 3 \cdot 1 + 4 \cdot 1 = 10, \\
+\hat{f}_1 &amp; = 1 \cdot 1 + 2 \cdot i + 3 \cdot (-1) + 4 \cdot (-i) = -2 - 2i, \\
+\hat{f}_2 &amp; = 1 \cdot 1 + 2 \cdot (-1) + 3 \cdot 1 + 4 \cdot (-1) = -2, \\
+\hat{f}_3 &amp; = 1 \cdot 1 + 2 \cdot (-i) + 3 \cdot (-1) + 4 \cdot i = -2 + 2i.\end{split}\]</div>
+</div>
+</section>
+</div><p>Đối với vector độ dài <span class="math notranslate nohighlight">\(n = 2^2\)</span> thì <span class="math notranslate nohighlight">\(t = 2\)</span>,
+chúng ta cần <span class="math notranslate nohighlight">\(n - 1\)</span> phép cộng và <span class="math notranslate nohighlight">\(n\)</span> phép
+nhân với lũy thừa của <span class="math notranslate nohighlight">\(\zeta_{n}\)</span> để tính mỗi
+<span class="math notranslate nohighlight">\(\hat{f}_i\)</span>, với <span class="math notranslate nohighlight">\(i = 0, 1, 2, 3\)</span>. Tổng
+quát, ta cần tất cả <span class="math notranslate nohighlight">\((n + n - 1) \cdot n\)</span> phép
+tính cộng và nhân với lũy thừa của <span class="math notranslate nohighlight">\(\zeta_n\)</span>.
+Độ phức tạp để tính biến đổi Fourier rời rạc là <span class="math notranslate nohighlight">\(O(n^2)\)</span>.</p>
+<div class="proof remark admonition" id="DTF-F-hat-check">
+<p class="admonition-title"><span class="caption-number">Nhận xét 8 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Các phần tử <span class="math notranslate nohighlight">\(\hat f_i\)</span> là giá trị của đa
+thức <span class="math notranslate nohighlight">\(F(x) = \sum\limits_{j=0}^{n-1} f_j x^j \in R[x]\)</span>
+tại điểm <span class="math notranslate nohighlight">\(x = \zeta_n^i\)</span>, các phần tử
+<span class="math notranslate nohighlight">\(\check f_i\)</span> là giá trị của đa thức
+<span class="math notranslate nohighlight">\(F(x)\)</span> tại <span class="math notranslate nohighlight">\(x = \zeta_{2n}^i\)</span>
+khi <span class="math notranslate nohighlight">\(i\)</span> lẻ.</p>
+</section>
+</div><div class="proof lemma admonition" id="fi">
+<p class="admonition-title"><span class="caption-number">Bổ đề 2 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>Ta có biểu diễn ngược như sau:</p>
+<div class="math-wrapper docutils container" id="equation-fi-fhat">
+<div class="math notranslate nohighlight" id="equation-fi-fhat">
+<span class="eqno">(1)<a class="headerlink" href="#equation-fi-fhat" title="Link to this equation">¶</a></span>\[f_i = n^{-1} \sum_{j=0}^{n-1} \hat f_j \zeta_n^{-ij},\]</div>
+</div>
+<div class="math-wrapper docutils container" id="equation-fi-fcheck">
+<div class="math notranslate nohighlight" id="equation-fi-fcheck">
+<span class="eqno">(2)<a class="headerlink" href="#equation-fi-fcheck" title="Link to this equation">¶</a></span>\[\begin{split}f_i = n^{-1} \sum_{\substack{1 \leqslant j \leqslant 2n-1 \\ j \ \text{lẻ}}} \check f_j \zeta_{2n}^{-ij},\end{split}\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(n^{-1} = (2^{-1})^t \in R\)</span>.</p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Đặt <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span>. Khi đó
+<span class="math notranslate nohighlight">\(\zeta_{2n}^{-k} = \zeta_{2n}^{2nr - k}\)</span>
+với <span class="math notranslate nohighlight">\(r \in \mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(2nr - k \geqslant 0\)</span>.</p>
+<p>Ngoài ra, vì order của phần tử <span class="math notranslate nohighlight">\(\zeta_n\)</span>
+trong phép nhân là <span class="math notranslate nohighlight">\(n\)</span> nên ta có:</p>
+<div class="math-wrapper docutils container" id="equation-l0">
+<div class="math notranslate nohighlight" id="equation-l0">
+<span class="eqno">(3)<a class="headerlink" href="#equation-l0" title="Link to this equation">¶</a></span>\[\sum_{j = 0}^{n - 1} \zeta_n^{lj} = n \quad \text{khi} \quad l \equiv 0 \pmod n,\]</div>
+</div>
+<div class="math-wrapper docutils container" id="equation-l1">
+<div class="math notranslate nohighlight" id="equation-l1">
+<span class="eqno">(4)<a class="headerlink" href="#equation-l1" title="Link to this equation">¶</a></span>\[\sum_{j = 0}^{n - 1} \zeta_n^{lj} = 0 \quad \text{khi} \quad l \not\equiv 0 \pmod n.\]</div>
+</div>
+<p>Phương trình <a class="reference internal" href="#equation-fi-fhat">(1)</a> thỏa mãn vì:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{j=0}^{n-1} \hat f_j \zeta_n^{-ij} = \sum_{j=0}^{n-1} \sum_{k=0}^{n-1} f_k \zeta_n^{jk} \zeta_n^{-ij} = \sum_{k=0}^{n-1} f_k \sum_{j=0}^{n-1} \zeta_n^{(k-i)j} = n f_i\]</div>
+</div>
+<p>theo <a class="reference internal" href="#equation-l0">(3)</a> và <a class="reference internal" href="#equation-l1">(4)</a>, cụ thể là khi
+<span class="math notranslate nohighlight">\(k - i \equiv 0 \bmod n\)</span>.</p>
+<p>Đẳng thức <a class="reference internal" href="#equation-fi-fcheck">(2)</a> có được từ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\sum_{\substack{1 \leqslant j \leqslant 2n - 1 \\ j \ \text{lẻ}}} \check f_j \zeta_{2n}^{-ij} &amp; = \sum_{k=0}^{n-1} \check f_{2k+1} \zeta_{2n}^{-i(2k+1)} \\
+&amp; = \sum_{k=0}^{n-1} \sum_{l=0}^{n-1} f_l \zeta_{2n}^{l(2k+1)} \zeta_{2n}^{-i(2k+1)} \\
+&amp; = \sum_{l=0}^{n-1} f_l \zeta_{2n}^{l-i} \sum_{k=0}^{n-1} \zeta_n^{(l-i) k}.\end{split}\]</div>
+</div>
+<p>Từ <a class="reference internal" href="#equation-l0">(3)</a> và <a class="reference internal" href="#equation-l1">(4)</a> suy ra được đẳng thức <a class="reference internal" href="#equation-fi-fcheck">(2)</a>, cũng là khi <span class="math notranslate nohighlight">\(l - i \equiv 0 \bmod n\)</span>.</p>
+</div>
+<p>Việc tính toán biến đổi Fourier rời rạc bằng <a class="reference internal" href="#equation-fi-fhat">(1)</a>
+và <a class="reference internal" href="#equation-fi-fcheck">(2)</a> cần <span class="math notranslate nohighlight">\(O(n^2)\)</span> phép tính
+cộng và nhân trong vành <span class="math notranslate nohighlight">\(R\)</span>. Phần sau sẽ
+trình bày phương pháp tính biến đổi Fourier rời
+rạc với độ phức tạp <span class="math notranslate nohighlight">\(O(n \log n)\)</span>. Phương
+pháp này được gọi là <strong>biến đổi Fourier nhanh</strong>
+(hay <strong>Fast Fourier Transform</strong>, <strong>FFT</strong>,
+<strong>быстрое преобразование Фурье</strong>).</p>
+</section>
+<section id="bien-doi-fourier-nhanh">
+<h2>Biến đổi Fourier nhanh<a class="headerlink" href="#bien-doi-fourier-nhanh" title="Link to this heading">¶</a></h2>
+<div class="proof theorem admonition" id="DFT-fhat-fcheck">
+<p class="admonition-title"><span class="caption-number">Định lí 6 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Biến đổi Fourier rời rạc <span class="math notranslate nohighlight">\((\hat f_0, \ldots, \hat f_{n-1})\)</span>
+có thể được tính bằng:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(nt\)</span> phép cộng trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(nt\)</span> phép nhân với lũy thừa của
+<span class="math notranslate nohighlight">\(\zeta_n\)</span> trong vành <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+<p>Biến đổi Fourier rời rạc <span class="math notranslate nohighlight">\((\check f_1, \ldots, \check f_{2n-1})\)</span>
+có thể được tính bằng:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(nt\)</span> phép cộng trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(nt\)</span> phép nhân với lũy thừa của
+<span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> trong vành <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+<p>Nếu có <span class="math notranslate nohighlight">\((\hat f_i)\)</span> và <span class="math notranslate nohighlight">\((\check f_i)\)</span>
+thì có thể tính được vector <span class="math notranslate nohighlight">\((f_0, \ldots, f_{n-1})\)</span>
+bằng:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(nt\)</span> phép cộng trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(nt\)</span> phép nhân với lũy thừa của
+<span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> phép nhân với <span class="math notranslate nohighlight">\(n^{-1} \in R\)</span>.</p></li>
+</ul>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Đặt</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}F(x) = \sum_{j=0}^{n-1} f_i x^i &amp; = \sum_{\substack{0 \leqslant j \leqslant n-1 \\ j \ \text{chẵn}}} f_j x^j + \sum_{\substack{0 \leqslant j \leqslant n-1 \\ j \ \text{lẻ}}} f_j x^j \\
+&amp; = F_0(x^2) + x F_1(x^2),\end{split}\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(\deg F_0(x), \deg F_1(x) &lt; \dfrac{n}{2} = 2^{t-1}\)</span>.</p>
+<p>Khi đó</p>
+<div class="math-wrapper docutils container" id="equation-dft-f">
+<div class="math notranslate nohighlight" id="equation-dft-f">
+<span class="eqno">(5)<a class="headerlink" href="#equation-dft-f" title="Link to this equation">¶</a></span>\[F(\zeta_n^i) = F_0(\zeta_n^{2i}) + \zeta_n^i F_1(\zeta_n^{2i}),\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(i = 0, \ldots, n-1\)</span>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(\zeta_{n/2} = \zeta_n^2\)</span>. Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\left\{ \zeta_n^{2i} : 0 \leqslant i \leqslant n - 1 \right\} = \left\{ \zeta_{n/2}^i : 0 \leqslant i \leqslant \dfrac{n}{2} - 1\right\}.\]</div>
+</div>
+<p>Dựa trên quy nạp ta sẽ chứng minh biến đổi Fourier
+rời rạc loại 1, tức là tính <span class="math notranslate nohighlight">\((F(\zeta_n^0), \ldots, F(\zeta_n^{n-1}))\)</span>,
+theo công thức <a class="reference internal" href="#equation-dft-f">(5)</a> bằng <span class="math notranslate nohighlight">\(n\)</span> phép cộng
+trong vành <span class="math notranslate nohighlight">\(R\)</span> và <span class="math notranslate nohighlight">\(n\)</span> phép tính nhân với
+lũy thừa của <span class="math notranslate nohighlight">\(\zeta_n\)</span> trong vành <span class="math notranslate nohighlight">\(R\)</span> nếu
+ta đã biết các giá trị <span class="math notranslate nohighlight">\(F_0(\zeta_{n/2}^i)\)</span> và
+<span class="math notranslate nohighlight">\(F_1(\zeta_{n/2}^i)\)</span> với <span class="math notranslate nohighlight">\(i = 0, \ldots, \dfrac{n}{2} - 1\)</span>.</p>
+<p>Khi <span class="math notranslate nohighlight">\(t = 1\)</span> và <span class="math notranslate nohighlight">\(n = 2 = 2^t\)</span> (bước cơ sở quy nạp)
+thì để tính <span class="math notranslate nohighlight">\((\hat f_0, \hat f_1)\)</span> ta cần tìm
+<span class="math notranslate nohighlight">\(F_0 + \zeta_2^i F_1\)</span> với <span class="math notranslate nohighlight">\(F_0\)</span> và <span class="math notranslate nohighlight">\(F_1\)</span>
+là các phần tử thuộc vành <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(i = 0, 1\)</span>.
+Như vậy, với <span class="math notranslate nohighlight">\(n = 2\)</span> thì cần:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(2 = nt\)</span> phép nhân với lũy thừa của <span class="math notranslate nohighlight">\(\zeta_n = \zeta_2\)</span>
+trong vành <span class="math notranslate nohighlight">\(R\)</span>, ứng với <span class="math notranslate nohighlight">\(\zeta_2^i F_1\)</span> khi <span class="math notranslate nohighlight">\(i = 0, 1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(2 = nt\)</span> phép cộng trong vành <span class="math notranslate nohighlight">\(R\)</span>, ứng với
+<span class="math notranslate nohighlight">\(F_0 {\color{red}+} \zeta_2^i F_1\)</span>.</p></li>
+</ul>
+<p>Giả sử với mọi <span class="math notranslate nohighlight">\(j &lt; t\)</span>, để tính biến đổi Fourier
+rời rạc loại 1 trên vector <span class="math notranslate nohighlight">\(2^j\)</span> chiều ta cần:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(2^j \cdot j\)</span> phép nhân với lũy thừa của
+<span class="math notranslate nohighlight">\(\zeta_{2^j} = \left(\zeta_n\right)^{2^{t-j}}\)</span>
+trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^j \cdot j\)</span> phép cộng trong vành <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+<p>Khi đó, nếu <span class="math notranslate nohighlight">\(j = t\)</span> thì việc tính
+<span class="math notranslate nohighlight">\((\hat f_0, \ldots, \hat f_{n-1})\)</span> theo
+công thức <a class="reference internal" href="#equation-dft-f">(5)</a> bao gồm tính <span class="math notranslate nohighlight">\(F_0(\zeta_{n/2}^i)\)</span>
+và <span class="math notranslate nohighlight">\(F_1(\zeta_{n/2}^i)\)</span> với <span class="math notranslate nohighlight">\(i = 0, \ldots, n-1\)</span>.
+Nói cách khác là tính biến đổi Fourier cho
+vector độ dài <span class="math notranslate nohighlight">\(n / 2\)</span> gồm các hệ số <span class="math notranslate nohighlight">\(F_0(x)\)</span>
+và <span class="math notranslate nohighlight">\(F_1(x)\)</span> cộng thêm:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n\)</span> phép cộng trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> phép nhân với lũy thừa của
+<span class="math notranslate nohighlight">\(\zeta_n\)</span> trong vành <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+<p>Khi đó, theo giả thiết quy nạp, việc tính vector
+<span class="math notranslate nohighlight">\((\hat f_0, \ldots, \hat f_{n-1})\)</span> cần
+không nhiều hơn:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n\)</span> phép cộng trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p>cộng với <span class="math notranslate nohighlight">\(n\)</span> phép nhân trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p>cộng với <span class="math notranslate nohighlight">\(2 \cdot 2^{t-1} \cdot (t-1)\)</span>
+phép nhân với lũy thừa của <span class="math notranslate nohighlight">\(\zeta_n\)</span> trong
+vành <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+<p>Như vậy cần tổng cộng <span class="math notranslate nohighlight">\(n + n(t - 1) = nt\)</span> phép
+cộng trong vành <span class="math notranslate nohighlight">\(R\)</span> và <span class="math notranslate nohighlight">\(n + n(t-1) = nt\)</span>
+phép nhân với lũy thừa của <span class="math notranslate nohighlight">\(\zeta_n\)</span> trong vành
+<span class="math notranslate nohighlight">\(R\)</span>. Như vậy mệnh đề đầu tiên của định lý được
+chứng minh.</p>
+<p>Mệnh đề thứ hai chứng minh tương tự, ta thay
+<span class="math notranslate nohighlight">\(\zeta_n\)</span> thành <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span>.</p>
+<p>Mệnh đề thứ ba suy ra từ hai mệnh đề trên và <a class="reference internal" href="#fi">Bổ đề 2</a>.</p>
+</div>
+<div class="proof example admonition" id="exp-FFT-4">
+<p class="admonition-title"><span class="caption-number">Ví dụ 16 </span></p>
+<section class="example-content" id="proof-content">
+<p>Xét vector <span class="math notranslate nohighlight">\((f_0, f_1, f_2, f_3) = (1, 2, 3, 4)\)</span>
+thuộc <span class="math notranslate nohighlight">\(\mathbb{C}^4\)</span> như bên trên.</p>
+<p>Ở đây, <span class="math notranslate nohighlight">\(n = 4 = 2^2\)</span> và <span class="math notranslate nohighlight">\(t = 2\)</span>.</p>
+<p>Chọn nghiệm <span class="math notranslate nohighlight">\(\zeta_{8} = e^{i\pi / 4}\)</span> của phương
+trình <span class="math notranslate nohighlight">\(x^4 + 1 = 0\)</span>. Khi đó
+<span class="math notranslate nohighlight">\(\zeta_4 = \zeta_{8}^2 = e^{i \pi / 2} = i\)</span>.</p>
+<p>Ta chia vector thành hai phần:</p>
+<ul class="simple">
+<li><p>vector con gồm các phần tử ở vị trí chẵn là
+<span class="math notranslate nohighlight">\((f_0, f_2) = (1, 3)\)</span>;</p></li>
+<li><p>vector con gồm các phần tử ở vị trí lẻ là
+<span class="math notranslate nohighlight">\((f_1, f_3) = (2, 4)\)</span>.</p></li>
+</ul>
+<p>Đặt <span class="math notranslate nohighlight">\(\zeta_2 = \zeta_{4}^2 = -1\)</span>.</p>
+<p>Khi đó, với vector con <span class="math notranslate nohighlight">\((f_0, f_2) = (1, 3)\)</span>
+ta tính:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}F_0 &amp; = f_0 + \zeta_{2}^0 \cdot f_2 = 1 + 1 \cdot 3 = 4, \\
+F_1 &amp; = f_0 + \zeta_{2}^1 \cdot f_2 = 1 + (-1) \cdot 3 = -2.\end{split}\]</div>
+</div>
+<p>Tương tự, với vector con
+<span class="math notranslate nohighlight">\((f_1, f_3) = (2, 4)\)</span> ta tính</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}F_2 &amp; = f_1 + \zeta_{2}^0 \cdot f_3 = 2 + 1 \cdot 4 = 6, \\
+F_3 &amp; = f_1 + \zeta_{2}^1 \cdot f_3 = 2 + (-1) \cdot 4 = -2.\end{split}\]</div>
+</div>
+<p>Kết hợp hai vector <span class="math notranslate nohighlight">\((F_0, F_2)\)</span> và
+<span class="math notranslate nohighlight">\((F_3, F_4)\)</span> ta tính được biến đổi
+Fourier nhanh.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{f}_0 &amp; = F_0 + \zeta_4^0 \cdot F_2 = 4 + 1 \cdot 6 = 10, \\
+\hat{f}_2 &amp; = F_0 + \zeta_4^2 \cdot F_2 = 4 + (-1) \cdot 6 = -2, \\
+\hat{f}_1 &amp; = F_1 + \zeta_4^1 \cdot F_3 = -2 + i \cdot (-2) = -2 - 2 i, \\
+\hat{f}_3 &amp; = F_1 + \zeta_4^3 \cdot F_3 = -2 + (-i) \cdot (-2) = -2 + 2i.\end{split}\]</div>
+</div>
+<p>Ở đây, hệ số <span class="math notranslate nohighlight">\(\hat{f}_i\)</span> ở vị trí lẻ
+sẽ được tính nhờ các <span class="math notranslate nohighlight">\(F_i\)</span> ở vị trí lẻ
+cùng với lũy thừa lẻ của <span class="math notranslate nohighlight">\(\zeta_n\)</span>, và
+ngược lại, hệ số <span class="math notranslate nohighlight">\(\hat{f}_i\)</span> ở vị trí
+chẵn sẽ được tính nhờ các <span class="math notranslate nohighlight">\(F_i\)</span> ở vị
+trí chẵn cùng với lũy thừa chẵn của <span class="math notranslate nohighlight">\(\zeta_n\)</span>.</p>
+<p>Như vậy kết quả là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(\hat{f}_0, \hat{f}_1, \hat{f}_2, \hat{f}_3) = (10, -2 - 2i, -2, -2 + 2i),\]</div>
+</div>
+<p>giống với ví dụ ở trên. Tuy nhiên chúng ta chỉ
+dùng <span class="math notranslate nohighlight">\(4\)</span> phép cộng và <span class="math notranslate nohighlight">\(4\)</span> phép nhân
+với <span class="math notranslate nohighlight">\(\zeta_{2}\)</span> để tính các <span class="math notranslate nohighlight">\(F_i\)</span>,
+cộng thêm <span class="math notranslate nohighlight">\(4\)</span> phép cộng và <span class="math notranslate nohighlight">\(4\)</span> phép
+nhân với <span class="math notranslate nohighlight">\(\zeta_4\)</span> để tính các <span class="math notranslate nohighlight">\(\hat{f}_i\)</span>.
+Như vậy tổng cộng ta dùng <span class="math notranslate nohighlight">\(8 = n t\)</span> phép cộng,
+và <span class="math notranslate nohighlight">\(8 = n t\)</span> phép nhân cho các lũy thừa của
+<span class="math notranslate nohighlight">\(\zeta_4\)</span> (vì <span class="math notranslate nohighlight">\(\zeta_{2}\)</span> cũng là lũy
+thừa của <span class="math notranslate nohighlight">\(\zeta_4\)</span>).</p>
+</section>
+</div></section>
+<section id="bien-doi-fourier-va-phep-nhan-da-thuc">
+<h2>Biến đổi Fourier và phép nhân đa thức<a class="headerlink" href="#bien-doi-fourier-va-phep-nhan-da-thuc" title="Link to this heading">¶</a></h2>
+<div class="proof lemma admonition" id="DFT-mult-poly">
+<p class="admonition-title"><span class="caption-number">Bổ đề 3 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>Một phép nhân trong vành <span class="math notranslate nohighlight">\(R[x]/(x^{2^t} + 1)\)</span>
+có thể được tính bởi:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n = 2^t\)</span> phép nhân trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(3nt\)</span> phép cộng trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(3nt\)</span> phép nhân với lũy thừa của
+<span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> phép nhân với <span class="math notranslate nohighlight">\(n^{-1}\)</span>
+trong vành <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+</section>
+</div><div class="proof remark admonition" id="DFT-no-mult-poly">
+<p class="admonition-title"><span class="caption-number">Nhận xét 9 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Bổ đề không áp dụng khi <span class="math notranslate nohighlight">\(R = \mathbb{Z}\)</span> và
+<span class="math notranslate nohighlight">\(R = \mathbb{Q}\)</span> vì hai vành này không có
+phần tử <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> (căn bậc <span class="math notranslate nohighlight">\(n\)</span> của
+đơn vị).</p>
+</section>
+</div><p>Sau đây ta chứng minh <a class="reference internal" href="#DFT-mult-poly">Bổ đề 3</a>.</p>
+<div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Đặt <span class="math notranslate nohighlight">\(\sum\limits_{i=0}^{n-1} f_i x^i\)</span> và
+<span class="math notranslate nohighlight">\(\sum\limits_{i=0}^{n-1} g_i x^i\)</span> với
+<span class="math notranslate nohighlight">\(F, G \in R[x]\)</span> và là biểu diễn của phần
+tử trong lớp nhân tử <span class="math notranslate nohighlight">\(R[x]/(x^{2^t} + 1)\)</span>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(H = \sum\limits_{i=0}^{n-1} h_i x^i \in R[x]\)</span>
+sao cho <span class="math notranslate nohighlight">\(F \cdot G \equiv H \pmod{x^n+1}\)</span>. Nói
+cách khác <span class="math notranslate nohighlight">\(H\)</span> là tích <span class="math notranslate nohighlight">\(F \cdot G\)</span> trong
+vành và ta sẽ tính <span class="math notranslate nohighlight">\(H\)</span>.</p>
+<p>Biến đổi Fourier loại 2 cho vector
+<span class="math notranslate nohighlight">\((f_0, \ldots, f_{n-1})\)</span> và <span class="math notranslate nohighlight">\((g_0, \ldots, g_{n-1})\)</span>
+cho ta đẳng thức:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\check f_i \cdot \check g_i = F(\zeta_{2n}^i) \cdot G(\zeta_{2n}^i) = H(\zeta_{2n}^i) = \check h_i\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(i\)</span> lẻ, <span class="math notranslate nohighlight">\(1 \leqslant i \leqslant 2n-1\)</span>,
+vì <span class="math notranslate nohighlight">\(\zeta_{2n}^n + 1 = 0\)</span>.</p>
+<p>Như vậy nếu ta biết tất cả <span class="math notranslate nohighlight">\(\check f_i\)</span> và
+<span class="math notranslate nohighlight">\(\check g_i\)</span> thì có thể tính mọi <span class="math notranslate nohighlight">\(\check h_i\)</span>
+với <span class="math notranslate nohighlight">\(n\)</span> phép nhân trong vành <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p>Theo <a class="reference internal" href="#DFT-fhat-fcheck">Định lí 6</a>, các phần tử
+<span class="math notranslate nohighlight">\(\check f_i\)</span> và <span class="math notranslate nohighlight">\(\check g_i\)</span> có thể
+tính với <span class="math notranslate nohighlight">\(2tn\)</span> phép cộng trong vành <span class="math notranslate nohighlight">\(R\)</span>
+và <span class="math notranslate nohighlight">\(2tn\)</span> phép nhân với lũy thừa của
+<span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> trong vành <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p>Cũng theo <a class="reference internal" href="#DFT-fhat-fcheck">Định lí 6</a>, các phần tử
+<span class="math notranslate nohighlight">\(h_i\)</span> có thể tính, với điều kiện đã biết
+<span class="math notranslate nohighlight">\(\check h_i\)</span>, với</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(tn\)</span> phép cộng trong vành <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(tn\)</span> phép nhân với lũy thừa của
+<span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> trong vành <span class="math notranslate nohighlight">\(R\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span> phép nhân với phần tử
+<span class="math notranslate nohighlight">\(n^{-1}\)</span> trong vành <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+<p>Ta có điều phải chứng minh.</p>
+</div>
+<div class="proof corollary admonition" id="DFT-cor-1">
+<p class="admonition-title"><span class="caption-number">Hệ quả 1 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Đặt <span class="math notranslate nohighlight">\(T\)</span> là vành giao hoán với đơn vị,
+<span class="math notranslate nohighlight">\(2^{-1} \in T\)</span>, <span class="math notranslate nohighlight">\(\zeta_{4n} = \zeta_{2^{t + 2}} \in T\)</span>
+là nghiệm phương trình <span class="math notranslate nohighlight">\(x^{2n} + 1 = 0\)</span>.
+Nếu <span class="math notranslate nohighlight">\(F(x), G(x) \in T[x]\)</span>, <span class="math notranslate nohighlight">\(\deg F(x) &lt; n\)</span>,
+<span class="math notranslate nohighlight">\(\deg G(x) &lt; n\)</span> thì tích <span class="math notranslate nohighlight">\(F(x) \cdot G(x)\)</span>
+có thể tính với:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(2n\)</span> phép nhân trong <span class="math notranslate nohighlight">\(T\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(6n(t+1)\)</span> phép cộng trong <span class="math notranslate nohighlight">\(T\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(6n(t+1)\)</span> phép nhân với lũy thừa
+của <span class="math notranslate nohighlight">\(\zeta_{4n}\)</span> trong <span class="math notranslate nohighlight">\(T\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(2n\)</span> phép nhân với <span class="math notranslate nohighlight">\((2^{-1})^{t+1}\)</span>
+trong <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+</ul>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Vì chặn trên của bậc đa thức <span class="math notranslate nohighlight">\(F(x)\)</span> và
+<span class="math notranslate nohighlight">\(G(x)\)</span> nên bậc của <span class="math notranslate nohighlight">\(F(x) \cdot G(x)\)</span>
+sẽ nhỏ hơn <span class="math notranslate nohighlight">\(2n\)</span>. Khi chia
+<span class="math notranslate nohighlight">\(F(x) \cdot G(x)\)</span> cho <span class="math notranslate nohighlight">\(2^{2n} + 1\)</span>
+ta thu được chính đa thức <span class="math notranslate nohighlight">\(F(x) \cdot G(x)\)</span>.
+Khi đó tích <span class="math notranslate nohighlight">\(F(x) \cdot G(x)\)</span> trong
+<span class="math notranslate nohighlight">\(R[x]\)</span> có thể tính với một phép nhân
+trong <span class="math notranslate nohighlight">\(R[x] / (x^{2n} + 1)\)</span>.
+Từ <a class="reference internal" href="#DFT-lem-z2n">Bổ đề 1</a>, ta thay <span class="math notranslate nohighlight">\(n\)</span>
+thành <span class="math notranslate nohighlight">\(2n\)</span> và <span class="math notranslate nohighlight">\(t\)</span> thay thành
+<span class="math notranslate nohighlight">\(t+1\)</span>, kết hợp <a class="reference internal" href="#DFT-mult-poly">Bổ đề 3</a>
+ta có điều phải chứng minh.</p>
+</div>
+<p>Đặt <span class="math notranslate nohighlight">\(T\)</span> là vành giao hoán với đơn vị
+<span class="math notranslate nohighlight">\(1\)</span> và có phần tử <span class="math notranslate nohighlight">\(2^{-1}\)</span>.</p>
+<p>Ta hiểu phép cộng trong <span class="math notranslate nohighlight">\(T\)</span> là cả phép cộng
+lẫn phép trừ (cộng cho số đối). Ta cần bổ đề cơ
+sở sau.</p>
+<div class="proof lemma admonition" id="Tx">
+<p class="admonition-title"><span class="caption-number">Bổ đề 4 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>Nếu <span class="math notranslate nohighlight">\(t \geqslant 2\)</span> thì một phép nhân
+trong vành <span class="math notranslate nohighlight">\(T[x] / (x^{2^t} + 1)\)</span>
+có thể thực hiện với:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(2^t \cdot t)\)</span> phép nhân trong
+<span class="math notranslate nohighlight">\(T\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(O(2^t \cdot t \cdot \log t)\)</span> phép
+cộng trong <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+</ul>
+</section>
+</div><div class="proof remark admonition" id="DFT-rem-Tx">
+<p class="admonition-title"><span class="caption-number">Nhận xét 10 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Kết quả trên có thể áp dụng với vành số
+nguyên <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> nếu ta xem <span class="math notranslate nohighlight">\(T\)</span>
+là vành như sau:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[T = \left\{\frac{m}{2^k} : m \in \mathbb{Z}, k \in \mathbb{Z}_{\geqslant 0}\right\}, \quad T \supseteq \mathbb{Z}.\]</div>
+</div>
+<p>Trên máy tính, mỗi phần tử của <span class="math notranslate nohighlight">\(T\)</span>
+được lưu chính xác, ví dụ dưới dạng cặp <span class="math notranslate nohighlight">\((m, k)\)</span>.</p>
+</section>
+</div><p>Ta sẽ xem xét định lí quan trọng tiếp theo
+rồi quay lại chứng minh <a class="reference internal" href="#Tx">Bổ đề 4</a>.</p>
+<div class="proof theorem admonition" id="DFT-thr-Tx">
+<p class="admonition-title"><span class="caption-number">Định lí 7 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>Phép nhân hai đa thức có bậc không quá <span class="math notranslate nohighlight">\(n\)</span>
+trong vành <span class="math notranslate nohighlight">\(T[x]\)</span>, với <span class="math notranslate nohighlight">\(n \geqslant 3\)</span>,
+được tính với <span class="math notranslate nohighlight">\(M(n) = O(n \log n)\)</span> phép nhân
+trong <span class="math notranslate nohighlight">\(T\)</span> và <span class="math notranslate nohighlight">\(A(n) = O(n \log n \log \log n)\)</span>
+phép cộng trong <span class="math notranslate nohighlight">\(T\)</span>.</p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Gọi <span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span> là số sao cho
+<span class="math notranslate nohighlight">\(2^{t-1} \leqslant 2n &lt; 2^t\)</span>. Dễ thấy
+<span class="math notranslate nohighlight">\(t \geqslant 2\)</span> và <span class="math notranslate nohighlight">\(2n &lt; 2^t &lt; 4n\)</span>.</p>
+<p>Do đó phép nhân hai đa thức có bậc không quá
+<span class="math notranslate nohighlight">\(n\)</span> theo modulo <span class="math notranslate nohighlight">\(x^{2^t} + 1\)</span> là
+phép nhân thông thường, kết quả không thay đổi
+sau phép modulo.</p>
+<p>Theo <a class="reference internal" href="#Tx">Bổ đề 4</a> thì ta có thể tính tích
+với <span class="math notranslate nohighlight">\(M(n) = O(2^t \cdot t) = O(n \log n)\)</span>
+phép nhân trong <span class="math notranslate nohighlight">\(T\)</span> và
+<span class="math notranslate nohighlight">\(A(n) = O(2^t \cdot t \log t) = O(n \cdot \log n \cdot \log \log n)\)</span>
+phép cộng trong <span class="math notranslate nohighlight">\(T\)</span>.</p>
+</div>
+<p>Tiếp theo chúng ta quay lại chứng minh <a class="reference internal" href="#Tx">Bổ đề 4</a>.</p>
+<div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Đặt <span class="math notranslate nohighlight">\(F = F(x)\)</span> và <span class="math notranslate nohighlight">\(G = G(x)\)</span> là
+các đa thức bậc không quá <span class="math notranslate nohighlight">\(2^t - 1\)</span>. Đặt</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[H = H(x) = \sum_{i=0}^{2^t - 1} H_i x^i\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(H = FG \pmod{x^{2^t} + 1}\)</span>. Ta cần
+tính các hệ số <span class="math notranslate nohighlight">\(H_0\)</span>, <span class="math notranslate nohighlight">\(H_1\)</span>, ...,
+<span class="math notranslate nohighlight">\(H_{2^t - 1}\)</span> theo các hệ số của <span class="math notranslate nohighlight">\(F\)</span>
+và <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(k\)</span> là tham số tự nhiên với
+<span class="math notranslate nohighlight">\(1 \leqslant k &lt; t\)</span> mà ta sẽ chọn ở dưới.</p>
+<p>Ta biểu diễn <span class="math notranslate nohighlight">\(F\)</span> và <span class="math notranslate nohighlight">\(G\)</span> dưới dạng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[F = \sum_{i = 0}^{2^{t - k} - 1} f_i(x) x^{i \cdot 2^k}, \quad G = \sum_{i = 0}^{2^{t - k} - 1} g_i(x) x^{i \cdot 2^k}\]</div>
+</div>
+<p>với</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f_i(x), g_i(x) \in T[x]\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\deg f_i(x) \leqslant 2^k - 1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\deg g_i(x) \leqslant 2^k - 1\)</span>.</p></li>
+</ul>
+<p>Thuật toán tính <span class="math notranslate nohighlight">\(F \cdot G\)</span> được thực hiện
+theo các bước sau.</p>
+<p><strong>Bước 1.</strong> Nhân <span class="math notranslate nohighlight">\(\sum\limits_{i=0}^{2^{t-k} - 1} f_i(x) Y_i\)</span>
+với <span class="math notranslate nohighlight">\(\sum\limits_{i=0}^{2^{t-k} - 1} g_i(x) Y_i\)</span>
+trên vành <span class="math notranslate nohighlight">\(T[x, Y] / (Y^{2^{t - k} - 1})\)</span>.
+Kết quả được biểu diễn bởi
+<span class="math notranslate nohighlight">\(\widetilde{H} = \sum\limits_{i=0}^{2^{t-k} - 1} h_i(x) Y^i\)</span>.</p>
+<p><strong>Bước 2.</strong> Thay <span class="math notranslate nohighlight">\(Y = x^{2^k}\)</span> vào
+<span class="math notranslate nohighlight">\(\widetilde{H}\)</span> vào tính modulo
+<span class="math notranslate nohighlight">\(x^{2^t} + 1 = Y^{2^{t - k}} + 1\)</span>. Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[F(x) \cdot G(x) = \sum_{l=0}^{2^{t-k} - 1} f_l(x) x^{2^k l} \cdot \sum_{j=0}^{2^{t-k} - 1} g_j(x) x^{2^k j} \equiv \sum_{i=0}^{2^{t-k} - 1} h_i(x) x^{2^k i} \pmod{(x^{2^k})^{2^{t-k}} + 1}.\]</div>
+</div>
+<p>Từ bước 2 ta sẽ tính được
+<span class="math notranslate nohighlight">\(H(x) = \sum\limits_{i=0}^{2^t - 1} H_i x^i\)</span>.
+Ta cần hiểu tại sao ở bước 2 dãy <span class="math notranslate nohighlight">\(\{ h_i(x) \}\)</span>
+theo modulo <span class="math notranslate nohighlight">\(x^{2^t} + 1\)</span> tìm được hệ số
+<span class="math notranslate nohighlight">\(H_i\)</span> của <span class="math notranslate nohighlight">\(H(x)\)</span>.</p>
+<p>Ở bước 1 ta nhân</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{l=0}^{2^{t-k} - 1} f_l(x) Y^l \cdot \sum_{j=0}^{2^{t-k}-1} g_j(x) Y^j \equiv \sum_{i=0}^{2^{t-k} - 1} h_i(x) Y^i \pmod{Y^{2^{t-k}} + 1}.\]</div>
+</div>
+<p>Ở đây <span class="math notranslate nohighlight">\(l + j \leqslant 2^{t - k + 1} - 2 &lt; 2^{t-k+1} - 1\)</span>.
+Khi đó có hai trường hợp có thể xảy ra.</p>
+<p><strong>Trường hợp 1.</strong> Nếu
+<span class="math notranslate nohighlight">\(0 \leqslant l + j \leqslant 2^{t-k} - 1\)</span> thì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[Y^l \cdot Y_j \equiv Y^{l + j} \pmod{Y^{2^{t - k}} + 1}.\]</div>
+</div>
+<p><strong>Trường hợp 2.</strong> Nếu
+<span class="math notranslate nohighlight">\(2^{t - k} \leqslant l + j \leqslant 2 \cdot 2^{t - k} - 2\)</span>
+thì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[Y^{l + j} \equiv -Y^i \pmod{Y^{2^{t-k}} + 1},\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(i = l + j - 2^{t-k}\)</span>.</p>
+<p>Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}h_i(x) = \sum_{\substack{l, j \\ j + j = i}} f_l(x) g_j(x) - \sum_{\substack{l, j \\ l + j = i + 2^{t - k}}} f_l(x) g_j(x),\end{split}\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(i = 0, \ldots, 2^{t - k} - 1\)</span>.</p>
+<p>Từ đây suy ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\deg h_i(x) \leqslant \deg f_l(x) = \deg g_j(x) \leqslant 2^{k+1} - 2 &lt; 2^{k+1} - 1.\]</div>
+</div>
+<p>Vì <span class="math notranslate nohighlight">\(k &lt; t\)</span> nên <span class="math notranslate nohighlight">\(\deg h_i &lt; 2^t - 1\)</span>.</p>
+<p>Bước 2 thực hiện không nhiều hơn <span class="math notranslate nohighlight">\(2^t\)</span>
+phép cộng trên <span class="math notranslate nohighlight">\(T\)</span> vì nếu chúng ta đã
+biết các giá trị
+<span class="math notranslate nohighlight">\(h_i(x) = \sum\limits_{j = 0}^{2^{k+1} - 1} h_{ij} x^j\)</span>
+thì khi thay <span class="math notranslate nohighlight">\(Y = x^{2^k}\)</span> ta có biểu thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{i = 0}^{2^{t-k} - 1} \sum_{j=0}^{2^{k+1} - 1} h_{ij} x^{j + 2^k i} \pmod{x^{2^t} + 1}.\]</div>
+</div>
+<p>Phép tính modulo <span class="math notranslate nohighlight">\(x^{2^t} + 1\)</span> ta sẽ
+được các biểu thức với <span class="math notranslate nohighlight">\(j + 2^k i \geqslant 2^t\)</span>.</p>
+<p>Khi đó, với <span class="math notranslate nohighlight">\(j + 2^k i = r 2^t + l\)</span>,
+<span class="math notranslate nohighlight">\(0 \leqslant l &lt; 2^t\)</span>, nếu thay
+<span class="math notranslate nohighlight">\(x^{j + 2^k i}\)</span> thành <span class="math notranslate nohighlight">\((-1)^r \cdot x^l\)</span>
+thì đại lượng <span class="math notranslate nohighlight">\((-1)^r \cdot h_{ij}\)</span> sẽ
+được thêm vào hệ số của <span class="math notranslate nohighlight">\(x^l\)</span> (tức là
+thực hiện một phép cộng hoặc trừ). Các phép
+cộng như vậy sẽ không lớn hơn số lượng số
+hạng, tức là không lớn hơn
+<span class="math notranslate nohighlight">\(2^{t - k} \cdot 2^{k + 1} = 2^{t + 1}\)</span>.</p>
+<p>Ở đây, khi <span class="math notranslate nohighlight">\(0 \leqslant i \leqslant 2^{t - k + 1}\)</span>
+ta có bất đẳng thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[j + 2^k \cdot i \leqslant 2^{k + 1} - 1 + 2^{t - 1} - 2^k = 2^k + 2^{t - 1} - 1 \leqslant 2^t - 1\]</div>
+</div>
+<p>vì <span class="math notranslate nohighlight">\(k \leqslant t - 1\)</span>. Với những số
+<span class="math notranslate nohighlight">\(i\)</span> như vậy thì phép tính modulo là
+không cần thiết.</p>
+<p>Lúc này còn các giá trị <span class="math notranslate nohighlight">\(i\)</span> trong đoạn
+<span class="math notranslate nohighlight">\(2^{t - k - 1} \leqslant i \leqslant 2^{t - k} - 1\)</span>,
+số lượng các giá trị này không nhiều hơn
+<span class="math notranslate nohighlight">\(2^{t - k - 1}\)</span>. Khi đó, cặp <span class="math notranslate nohighlight">\((i, j)\)</span>
+ở bước 2 sẽ triệt tiêu theo modulo, và có không
+nhiều hơn <span class="math notranslate nohighlight">\(2^{t - k - 1} \cdot 2^{k + 1} = 2^t\)</span>
+cặp. Như vậy ta đã chứng minh được ở bước 2
+thực hiện không nhiều hơn <span class="math notranslate nohighlight">\(2^t\)</span> phép
+cộng trong <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>Bây giờ xét bước 1. Phép nhân ta không thực hiện
+trong vành <span class="math notranslate nohighlight">\(T[x, Y] / (Y^{2^{t - k}}  - 1)\)</span>
+mà trong vành <span class="math notranslate nohighlight">\(R[Y] / (Y^{2^{t - k}} - 1)\)</span>
+với <span class="math notranslate nohighlight">\(R = T[x] / (x^{2^{k+1}} + 1)\)</span>.</p>
+<p>Trong vành <span class="math notranslate nohighlight">\(R\)</span> có phần tử
+<span class="math notranslate nohighlight">\(\zeta_{2^{k+2}} \equiv x \pmod{x^{2^{k+1}} + 1}\)</span>
+là nghiệm phương trình <span class="math notranslate nohighlight">\(X^{2^{k+1}} + 1 = 0\)</span>.</p>
+<p>Chọn <span class="math notranslate nohighlight">\(k = \left[\dfrac{t}{2}\right] \geqslant 1\)</span>.
+Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[k \geqslant \frac{t-1}{2}, \quad k \leqslant \frac{t}{2} &lt; t.\]</div>
+</div>
+<p>Vì <span class="math notranslate nohighlight">\(2^{t - k + 1} \leqslant 2^{k+2}\)</span> nên
+trong <span class="math notranslate nohighlight">\(R\)</span> có phần tử <span class="math notranslate nohighlight">\(\zeta_{2^{t-k+1}}\)</span>
+là một lũy thừa của phần tử <span class="math notranslate nohighlight">\(\zeta_{2^{k+2}}\)</span>.</p>
+<p>Một phép nhân cho lũy thừa của phần tử
+<span class="math notranslate nohighlight">\(\zeta_{2^{t-k+1}}\)</span> trong vành
+<span class="math notranslate nohighlight">\(R\)</span> được thực hiện bởi <span class="math notranslate nohighlight">\(2^{k+1}\)</span>
+phép cộng trong <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>Vì <span class="math notranslate nohighlight">\(x \equiv \zeta_{2^{k+2}} \pmod{x^{2^{k+1}} + 1}\)</span> nên</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[R = \left\{a_0 + a_1 \zeta_{2^{k+2}} + \cdots + a_{2^{k+1}} \zeta_{2^{k+2}}^{2^{k+1} - 1} : a_i \in T, i = 0, 1, \ldots, 2^{k+1} - 1\right\}.\]</div>
+</div>
+<p>Phép nhân với <span class="math notranslate nohighlight">\(\zeta_{2^{t-k+1}}^j = \zeta_{2^{k+2}}^{j}\)</span>
+với đẳng thức <span class="math notranslate nohighlight">\(\zeta_{2^{k+2}}^{2^{k+1}} = -1\)</span>
+sẽ cho kết quả là hoán vị các hệ số
+<span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_1\)</span>, ..., <span class="math notranslate nohighlight">\(a_{2^{k+1} - 1}\)</span>
+và một số phần tử sẽ đổi dấu.</p>
+<p>Ta dùng <a class="reference internal" href="#DFT-mult-poly">Bổ đề 3</a> để đánh giá độ
+phức tạp của một phép nhân trong vành
+<span class="math notranslate nohighlight">\(R[Y] / (Y^{2^{t-k}} + 1)\)</span>.</p>
+<p>Ta cần thực hiện:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(2^{t-k}\)</span> phép nhân trong <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(3 \cdot (t - k) \cdot 2^{t-k}\)</span> phép
+cộng trong <span class="math notranslate nohighlight">\(R\)</span> (ở đây có
+<span class="math notranslate nohighlight">\(3 \cdot (t - k) \cdot 2^{t-k} \cdot 2^{k+1}\)</span>
+phép cộng trong <span class="math notranslate nohighlight">\(T\)</span> vì các phần tử của
+vành <span class="math notranslate nohighlight">\(R\)</span> được biểu diễn bởi đa thực bậc
+không quá <span class="math notranslate nohighlight">\(2^{k+1} - 1\)</span> trong <span class="math notranslate nohighlight">\(T[x]\)</span>);</p></li>
+<li><p><span class="math notranslate nohighlight">\(3 \cdot (t - k) \cdot 2^{t-k}\)</span> phép nhân
+với lũy thừa của <span class="math notranslate nohighlight">\(\zeta_{2^{t-k+1}}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^{t-k}\)</span> phép nhân với <span class="math notranslate nohighlight">\((2^{-1})^{t-k}\)</span>
+(lần nữa, cần <span class="math notranslate nohighlight">\(2^{t-k} \cdot 2^{k+1} = 2^{t+1}\)</span>
+phép nhân trong <span class="math notranslate nohighlight">\(T\)</span> cho phần tử
+<span class="math notranslate nohighlight">\((2^{-1})^{t-k}\)</span>).</p></li>
+</ul>
+<p>Tổng cộng ta cần:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(2^{t-k}\)</span> phép nhân trong <span class="math notranslate nohighlight">\(R\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(6 \cdot (t - k) \cdot 2^{k+1}\)</span> phép
+cộng trong <span class="math notranslate nohighlight">\(T\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(2^{t+1}\)</span> phép nhân cho
+<span class="math notranslate nohighlight">\((2^{-1})^{t-k}\)</span> trong <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+</ul>
+<p>Ta tính thêm <span class="math notranslate nohighlight">\(2^t\)</span> phép cộng trong
+<span class="math notranslate nohighlight">\(T\)</span> ở bước 2, đặt</p>
+<div class="math-wrapper docutils container" id="equation-kt">
+<div class="math notranslate nohighlight" id="equation-kt">
+<span class="eqno">(6)<a class="headerlink" href="#equation-kt" title="Link to this equation">¶</a></span>\[k(t) = k + 1 = \left[\frac{t}{2}\right] + 1 \geqslant 2.\]</div>
+</div>
+<p>Khi đó, một phép nhân trong
+<span class="math notranslate nohighlight">\(T[x] / (x^{2^{k+1}} + 1)\)</span> được thực hiện
+bởi <span class="math notranslate nohighlight">\(2^{t - k(t) + 1}\)</span> phép nhân trong
+vành <span class="math notranslate nohighlight">\(R = T[x] / (x^{2^{k(t)}} + 1)\)</span>,
+cộng với không nhiều hơn <span class="math notranslate nohighlight">\(12 \cdot t \cdot 2^t\)</span>
+phép cộng trong <span class="math notranslate nohighlight">\(T\)</span>, cộng với
+<span class="math notranslate nohighlight">\(2^{t+1}\)</span> phép nhân trong <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>Khi <span class="math notranslate nohighlight">\(t \geqslant 3\)</span> thì <span class="math notranslate nohighlight">\(k(t) &lt; t\)</span>.
+Ta chuyển phép nhân ở trên trong vành
+<span class="math notranslate nohighlight">\(T[x] / (x^{2^t} + 1)\)</span> thành phép nhân
+trong vành <span class="math notranslate nohighlight">\(T[x] / (x^{2^{k(t)}} + 1)\)</span>,
+và đi xuống tiếp cho tới khi gặp vành
+<span class="math notranslate nohighlight">\(T[x] / (x^4 + 1)\)</span>. Ở bước cuối
+này phép nhân bất kì đều cần <span class="math notranslate nohighlight">\(O(1)\)</span>
+phép cộng và phép nhân trong <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>Ta kí hiệu <span class="math notranslate nohighlight">\(M_1(2^j)\)</span> và <span class="math notranslate nohighlight">\(A_1(2^j)\)</span>
+là số lượng phép nhân và cộng trong <span class="math notranslate nohighlight">\(T\)</span>,
+tương ứng với số lượng cần thiết để thực hiện
+phép nhân ở trên trong vành
+<span class="math notranslate nohighlight">\(T[x] / (x^{2^j} + 1)\)</span>.</p>
+<p>Khi đó, với <span class="math notranslate nohighlight">\(t \geqslant 3\)</span> ta có
+bất đẳng thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}M_1(2^t) &amp; \leqslant 2^{t - k(t) + 1} \cdot M_1(2^{k(t)}) + 2^{t+1}, \\
+A_1(2^t) &amp; \leqslant 2^{t - k(t) + 1} \cdot A_1(2^{k(t)}) + 12 \cdot t \cdot 2^t,\end{split}\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(k(t)\)</span> định nghĩa ở <a class="reference internal" href="#equation-kt">(6)</a>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(\alpha(j) = \dfrac{A_1(2^j)}{2^j}\)</span>
+với <span class="math notranslate nohighlight">\(j = 2, 3, \ldots\)</span></p>
+<p>Khi đó <span class="math notranslate nohighlight">\(\alpha(j) \leqslant 2\alpha(k(t)) + 12t\)</span>.</p>
+<p>Giả sử ta có bất đẳng thức sau với
+<span class="math notranslate nohighlight">\(2 \leqslant j \leqslant t\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\alpha(j) \leqslant c \cdot j \log j\]</div>
+</div>
+<p>với hằng số tuyệt đối <span class="math notranslate nohighlight">\(c\)</span> nào đó.</p>
+<p>Khi đó ta có bất đẳng thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\alpha(t) \leqslant 2c \cdot k(t) \cdot \log(k(t)) + 12t \leqslant 2c \left(\frac{t}{2} + 1\right) \log\left(\frac{t}{2} + 1\right) + 12t &lt; c \cdot t\log t\]</div>
+</div>
+<p>khi hằng số <span class="math notranslate nohighlight">\(c\)</span> đủ lớn.</p>
+<p>Như vậy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[A_1(2^t) \leqslant 2^t \cdot c \cdot t\log t = O(2^t \cdot t\log t)\]</div>
+</div>
+<p>và ta đã chứng minh được ý thứ hai
+của <a class="reference internal" href="#Tx">Bổ đề 4</a> về phép cộng.</p>
+<p>Bây giờ, lại đặt <span class="math notranslate nohighlight">\(\beta(j) = \dfrac{M_1(2^j)}{2^j}\)</span>
+với <span class="math notranslate nohighlight">\(j = 2, 3, \ldots\)</span></p>
+<p>Ta có bất đẳng thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\beta(t) \leqslant 2\beta(k(t)) + 2.\]</div>
+</div>
+<p>Từ đây suy ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\beta(t) \leqslant 2(2\beta(k(k(t))) + 2) + 2 = 2^2\beta(k(k(t))) + 2^2 + 2,\]</div>
+</div>
+<p>và tương tự như vậy.</p>
+<p>Vì <span class="math notranslate nohighlight">\(k(t) \leqslant \dfrac{t}{2} + 1\)</span> nên</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[k(k(t)) \leqslant \dfrac{1}{2}\left(\dfrac{t}{2} + 1\right) + 1 = \dfrac{t}{2^2} + 1 + \dfrac{1}{2}; \ldots; k(k(\ldots(k(t))\ldots)) &lt; \dfrac{t}{2^j} + 2\]</div>
+</div>
+<p>với mọi <span class="math notranslate nohighlight">\(j \geqslant 1\)</span>.
+Vì vậy khi <span class="math notranslate nohighlight">\(j = \left[\log_2 t\right]\)</span>
+ta có bất đẳng thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\beta(t) \leqslant 2^j \cdot c_1 + 2 + 2^2 + \cdots + 2^j &lt; 2^j \cdot c_1 + 2^{j+1} \leqslant c_2 t\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(c_1\)</span>, <span class="math notranslate nohighlight">\(c_2\)</span> là các hằng số
+tuyệt đối.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(M_1(t) = O(t \cdot 2^t)\)</span> và
+ta đã chứng minh xong ý đầu của <a class="reference internal" href="#Tx">Bổ đề 4</a>.</p>
+</div>
+</section>
+<section id="vi-du-nhan-da-thuc-voi-sympy">
+<h2>Ví dụ nhân đa thức với Sympy<a class="headerlink" href="#vi-du-nhan-da-thuc-voi-sympy" title="Link to this heading">¶</a></h2>
+<p>Để ví dụ, mình sẽ viết chương trình Python nhân hai đa thức
+bậc <span class="math notranslate nohighlight">\(4\)</span> trên <span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> trong modulo <span class="math notranslate nohighlight">\(x^4 + 1\)</span>.</p>
+<p>Thuật toán ở các chứng minh trên là thuật toán Cooley-Tukey FFT.</p>
+<p>Đầu tiên mình sẽ viết hàm đảo ngược bit (dùng cho radix-2 decimal-in-time).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_reverse_bit</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">nbits</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+  <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbits</span><span class="p">):</span>
+      <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">m</span>
+
+<span class="k">assert</span> <span class="n">_reverse_bit</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+<span class="k">assert</span> <span class="n">_reverse_bit</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<p>FFT là thuật toán chia để trị -- để tính toán FFT cho vector
+độ dài <span class="math notranslate nohighlight">\(n = 2^t\)</span>, ta sẽ tính trên hai vector độ dài
+<span class="math notranslate nohighlight">\(n / 2\)</span> và kết hợp kết quả lại.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">simplify</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sympy.codegen.cfunctions</span><span class="w"> </span><span class="kn">import</span> <span class="n">log2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_mult_W</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+  <span class="n">w</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="n">I</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
+  <span class="n">u</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">):</span>
+      <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="o">**</span><span class="n">i</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+      <span class="n">u</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="o">**</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">u</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_fft</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_mult_W</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">_fft</span><span class="p">(</span><span class="n">v</span><span class="p">[:</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="n">_fft</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:])</span>
+        <span class="k">return</span> <span class="n">_mult_W</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fft</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="n">_reverse_bit</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">simplify</span><span class="p">,</span> <span class="n">_fft</span><span class="p">(</span><span class="n">v</span><span class="p">)))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_mult_iW</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="n">I</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="o">**</span><span class="n">i</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="n">u</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="o">**</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">u</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ifft</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_mult_iW</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">_ifft</span><span class="p">(</span><span class="n">v</span><span class="p">[:</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="n">_ifft</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:])</span>
+        <span class="k">return</span> <span class="n">_mult_iW</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ifft</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="n">_reverse_bit</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="n">idx</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">simplify</span><span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">_ifft</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Tiếp theo mình kiểm tra các hàm đã viết bên trên.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">fft</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">I</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">I</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">ifft</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">I</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">I</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)]</span>
+<span class="k">assert</span> <span class="n">ifft</span><span class="p">(</span><span class="n">fft</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="o">==</span> <span class="n">v</span><span class="p">,</span> <span class="n">fft</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ví dụ, để nhân hai đa thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}a(x) &amp; = 1 + 2x - x^2 + 3x^3, \\
+b(x) &amp; = -1 - 4x + 3x^2 - 2x^3,\end{split}\]</div>
+</div>
+<p>trong modulo <span class="math notranslate nohighlight">\(x^4 + 1\)</span>, đầu tiên mình viết hệ số
+của mỗi đa thức thành vector theo số mũ tăng dần, như
+vậy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\bm{a} = (1, 2, -1, 3), \quad \bm{b} = (-1, -4, 3, -2).\]</div>
+</div>
+<p>Tiếp theo, mình sẽ thêm vào sau các vector <span class="math notranslate nohighlight">\(\bm{a}\)</span>
+và <span class="math notranslate nohighlight">\(\bm{b}\)</span> các số <span class="math notranslate nohighlight">\(0\)</span> để đạt độ dài là lũy
+thừa của <span class="math notranslate nohighlight">\(2\)</span> nhưng lớn hơn bậc của modulo. Ở đây
+modulo là <span class="math notranslate nohighlight">\(x^4 + 1\)</span> nên mình sẽ thêm các số <span class="math notranslate nohighlight">\(0\)</span>
+để đạt độ dài <span class="math notranslate nohighlight">\(4 \cdot 2 = 8\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\bm{a}' = (1, 2, -1, 3, 0, 0, 0, 0), \quad \bm{b}' = (-1, 4, 3, -2, 0, 0, 0, 0).\]</div>
+</div>
+<p>Tiếp theo, mình áp dụng FFT cho hai vector <span class="math notranslate nohighlight">\(\bm{a}'\)</span>
+và <span class="math notranslate nohighlight">\(\bm{b}'\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">fa</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">fb</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Đặt</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\bm{f}_a &amp; = \mathsf{FFT}(\bm{a}') = (a_0, a_1, \ldots, a_7), \\
+\bm{f}_b &amp; = \mathsf{FFT}(\bm{b}') = (b_0, b_1, \ldots, b_7).\end{split}\]</div>
+</div>
+<p>Khi đó ta tính vector <span class="math notranslate nohighlight">\(\bm{f}_c\)</span> theo là tích theo cặp
+của <span class="math notranslate nohighlight">\(\bm{f}_a\)</span> và <span class="math notranslate nohighlight">\(\bm{f}_b\)</span>, nghĩa là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\bm{f}_c = (c_0, c_1, \ldots, c_7), \ c_i = a_i \cdot b_i.\]</div>
+</div>
+<p>Tiếp theo, ta tính <span class="math notranslate nohighlight">\(\bm{c}'\)</span> là biến đổi Fourier rời rạc
+ngược của <span class="math notranslate nohighlight">\(\bm{f}_c\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\bm{c}' = \mathsf{FFT}^{-1}(\bm{f}_c) = (C_0, C_1, \ldots, C_7).\]</div>
+</div>
+<p>Khi đó, ta tính vector <span class="math notranslate nohighlight">\(\bm{c}\)</span> độ dài <span class="math notranslate nohighlight">\(4\)</span> theo
+công thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\bm{c} = (C_i - C_{i+4})_{i = 0}^3.\]</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fc</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">j</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fa</span><span class="p">,</span> <span class="n">fb</span><span class="p">)]</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">simplify</span><span class="p">,</span> <span class="n">ifft</span><span class="p">(</span><span class="n">fc</span><span class="p">)))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="n">fc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">fc</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kết quả là vector <span class="math notranslate nohighlight">\((18, -17, 2, 5)\)</span>.</p>
+<p>Kiểm tra kết quả bằng tay, mình có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}a(x) \cdot b(x) &amp; = (1 + 2x - x^2 + 3x^3) \cdot (-1 - 4x + 3x^2 - 2x^3) \\
+  &amp; = -1 - 4x + 3x^2 - 2x^3 \\
+  &amp; - 2x - 8x^2 + 6x^3 - 4x^4 \\
+  &amp; + x^2 + 4x^3 - 3x^4 + 2x^5 \\
+  &amp; - 3x^3 - 12x^4 + 9x^5 - 6x^6 \\
+  &amp; = -1 - 6x - 4x^2 + 5x^3 - 19x^4 + 11x^5 - 6x^6.\end{split}\]</div>
+</div>
+<p>Trong modulo <span class="math notranslate nohighlight">\(x^4 + 1\)</span> ta có thể thay thế
+<span class="math notranslate nohighlight">\(x^4\)</span> thành <span class="math notranslate nohighlight">\(-1\)</span>, như vậy kết quả trên tương đương</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}a(x) \cdot b(x) &amp; = -1 - 6x - 4x^2 + 5x^3 - 19x^4 + 11x^5 - 6x^6 \\
+  &amp; = -1 - 6x - 4x^2 + 5x^3 - 19 \cdot (-1) + 11x \cdot (-1) - 6x^2 \cdot (-1) \\
+  &amp; = 18 - 17x + 2x^2 + 5x^3 \bmod x^4 + 1.\end{split}\]</div>
+</div>
+<p>Nếu viết hệ số của kết quả dưới dạng vector
+theo số mũ tăng dần thì mình có <span class="math notranslate nohighlight">\((18, -17, 2, 5)\)</span>,
+bằng đúng phép tính với thuật toán Cooley-Tukey.</p>
+<p>Một lý do khiến mình viết code trong khi
+nhiều thư viện Python như numpy, sympy,
+sagemath đã hỗ trợ là vì trong <span id="id2">[<a class="reference internal" href="../index.html#id9" title="О.Н. Василенко. Теоретико-числовые алгоритмы в криптографии. МЦНМО, 2003.">12</a>]</span>
+(tài liệu tham khảo chính của bài viết này) thì
+DFT thuận sử dụng <span class="math notranslate nohighlight">\(\zeta_{2n}\)</span> là nghiệm
+của <span class="math notranslate nohighlight">\(x^n + 1\)</span> nên nếu xét trên <span class="math notranslate nohighlight">\(\mathbb{C}\)</span>
+thì <span class="math notranslate nohighlight">\(\zeta_{2n} = e^{i \pi / n}\)</span>. Trong khi đó
+các tài liệu khác như wikipedia, numpy, sympy, ...
+sử dụng <span class="math notranslate nohighlight">\(e^{-i \pi / n}\)</span> để tính DFT thuận.
+Ngược lại, <span id="id3">[<a class="reference internal" href="../index.html#id9" title="О.Н. Василенко. Теоретико-числовые алгоритмы в криптографии. МЦНМО, 2003.">12</a>]</span> sử dụng <span class="math notranslate nohighlight">\(e^{-i \pi /n }\)</span>
+để tính DFT ngược, trong khi các tài liệu khác
+dùng <span class="math notranslate nohighlight">\(e^{i \pi / n}\)</span>. Ở đây chúng ta có thể
+thấy dù là cách nào thì để thực hiện phép nhân nhanh
+đa thức modulo <span class="math notranslate nohighlight">\(x^{2^t} + 1\)</span> đều cần cả DFT thuận
+và ngược, nên kết quả không thay đổi nhờ vào tính
+chất của DFT.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="combinatoric.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Đại cương tổ hợp</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="partition.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Phân hoạch</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Biến đổi Fourier rời rạc</a><ul>
+<li><a class="reference internal" href="#gioi-thieu">Giới thiệu</a></li>
+<li><a class="reference internal" href="#bien-doi-fourier-nhanh">Biến đổi Fourier nhanh</a></li>
+<li><a class="reference internal" href="#bien-doi-fourier-va-phep-nhan-da-thuc">Biến đổi Fourier và phép nhân đa thức</a></li>
+<li><a class="reference internal" href="#vi-du-nhan-da-thuc-voi-sympy">Ví dụ nhân đa thức với Sympy</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1]}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
