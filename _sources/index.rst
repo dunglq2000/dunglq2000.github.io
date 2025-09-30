@@ -92,3 +92,14 @@ Tài liệu tham khảo
    <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
    </script>
+
+   <!-- Yandex.RTB R-A-17363457-2 -->
+   <script>
+   window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+         "blockId": "R-A-17363457-2",
+         "type": "floorAd",
+         "platform": "desktop"
+      })
+   })
+   </script>
