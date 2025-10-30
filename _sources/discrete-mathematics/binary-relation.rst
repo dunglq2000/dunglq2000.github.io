@@ -1,7 +1,6 @@
 Quan hệ hai ngôi
 ****************
 
-
 Quan hệ hai ngôi
 ================
 

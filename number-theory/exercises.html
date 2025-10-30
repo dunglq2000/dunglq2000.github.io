@@ -3,15 +3,15 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Tìm Kiếm" href="../search.html" /><link rel="next" title="Toán rời rạc" href="../discrete-mathematics/index.html" /><link rel="prev" title="6. Định lý số dư Trung Hoa" href="chinese-remainder-theorem.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Tìm Kiếm" href="../search.html" /><link rel="next" title="Toán rời rạc" href="../discrete-mathematics/index.html" /><link rel="prev" title="7. Định lý số dư Trung Hoa" href="chinese-remainder-theorem.html" />
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
-        <title>7. Bài tập số học sưu tầm - Math Book</title>
+        <title>8. Bài tập số học sưu tầm - Math Book</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=4c010e0d" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../_static/mystyles.css?v=fd3ba0dd" />
@@ -229,6 +229,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc">2.2. So sánh, cộng, trừ và nhân hai đa thức</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/lagrange-interpolation.html">2.3. Đa thức nội suy Lagrange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/numerical-methods.html">2.4. Phương pháp tính giá trị đa thức</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../algebra/proof.html">3. Phương pháp chứng minh toán học</a></li>
@@ -350,8 +351,9 @@
 <li class="toctree-l2"><a class="reference internal" href="euler.html">3. Hàm Euler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quadratic-residue.html">4. Thặng dư chính phương</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mobius.html">5. Hàm Möbius</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chinese-remainder-theorem.html">6. Định lý số dư Trung Hoa</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">7. Bài tập số học sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dirichlet-convolution.html">6. Tích chập Dirichlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chinese-remainder-theorem.html">7. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">8. Bài tập số học sưu tầm</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/index.html">Toán rời rạc</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Toán rời rạc</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -360,6 +362,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/discrete-fourier-transform.html">Biến đổi Fourier rời rạc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">Đại cương tổ hợp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/recurrence-relation.html">Công thức truy hồi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/system-lineq-integer.html">Hệ phương trình tuyến tính trên trường hữu hạn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/graph/index.html">Lý thuyết đồ thị</a></li>
 </ul>
 </li>
@@ -573,7 +576,7 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="bai-tap-so-hoc-suu-tam">
-<h1><span class="section-number">7. </span>Bài tập số học sưu tầm<a class="headerlink" href="#bai-tap-so-hoc-suu-tam" title="Link to this heading">¶</a></h1>
+<h1><span class="section-number">8. </span>Bài tập số học sưu tầm<a class="headerlink" href="#bai-tap-so-hoc-suu-tam" title="Link to this heading">¶</a></h1>
 <p><strong>Câu 1</strong> (đề kiểm tra, ITMO). Chứng minh (không dùng quy nạp) rằng với mọi <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> thì</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -704,7 +707,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title"><span class="section-number">6. </span>Định lý số dư Trung Hoa</div>
+                <div class="title"><span class="section-number">7. </span>Định lý số dư Trung Hoa</div>
                 
               </div>
             </a>

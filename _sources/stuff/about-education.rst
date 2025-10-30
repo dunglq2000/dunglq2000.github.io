@@ -5,6 +5,8 @@ Một ngày đẹp trời, mình nhìn lại những ngày tháng phổ thông. 
 
 Ngành giáo dục có lẽ là ngành gây tranh cãi nhiều nhất, thậm chí xuất hiện nhiều tư tưởng cực đoan về nó. Vấn đề là, bản thân ngành giáo dục có sự tham gia của rất nhiều thành phần xã hội, một số thậm chí còn không thực sự làm việc trong ngành giáo dục hay sư phạm.
 
+Ở bài viết này mình sẽ đưa ra một số quan điểm cá nhân về ngành giáo dục từ 2018 về trước vì 2018 là năm mình tốt nghiệp phổ thông.
+
 Dạy học thêm và quy luật cung cầu
 =================================
 

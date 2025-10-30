@@ -10,8 +10,8 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=4c010e0d" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../_static/mystyles.css?v=fd3ba0dd" />
@@ -229,6 +229,7 @@
 <li class="toctree-l3"><a class="reference internal" href="polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
 <li class="toctree-l3"><a class="reference internal" href="polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc">2.2. So sánh, cộng, trừ và nhân hai đa thức</a></li>
 <li class="toctree-l3"><a class="reference internal" href="polynomial/lagrange-interpolation.html">2.3. Đa thức nội suy Lagrange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="polynomial/numerical-methods.html">2.4. Phương pháp tính giá trị đa thức</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="proof.html">3. Phương pháp chứng minh toán học</a></li>
@@ -350,8 +351,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../number-theory/euler.html">3. Hàm Euler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../number-theory/quadratic-residue.html">4. Thặng dư chính phương</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../number-theory/mobius.html">5. Hàm Möbius</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../number-theory/chinese-remainder-theorem.html">6. Định lý số dư Trung Hoa</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../number-theory/exercises.html">7. Bài tập số học sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/dirichlet-convolution.html">6. Tích chập Dirichlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/chinese-remainder-theorem.html">7. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/exercises.html">8. Bài tập số học sưu tầm</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/index.html">Toán rời rạc</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Toán rời rạc</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -360,6 +362,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/discrete-fourier-transform.html">Biến đổi Fourier rời rạc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">Đại cương tổ hợp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/recurrence-relation.html">Công thức truy hồi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/system-lineq-integer.html">Hệ phương trình tuyến tính trên trường hữu hạn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/graph/index.html">Lý thuyết đồ thị</a></li>
 </ul>
 </li>
@@ -588,6 +591,7 @@
 <li class="toctree-l2"><a class="reference internal" href="polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
 <li class="toctree-l2"><a class="reference internal" href="polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc">2.2. So sánh, cộng, trừ và nhân hai đa thức</a></li>
 <li class="toctree-l2"><a class="reference internal" href="polynomial/lagrange-interpolation.html">2.3. Đa thức nội suy Lagrange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polynomial/numerical-methods.html">2.4. Phương pháp tính giá trị đa thức</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="proof.html">3. Phương pháp chứng minh toán học</a><ul>

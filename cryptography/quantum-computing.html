@@ -10,8 +10,8 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=4c010e0d" />
-    <link rel="stylesheet" type="text/css" href="../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../_static/mystyles.css?v=fd3ba0dd" />
@@ -229,6 +229,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc">2.2. So sánh, cộng, trừ và nhân hai đa thức</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/lagrange-interpolation.html">2.3. Đa thức nội suy Lagrange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/numerical-methods.html">2.4. Phương pháp tính giá trị đa thức</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../algebra/proof.html">3. Phương pháp chứng minh toán học</a></li>
@@ -350,8 +351,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../number-theory/euler.html">3. Hàm Euler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../number-theory/quadratic-residue.html">4. Thặng dư chính phương</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../number-theory/mobius.html">5. Hàm Möbius</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../number-theory/chinese-remainder-theorem.html">6. Định lý số dư Trung Hoa</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../number-theory/exercises.html">7. Bài tập số học sưu tầm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/dirichlet-convolution.html">6. Tích chập Dirichlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/chinese-remainder-theorem.html">7. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/exercises.html">8. Bài tập số học sưu tầm</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/index.html">Toán rời rạc</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Toán rời rạc</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -360,6 +362,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/discrete-fourier-transform.html">Biến đổi Fourier rời rạc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">Đại cương tổ hợp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/recurrence-relation.html">Công thức truy hồi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/system-lineq-integer.html">Hệ phương trình tuyến tính trên trường hữu hạn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/graph/index.html">Lý thuyết đồ thị</a></li>
 </ul>
 </li>
@@ -582,7 +585,7 @@
 <p>Mỗi qubit <span class="math notranslate nohighlight">\(\lvert \psi \rangle\)</span> được biểu diễn dưới dạng tổ hợp tuyến tính của cơ sở gồm <span class="math notranslate nohighlight">\(\lvert 0 \rangle = (1, 0)\)</span> và <span class="math notranslate nohighlight">\(\lvert 1 \rangle = (0, 1)\)</span>. Khi đó qubit <span class="math notranslate nohighlight">\(\lvert \psi \rangle = \alpha \lvert 0 \rangle + \beta \lvert 1 \rangle\)</span>. Ở đây <span class="math notranslate nohighlight">\(\alpha, \beta \in \mathbb{C}\)</span> (tập số phức).</p>
 <p>Tích của <span class="math notranslate nohighlight">\(n\)</span> qubit là các tổ hợp <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 0 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 1 \rangle\)</span>, ..., <span class="math notranslate nohighlight">\(\lvert 1, 1, \ldots, 1 \rangle\)</span>. Ta cũng kí hiệu <span class="math notranslate nohighlight">\(\lvert 0 \rangle \otimes \lvert 1 \rangle = \lvert 01 \rangle\)</span>.</p>
 <div class="proof example admonition" id="exp-qubit">
-<p class="admonition-title"><span class="caption-number">Ví dụ 6.10 </span></p>
+<p class="admonition-title"><span class="caption-number">Ví dụ 6.9 </span></p>
 <section class="example-content" id="proof-content">
 <p>Nếu <span class="math notranslate nohighlight">\(\lvert \psi \rangle = \alpha \lvert 0 \rangle + \beta \lvert 1 \rangle\)</span> và <span class="math notranslate nohighlight">\(\lvert \Psi \rangle = \gamma \lvert 0 \rangle + \delta \lvert 1 \rangle\)</span> thì</p>
 </section>
@@ -602,23 +605,23 @@
 <section id="cac-toan-tu-quantum-thuong-gap">
 <h3><span class="section-number">6.1.2. </span>Các toán tử quantum thường gặp<a class="headerlink" href="#cac-toan-tu-quantum-thuong-gap" title="Link to this heading">¶</a></h3>
 <div class="proof definition admonition" id="def-op-quan-id">
-<p class="admonition-title"><span class="caption-number">Định nghĩa 6.4 </span> (Toán tử đồng nhất)</p>
+<p class="admonition-title"><span class="caption-number">Định nghĩa 6.7 </span> (Toán tử đồng nhất)</p>
 <section class="definition-content" id="proof-content">
 <p>Toán tử đồng nhất identity giữ nguyên qubit đầu vào. Ma trận tương ứng là ma trận đơn vị <span class="math notranslate nohighlight">\(I = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span>.</p>
 </section>
 </div><div class="proof definition admonition" id="def-op-quan-not">
-<p class="admonition-title"><span class="caption-number">Định nghĩa 6.5 </span> (Toán tử NOT)</p>
+<p class="admonition-title"><span class="caption-number">Định nghĩa 6.8 </span> (Toán tử NOT)</p>
 <section class="definition-content" id="proof-content">
 <p>Toán tử NOT có ma trận tương ứng là <span class="math notranslate nohighlight">\(\text{NOT} = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span>. Khi đó <span class="math notranslate nohighlight">\(\text{NOT} \lvert \psi \rangle = b \lvert 0 \rangle + a \lvert 1 \rangle\)</span> với <span class="math notranslate nohighlight">\(x \in \{ 0, 1 \}\)</span>.</p>
 </section>
 </div><p>Khi qubit là <span class="math notranslate nohighlight">\(\lvert 0 \rangle\)</span> hoặc <span class="math notranslate nohighlight">\(\lvert 1 \rangle\)</span>, tác dụng của toán tử NOT là phép XOR nên ta có <span class="math notranslate nohighlight">\(\text{NOT} \lvert x \rangle = \lvert x \oplus 1 \rangle\)</span>.</p>
 <div class="proof definition admonition" id="def-op-quan-hadamard">
-<p class="admonition-title"><span class="caption-number">Định nghĩa 6.6 </span> (Toán tử Hadamard)</p>
+<p class="admonition-title"><span class="caption-number">Định nghĩa 6.9 </span> (Toán tử Hadamard)</p>
 <section class="definition-content" id="proof-content">
 <p>Ma trận của toán tử Hadamard là <span class="math notranslate nohighlight">\(H = \dfrac{1}{\sqrt{2}} \begin{pmatrix} 1 &amp; 1 \\ 1 &amp; - 1 \end{pmatrix}\)</span>.</p>
 </section>
 </div><div class="proof example admonition" id="exp-op-quan-hadamard">
-<p class="admonition-title"><span class="caption-number">Ví dụ 6.11 </span></p>
+<p class="admonition-title"><span class="caption-number">Ví dụ 6.10 </span></p>
 <section class="example-content" id="proof-content">
 <p>Xét qubit <span class="math notranslate nohighlight">\(\lvert \psi \rangle = a \lvert 0 \rangle + b \lvert 1 \rangle\)</span>, toán tử Hadamard tương ứng với phép nhân ma trận</p>
 <div class="math-wrapper docutils container">
@@ -638,7 +641,7 @@
 <p>Tiếp theo là toán tử thường được dùng nhất khi tính toán trên tích của nhiều qubit: toán tử control.</p>
 <p>Như đã xem xét ở trên, tích của <span class="math notranslate nohighlight">\(n\)</span> qubit sẽ có <span class="math notranslate nohighlight">\(2^n\)</span> phần tử tương ứng các bộ <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 0, 0 \rangle\)</span>, <span class="math notranslate nohighlight">\(\lvert 0, 0, \ldots, 0, 1 \rangle\)</span>, ... Do đó toán tử control sẽ là ma trận kích thước <span class="math notranslate nohighlight">\(2^n \times 2^n\)</span>.</p>
 <div class="proof definition admonition" id="def-op-quan-control">
-<p class="admonition-title"><span class="caption-number">Định nghĩa 6.7 </span> (Toán tử control)</p>
+<p class="admonition-title"><span class="caption-number">Định nghĩa 6.10 </span> (Toán tử control)</p>
 <section class="definition-content" id="proof-content">
 <p>Gọi <span class="math notranslate nohighlight">\(\mathcal{U} = \begin{pmatrix} c_{11} &amp; c_{12} \\ c_{21} &amp; c_{22} \end{pmatrix}\)</span> là toán tử tác động lên một qubit. Xét hai qubit là <span class="math notranslate nohighlight">\(\lvert x \rangle = a \lvert 0 \rangle + b \lvert 1 \rangle\)</span> và <span class="math notranslate nohighlight">\(\lvert y \rangle = c \lvert 0 \rangle + d \lvert 1 \rangle\)</span>. Ta có tích</p>
 <div class="math-wrapper docutils container">
@@ -684,7 +687,7 @@
 </ul>
 <p>Tùy vào <span class="math notranslate nohighlight">\(x\)</span> là 0 hay 1 mà toán tử quantum <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> sẽ bị bỏ qua hoặc xem xét. Ở đây qubit <span class="math notranslate nohighlight">\(\lvert x \rangle\)</span> đóng vai trò điều khiển nên đây được gọi là toán tử control.</p>
 <div class="proof definition admonition" id="def-op-quan-control-not">
-<p class="admonition-title"><span class="caption-number">Định nghĩa 6.8 </span> (Toán tử control CNOT, Control NOT)</p>
+<p class="admonition-title"><span class="caption-number">Định nghĩa 6.11 </span> (Toán tử control CNOT, Control NOT)</p>
 <section class="definition-content" id="proof-content">
 <p>Toán tử quantum CNOT có ma trận là</p>
 <div class="math-wrapper docutils container">
