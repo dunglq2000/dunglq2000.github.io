@@ -7,8 +7,9 @@ Ngoài lề
     game/index
     graphics
     about-godel
-    about-education
     about-stoicism
+
+.. about-education
 
 .. only:: html
 

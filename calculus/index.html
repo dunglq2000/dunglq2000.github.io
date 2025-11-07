@@ -183,7 +183,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -458,6 +458,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../solutions/an-introduction-to-mathematical-cryptography/chapter-7.html">Chapter 7. Lattices and Cryptography</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/symmetric-cryptography/index.html">Симметричная криптография</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../solutions/collection.html">Các bài toán sưu tầm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../solutions/cryptohack/index.html">Wargame chill chill</a></li>
 </ul>
@@ -514,7 +515,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../stuff/game/index.html">Lý thuyết trò chơi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../stuff/graphics.html">Một số đồ thị hàm số sưu tầm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../stuff/about-godel.html">Về một vị giáo sư và định lý Godel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../stuff/about-education.html">Nhìn lại giáo dục từ 2018 về trước</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../stuff/about-stoicism.html">Chủ nghĩa khắc kỷ và phân phối nhị thức</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../stuff/latex/index.html">Trải nghiệm người dùng với LaTeX</a></li>
 </ul>
@@ -522,8 +522,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../russia/index.html">Nước Nga du kí</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle navigation of Nước Nga du kí</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../russia/intro.html">Giới thiệu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../russia/good-or-bad.html">Đi học ở Nga tốt hay xấu?</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../russia/criticism/index.html">Góc khẩu nghiệp</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of Góc khẩu nghiệp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../russia/criticism/criticism-2.html">Phần 2. Sinh viên Việt Nam tại Moscow</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../russia/criticism/index.html">Góc khẩu nghiệp</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of Góc khẩu nghiệp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../russia/contests.html">Các cuộc thi toán ở Nga</a></li>
@@ -569,7 +568,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -609,6 +608,140 @@
 </li>
 </ul>
 </div>
+<section id="ham-gamma-ham-beta-ham-zeta">
+<h2>Hàm gamma, hàm beta, hàm zeta<a class="headerlink" href="#ham-gamma-ham-beta-ham-zeta" title="Link to this heading">¶</a></h2>
+<p>[TODO] Triển khai hàm gamma và beta thành mục riêng.</p>
+<p>Hàm gamma được định nghĩa bởi tích phân</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Gamma(z) = \int\limits_0^{\infty} t^{z-1} e^{-t} \, dt,\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span> và <span class="math notranslate nohighlight">\(\mathrm{Re}(z) &gt; 0\)</span>.</p>
+<p>Hàm gamma có một số tính chất thú vị:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Gamma(n) = (n - 1)!\)</span> khi <span class="math notranslate nohighlight">\(n\)</span> là số nguyên dương với <span class="math notranslate nohighlight">\(\Gamma(1) = 1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma(z + 1) = z \Gamma(z)\)</span>.</p></li>
+</ul>
+<p>Tính chất thứ hai có thể chứng minh bằng tích phân từng phần</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\Gamma(z + 1) &amp; = \int\limits_0^{\infty} t^z e^{-t} \, dt = (-t^z e^{-t})\Big|_0^{\infty} + \int\limits_0^{\infty} z t^{z-1} e^{-t} \, dt \\
+&amp; = z \int\limits_0^{\infty} t^{z-1} e^{-t} \, dt = z \Gamma(z).\end{split}\]</div>
+</div>
+<p>Euler's reflection formula:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Gamma(1 - z) \cdot \Gamma(z) = \dfrac{\pi}{\sin \pi z}, \ z \not\in \mathbb{Z}.\]</div>
+</div>
+<p>Từ công thức Euler ta suy ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Gamma(z - n) = (-1)^{n-1} \dfrac{\Gamma(-z) \cdot \Gamma(1 + z)}{\Gamma(n + 1 - z)}, \ n \in \mathbb{Z}.\]</div>
+</div>
+<p>Legendre duplication formula:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Gamma(z) \cdot \Gamma(z + \dfrac{1}{2}) = 2^{1 - 2z} \sqrt{\pi} \Gamma(2z).\]</div>
+</div>
+<p>Từ công thức Legendre có thể suy ra một số tính chất:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Gamma(1/2) = \sqrt{\pi}\)</span>;</p></li>
+<li><p>nếu <span class="math notranslate nohighlight">\(\overline{\Gamma(z)} = \Gamma(\overline{z})\)</span> thì <span class="math notranslate nohighlight">\(\Gamma(z) \cdot \Gamma(\overline{z}) \in \mathbb{R}\)</span>.</p></li>
+</ul>
+<p>Tính chất thứ hai, cụ thể hơn, nếu đặt <span class="math notranslate nohighlight">\(z = a + bi\)</span> thì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lvert \Gamma(a + b) \rvert^2 = \lvert \Gamma(a) \rvert^2 \prod_{k=0}^{\infty} \dfrac{1}{1 + \dfrac{b^2}{(a + k)^2}}.\]</div>
+</div>
+<p>Ta có thể mở rộng hàm gamma cho phần thực âm với công thức Euler</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Gamma(-x) = \dfrac{1}{\Gamma(x + 1)} \cdot \dfrac{\pi}{\sin(\pi(x+1))},\]</div>
+</div>
+<p>hoặc tính chất của hàm gamma ở trên</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Gamma(-x + 1) = (-x) \cdot \Gamma(-x) \Rightarrow \Gamma(-x) = -\dfrac{1}{x} \Gamma(-x + 1), \ x \not\in \mathbb{Z}.\]</div>
+</div>
+<p>Hàm beta được định nghĩa bởi tích phân</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[B(z_1, z_2) = \int\limits_0^1 t^{z_1 - 1} (1 - t)^{z_2 - 1} \, dt\]</div>
+</div>
+<p>với đầu vào là các số phức <span class="math notranslate nohighlight">\(z_1\)</span>, <span class="math notranslate nohighlight">\(z_2\)</span> mà <span class="math notranslate nohighlight">\(\mathrm{Re}(z_1) &gt; 0\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Re}(z_2) &gt; 0\)</span>.</p>
+<p>Hàm beta còn được định nghĩa thông qua tích phân</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[B(z_1, z_2) = \int\limits_0^{\infty} \dfrac{u^{z_1 - 1}}{(1 + u)^{z_1 + z_2}} \, du.\]</div>
+</div>
+<p>Tại sao hai định nghĩa lại tương đương nhau? Các bạn hãy đặt <span class="math notranslate nohighlight">\(t = \dfrac{u}{1 + u}\)</span>. Khi <span class="math notranslate nohighlight">\(u \to \infty\)</span> thì <span class="math notranslate nohighlight">\(t \to 1\)</span> và sử dụng phương pháp đổi biến để biến đổi hai dạng tích phân.</p>
+<p>Một số tính chất của hàm beta</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(B(z_1, z_2) = \dfrac{\Gamma(z_1) \cdot \Gamma(z_2)}{\Gamma(z_1 + z_2)}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(B(1, x) = \dfrac{1}{x}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(B(x, 1 - x) = \dfrac{\pi}{\sin \pi x}\)</span> với <span class="math notranslate nohighlight">\(x \not\in \mathbb{Z}\)</span>.</p></li>
+</ul>
+<p>Ví dụ, tính tích phân</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[I = \int\limits_0^{+\infty} \dfrac{x^{1/4}}{(1 + x)^2}\,dx\]</div>
+</div>
+<p>với tích phân Euler.</p>
+<p>Theo định nghĩa hàm beta thì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[B(p, q) = \int\limits_0^{+\infty} \dfrac{u^{p-1}}{(1 + u)^{p+q}} \,du\]</div>
+</div>
+<p>nên <span class="math notranslate nohighlight">\(I = B\left(\dfrac{5}{4}, \dfrac{3}{4}\right)\)</span>.</p>
+<p>Theo tính chất của hàm beta (liên hệ với hàm gamma) thì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[B(p, q) = \dfrac{\Gamma(p) \cdot \Gamma(q)}{\Gamma(p + q)} \Rightarrow I = \dfrac{\Gamma\left(\dfrac{5}{4}\right) \cdot \Gamma\left(\dfrac{3}{4}\right)}{\Gamma(2)}.\]</div>
+</div>
+<p>Vì <span class="math notranslate nohighlight">\(\Gamma(n) = (n-1)!\)</span> với <span class="math notranslate nohighlight">\(n\)</span> là số nguyên dương nên <span class="math notranslate nohighlight">\(I = \Gamma\left(\dfrac{5}{4}\right) \cdot \Gamma\left(\dfrac{3}{4}\right)\)</span>.</p>
+<p>Vì <span class="math notranslate nohighlight">\(\Gamma(p + 1) = p \Gamma(p)\)</span> với <span class="math notranslate nohighlight">\(p &gt; 0\)</span> (ở đây <span class="math notranslate nohighlight">\(p\)</span> là số thực) nên</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Gamma\left(\dfrac{5}{4}\right) = \dfrac{1}{4} \cdot \Gamma\left(\dfrac{1}{4}\right),\]</div>
+</div>
+<p>mà theo tính chất của hàm gamma</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Gamma(p) \cdot \Gamma(1 - p) = \dfrac{\pi}{\sin \pi p}\]</div>
+</div>
+<p>nên</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Gamma\left(\dfrac{3}{4}\right) \cdot \Gamma\left(\dfrac{1}{4}\right) = \dfrac{\pi}{\sin(\pi / 4)} = \dfrac{\pi}{\sqrt{2} / 2} = \pi \sqrt{2}.\]</div>
+</div>
+<p>Như vậy đáp án là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[I = \Gamma\left(\dfrac{5}{4}\right) \cdot \Gamma\left(\dfrac{3}{4}\right) = \dfrac{1}{4} \cdot \Gamma\left(\dfrac{1}{4}\right) \cdot \Gamma\left(\dfrac{3}{4}\right) = \dfrac{1}{4} \cdot \pi \sqrt{2} = \dfrac{\pi}{2\sqrt{2}}.\]</div>
+</div>
+<p>Hàm zeta được định nghĩa bởi tích phân</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\zeta(s) = \sum_{n=1}^{\infty} \dfrac{1}{n^s} = \dfrac{1}{1^s} + \dfrac{1}{2^s} + \cdots\]</div>
+</div>
+<p>với đầu vào <span class="math notranslate nohighlight">\(s \in \mathbb{C}\)</span> có <span class="math notranslate nohighlight">\(\mathrm{Re}(s) &gt; 1\)</span>.</p>
+<p>Liên hệ giữa hàm zeta và hàm gamma là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\zeta(s) = \sum_{n=1}^{\infty} \dfrac{1}{n^s} = \dfrac{1}{\Gamma(s)} \int\limits_0^{\infty} \dfrac{x^{s-1}}{e^x - 1}\,dx.\]</div>
+</div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+  crossorigin="anonymous"></script>
+<!-- First Ads -->
+<ins class="adsbygoogle"
+   style="display:block"
+   data-ad-client="ca-pub-2343650775986433"
+   data-ad-slot="4417625951"
+   data-ad-format="auto"
+   data-full-width-responsive="true"></ins>
+<script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+</script></section>
 </section>
 
         </article>
@@ -654,8 +787,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Giải tích</a><ul>
+<li><a class="reference internal" href="#ham-gamma-ham-beta-ham-zeta">Hàm gamma, hàm beta, hàm zeta</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -672,5 +824,7 @@
     <script src="../_static/translations.js?v=4c1d55b0"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1]}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

@@ -57,3 +57,18 @@ Tập đóng (closed set, замкнутое множество) nếu phần c�
     Tập mở và tập đóng không phải hai khái niệm loại trừ nhau. Một tập thuộc :math:`\tau` có thể vừa mở và vừa đóng.
 
 Ở :prf:ref:`exp-topo-2` thì :math:`\{ x_1 \}` và :math:`\{ x_2 \}` là các tập mở. Đồng thời, :math:`\{ x_1 \} = X \setminus \{ x_2 \}` nên :math:`\{ x_1 \}` cũng là tập đóng, tương tự cho :math:`\{ x_2 \}`.
+
+.. raw:: html
+
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+     crossorigin="anonymous"></script>
+   <!-- First Ads -->
+   <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2343650775986433"
+      data-ad-slot="4417625951"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+   <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>

@@ -458,6 +458,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/chapter-7.html">Chapter 7. Lattices and Cryptography</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/symmetric-cryptography/index.html">Симметричная криптография</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../solutions/collection.html">Các bài toán sưu tầm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../solutions/cryptohack/index.html">Wargame chill chill</a></li>
 </ul>
@@ -514,7 +515,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../stuff/game/index.html">Lý thuyết trò chơi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../stuff/graphics.html">Một số đồ thị hàm số sưu tầm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../stuff/about-godel.html">Về một vị giáo sư và định lý Godel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../stuff/about-education.html">Nhìn lại giáo dục từ 2018 về trước</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../stuff/about-stoicism.html">Chủ nghĩa khắc kỷ và phân phối nhị thức</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../stuff/latex/index.html">Trải nghiệm người dùng với LaTeX</a></li>
 </ul>
@@ -522,8 +522,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../russia/index.html">Nước Nga du kí</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle navigation of Nước Nga du kí</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../russia/intro.html">Giới thiệu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../russia/good-or-bad.html">Đi học ở Nga tốt hay xấu?</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../russia/criticism/index.html">Góc khẩu nghiệp</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of Góc khẩu nghiệp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../russia/criticism/criticism-2.html">Phần 2. Sinh viên Việt Nam tại Moscow</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../russia/criticism/index.html">Góc khẩu nghiệp</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle navigation of Góc khẩu nghiệp</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../russia/contests.html">Các cuộc thi toán ở Nga</a></li>
@@ -583,9 +582,6 @@
 <p>AES hỗ trợ key với các kích thước: <span class="math notranslate nohighlight">\(128\)</span> bit, <span class="math notranslate nohighlight">\(192\)</span> bit và <span class="math notranslate nohighlight">\(256\)</span> bit.</p>
 <p>Đối với kích thước khóa <span class="math notranslate nohighlight">\(128\)</span> bit, AES dùng hàm Expand Key để mở rộng khóa thành <span class="math notranslate nohighlight">\(44\)</span> words, mỗi word có <span class="math notranslate nohighlight">\(32\)</span> bits, với key <span class="math notranslate nohighlight">\(128\)</span> bit thành <span class="math notranslate nohighlight">\(11\)</span> cụm khóa con. Mỗi <span class="math notranslate nohighlight">\(4\)</span> words làm tham số cho một phép Add Round Key.</p>
 <p>Mỗi block bản rõ <span class="math notranslate nohighlight">\(16\)</span> byte <span class="math notranslate nohighlight">\(p_0\)</span>, <span class="math notranslate nohighlight">\(p_1\)</span>, ..., <span class="math notranslate nohighlight">\(p_{15}\)</span> được tổ chức dưới dạng một ma trận <span class="math notranslate nohighlight">\(4 \times 4\)</span> (gọi là <strong>ma trận state</strong>)</p>
-<figure class="align-default">
-<img alt="../../_images/state.jpg" src="../../_images/state.jpg" />
-</figure>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{pmatrix}
@@ -749,14 +745,14 @@
 <figure class="align-default">
 <img alt="../../_images/expandkey.jpg" src="../../_images/expandkey.jpg" />
 </figure>
-<p>Từ 4 word đầu vào <span class="math notranslate nohighlight">\(w_0 w_1 w_2 w_3\)</span>, lần lặp đầu sinh ra <span class="math notranslate nohighlight">\(w_4 w_5 w_6 w_7\)</span>, lần lặp thứ hai sinh ra <span class="math notranslate nohighlight">\(w_8 w_9 w_{10} w_{11}\)</span>, ...</p>
+<p>Từ bốn word đầu vào <span class="math notranslate nohighlight">\(w_0 w_1 w_2 w_3\)</span>, lần lặp đầu sinh ra <span class="math notranslate nohighlight">\(w_4 w_5 w_6 w_7\)</span>, lần lặp thứ hai sinh ra <span class="math notranslate nohighlight">\(w_8 w_9 w_{10} w_{11}\)</span>, ...</p>
 <div class="proof algorithm admonition" id="algo-AES-expand-key">
 <p class="admonition-title"><span class="caption-number">Thuật toán 3.1 </span></p>
 <section class="algorithm-content" id="proof-content">
 <ol class="arabic simple">
 <li><p>if <span class="math notranslate nohighlight">\(i \bmod 4 = 0\)</span></p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(g \gets SubWord(RotWord(w_{i-1})) \oplus Rcon[i/4]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g \gets \mathsf{SubWord}(\mathsf{RotWord}(w_{i-1})) \oplus \mathrm{Rcon}[i/4]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(w_i = w_{i-4} \oplus g\)</span></p></li>
 </ol>
 </li>
@@ -770,9 +766,9 @@
 </section>
 </div><p>Trong đó:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(RotWord\)</span> dịch vòng trái <span class="math notranslate nohighlight">\(1\)</span> bit, nghĩa là <span class="math notranslate nohighlight">\(b_0 b_1 b_2\)</span> trở thành <span class="math notranslate nohighlight">\(b_1 b_2 b_0\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(SubWord\)</span> thay mỗi byte trong word bằng bảng S-box.</p></li>
-<li><p><span class="math notranslate nohighlight">\(Rcon\)</span> là một mảng hằng số gồm <span class="math notranslate nohighlight">\(10\)</span> words tương ứng với <span class="math notranslate nohighlight">\(10\)</span> vòng AES. <span class="math notranslate nohighlight">\(4\)</span> bytes của một phần tử <span class="math notranslate nohighlight">\(Rcon[j]\)</span> là <span class="math notranslate nohighlight">\(RC[j], 0, 0, 0\)</span> với <span class="math notranslate nohighlight">\(RC[j]\)</span> là mảng <span class="math notranslate nohighlight">\(10\)</span> bytes như sau</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathsf{RotWord}\)</span> dịch vòng trái <span class="math notranslate nohighlight">\(1\)</span> byte, nghĩa là từ bốn byte <span class="math notranslate nohighlight">\(b_0 b_1 b_2 b_3\)</span> trở thành <span class="math notranslate nohighlight">\(b_1 b_2 b_3 b_0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathsf{SubWord}\)</span> thay mỗi byte trong word bằng bảng S-box.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{Rcon}\)</span> là một mảng hằng số gồm <span class="math notranslate nohighlight">\(10\)</span> words tương ứng với <span class="math notranslate nohighlight">\(10\)</span> vòng AES. <span class="math notranslate nohighlight">\(4\)</span> bytes của một phần tử <span class="math notranslate nohighlight">\(\mathrm{Rcon}[j]\)</span> là <span class="math notranslate nohighlight">\(\mathrm{RC}[j], 0, 0, 0\)</span> với <span class="math notranslate nohighlight">\(\mathrm{RC}[j]\)</span> là mảng <span class="math notranslate nohighlight">\(10\)</span> bytes như sau</p></li>
 </ol>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -791,7 +787,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(RC[j]\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathrm{RC}[j]\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
@@ -845,14 +841,11 @@
 <p>Tính trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span>:</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[\begin{split}c(z) \cdot d(z) = &amp; (2 + z + z^2 + 3 z^3) \cdot (c_0 + c_4 z + c_8 z^2 + c_{12} z^3) \\
-= &amp; 2 c_0 + 2 c_4 z + 2 c_8 z^2 + 2 c_{12} z^3 \\
-+ &amp; c_0 z + c_4 z^2 + c_8 z^3 + c_{12} z^4 \\
-+ &amp; c_0 z^2 + c_4 z^3 + c_8 z^4 + c_{12} z^5 \\
-+ &amp; 3 c_0 z^3 + 3 c_4 z^4 + 3 c_8 z^5 + 3 c_{12} z^6 \\
-= &amp; 2 c_0 + (2 c_4 + c_0) z + (2 c_8 + c_4 + c_0) z^2 \\
-+ &amp; (2 c_{12} + c_8 + c_4 + 3 c_0) z^3 + (c_{12} + c_8 + 3 c_4) z^4 \\
-+ &amp; (c_{12} + 3 c_8) z^5 + 3 c_{12} z^6.\end{split}\]</div>
+\[\begin{split}c(z) \cdot d(z) &amp; = (2 + z + z^2 + 3 z^3) \cdot (c_0 + c_4 z + c_8 z^2 + c_{12} z^3) \\
+&amp; = 2 c_0 + 2 c_4 z + 2 c_8 z^2 + 2 c_{12} z^3 + c_0 z + c_4 z^2 + c_8 z^3 + c_{12} z^4 \\
+&amp; + c_0 z^2 + c_4 z^3 + c_8 z^4 + c_{12} z^5 + 3 c_0 z^3 + 3 c_4 z^4 + 3 c_8 z^5 + 3 c_{12} z^6 \\
+&amp; = 2 c_0 + (2 c_4 + c_0) z + (2 c_8 + c_4 + c_0) z^2 + (2 c_{12} + c_8 + c_4 + 3 c_0) z^3 \\
+&amp; + (c_{12} + c_8 + 3 c_4) z^4 + (c_{12} + 3 c_8) z^5 + 3 c_{12} z^6.\end{split}\]</div>
 </div>
 <p>Trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> thì mọi phần tử đều có tính chất <span class="math notranslate nohighlight">\(2 x^n = 0\)</span>, tương đương với <span class="math notranslate nohighlight">\(x^n = -x^n\)</span>. Do đó</p>
 <div class="math-wrapper docutils container">
@@ -864,13 +857,12 @@
 <p>Suy ra</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[\begin{split}c(z) \cdot d(z) = &amp; 2 c_0 + (2 c_4 + c_0) z + (2 c_8 + c_4 + c_0) z^2 \\
-+ &amp; (2 c_{12} + c_8 + c_4 + 3 c_0) z^3 + (c_{12} + c_8 + 3 c_4) \\
-+ &amp; (c_{12} + 3 c_8) z + 3 c_{12} z^2 \\
-= &amp; (c_{12} + c_8 + 3 c_4 + 2 c_0) + (c_{12} + 3 c_8 + 2 c_4 + c_0) z \\
-+ &amp; (3 c_{12} + 2 c_8 + c_4 + c_0) z^2 + (2 c_{12} + c_8 + c_4 + 3 c_0) z^3.\end{split}\]</div>
+\[\begin{split}c(z) \cdot d(z) &amp; = 2 c_0 + (2 c_4 + c_0) z + (2 c_8 + c_4 + c_0) z^2 + (2 c_{12} + c_8 + c_4 + 3 c_0) z^3 \\
+&amp; + (c_{12} + c_8 + 3 c_4) + (c_{12} + 3 c_8) z + 3 c_{12} z^2 \\
+&amp; = (c_{12} + c_8 + 3 c_4 + 2 c_0) + (c_{12} + 3 c_8 + 2 c_4 + c_0) z \\
+&amp; + (3 c_{12} + 2 c_8 + c_4 + c_0) z^2 + (2 c_{12} + c_8 + c_4 + 3 c_0) z^3.\end{split}\]</div>
 </div>
-<p>Như vậy xét hệ số lần lượt trước 1, <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(z^2\)</span> và <span class="math notranslate nohighlight">\(z^3\)</span> thì tương đương với phép nhân ma trận</p>
+<p>Như vậy xét hệ số lần lượt trước <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(z^2\)</span> và <span class="math notranslate nohighlight">\(z^3\)</span> thì tương đương với phép nhân ma trận</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{pmatrix}

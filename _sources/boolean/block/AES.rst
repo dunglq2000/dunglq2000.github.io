@@ -13,8 +13,6 @@ AES hỗ trợ key với các kích thước: :math:`128` bit, :math:`192` bit v
 
 Mỗi block bản rõ :math:`16` byte :math:`p_0`, :math:`p_1`, ..., :math:`p_{15}` được tổ chức dưới dạng một ma trận :math:`4 \times 4` (gọi là **ma trận state**)
 
-.. figure:: ../../figures/aes/state.*
-
 .. math:: 
 
     \begin{pmatrix}
@@ -191,14 +189,14 @@ Expand Key
 
 .. figure:: ../../figures/aes/expandkey.*
 
-Từ 4 word đầu vào :math:`w_0 w_1 w_2 w_3`, lần lặp đầu sinh ra :math:`w_4 w_5 w_6 w_7`, lần lặp thứ hai sinh ra :math:`w_8 w_9 w_{10} w_{11}`, ...
+Từ bốn word đầu vào :math:`w_0 w_1 w_2 w_3`, lần lặp đầu sinh ra :math:`w_4 w_5 w_6 w_7`, lần lặp thứ hai sinh ra :math:`w_8 w_9 w_{10} w_{11}`, ...
 
 .. prf:algorithm:: 
     :label: algo-AES-expand-key
 
     1. if :math:`i \bmod 4 = 0`
         
-       1. :math:`g \gets SubWord(RotWord(w_{i-1})) \oplus Rcon[i/4]`
+       1. :math:`g \gets \mathsf{SubWord}(\mathsf{RotWord}(w_{i-1})) \oplus \mathrm{Rcon}[i/4]`
        2. :math:`w_i = w_{i-4} \oplus g`
     
     2. else
@@ -209,15 +207,15 @@ Từ 4 word đầu vào :math:`w_0 w_1 w_2 w_3`, lần lặp đầu sinh ra :mat
 
 Trong đó:
 
-1. :math:`RotWord` dịch vòng trái :math:`1` bit, nghĩa là :math:`b_0 b_1 b_2` trở thành :math:`b_1 b_2 b_0`.
-2. :math:`SubWord` thay mỗi byte trong word bằng bảng S-box.
-3. :math:`Rcon` là một mảng hằng số gồm :math:`10` words tương ứng với :math:`10` vòng AES. :math:`4` bytes của một phần tử :math:`Rcon[j]` là :math:`RC[j], 0, 0, 0` với :math:`RC[j]` là mảng :math:`10` bytes như sau
+1. :math:`\mathsf{RotWord}` dịch vòng trái :math:`1` byte, nghĩa là từ bốn byte :math:`b_0 b_1 b_2 b_3` trở thành :math:`b_1 b_2 b_3 b_0`.
+2. :math:`\mathsf{SubWord}` thay mỗi byte trong word bằng bảng S-box.
+3. :math:`\mathrm{Rcon}` là một mảng hằng số gồm :math:`10` words tương ứng với :math:`10` vòng AES. :math:`4` bytes của một phần tử :math:`\mathrm{Rcon}[j]` là :math:`\mathrm{RC}[j], 0, 0, 0` với :math:`\mathrm{RC}[j]` là mảng :math:`10` bytes như sau
 
-+---------------+-----------+-----------+-----------+-----------+------------+------------+------------+------------+------------+------------+
-| :math:`j`     | :math:`1` | :math:`2` | :math:`3` | :math:`4` | :math:`5`  | :math:`6`  | :math:`7`  | :math:`8`  | :math:`9`  | :math:`10` |
-+===============+===========+===========+===========+===========+============+============+============+============+============+============+
-| :math:`RC[j]` | :math:`1` | :math:`2` | :math:`4` | :math:`8` | :math:`10` | :math:`20` | :math:`40` | :math:`80` | :math:`18` | :math:`36` |
-+---------------+-----------+-----------+-----------+-----------+------------+------------+------------+------------+------------+------------+
++------------------------+-----------+-----------+-----------+-----------+------------+------------+------------+------------+------------+------------+
+| :math:`j`              | :math:`1` | :math:`2` | :math:`3` | :math:`4` | :math:`5`  | :math:`6`  | :math:`7`  | :math:`8`  | :math:`9`  | :math:`10` |
++========================+===========+===========+===========+===========+============+============+============+============+============+============+
+| :math:`\mathrm{RC}[j]` | :math:`1` | :math:`2` | :math:`4` | :math:`8` | :math:`10` | :math:`20` | :math:`40` | :math:`80` | :math:`18` | :math:`36` |
++------------------------+-----------+-----------+-----------+-----------+------------+------------+------------+------------+------------+------------+
 
 Ý nghĩa của Expand Key
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -263,14 +261,11 @@ Tính trong :math:`\mathrm{GF}(2^8)`:
 
 .. math:: 
     
-    c(z) \cdot d(z) = & (2 + z + z^2 + 3 z^3) \cdot (c_0 + c_4 z + c_8 z^2 + c_{12} z^3) \\
-    = & 2 c_0 + 2 c_4 z + 2 c_8 z^2 + 2 c_{12} z^3 \\
-    + & c_0 z + c_4 z^2 + c_8 z^3 + c_{12} z^4 \\
-    + & c_0 z^2 + c_4 z^3 + c_8 z^4 + c_{12} z^5 \\
-    + & 3 c_0 z^3 + 3 c_4 z^4 + 3 c_8 z^5 + 3 c_{12} z^6 \\
-    = & 2 c_0 + (2 c_4 + c_0) z + (2 c_8 + c_4 + c_0) z^2 \\
-    + & (2 c_{12} + c_8 + c_4 + 3 c_0) z^3 + (c_{12} + c_8 + 3 c_4) z^4 \\
-    + & (c_{12} + 3 c_8) z^5 + 3 c_{12} z^6.
+    c(z) \cdot d(z) & = (2 + z + z^2 + 3 z^3) \cdot (c_0 + c_4 z + c_8 z^2 + c_{12} z^3) \\
+    & = 2 c_0 + 2 c_4 z + 2 c_8 z^2 + 2 c_{12} z^3 + c_0 z + c_4 z^2 + c_8 z^3 + c_{12} z^4 \\
+    & + c_0 z^2 + c_4 z^3 + c_8 z^4 + c_{12} z^5 + 3 c_0 z^3 + 3 c_4 z^4 + 3 c_8 z^5 + 3 c_{12} z^6 \\
+    & = 2 c_0 + (2 c_4 + c_0) z + (2 c_8 + c_4 + c_0) z^2 + (2 c_{12} + c_8 + c_4 + 3 c_0) z^3 \\
+    & + (c_{12} + c_8 + 3 c_4) z^4 + (c_{12} + 3 c_8) z^5 + 3 c_{12} z^6.
     
 Trong :math:`\mathrm{GF}(2^8)` thì mọi phần tử đều có tính chất :math:`2 x^n = 0`, tương đương với :math:`x^n = -x^n`. Do đó
 
@@ -284,13 +279,12 @@ Suy ra
 
 .. math:: 
 
-    c(z) \cdot d(z) = & 2 c_0 + (2 c_4 + c_0) z + (2 c_8 + c_4 + c_0) z^2 \\
-    + & (2 c_{12} + c_8 + c_4 + 3 c_0) z^3 + (c_{12} + c_8 + 3 c_4) \\
-    + & (c_{12} + 3 c_8) z + 3 c_{12} z^2 \\
-    = & (c_{12} + c_8 + 3 c_4 + 2 c_0) + (c_{12} + 3 c_8 + 2 c_4 + c_0) z \\
-    + & (3 c_{12} + 2 c_8 + c_4 + c_0) z^2 + (2 c_{12} + c_8 + c_4 + 3 c_0) z^3.
+    c(z) \cdot d(z) & = 2 c_0 + (2 c_4 + c_0) z + (2 c_8 + c_4 + c_0) z^2 + (2 c_{12} + c_8 + c_4 + 3 c_0) z^3 \\
+    & + (c_{12} + c_8 + 3 c_4) + (c_{12} + 3 c_8) z + 3 c_{12} z^2 \\
+    & = (c_{12} + c_8 + 3 c_4 + 2 c_0) + (c_{12} + 3 c_8 + 2 c_4 + c_0) z \\
+    & + (3 c_{12} + 2 c_8 + c_4 + c_0) z^2 + (2 c_{12} + c_8 + c_4 + 3 c_0) z^3.
 
-Như vậy xét hệ số lần lượt trước 1, :math:`z`, :math:`z^2` và :math:`z^3` thì tương đương với phép nhân ma trận
+Như vậy xét hệ số lần lượt trước :math:`1`, :math:`z`, :math:`z^2` và :math:`z^3` thì tương đương với phép nhân ma trận
 
 .. math:: 
 

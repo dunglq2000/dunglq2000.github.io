@@ -12,6 +12,5 @@ Góc khẩu nghiệp
 
 .. toctree:: 
 
-    criticism-2
-
+.. criticism-2
 .. criticism-1 

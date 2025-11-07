@@ -45,7 +45,7 @@ Khi đó cạnh nối hai đỉnh kề nhau được gọi là cạnh **liên th
 
 Ở đồ thị vô hướng, ta nói **bậc** (hay **degree**) của đỉnh :math:`v` là số cạnh liên thuộc với đỉnh :math:`v`, và kí hiệu là :math:`\deg (v)`.
 
-Ở :numref:`undirected-graph` ta thấy :math:`\deg (v_1) = 1`, :math:`\deg (v_2) = 3`, :math:`\deg (v_3) = 1`, :math:`\deg (v_4) = 1`, :math:`\deg (v_5) = 1`, :math:`\deg (v_6) = 2`. Tổng quát ta có định lí sau.
+Ở :numref:`hình %s <undirected-graph>` ta thấy :math:`\deg (v_1) = 1`, :math:`\deg (v_2) = 3`, :math:`\deg (v_3) = 1`, :math:`\deg (v_4) = 1`, :math:`\deg (v_5) = 1`, :math:`\deg (v_6) = 2`. Tổng quát ta có định lí sau.
 
 .. prf:theorem:: 
     :label: thm-vertice-edges
@@ -109,7 +109,7 @@ và tập cạnh là
 
     **Bán bậc vào** (hay **in-degree**) của đỉnh :math:`v` là số lượng cạnh đi vào nó và kí hiệu là :math:`\deg^-(v)`.
 
-Với ví dụ ở :numref:`directed-graph` thì:
+Với ví dụ ở :numref:`hình %s <directed-graph>` thì:
 
 - :math:`\deg^+(v_1) = 1`, :math:`\deg^-(v_1) = 0`;
 - :math:`\deg^+(v_2) = 2`, :math:`\deg^-(v_2) = 1`;
@@ -185,7 +185,7 @@ Bài toán đẳng cấu đồ thị (graph isomorphism problem) là một trong
 
 Nói cách khác, đồ thị con thu được từ đồ thị ban đầu bằng việc lấy một lượng nhất định đỉnh và cạnh.
 
-Ở đồ thị trên :numref:`subgraph-1`, mình lấy các đỉnh :math:`v_1`, :math:`v_2`, :math:`v_4` và :math:`v_5`, và lấy các cạnh :math:`e_{24}`, :math:`e_{45}` thì mình có đồ thị con trên :numref:`subgraph-2`. Các bạn có thể thấy ở đồ thị ban đầu thì :math:`v_1` nối với :math:`v_2`, nhưng ở đồ thị con thì không có cạnh nối giữa hai đỉnh này.
+Ở đồ thị trên :numref:`hình %s <subgraph-1>`, mình lấy các đỉnh :math:`v_1`, :math:`v_2`, :math:`v_4` và :math:`v_5`, và lấy các cạnh :math:`e_{24}`, :math:`e_{45}` thì mình có đồ thị con trên :numref:`hình %s <subgraph-2>`. Các bạn có thể thấy ở đồ thị ban đầu thì :math:`v_1` nối với :math:`v_2`, nhưng ở đồ thị con thì không có cạnh nối giữa hai đỉnh này.
 
 .. _subgraph-1:
 
@@ -291,7 +291,7 @@ Tính liên thông trên đồ thị vô hướng
  
     Các thành phần liên thông trên đồ thị
 
-Trên :numref:`connected-component` có ba thành phần liên thông:
+Trên :numref:`hình %s <connected-component>` có ba thành phần liên thông:
 
 - thành phần liên thông thứ nhất gồm hai đỉnh :math:`v_1`, :math:`v_2`, và cạnh :math:`e_{12}`
 - thành phần liên thông thứ hai gồm ba đỉnh :math:`v_3`, :math:`v_4`, :math:`v_6`, và các cạnh :math:`e_{36}`, :math:`e_{46}`
@@ -301,7 +301,7 @@ Trên :numref:`connected-component` có ba thành phần liên thông:
 
 Tương tự, khi bỏ đi một cạnh mà số lượng thành phần liên thông tăng lên thì cạnh đó gọi là **cạnh cắt** (hay **cut edges**) hoặc **cầu** (hay **bridge**).
 
-Ở :numref:`bridge` là một đồ thị liên thông, nếu chúng ta xóa cạnh :math:`e_{24}` (cạnh màu đỏ) thì chúng ta sẽ có hai thành phần liên thông:
+Ở :numref:`hình %s <bridge>` là một đồ thị liên thông, nếu chúng ta xóa cạnh :math:`e_{24}` (cạnh màu đỏ) thì chúng ta sẽ có hai thành phần liên thông:
 
 - thành phần liên thông thứ nhất gồm hai đỉnh :math:`v_1` và :math:`v_2`
 - thành phần liên thông thứ hai gồm bốn đỉnh :math:`v_3`, :math:`v_4`, :math:`v_5` và :math:`v_6`.
@@ -312,7 +312,7 @@ Tương tự, khi bỏ đi một cạnh mà số lượng thành phần liên th
  
     Ví dụ về cầu
 
-Đồ thị có thể có nhiều cầu. Ở :numref:`bridge`, thay vì xóa cạnh :math:`e_{24}`, nếu ta xóa cạnh :math:`e_{46}` thì cũng làm tăng số thành phần liên thông. Do đó cạnh :math:`e_{46}` cũng là cầu. Tương tự cho cạnh :math:`e_{12}`, ...
+Đồ thị có thể có nhiều cầu. Ở :numref:`hình %s <bridge>`, thay vì xóa cạnh :math:`e_{24}`, nếu ta xóa cạnh :math:`e_{46}` thì cũng làm tăng số thành phần liên thông. Do đó cạnh :math:`e_{46}` cũng là cầu. Tương tự cho cạnh :math:`e_{12}`, ...
 
 Tính liên thông trên đồ thị có hướng
 ------------------------------------
@@ -354,7 +354,7 @@ Cây
 
 Điều kiện cần và đủ để một đồ thị vô hướng có cây khung là đồ thị đó phải liên thông.
 
-Một đồ thị có thể có nhiều cây khung. Ở :numref:`spanning-tree-1` ta xóa đi cạnh :math:`e_{23}` và :math:`e_{46}` (hai cạnh màu đỏ) thì thu được một cây khung. Tương tự, ở :numref:`spanning-tree-2` ta xóa đi hai cạnh màu đỏ là :math:`e_{13}` và :math:`e_{23}` thì cũng thu được một cây khung khác.
+Một đồ thị có thể có nhiều cây khung. Ở :numref:`hình %s <spanning-tree-1>` ta xóa đi cạnh :math:`e_{23}` và :math:`e_{46}` (hai cạnh màu đỏ) thì thu được một cây khung. Tương tự, ở :numref:`hình %s <spanning-tree-2>` ta xóa đi hai cạnh màu đỏ là :math:`e_{13}` và :math:`e_{23}` thì cũng thu được một cây khung khác.
 
 .. _spanning-tree-1:
 
