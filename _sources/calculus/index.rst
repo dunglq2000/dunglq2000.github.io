@@ -8,8 +8,6 @@ Giải tích
     calculus/index
     differential-equation/index
     series/index
-    derivative/index
-    integral/index
 
 Hàm gamma, hàm beta, hàm zeta
 *****************************

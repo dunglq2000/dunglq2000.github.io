@@ -1,4 +1,3 @@
-==============
 Bổ đề Burnside
 ==============
 
@@ -67,7 +66,6 @@ Các ví dụ về bổ đề Burnside và định lý Polya được tham khả
 
     Ở đây :math:`n = t_G` và ta có điểm phải chứng minh.
 
---------------------------------
 Bài toán tô màu bốn đỉnh tứ diện
 --------------------------------
 
@@ -137,7 +135,6 @@ Tổng quát, nếu có :math:`k` màu thì số lớp tương đương là
 
 .. math:: t_G = \dfrac{1}{12}\left(1 \cdot k^4 + 8 \cdot k^2 + 3 \cdot k^2\right) = \dfrac{1}{12}(k^4 + 11 k^2).
 
-------------------------
 Tác động nhóm lên vector
 ------------------------
 
@@ -193,7 +190,6 @@ Ngoài nhóm :math:`\mathcal{S}_3` ra còn các nhóm khác cũng tác động l
         
     ma trận.
 
------------------------------
 Tác động nhóm lên hàm boolean
 -----------------------------
 
@@ -237,7 +233,6 @@ Như vậy theo bổ đề Burnside, số lớp hàm bool tương đương dư�
 
 .. math:: t (\mathcal{S}_3) = \dfrac{1}{6}(2^8 + 3 \cdot 2^6 + 2 \cdot 2^4) = 80.
 
--------------
 Định lý Polya
 -------------
 
@@ -380,3 +375,18 @@ Ta có:
 .. math:: P_G = \frac{1}{12} \left[(x + y + z)^4 + 8 \cdot (x + y + z) (x^3 + y^3 + z^3) + 3 \cdot (x^2 + y^2 + z^2)^2\right].
 
 Như vậy đề bài tương ứng việc tìm hệ số của hạng tử :math:`x^2 yz` trong biểu thức trên. Kết quả là :math:`1`.
+
+.. raw:: html
+
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+     crossorigin="anonymous"></script>
+   <!-- First Ads -->
+   <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2343650775986433"
+      data-ad-slot="4417625951"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+   <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>

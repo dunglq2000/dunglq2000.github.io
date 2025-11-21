@@ -1,4 +1,3 @@
-=====
 Ideal
 =====
 
@@ -80,3 +79,18 @@ Nói cách khác, nếu có một phần tử trong :math:`R` "sinh" ra được
     Xét tập hợp :math:`\mathbb{Z}` là vành giao hoán với đơn vị. Nếu :math:`n` là số nguyên tố thì :math:`n \mathbb{Z}` là maximal ideal (đã chứng minh ở trên).
     
     Khi đó tập :math:`\mathbb{Z} / n\mathbb{Z}` là trường hữu hạn modulo nguyên tố gồm các phần tử :math:`\{ 0, 1, \ldots, p-1 \}`.
+
+.. raw:: html
+
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+     crossorigin="anonymous"></script>
+   <!-- First Ads -->
+   <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2343650775986433"
+      data-ad-slot="4417625951"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+   <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>

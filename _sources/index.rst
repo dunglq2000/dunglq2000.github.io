@@ -71,6 +71,7 @@ Bên lề sách của Fermat
    russia/index
    mathematicians/index
    men-of-mathematics/index
+   game-programming/index
 
 Tài liệu tham khảo
 ==================

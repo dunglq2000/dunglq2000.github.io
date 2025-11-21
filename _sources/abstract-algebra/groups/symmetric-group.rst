@@ -1,8 +1,6 @@
-============
 Nhóm hoán vị
 ============
 
-------------
 Nhóm hoán vị
 ------------
 
@@ -100,7 +98,6 @@ Tập các hoán vị :math:`\mathcal{S}_n` và toán tử như trên tạo thà
             1 & 2 & 5 & 4 & 3
         \end{pmatrix}.
 
------------------
 Chu trình độc lập
 -----------------
 
@@ -167,3 +164,18 @@ Do đó tích của chúng (hay toán tử trên nhóm hoán vị) sẽ cho ra k
     \end{pmatrix}}_{p_1} \star \underbrace{\begin{pmatrix}
         5 & 1 & 3 & 4 & 2 \\ 5 & 1 & 4 & 3 & 2 
     \end{pmatrix}}_{p_2}.
+
+.. raw:: html
+
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+     crossorigin="anonymous"></script>
+   <!-- First Ads -->
+   <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2343650775986433"
+      data-ad-slot="4417625951"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+   <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>

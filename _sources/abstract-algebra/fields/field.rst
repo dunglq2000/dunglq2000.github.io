@@ -1,4 +1,3 @@
-======
 Trường
 ======
 
@@ -27,11 +26,9 @@ Những trường trên được gọi là **trường vô hạn** vì có vô s
 
 Ngược lại, chúng ta cũng có các **trường hữu hạn**.
 
---------------
 Trường hữu hạn
 --------------
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Trường hữu hạn modulo nguyên tố
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -65,7 +62,6 @@ Cho :math:`p` là số nguyên tố. Khi đó tập hợp các số dư khi chia
 
 Ta thường kí hiệu trường này là :math:`\mathrm{GF}(p)` (GF là viết tắt của Galois Field để tưởng nhớ người có đóng góp quan trọng trong lý thuyết nhóm).
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Trường hữu hạn modulo đa thức
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -123,3 +119,18 @@ Tương tự, sau đây là bảng phép nhân hai đa thức bậc nhỏ hơn :
     .. include:: gf9-mult.rst.inc
 
 Ta thấy rằng bảng phép nhân đối xứng qua đường chéo chính. Điều này chứng tỏ phép nhân có tính giao hoán. Thêm nữa ở mỗi hàng hoặc cột khác :math:`0` đều có :math:`9` phần tử khác nhau.
+
+.. raw:: html
+
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+     crossorigin="anonymous"></script>
+   <!-- First Ads -->
+   <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2343650775986433"
+      data-ad-slot="4417625951"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+   <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>

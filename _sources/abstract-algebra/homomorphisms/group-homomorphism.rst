@@ -1,8 +1,6 @@
-==================
 Group homomorphism
 ==================
 
--------------
 Đồng cấu nhóm
 -------------
 
@@ -47,7 +45,6 @@ phần tử thuộc :math:`H` nên toán tử giữa chúng là :math:`*`.
     2. Từ việc tìm ra phần tử đơn vị, ta cũng chứng minh 
        được tính chất nghịch đảo trên.
 
----------------------
 Các loại homomorphism
 ---------------------
 
@@ -161,7 +158,6 @@ Tương tự như ánh xạ, chúng ta có các loại homomorphism sau
     nếu nó là song ánh từ nó lên chính nó. Ta kí hiệu tự đồng 
     cấu nhóm :math:`G` là :math:`\mathrm{Aut}(G)`.
 
----------------
 Hạt nhân và ảnh
 ---------------
 
@@ -328,3 +324,18 @@ trong lý thuyết nhóm là **Định lí thứ nhất về sự đẳng cấu*
     sự đẳng cấu, ta có
 
     .. math:: \mathrm{GL}_n(\mathbb{C}) / H \cong \mathbb{R}^+.
+
+.. raw:: html
+
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+     crossorigin="anonymous"></script>
+   <!-- First Ads -->
+   <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2343650775986433"
+      data-ad-slot="4417625951"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+   <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>

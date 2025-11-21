@@ -64,6 +64,17 @@ trên thực tế, quá trình hội tụ thường đạt được sớm hơn n
 Phương pháp này minh họa cách lựa chọn hình học thông 
 minh (liên hợp thay vì trực giao) giúp tăng tốc đáng kể tính toán.
 
+Sưu tầm 2
+=========
+
+Контрольная работа.
+
+Задание 1. Докажите или опровергните утверждение :math:`n^2 = o(2n^2)`.
+
+Задание 2. Расположите следующие функции в порядке увеличения скорости из роста, отметив среди них :math:`\Theta`-эквивалентные: :math:`f(n) = 4^{\log n}`, :math:`g(n) = 4n^2`, :math:`h(n) = n \log(n^4)`.
+
+Задание 3. Пусть :math:`f(n)` и :math:`g(n)` - асимптотически положительные функции. Докажите или опровергните следующее утверждение: :math:`f(n) + g(n) = O(\min (f(n), g(n)))`.
+
 .. raw:: html
 
    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"

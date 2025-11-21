@@ -119,7 +119,7 @@ Trong cả hai trường hợp, chúng ta đều đang tiến lên, không ì �
 
     -- Diễn đàn toán học Việt Nam
 
----
+----
 
 .. epigraph:: 
 
@@ -129,7 +129,7 @@ Trong cả hai trường hợp, chúng ta đều đang tiến lên, không ì �
 
     -- Albert Einstein
 
----
+----
 
 .. epigraph:: 
 

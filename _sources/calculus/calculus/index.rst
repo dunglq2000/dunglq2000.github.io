@@ -14,5 +14,7 @@ Phần này mình lấy từ các sách giáo khoa toán của bậc THPT thời
     continuity
     monotone
     derivative
+    partial-derivative
     avarage-value
     concave
+    line-integral

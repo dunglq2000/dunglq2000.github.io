@@ -1,8 +1,6 @@
-================
 Extension Fields
 ================
 
-----------------
 Extension Fields
 ----------------
 
@@ -74,7 +72,6 @@ Khi đó ta viết
     2. :math:`\mathbb{Q}(i)` nhỏ hơn :math:`\mathbb{C}` rất nhiều (không chứa :math:`\sqrt{2}`).
     3. :math:`\mathbb{Q}(\sqrt{2})` chứa tất cả nghiệm của đa thức :math:`f(x) = x^2 - 2` trên :math:`\mathbb{Q}`. Do đó :math:`\mathbb{Q}(\sqrt{2})` được gọi là **trường phân rã** của đa thức :math:`f(x)`.
 
----------------------------------------------
 Biểu diễn quan hệ giữa các trường qua lattice
 ---------------------------------------------
 
@@ -169,7 +166,6 @@ Sơ đồ mở rộng trường bây giờ như sau
 
 .. figure:: ../../figures/extension_field/extension_field-2.*
 
----------------
 Splitting Field
 ---------------
 
@@ -222,7 +218,6 @@ Quay lại một chút, ta đã mở rộng :math:`\mathbb{Q}(\sqrt{6})` lên :m
 
 Đa thức :math:`m(x)` có hệ số trong :math:`\mathbb{Q}(\sqrt{6})` nhưng không có nghiệm trong :math:`\mathbb{Q}(\sqrt{6})`, mà trong :math:`\mathbb{Q}(\sqrt{2}, \sqrt{3})`. Ta có điều phải chứng minh.
 
-------------------
 Field automorphism
 ------------------
 
@@ -362,3 +357,18 @@ Khi đó ta có định lí quan trọng sau về số phần tử của nhóm G
     Đặt :math:`f(x)` là đa thức trên :math:`F[x]` và giả sử :math:`E` là trường phân rã của :math:`f(x)` trên :math:`F`. Nếu :math:`f(x)` không có nghiệm bội thì
 
     .. math:: \lvert G(E/F) \rvert = [E : F].
+
+.. raw:: html
+
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+     crossorigin="anonymous"></script>
+   <!-- First Ads -->
+   <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2343650775986433"
+      data-ad-slot="4417625951"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+   <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>

@@ -47,7 +47,7 @@ Chứng minh trực tiếp hữu dụng đối với những lời giải tuần
 
 .. _euler-line:
 
-.. figure:: ../figures/euler-line/euler-line.*
+.. figure:: ../figures/euler_line/euler_line.*
 
     Đường thẳng Euler
 

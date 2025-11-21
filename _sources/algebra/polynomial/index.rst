@@ -1,4 +1,3 @@
-********
 Đa thức
 ********
 
@@ -23,15 +22,4 @@ Một số vấn đề về đa thức.
       data-full-width-responsive="true"></ins>
    <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
-   </script>
-
-   <!-- Yandex.RTB R-A-17363457-2 -->
-   <script>
-   window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-         "blockId": "R-A-17363457-2",
-         "type": "floorAd",
-         "platform": "desktop"
-      })
-   })
    </script>

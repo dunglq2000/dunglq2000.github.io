@@ -1,8 +1,6 @@
-====
 Nhóm
 ====
 
-----------------
 Nhóm và nhóm con
 ----------------
 
@@ -84,7 +82,6 @@ Nhóm và nhóm con
 bằng :math:`0`, ví dụ như với hai nhóm :math:`(\mathbb{Z}, +)` 
 và :math:`(\mathbb{Q}^*, \cdot)` ở trên.
 
---------
 Nhóm con
 --------
 
@@ -113,7 +110,6 @@ Nói cách khác, toán tử :math:`\star` đóng với các phần tử trong :
     
     Order của nhóm luôn chia hết order của một nhóm con bất kì của nó.
 
----------
 Nhóm vòng
 ---------
 
@@ -143,7 +139,6 @@ Như vậy, số lượng phần tử sinh của :math:`\mathbb{Z}_n` là :math:
     
     Nhóm vòng được gọi là **elementary abelian** (hay **примарная абелева группа**) nếu bậc của nhóm là số nguyên tố.
 
------
 Coset
 -----
 
@@ -194,7 +189,6 @@ Rõ ràng hai coset trên rời nhau.
 
     Từ đó :math:`g_1 H \subseteq g_2 H`. Tương tự ta cũng có :math:`g_2 H \subseteq g_1 H`. Vậy :math:`g_1 H = g_2 H`.
 
----------------
 Normal Subgroup
 ---------------
 
@@ -229,11 +223,8 @@ Quotient Group còn được gọi là **Factor Group** (hay **nhóm nhân tử*
     
     .. math:: \mathbb{Z} / 2 \mathbb{Z} = \{0 + 2 \mathbb{Z}, 1 + 2 \mathbb{Z} \}.
 
----------------------
 Direct sum of modules
 ---------------------
-
-    Прямая сумма
 
 Có hai dạng tổng là external và internal.
 
@@ -250,7 +241,6 @@ Giả sử :math:`g = (g_1, g_2, \ldots, g_t) \in G` với :math:`g_i \in G_i`, 
 
 .. math:: g \square g' = (g_1 * g'_1, g_2 \star g'_2, \ldots, g_t \circ g'_t).
 
-
 .. prf:definition:: Internal direct sum
     :label: def-int-sum
 
@@ -262,3 +252,18 @@ Giả sử :math:`g = (g_1, g_2, \ldots, g_t) \in G` với :math:`g_i \in G_i`, 
     .. math:: g_i \circ g_j = g_j \circ g_i
 
     với mọi :math:`g_i \in G_i` và :math:`g_j \in G_j`.
+
+.. raw:: html
+
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+     crossorigin="anonymous"></script>
+   <!-- First Ads -->
+   <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2343650775986433"
+      data-ad-slot="4417625951"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+   <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>

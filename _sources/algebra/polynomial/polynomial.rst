@@ -1,5 +1,3 @@
-
-=====================
 Giới thiệu về đa thức
 =====================
 
@@ -25,11 +23,10 @@ Biểu thức :math:`a_k x^k` được gọi là **hạng tử bậc** :math:`k`
 .. prf:definition:: Bậc của đa thức
     :label: def-deg-poly
     
-    Nếu :math:`a_n \neq 0` thì số tự nhiên :math:`n` được gọi là **bậc của đa thức** (hay **degree**, **степень**) và ta kí hiệu :math:`\deg P = n`.
+    Nếu :math:`a_n \neq 0` thì số tự nhiên :math:`n` được gọi là **bậc** của đa thức (hay **degree**, **степень**) và ta kí hiệu :math:`\deg P = n`.
 
-======================================
-So sánh, cộng, trừ và nhân hai đa thức
-======================================
+So sánh, cộng, trừ và nhân hai đa thức một biến
+===============================================
 
 Hai đa thức
 
@@ -115,3 +112,108 @@ với hệ số :math:`c_k` được xác định bởi
         \deg (P+Q) = 0 < \max(\deg P, \deg Q),
 
         \deg (P-Q) = 1 = \max(\deg P, \deg Q).
+
+Phép chia đa thức một biến
+==========================
+
+Khi chia đa thức :math:`A(x)` cho đa thức :math:`B(x)`, ta tìm đa thức :math:`Q(x)` và :math:`R(x)` sao cho
+
+.. math:: A(x) = Q(x) \cdot B(x) + R(x), \ \text{và} \ 0 \leqslant \deg R(x) < \deg B(x).
+
+Phân tích trên còn được gọi là phép chia Euclid cho đa thức.
+
+Xét phép chia đa thức :math:`x^3 + 4 x^2 - 3` cho đa thức :math:`x - 2`. Tương tự phép chia hai số nguyên, đa thức :math:`x^3 + 4 x^2 - 3` là đa thức bị chia, :math:`x - 2` là đa thức chia, và ta cần tìm thương và số dư.
+
+Đầu tiên, ta viết tất cả hệ số của đa thức bị chia, bao gồm các hệ số :math:`0`:
+
+.. math:: x^3 + 4 x^2 - 0 x - 3,
+
+và viết lên sơ đồ.
+
+.. figure:: ../../figures/polynomials/univariate-01.*
+
+Bước 1. Ta chia hạng tử có bậc cao nhất của đa thức bị chia là :math:`x^3` cho đa thức chia là :math:`x` và nhận được :math:`x^3 : x = x^2`. Ta viết :math:`x^2` vào phần thương (ở trên cùng).
+
+.. figure:: ../../figures/polynomials/univariate-02.*
+
+Bước 2. Ta nhân phần tử vừa nhận được của thương là :math:`x^2` cho đa thức chia, tức là
+
+.. math:: x^2 \cdot (x - 2) = x^3 - 2 x^2,
+
+và viết xuống hàng dưới.
+
+.. figure:: ../../figures/polynomials/univariate-03.*
+
+Bước 3. Ta trừ đa thức chia cho :math:`x^3 - 2 x^2`.
+
+.. figure:: ../../figures/polynomials/univariate-04.*
+
+Lặp lại các bước 1, 2, 3 nhưng hạng tử lớn nhất hiện tại là :math:`6x^2`.
+
+Bước 1a. Ta chia :math:`6x^2` cho hạng tử bậc cao nhất của số chia và được :math:`6x^2 : x = 6x`. Ta viết :math:`+6x` vào phần thương ở trên cùng.
+
+.. figure:: ../../figures/polynomials/univariate-05.*
+
+Bước 2a. Ta nhân :math:`6x` cho đa thức chia
+
+.. math:: 6x \cdot (x - 2) = 6 x^2 - 12 x,
+
+và viết xuống hàng dưới.
+
+.. figure:: ../../figures/polynomials/univariate-06.*
+
+Bước 3a. Ta trừ đa thức chia, lúc này là :math:`6x^2`, cho tích vừa tìm được.
+
+.. figure:: ../../figures/polynomials/univariate-07.*
+
+Tiếp tục lặp lại bước 1, 2, 3.
+
+.. figure:: ../../figures/polynomials/univariate-08.*
+
+.. figure:: ../../figures/polynomials/univariate-09.*
+    
+.. figure:: ../../figures/polynomials/univariate-10.*
+
+Sau khi thực hiện phép trừ ở bước cuối ta có đa thức thương :math:`x^2 + 6x + 12` và đa thức dư :math:`21` có bậc là :math:`0`, nhỏ hơn bậc của đa thức chia :math:`x - 2` là :math:`1`.
+
+Phép chia đa thức nhiều biến
+============================
+
+Ở phần này kí hiệu :math:`\mathrm{LT}(f)` là leading term của đa thức nhiều biến theo thứ tự đơn thức (monomial order) cho trước (lex, deglex, ...).
+
+Input: hàm :math:`f` và các hàm :math:`g_1`, ..., :math:`g_a` trên vành đa thức :math:`K[x_1, \ldots, x_n]` với trường :math:`K` và thứ tự đơn thức nào đó.
+
+Output: số dư :math:`r` và các đa thức :math:`q_1`, ..., :math:`q_a` thỏa mãn
+
+1. Không có đơn thức nào của :math:`r` chia hết :math:`\mathrm{LT}(g_i)` với mọi :math:`i`.
+2. :math:`\mathrm{LT}(g_i \cdot q_i) \leqslant \mathrm{LT}(f)`.
+
+Khi đó
+
+.. math:: f = r + q_1 g_1 + \cdots + q_a g_g.
+
+.. prf:algorithm:: 
+    :label: alg-multivariate-polydiv
+
+    1. Khởi tạo :math:`p \gets f`; :math:`f`, :math:`q_1`, ..., :math:`q_a \gets 0`; :math:`i \gets 0`
+    2. While :math:`p \neq 0` do
+
+       - :math:`i \gets i + 1`
+       - if :math:`\mathrm{LT}(g_i) \mid \mathrm{LT}(p)` then
+         
+         - :math:`q_i \gets q_i + \mathrm{LT}(p) / \mathrm{LT}(g_i)`
+         - :math:`p \gets p - \mathrm{LT}(p) / \mathrm{LT}(g_i)`
+         - :math:`i \gets 0`
+
+       - if :math:`i = a` then
+
+         - :math:`r \gets r + \mathrm{LT}(p)`
+         - :math:`p \gets p - \mathrm{LT}(p)`
+         - :math:`i \gets 0`
+
+    3. Return :math:`r`, :math:`q_1`, ..., :math:`q_a`
+
+Lưu ý:
+
+- thứ tự đơn thức ảnh hưởng kết quả thuật toán;
+- :math:`r \neq 0` không có nghĩa :math:`f` không là tổ hợp tuyến tính của các đa thức :math:`g_i`.

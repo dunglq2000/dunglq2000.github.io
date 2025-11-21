@@ -17,9 +17,8 @@ Lý thuyết số
 
     euclidean
     linear-congruence
-    euler
+    arithmetic-functions
     quadratic-residue
-    mobius
     dirichlet-convolution
     chinese-remainder-theorem
     exercises

@@ -1,7 +1,6 @@
 Hàm số
 ======
 
-
 Hàm số
 ------
 
@@ -47,7 +46,6 @@ mà cũng có thể là tích Descartes của chúng.
     là toàn ánh.
 
     Kết luận :math:`f` là song ánh.
-
 
 Đồng biến và nghịch biến
 ------------------------
@@ -111,7 +109,6 @@ và đồng biến trên :math:`(0; +\infty)`, giá trị :math:`f(0) = 3`
 nên bảng biến thiên thể hiện sự tăng giảm trên các khoảng. Dựa 
 vào bảng biến thiên ta có thể hình dung ra dạng của đồ thị hàm số.
 
-
 Đồ thị hàm số
 -------------
 
@@ -153,13 +150,11 @@ nghịch biến trên :math:`(-\infty; 0)` nhưng nghịch biến của
 :math:`y = \dfrac{1}{x}` thì ban đầu "nhẹ nhàng", sau thì 
 như "rơi tự do".
 
-
 Một số loại hàm số
 ------------------
 
 Một số hàm số có tính chất đặc biệt giúp chúng ta tiết kiệm 
 công sức trong chứng minh, tính toán.
-
 
 Hàm chẵn và hàm lẻ
 ^^^^^^^^^^^^^^^^^^
@@ -196,7 +191,6 @@ vì với mọi :math:`x \in (-\infty; 0) \cup (0; +\infty)` ta có
     
 Dễ thấy rằng hàm lẻ đối xứng qua gốc tọa độ :math:`O(0, 0)`.
 
-
 Hàm cộng tính
 ^^^^^^^^^^^^^
 
@@ -217,7 +211,6 @@ Xét hàm số :math:`y = f(x)` xác định trên miền :math:`D`.
     
     .. math:: f(x+y) = 2(x+y) = 2x + 2y = f(x) + f(y).
 
-
 Hàm nhân tính
 ^^^^^^^^^^^^^
 
@@ -235,7 +228,6 @@ hàm :math:`\varphi` Euler về số lượng các số nguyên tố
 cùng nhau với số nguyên dương :math:`n`. Nếu một hàm số 
 học là nhân tính thì chúng ta chỉ cần quan tâm giá trị 
 của hàm số đó tại các số nguyên tố là đủ.
-
 
 Hàm tuần hoàn
 ^^^^^^^^^^^^^

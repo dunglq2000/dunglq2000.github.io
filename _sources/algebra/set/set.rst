@@ -1,7 +1,6 @@
 Tập hợp
 =======
 
-
 Mở đầu về tập hợp
 -----------------
 
@@ -28,7 +27,6 @@ Một **tập hợp** (**set**) bao gồm các phần tử khác nhau. Tập h�
     Tập hợp rỗng là con của mọi tập hợp.
 
 Dễ thấy rằng mọi tập hợp là tập hợp con của chính nó. Do đó tập con này được gọi là tập con tầm thường (trivial subset). Để kí hiệu một tập con có thể bằng tập chứa nó ta viết :math:`B \subseteq A`. Trong trường hợp :math:`B` là tập con của :math:`A` nhưng không bằng :math:`A` ta có thể viết :math:`B \subsetneq A`.
-
 
 Toán tử trên tập hợp
 --------------------

@@ -6,3 +6,4 @@ Các cuộc thi năm 2025
     
     cryptofox/index
     tjctf
+    yaprofi/index

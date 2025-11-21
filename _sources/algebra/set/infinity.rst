@@ -5,7 +5,6 @@ Tiếp theo chúng ta sẽ xem hết những bài toán hết sức thú vị
 cùng những lập luận cũng thú vị không kém để thấy rằng có 
 nhiều điều bất ngờ sẽ xảy ra nếu vận dụng những lý luận chặt chẽ.
 
-
 Nghịch lý Zeno
 ---------------
 
@@ -36,7 +35,6 @@ tới cấp số nhân lùi vô hạn sẽ biết cách tính tổng
 .. math:: \frac{1}{10} + \frac{1}{100} + \cdots \frac{1}{10^n} = \frac{1}{9}
 
 là hữu hạn.
-
 
 So sánh :math:`\mathbb{N}` và :math:`\mathbb{Z}`
 -------------------------------------------------
@@ -103,7 +101,6 @@ dạng tập hợp này.
 
 1. Tập hợp được gọi là **đếm được** khi tồn tại song ánh từ nó tới :math:`\mathbb{N}`.
 2. Tập hợp được gọi là **không đếm được** khi nó không phải là tập đếm được.
-
 
 Định lý về :math:`\mathbb{R}`
 -----------------------------

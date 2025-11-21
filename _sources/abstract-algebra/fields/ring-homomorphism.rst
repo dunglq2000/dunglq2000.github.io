@@ -1,4 +1,3 @@
-================================
 Ring kernel và ring homomorphism
 ================================
 
@@ -48,3 +47,18 @@ Xét vành :math:`(R, +, \times)`. Khi đó:
     suy ra :math:`b \times a \in \ker f` nên :math:`\ker f` cũng là ideal phải của :math:`R_1`.
 
     Kết luận: :math:`\ker f` là ideal của :math:`R_1`.
+
+.. raw:: html
+
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+     crossorigin="anonymous"></script>
+   <!-- First Ads -->
+   <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2343650775986433"
+      data-ad-slot="4417625951"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+   <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>
