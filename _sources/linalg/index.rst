@@ -12,6 +12,7 @@
     linear-combination
     vector-space
     euclidean-space
+    quadratic-form
     hilbert-space
 
 .. raw:: html

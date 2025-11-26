@@ -1,6 +1,8 @@
 AES
 ===
 
+Phần này sử dụng tài liệu mô tả thuật toán AES của NIST :cite:`1250461`.
+
 AES biến đổi theo khối :math:`128` bit, sử dụng mô hình mạng SPN.
 
 Bốn phép biến đổi chính là Add Round Key, Substitute Bytes, Shift Rows và Mix Columns.

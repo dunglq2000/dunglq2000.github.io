@@ -1,8 +1,6 @@
-*****************
 Không gian vector
 *****************
 
-=================
 Không gian vector
 =================
 
@@ -30,7 +28,6 @@ Ta thấy rằng không gian vector ở chương trình phổ thông là không 
 
 Khi đó :math:`\mathcal{V} = \mathbb{R}^n`. Trong chương này sẽ làm việc với không gian vector thực :math:`\mathbb{R}`.
 
-=======================================
 Cơ sở và số chiều của không gian vector
 =======================================
 
@@ -120,7 +117,6 @@ Giả sử ta có :math:`\bm{v}_1`, :math:`\bm{v}_2`, ..., :math:`\bm{v}_d` là 
     
     Nói cách khác, ma trận :math:`(\alpha_{ij})` khả nghịch và ta có điều phải chứng minh.
 
-=====================
 Không gian vector con
 =====================
 
