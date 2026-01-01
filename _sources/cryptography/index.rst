@@ -1,20 +1,23 @@
-##########
 Mật mã học
 ##########
 
 .. toctree:: 
-    :numbered:
-    :maxdepth: 2
+   :numbered:
+   :maxdepth: 2
 
-    lattice-based/index
-    code-based/index
-    elliptic/index
+   lattice-based/index
+   code-based/index
+   elliptic/index
+   Kerckhoffs-principle/index
+   quantum-computing
+   discrete-logarithm
 
-    Kerckhoffs-principle/index
+.. .. toctree:: 
+..    :numbered:
+..    :maxdepth: 2
 
-    examen
-    quantum-computing
-    zero-knowledge-proof/index
+..    examen
+..    zero-knowledge-proof/index
 
 .. raw:: html
 

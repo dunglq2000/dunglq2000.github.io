@@ -80,16 +80,16 @@ với :math:`p_1(x)` là đa thức bậc :math:`n - 1`.
 
 .. only:: html
 
-    .. table:: 
-        :class: centered-table
+   .. table:: 
+      :class: centered-table
 
-        .. include:: tab-hoocner-1.rst.inc
+      .. include:: tables/tab-hoocner-1.rst.inc
 
 .. only:: latex
 
-    .. tabularcolumns:: |c|c|c|c|
+   .. tabularcolumns:: |c|c|c|c|
 
-    .. include:: tab-hoocner-1.rst.inc
+   .. include:: tables/tab-hoocner-1.rst.inc
 
 Tiếp theo ta điền các giá trị vào dưới chân các ô :math:`a_i` bắt đầu từ :math:`a_n` theo quy tắc "đầu rơi - nhân ngang - cộng chéo", có nghĩa là:
 
@@ -98,16 +98,16 @@ Tiếp theo ta điền các giá trị vào dưới chân các ô :math:`a_i` b�
 
 .. only:: html
 
-    .. table:: 
-        :class: centered-table
+   .. table:: 
+      :class: centered-table
 
-        .. include:: tab-hoocner-2.rst.inc
+      .. include:: tables/tab-hoocner-2.rst.inc
 
 .. only:: latex
 
-    .. tabularcolumns:: |c|c|c|c|
+   .. tabularcolumns:: |c|c|c|c|
 
-    .. include:: tab-hoocner-2.rst.inc
+   .. include:: tables/tab-hoocner-2.rst.inc
 
 Ví dụ, phân tích đa thức
 
@@ -119,76 +119,76 @@ khi biết một nghiệm :math:`x = 2` của nó.
 
 .. only:: html
 
-    .. table:: 
-        :class: centered-table
+   .. table:: 
+      :class: centered-table
 
-        .. include:: tab-hoocner-3.rst.inc
+      .. include:: tables/tab-hoocner-3.rst.inc
 
 .. only:: latex
 
-    .. tabularcolumns:: |c|c|c|c|c|
+   .. tabularcolumns:: |c|c|c|c|c|
 
-    .. include:: tab-hoocner-3.rst.inc
+   .. include:: tables/tab-hoocner-3.rst.inc
 
 Ta giữ lại hệ số bậc cao nhất :math:`a_n`:
 
 .. only:: html
 
-    .. table:: 
-        :class: centered-table
+   .. table:: 
+      :class: centered-table
 
-        .. include:: tab-hoocner-4.rst.inc
+      .. include:: tables/tab-hoocner-4.rst.inc
 
 .. only:: latex
 
-    .. tabularcolumns:: |c|c|c|c|c|
+   .. tabularcolumns:: |c|c|c|c|c|
 
-    .. include:: tab-hoocner-4.rst.inc
+   .. include:: tables/tab-hoocner-4.rst.inc
 
 Tiếp theo, lấy kết quả vừa nhận được :math:`1`, nhân với :math:`x = 2` rồi cộng ô chéo bên phải
 
 .. only:: html
 
-    .. table:: 
-        :class: centered-table
+   .. table:: 
+      :class: centered-table
 
-        .. include:: tab-hoocner-5.rst.inc
+      .. include:: tables/tab-hoocner-5.rst.inc
 
 .. only:: latex
 
-    .. tabularcolumns:: |c|c|c|c|c|
+   .. tabularcolumns:: |c|c|c|c|c|
 
-    .. include:: tab-hoocner-5.rst.inc
+   .. include:: tables/tab-hoocner-5.rst.inc
 
 Như vậy kết quả dưới :math:`-1` là :math:`1`, thực hiện tương tự ta có
 
 .. only:: html
 
-    .. table:: 
-        :class: centered-table
+   .. table:: 
+      :class: centered-table
 
-        .. include:: tab-hoocner-6.rst.inc
+      .. include:: tables/tab-hoocner-6.rst.inc
 
 .. only:: latex
 
-    .. tabularcolumns:: |c|c|c|c|c|
+   .. tabularcolumns:: |c|c|c|c|c|
 
-    .. include:: tab-hoocner-6.rst.inc
+   .. include:: tables/tab-hoocner-6.rst.inc
 
 Hệ số cuối cùng chắc chắn bằng :math:`0`
 
 .. only:: html
 
-    .. table:: 
-        :class: centered-table
+   .. table:: 
+      :class: centered-table
 
-        .. include:: tab-hoocner-7.rst.inc
+      .. include:: tables/tab-hoocner-7.rst.inc
 
 .. only:: latex
 
-    .. tabularcolumns:: |c|c|c|c|c|
+   .. tabularcolumns:: |c|c|c|c|c|
 
-    .. include:: tab-hoocner-7.rst.inc
+   .. include:: tables/tab-hoocner-7.rst.inc
 
 Như vậy :math:`(1, 1, 1)` là hệ số của đa thức :math:`p_1(x)` theo bậc giảm dần, tức là
 
@@ -232,64 +232,63 @@ Lặp lại quá trình trên, cho :math:`y = 0` thì :math:`p_1(c) = b_1`, nói
 Tương tự ta tính :math:`b_i = p_i(c)` với :math:`i = 1, 2, \ldots, n`, trong đó :math:`p_i(c)` là giá trị đa thức bậc :math:`n - i` tại :math:`x = c`.
 
 .. prf:example:: Ví dụ phương pháp Hoocner tổng quát
-    :label: exp-general-hoocner
+   :label: exp-general-hoocner
 
-    Cho
+   Cho
 
-    .. math:: p(x) = 2 x^6 + 4 x^5 - x^2 + x + 2,
+   .. math:: p(x) = 2 x^6 + 4 x^5 - x^2 + x + 2,
 
-    tính :math:`p(y - 1)`.
+   tính :math:`p(y - 1)`.
 
-    Ở đây :math:`c = -1`, ta sử dụng phương pháp chia Hoocner ở trên khi :math:`x = -1`.
+Ở đây :math:`c = -1`, ta sử dụng phương pháp chia Hoocner ở trên khi :math:`x = -1`.
 
-    .. only:: html
+.. only:: html
 
-      .. table:: 
-          :class: centered-table
+   .. table:: 
+      :class: centered-table
 
-          .. include:: exp-hoocner-1.rst.inc
+      .. include:: tables/exp-hoocner-1.rst.inc
 
-    .. only:: latex
+.. only:: latex
 
-        .. tabularcolumns:: |c|c|c|c|c|c|c|c|
+   .. tabularcolumns:: |c|c|c|c|c|c|c|c|
 
-        .. include:: exp-hoocner-1.rst.inc
+   .. include:: tables/exp-hoocner-1.rst.inc
 
-    Lúc này, hệ số :math:`b_0` là giá trị ngoài cùng bên phải ở dòng thứ hai, nghĩa là :math:`b_0 = -2`.
+Lúc này, hệ số :math:`b_0` là giá trị ngoài cùng bên phải ở dòng thứ hai, nghĩa là :math:`b_0 = -2`.
 
-    Tiếp tục sử dụng phương pháp chia Hoocner để tìm hàng thứ ba từ hàng thứ hai
+Tiếp tục sử dụng phương pháp chia Hoocner để tìm hàng thứ ba từ hàng thứ hai
 
-    .. only:: html
+.. only:: html
 
-      .. table:: 
-          :class: centered-table
+   .. table:: 
+      :class: centered-table
 
-          .. include:: exp-hoocner-2.rst.inc
+      .. include:: tables/exp-hoocner-2.rst.inc
 
-    .. only:: latex
+.. only:: latex
 
-        .. tabularcolumns:: |c|c|c|c|c|c|c|c|
+   .. tabularcolumns:: |c|c|c|c|c|c|c|c|
 
-        .. include:: exp-hoocner-2.rst.inc
+   .. include:: tables/exp-hoocner-2.rst.inc
 
-    Hệ số :math:`b_1` là giá trị ngoài cùng bên phải ở dòng thứ ba, hay :math:`b_1 = 11`.
+Hệ số :math:`b_1` là giá trị ngoài cùng bên phải ở dòng thứ ba, hay :math:`b_1 = 11`.
 
-    Tương tự, từ hàng trên ta áp dụng phương pháp chia Hoocner để tìm hàng dưới với độ dài trừ đi :math:`1`. Khi độ dài hàng bằng :math:`1` thì ta kết thúc thuật toán.
+Tương tự, từ hàng trên ta áp dụng phương pháp chia Hoocner để tìm hàng dưới với độ dài trừ đi :math:`1`. Khi độ dài hàng bằng :math:`1` thì ta kết thúc thuật toán.
 
-    .. only:: html
+.. only:: html
 
-      .. table:: 
-          :class: centered-table
+   .. table:: 
+      :class: centered-table
 
-          .. include:: exp-hoocner-3.rst.inc
+      .. include:: tables/exp-hoocner-3.rst.inc
 
-    .. only:: latex
+.. only:: latex
 
-        .. tabularcolumns:: |c|c|c|c|c|c|c|c|
+   .. tabularcolumns:: |c|c|c|c|c|c|c|c|
 
-        .. include:: exp-hoocner-3.rst.inc
-    
-    Như vậy, lấy kết quả ngoài cùng bên phải ở mỗi hàng ta có hệ số của đa thức :math:`p(y - 1)`, ở đây là
+   .. include:: tables/exp-hoocner-3.rst.inc
 
-    .. math:: p(y - 1) = -2 + 11 x - 11 x^2 + 10 x^4 - 8 x^5 + 2 x^6.
-    
+Như vậy, lấy kết quả ngoài cùng bên phải ở mỗi hàng ta có hệ số của đa thức :math:`p(y - 1)`, ở đây là
+
+.. math:: p(y - 1) = -2 + 11 x - 11 x^2 + 10 x^4 - 8 x^5 + 2 x^6.

@@ -1,8 +1,6 @@
-*****************
 Xác suất thống kê
 *****************
 
-===============
 Xác suất là gì?
 ===============
 
@@ -49,7 +47,6 @@ Như vậy, :math:`P(A) = \dfrac{\lvert\Omega_A\vert}{\lvert\Omega\rvert}`.
 
     Như vậy :math:`\lvert\Omega_A\rvert = 3` và :math:`P(A) = \dfrac{3}{36} = \dfrac{1}{12}`.
 
----------------------------------------
 Ba tiên đề về sự nhất quán của xác suất
 ---------------------------------------
 
@@ -65,7 +62,6 @@ Ba tiên đề về sự nhất quán của xác suất
 
 .. math:: P(A \cap B) = 0 \Rightarrow P(A \cup B) = P(A) + P(B).
 
--------------------
 Không gian xác suất
 -------------------
 
@@ -87,17 +83,17 @@ Không gian xác suất
 
     2) Một hàm số thực :math:`P : \mathcal{S} \to \mathbb{R}`, được gọi là **phân bố xác suất** hay **độ đo xác suất** trên :math:`\Omega`, thỏa mãn các tính chất sau:
 
-        i) với mọi :math:`A \in \mathcal{S}` ta có:
+       i) với mọi :math:`A \in \mathcal{S}` ta có:
 
-        .. math:: 0 \leqslant P(A) \leqslant 1
+       .. math:: 0 \leqslant P(A) \leqslant 1
 
-        ii)
+       ii)
 
-        .. math:: P(\emptyset) = 0, P(\Omega) = 1
+       .. math:: P(\emptyset) = 0, P(\Omega) = 1
 
-        iii) nếu :math:`A \cap B = \emptyset` thì:
+       iii) nếu :math:`A \cap B = \emptyset` thì:
 
-        .. math:: P(A \cup B) = P(A) + P(B).
+       .. math:: P(A \cup B) = P(A) + P(B).
 
     Tổng quát hơn, nếu :math:`A_i`, với :math:`i = 1, 2, 3, \ldots` là một dãy các tập hợp con đo được và chúng đôi một không giao nhau thì:
 
@@ -113,7 +109,7 @@ Một số lưu ý:
    - phép nhân trong :math:`\mathcal{S}` là phép giao :math:`A \times B = A \cap B`;
    - phép cộng trong :math:`\mathcal{S}` là phép
  
-    .. math:: A + B = (A \cup B) \setminus (A \cap B) = (A \setminus B) \cup (B \setminus A).
+   .. math:: A + B = (A \cup B) \setminus (A \cap B) = (A \setminus B) \cup (B \setminus A).
 
 Đại số này có đặc số (số đặc trưng, characteristic) bằng :math:`2`, tức là :math:`2 A = A + A = 0` với mọi :math:`A`. Vì lý do này mà phép cộng và phép trừ là một. Chúng ta muốn :math:`\mathcal{S}` là một đại số để thuận tiện thực hiện tính toán số học.
 
@@ -128,7 +124,6 @@ Ví dụ, nếu :math:`A_1 \subset A_2 \subset \ldots` là một dãy tăng các
 
 Đẳng thức :math:`P\left(\bigcup\limits_i A_i\right) = \sum\limits_{i} P(A_i)` không được suy ra từ :math:`P(A \cup B) = P(A) + P(B)` mà là một tiên đề trong xác suất. Tiên đề này được đưa ra bởi nhà toán học người Nga Andrei Nikolaievich Kolmogorov.
 
---------------------------
 Phép cộng xác suất mở rộng
 --------------------------
 
@@ -168,7 +163,6 @@ Tương tự, ta có phép cộng xác suất:
 
     .. math:: P(A_1 \cup A_2 \cup \cdots \cup A_n) = \sum_{i=1}^n (-1)^{i+1} \sum_{j_1, j_2, \cdots, j_i} P(A_{j_1} \cap A_{j_2} \cap \cdots \cap A_{j_i}).
 
----------------------------------------
 Mô hình xác suất với vô hạn các sự kiện
 ---------------------------------------
 
@@ -183,7 +177,7 @@ Mô hình xác suất với vô hạn các sự kiện
 
 .. math:: \sum_{n=0}^{\infty} P(n) = \sum_{n=0}^\infty e^{-\lambda} \cdot \frac{\lambda^n}{n!} = e^{-\lambda} \sum_{n=0}^\infty \frac{\lambda^n}{n!} = e^{-\lambda} \cdot e^\lambda = 1.
 
-Ở biến đổi trên, :math:`\sum_{n=0}^\infty \frac{\lambda^n}{n!} = e^\lambda` là khai triển Taylor.
+Ở biến đổi trên, :math:`\sum\limits_{n=0}^\infty \frac{\lambda^n}{n!} = e^\lambda` là khai triển Taylor.
 
 .. prf:example:: 
     :label: exp-eq-dist
@@ -194,7 +188,6 @@ Mô hình xác suất với vô hạn các sự kiện
     
     Ta có thể chọn phân bố xác suất đều trên :math:`\Omega = [a; b]` theo nghĩa sau: xác suất mỗi đoạn thẳng con trên :math:`\Omega` tỷ lệ thuận với độ dài của đoạn thẳng con đó, hay :math:`P([c; d]) = (d - c) / (b - a)`.
 
------------------------------------
 Ánh xạ giữa các không gian xác suất
 -----------------------------------
 
@@ -222,7 +215,6 @@ Ta xây dựng :math:`P_2` theo công thức: với mỗi tập con :math:`B \su
 
 Giải: vì :math:`\phi` là song ánh, đối với tính phản xạ chúng ta lấy ánh xạ đồng nhất, tính đối xứng thì ánh xạ ngược của song ánh (vẫn là song ánh), bắc cầu thì ta hợp hai song ánh vẫn là song ánh.
 
---------------------------------
 Tích của các không gian xác suất
 --------------------------------
 
@@ -239,11 +231,9 @@ Tương tự ta có thể định nghĩa tích trực tiếp của :math:`n` kh�
 
     Hai phép chiếu tự nhiên từ tích :math:`(\Omega_1, P_1) \times (\Omega_2, P_2)` của hai không gian xác suất xuống :math:`(\Omega_1, P_1)` và :math:`(\Omega_2, P_2)` là hai ánh xạ bảo toàn xác suất.
 
-=====================
 Xác suất có điều kiện
 =====================
 
----------------------
 Xác suất có điều kiện
 ---------------------
 
@@ -277,7 +267,6 @@ Tương tự như vậy, :math:`A_i` xảy ra với điều kiện tất cả :m
 
 Cũng từ nhận xét trên, các biến cố có vai trò như nhau nên việc đổi vị trí không thay đổi kết quả :math:`P(A_1 \ldots A_n)`.
 
----------------------------------------
 Sự độc lập và phụ thuộc của các sự kiện
 ---------------------------------------
 
@@ -308,7 +297,6 @@ Khi đó, giả sử ta có một họ :math:`\mathcal{M}` các sự kiện.
     
     Nếu ta có một họ các sự kiện độc lập thì các sự kiện trong họ độc lập đôi một với nhau. Nhưng ngược lại chưa chắc: có những họ không độc lập mà trong đó các sự kiện độc lập từng đôi một với nhau!
 
-----------------------------
 Công thức xác suất toàn phần
 ----------------------------
 
@@ -363,7 +351,6 @@ Khi có một hệ biến cố đầy đủ, ta có thể tính xác suất củ
 
 Để trả lời câu hỏi này chúng ta sử dụng công thức Bayes.
 
----------------
 Công thức Bayes
 ---------------
 
@@ -382,11 +369,9 @@ Như vậy, để trả lời cho câu hỏi trên, ta có
 
 .. math:: P(A_2 \vert B) = \dfrac{P(A_2) \cdot P(B \vert A_2)}{P(B)} = \dfrac{\dfrac{2}{5} \cdot \dfrac{1}{5}}{\dfrac{7}{25}} = \dfrac{2}{7}.
 
-===============
 Biến ngẫu nhiên
 ===============
 
----------------
 Biến ngẫu nhiên
 ---------------
 
@@ -404,7 +389,6 @@ Giá trị :math:`\xi(\omega)` được gọi là một giá trị của biến 
 - Nếu :math:`\xi(\omega)` là một tập hữu hạn :math:`\{ \xi_1, \xi_2, \ldots, \xi_n \}` hay tập vô hạn đếm được thì :math:`\xi` được gọi là **biến ngẫu nhiên rời rạc**.
 - Nếu :math:`\xi(\omega)` là một khoảng của :math:`\mathbb{R}` hay toàn bộ :math:`\mathbb{R}` thì :math:`\xi` được gọi là **biến ngẫu nhiên liên tục**.
 
-------------------------------------
 Phân bố xác suất của biến ngẫu nhiên
 ------------------------------------
 
@@ -417,7 +401,6 @@ Phân bố xác suất của biến ngẫu nhiên
     
 Ở đây ta viết gọn :math:`P(\xi \leqslant x)` từ :math:`P(\{ \omega: \xi(\omega) \leqslant x \})`. Tập hợp :math:`\{ \omega: \xi(\omega) \leqslant x \}` có thể không thuộc một biến cố nào, do đó có thể là tập rỗng (ứng với xác suất là :math:`0`).
 
----------------------------
 Tính chất của hàm phân phối
 ---------------------------
 
@@ -444,7 +427,6 @@ Tính chất của hàm phân phối
 
 Để chứng minh các tính chất 2, 3, 4 chúng ta cần các tiên đề của sự liên tục (continunity axioms) và sẽ không đề cập ở đây.
 
------------------------
 Biến ngẫu nhiên rời rạc
 -----------------------
 
@@ -526,7 +508,6 @@ Khái niệm phân bố đều không mở rộng được lên các không gian
     
 Tham số :math:`\lambda` thể hiện số lần trung bình mà một sự kiện xảy ra trong một khoảng thời gian nhất định. Khi đó, nếu một biến ngẫu nhiên có số lần xuất hiện trung bình của một sự kiện trong thời gian :math:`t` thì nó có phân phối Poisson với tham số :math:`\lambda t`, với :math:`\lambda` là số lần trung bình trong một đơn vị thời gian.
 
-------------------------
 Biến ngẫu nhiên liên tục
 ------------------------
 
@@ -550,7 +531,6 @@ Từ định nghĩa của hàm phân phối $F(x) = P(\xi \leqslant x)$ ta có h
 
 Tính chất thứ nhất là từ định nghĩa hàm phân phối. Tính chất thứ hai suy ra từ việc cận trên của tích phân là hữu hạn.
 
---------------------------------------
 Hàm mật độ của biến ngẫu nhiên rời rạc
 --------------------------------------
 
@@ -579,7 +559,6 @@ Khi đó hàm mật độ của :math:`X` là:
     - :math:`p_i \geqslant 0`, :math:`\sum p_i = 1`, :math:`i = 1, 2, \ldots`
     - :math:`\displaystyle{P(a < X \leqslant b) = \sum_{a < x_i \leqslant b} p_i}`.
 
----------------------------------------
 Hàm mật độ của biến ngẫu nhiên liên tục
 ---------------------------------------
 
@@ -596,3 +575,18 @@ Hàm mật độ của biến ngẫu nhiên liên tục
     Với mọi :math:`x \in \mathbb{R}`, :math:`f(x) \geqslant 0` và :math:`\displaystyle{\int\limits_{-\infty}^{+\infty}f(x)\,dx = 1}`.
 
 **Ý nghĩa hình học.** Xác suất của biến ngẫu nhiên :math:`X` nhận giá trị trong :math:`[a; b]` bằng diện tích hình thang cong giới hạn bởi :math:`x = a`, :math:`x = b`, :math:`y=f(x)` và :math:`Ox`.
+
+.. raw:: html
+
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2343650775986433"
+     crossorigin="anonymous"></script>
+   <!-- First Ads -->
+   <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-2343650775986433"
+      data-ad-slot="4417625951"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+   <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+   </script>

@@ -131,7 +131,7 @@ Ta sử dụng tính chất sau của ma trận đối xứng.
 .. admonition:: Chứng minh
     :class: danger, dropdown
 
-    Theo định lí cơ bản của đại số thì mọi đa thức bậc :math:`n` trên :math:`\mathbb{R}` có đầy đủ :math:`n` nghiệm trên :math:`\mathbb{C}`. Do đó nếu gọi :math:`\lambda` là trị riêng của ma trận vuống đối xứng :math:`\bm{A}` thì ta cần chứng minh :math:`\lambda = \overline{\lambda}`, tức :math:`\lambda` là số thực.
+    Theo định lí cơ bản của đại số thì mọi đa thức bậc :math:`n` trên :math:`\mathbb{R}` có đầy đủ :math:`n` nghiệm trên :math:`\mathbb{C}`. Do đó nếu gọi :math:`\lambda` là trị riêng của ma trận vuông đối xứng :math:`\bm{A}` thì ta cần chứng minh :math:`\lambda = \overline{\lambda}`, tức :math:`\lambda` là số thực.
 
     Vì :math:`\lambda` là trị riêng của ma trận :math:`\bm{A}` cỡ :math:`n \times n` nên tồn tại vector :math:`\bm{v} \in \mathbb{C}^{n \times 1}` khác không sao cho 
 
@@ -232,37 +232,10 @@ Chúng ta hãy thử một ví dụ nhỏ.
 
     .. math:: \begin{pmatrix} x & y \end{pmatrix} \cdot \begin{pmatrix} 3 & 4 \\ 4 & -3 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}.
 
-    Đầu tiên ta tính các trị riêng của ma trận :math:`\bm{A} = \begin{pmatrix} 3 & 4 \\ 4 & -3 \end{pmatrix}`.
+    Đầu tiên ta tính các trị riêng của ma trận :math:`\bm{A} = \begin{pmatrix} 3 & 4 \\ 4 & -3 \end{pmatrix}` theo :prf:ref:`exp-eigens`. Khi đó:
 
-    Ta có
-
-    .. math:: \bm{A} - \lambda \bm{I} = \begin{pmatrix} 3 - \lambda & 4 \\ 4 & -3 - \lambda \end{pmatrix}
-
-    nên 
-        
-    .. math:: 
-
-        f(\lambda) = \lambda^2 - 25 = 0 \Rightarrow \lambda = \pm 5.
-
-    Khi :math:`\lambda = 5` thì
-
-    .. math:: \bm{A} - 5 \bm{I} = \begin{pmatrix} -2 & 4 \\ 4 & -8 \end{pmatrix} \sim \begin{pmatrix} 1 & -2 \\ 0 & 0 \end{pmatrix},
-
-    do đó :math:`x_1 - 2 x_2 = 0`, tương đương :math:`x_1 = 2 x_2`. Khi đó mọi vector :math:`(x_1, x_2)` có dạng
-
-    .. math:: (x_1, x_2) = (2 x_2, x_2) = x_2 (2, 1), \quad x_2 \in \mathbb{R},
-
-    nên vector riêng ứng với trị riêng :math:`\lambda = 5` là :math:`(2, 1)` và ta chuẩn hóa thành :math:`(2/\sqrt{5}, 1/\sqrt{5})`.
-
-    Khi :math:`\lambda = -5` thì
-
-    .. math:: \bm{A} - (-5) \bm{I} = \begin{pmatrix} 8 & 4 \\ 4 & 2 \end{pmatrix} \sim \begin{pmatrix} 2 & 1 \\ 0 & 0 \end{pmatrix},
-
-    do đó :math:`2 x_1 + x_2 = 0`, tương đương :math:`x_2 = -2 x_1`. Khi đó mọi vector :math:`(x_1, x_2)` có dạng
-
-    .. math:: (x_1, x_2) = (x_1, -2 x_1) = x_1 (1, -2), \quad x_1 \in \mathbb{R},
-
-    nên vector riêng ứng với trị riêng :math:`\lambda = -5` là :math:`(1, -2)` và ta chuẩn hóa thành :math:`(1/\sqrt{5}, -2/\sqrt{5})`.
+    - tương ứng với trị riêng :math:`\lambda_1 = 5` là vector riêng :math:`\bm{v}_1 = (2, 1)` và ta chuẩn hóa thành :math:`(2/\sqrt{5}, 1/\sqrt{5})`;
+    - tương ứng với trị riêng :math:`\lambda_2 = -5` là vector riêng :math:`\bm{v}_2 = (1, -2)` và ta chuẩn hóa thành :math:`(1\sqrt{5}, -2\sqrt{5})`.
 
     Như vậy ma trận :math:`\bm{A}` được chéo hóa thành
 

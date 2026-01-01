@@ -195,21 +195,27 @@ Khi đó
 .. prf:algorithm:: 
     :label: alg-multivariate-polydiv
 
-    1. Khởi tạo :math:`p \gets f`; :math:`f`, :math:`q_1`, ..., :math:`q_a \gets 0`; :math:`i \gets 0`
+    1. Khởi tạo
+
+       - :math:`p \gets f`
+       - :math:`f`, :math:`q_1`, ..., :math:`q_a \gets 0`
+       - :math:`i \gets 1`
+
     2. While :math:`p \neq 0` do
 
-       - :math:`i \gets i + 1`
        - if :math:`\mathrm{LT}(g_i) \mid \mathrm{LT}(p)` then
          
-         - :math:`q_i \gets q_i + \mathrm{LT}(p) / \mathrm{LT}(g_i)`
-         - :math:`p \gets p - \mathrm{LT}(p) / \mathrm{LT}(g_i)`
-         - :math:`i \gets 0`
-
-       - if :math:`i = a` then
+         - :math:`t \gets \mathrm{LT}(p) / \mathrm{LT}(g_i)`
+         - :math:`q_i \gets q_i + t`
+         - :math:`p \gets p - t \cdot g_i`
+         - :math:`i \gets 1`
+       
+       - :math:`i \gets i + 1`
+       - if :math:`i = a + 1` then
 
          - :math:`r \gets r + \mathrm{LT}(p)`
          - :math:`p \gets p - \mathrm{LT}(p)`
-         - :math:`i \gets 0`
+         - :math:`i \gets 1`
 
     3. Return :math:`r`, :math:`q_1`, ..., :math:`q_a`
 

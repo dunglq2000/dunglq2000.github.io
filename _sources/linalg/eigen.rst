@@ -1,8 +1,6 @@
-*************************
 Trị riêng và vector riêng
 *************************
 
-=========================
 Trị riêng và vector riêng
 =========================
 
@@ -15,11 +13,52 @@ Trị riêng và vector riêng
 
     Giá trị :math:`\lambda` khi đó gọi là **trị riêng** (hay **eigenvalue**) tương ứng với vector riêng :math:`\bm{v}`.
 
-Chuyển vế đẳng thức trên ta có :math:`(\bm{A} - \lambda \bm{I}) \cdot \bm{v} = \bm{0}`. Ở đây :math:`\bm{I}` là ma trận cùng cỡ với :math:`\bm{A}` và có các phần tử ở hàng :math:`i` và cột :math:`i` bằng :math:`1` (ma trận đơn vị).
+Chuyển vế đẳng thức trên ta có :math:`(\bm{A} - \lambda \bm{I}) \bm{v} = \bm{0}`. Ở đây :math:`\bm{I}` là ma trận cùng cỡ với :math:`\bm{A}` và có các phần tử ở hàng :math:`i` và cột :math:`i` bằng :math:`1` (ma trận đơn vị).
 
 Như vậy, để phương trình có nghiệm khác không thì ma trận :math:`\bm{A} - \lambda \bm{I}` suy biến, hay :math:`\det (\bm{A} - \lambda \bm{I}) = 0`.
 
-Mỗi nghiệm :math:`\lambda` của phương trình $\det (\bm{A} - \lambda \bm{I}) = 0$ là một trị riêng. Với mỗi trị riêng :math:`\lambda` ta tìm được các vector riêng :math:`\bm{v}` tương ứng.
+Mỗi nghiệm :math:`\lambda` của phương trình :math:`\det (\bm{A} - \lambda \bm{I}) = 0` là một trị riêng. Với mỗi trị riêng :math:`\lambda` ta tìm được các vector riêng :math:`\bm{v}` tương ứng.
+
+.. prf:example:: 
+    :label: exp-eigens
+
+    Trị riêng của ma trận :math:`\begin{pmatrix} 3 & 4 \\ 4 & -3 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}` là :math:`\pm 5`, trong đó:
+    
+    - tương ứng với trị riêng :math:`\lambda_1 = 5` là vector riêng :math:`\bm{v}_1 = (2, 1)`;
+    - tương ứng với trị riêng :math:`\lambda_2 = -5` là vector riêng :math:`\bm{v}_2 = (1, -2)`.
+
+.. admonition:: Chứng minh
+    :class: danger, dropdown
+
+    Ta có
+
+    .. math:: \bm{A} - \lambda \bm{I} = \begin{pmatrix} 3 - \lambda & 4 \\ 4 & -3 - \lambda \end{pmatrix}
+
+    nên 
+        
+    .. math:: 
+
+        \det(\bm{A} - \lambda \bm{I}) = \lambda^2 - 25 = 0 \Rightarrow \lambda = \pm 5.
+
+    Khi :math:`\lambda = 5` thì
+
+    .. math:: \bm{A} - 5 \bm{I} = \begin{pmatrix} -2 & 4 \\ 4 & -8 \end{pmatrix} \sim \begin{pmatrix} 1 & -2 \\ 0 & 0 \end{pmatrix},
+
+    do đó :math:`x_1 - 2 x_2 = 0`, tương đương :math:`x_1 = 2 x_2`. Khi đó mọi vector :math:`(x_1, x_2)` có dạng
+
+    .. math:: (x_1, x_2) = (2 x_2, x_2) = x_2 (2, 1), \quad x_2 \in \mathbb{R},
+
+    nên vector riêng ứng với trị riêng :math:`\lambda = 5` là :math:`(2, 1)`.
+
+    Khi :math:`\lambda = -5` thì
+
+    .. math:: \bm{A} - (-5) \bm{I} = \begin{pmatrix} 8 & 4 \\ 4 & 2 \end{pmatrix} \sim \begin{pmatrix} 2 & 1 \\ 0 & 0 \end{pmatrix},
+
+    do đó :math:`2 x_1 + x_2 = 0`, tương đương :math:`x_2 = -2 x_1`. Khi đó mọi vector :math:`(x_1, x_2)` có dạng
+
+    .. math:: (x_1, x_2) = (x_1, -2 x_1) = x_1 (1, -2), \quad x_1 \in \mathbb{R},
+
+    nên vector riêng ứng với trị riêng :math:`\lambda = -5` là :math:`(1, -2)`.
 
 .. prf:property:: Một số tính chất của trị riêng và vector riêng
     :label: prop-eigens
@@ -35,7 +74,6 @@ Mỗi nghiệm :math:`\lambda` của phương trình $\det (\bm{A} - \lambda \bm
     1. :math:`\mathrm{tr} (\bm{A} \bm{B}) = \mathrm{tr} (\bm{B} \bm{A})`.
     2. :math:`\mathrm{rank} (\bm{A} \bm{B}) \leqslant \min(\mathrm{rank}(\bm{A}), \mathrm{rank}(\bm{B}))`.
 
-=======
 Bài tập
 =======
 
@@ -75,7 +113,7 @@ Vậy phương trình đặc trưng là :math:`P_3(\lambda) = -\lambda^3 + 1`. T
 
 ----
 
-**Bài 4.** Cho ma trận :math:`\bm{A}_{n \times n}`, :math:`\bm{A}_{ij} \geqslant 0`. Giả sử ma trận có đủ :math:`n` trị riêng thực. Chứng minh rằng $\lambda_1^k + \lambda_2^k + \ldots + \lambda_n^k \geqslant 0$ với mọi $k \in \mathbb{N}$.
+**Bài 4.** Cho ma trận :math:`\bm{A}_{n \times n}`, :math:`\bm{A}_{ij} \geqslant 0`. Giả sử ma trận có đủ :math:`n` trị riêng thực. Chứng minh rằng :math:`\lambda_1^k + \lambda_2^k + \ldots + \lambda_n^k \geqslant 0` với mọi :math:`k \in \mathbb{N}`.
 
 Ta thấy rằng với :math:`k = 1` thì :math:`\lambda_1 + \ldots + \lambda_n = \mathrm{tr}(\bm{A}) \geqslant 0`.
 

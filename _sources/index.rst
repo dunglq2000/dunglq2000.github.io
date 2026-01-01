@@ -68,16 +68,24 @@ Bên lề sách của Fermat
    :maxdepth: 2
 
    stuff/index
-   russia/index
-   mathematicians/index
-   men-of-mathematics/index
    game-programming/index
+
+.. .. only:: html
+
+..    .. toctree:: 
+..       :maxdepth: 2
+
+..    men-of-mathematics/index
+..    russia/index
+..    mathematicians/index
 
 Tài liệu tham khảo
 ==================
 
-.. bibliography::
-   :style: unsrt
+.. toctree:: 
+   :maxdepth: 2
+
+   myrefs
 
 .. raw:: html
 

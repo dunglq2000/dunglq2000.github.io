@@ -117,7 +117,7 @@ Vậy mở rộng từ :math:`\mathbb{Q}(\sqrt{6})` lên :math:`\mathbb{Q}(\sqrt
 
     Ta chứng minh :math:`\mathbb{Q}(\sqrt{2}, \sqrt{3}) \subset \mathbb{Q}(\sqrt{2} + \sqrt{3})`.
 
-    Do :math:`\sqrt{2} + \sqrt{3}` nên nghịch đảo :math:`\dfrac{1}{\sqrt{2} + \sqrt{3}} = \sqrt{3} - \sqrt{2} \in \mathbb{Q}(\sqrt{2} + \sqrt{3})`.
+    Do :math:`\sqrt{2} + \sqrt{3} \in \mathbb{Q}(\sqrt{2} + \sqrt{3})` nên nghịch đảo :math:`\dfrac{1}{\sqrt{2} + \sqrt{3}} = \sqrt{3} - \sqrt{2} \in \mathbb{Q}(\sqrt{2} + \sqrt{3})`.
 
     Khi đó, :math:`\dfrac{1}{2} \cdot (\sqrt{2} + \sqrt{3}) \pm \dfrac{1}{2} \cdot (\sqrt{3} - \sqrt{2}) \in \mathbb{Q}(\sqrt{2} + \sqrt{3})`.
 
@@ -176,7 +176,7 @@ Splitting Field
     
     .. math:: p(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0
         
-    trên :math:`F[x]`, ở đây :math:`a_i \in F` với mọi :math:`i = 1, 2, \ldots`
+    trên :math:`F[x]`, ở đây :math:`a_i \in F` với mọi :math:`i = 0, 1, 2, \ldots`
 
     Trường mở rộng :math:`E` của trường :math:`F` được gọi là **trường phân rã** (hay **splitting field**) của :math:`p(x)` nếu tồn tại các phần tử :math:`\alpha_1`, :math:`\alpha_2`, ..., :math:`\alpha_n` thuộc :math:`E` sao cho :math:`E = F(\alpha_1, \alpha_2, \ldots, \alpha_n)` và
 
@@ -280,6 +280,9 @@ Nếu :math:`f(x)` là đa thức trong :math:`F[x]` và :math:`E` là trường
 
     là tự đẳng cấu trên :math:`\mathbb{Q}(\sqrt{3}, \sqrt{5})` mà cố định :math:`\mathbb{Q}(\sqrt{5})`.
 
+.. admonition:: Chứng minh
+    :class: danger, dropdown
+    
     Thật vậy, giả sử :math:`a = s + t \sqrt{5}` và :math:`b = u + v \sqrt{5}` với :math:`s, t, u, v \in \mathbb{Q}`. Khi đó
 
     .. math:: \sigma(a + b\sqrt{3}) = a - b\sqrt{3} = s + t\sqrt{5} - (u + v\sqrt{5}) \sqrt{3} = (s - u\sqrt{3}) + (t - v\sqrt{3}) \sqrt{5}.

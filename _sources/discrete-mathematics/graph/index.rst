@@ -1,7 +1,7 @@
 Lý thuyết đồ thị
 ****************
 
-Phần này mình sử dụng các quyển sách dành cho học sinh chuyên Tin :cite:`TLCT1`.
+Phần này mình sử dụng các quyển sách dành cho học sinh chuyên Tin :cite:`TLCTin1`.
 
 
 Các định nghĩa cơ bản

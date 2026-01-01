@@ -1,4 +1,3 @@
-======================================
 Kí hiệu và công thức toán trong mật mã
 ======================================
 
@@ -9,7 +8,6 @@ nhiều người kí hiệu mà không hiểu rõ nó là gì. Trong bài viết
 này mình sẽ nói về các kí hiệu toán học mà mình sẽ dùng trong 
 các bài viết của mình, cũng như quan điểm về chúng.
 
-----------------------------------------
 Có nên sử dụng kí hiệu mọi lúc, mọi nơi?
 ----------------------------------------
 

@@ -1,22 +1,20 @@
 Ngoài lề
 ########
 
-.. toctree:: 
-    :maxdepth: 2
+.. .. toctree:: 
+..    :maxdepth: 2
 
-    game/index
-    graphics
-    about-godel
-    about-stoicism
+..    game/index
+..    about-godel
+    
+.. .. only:: html
 
-.. about-education
+..    .. toctree:: 
+..       :maxdepth: 2
 
-.. only:: html
-
-    .. toctree:: 
-        :maxdepth: 2
-
-        latex/index
+..       latex/index
+..       about-education
+..       about-stoicism
         
 Sưu tầm 1
 ==========
@@ -74,6 +72,16 @@ Sưu tầm 2
 Задание 2. Расположите следующие функции в порядке увеличения скорости из роста, отметив среди них :math:`\Theta`-эквивалентные: :math:`f(n) = 4^{\log n}`, :math:`g(n) = 4n^2`, :math:`h(n) = n \log(n^4)`.
 
 Задание 3. Пусть :math:`f(n)` и :math:`g(n)` - асимптотически положительные функции. Докажите или опровергните следующее утверждение: :math:`f(n) + g(n) = O(\min (f(n), g(n)))`.
+
+Một số đồ thị hàm số sưu tầm
+============================
+
+Để vẽ trái tim như ở `đây <https://vk.com/wall-216361286_445>`_ ta dùng phương trình
+
+.. math::
+    y = x^{2/3} + 0,9 (3,3 - x^2)^{1/2} \cdot \sin(m \cdot \pi \cdot x)
+
+với :math:`m = 6,50`.
 
 .. raw:: html
 

@@ -1,8 +1,74 @@
-=============================
+Đạo hàm riêng
+=============
+
+Đạo hàm riêng
+-------------
+
+.. prf:definition:: 
+   :label: def-partial-derivative
+
+   Xét hàm :math:`z = f(x, y)` xác định trên :math:`D` và điểm :math:`M_0(x_0, y_0) \in D`.
+
+   1. Cho :math:`x` thay đổi, cố định :math:`y = y_0`, ta có hàm theo biến :math:`x`. Nếu hàm số có đạo hàm tại :math:`x = x_0` thì đạo hàm đó được gọi là **đạo hàm riêng** (hay **partial derivative**) của :math:`z` theo :math:`x`, kí hiệu là :math:`z'_x` hoặc :math:`\dfrac{\partial z}{\partial x}`. Đặt 
+
+      .. math:: \Delta_x z = f(x_0 + \Delta x, y_0) - f(x_0, y_0)
+
+      thì
+
+      .. math:: \frac{\partial z}{\partial x} = \lim_{\Delta x \to 0} \frac{\Delta_x z}{\Delta x}.
+
+   2. Tương tự, đạo hàm riêng của :math:`z` đối với :math:`y` tại :math:`(x_0, y_0)` là :math:`\dfrac{\partial z}{\partial y}`.
+
+Vi phân toàn phần
+-----------------
+
+Nếu số gia
+
+.. math:: \Delta z = f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0, y_0)
+
+có thể biểu diễn dưới dạng
+
+.. math:: \Delta z = A \cdot \Delta x + B \cdot \Delta y + \alpha \beta,
+
+trong đó :math:`A`, :math:`B` không phụ thuộc :math:`\Delta x`, :math:`\Delta y`; :math:`\alpha \to 0` khi 
+
+.. math:: \beta = \sqrt{(\Delta x)^2 + (\Delta y)^2} \to 0
+
+thì ta nói hàm số :math:`z` khả vi tại :math:`(x_0, y_0)`. Phần chính bậc nhất
+
+.. math:: dz = A \cdot \Delta x + B \cdot \Delta y
+
+được gọi là **vi phân toàn phần** của :math:`z = f(x, y)` tại :math:`(x_0, y_0)`.
+
+.. note:: 
+
+   - nếu :math:`z` khả vi tại mọi điểm của :math:`D` thì nó khả vi trên :math:`D`;
+   - :math:`dz` là phần chính của :math:`\Delta z`.
+   
+.. prf:theorem:: 
+   :label: thm-partial-der-1
+
+   Nếu :math:`z` khả vi tại :math:`M_0(x_0, y_0)` thì tồn tại :math:`z_x'(M_0)`, :math:`z_y'(M_0)` và 
+
+   .. math:: dz = z_x'(M_0) \Delta x + z_y'(M_0) \Delta y.
+
+.. prf:theorem:: 
+   :label: thm-partial-der-2
+
+   Nếu :math:`z = f(x, y)` có các đạo hàm riêng ở lân cận của :math:`M_0(x_0, y_0)` và các đạo hàm riêng ấy liên tục tại :math:`M_0(x_0, y_0)` thì :math:`f(x, y)` khả vi tại :math:`M_0(x_0, y_0)` và 
+
+   .. math:: dz = z_x' \Delta x + z_y' \Delta y.
+
+.. prf:example:: 
+   :label: exp-partial-der-1
+
+   Cho :math:`z = x^2 e^y + y^3`. Khi đó :math:`z_x' = 2x e^y`, :math:`z_y' = x^2 e^y + 3y^2`
+   
+   .. math:: \Longrightarrow dz = 2x e^y \, dx + (x^2 e^y + 3y^2) \, dy.
+
 Đạo hàm một số hàm nhiều biến
 =============================
 
----------------------------------
 Hàm số cho giá trị là số vô hướng
 ---------------------------------
 	
@@ -66,7 +132,6 @@ Khi đó đạo hàm của hàm :math:`f` theo ma trận :math:`\bm{X}` là
 
 Như vậy đạo hàm theo ma trận cũng là ma trận cùng cỡ với ma trận đầu vào.
 
-----------------------------
 Hàm số cho giá trị là vector
 ----------------------------
 

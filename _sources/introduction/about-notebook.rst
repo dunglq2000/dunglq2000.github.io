@@ -143,7 +143,6 @@ Kết quả sẽ là:
 
         print("Hello, World")
 
-
 Tiếng Việt là nền tảng
 ----------------------
 

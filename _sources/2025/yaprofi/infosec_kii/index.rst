@@ -69,8 +69,8 @@
 
 .. code-block:: php
 
-   :math:`userName = `_POST['userName'];
-   :math:`password = `_POST['password'];
+   $userName = $_POST['userName'];
+   $password = $_POST['password'];
    $sqlQuery = "select * from users 
                where user_name = '".$userName."' 
                and user_password = '".$password."';";

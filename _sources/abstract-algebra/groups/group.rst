@@ -75,7 +75,7 @@ Nhóm và nhóm con
     :label: def-group-order
     
     **Order** (hay **порядок**) của nhóm :math:`G` là lực lượng (hay 
-    số phần tử, **carninality**, **мощность**) của nhóm đó 
+    số phần tử, **cardinality**, **мощность**) của nhóm đó 
     và kí hiệu là :math:`\lvert G \rvert`.
 
 Đối với nhóm có vô hạn phần tử, ta quy ước order của nhóm 

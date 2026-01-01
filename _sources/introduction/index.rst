@@ -1,4 +1,3 @@
-#################
 Những lời nói đầu
 #################
 
@@ -7,5 +6,5 @@ Những lời nói đầu
 
     about-maths
     about-notebook
-    about-quotations
+    about-quotation
     about-notation

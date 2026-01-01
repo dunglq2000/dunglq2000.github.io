@@ -3,9 +3,9 @@ Trường
 
 .. toctree:: 
 
-    field
-    ideal
-    ring-homomorphism
+   field
+   ideal
+   ring-homomorphism
 
 .. raw:: html
 
