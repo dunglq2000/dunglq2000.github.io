@@ -1,15 +1,15 @@
-Đại số Bool và mật mã học
+Hàm Boolean và mật mã học
 #########################
 
 .. toctree:: 
-    :numbered:
-    :maxdepth: 2
+   :numbered:
+   :maxdepth: 2
 
-    intro
-    boolean-algebra/index
-    block/block-cipher
-    stream/stream-cipher
-    mac
+   boolean-function/index
+   cryptographic-properties
+   block-cipher/index
+   stream-cipher/index
+   mac
 
 .. raw:: html
 

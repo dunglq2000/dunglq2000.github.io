@@ -213,13 +213,13 @@ như sau
 +------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 | :math:`9`  | :math:`224` | :math:`15`  | :math:`236` | :math:`222` | :math:`122` | :math:`148` | :math:`176` | :math:`188` | :math:`220` | :math:`232` | :math:`40`  | :math:`80`  | :math:`78`  | :math:`51`  | :math:`10`  | :math:`74`  |
 +------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-| :math:`10` | :math:`167` | :math:`151` | :math:`96`  | :math:`115` | :math:`30`  | :math:`0`   | :math:` 98` | :math:`68`  | :math:`26`  | :math:`184` | :math:`56`  | :math:`130` | :math:`100` | :math:`159` | :math:`38`  | :math:`65`  |
+| :math:`10` | :math:`167` | :math:`151` | :math:`96`  | :math:`115` | :math:`30`  | :math:`0`   | :math:`98`  | :math:`68`  | :math:`26`  | :math:`184` | :math:`56`  | :math:`130` | :math:`100` | :math:`159` | :math:`38`  | :math:`65`  |
 +------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 | :math:`11` | :math:`173` | :math:`69`  | :math:`70`  | :math:`146` | :math:`39`  | :math:`94`  | :math:`85`  | :math:`47`  | :math:`140` | :math:`163` | :math:`165` | :math:`125` | :math:`105` | :math:`213` | :math:`149` | :math:`59`  |
 +------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 | :math:`12` | :math:`7`   | :math:`88`  | :math:`179` | :math:`64`  | :math:`134` | :math:`172` | :math:`29`  | :math:`247` | :math:`48`  | :math:`55`  | :math:`107` | :math:`228` | :math:`136` | :math:`217` | :math:`231` | :math:`137` |
 +------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-| :math:`13` | :math:`225` | :math:`27`  | :math:`131` | :math:`73`  | :math:`76`  | :math:`63`  | :math:`248` | :math:`254` | :math:`141` | :math:`83`  | :math:`170` | :math:`144` | :math:`202` | :math:`216` | :math:`133` | :math:` 97` |
+| :math:`13` | :math:`225` | :math:`27`  | :math:`131` | :math:`73`  | :math:`76`  | :math:`63`  | :math:`248` | :math:`254` | :math:`141` | :math:`83`  | :math:`170` | :math:`144` | :math:`202` | :math:`216` | :math:`133` | :math:`97`  |
 +------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 | :math:`14` | :math:`32`  | :math:`113` | :math:`103` | :math:`164` | :math:`45`  | :math:`43`  | :math:`9`   | :math:`91`  | :math:`203` | :math:`155` | :math:`37`  | :math:`208` | :math:`190` | :math:`229` | :math:`108` | :math:`82`  |
 +------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
@@ -386,25 +386,27 @@ Ta sử dụng thuật toán RSA để mã hóa với tham số sau
 
 .. math:: 
 
-    n = & 307113764813174451979648861837374183706400686964058131652523053759767112686 \\
-        & 921105760986215994148574439656212523327564727423276973650662361700716117034 \\
-        & 585310519473492500005549242633169443931102631059829073180528952729440631440 \\
-        & 857431430574567858285873536218804878054530675205445624011186425555088867207 \\
-        & 5353043 \\
-
-    e = & 5.
+    \begin{array}{cl}
+        n = & 307113764813174451979648861837374183706400686964058131652523053759767112686 \\
+            & 921105760986215994148574439656212523327564727423276973650662361700716117034 \\
+            & 585310519473492500005549242633169443931102631059829073180528952729440631440 \\
+            & 857431430574567858285873536218804878054530675205445624011186425555088867207 \\
+            & 5353043 \\
+        e = & 5.
+    \end{array}
 
 Ta chặn được hai bản mã:
 
 .. math:: 
 
-    c1 = & 693089265758848025485688850665080349728312487495309688707596506807354538873 \\
-        & 067996032536142769206361054315964464537700685311216289298705857554525830204 \\
-        & 6252205886190035304282857903311014974554686997348541958002897243 \\
-
-    c2 = & 693089265758848025485688850665080349728313078514173314915077310887781132564 \\
-        & 247507141242724120234983668164062692763390490140270935400218398173406875322 \\
-        & 8613850558221595769683504261263861404892836544032097068963073024.
+    \begin{array}{cl}
+        c1 = & 693089265758848025485688850665080349728312487495309688707596506807354538873 \\
+            & 067996032536142769206361054315964464537700685311216289298705857554525830204 \\
+            & 6252205886190035304282857903311014974554686997348541958002897243 \\
+        c2 = & 693089265758848025485688850665080349728313078514173314915077310887781132564 \\
+            & 247507141242724120234983668164062692763390490140270935400218398173406875322 \\
+            & 8613850558221595769683504261263861404892836544032097068963073024.
+    \end{array}
 
 Hãy giải mã các thông điệp, biết rằng bản rõ :math:`m_1` và :math:`m_2` có liên hệ :math:`m_2 = m_1 + 1`.
 
@@ -638,8 +640,6 @@ Kết quả giải mã là
 
     EVALUATION OF THE SITUATION UNTIL NOW IT HAD TO BE EXPECTED THAT THE ENEMY WOULD TRY TO CROSS THE DANUBE WITH THE TROOPS ASSEMBLING AT VIDIN LOMPALANKA AND NEAR DRUTSCHUK WITH THE GOAL TO CUT OFF THE RAILWAYS BETWEEN ORSOVA AND CRAIOVA AND TO PUSH FORWARD TO BUCHAREST SINCE NOVEMBER 1 1918 IT APPEARS THAT THE SERBIAN ARMIES TOGETHER WITH THREE FRENCH DIVISIONS AREENGAGED IN AN ADVANCE TOWARD BELGRADE SEMENDRIA AND THE INTENDED ATTACK AT VIDI AND LOM PALANKA SEEMS TO HAVE BEEN ABANDONED IT HAS TO BE EXPECTED THE DEPLOYMENT OF STRONGER FORCES AT THE DANUBE SOUTH OF SVISTOVRUSTSCHUK SPECIALLY AFTER THE PEACE AGREEMENT OF TURKEY HENCE IT IS MOST LIKELY THAT THE SERBIAN ARMIES REINFORCED BY THE FRENCH INTEND TO CROSS THE DANUBE NEAR BELGRADE SEMENDIA AND THE INTO SOUTHERN REPEAT SOUTHERN HUNGARY WHILE THE TASK OF THE FRENCH ARMY MARCHING SOUTH OF SVISTOV RUTSCHUK REMAINS THE OFFENSIVE TOWARD BUCHAREST IN CONJUNCTION WITH THIS OPERATION IT CANNOT BE RULED OUT THAT THE ROMANIAN FORCES COMING FROM MOLDAVIA OVER THE PASSES OF TOELGYESGIMES AND OITOS WILL INVADE TRANSYLVANIA THUS THE LINES OF COMMUNICATIONS IN THE REAR OF THE OCCUPATION ARMY WHICH HAVE UP TO NOW AS A RESULT OF IS THREATENED WITH ATTACK AND THE FURTHER OCCUPATION OF THE WALL ACHIAAS LAID DOWN IN ORDER FROM OKHEAD QUARTERS 2RMNR11161 WITHOUT DOUBT AND WITH REGARD TO THE AMMUNITION FOOD AND THE COAL STOCK SIT IS UNFEASIBLE IF THE GENERAL ARM ISTICE DOES NOT BECOME EFFECTIVE IN THE FORESEEABLE FUTURE IT IS SUGGESTED THAT THE OCCUPATION ARMY BE WITHDRAWN ATONCE FROM ROMANIA AND TOGETHER WITH THE GERMAN UNITS OF THE FIRST ARMY TO START THE MARCH TOUPPERSILES IA THROUGH HUNGARY APPROVAL IS REQUESTED SIGNED KMIAGROP
 
-Ở cuối đoạn có ghi `SIGNED KMIAGROP` nên họ của tác giả là `KMIAGROP`.
-
 Задача 8. Загадочная ошибка
 ===========================
 
@@ -702,22 +702,22 @@ Như vậy, quá trình sinh khóa có dạng
 
 với :math:`k^{(i - 1)}` là khóa được sinh trước đó, :math:`k^{(0)}` là khóa đầu vào để sinh toàn bộ dãy khóa, và :math:`C^{(i)}` là hằng số của vòng, gồm
 
-- 0x6ea276726c487ab8,
-- 0x5d27bd10dd849401,
-- 0xdc87ece4d890f4b3,
-- 0xba4eb92079cbeb02,
-- 0xb2259a96b4d88e0b,
-- 0xe7690430a44f7f03,
-- 0x7bcd1b0b73e32ba5,
-- 0xb79cb140f2551504,
-- 0x156f6d791fab511d,
-- 0xeabb0c502fd18105,
-- 0xa74af7efab73df16,
-- 0x0dd208608b9efe06,
-- 0xc9e8819dc73ba5ae,
-- 0x50f5b570561a6a07,
-- 0xf6593616e6055689,
-- 0xadfba18027aa2a08.
+- ``0x6ea276726c487ab8``,
+- ``0x5d27bd10dd849401``,
+- ``0xdc87ece4d890f4b3``,
+- ``0xba4eb92079cbeb02``,
+- ``0xb2259a96b4d88e0b``,
+- ``0xe7690430a44f7f03``,
+- ``0x7bcd1b0b73e32ba5``,
+- ``0xb79cb140f2551504``,
+- ``0x156f6d791fab511d``,
+- ``0xeabb0c502fd18105``,
+- ``0xa74af7efab73df16``,
+- ``0x0dd208608b9efe06``,
+- ``0xc9e8819dc73ba5ae``,
+- ``0x50f5b570561a6a07``,
+- ``0xf6593616e6055689``,
+- ``0xadfba18027aa2a08``.
 
 Phương trình mã hóa có dạng
 

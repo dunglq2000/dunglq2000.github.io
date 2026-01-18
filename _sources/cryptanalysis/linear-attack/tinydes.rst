@@ -45,71 +45,68 @@ Khi đó, khóa :math:`K_i` ở vòng thứ :math:`i` (với :math:`i = 1, 2, 3`
 
 Đặt :math:`8` bits khi ghép :math:`KL_i \Vert KR_i` là :math:`k_0 k_1 k_2 k_3 k_4 k_5 k_6 k_7`, kết quả là :math:`6` bits :math:`k_5 k_1 k_3 k_2 k_7 k_0`.
 
-.. admonition:: tinydes.py
-    :class: dropdown
+.. code-block:: python
 
-    .. code-block:: python
+    # tindeys.py
 
-        # tindeys.py
-
-        sbox = [
-            0xE, 0x4, 0xD, 0x1, 0x2, 0xF, 0xB, 0x8, 0x3, 0xA, 0x6, 0xC, 0x5, 0x9, 0x0, 0x7,
-            0x0, 0xF, 0x7, 0x4, 0xE, 0x2, 0xD, 0x1, 0xA, 0x6, 0xC, 0xB, 0x9, 0x5, 0x3, 0x8,
-            0x4, 0x1, 0xE, 0x8, 0xD, 0x6, 0x2, 0xB, 0xF, 0xC, 0x9, 0x7, 0x3, 0xA, 0x5, 0x0,
-            0xF, 0xC, 0x8, 0x2, 0x4, 0x9, 0x1, 0x7, 0x5, 0xB, 0x3, 0xE, 0xA, 0x0, 0x6, 0xD
-        ]
+    sbox = [
+        0xE, 0x4, 0xD, 0x1, 0x2, 0xF, 0xB, 0x8, 0x3, 0xA, 0x6, 0xC, 0x5, 0x9, 0x0, 0x7,
+        0x0, 0xF, 0x7, 0x4, 0xE, 0x2, 0xD, 0x1, 0xA, 0x6, 0xC, 0xB, 0x9, 0x5, 0x3, 0x8,
+        0x4, 0x1, 0xE, 0x8, 0xD, 0x6, 0x2, 0xB, 0xF, 0xC, 0x9, 0x7, 0x3, 0xA, 0x5, 0x0,
+        0xF, 0xC, 0x8, 0x2, 0x4, 0x9, 0x1, 0x7, 0x5, 0xB, 0x3, 0xE, 0xA, 0x0, 0x6, 0xD
+    ]
 
 
-        def Xor(a: list[int], b: list[int]) -> list[int]:
-            return [x^y for x, y in zip(a, b)]
+    def Xor(a: list[int], b: list[int]) -> list[int]:
+        return [x^y for x, y in zip(a, b)]
 
 
-        def Expand(R: list[int]) -> list[int]:
-            return [R[2], R[3], R[1], R[2], R[1], R[0]]
+    def Expand(R: list[int]) -> list[int]:
+        return [R[2], R[3], R[1], R[2], R[1], R[0]]
 
 
-        def SBox(R: list[int]) -> list[int]:
-            row = int("".join(map(str, [R[0], R[5]])), 2)
-            col = int("".join(map(str, R[1:5])), 2)
-            
-            return list(map(int, format(sbox[row*16 + col], "04b")))
+    def SBox(R: list[int]) -> list[int]:
+        row = int("".join(map(str, [R[0], R[5]])), 2)
+        col = int("".join(map(str, R[1:5])), 2)
+        
+        return list(map(int, format(sbox[row*16 + col], "04b")))
 
 
-        def PBox(R: list[int]) -> list[int]:
-            return [R[2], R[0], R[3], R[1]]
+    def PBox(R: list[int]) -> list[int]:
+        return [R[2], R[0], R[3], R[1]]
 
 
-        def PBox_inv(R: list[int]) -> list[int]:
-            return [R[1], R[3], R[0], R[2]]
+    def PBox_inv(R: list[int]) -> list[int]:
+        return [R[1], R[3], R[0], R[2]]
 
 
-        def Compress(K: list[int], round: int) -> list[int]:
-            left, right = K[:4], K[4:]
-            if round == 0 or round == 2:
-                left = left[1:] + left[:1]
-                right = right[1:] + right[:1]
-            elif round == 1:
-                left = left[2:] + left[:2]
-                right = right[2:] + right[:2]
+    def Compress(K: list[int], round: int) -> list[int]:
+        left, right = K[:4], K[4:]
+        if round == 0 or round == 2:
+            left = left[1:] + left[:1]
+            right = right[1:] + right[:1]
+        elif round == 1:
+            left = left[2:] + left[:2]
+            right = right[2:] + right[:2]
 
-            Ki = left + right
-            return left, right, [Ki[5], Ki[1], Ki[3], Ki[2], Ki[7], Ki[0]]
+        Ki = left + right
+        return left, right, [Ki[5], Ki[1], Ki[3], Ki[2], Ki[7], Ki[0]]
 
 
-        def encrypt_block(plaintext: list[int], key: list[int]) -> list[int]:
-            keys = [key]
-            left, right = key[:4], key[4:]
-            for i in range(3):
-                left, right, key = Compress(left + right, i)
-                keys.append(key)
+    def encrypt_block(plaintext: list[int], key: list[int]) -> list[int]:
+        keys = [key]
+        left, right = key[:4], key[4:]
+        for i in range(3):
+            left, right, key = Compress(left + right, i)
+            keys.append(key)
 
-            left, right = plaintext[:4], plaintext[4:]
-            for i in range(3):
-                left, right = right, Xor(left, PBox(SBox(Xor(Expand(right), keys[i+1]))))
-            
-            return left + right
+        left, right = plaintext[:4], plaintext[4:]
+        for i in range(3):
+            left, right = right, Xor(left, PBox(SBox(Xor(Expand(right), keys[i+1]))))
+        
+        return left + right
 
-        #print(encrypt_block([0, 1, 0, 1, 1, 1, 0, 0], [1, 0, 0, 1, 1, 0, 1, 0]))
+    #print(encrypt_block([0, 1, 0, 1, 1, 1, 0, 0], [1, 0, 0, 1, 1, 0, 1, 0]))
 
 
 ------------------------------
@@ -272,31 +269,28 @@ Bảng dưới liệt kê các giá trị :math:`S(\bm{a}, \bm{b}) - 32` với h
 | :math:`32` | :math:`0`  | :math:`0`  | :math:`0`  | :math:`0`  | :math:`0`  | :math:`0`  | :math:`0`   | :math:`0`   | :math:`0`  | :math:`0`  | :math:`0`  | :math:`0`  | :math:`0`  | :math:`0`  | :math:`0`   |
 +------------+------------+------------+------------+------------+------------+------------+-------------+-------------+------------+------------+------------+------------+------------+------------+-------------+
 
-.. admonition:: check_sbox.py
-    :class: dropdown
+.. code-block:: python
 
-    .. code-block:: python
+    # check_sbox.py
 
-        # check_sbox.py
-
-        from tinydes import SBox
+    from tinydes import SBox
 
 
-        S = [[0 for _ in range(15)] for __ in range(63)]
+    S = [[0 for _ in range(15)] for __ in range(63)]
 
-        for a in range(1, 64):
-            va = list(map(int, f"{a:06b}"))[::-1]
-            for b in range(1, 16):
-                vb = list(map(int, f"{b:04b}"))[::-1]
-                for x in range(64):
-                    vx = list(map(int, f"{x:06b}"))[::-1]
-                    vy = SBox(vx)
-                    u = sum(i * j for i, j in zip(va, vx)) % 2
-                    v = sum(i * j for i, j in zip(vb, vy)) % 2
-                    if u == v:
-                        S[a - 1][b - 1] += 1
+    for a in range(1, 64):
+        va = list(map(int, f"{a:06b}"))[::-1]
+        for b in range(1, 16):
+            vb = list(map(int, f"{b:04b}"))[::-1]
+            for x in range(64):
+                vx = list(map(int, f"{x:06b}"))[::-1]
+                vy = SBox(vx)
+                u = sum(i * j for i, j in zip(va, vx)) % 2
+                v = sum(i * j for i, j in zip(vb, vy)) % 2
+                if u == v:
+                    S[a - 1][b - 1] += 1
 
-        print(S)
+    print(S)
 
 Sau khi xem bảng phân phối :math:`S(\bm{a}, \bm{b})` thì chúng ta quan tâm một số giá trị.
 
@@ -444,12 +438,10 @@ Ta lại có :math:`L_2 = R_1`, kết hợp thêm vòng 1 ta có phương trình
 
 .. math:: 
     
+    F(R_2, K_3) & = R_3[0, 1, 2, 3] \oplus R_1[0, 1, 2, 3] \\
+    & = R_3[0, 1, 2, 3] \oplus L_0[0, 1, 2, 3] \oplus R_0[3] \oplus K_1[1] \\
+    & = R_2[3] \oplus K_3[1] = L_3[3] \oplus K_3[1],
     
-        F(R_2, K_3) & = R_3[0, 1, 2, 3] \oplus R_1[0, 1, 2, 3] \\
-        & = R_3[0, 1, 2, 3] \oplus L_0[0, 1, 2, 3] \oplus R_0[3] \oplus K_1[1] \\
-        & = R_2[3] \oplus K_3[1] = L_3[3] \oplus K_3[1],
-    
-
 tương đương với
 
 .. math:: K_1[1] \oplus K_3[1] = R_3[0, 1, 2, 3] \oplus L_0[0, 1, 2, 3,] \oplus R_0[3] \oplus L_3[3].
@@ -473,11 +465,9 @@ Dịch vòng trái :math:`1` bit :math:`KL_0` và :math:`KR_0` ta được :math
 
 .. math:: 
     
-    
     KL_0 = (k^{(0)}_0, k^{(0)}_1, k^{(0)}_2, k^{(0)}_3) \xrightarrow{\ll 1} KL_1 = (k^{(0)}_1, k^{(0)}_2, k^{(0)}_3, k^{(0)}_0) = (k^{(1)}_0, k^{(1)}_1, k^{(1)}_2, k^{(1)}_3) \\ 
     KR_0 = (k^{(0)}_4, k^{(0)}_5, k^{(0)}_6, k^{(0)}_7) \xrightarrow{\ll 1} KR_1 = (k^{(0)}_5, k^{(0)}_6, k^{(0)}_7, k^{(0)}_4) = (k^{(1)}_4, k^{(1)}_5, k^{(1)}_6, k^{(1)}_7)
     
-
 nên suy ra
 
 .. math:: K_1 = (k^{(1)}_5, k^{(1)}_1, k^{(1)}_3, k^{(1)}_2, k^{(1)}_7, k^{(1)}_0).
@@ -493,39 +483,36 @@ Giả sử ta phá mã known-plaintext với :math:`100` cặp plaintext-ciphert
 .. math:: R_3[0, 1, 2, 3] \oplus L_0[0, 1, 2, 3,] \oplus R_0[3] \oplus L_3[3]
 
 bằng :math:`1` ở :math:`66` lần và bằng :math:`0` ở :math:`34` lần. Như vậy theo phân tích xác suất ở phần phụ thuộc tuyến tính ở trên có thể kết luận :math:`k^{(0)}_1 \oplus k^{(0)}_2 = 1`. Điều này cho chúng ta hai trường hợp về hai bit của khóa, và nếu ta vét cạn :math:`6` bits còn lại thì tổng cộng cần :math:`2 \cdot 2^6 = 128` trường hợp. Như vậy chúng ta không phải vét cạn :math:`8` bits, tốn :math:`2^8 = 256` trường hợp. Hiện tại chúng ta chỉ mới xét một liên hệ giữa :math:`k^{(0)}_1` và :math:`k^{(0)}_2` nên độ phức tạp chỉ giảm một nửa. Nếu xét thêm các liên hệ khác thì sẽ có thể giảm thêm.
-
-.. admonition:: solve.py
-    :class: dropdown
     
-    .. code-block:: python
+.. code-block:: python
 
-        # solve.py
+    # solve.py
 
-        from tinydes import encrypt_block, SBox
-        from functools import reduce
-        import random
+    from tinydes import encrypt_block, SBox
+    from functools import reduce
+    import random
 
-        random.seed(4)
+    random.seed(4)
 
-        secret_key = [1, 1, 0, 1, 0, 0, 1, 0]
-        count = 0
-        plaintext = [random.randint(0, 1) for __ in range(8)]
-        ciphertext = encrypt_block(plaintext, secret_key)
+    secret_key = [1, 1, 0, 1, 0, 0, 1, 0]
+    count = 0
+    plaintext = [random.randint(0, 1) for __ in range(8)]
+    ciphertext = encrypt_block(plaintext, secret_key)
 
-        for _ in range(100):
-            pt = [random.randint(0, 1) for __ in range(8)]
-            ct = encrypt_block(pt, secret_key)
-            L0, R0 = pt[:4], pt[4:]
-            L3, R3 = ct[:4], ct[4:]
-            S = reduce(lambda x, y: x ^ y, R3) ^ reduce(lambda x, y: x ^ y, L0) ^ R0[3] ^ L3[3]
-            if S == 1:
-                count += 1
+    for _ in range(100):
+        pt = [random.randint(0, 1) for __ in range(8)]
+        ct = encrypt_block(pt, secret_key)
+        L0, R0 = pt[:4], pt[4:]
+        L3, R3 = ct[:4], ct[4:]
+        S = reduce(lambda x, y: x ^ y, R3) ^ reduce(lambda x, y: x ^ y, L0) ^ R0[3] ^ L3[3]
+        if S == 1:
+            count += 1
 
-        if count > 100 - count:
-            for k1 in range(2):
-                k2 = k1 ^ 1
-                for k0 in range(2):         # Bruteforce k_0
-                    for k in range(2**5):   # Bruteforce k_3 to k_7
-                        K = [k0, k1, k2] + list(map(int, f"{k:05b}"))
-                        if encrypt_block(plaintext, K) == ciphertext:
-                            print(f"Found key: {K}")
+    if count > 100 - count:
+        for k1 in range(2):
+            k2 = k1 ^ 1
+            for k0 in range(2):         # Bruteforce k_0
+                for k in range(2**5):   # Bruteforce k_3 to k_7
+                    K = [k0, k1, k2] + list(map(int, f"{k:05b}"))
+                    if encrypt_block(plaintext, K) == ciphertext:
+                        print(f"Found key: {K}")

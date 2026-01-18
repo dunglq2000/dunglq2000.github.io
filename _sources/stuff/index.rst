@@ -11,7 +11,8 @@ Ngoài lề
 
 ..    .. toctree:: 
 ..       :maxdepth: 2
-
+..       
+..       school-mephi-2024/index
 ..       latex/index
 ..       about-education
 ..       about-stoicism
@@ -62,26 +63,26 @@ trên thực tế, quá trình hội tụ thường đạt được sớm hơn n
 Phương pháp này minh họa cách lựa chọn hình học thông 
 minh (liên hợp thay vì trực giao) giúp tăng tốc đáng kể tính toán.
 
-Sưu tầm 2
-=========
+.. Sưu tầm 2
+.. =========
 
-Контрольная работа.
+.. Контрольная работа.
 
-Задание 1. Докажите или опровергните утверждение :math:`n^2 = o(2n^2)`.
+.. Задание 1. Докажите или опровергните утверждение :math:`n^2 = o(2n^2)`.
 
-Задание 2. Расположите следующие функции в порядке увеличения скорости из роста, отметив среди них :math:`\Theta`-эквивалентные: :math:`f(n) = 4^{\log n}`, :math:`g(n) = 4n^2`, :math:`h(n) = n \log(n^4)`.
+.. Задание 2. Расположите следующие функции в порядке увеличения скорости из роста, отметив среди них :math:`\Theta`-эквивалентные: :math:`f(n) = 4^{\log n}`, :math:`g(n) = 4n^2`, :math:`h(n) = n \log(n^4)`.
 
-Задание 3. Пусть :math:`f(n)` и :math:`g(n)` - асимптотически положительные функции. Докажите или опровергните следующее утверждение: :math:`f(n) + g(n) = O(\min (f(n), g(n)))`.
+.. Задание 3. Пусть :math:`f(n)` и :math:`g(n)` - асимптотически положительные функции. Докажите или опровергните следующее утверждение: :math:`f(n) + g(n) = O(\min (f(n), g(n)))`.
 
-Một số đồ thị hàm số sưu tầm
-============================
+.. Một số đồ thị hàm số sưu tầm
+.. ============================
 
-Để vẽ trái tim như ở `đây <https://vk.com/wall-216361286_445>`_ ta dùng phương trình
+.. Để vẽ trái tim như ở `đây <https://vk.com/wall-216361286_445>`_ ta dùng phương trình
 
-.. math::
-    y = x^{2/3} + 0,9 (3,3 - x^2)^{1/2} \cdot \sin(m \cdot \pi \cdot x)
+.. .. math::
+..     y = x^{2/3} + 0,9 (3,3 - x^2)^{1/2} \cdot \sin(m \cdot \pi \cdot x)
 
-với :math:`m = 6,50`.
+.. với :math:`m = 6,50`.
 
 .. raw:: html
 

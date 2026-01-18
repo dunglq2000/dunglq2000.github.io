@@ -26,7 +26,7 @@ Ta thấy rằng, đường cong elliptic đối xứng qua trục hoành.
 
 .. _ecc-1:
 
-.. figure::  ../../figures/ecc/ecc1.jpg
+.. figure::  ../../figures/ecc/ecc-1.*
 
     Elliptic :math:`y^2 = x^3 + 8`
 
@@ -34,7 +34,7 @@ Ví dụ với phương trình :math:`y^2 = x^3 - x`, đồ thị được biể
 
 .. _ecc-2:
 
-.. figure::  ../../figures/ecc/ecc2.jpg  
+.. figure::  ../../figures/ecc/ecc-2.*  
 
     Elliptic :math:`y^2 = x^3 - x`
 
@@ -42,7 +42,7 @@ Hoặc đối với phương trình :math:`y^2 = x^3 - 3x + 3` thì đồ thị 
 
 .. _ecc-3:
 
-.. figure::  ../../figures/ecc/ecc3.jpg  
+.. figure::  ../../figures/ecc/ecc-3.*  
 
     Elliptic :math:`y^2 = x^3 - 3x + 3`
 

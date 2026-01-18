@@ -4,7 +4,7 @@ Google CTF 2021
 Pythia
 ======
 
-Đề bài ở file :download:`service.py <Pythia/service.py>`.
+Đề bài ở file :download:`service.py <../../CTF/2021/GoogleCTF/Pythia/service.py>`.
 
 Ở bài này random ba password từ các ký tự in thường, mỗi password có độ dài là :math:`3`.
 
@@ -171,97 +171,8 @@ Hàm attack tìm ciphertext với danh sách key, nonce và tag
 
 **LƯU Ý 2**. Việc tính toán đa thức bậc :math:`512` cũng tốn thời gian nên chúng ta có thể tính trước rồi lưu lại trên dict hoặc hash table hoặc bất cứ thứ gì bạn nghĩ ra :v sau đó chúng ta mới giao tiếp với server.
 
-Phần còn lại của code là attack thôi :))))
-
-.. admonition:: solve.py
-    :class: dropdown
-
-    .. code-block:: python
-            
-        from pwn import remote, process, context
-        from sage.all import *
-        from Crypto.Cipher import AES
-        from itertools import product
-        import string
-        from base64 import b64encode, b64decode
-        from cryptography.hazmat.backends import default_backend
-        from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-        from cryptography.hazmat.primitives.kdf.scrypt import Scrypt
-        from tqdm import tqdm
-        import os
-
-        # context.log_level = 'Debug'
-
-        F2 = GF(2)['x']
-        x = F2.gen()
-        modulus = x**128 + x**7 + x**2 + x + 1
-        F = GF(2**128, 'x', modulus=modulus)
-        R = PolynomialRing(F, 'z')
-        z = R.gen()
-
-        NONCE = b'\x00' * 12
-        TAG = b'\x00' * 16
-
-        possible_keys = {}
-        keys = []
-        for a, b, c in product(string.ascii_lowercase, repeat=3):
-            kdf = Scrypt(salt=b'', length=16, n=2**4, r=8, p=1, backend=default_backend())
-            password = bytes(a+b+c, 'UTF-8')
-            key = kdf.derive(password)
-            possible_keys[key] = password
-            keys.append(key)
-
-        p = process(["python3", "service.py"])
-
-        CACHE = {}
-        chunk_size = 512
-        for i in tqdm(range(0, len(keys), chunk_size)):
-            test_keys = [key for key in keys[i:i+chunk_size]]
-            C = find_poly(test_keys, NONCE, TAG)
-            CACHE[i] = C
-            aes = AES.new(test_keys[0], AES.MODE_GCM, nonce=NONCE)
-            aes.decrypt_and_verify(C, TAG)
-
-        def attack(idx):
-            p.sendlineafter(b">>> ", b"1")
-            p.sendlineafter(b">>> ", str(idx).encode())
-            # phase 1
-            index = 0
-            for cache in CACHE:
-                C = CACHE[cache]
-                payload = b64encode(NONCE) + b"," + b64encode(C + TAG)
-                p.sendlineafter(b">>> ", b"3")
-                p.sendlineafter(b">>> ", payload)
-                p.recvline()
-                if b'success' in p.recvline():
-                    index = cache
-                    break
-            print(cache)
-            # phase 2
-            test_keys = [key for key in keys[cache:cache + chunk_size]]
-            while len(test_keys) > 1:
-                C = find_poly(test_keys[:len(test_keys) // 2], NONCE, TAG)
-                payload = b64encode(NONCE) + b"," + b64encode(C + TAG)
-                p.sendlineafter(b">>> ", b"3")
-                p.sendlineafter(b">>> ", payload)
-                p.recvline()
-                if b"success" in p.recvline():
-                    test_keys = test_keys[:len(test_keys) // 2]
-                else:
-                    test_keys = test_keys[len(test_keys) // 2:]
-            return test_keys[0]
-
-        password = b""
-
-        for _ in range(3):
-            password += possible_keys[attack(_)]
-
-        p.sendlineafter(b">>> ", b"2")
-        p.sendlineafter(b">>> ", password)
-        print(p.recvline())
-        print(p.recvline())
-        p.close()
-
-Với mỗi password mình dùng một query để chỉ định vị trí password (:math:`0, 1, 2`), :math:`\lceil 26^3 / 512 \rceil = 35` query cho mỗi chunk, và :math:`\log_2(512) = 9` cho tìm nhị phân. Như vậy mình tốn :math:`(1 + 35 + 9) \cdot 3 = 135` query tổng cộng.
+Phần còn lại của code là attack thôi :) Source code mình để ở file :download:`solve.py <../../CTF/2021/GoogleCTF/Pythia/service.py>`.
+        
+Với mỗi password mình dùng một query để chỉ định vị trí password (:math:`0`, :math:`1, :math:`2`), :math:`\lceil 26^3 / 512 \rceil = 35` query cho mỗi chunk, và :math:`\log_2(512) = 9` cho tìm nhị phân. Như vậy mình tốn :math:`(1 + 35 + 9) \cdot 3 = 135` query tổng cộng.
 
 Bài viết tới đây là hết. Cám ơn các bạn đã đọc.

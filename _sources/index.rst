@@ -38,22 +38,24 @@ Mật mã học cũng khó
    :maxdepth: 2
 
    boolean/index
-   cryptanalysis/index
-   cryptography/index
+
+.. only:: html
+   
+   .. toctree::
+      :maxdepth: 2
+   
+      cryptanalysis/index
+      cryptography/index
 
 Lời giải cho những vấn đề
 =========================
-
-.. toctree:: 
-   :maxdepth: 2
-
-   solutions/index
 
 .. only:: html
 
    .. toctree:: 
       :maxdepth: 1
       
+      solutions/index
       2020/index
       2021/index
       2022/index
@@ -64,11 +66,13 @@ Lời giải cho những vấn đề
 Bên lề sách của Fermat
 ======================
 
-.. toctree:: 
-   :maxdepth: 2
+.. only:: html
 
-   stuff/index
-   game-programming/index
+   .. toctree:: 
+      :maxdepth: 2
+
+      stuff/index
+      game-programming/index
 
 .. .. only:: html
 
@@ -86,6 +90,9 @@ Tài liệu tham khảo
    :maxdepth: 2
 
    myrefs
+
+.. disqus::
+    :disqus_identifier: this_is_index_page
 
 .. raw:: html
 

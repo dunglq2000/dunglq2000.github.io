@@ -74,26 +74,28 @@ Bằng lập luận tương tự cũng có thể chứng minh số phần tử c
 bằng số phần tử của :math:`\mathbb{N}`. Những lập luận này đã gây ra tiếng vang 
 lớn vào thời đó.
 
-Ở :numref:`hình %s <meme-1>` cho thấy một cách xây dựng song ánh từ 
-:math:`\mathbb{N}` tới :math:`\mathbb{Z}^2`, trong đó:
+.. only:: html
 
-- điểm :math:`(0, 0)` tương ứng với :math:`1`;
-- điểm :math:`(1, 0)` tương ứng với :math:`2`;
-- điểm :math:`(1, 1)` tương ứng với :math:`3`;
-- điểm :math:`(0, 1)` tương ứng với :math:`4`;
-- cứ tiếp tục như vậy theo hình xoắn vuông.
+   Ở :numref:`hình %s <meme-1>` cho thấy một cách xây dựng song ánh từ 
+   :math:`\mathbb{N}` tới :math:`\mathbb{Z}^2`, trong đó:
 
-Vietsub cho :numref:`hình %s <meme-1>`: Không có chuyện :math:`\mathbb{N}` và 
-:math:`\mathbb{Z}^2` có cùng số phần tử. Ở đây thuật ngữ "số phần tử" không 
-thực sự chính xác mà nên gọi là "lực lượng" vì khi nói đến các tập vô hạn (tức 
-tập có vô hạn phần tử) thì vô hạn không thể so sánh với vô hạn. Hai tập hợp 
-vô hạn chỉ có thể có cùng lực lượng.
+   - điểm :math:`(0, 0)` tương ứng với :math:`1`;
+   - điểm :math:`(1, 0)` tương ứng với :math:`2`;
+   - điểm :math:`(1, 1)` tương ứng với :math:`3`;
+   - điểm :math:`(0, 1)` tương ứng với :math:`4`;
+   - cứ tiếp tục như vậy theo hình xoắn vuông.
 
-.. _meme-1:
+   Vietsub cho :numref:`hình %s <meme-1>`: Không có chuyện :math:`\mathbb{N}` và 
+   :math:`\mathbb{Z}^2` có cùng số phần tử. Ở đây thuật ngữ "số phần tử" không 
+   thực sự chính xác mà nên gọi là "lực lượng" vì khi nói đến các tập vô hạn (tức 
+   tập có vô hạn phần tử) thì vô hạn không thể so sánh với vô hạn. Hai tập hợp 
+   vô hạn chỉ có thể có cùng lực lượng.
 
-.. figure:: https://sun9-41.userapi.com/impg/zmz_1-_MamZ7dwVLXKooNar7f1hC5crUItC2YA/sCWd3BmHVqc.jpg?size=640x550&quality=95&sign=53e3e82934396255a586fb2e39f0c82e&type=album 
+   .. _meme-1:
 
-    Song ánh giữa :math:`\mathbb{N}` và :math:`\mathbb{Z}^2`. Nguồn: https://vk.com/wall-91031095_82482.
+   .. figure:: https://sun9-41.userapi.com/impg/zmz_1-_MamZ7dwVLXKooNar7f1hC5crUItC2YA/sCWd3BmHVqc.jpg?size=640x550&quality=95&sign=53e3e82934396255a586fb2e39f0c82e&type=album 
+
+      Song ánh giữa :math:`\mathbb{N}` và :math:`\mathbb{Z}^2`. Nguồn: https://vk.com/wall-91031095_82482.
 
 Từ đây tập hợp vô hạn có thể chia ra **đếm được** (countable) 
 và **không đếm được** (uncountable). Tiếp theo ta định nghĩa hai 

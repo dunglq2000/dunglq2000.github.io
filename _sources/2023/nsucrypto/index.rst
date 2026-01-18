@@ -29,7 +29,7 @@ Theo thống kê các bigram xuất hiện nhiều nhất trong ciphertext và t
     812 = a \cdot 558 + b \pmod{841} \\ 
     321 = a \cdot 207 + b \pmod{841}
 
-Giải hệ ta có :math:`a = 15, b = 10`. Đây là key.
+Giải hệ ta có :math:`a = 15`, :math:`b = 10`. Đây là key.
 
 Từ đây chúng ta có thể giải mã thành **CRYPTO** là plaintext ban đầu. Bài này ăn trọn 4/4 điểm.
 

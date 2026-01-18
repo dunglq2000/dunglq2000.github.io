@@ -12,7 +12,7 @@ Farm
 
 Ok, vì ``key`` chỉ nằm trong :math:`\mathrm{GF}(2^6)`, mình chỉ việc bruteforce thôi (nằm trong :math:`\mathrm{GF}(2^6)` nên độ dài là :math:`14` hay bao nhiêu cũng không quan trọng). Làm ngược lại quá trình mã hóa mình có flag.
 
-Flag: ``CCTF{EnCrYp7I0n_4nD_5u8STitUtIn9_iN_Fi3Ld!}``.
+.. Flag: ``CCTF{EnCrYp7I0n_4nD_5u8STitUtIn9_iN_Fi3Ld!}``.
 
 KeyBase
 =======
@@ -30,10 +30,10 @@ Bây giờ tìm iv, mình chỉ cần đưa lên server :math:`32` bytes ``\0`` 
 
 Giờ thì giải mã flag thôi.
 
-Flag: ``CCTF{h0W_R3cOVER_7He_5eCrET_1V?}``.
+.. Flag: ``CCTF{h0W_R3cOVER_7He_5eCrET_1V?}``.
 
 Rima
-=======
+====
 
 Bài này không dùng biến chữ để chạy loop và dùng dấu gạch dưới của python nên lúc đầu mình thấy hơi rắc rối.
 
@@ -51,10 +51,10 @@ Sau đó là làm ngược lại quá trình, với :math:`i = \mathrm{len}(f) -
 
 Giờ thì, lấy :math:`\mathrm{len}(f)` số đầu của :math:`g` và tiếp tục làm ngược lại sẽ ra các bit của flag.
 
-Flag: ``CCTF{_how_finD_7h1s_1z_s3cr3T?!}``.
+.. Flag: ``CCTF{_how_finD_7h1s_1z_s3cr3T?!}``.
 
 Maid
-=======
+====
 
 Ở bài này server cung cấp cho mình các chứng năng sau:
 
@@ -84,10 +84,10 @@ Thật ra là vì nếu :math:`c \equiv m^2 \pmod{pubkey}` thì :math:`c \equiv 
 * khi đó :math:`p^2q = \gcd(m_1^2 - c_1, m_2^2 - c_2)`. Việc này ngược lại quá trình trên vì như nãy mình đã nói, ``encrypt`` sử dụng :math:`p^2q` còn ``decrypt`` thì chỉ cần :math:`p^2`;
 * và bây giờ :math:`p` và :math:`q` đã có đủ, ta decrypt và có flag thôi.
 
-Flag: ``CCTF{___Ra8!N_H_Cryp70_5YsT3M___}``.
+.. Flag: ``CCTF{___Ra8!N_H_Cryp70_5YsT3M___}``.
 
 Tuti
-=======
+====
 
 Ở đây :math:`x` và :math:`y` là nửa đầu và nửa sau của flag, :math:`k` là một số cho trước thỏa mãn
 
@@ -173,6 +173,9 @@ Từ đó mình dễ dàng tìm lại được :math:`A = U^{-1}E - (LU)^8 W^{-1
 
 Thực hiện tương tự hàm ``prepare`` mình có được flag.
 
-Flag: ``CCTF{LU__D3c0mpO517Ion__4L90?}``.
+.. Flag: ``CCTF{LU__D3c0mpO517Ion__4L90?}``.
+
+Kết bài
+=======
 
 Writeup đến đây là hết, cám ơn các bạn đã đọc.

@@ -6,6 +6,7 @@ Các cuộc thi năm 2023
     
     nsucrypto/index
     siberian-maths-contest/index
+    internet-olympiad/index
     amateursCTF
     backdoorCTF
     googleCTF

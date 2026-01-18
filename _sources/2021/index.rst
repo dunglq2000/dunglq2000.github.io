@@ -6,4 +6,4 @@ Các cuộc thi năm 2021
 
     CryptoCTF/index
     GoogleCTF/index
-    nsucrypto
+    nsucrypto/index
