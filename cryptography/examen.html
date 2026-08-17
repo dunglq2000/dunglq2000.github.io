@@ -1,0 +1,685 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Tìm Kiếm" href="search.html"><link rel="next" title="12. Zero Knowledge Proof" href="zero-knowledge-proof/index.html"><link rel="prev" title="10. Tổng hợp bài tập môn Giao thức an toàn thông tin cho hệ thống cyber-physical" href="protocols/TONG_HOP.html">
+        <link rel="prefetch" href="_static/rhine_lab.jpg" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>11. Câu hỏi ôn thi mật mã học - Math Book</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=3a5ece24" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyles.css?v=ca48935a" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Math Book</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/rhine_lab.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Math Book</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="block-cipher/index.html">1. Block cipher</a><input aria-label="Toggle navigation of 1. Block cipher" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/spnet.html">1.1. SP network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/aes.html">1.2. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/kuznyechik.html">1.3. Kuznyechik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/present.html">1.4. PRESENT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/feistel.html">1.5. Mô hình Feistel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/magma.html">1.6. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/sms4.html">1.7. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/arx.html">1.8. ARX</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lattice-based/index.html">2. Lattice-based cryptography</a><input aria-label="Toggle navigation of 2. Lattice-based cryptography" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/intro.html">2.1. Nhập môn mật mã dựa trên lattice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/hard-problems.html">2.2. Các bài toán khó</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/heuristic.html">2.3. Các heuristic cho lattice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/lattice-reduction-algorithms.html">2.4. Thuật toán rút gọn lattice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/congruential-pubkey.html">2.5. Congruential public key cryptosystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/ntru.html">2.6. NTRU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/falcon.html">2.7. FALCON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/coppersmith.html">2.8. Phương pháp Coppersmith</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="code-based/index.html">3. Code-based cryptography</a><input aria-label="Toggle navigation of 3. Code-based cryptography" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="code-based/intro.html">3.1. Nhập môn mật mã dựa trên mã sửa sai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/decode-problem.html">3.2. Bài toán decode tổng quát</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/linear-code.html">3.3. Mã tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/weight.html">3.4. Bài toán phổ trọng số của mã tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/decode-on-linear-code.html">3.5. Bài toán decode trên linear code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/equivalence.html">3.6. Bài toán tương đương các linear code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/cryptosystem.html">3.7. Ý tưởng xây dựng các hệ mật mã dựa trên mã sửa sai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/pubkey-algo.html">3.8. Các hệ mật mã khóa công khai dựa trên lý thuyết code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/goppa-code.html">3.9. Goppa Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="elliptic/index.html">4. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Kerckhoffs-principle/index.html">5. Nguyên tắc Kerckhoffs và mật mã học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-computing.html">6. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete-logarithm.html">7. Logarithm rời rạc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hash-based.html">8. Hash-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stega/TONG_HOP.html">9. Tổng hợp bài lab môn Bảo vệ thông tin bằng kỹ thuật giấu tin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protocols/TONG_HOP.html">10. Tổng hợp bài tập môn Giao thức an toàn thông tin cho hệ thống cyber-physical</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">11. Câu hỏi ôn thi mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="zero-knowledge-proof/index.html">12. Zero Knowledge Proof</a><input aria-label="Toggle navigation of 12. Zero Knowledge Proof" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="zero-knowledge-proof/intro.html">12.1. Giới thiệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zero-knowledge-proof/plonk.html">12.2. Giao thức PLONK</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/examen.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="cau-hoi-on-thi-mat-ma-hoc">
+<h1><span class="section-number">11. </span>Câu hỏi ôn thi mật mã học<a class="headerlink" href="#cau-hoi-on-thi-mat-ma-hoc" title="Link to this heading">¶</a></h1>
+<section id="mon-cac-phuong-phap-bao-ve-thong-tin-bang-mat-ma">
+<h2><span class="section-number">11.1. </span>Môn &quot;Các phương pháp bảo vệ thông tin bằng mật mã&quot;<a class="headerlink" href="#mon-cac-phuong-phap-bao-ve-thong-tin-bang-mat-ma" title="Link to this heading">¶</a></h2>
+<section id="id1">
+<h3><span class="section-number">11.1.1. </span>Задачи криптографической защиты информации и средства их решения<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>Bốn mục tiêu chính là: <strong>bí mật</strong> bằng mã hóa; <strong>toàn vẹn</strong> bằng MAC hoặc chữ ký; <strong>xác thực</strong> bằng mật khẩu, challenge--response, chứng thư; và <strong>chống chối bỏ</strong> bằng chữ ký số cùng cơ chế ghi nhận thời gian.</p>
+</section>
+<section id="id2">
+<h3><span class="section-number">11.1.2. </span>Симметричные, асимметричные и комбинированные криптосистемы<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<p>Mật mã đối xứng dùng cùng khóa để mã hóa và giải mã, nhanh nhưng khó phân phối khóa. Mật mã bất đối xứng dùng cặp khóa công khai--bí mật, chậm hơn nhưng thuận tiện trao đổi khóa và ký số. Hệ lai dùng bất đối xứng bảo vệ khóa phiên và dùng đối xứng mã hóa dữ liệu lớn.</p>
+</section>
+<section id="id3">
+<h3><span class="section-number">11.1.3. </span>Шифры, алгебраическая модель шифра, примеры<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>Một hệ mã là <span class="math notranslate nohighlight">\((\mathcal X,\mathcal K,\mathcal Y,E,D)\)</span> sao cho <span class="math notranslate nohighlight">\(D_k(E_k(x))=x\)</span>. Với mỗi khóa <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(E_k\)</span> phải là đơn ánh; nếu <span class="math notranslate nohighlight">\(\mathcal X=\mathcal Y\)</span> hữu hạn thì là một hoán vị. Ví dụ: Caesar, Vigenère, AES và RSA.</p>
+</section>
+<section id="id4">
+<h3><span class="section-number">11.1.4. </span>Шифры, вероятностная модель шифра, примеры<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<p>Mô hình xác suất bổ sung phân phối <span class="math notranslate nohighlight">\(P_X\)</span>, <span class="math notranslate nohighlight">\(P_K\)</span> và có thể cả randomness. Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P_Y(y)=\sum_{E_k(x)=y}P_X(x)P_K(k).\]</div>
+</div>
+<p>Ví dụ: one-time pad với khóa đều; ElGamal và RSA-OAEP là mã xác suất.</p>
+</section>
+<section id="id5">
+<h3><span class="section-number">11.1.5. </span>Модели и критерии распознавания открытых текстов<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<p>Plaintext được mô hình bằng nguồn ngôn ngữ có phân phối không đều. Có thể nhận dạng bằng tần suất ký tự/n-gram, entropy, redundancy, từ điển hoặc điểm log-likelihood; plaintext đúng thường có điểm thống kê cao hơn chuỗi ngẫu nhiên.</p>
+</section>
+<section id="id6">
+<h3><span class="section-number">11.1.6. </span>Криптоанализ классических шифров. Дешифрование шифра Виженера<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<p>Tìm chu kỳ khóa bằng Kasiski hoặc chỉ số trùng hợp. Chia ciphertext thành các cột theo chu kỳ; mỗi cột là Caesar nên tìm dịch chuyển bằng phân tích tần suất hoặc <span class="math notranslate nohighlight">\(\chi^2\)</span>, rồi ghép các ký tự khóa.</p>
+</section>
+<section id="id7">
+<h3><span class="section-number">11.1.7. </span>Классификации шифров<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p>Phân loại theo khóa: đối xứng, bất đối xứng, lai; theo đơn vị xử lý: khối và dòng; theo biến đổi: thay thế, hoán vị, SPN, Feistel; theo tính ngẫu nhiên: tất định và xác suất.</p>
+</section>
+<section id="id8">
+<h3><span class="section-number">11.1.8. </span>Теоретическая и практическая стойкость шифров<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<p>An toàn lý thuyết không phụ thuộc năng lực tính toán, điển hình là one-time pad. An toàn thực tế dựa trên chi phí phá mã vượt nguồn lực trong thời hạn cần bảo vệ; được đánh giá bằng mô hình tấn công, độ dài khóa và thuật toán tốt nhất.</p>
+</section>
+<section id="id9">
+<h3><span class="section-number">11.1.9. </span>Совершенные шифры<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p>Hệ mã hoàn hảo khi ciphertext không tiết lộ thông tin về plaintext: <span class="math notranslate nohighlight">\(P(X=x\mid Y=y)=P(X=x)\)</span>, tương đương <span class="math notranslate nohighlight">\(I(X;Y)=0\)</span>. One-time pad đạt tính chất này nếu khóa ngẫu nhiên đều, dài bằng thông điệp và chỉ dùng một lần.</p>
+</section>
+<section id="id10">
+<h3><span class="section-number">11.1.10. </span>Шифры замены и их криптоанализ<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>Mã thay thế ánh xạ mỗi ký hiệu hoặc nhóm ký hiệu sang ký hiệu khác. Mã thay thế đơn bảo toàn tần suất nên bị phá bằng tần suất chữ, digram/trigram và cấu trúc ngôn ngữ; mã đa bảng cần thêm bước tìm chu kỳ.</p>
+</section>
+<section id="id11">
+<h3><span class="section-number">11.1.11. </span>Шифры перестановки и их криптоанализ<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<p>Mã hoán vị chỉ đổi vị trí ký tự nên giữ nguyên tần suất. Phá mã bằng thử độ dài khối, xét anagram/n-gram và tìm hoán vị tối ưu; không gian khóa tối đa của khối <span class="math notranslate nohighlight">\(n\)</span> ký tự là <span class="math notranslate nohighlight">\(n!\)</span>.</p>
+</section>
+<section id="id12">
+<h3><span class="section-number">11.1.12. </span>Шифрование методом гаммирования и его криптоанализ<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<p>Mã hóa dòng thường tính <span class="math notranslate nohighlight">\(C_i=P_i\oplus\gamma_i\)</span>. Nếu gamma thật sự ngẫu nhiên và dùng một lần thì là OTP; nếu tái sử dụng, <span class="math notranslate nohighlight">\(C\oplus C'\)</span> loại gamma và làm lộ quan hệ giữa hai plaintext.</p>
+</section>
+<section id="id13">
+<h3><span class="section-number">11.1.13. </span>Криптоаналитические атаки и их классификация<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
+<p>Các mô hình chính: ciphertext-only, known-plaintext, chosen-plaintext (CPA), chosen-ciphertext (CCA), related-key và adaptive. Kỹ thuật gồm vét cạn, time--memory tradeoff, phân tích vi sai/tuyến tính, đại số, lỗi và side channel.</p>
+</section>
+<section id="id14">
+<h3><span class="section-number">11.1.14. </span>Блочные шифры. Принципы построения симметричных блочных шифров<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
+<p>Block cipher là họ hoán vị có khóa trên khối <span class="math notranslate nohighlight">\(n\)</span> bit. Thiết kế thường dùng mạng Feistel hoặc SPN, lặp nhiều vòng để tạo confusion và diffusion; S-box cung cấp phi tuyến, permutation/mixing khuếch tán sai khác.</p>
+</section>
+<section id="id15">
+<h3><span class="section-number">11.1.15. </span>Режимы работы блочных шифров и их сравнение<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h3>
+<p>ECB độc lập nhưng lộ mẫu. CBC che mẫu và cần IV ngẫu nhiên. CFB/OFB biến block cipher thành stream cipher. CTR song song, truy cập ngẫu nhiên và nhanh nhưng không được lặp nonce/counter. Các mode này không tự xác thực; nên dùng AEAD như GCM hoặc CCM.</p>
+</section>
+<section id="id16">
+<h3><span class="section-number">11.1.16. </span>Методы анализа алгоритмов блочного шифрования<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<p>Các phương pháp chính: vét cạn khóa, vi sai, tuyến tính, vi sai bất khả thi, integral, boomerang, meet-in-the-middle, đại số, related-key và side channel. So sánh chi phí với vét cạn <span class="math notranslate nohighlight">\(2^k\)</span> và birthday bound theo kích thước khối.</p>
+</section>
+<section id="des">
+<h3><span class="section-number">11.1.17. </span>Стандарт шифрования данных DES<a class="headerlink" href="#des" title="Link to this heading">¶</a></h3>
+<p>DES là mạng Feistel 16 vòng, khối 64 bit, khóa hiệu dụng 56 bit và khóa vòng 48 bit. Hàm vòng mở rộng 32→48 bit, XOR khóa, qua 8 S-box rồi hoán vị. DES nay không an toàn vì khóa ngắn.</p>
+</section>
+<section id="id17">
+<h3><span class="section-number">11.1.18. </span>Развертывание раундовых ключей в DES<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
+<p>Khóa 64 bit chứa 8 bit parity. PC-1 chọn 56 bit thành <span class="math notranslate nohighlight">\(C_0,D_0\)</span>; mỗi vòng dịch trái 1 hoặc 2 bit, rồi PC-2 chọn 48 bit tạo <span class="math notranslate nohighlight">\(K_i\)</span>. Dịch 1 bit ở vòng 1, 2, 9, 16; các vòng khác dịch 2 bit.</p>
+</section>
+<section id="cbc-des">
+<h3><span class="section-number">11.1.19. </span>Режим сцепления блоков шифра (CBC) на примере DES<a class="headerlink" href="#cbc-des" title="Link to this heading">¶</a></h3>
+<p>Với IV <span class="math notranslate nohighlight">\(C_0\)</span>, mã hóa <span class="math notranslate nohighlight">\(C_i=E_K(P_i\oplus C_{i-1})\)</span>; giải mã <span class="math notranslate nohighlight">\(P_i=D_K(C_i)\oplus C_{i-1}\)</span>. IV phải không dự đoán được. Lỗi ở <span class="math notranslate nohighlight">\(C_i\)</span> phá <span class="math notranslate nohighlight">\(P_i\)</span> và lật bit tương ứng ở <span class="math notranslate nohighlight">\(P_{i+1}\)</span>.</p>
+</section>
+<section id="ofb-des">
+<h3><span class="section-number">11.1.20. </span>Режим обратной связи по выходу (OFB) на примере DES<a class="headerlink" href="#ofb-des" title="Link to this heading">¶</a></h3>
+<p>Sinh <span class="math notranslate nohighlight">\(O_i=E_K(O_{i-1})\)</span>, <span class="math notranslate nohighlight">\(O_0=IV\)</span>, rồi <span class="math notranslate nohighlight">\(C_i=P_i\oplus O_i\)</span>. Mã hóa và giải mã giống nhau; lỗi bit không lan truyền. Không được lặp IV với cùng khóa.</p>
+</section>
+<section id="cfb-des">
+<h3><span class="section-number">11.1.21. </span>Режим обратной связи по шифртексту (CFB) на примере DES<a class="headerlink" href="#cfb-des" title="Link to this heading">¶</a></h3>
+<p>Với CFB toàn khối: <span class="math notranslate nohighlight">\(C_i=P_i\oplus E_K(C_{i-1})\)</span>, <span class="math notranslate nohighlight">\(C_0=IV\)</span>; giải mã dùng cùng <span class="math notranslate nohighlight">\(E_K\)</span>. Mode tự đồng bộ nhưng lỗi ciphertext ảnh hưởng đoạn hiện tại và đoạn kế tiếp.</p>
+</section>
+<section id="id18">
+<h3><span class="section-number">11.1.22. </span>Имитостойкость шифров<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h3>
+<p>Đây là khả năng chống giả mạo/thay đổi dữ liệu. Cơ chế chuẩn là MAC (CMAC, HMAC, GMAC) hoặc AEAD. Checksum/parity không khóa chỉ phát hiện lỗi ngẫu nhiên, không chống đối thủ chủ động.</p>
+</section>
+<section id="aes">
+<h3><span class="section-number">11.1.23. </span>Стандарт шифрования данных AES<a class="headerlink" href="#aes" title="Link to this heading">¶</a></h3>
+<p>AES là SPN khối 128 bit, khóa 128/192/256 bit tương ứng 10/12/14 vòng. Mỗi vòng gồm SubBytes, ShiftRows, MixColumns, AddRoundKey; vòng cuối bỏ MixColumns.</p>
+</section>
+<section id="id19">
+<h3><span class="section-number">11.1.24. </span>Развертывание раундовых ключей в AES<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h3>
+<p>Khóa chia thành word 32 bit. Word mới là XOR với word cách <span class="math notranslate nohighlight">\(N_k\)</span> vị trí; tại biên vòng áp dụng RotWord, SubWord và Rcon. AES-256 còn áp dụng SubWord khi <span class="math notranslate nohighlight">\(i\equiv4\pmod8\)</span>.</p>
+</section>
+<section id="id20">
+<h3><span class="section-number">11.1.25. </span>Российский стандарт шифрования данных МАГМА (ГОСТ Р 34.12-2015)<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h3>
+<p>Magma là Feistel 32 vòng, khối 64 bit, khóa 256 bit. Hàm vòng cộng modulo <span class="math notranslate nohighlight">\(2^{32}\)</span> với khóa vòng, thay thế qua 8 S-box 4 bit, quay trái 11 bit rồi XOR nửa còn lại.</p>
+</section>
+<section id="id21">
+<h3><span class="section-number">11.1.26. </span>Развертывание раундовых ключей в стандарте МАГМА, количество слабых и 2-слабых ключей<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h3>
+<p>Khóa 256 bit tách thành tám word 32 bit. Vòng 1--24 dùng <span class="math notranslate nohighlight">\(K_1,\ldots,K_8\)</span> lặp ba lần; vòng 25--32 dùng <span class="math notranslate nohighlight">\(K_8,\ldots,K_1\)</span>. Có <span class="math notranslate nohighlight">\(2^{32}\)</span> khóa yếu dạng <span class="math notranslate nohighlight">\(K_1=\cdots=K_8\)</span>; chuẩn Magma không quy định một số lượng chính thức cho lớp “2-yếu”.</p>
+</section>
+<section id="id22">
+<h3><span class="section-number">11.1.27. </span>Российский стандарт шифрования данных КУЗНЕЧИК (ГОСТ Р 34.12-2015)<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h3>
+<p>Kuznyechik là SPN khối 128 bit, khóa 256 bit và 10 khóa vòng. Một vòng dùng XOR khóa, biến đổi phi tuyến S và tuyến tính L; vòng cuối chỉ XOR khóa.</p>
+</section>
+<section id="id23">
+<h3><span class="section-number">11.1.28. </span>Развертывание раундовых ключей в стандарте КУЗНЕЧИК<a class="headerlink" href="#id23" title="Link to this heading">¶</a></h3>
+<p>Hai nửa 128 bit của khóa là <span class="math notranslate nohighlight">\(K_1,K_2\)</span>. Dùng mạng Feistel với 32 hằng số <span class="math notranslate nohighlight">\(C_i=L(\mathrm{Vec}_{128}(i))\)</span>; sau mỗi 8 bước thu thêm một cặp khóa, tổng cộng 10 khóa vòng.</p>
+</section>
+<section id="id24">
+<h3><span class="section-number">11.1.29. </span>Поточные шифры. Принципы их построения<a class="headerlink" href="#id24" title="Link to this heading">¶</a></h3>
+<p>Stream cipher sinh keystream từ khóa và nonce rồi XOR dữ liệu. Yêu cầu: chu kỳ dài, gần đều, khó dự đoán, không lặp cặp khóa--nonce và có diffusion tốt từ trạng thái nội bộ.</p>
+</section>
+<section id="id25">
+<h3><span class="section-number">11.1.30. </span>Методы генерации и анализа псевдослучайных последовательностей<a class="headerlink" href="#id25" title="Link to this heading">¶</a></h3>
+<p>Có thể sinh bằng LFSR kết hợp phi tuyến, block cipher CTR/OFB hoặc CSPRNG dựa trên hash/stream cipher. Phân tích gồm chu kỳ, cân bằng, autocorrelation, linear complexity, kiểm thử thống kê và khả năng dự đoán.</p>
+</section>
+<section id="id26">
+<h3><span class="section-number">11.1.31. </span>Регистры сдвига, критерий регулярности<a class="headerlink" href="#id26" title="Link to this heading">¶</a></h3>
+<p>LFSR cập nhật trạng thái bằng recurrence tuyến tính trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2)\)</span>. Dãy là regular khi đa thức đặc trưng không có nghiệm bội, tương đương <span class="math notranslate nohighlight">\(\gcd(f,f')=1\)</span>; khi đó không có thành phần lũy linh.</p>
+</section>
+<section id="id27">
+<h3><span class="section-number">11.1.32. </span>Регистры сдвига максимального периода<a class="headerlink" href="#id27" title="Link to this heading">¶</a></h3>
+<p>LFSR <span class="math notranslate nohighlight">\(n\)</span> bit có chu kỳ cực đại <span class="math notranslate nohighlight">\(2^n-1\)</span> với mọi trạng thái khác 0 khi và chỉ khi đa thức hồi tiếp bậc <span class="math notranslate nohighlight">\(n\)</span> là primitive trên <span class="math notranslate nohighlight">\(\mathrm{GF}(2)\)</span>.</p>
+</section>
+<section id="id28">
+<h3><span class="section-number">11.1.33. </span>Криптоанализ поточных шифров<a class="headerlink" href="#id28" title="Link to this heading">¶</a></h3>
+<p>Gồm correlation, fast correlation, algebraic, guess-and-determine, time--memory--data tradeoff và nonce reuse. Với LFSR đơn, Berlekamp--Massey khôi phục recurrence từ khoảng <span class="math notranslate nohighlight">\(2L\)</span> bit, với <span class="math notranslate nohighlight">\(L\)</span> là linear complexity.</p>
+</section>
+<section id="id29">
+<h3><span class="section-number">11.1.34. </span>Системы шифрования с открытыми ключами. Принципы их построения<a class="headerlink" href="#id29" title="Link to this heading">¶</a></h3>
+<p>Dựa trên hàm một chiều có cửa sập: khóa công khai cho phép mã hóa/kiểm tra, khóa bí mật cho phép giải mã/ký. Mã hóa thực tế phải xác suất và đạt ít nhất IND-CPA, thường hướng tới IND-CCA.</p>
+</section>
+<section id="id30">
+<h3><span class="section-number">11.1.35. </span>Анализ асимметричных криптосистем<a class="headerlink" href="#id30" title="Link to this heading">¶</a></h3>
+<p>Kiểm tra bài toán nền, kích thước tham số, sinh khóa, padding/encoding, mô hình IND-CPA/CCA hoặc EUF-CMA, chi phí thuật toán tốt nhất và khả năng chống side channel.</p>
+</section>
+<section id="id31">
+<h3><span class="section-number">11.1.36. </span>Атаки на асимметричные криптосистемы<a class="headerlink" href="#id31" title="Link to this heading">¶</a></h3>
+<p>Gồm giải bài toán nền, padding oracle, small exponent, reuse randomness, invalid-curve, fault injection, timing/cache/power và tấn công giao thức. Phòng vệ bằng chuẩn mã hóa đúng, kiểm tra đầu vào, blinding và constant-time.</p>
+</section>
+<section id="rsa">
+<h3><span class="section-number">11.1.37. </span>Системы шифрования с открытыми ключами. Криптосистема RSA<a class="headerlink" href="#rsa" title="Link to this heading">¶</a></h3>
+<p>Chọn <span class="math notranslate nohighlight">\(N=pq\)</span>, <span class="math notranslate nohighlight">\(ed\equiv1\pmod{\lambda(N)}\)</span>. Mã hóa thô: <span class="math notranslate nohighlight">\(c=m^e\bmod N\)</span>; giải mã <span class="math notranslate nohighlight">\(m=c^d\bmod N\)</span>. Thực tế dùng OAEP cho mã hóa và PSS cho chữ ký.</p>
+</section>
+<section id="id32">
+<h3><span class="section-number">11.1.38. </span>Системы шифрования с открытыми ключами. Криптосистема Эль-Гамаля<a class="headerlink" href="#id32" title="Link to this heading">¶</a></h3>
+<p>Khóa bí mật <span class="math notranslate nohighlight">\(x\)</span>, công khai <span class="math notranslate nohighlight">\(y=g^x\)</span>. Chọn ngẫu nhiên <span class="math notranslate nohighlight">\(k\)</span>; mã hóa <span class="math notranslate nohighlight">\((c_1,c_2)=(g^k,m y^k)\)</span>; giải mã <span class="math notranslate nohighlight">\(m=c_2(c_1^x)^{-1}\)</span>. Không được lặp <span class="math notranslate nohighlight">\(k\)</span>.</p>
+</section>
+<section id="id33">
+<h3><span class="section-number">11.1.39. </span>Управление ключами. Открытое распределение ключей Диффи--Хеллмана<a class="headerlink" href="#id33" title="Link to this heading">¶</a></h3>
+<p>Alice gửi <span class="math notranslate nohighlight">\(A=g^a\)</span>, Bob gửi <span class="math notranslate nohighlight">\(B=g^b\)</span>; cả hai tính <span class="math notranslate nohighlight">\(K=g^{ab}\)</span>. DH không tự xác thực nên bị man-in-the-middle; cần chữ ký/chứng thư và đưa shared secret qua KDF.</p>
+</section>
+<section id="id34">
+<h3><span class="section-number">11.1.40. </span>Электронная подпись. Принципы ее формирования<a class="headerlink" href="#id34" title="Link to this heading">¶</a></h3>
+<p>KeyGen tạo <span class="math notranslate nohighlight">\((sk,pk)\)</span>; Sign ký hash bằng <span class="math notranslate nohighlight">\(sk\)</span>; Verify dùng <span class="math notranslate nohighlight">\(pk\)</span>. Yêu cầu đúng đắn và EUF-CMA. Chữ ký cung cấp toàn vẹn, xác thực nguồn và hỗ trợ chống chối bỏ, không cung cấp bí mật.</p>
+</section>
+<section id="id35">
+<h3><span class="section-number">11.1.41. </span>Электронная подпись на базе криптосистемы RSA<a class="headerlink" href="#id35" title="Link to this heading">¶</a></h3>
+<p>RSA thô ký <span class="math notranslate nohighlight">\(s=H(m)^d\bmod N\)</span>, kiểm tra <span class="math notranslate nohighlight">\(s^e\equiv H(m)\)</span>. Thực tế phải dùng RSA-PSS; không ký trực tiếp thông điệp hay dùng textbook RSA.</p>
+</section>
+<section id="id36">
+<h3><span class="section-number">11.1.42. </span>Электронная подпись на базе криптосистемы Эль Гамаля<a class="headerlink" href="#id36" title="Link to this heading">¶</a></h3>
+<p>Chọn <span class="math notranslate nohighlight">\(k\)</span> khả nghịch modulo <span class="math notranslate nohighlight">\(p-1\)</span>, tính <span class="math notranslate nohighlight">\(r=g^k\)</span>, <span class="math notranslate nohighlight">\(s=k^{-1}(H(m)-xr)\bmod(p-1)\)</span>. Kiểm tra <span class="math notranslate nohighlight">\(g^{H(m)}\equiv y^r r^s\pmod p\)</span>. Lặp <span class="math notranslate nohighlight">\(k\)</span> làm lộ khóa bí mật.</p>
+</section>
+<section id="id37">
+<h3><span class="section-number">11.1.43. </span>Российский стандарт электронной подписи ГОСТ Р 34.10-2012<a class="headerlink" href="#id37" title="Link to this heading">¶</a></h3>
+<p>Chuẩn dùng elliptic curve với khóa <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(Q=dP\)</span>. Với nonce <span class="math notranslate nohighlight">\(k\)</span>, đặt <span class="math notranslate nohighlight">\(r=x(kP)\bmod q\)</span>, <span class="math notranslate nohighlight">\(s=(rd+ke)\bmod q\)</span>, <span class="math notranslate nohighlight">\(e=H(m)\bmod q\)</span>. Có biến thể 256 và 512 bit.</p>
+</section>
+<section id="id38">
+<h3><span class="section-number">11.1.44. </span>Хэш-функции, требования к ним<a class="headerlink" href="#id38" title="Link to this heading">¶</a></h3>
+<p>Hash ánh xạ dữ liệu tùy ý thành digest cố định. Yêu cầu khó tìm preimage, second preimage và collision; avalanche và phân phối đều. Collision security lý tưởng của hash <span class="math notranslate nohighlight">\(n\)</span> bit là khoảng <span class="math notranslate nohighlight">\(2^{n/2}\)</span>.</p>
+</section>
+<section id="id39">
+<h3><span class="section-number">11.1.45. </span>Методы построения функций хэширования<a class="headerlink" href="#id39" title="Link to this heading">¶</a></h3>
+<p>Cấu trúc phổ biến: Merkle--Damgård, HAIFA, sponge/duplex và tree hashing. Có thể xây compression function từ block cipher bằng Davies--Meyer hoặc Miyaguchi--Preneel.</p>
+</section>
+<section id="id40">
+<h3><span class="section-number">11.1.46. </span>Российский стандарт хэш-функции ГОСТ Р 34.11-2012<a class="headerlink" href="#id40" title="Link to this heading">¶</a></h3>
+<p>Streebog nhận thông điệp tùy ý và cho digest 256 hoặc 512 bit. Hàm nén dùng biến đổi S, P, L và 12 vòng; trạng thái còn theo dõi tổng độ dài và checksum modulo <span class="math notranslate nohighlight">\(2^{512}\)</span>.</p>
+</section>
+<section id="id41">
+<h3><span class="section-number">11.1.47. </span>Криптографические протоколы и их классификация<a class="headerlink" href="#id41" title="Link to this heading">¶</a></h3>
+<p>Protocol là chuỗi thông điệp/quy tắc để đạt mục tiêu mật mã. Phân loại theo mục tiêu: trao đổi khóa, xác thực, cam kết, chữ ký, zero-knowledge, bỏ phiếu; theo tương tác và số bên.</p>
+</section>
+<section id="id42">
+<h3><span class="section-number">11.1.48. </span>Системы аутентификации<a class="headerlink" href="#id42" title="Link to this heading">¶</a></h3>
+<p>Xác thực dựa trên yếu tố biết (mật khẩu), có (token/khóa), hoặc là (sinh trắc). Dùng nonce/challenge chống replay, lưu mật khẩu bằng salted password hash và ưu tiên MFA.</p>
+</section>
+<section id="lightweight">
+<h3><span class="section-number">11.1.49. </span>Алгоритмы «облегченной» (lightweight) криптографии и их предназначение<a class="headerlink" href="#lightweight" title="Link to this heading">¶</a></h3>
+<p>Lightweight cryptography tối ưu diện tích mạch, RAM, năng lượng và độ trễ cho IoT/RFID. Ví dụ: Ascon-AEAD128 và Ascon-Hash256.</p>
+</section>
+<section id="windows">
+<h3><span class="section-number">11.1.50. </span>Криптографические средства защиты информации в ОС Windows<a class="headerlink" href="#windows" title="Link to this heading">¶</a></h3>
+<p>Windows cung cấp CNG/CryptoAPI, DPAPI, BitLocker, EFS, TLS/SChannel, Credential Guard và kho chứng thư. Ứng dụng nên dùng API cấp cao và bảo vệ khóa bằng hệ điều hành/TPM.</p>
+</section>
+<section id="msdn">
+<h3><span class="section-number">11.1.51. </span>Криптографические средства защиты информации в MSDN<a class="headerlink" href="#msdn" title="Link to this heading">¶</a></h3>
+<p>.NET có <code class="docutils literal notranslate"><span class="pre">System.Security.Cryptography</span></code>: AES, RSA, ECDSA, ECDH, hash, HMAC, RNG và X.509. Dùng <code class="docutils literal notranslate"><span class="pre">RandomNumberGenerator</span></code>, AEAD như <code class="docutils literal notranslate"><span class="pre">AesGcm</span></code>; tránh DES, RC2, SHA-1.</p>
+</section>
+<section id="id43">
+<h3><span class="section-number">11.1.52. </span>Реализация операций над байтами в стандарте AES<a class="headerlink" href="#id43" title="Link to this heading">¶</a></h3>
+<p>Byte AES là phần tử <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> theo <span class="math notranslate nohighlight">\(x^8+x^4+x^3+x+1\)</span>. Cộng là XOR; nhân là nhân đa thức rồi rút gọn. <code class="docutils literal notranslate"><span class="pre">xtime</span></code> dịch trái và XOR <code class="docutils literal notranslate"><span class="pre">0x1B</span></code> nếu bit cao ban đầu bằng 1.</p>
+</section>
+<section id="subbytes-aes">
+<h3><span class="section-number">11.1.53. </span>Реализация преобразования SubBytes в стандарте AES<a class="headerlink" href="#subbytes-aes" title="Link to this heading">¶</a></h3>
+<p>Lấy nghịch đảo nhân của byte trong <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> (<span class="math notranslate nohighlight">\(0\mapsto0\)</span>), sau đó áp dụng affine transform và XOR <code class="docutils literal notranslate"><span class="pre">0x63</span></code>. Inverse SubBytes dùng phép biến đổi ngược.</p>
+</section>
+<section id="id44">
+<h3><span class="section-number">11.1.54. </span>Реализация нелинейного узла замены в стандарте DES<a class="headerlink" href="#id44" title="Link to this heading">¶</a></h3>
+<p>Mỗi S-box DES nhận 6 bit, trả 4 bit. Hai bit ngoài chọn hàng, bốn bit giữa chọn cột; tra bảng <span class="math notranslate nohighlight">\(S_i\)</span>. Tám S-box biến 48 bit thành 32 bit.</p>
+</section>
+<section id="id45">
+<h3><span class="section-number">11.1.55. </span>Вычисления в группе точек эллиптических кривых<a class="headerlink" href="#id45" title="Link to this heading">¶</a></h3>
+<p>Trên <span class="math notranslate nohighlight">\(y^2=x^3+ax+b\)</span>, nếu <span class="math notranslate nohighlight">\(P\ne Q\)</span> thì <span class="math notranslate nohighlight">\(\lambda=(y_Q-y_P)/(x_Q-x_P)\)</span>; nếu nhân đôi, <span class="math notranslate nohighlight">\(\lambda=(3x_P^2+a)/(2y_P)\)</span>. Sau đó <span class="math notranslate nohighlight">\(x_R=\lambda^2-x_P-x_Q\)</span>, <span class="math notranslate nohighlight">\(y_R=\lambda(x_P-x_R)-y_P\)</span>.</p>
+</section>
+<section id="id46">
+<h3><span class="section-number">11.1.56. </span>Криптосистемы на эллиптических кривых. Принципы их построения<a class="headerlink" href="#id46" title="Link to this heading">¶</a></h3>
+<p>ECC dùng nhóm điểm đường cong, an toàn dựa trên ECDLP. Với cùng mức an toàn, khóa nhỏ hơn RSA. Phải kiểm tra điểm, dùng subgroup bậc lớn và scalar multiplication chống side channel.</p>
+</section>
+<section id="id47">
+<h3><span class="section-number">11.1.57. </span>Распределение ключей с использованием эллиптических кривых. Протокол Диффи--Хеллмана<a class="headerlink" href="#id47" title="Link to this heading">¶</a></h3>
+<p>Alice gửi <span class="math notranslate nohighlight">\(A=aG\)</span>, Bob gửi <span class="math notranslate nohighlight">\(B=bG\)</span>; shared point là <span class="math notranslate nohighlight">\(aB=bA=abG\)</span>. Đưa encoding của điểm qua KDF; ECDH cần xác thực và kiểm tra public point.</p>
+</section>
+<section id="id48">
+<h3><span class="section-number">11.1.58. </span>Криптосистема Эль-Гамаля на эллиптических кривых<a class="headerlink" href="#id48" title="Link to this heading">¶</a></h3>
+<p>Khóa công khai <span class="math notranslate nohighlight">\(Q=dG\)</span>. Mã hóa điểm <span class="math notranslate nohighlight">\(M\)</span>: <span class="math notranslate nohighlight">\((C_1,C_2)=(kG,M+kQ)\)</span>; giải mã <span class="math notranslate nohighlight">\(M=C_2-dC_1\)</span>. Thực tế dùng ECIES/KEM-DEM.</p>
+</section>
+<section id="id49">
+<h3><span class="section-number">11.1.59. </span>Электронная подпись Эль-Гамаля на эллиптических кривых<a class="headerlink" href="#id49" title="Link to this heading">¶</a></h3>
+<p>ECDSA: <span class="math notranslate nohighlight">\(r=x(kG)\bmod n\)</span>, <span class="math notranslate nohighlight">\(s=k^{-1}(H(m)+dr)\bmod n\)</span>. Verify dùng <span class="math notranslate nohighlight">\(u_1=H(m)s^{-1}\)</span>, <span class="math notranslate nohighlight">\(u_2=rs^{-1}\)</span> và kiểm tra hoành độ của <span class="math notranslate nohighlight">\(u_1G+u_2Q\)</span>. Nonce không được lặp.</p>
+</section>
+<section id="id50">
+<h3><span class="section-number">11.1.60. </span>Квантовая криптография, протоколы открытого распределения ключей<a class="headerlink" href="#id50" title="Link to this heading">¶</a></h3>
+<p>QKD phân phối khóa bằng trạng thái lượng tử; nghe lén gây nhiễu có thể phát hiện. BB84 dùng hai basis, rồi sifting, ước lượng lỗi, error correction và privacy amplification. Kênh cổ điển vẫn phải xác thực.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="zero-knowledge-proof/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><span class="section-number">12. </span>Zero Knowledge Proof</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="protocols/TONG_HOP.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><span class="section-number">10. </span>Tổng hợp bài tập môn Giao thức an toàn thông tin cho hệ thống cyber-physical</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025-2026, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">11. Câu hỏi ôn thi mật mã học</a><ul>
+<li><a class="reference internal" href="#mon-cac-phuong-phap-bao-ve-thong-tin-bang-mat-ma">11.1. Môn &quot;Các phương pháp bảo vệ thông tin bằng mật mã&quot;</a><ul>
+<li><a class="reference internal" href="#id1">11.1.1. Задачи криптографической защиты информации и средства их решения</a></li>
+<li><a class="reference internal" href="#id2">11.1.2. Симметричные, асимметричные и комбинированные криптосистемы</a></li>
+<li><a class="reference internal" href="#id3">11.1.3. Шифры, алгебраическая модель шифра, примеры</a></li>
+<li><a class="reference internal" href="#id4">11.1.4. Шифры, вероятностная модель шифра, примеры</a></li>
+<li><a class="reference internal" href="#id5">11.1.5. Модели и критерии распознавания открытых текстов</a></li>
+<li><a class="reference internal" href="#id6">11.1.6. Криптоанализ классических шифров. Дешифрование шифра Виженера</a></li>
+<li><a class="reference internal" href="#id7">11.1.7. Классификации шифров</a></li>
+<li><a class="reference internal" href="#id8">11.1.8. Теоретическая и практическая стойкость шифров</a></li>
+<li><a class="reference internal" href="#id9">11.1.9. Совершенные шифры</a></li>
+<li><a class="reference internal" href="#id10">11.1.10. Шифры замены и их криптоанализ</a></li>
+<li><a class="reference internal" href="#id11">11.1.11. Шифры перестановки и их криптоанализ</a></li>
+<li><a class="reference internal" href="#id12">11.1.12. Шифрование методом гаммирования и его криптоанализ</a></li>
+<li><a class="reference internal" href="#id13">11.1.13. Криптоаналитические атаки и их классификация</a></li>
+<li><a class="reference internal" href="#id14">11.1.14. Блочные шифры. Принципы построения симметричных блочных шифров</a></li>
+<li><a class="reference internal" href="#id15">11.1.15. Режимы работы блочных шифров и их сравнение</a></li>
+<li><a class="reference internal" href="#id16">11.1.16. Методы анализа алгоритмов блочного шифрования</a></li>
+<li><a class="reference internal" href="#des">11.1.17. Стандарт шифрования данных DES</a></li>
+<li><a class="reference internal" href="#id17">11.1.18. Развертывание раундовых ключей в DES</a></li>
+<li><a class="reference internal" href="#cbc-des">11.1.19. Режим сцепления блоков шифра (CBC) на примере DES</a></li>
+<li><a class="reference internal" href="#ofb-des">11.1.20. Режим обратной связи по выходу (OFB) на примере DES</a></li>
+<li><a class="reference internal" href="#cfb-des">11.1.21. Режим обратной связи по шифртексту (CFB) на примере DES</a></li>
+<li><a class="reference internal" href="#id18">11.1.22. Имитостойкость шифров</a></li>
+<li><a class="reference internal" href="#aes">11.1.23. Стандарт шифрования данных AES</a></li>
+<li><a class="reference internal" href="#id19">11.1.24. Развертывание раундовых ключей в AES</a></li>
+<li><a class="reference internal" href="#id20">11.1.25. Российский стандарт шифрования данных МАГМА (ГОСТ Р 34.12-2015)</a></li>
+<li><a class="reference internal" href="#id21">11.1.26. Развертывание раундовых ключей в стандарте МАГМА, количество слабых и 2-слабых ключей</a></li>
+<li><a class="reference internal" href="#id22">11.1.27. Российский стандарт шифрования данных КУЗНЕЧИК (ГОСТ Р 34.12-2015)</a></li>
+<li><a class="reference internal" href="#id23">11.1.28. Развертывание раундовых ключей в стандарте КУЗНЕЧИК</a></li>
+<li><a class="reference internal" href="#id24">11.1.29. Поточные шифры. Принципы их построения</a></li>
+<li><a class="reference internal" href="#id25">11.1.30. Методы генерации и анализа псевдослучайных последовательностей</a></li>
+<li><a class="reference internal" href="#id26">11.1.31. Регистры сдвига, критерий регулярности</a></li>
+<li><a class="reference internal" href="#id27">11.1.32. Регистры сдвига максимального периода</a></li>
+<li><a class="reference internal" href="#id28">11.1.33. Криптоанализ поточных шифров</a></li>
+<li><a class="reference internal" href="#id29">11.1.34. Системы шифрования с открытыми ключами. Принципы их построения</a></li>
+<li><a class="reference internal" href="#id30">11.1.35. Анализ асимметричных криптосистем</a></li>
+<li><a class="reference internal" href="#id31">11.1.36. Атаки на асимметричные криптосистемы</a></li>
+<li><a class="reference internal" href="#rsa">11.1.37. Системы шифрования с открытыми ключами. Криптосистема RSA</a></li>
+<li><a class="reference internal" href="#id32">11.1.38. Системы шифрования с открытыми ключами. Криптосистема Эль-Гамаля</a></li>
+<li><a class="reference internal" href="#id33">11.1.39. Управление ключами. Открытое распределение ключей Диффи--Хеллмана</a></li>
+<li><a class="reference internal" href="#id34">11.1.40. Электронная подпись. Принципы ее формирования</a></li>
+<li><a class="reference internal" href="#id35">11.1.41. Электронная подпись на базе криптосистемы RSA</a></li>
+<li><a class="reference internal" href="#id36">11.1.42. Электронная подпись на базе криптосистемы Эль Гамаля</a></li>
+<li><a class="reference internal" href="#id37">11.1.43. Российский стандарт электронной подписи ГОСТ Р 34.10-2012</a></li>
+<li><a class="reference internal" href="#id38">11.1.44. Хэш-функции, требования к ним</a></li>
+<li><a class="reference internal" href="#id39">11.1.45. Методы построения функций хэширования</a></li>
+<li><a class="reference internal" href="#id40">11.1.46. Российский стандарт хэш-функции ГОСТ Р 34.11-2012</a></li>
+<li><a class="reference internal" href="#id41">11.1.47. Криптографические протоколы и их классификация</a></li>
+<li><a class="reference internal" href="#id42">11.1.48. Системы аутентификации</a></li>
+<li><a class="reference internal" href="#lightweight">11.1.49. Алгоритмы «облегченной» (lightweight) криптографии и их предназначение</a></li>
+<li><a class="reference internal" href="#windows">11.1.50. Криптографические средства защиты информации в ОС Windows</a></li>
+<li><a class="reference internal" href="#msdn">11.1.51. Криптографические средства защиты информации в MSDN</a></li>
+<li><a class="reference internal" href="#id43">11.1.52. Реализация операций над байтами в стандарте AES</a></li>
+<li><a class="reference internal" href="#subbytes-aes">11.1.53. Реализация преобразования SubBytes в стандарте AES</a></li>
+<li><a class="reference internal" href="#id44">11.1.54. Реализация нелинейного узла замены в стандарте DES</a></li>
+<li><a class="reference internal" href="#id45">11.1.55. Вычисления в группе точек эллиптических кривых</a></li>
+<li><a class="reference internal" href="#id46">11.1.56. Криптосистемы на эллиптических кривых. Принципы их построения</a></li>
+<li><a class="reference internal" href="#id47">11.1.57. Распределение ключей с использованием эллиптических кривых. Протокол Диффи--Хеллмана</a></li>
+<li><a class="reference internal" href="#id48">11.1.58. Криптосистема Эль-Гамаля на эллиптических кривых</a></li>
+<li><a class="reference internal" href="#id49">11.1.59. Электронная подпись Эль-Гамаля на эллиптических кривых</a></li>
+<li><a class="reference internal" href="#id50">11.1.60. Квантовая криптография, протоколы открытого распределения ключей</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Nhấp để hiển thị';</script>
+    <script>let toggleHintHide = 'Nhấp để ẩn';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1], "wt": "\\operatorname{wt}", "tr": "\\operatorname{tr}", "rank": "\\operatorname{rank}", "lcm": "\\mathrm{lcm}", "GL": "\\mathrm{GL}", "lex": "\\text{lex}", "grlex": "\\text{grlex}", "grevlex": "\\text{grevlex}", "CC": "\\mathbb{C}", "RR": "\\mathbb{R}", "QQ": "\\mathbb{Q}", "ZZ": "\\mathbb{Z}", "NN": "\\mathbb{N}", "FF": "\\mathbb{F}", "KK": "\\mathbb{K}"}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>

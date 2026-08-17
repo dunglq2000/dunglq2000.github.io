@@ -1,0 +1,1940 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Tìm Kiếm" href="../../search.html"><link rel="next" title="An Introduction to Mathematical Cryptography" href="../an-introduction-to-mathematical-cryptography/index.html"><link rel="prev" title="Abstract Algebra: Theory and Applications" href="../Judson.html">
+        <link rel="prefetch" href="../../_static/rhine_lab.jpg" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Курс высшей математики: Теория вероятностей - Contests</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=3a5ece24" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystyles.css?v=ca48935a" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Contests</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/rhine_lab.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Contests</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2019/index.html">Các cuộc thi năm 2019</a><input aria-label="Toggle navigation of Các cuộc thi năm 2019" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2019/AceBear/index.html">AceBear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2019/efiensCTF/round-2/index.html">EFIENS CTF 2019 Round 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2020/index.html">Các cuộc thi năm 2020</a><input aria-label="Toggle navigation of Các cuộc thi năm 2020" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/MidnightsunCTF/index.html">Midnightsun CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/nsucrypto/index.html">NSUCRYPTO 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/AngstromCTF/index.html">angstromCTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/AsisCTF/index.html">ASIS CTF Quals 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/CryptoCTF/index.html">CryptoCTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/InCTF/index.html">InCTF 2019 Bài viết</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/NetwarkAcademyCTF/index.html">Netwark Academy CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/NetwarkAcademyCTF/index.html#error-2">6. Error 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/SpamAndFlagsCTF/index.html">SpamAndFlags CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/SunshineCTF/index.html">Sunshine CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/VIRSECCONCTF/index.html">VIRSECCON CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/VolgaCTF-Qualifier/index.html">VolgaCTF 2020 Qualifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/castorsCTF/index.html">Castor CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2020/efiensCTF/index.html">Efiens CTF 2020</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2021/index.html">Các cuộc thi năm 2021</a><input aria-label="Toggle navigation of Các cuộc thi năm 2021" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/CryptoCTF/index.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/GoogleCTF/index.html">Google CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/nsucrypto/index.html">NSUCRYPTO 2021</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/index.html">Các cuộc thi năm 2022</a><input aria-label="Toggle navigation of Các cuộc thi năm 2022" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/downunderCTF/index.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/nsucrypto.html">NSUCRYPTO 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sekaiCTF/index.html">Sekai CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/ISITDTUCTF/index.html">ISITDTU Quals 2022</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2023/index.html">Các cuộc thi năm 2023</a><input aria-label="Toggle navigation of Các cuộc thi năm 2023" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/nsucrypto/index.html">NSUCRYPTO 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/siberian-maths-contest/index.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/internet-olympiad/index.html">Internet Olympiad 2023 (Vòng 3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/AmateursCTF/index.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/backdoorCTF.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/googleCTF.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/diceCTF.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/UTCTF.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/wolvCTF.html">Wolv CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/cryptoCTF-2023.html">Crypto CTF 2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2024/index.html">Các cuộc thi năm 2024</a><input aria-label="Toggle navigation of Các cuộc thi năm 2024" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/NSUCRYPTO/index.html">NSUCRYPTO 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/internet-olympiad/index.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/0xL4ughCTF-2024/index.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/ASISCTF-2024/index.html">ASIS CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/TJCTF/index.html">TJCTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/cryptofox/index.html">CryptoFox 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/isitdtu.html">ISITDTU Quals 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2025/index.html">Các cuộc thi năm 2025</a><input aria-label="Toggle navigation of Các cuộc thi năm 2025" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/cryptofox/index.html">CryptoFox 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/tjctf.html">TJCTF 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/olympiad-algebra.html">Семнадцатая студенческая олимпиада по алгебре</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/CryptoFox2025/4/solve.html">Задача "РАЗНОСТИ ДЛЯ FOX128"</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2026/index.html">Các cuộc thi năm 2026</a><input aria-label="Toggle navigation of Các cuộc thi năm 2026" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2026/cryptofox/index.html">CryptoFox</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptohack/index.html">Wargame chill chill</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Đáp án bài tập trong sách</a><input aria-label="Toggle navigation of Đáp án bài tập trong sách" checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Judson.html">Abstract Algebra: Theory and Applications</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Курс высшей математики: Теория вероятностей</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../an-introduction-to-mathematical-cryptography/index.html">An Introduction to Mathematical Cryptography</a><input aria-label="Toggle navigation of An Introduction to Mathematical Cryptography" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../an-introduction-to-mathematical-cryptography/chapter-2.html">Chapter 2. Discrete Logarithms and Diffie-Hellman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../an-introduction-to-mathematical-cryptography/chapter-3.html">Chapter 3. Integer Factorization and RSA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../an-introduction-to-mathematical-cryptography/chapter-4.html">Chapter 4. Digital Signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../an-introduction-to-mathematical-cryptography/chapter-7.html">Chapter 7. Lattices and Cryptography</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../symmetric-cryptography/index.html">Симметричная криптография</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collection.html">Các bài toán sưu tầm</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/solutions/Petrushko/index.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="id1">
+<h1>Курс высшей математики: Теория вероятностей<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+<p>Lời giải cho quyển sách <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../../index.html#id16" title="И.М. Петрушко. Курс высшей математики. Теория вероятностей. Лекции и практикум : учебное пособие. Издательство &quot;Лань&quot;, 3 edition, 2008. ISBN 978-5-8114-0728-6. URL: https://e.lanbook.com/book/497.">3</a>]</span>. Đây là quyển ta được học trên trường.</p>
+<section id="xac-suat-khong-lien-tuc">
+<h2>Xác suất không liên tục<a class="headerlink" href="#xac-suat-khong-lien-tuc" title="Link to this heading">¶</a></h2>
+<p><strong>Bài 1.</strong> Có <span class="math notranslate nohighlight">\(10\)</span> đội được chia ngẫu nhiên làm hai nhóm. Tính xác xuất để hai đội mạnh nhất vào hai nhóm khác nhau? ... cùng một nhóm? ... cùng vào nhóm thứ nhất?</p>
+<p><strong>Giải.</strong></p>
+<ol class="arabic simple">
+<li><p>Một đội mạnh có <span class="math notranslate nohighlight">\(C^1_2\)</span> cách chọn, đội còn lại
+sẽ vào nhóm còn lại. Tiếp theo, chọn <span class="math notranslate nohighlight">\(4\)</span> đội cho
+nhóm đầu có <span class="math notranslate nohighlight">\(C^4_8\)</span> cách, <span class="math notranslate nohighlight">\(4\)</span> đội cho nhóm
+còn lại có <span class="math notranslate nohighlight">\(C^4_4\)</span> cách. Không gian mẫu là
+<span class="math notranslate nohighlight">\(C^5_{10} \cdot C^5_5\)</span>. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{5}{9}\)</span>.</p></li>
+<li><p>Hai đội mạnh vào cùng một nhóm, có <span class="math notranslate nohighlight">\(C^1_2\)</span> cách.
+Chọn <span class="math notranslate nohighlight">\(3\)</span> đội cho nhóm đó có <span class="math notranslate nohighlight">\(C^3_8\)</span> cách.
+Nhóm còn lại sẽ có <span class="math notranslate nohighlight">\(C^5_5\)</span> cách. Không gian mẫu
+là <span class="math notranslate nohighlight">\(C^5_{10} \cdot C^5_5\)</span>. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{4}{9}\)</span>.</p></li>
+<li><p>Hai đội mạnh đều vào nhóm đầu nên chỉ có <span class="math notranslate nohighlight">\(1\)</span>
+cách chọn. Chọn <span class="math notranslate nohighlight">\(3\)</span> đội còn lại của nhóm đầu
+có <span class="math notranslate nohighlight">\(C^3_8\)</span> cách. Chọn <span class="math notranslate nohighlight">\(5\)</span> đội cho nhóm
+còn lại có <span class="math notranslate nohighlight">\(C^5_5\)</span> cách. Không gian mẫu là
+<span class="math notranslate nohighlight">\(C^5_{10} \cdot C^5_5\)</span>. Vậy đáp án là <span class="math notranslate nohighlight">\(\dfrac{2}{9}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 2.</strong> Một bộ bài đầy đủ có <span class="math notranslate nohighlight">\(52\)</span> lá. Lấy ngẫu nhiên
+ra ba lá. Tính xác suất để ba lá đó là <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(7\)</span> và át?
+Tính xác suất để ba lá đó được lấy theo thứ tự trên?</p>
+<p><strong>Giải.</strong></p>
+<ol class="arabic simple">
+<li><p>Không gian mẫu là <span class="math notranslate nohighlight">\(C^3_{52}\)</span>. Lấy một trong bốn
+con <span class="math notranslate nohighlight">\(3\)</span> có <span class="math notranslate nohighlight">\(C^1_4\)</span> cách, tương tự cho lấy
+con <span class="math notranslate nohighlight">\(7\)</span> có <span class="math notranslate nohighlight">\(C^1_4\)</span> cách và lấy con át
+có <span class="math notranslate nohighlight">\(C^1_4\)</span> cách. Vậy đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{4 \cdot 4 \cdot 4}{C^3_{52}} = \dfrac{16}{5525}\)</span>.</p></li>
+<li><p>Không gian mẫu là <span class="math notranslate nohighlight">\(A^3_{52}\)</span> vì có xét thứ tự.
+Cách chọn ba lá bài vẫn như trước. Vậy đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{4 \cdot 4 \cdot 4}{A^3_{52}} = \dfrac{8}{16575}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 3.</strong> Trên đoạn thẳng <span class="math notranslate nohighlight">\(OA\)</span> độ dài <span class="math notranslate nohighlight">\(L\)</span> chọn
+ngẫu nhiên hai điểm <span class="math notranslate nohighlight">\(B\)</span> và <span class="math notranslate nohighlight">\(C\)</span>, điều kiện là <span class="math notranslate nohighlight">\(C\)</span>
+nằm bên phải so với <span class="math notranslate nohighlight">\(B\)</span>. Tính xác suất để độ dài <span class="math notranslate nohighlight">\(BC\)</span>
+nhỏ hơn độ dài <span class="math notranslate nohighlight">\(OB\)</span>.</p>
+<p><strong>Giải.</strong></p>
+<figure class="align-default">
+<img alt="../../_images/ch01-ex03.jpg" src="../../_images/ch01-ex03.jpg" />
+</figure>
+<p>Gọi <span class="math notranslate nohighlight">\(L\)</span> là độ dài đoạn <span class="math notranslate nohighlight">\(OA\)</span>. Đặt <span class="math notranslate nohighlight">\(x\)</span> là
+độ dài <span class="math notranslate nohighlight">\(OB\)</span> và <span class="math notranslate nohighlight">\(y\)</span> là độ dài <span class="math notranslate nohighlight">\(BC\)</span>. Khi đó
+các độ dài này phải thỏa mãn các phương trình</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    y &lt; x \\
+    0 &lt; x + y &lt; L \\
+    x &gt; 0, y &gt; 0
+\end{cases}\end{split}\]</div>
+</div>
+<p>Xác suất trên tương ứng biểu diễn hình học. Khi đó
+xác suất là tỉ lệ diện tích:</p>
+<ol class="arabic simple">
+<li><p>Không gian mẫu là tam giác vuông nên diện tích
+là <span class="math notranslate nohighlight">\(\dfrac{L^2}{2}\)</span>.</p></li>
+<li><p>Vùng giới hạn bởi các đường thẳng <span class="math notranslate nohighlight">\(y = 0\)</span>,
+<span class="math notranslate nohighlight">\(y = x\)</span> và <span class="math notranslate nohighlight">\(x + y = L\)</span> là tam giác
+với diện tích là <span class="math notranslate nohighlight">\(\dfrac{L \cdot \dfrac{L}{2}}{2} = \dfrac{L^2}{4}\)</span>.</p></li>
+</ol>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{1}{2}\)</span>.</p>
+<p><strong>Bài 4.</strong> Có <span class="math notranslate nohighlight">\(10\)</span> bilet nằm trên bàn giám thị
+được đánh số từ <span class="math notranslate nohighlight">\(1\)</span> tới <span class="math notranslate nohighlight">\(10\)</span>. Tính xác suất
+để các sinh viên lấy bilet theo thứ tự từ <span class="math notranslate nohighlight">\(1\)</span> tới
+<span class="math notranslate nohighlight">\(10\)</span>.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(10!\)</span> cách lấy <span class="math notranslate nohighlight">\(10\)</span>
+bilet theo tứ tự bất kì.</p>
+<p>Để lấy <span class="math notranslate nohighlight">\(10\)</span> bilet theo thứ tự, chỉ có
+duy nhất một cách lấy lần lượt <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, ...</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{1}{10!}\)</span>.</p>
+<p><strong>Bài 5.</strong> Bốn người vào thang máy ở tầng <span class="math notranslate nohighlight">\(1\)</span> của
+tòa nhà <span class="math notranslate nohighlight">\(9\)</span> tầng. Biết rằng xác suất mỗi người
+rời khỏi thang máy là như nhau cho các tầng từ <span class="math notranslate nohighlight">\(2\)</span>
+tới <span class="math notranslate nohighlight">\(9\)</span>. Tính xác suất để: a) mọi người rời thang máy
+ở các tầng khác nhau; b) mọi người rời thang máy cao hơn
+tầng <span class="math notranslate nohighlight">\(5\)</span>; c) ở tầng <span class="math notranslate nohighlight">\(3\)</span> không ai rời thang máy.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(8^4\)</span> vì mỗi người
+đều có <span class="math notranslate nohighlight">\(8\)</span> cách chọn ra các tầng từ <span class="math notranslate nohighlight">\(2\)</span>
+tới <span class="math notranslate nohighlight">\(9\)</span>.</p>
+<ol class="loweralpha simple">
+<li><p>Chọn <span class="math notranslate nohighlight">\(4\)</span> tầng mà mỗi người sẽ ra, có <span class="math notranslate nohighlight">\(A^4_8\)</span>
+cách vì thứ tự có thể khác nhau. Đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{A^4_8}{8^4} = \dfrac{105}{256}\)</span>.</p></li>
+<li><p>Tầng cao hơn <span class="math notranslate nohighlight">\(5\)</span> có <span class="math notranslate nohighlight">\(4\)</span> phương án <span class="math notranslate nohighlight">\(6\)</span>,
+<span class="math notranslate nohighlight">\(7\)</span>, <span class="math notranslate nohighlight">\(8\)</span>, <span class="math notranslate nohighlight">\(9\)</span>. Khi đó mỗi người có
+<span class="math notranslate nohighlight">\(4\)</span> cách chọn nên bốn người có <span class="math notranslate nohighlight">\(4^4\)</span> cách chọn.
+Đáp án là <span class="math notranslate nohighlight">\(\dfrac{4^4}{8^4} = \dfrac{1}{16}\)</span>.</p></li>
+<li><p>Do không ai rời thang máy tầng <span class="math notranslate nohighlight">\(3\)</span> nên mỗi người
+có <span class="math notranslate nohighlight">\(7\)</span> cách chọn là <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(5\)</span>,
+<span class="math notranslate nohighlight">\(6\)</span>, <span class="math notranslate nohighlight">\(7\)</span>, <span class="math notranslate nohighlight">\(8\)</span> và <span class="math notranslate nohighlight">\(9\)</span>. Do đó
+số cách chọn của bốn người là <span class="math notranslate nohighlight">\(7^4\)</span>. Đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{7^4}{8^4} = \dfrac{2401}{4096}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 6.</strong> Lấy ngẫu nhiên bốn chữ số và xếp chúng theo vị trí
+bất kì. Tính xác suất để thu được số có <span class="math notranslate nohighlight">\(4\)</span> chữ số? Tính
+xác suất để thu được số có <span class="math notranslate nohighlight">\(4\)</span> chữ số chia hết cho <span class="math notranslate nohighlight">\(5\)</span>?</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(10^4\)</span> vì có <span class="math notranslate nohighlight">\(10\)</span>
+chữ số từ <span class="math notranslate nohighlight">\(0\)</span> tới <span class="math notranslate nohighlight">\(9\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Để tạo thành số có <span class="math notranslate nohighlight">\(4\)</span> chữ số thì chữ số đầu phải
+khác <span class="math notranslate nohighlight">\(0\)</span> nên có <span class="math notranslate nohighlight">\(9\)</span> cách chọn. Ba vị trí
+còn lại mỗi vị trí <span class="math notranslate nohighlight">\(10\)</span> cách chọn. Như vậy số
+cách chọn là <span class="math notranslate nohighlight">\(9 \cdot 10^3\)</span> nên đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{9}{10}\)</span>.</p></li>
+<li><p>Tương tự, để tạo thành số có <span class="math notranslate nohighlight">\(4\)</span> chữ số thì chữ số
+đầu có <span class="math notranslate nohighlight">\(9\)</span> cách chọn. Vị trí cuối phải là <span class="math notranslate nohighlight">\(0\)</span>
+hoặc <span class="math notranslate nohighlight">\(5\)</span> để chia hết cho <span class="math notranslate nohighlight">\(5\)</span>. Hai chữ số ở
+giữa tùy ý nên có <span class="math notranslate nohighlight">\(10^2\)</span> cách. Như vậy số cách chọn
+là <span class="math notranslate nohighlight">\(9 \cdot 2 \cdot 10^2\)</span>, nên đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{9}{50}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 7.</strong> Có <span class="math notranslate nohighlight">\(20\)</span> bilet exam trên bàn giám thị theo
+thứ tự ngẫu nhiên. <span class="math notranslate nohighlight">\(10\)</span> sinh viên lần lượt bốc bilet
+ngẫu nhiên. Tính xác suất để bilet số <span class="math notranslate nohighlight">\(1\)</span> và <span class="math notranslate nohighlight">\(2\)</span>
+không được chọn.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(A^{10}_{20}\)</span> do các sinh viên
+bốc lần lượt nên sẽ có thứ tự.</p>
+<p>Biến cố bilet số <span class="math notranslate nohighlight">\(1\)</span> và <span class="math notranslate nohighlight">\(2\)</span> không được chọn, như vậy
+sẽ còn <span class="math notranslate nohighlight">\(18\)</span> trường hợp và <span class="math notranslate nohighlight">\(10\)</span> sinh viên sẽ bốc
+ngẫu nhiên <span class="math notranslate nohighlight">\(10\)</span> bilet trong này. Do đó có <span class="math notranslate nohighlight">\(A^{10}_{18}\)</span> cách.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{A^{10}_{18}}{A^{10}_{20}} = \dfrac{9}{38}\)</span>.</p>
+<p><strong>Bài 8.</strong> Trong hộp có <span class="math notranslate nohighlight">\(6\)</span> quả bóng trắng, <span class="math notranslate nohighlight">\(4\)</span> quả bóng
+đen và <span class="math notranslate nohighlight">\(2\)</span> quả bóng đỏ. Lấy ngẫu nhiên <span class="math notranslate nohighlight">\(4\)</span> quả bóng. Tính
+xác suất để trong số <span class="math notranslate nohighlight">\(4\)</span> quả đó chỉ có bóng đen và bóng đỏ.</p>
+<p><strong>Giải.</strong> Có tất cả <span class="math notranslate nohighlight">\(6+4+2 = 12\)</span> quả bóng. Không gian mẫu
+là <span class="math notranslate nohighlight">\(C^4_{12}\)</span>.</p>
+<p>Bóng đen và bóng đỏ có tất cả <span class="math notranslate nohighlight">\(4+2 = 6\)</span> quả. Lấy <span class="math notranslate nohighlight">\(4\)</span> trong số
+đó có <span class="math notranslate nohighlight">\(C^4_6\)</span> cách.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{C^4_6}{C^4_{12}} = \dfrac{1}{33}\)</span>.</p>
+<p><strong>Bài 9.</strong> Có <span class="math notranslate nohighlight">\(10\)</span> quyển sách, trong đó có <span class="math notranslate nohighlight">\(3\)</span> quyển màu đỏ,
+được xếp theo thứ tự ngẫu nhiên trên kệ. Tính xác suất để <span class="math notranslate nohighlight">\(3\)</span>
+quyển màu đỏ nằm liền kề nhau.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(10!\)</span>.</p>
+<p>Nếu xem <span class="math notranslate nohighlight">\(3\)</span> quyển đỏ là cùng một khối thì lúc này trên kệ
+có <span class="math notranslate nohighlight">\(8\)</span> quyển. Số cách chọn là <span class="math notranslate nohighlight">\(8!\)</span>. Bên trong khối đó,
+<span class="math notranslate nohighlight">\(3\)</span> quyển màu đỏ có thể xếp theo thứ tự bất kì nên có <span class="math notranslate nohighlight">\(3!\)</span>
+hoán vị. Như vậy tổng số cách xếp là <span class="math notranslate nohighlight">\(8! \cdot 3!\)</span>.</p>
+<p>Đáp án là <span class="math notranslate nohighlight">\(\dfrac{8! \cdot 3!}{10!} = \dfrac{1}{15}\)</span>.</p>
+<p><strong>Bài 10.</strong> Gieo ba con súc sắc. Tính xác suất các biến cố: <span class="math notranslate nohighlight">\(A\)</span> -
+các súc sắc cho các số khác nhau; <span class="math notranslate nohighlight">\(B\)</span> - các súc sắc ra cùng số.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(6^3\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Các súc sắc cho số khác nhau nên có <span class="math notranslate nohighlight">\(A^3_6\)</span> cách chọn
+vì có tính hoán vị. Đáp án là <span class="math notranslate nohighlight">\(P(A) = \dfrac{A^3_6}{6^3} = \dfrac{5}{9}\)</span>.</p></li>
+<li><p>Các súc sắc ra cùng số có <span class="math notranslate nohighlight">\(6\)</span> trường hợp. Đáp án
+là <span class="math notranslate nohighlight">\(P(B) = \dfrac{6}{6^3} = \dfrac{1}{36}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 11.</strong> Trong tủ có <span class="math notranslate nohighlight">\(5\)</span> đôi tất. Lấy ngẫu nhiên <span class="math notranslate nohighlight">\(2\)</span>
+chiếc tất. Tính xác suất để <span class="math notranslate nohighlight">\(2\)</span> chiếc tất đó cùng đôi.</p>
+<p><strong>Giải.</strong> Không gian mẫu <span class="math notranslate nohighlight">\(C^2_{10}\)</span>.</p>
+<p>Lấy <span class="math notranslate nohighlight">\(2\)</span> chiếc cùng đôi nghĩa là lấy một trong <span class="math notranslate nohighlight">\(5\)</span>
+đôi. Vậy có <span class="math notranslate nohighlight">\(5\)</span> cách chọn.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{5}{C^2_{10}} = \dfrac{1}{9}\)</span>.</p>
+<p><strong>Bài 13.</strong> Trong nhóm có <span class="math notranslate nohighlight">\(4\)</span> nam và <span class="math notranslate nohighlight">\(4\)</span> nữ được chia thành
+hai nhóm nhỏ, mỗi nhóm <span class="math notranslate nohighlight">\(4\)</span> người. Tính xác suất để ở mỗi nhóm nhỏ
+có <span class="math notranslate nohighlight">\(2\)</span> nam và <span class="math notranslate nohighlight">\(2\)</span> nữ.</p>
+<p><strong>Giải.</strong> Do có tất cả <span class="math notranslate nohighlight">\(8\)</span> người nên để chia thành hai nhóm nhỏ
+thì ta chọn <span class="math notranslate nohighlight">\(4\)</span> người cho nhóm đầu, có <span class="math notranslate nohighlight">\(C^4_8\)</span> cách. Nhóm thứ hai
+có <span class="math notranslate nohighlight">\(C^4_4\)</span> cách. Tuy nhiên có khả năng bị lặp (chọn A-B rồi C-D hoàn toàn
+giống chọn C-D rồi A-B). Do đó không gian mẫu cần chia <span class="math notranslate nohighlight">\(2!\)</span>, nên suy ra
+<span class="math notranslate nohighlight">\(\lvert \Omega \rvert = \dfrac{C^4_8 \cdot C^4_4}{2!} = 35\)</span> cách.</p>
+<p>Tương tự, ta chọn <span class="math notranslate nohighlight">\(2\)</span> nam cho nhóm đầu thì có <span class="math notranslate nohighlight">\(C^2_4\)</span> cách
+và cho nhóm thứ hai có <span class="math notranslate nohighlight">\(C^2_2\)</span> cách. Như vậy có <span class="math notranslate nohighlight">\(6\)</span> cách
+chia <span class="math notranslate nohighlight">\(4\)</span> nam vào <span class="math notranslate nohighlight">\(2\)</span> nhóm. Nữ cũng vậy, có <span class="math notranslate nohighlight">\(6\)</span> cách.
+Theo bên trên, hai nhóm này có thể bị lặp nên cần phải chia <span class="math notranslate nohighlight">\(2!\)</span>,
+suy ra số cách chia mỗi nhóm <span class="math notranslate nohighlight">\(2\)</span> nam <span class="math notranslate nohighlight">\(2\)</span> nữ
+là <span class="math notranslate nohighlight">\(\dfrac{6 \cdot 6}{2!} = 18\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{18}{35}\)</span>.</p>
+<p><strong>Bài 14.</strong> Bên trong hình tròn bán kính <span class="math notranslate nohighlight">\(R\)</span> chọn ngẫu nhiên một điểm.
+Tính xác suất để điểm đó: a) nằm bên trong hình vuông nội tiếp; b) nằm bên
+trong tam giác đều nội tiếp.</p>
+<p><strong>Giải.</strong> Bài này sử dụng xác suất hình học. Khi đó không gian mẫu là
+diện tích hình tròn bán kính <span class="math notranslate nohighlight">\(R\)</span>, hay <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = \pi R^2\)</span>.</p>
+<ol class="loweralpha simple">
+<li><p>Biến cố điểm nằm trong hình vuông nội tiếp có xác suất bằng diện tích
+hình vuông chia diện tích hình tròn. Hình vuông nội tiếp đường tròn
+bán kính <span class="math notranslate nohighlight">\(R\)</span> có đường chéo bằng <span class="math notranslate nohighlight">\(2R\)</span> nên cạnh là <span class="math notranslate nohighlight">\(R \sqrt{2}\)</span>.
+Đáp án là <span class="math notranslate nohighlight">\(\dfrac{2R^2}{\pi R^2} = \dfrac{2}{\pi}\)</span>.</p></li>
+<li><p>Tương tự, tam giác nội tiếp thì cạnh nối từ tâm tới đỉnh là <span class="math notranslate nohighlight">\(R\)</span>,
+bằng <span class="math notranslate nohighlight">\(2R/3\)</span> độ dài đường cao nên suy ra đường cao là <span class="math notranslate nohighlight">\(3R/2\)</span>,
+suy ra cạnh là <span class="math notranslate nohighlight">\(R \sqrt{3}\)</span>. Diện tích tam giác nội tiếp là
+<span class="math notranslate nohighlight">\(\dfrac{R \sqrt{3} \cdot 3R/2}{2} = \dfrac{3\sqrt{3} \cdot R^2}{4}\)</span>
+nên đáp án là <span class="math notranslate nohighlight">\(\dfrac{3\sqrt{3}}{4 \pi}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 15.</strong> Trong một ngày có hai chuyến tàu cập cảng để dỡ hàng.
+Chuyến tàu thứ nhất cần <span class="math notranslate nohighlight">\(6\)</span> tiếng để dỡ hàng, trong khi chuyến tàu
+thứ hai cần <span class="math notranslate nohighlight">\(8\)</span> tiếng. Hai chuyến tàu đến cảng không phụ thuộc
+vào nhau. Tính xác suất để không chuyến tàu nào phải chờ chuyến tàu kia
+dỡ hàng xong mới được cập cảng.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(x\)</span> là thời gian chuyến tàu đầu cập cảng. Do mất <span class="math notranslate nohighlight">\(6\)</span>
+giờ để dỡ hàng nên tàu phải cập cảng trước <span class="math notranslate nohighlight">\(18\)</span> giờ. Như vậy <span class="math notranslate nohighlight">\(0 \leqslant x \leqslant 18\)</span>.</p>
+<p>Tương tự, gọi <span class="math notranslate nohighlight">\(y\)</span> là thời gian chuyến tàu thứ hai cập cảng, suy
+ra <span class="math notranslate nohighlight">\(0 \leqslant y \leqslant 16\)</span>.</p>
+<p>Đến đây ta có hai trường hợp:</p>
+<ol class="arabic simple">
+<li><p>Chuyến tàu đầu cập cảng trước. Khi đó chuyến tàu thứ hai phải đến
+sau khi chuyến tàu đầu dỡ hàng xong. Do đó <span class="math notranslate nohighlight">\(y \geqslant x + 6\)</span>.</p></li>
+<li><p>Chuyến tàu thứ hai cập cảng trước. Tương tự, chuyến tàu đầu phải
+cập cảng sau khi chuyến thứ hai dỡ hàng xong. Do đó <span class="math notranslate nohighlight">\(x \geqslant y + 8\)</span>.</p></li>
+</ol>
+<p>Không gian mẫu là diện tích hình chữ nhật giới hạn bởi <span class="math notranslate nohighlight">\(x=0\)</span>,
+<span class="math notranslate nohighlight">\(x=18\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span> và <span class="math notranslate nohighlight">\(y=16\)</span>.</p>
+<p>Không gian biến cố nằm trong hình giới hạn bởi các đường thẳng <span class="math notranslate nohighlight">\(x=0\)</span>,
+<span class="math notranslate nohighlight">\(x=18\)</span>, <span class="math notranslate nohighlight">\(y=0\)</span>, <span class="math notranslate nohighlight">\(y=16\)</span>, <span class="math notranslate nohighlight">\(x+6=y\)</span> và <span class="math notranslate nohighlight">\(x-8=y\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{25}{72}\)</span>.</p>
+</section>
+<section id="quy-tac-cong-va-nhan-xac-suat">
+<h2>Quy tắc cộng và nhân xác suất<a class="headerlink" href="#quy-tac-cong-va-nhan-xac-suat" title="Link to this heading">¶</a></h2>
+<p><strong>Bài 1.</strong> Xác suất bóng đèn hoạt động tốt trong khoảng thời gian xác định
+của mỗi phần tử là <span class="math notranslate nohighlight">\(0,8\)</span>. Một hệ thống có ba phần tử như hình. Tính độ
+hoạt động tốt trong mỗi phần tử.</p>
+<p><strong>Giải.</strong> Nào vẽ hình rồi giải sau</p>
+<p><strong>Bài 2.</strong> Trong hộp có <span class="math notranslate nohighlight">\(7\)</span> quả bóng trắng và <span class="math notranslate nohighlight">\(3\)</span> quả bóng đen.
+Lấy ngẫu nhiên lần lượt từng quả đến khi lấy được bóng đen. Tính xác suất
+đến khi dừng lại lấy được <span class="math notranslate nohighlight">\(4\)</span> quả bóng nếu: a) lấy có trả lại; b) lấy
+không trả lại.</p>
+<p><strong>Giải.</strong> Không gian mẫu gồm các cách lấy ra <span class="math notranslate nohighlight">\(4\)</span> quả bóng.</p>
+<ol class="loweralpha simple">
+<li><p>Khi lấy có trả lại, ở mỗi lần lấy có 10 cách chọn nên không gian mẫu
+<span class="math notranslate nohighlight">\(\lvert \Omega \rvert = 10^4\)</span>. Theo đề bài, nếu lấy có trả lại
+<span class="math notranslate nohighlight">\(4\)</span> quả bóng, <span class="math notranslate nohighlight">\(3\)</span> quả đầu là bóng trắng và có <span class="math notranslate nohighlight">\(7^3\)</span>
+cách chọn. Quả bóng cuối màu đen, có <span class="math notranslate nohighlight">\(3\)</span> cách chọn. Như vậy có
+<span class="math notranslate nohighlight">\(7^3 \cdot 3\)</span> cách chọn. Đáp án là <span class="math notranslate nohighlight">\(\dfrac{1029}{10000}\)</span>.</p></li>
+<li><p>Khi lấy không trả lại, không gian mẫu là số cách lấy <span class="math notranslate nohighlight">\(4\)</span> quả bóng
+từ <span class="math notranslate nohighlight">\(10\)</span> quả bóng có thứ tự nên <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = A^4_{10}\)</span>.
+Số cách chọn <span class="math notranslate nohighlight">\(4\)</span> quả sao cho <span class="math notranslate nohighlight">\(3\)</span> quả đầu màu trắng là
+<span class="math notranslate nohighlight">\(A^3_7\)</span>, và quả cuối màu đen là <span class="math notranslate nohighlight">\(A^1_3\)</span>. Đáp án là
+<span class="math notranslate nohighlight">\(\dfrac{A^3_7 \cdot A^1_3}{A^4_{10}} = \dfrac{1}{8}\)</span>.</p></li>
+</ol>
+<p><strong>Bài 3.</strong> Trong một bộ domino có <span class="math notranslate nohighlight">\(28\)</span> quân lấy ngẫu nhiên <span class="math notranslate nohighlight">\(7\)</span>
+quân. Tính xác suất có ít nhất một quân có nút <span class="math notranslate nohighlight">\(6\)</span>.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố ít nhất một quân có nút <span class="math notranslate nohighlight">\(6\)</span>.
+Khi đó <span class="math notranslate nohighlight">\(\bar{A}\)</span> là biến cố không có quân nào có nút <span class="math notranslate nohighlight">\(6\)</span>.</p>
+<p>Không gian mẫu là <span class="math notranslate nohighlight">\(A^7_{28}\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(\bar{A}\)</span> không chứa các quân có nút <span class="math notranslate nohighlight">\(6\)</span> nên sẽ có
+<span class="math notranslate nohighlight">\(28-7 = 21\)</span> quân (bỏ các cặp <span class="math notranslate nohighlight">\(0\)</span>-<span class="math notranslate nohighlight">\(6\)</span>,
+<span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(6\)</span>, ..., <span class="math notranslate nohighlight">\(6\)</span>-<span class="math notranslate nohighlight">\(6\)</span>).</p>
+<p>Suy ra <span class="math notranslate nohighlight">\(P(\bar{A}) = \dfrac{A^7_{21}}{A^7_{28}} = \dfrac{323}{3289}\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(P(A) = 1 - P(\bar{A}) = \dfrac{2966}{3289}\)</span>.</p>
+<p><strong>Bài 4.</strong> Tung <span class="math notranslate nohighlight">\(4\)</span> cục súc sắc. Tính xác suất để chúng ra các mặt khác nhau.</p>
+<p><strong>Giải.</strong> Đáp án: <span class="math notranslate nohighlight">\(\dfrac{A^4_6}{6^4} = \dfrac{5}{18}\)</span>.</p>
+<p><strong>Bài 5.</strong> Trong hộp có <span class="math notranslate nohighlight">\(5\)</span> quả bóng trắng, <span class="math notranslate nohighlight">\(7\)</span> quả bóng đỏ
+và <span class="math notranslate nohighlight">\(8\)</span> quả bóng xanh. Lấy ngẫu nhiên ra <span class="math notranslate nohighlight">\(2\)</span> quả. Tính xác suất
+để hai quả đó cùng màu.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(A\)</span> - biến cố lấy hai quả bóng cùng màu.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(A_1, A_2, A_3\)</span> lần lượt là biến cố lấy hai quả bóng trắng,
+hai quả bóng đỏ và hai quả bóng xanh.</p>
+<p>Khi đó <span class="math notranslate nohighlight">\(A = A_1 \cup A_2 \cup A_3\)</span>.</p>
+<p>Đáp án:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A) = P(A_1) + P(A_2) + P(A_3) = \dfrac{C^2_5 + C^2_7 + C^2_8}{C^2_{5+7+8}} = \dfrac{59}{190}.\]</div>
+</div>
+<p><strong>Bài 6.</strong> Hai cung thủ bắn tên đồng thời độc lập nhau. Xác suất mỗi người
+bắn trúng là <span class="math notranslate nohighlight">\(0,2\)</span>. Tính xác suất để chỉ một người bắn trúng.</p>
+<p><strong>Giải.</strong> Chọn một trong hai người bắn trúng, có <span class="math notranslate nohighlight">\(2\)</span> cách.</p>
+<p>Nếu một người bắn trúng thì xác suất là <span class="math notranslate nohighlight">\(0,2\)</span>. Người còn lại sẽ
+bắn trượt với xác suất <span class="math notranslate nohighlight">\(0,8\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(2 \cdot 0,2 \cdot 0,8 = 0,32\)</span>.</p>
+<p><strong>Bài 7.</strong> <span class="math notranslate nohighlight">\(20\)</span> đội bóng tham gia giải đấu. Trong giải đấu có
+<span class="math notranslate nohighlight">\(4\)</span> giải thưởng sẽ được trao cho <span class="math notranslate nohighlight">\(4\)</span> đội xuất sắc nhất.
+Giả sử <span class="math notranslate nohighlight">\(20\)</span> đội được chia thành <span class="math notranslate nohighlight">\(4\)</span> nhóm được đánh số,
+mỗi nhóm <span class="math notranslate nohighlight">\(5\)</span> đội. Tính xác suất để mỗi nhóm có một đội đạt
+giải? Tính xác suất để nhóm đầu không có đội nào đạt giải.</p>
+<p><strong>Giải.</strong> Số cách chọn <span class="math notranslate nohighlight">\(5\)</span> đội cho nhóm đầu là <span class="math notranslate nohighlight">\(C^5_{20}\)</span>,
+cho nhóm thứ hai là <span class="math notranslate nohighlight">\(C^5_{15}\)</span>, cho nhóm thứ ba là <span class="math notranslate nohighlight">\(C^5_{10}\)</span>
+và nhóm cuối là <span class="math notranslate nohighlight">\(C^5_5\)</span>. Do có xét thứ tự nhóm nên vẫn tính các
+hoán vị. Ta suy ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lvert \Omega \rvert = C^5_{20} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_5.\]</div>
+</div>
+<p>Trong <span class="math notranslate nohighlight">\(4\)</span> đội đạt giải, chọn một đội cho vào nhóm <span class="math notranslate nohighlight">\(1\)</span> thì
+có <span class="math notranslate nohighlight">\(4\)</span> cách chọn. Tiếp theo chọn <span class="math notranslate nohighlight">\(4\)</span> đội trong <span class="math notranslate nohighlight">\(16\)</span>
+đội không đạt giải vào nhóm <span class="math notranslate nohighlight">\(1\)</span> thì có <span class="math notranslate nohighlight">\(C^4_{16}\)</span> cách.
+Tương tự cho các nhóm <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(4\)</span> nên đáp án là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A) = \dfrac{4 \cdot C^4_{16} \cdot 3 \cdot C^4_{12} \cdot 2 \cdot C^4_8 \cdot 1 \cdot C^4_4}{C^5_{20} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_5} = \dfrac{125}{969}\]</div>
+</div>
+<p>Nếu nhóm đầu không có đội nào đạt giải, chọn <span class="math notranslate nohighlight">\(5\)</span> trong số <span class="math notranslate nohighlight">\(16\)</span>
+đội không đạt giải thì có <span class="math notranslate nohighlight">\(C^5_{16}\)</span> cách. Lúc này còn lại <span class="math notranslate nohighlight">\(15\)</span> đội.
+Chọn <span class="math notranslate nohighlight">\(5\)</span> đội cho nhóm thứ <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(5\)</span> đội cho nhóm thứ <span class="math notranslate nohighlight">\(3\)</span>
+và <span class="math notranslate nohighlight">\(5\)</span> đội cho nhóm thứ <span class="math notranslate nohighlight">\(4\)</span> có <span class="math notranslate nohighlight">\(C^5_{15} \cdot C^5_{10} \cdot C^5_5\)</span>
+cách. Đáp án câu (b) là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B) = \dfrac{C^5_{16} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_{5}}{C^5_{20} \cdot C^5_{15} \cdot C^5_{10} \cdot C^5_5} = \dfrac{91}{323}\]</div>
+</div>
+<p><strong>Bài 8.</strong> Trong hộp đầu có <span class="math notranslate nohighlight">\(2\)</span> quả bóng trắng và <span class="math notranslate nohighlight">\(3\)</span> quả bóng đen,
+trong hộp thứ hai có <span class="math notranslate nohighlight">\(1\)</span> trắng và <span class="math notranslate nohighlight">\(2\)</span> xanh, trong hộp thứ ba có <span class="math notranslate nohighlight">\(3\)</span>
+trắng và <span class="math notranslate nohighlight">\(1\)</span> đỏ. Từ mỗi hộp lấy ngẫu nhiên một quả bóng. Tính xác suất
+các biến số sau: <span class="math notranslate nohighlight">\(A\)</span> - { chỉ lấy ra một bóng trắng }; <span class="math notranslate nohighlight">\(B\)</span> - { lấy ít nhất
+một bóng trắng }; <span class="math notranslate nohighlight">\(C\)</span> - { lấy ra các màu khác nhau }.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = (2 + 3) \cdot (1 + 2) \cdot (3 + 1) = 60\)</span>.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(A_1, A_2, A_3\)</span> lần lượt là biến cố quả bóng trắng lấy từ hộp <span class="math notranslate nohighlight">\(1\)</span>,
+<span class="math notranslate nohighlight">\(2\)</span> và <span class="math notranslate nohighlight">\(3\)</span>. Khi đó <span class="math notranslate nohighlight">\(A = A_1 \cup A_2 \cup A_3\)</span>.</p>
+<ul class="simple">
+<li><p>Nếu quả bóng trắng lấy từ hộp <span class="math notranslate nohighlight">\(1\)</span> thì có <span class="math notranslate nohighlight">\(2\)</span> cách chọn. Ở hộp
+thứ hai và thứ ba phải lấy ra quả khác màu trắng nên có <span class="math notranslate nohighlight">\(2 \cdot 1\)</span>
+cách chọn. Suy ra <span class="math notranslate nohighlight">\(P(A_1) = \dfrac{2 \cdot 2 \cdot 1}{60} = \dfrac{1}{15}\)</span>.</p></li>
+<li><p>Nếu quả bóng trắng lấy từ hộp <span class="math notranslate nohighlight">\(2\)</span> thì có <span class="math notranslate nohighlight">\(1\)</span> cách chọn. Ở hộp
+đầu và hộp thứ ba phải lấy ra quả khác màu trắng nên có <span class="math notranslate nohighlight">\(3 \cdot 1\)</span>
+cách. Vậy <span class="math notranslate nohighlight">\(P(A_2) = \dfrac{1 \cdot 3 \cdot 1}{60} = \dfrac{1}{20}\)</span>.</p></li>
+<li><p>Nếu quả bóng trắng lấy từ hộp <span class="math notranslate nohighlight">\(3\)</span> thì có <span class="math notranslate nohighlight">\(3\)</span> cách chọn. Ở hộp đầu
+và hộp thứ hai lấy ra quả khác màu trắng có <span class="math notranslate nohighlight">\(3 \cdot 2\)</span> cách chọn.
+Vậy <span class="math notranslate nohighlight">\(P(A_3) = \dfrac{3 \cdot 3 \cdot 2}{60} = \dfrac{3}{10}\)</span>.</p></li>
+</ul>
+<p>Như vậy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A) = P(A_1) + P(A_2) + P(A_3) = \dfrac{1}{15} + \dfrac{1}{20} + \dfrac{3}{10} = \dfrac{5}{12}.\]</div>
+</div>
+<p>Do <span class="math notranslate nohighlight">\(B\)</span> là biến cố lấy ít nhất một bóng trắng nên <span class="math notranslate nohighlight">\(\bar{B}\)</span> là biến cố
+không lấy ra bóng trắng nào. Khi đó ở hộp <span class="math notranslate nohighlight">\(1\)</span> có <span class="math notranslate nohighlight">\(3\)</span> cách chọn (đen),
+hộp <span class="math notranslate nohighlight">\(2\)</span> có <span class="math notranslate nohighlight">\(2\)</span> cách chọn (xanh) và hộp <span class="math notranslate nohighlight">\(3\)</span> có <span class="math notranslate nohighlight">\(1\)</span> cách chọn
+(đỏ), suy ra <span class="math notranslate nohighlight">\(P(\bar{B}) = \dfrac{3 \cdot 2 \cdot 1}{60} = \dfrac{1}{10}\)</span>.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(P(B) = 1 - P(\bar{B}) = \dfrac{9}{10}\)</span>.</p>
+<p>Khi lấy ra ba quả bóng khác màu nhau có các trường hợp theo thứ tự hộp là:</p>
+<ul class="simple">
+<li><p>trắng-xanh-đỏ: có <span class="math notranslate nohighlight">\(2 \cdot 2 \cdot 1\)</span> cách chọn</p></li>
+<li><p>đen-trắng-đỏ: có <span class="math notranslate nohighlight">\(3 \cdot 1 \cdot 1\)</span> cách chọn</p></li>
+<li><p>đen-xanh-trắng: có <span class="math notranslate nohighlight">\(3 \cdot 2 \cdot 3\)</span> cách chọn</p></li>
+<li><p>đen-xanh-đỏ: có <span class="math notranslate nohighlight">\(3 \cdot 2 \cdot 1\)</span> cách chọn</p></li>
+</ul>
+<p>Như vậy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(C) = \dfrac{2 \cdot 2 \cdot 1 + 3 \cdot 1 \cdot 1 + 3 \cdot 2 \cdot 3 + 3 \cdot 2 \cdot 1}{60} = \dfrac{31}{60}.\]</div>
+</div>
+<p><strong>Bài 9.</strong> Một bộ bài gồm <span class="math notranslate nohighlight">\(36\)</span> lá. Lấy ngẫu nhiên hai lá. Tính xác suất
+để hai lá đó có màu đỏ.</p>
+<p><strong>Giải.</strong> Không gian mẫu <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = C^2_{26}\)</span>.</p>
+<p>Lấy hai trong <span class="math notranslate nohighlight">\(36/2=18\)</span> lá đỏ có <span class="math notranslate nohighlight">\(C^2_{18}\)</span> cách.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{C^2_{18}}{C^2_{26}} = \dfrac{17}{70}\)</span>.</p>
+<p><strong>Bài 10.</strong> Trong thùng có <span class="math notranslate nohighlight">\(3\)</span> bóng đèn hỏng và <span class="math notranslate nohighlight">\(7\)</span> bóng đèn tốt.
+Lấy ngẫu nhiên các bóng lần lượt đến khi lấy được <span class="math notranslate nohighlight">\(2\)</span> bóng tốt thì dừng.
+Tính xác suất để lấy một nửa số bóng đèn.</p>
+<p><strong>Giải.</strong> Không gian mẫu là <span class="math notranslate nohighlight">\(A^5_{10}\)</span>.</p>
+<p>Trong số bốn bóng đèn đầu sẽ có một bóng tốt và <span class="math notranslate nohighlight">\(3\)</span> bóng hỏng. Bóng đèn
+thứ <span class="math notranslate nohighlight">\(5\)</span> sẽ là bóng tốt. Như vậy ta chọn vị trí cho bóng tốt trong <span class="math notranslate nohighlight">\(4\)</span>
+vị trí đầu, có <span class="math notranslate nohighlight">\(4\)</span> cách chọn. Chọn bóng tốt cho vị trí đó có <span class="math notranslate nohighlight">\(7\)</span>
+cách chọn. Chọn <span class="math notranslate nohighlight">\(3\)</span> bóng hỏng cho <span class="math notranslate nohighlight">\(3\)</span> vị trí còn lại có thứ tự,
+có <span class="math notranslate nohighlight">\(A^3_3\)</span> cách.</p>
+<p>Chọn bóng đèn tốt cho vị trí thứ <span class="math notranslate nohighlight">\(5\)</span> có <span class="math notranslate nohighlight">\(6\)</span> cách chọn.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{4 \cdot 7 \cdot A^3_3 \cdot 6}{A^5_{10}} = \dfrac{1}{30}\)</span>.</p>
+</section>
+<section id="quy-tac-cong-va-nhan-xac-suat-tiep-theo">
+<h2>Quy tắc cộng và nhân xác suất (tiếp theo)<a class="headerlink" href="#quy-tac-cong-va-nhan-xac-suat-tiep-theo" title="Link to this heading">¶</a></h2>
+<p><strong>Bài 1.</strong> Từ một bộ bài lấy ngẫu nhiên lần lượt bốn lá. Tính xác suất
+để tất cả các lá khác chất nhau? Tính xác suất để tất cả các lá khác số nhau?</p>
+<p><strong>Giải.</strong> Bộ bài có <span class="math notranslate nohighlight">\(36\)</span> lá (bài Nga) nên có không gian
+mẫu <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = A^4_{36}\)</span>.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố tất cả các lá khác chất nhau.</p>
+<ul class="simple">
+<li><p>Chọn chất cho lá thứ nhất có <span class="math notranslate nohighlight">\(4\)</span> cách chọn. Chọn lá thứ nhất
+có <span class="math notranslate nohighlight">\(9\)</span> cách chọn (trong chất đó).</p></li>
+<li><p>Chọn chất cho lá thứ hai có <span class="math notranslate nohighlight">\(4\)</span> cách chọn. Chọn lá thứ hai
+có <span class="math notranslate nohighlight">\(9\)</span> cách chọn (trong chất đó).</p></li>
+<li><p>Tương tự cho lá thứ ba và thứ tư.</p></li>
+</ul>
+<p>Như vậy <span class="math notranslate nohighlight">\(\lvert \Omega_A \rvert = 4! \cdot 9^4\)</span>.</p>
+<p>Đáp án là <span class="math notranslate nohighlight">\(P(A) = \dfrac{\lvert \Omega_A \rvert}{\lvert \Omega \rvert} = \dfrac{729}{6545}\)</span>.</p>
+<p>Gọi <span class="math notranslate nohighlight">\(B\)</span> là biến cố tất cả các lá có số khác nhau.</p>
+<ul class="simple">
+<li><p>Chọn số cho lá thứ nhất có <span class="math notranslate nohighlight">\(9\)</span> cách chọn. Chọn chất cho lá đó có <span class="math notranslate nohighlight">\(4\)</span> cách chọn.</p></li>
+<li><p>Chọn số cho lá thứ hai có <span class="math notranslate nohighlight">\(8\)</span> cách chọn. Chọn chất cho lá đó có <span class="math notranslate nohighlight">\(4\)</span> cách chọn.</p></li>
+<li><p>Tương tự cho lá thứ ba và thứ tư.</p></li>
+</ul>
+<p>Như vậy <span class="math notranslate nohighlight">\(\lvert \Omega_B \rvert = A^4_9 \cdot 4^4\)</span>.</p>
+<p>Đáp án là <span class="math notranslate nohighlight">\(P(B) = \dfrac{\lvert \Omega_B \rvert}{\lvert \Omega \rvert} = \dfrac{512}{935}\)</span>.</p>
+<p><strong>Bài 2.</strong> Trong rổ có <span class="math notranslate nohighlight">\(10\)</span> quả bóng tennis, <span class="math notranslate nohighlight">\(7\)</span> quả mới
+và <span class="math notranslate nohighlight">\(3\)</span> quả đã qua sử dụng. Lấy ngẫu nhiên <span class="math notranslate nohighlight">\(2\)</span> quả từ rổ
+cho trận đấu rồi trả lại. Tới trận đấu thứ hai cũng lấy ngẫu nhiên
+<span class="math notranslate nohighlight">\(2\)</span> quả. Tính xác suất để ở trận thứ hai lấy được <span class="math notranslate nohighlight">\(2\)</span> quả mới.</p>
+<p><strong>Giải.</strong> Sau khi chơi xong trận đầu thì những quả bóng mới sẽ
+trở thành bóng đã qua sử dụng.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(B\)</span> là biến cố trận thứ hai lấy được <span class="math notranslate nohighlight">\(2\)</span> quả mới.</p>
+<p>Đặt <span class="math notranslate nohighlight">\(A_1\)</span>, <span class="math notranslate nohighlight">\(A_2\)</span> và <span class="math notranslate nohighlight">\(A_3\)</span> lần lượt là biến cố
+trận đầu lấy được <span class="math notranslate nohighlight">\(2\)</span> quả bóng mới, <span class="math notranslate nohighlight">\(1\)</span> mới <span class="math notranslate nohighlight">\(1\)</span>
+đã qua sử dụng, và <span class="math notranslate nohighlight">\(2\)</span> quả đã qua sử dụng. Ba biến cố này
+hợp thành biến cố đầy đủ cho việc lấy <span class="math notranslate nohighlight">\(2\)</span> quả ở trận đầu.</p>
+<p>Theo công thức xác suất toàn phần:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B) = P(A_1) P(B \vert A_1) + P(A_2) P(B \vert A_2) + P(A_3) P(B \vert A_3).\]</div>
+</div>
+<p>Nếu ở trận đầu lấy <span class="math notranslate nohighlight">\(2\)</span> quả mới, ta có <span class="math notranslate nohighlight">\(P(A_1) = \dfrac{C^2_7}{C^2_{10}} = \dfrac{7}{15}\)</span>.
+Sau khi trận đầu kết thúc, số bóng mới là <span class="math notranslate nohighlight">\(7-2=5\)</span> và số bóng đã qua sử dụng là <span class="math notranslate nohighlight">\(3+2=5\)</span>
+nên <span class="math notranslate nohighlight">\(P(B \vert A_1) = \dfrac{C^2_5}{C^2_{10}} = \dfrac{2}{9}\)</span>.</p>
+<p>Nếu ở trận đầu lấy <span class="math notranslate nohighlight">\(1\)</span> quả mới và <span class="math notranslate nohighlight">\(1\)</span> quả đã qua sử dụng, ta có
+<span class="math notranslate nohighlight">\(P(A_2) = \dfrac{C^1_7 \cdot C^1_3}{C^2_{10}} = \dfrac{7}{15}\)</span>. Sau khi trận đầu
+kết thúc, số bóng mới là <span class="math notranslate nohighlight">\(6\)</span> và số bóng đã qua sử dụng là <span class="math notranslate nohighlight">\(4\)</span> nên
+<span class="math notranslate nohighlight">\(P(B \vert A_2) = \dfrac{C^2_6}{C^2_{10}} = \dfrac{1}{3}\)</span>.</p>
+<p>Nếu ở trận đầu lấy <span class="math notranslate nohighlight">\(2\)</span> quả đã qua sử dụng thì <span class="math notranslate nohighlight">\(P(A_3) = \dfrac{C^2_3}{C^2_{10}} = \dfrac{1}{15}\)</span>.
+Sau khi trận đầu kết thúc, số bóng mới vẫn là <span class="math notranslate nohighlight">\(7\)</span> và số bóng đã qua sử dụng vẫn là <span class="math notranslate nohighlight">\(3\)</span>
+nên <span class="math notranslate nohighlight">\(P(B \vert A_3) = \dfrac{C^2_7}{C^2_{10}} = \dfrac{7}{15}\)</span>.</p>
+<p>Đáp án:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B) = \dfrac{7}{15} \cdot \dfrac{2}{9} + \dfrac{7}{15} \cdot \dfrac{1}{3} + \dfrac{1}{15} \cdot \dfrac{7}{15} = \dfrac{196}{675} \approx 0,29.\]</div>
+</div>
+<p><strong>Bài 3.</strong> Trên mỗi cánh máy bay có <span class="math notranslate nohighlight">\(2\)</span> động cơ. Xác suất bị lỗi của
+mỗi động cơ trong một chuyến bay là <span class="math notranslate nohighlight">\(p\)</span>. Chuyến bay sẽ thành công nếu
+ở mỗi cánh có ít nhất một động cơ hoạt động bình thường. Tính xác suất chuyến
+bay thành công.</p>
+<p><strong>Giải.</strong> Gọi <span class="math notranslate nohighlight">\(A\)</span> là biến cố ở một cánh có ít nhất một động cơ hoạt động,
+suy ra <span class="math notranslate nohighlight">\(\bar{A}\)</span> là biến cố không động cơ nào hoạt động ở cả một cánh.</p>
+<p>Như vậy <span class="math notranslate nohighlight">\(P(\bar{A}) = p^2\)</span> nên <span class="math notranslate nohighlight">\(P(A) = 1-p^2\)</span>. Áp dụng cho hai bên
+cánh (theo quy tắc nhân) ta có đáp án là <span class="math notranslate nohighlight">\((1-p^2)^2\)</span>.</p>
+<p><strong>Bài 4.</strong> Sinh viên biết <span class="math notranslate nohighlight">\(20\)</span> trong <span class="math notranslate nohighlight">\(30\)</span> câu hỏi. Để qua bài thi
+cần trả lời đúng <span class="math notranslate nohighlight">\(2\)</span> câu hỏi bắt buộc hoặc trả lời đúng <span class="math notranslate nohighlight">\(1\)</span> trong
+<span class="math notranslate nohighlight">\(2\)</span> câu bắt buộc cộng thêm <span class="math notranslate nohighlight">\(1\)</span> câu hỏi phụ. Tính xác suất để
+sinh viên vượt qua bài thi?</p>
+<p><strong>Giải.</strong> Ở đây cần hiểu là sinh viên biết <span class="math notranslate nohighlight">\(20\)</span> câu trong số <span class="math notranslate nohighlight">\(30\)</span> câu,
+<span class="math notranslate nohighlight">\(10\)</span> câu kia là câu hỏi phụ. Khi đó có hai trường hợp:</p>
+<p>Trường hợp 1 là sinh viên trả lời đúng <span class="math notranslate nohighlight">\(2\)</span> câu trong số <span class="math notranslate nohighlight">\(20\)</span> câu
+sinh viên biết nên xác suất là <span class="math notranslate nohighlight">\(\dfrac{A^2_{20}}{A^2_{30}}\)</span>.</p>
+<p>Trường hợp 2 là sinh viên trả lời đúng <span class="math notranslate nohighlight">\(1\)</span> trong <span class="math notranslate nohighlight">\(2\)</span> câu bắt buộc
+(có <span class="math notranslate nohighlight">\(A^2_{20} \cdot 2\)</span> cách chọn) và <span class="math notranslate nohighlight">\(1\)</span> câu hỏi phụ (<span class="math notranslate nohighlight">\(10\)</span> cách chọn)
+nên xác suất là <span class="math notranslate nohighlight">\(\dfrac{A^2_{20} \cdot 2 \cdot 10}{A^3_{30}}\)</span>. Tổng số
+câu sinh viên trả lời là <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<p>Đáp án: <span class="math notranslate nohighlight">\(\dfrac{A^2_{20}}{A^2_{30}} + \dfrac{A^2_{20} \cdot 2 \cdot 10}{A^3_{30}} = \dfrac{152}{203}\)</span>.</p>
+</section>
+<section id="cac-buoi-con-lai-va-bai-kiem-tra">
+<h2>Các buổi còn lại và bài kiểm tra<a class="headerlink" href="#cac-buoi-con-lai-va-bai-kiem-tra" title="Link to this heading">¶</a></h2>
+<p>Phần dưới đây tiếp tục từ Bài 6 của buổi 4, sau đó gồm các buổi 5--13 và
+hai đề kiểm tra.</p>
+<p>Задача 6. Пусть <span class="math notranslate nohighlight">\(X\)</span> - количество бросков чтобы закончить.</p>
+<ol class="loweralpha simple">
+<li><p>(опят закончится до шестого броска).</p></li>
+</ol>
+<p>Первый бросок, какая сторона не важно <span class="math notranslate nohighlight">\(\Longrightarrow P(A) = P(X=2) + P(X=3) + P(X=4) + P(X=5)\)</span>.</p>
+<p>Второй бросок может выпадет <em>одной и той же</em> стороной, или <em>другой</em>. Оба вероятности равны <span class="math notranslate nohighlight">\(\dfrac{1}{2}\)</span>.</p>
+<p>То <span class="math notranslate nohighlight">\(P(X=2) = \dfrac{1}{2}\)</span>.</p>
+<p>Если <span class="math notranslate nohighlight">\(P(X=3)\)</span>, третьи бросок будет другой стороной, чем 2 другие. Поэтому вероятность того, что второй бросок выпадает одной стороной: <span class="math notranslate nohighlight">\(\dfrac{1}{2}\)</span>, а третьи бросок: <span class="math notranslate nohighlight">\(\dfrac{1}{2}\)</span>.</p>
+<p>То <span class="math notranslate nohighlight">\(P(X=3) = \dfrac{1}{2} \cdot \dfrac{1}{2} = \dfrac{1}{4}\)</span>, <span class="math notranslate nohighlight">\(P(X=4) = \dfrac{1}{8}\)</span> и <span class="math notranslate nohighlight">\(\dfrac{1}{16}\)</span>.</p>
+<p>Аналогично, <span class="math notranslate nohighlight">\(P(X=4) = \dfrac{1}{8}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow P(A) = \dfrac{1}{2} + \dfrac{1}{4} + \dfrac{1}{8} + \dfrac{1}{16} = \dfrac{15}{16}\)</span>.</p>
+<p>(б) <span class="math notranslate nohighlight">\(B\)</span> - { понадобится более четырех бросков }.</p>
+<p><span class="math notranslate nohighlight">\(\overline{B}\)</span> - { понадобится не более четырех бросков }.</p>
+<p>Делаем как (а), мы получим <span class="math notranslate nohighlight">\(P(\overline{B}) = \dfrac{1}{2} + \dfrac{1}{4} + \dfrac{1}{8} = \dfrac{7}{8}\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow P(B) = 1 - P(\overline{B}) = 1 - \dfrac{7}{8} = \dfrac{1}{8}.\]</div>
+</div>
+<p>Задача 7. Из колоды карт (36 штук)</p>
+<ol class="loweralpha simple">
+<li><p>Пусть <span class="math notranslate nohighlight">\(A\)</span> = { Первый тух появится при третьем извлечении карты }.</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\lvert \Omega \rvert = A^3_36\)</span>.</p>
+<p>Пусть <span class="math notranslate nohighlight">\(a_1, a_2, a_3\)</span> - карты выбраны.</p>
+<p>Тогда <span class="math notranslate nohighlight">\(a_3\)</span> будет одном из 4 карт, у нас есть 4 вариантов.</p>
+<p>Ещё нужно выбрать карты <span class="math notranslate nohighlight">\(a_1\)</span> и <span class="math notranslate nohighlight">\(a_2\)</span>, мы не можем выбрать туз, поэтому имеем <span class="math notranslate nohighlight">\(A^2_{36-4} = A^2_{32}\)</span>.</p>
+<p>Ответ: <span class="math notranslate nohighlight">\(P(A) = \dfrac{4 \cdot A^2_{32}}{A^3_{36}} = \dfrac{496}{5355} \approx 0,09\)</span>.</p>
+<p>(б) Пусть <span class="math notranslate nohighlight">\(B\)</span> = { Первый туз появится не ранее третьего извлечения карты }.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow \overline{B}\)</span> = { Первый туз появится при первом или втором извлечении карты }.</p>
+<ul class="simple">
+<li><p>Если первый туз появится при первом извлечении, то вероятность равно <span class="math notranslate nohighlight">\(\dfrac{4}{36} = \dfrac{1}{9}\)</span></p></li>
+<li><p>Если первый туз появится при втором извлечении, то делаем аналогично (а), мы получим <span class="math notranslate nohighlight">\(\dfrac{4 \cdot A^1_{32}}{A^2_{36}}\)</span></p></li>
+</ul>
+<p>Поэтому, <span class="math notranslate nohighlight">\(P(\overline{B}) = \dfrac{4}{36} + \dfrac{4 \cdot A^1_{32}}{A^2_{26}} = \dfrac{67}{315}\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow P(B) = 1 - P(\overline{B}) = \dfrac{248}{315}.\]</div>
+</div>
+<p>Задача 8. Из колоды карт (36 карт) не более трех карт, пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = { выбрать более трех карт }.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\overline{A}\)</span> = { выбрать не более трех карт, значит 1, 2 или 3 карт }</p></li>
+</ul>
+<p>Отсюда</p>
+<ol class="arabic">
+<li><p>Если выбрать 1 карту, <span class="math notranslate nohighlight">\(| \Omega_1 | = 36\)</span>.</p>
+<p>Выбрать одну красную карту из 18 красных карт, есть 18 вариантов. То <span class="math notranslate nohighlight">\(P(X=1) = \dfrac{18}{36}\)</span>.</p>
+</li>
+<li><p>Если выбрать 2 карты, <span class="math notranslate nohighlight">\(| \Omega_2 | = A^2_{36}\)</span>.</p>
+<p>Выбрать одну красную карту в последнем месте, то есть 18 вариантов. А первое место мы не можем выбрать красную карту, то есть 36-18=18 вариантов. Поэтому <span class="math notranslate nohighlight">\(P(X=2) = \dfrac{18 \cdot 18}{A^2_{36}}\)</span></p>
+</li>
+<li><p>Если выбрать 3 карты, <span class="math notranslate nohighlight">\(| \Omega_3 | = A^3_{36}\)</span>.</p>
+<p>Выбрать одну красную карту в последнем месте, есть 18 вариантов. Другие места мы не можем выбрать красные карты, а 2 черные карты из 18 карт. Поэтому <span class="math notranslate nohighlight">\(P(X=3) = \dfrac{18 \cdot A^2_{18}}{A^3_{36}}\)</span></p>
+</li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow P(\overline{A}) = P(X=1) + P(X=2) + P(X=3) = \dfrac{18}{36} + \dfrac{18 \cdot 18}{A^2_{26}} + \dfrac{18 \cdot A^2_{18}}{A^3_{36}} = \dfrac{31}{35}.\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow P(A) = 1 - P(\overline{A}) = \dfrac{4}{35}.\]</div>
+</div>
+<p>Задача 9. 8 белых, 6 черных и 2 синих</p>
+<ol class="loweralpha simple">
+<li><p>повторный выбор шаров, <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = {16}^3\)</span>.</p></li>
+</ol>
+<p>Выбрать первый шар, есть 8 вариантов (белых). Выбрать второй шар, есть 6 вариантов (черных). Выбрать третьи шар, есть 2 варианта (синих). Поэтому, вероятность равно <span class="math notranslate nohighlight">\(\dfrac{8 \cdot 6 \cdot 2}{{16}^3} = \dfrac{3}{128}\)</span>
+(б) бесповторный выбор шаров, <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = A^3_{16}\)</span>.</p>
+<p>Делаем аналогично (а), получим вероятность <span class="math notranslate nohighlight">\(\dfrac{8 \cdot 6 \cdot 2}{A^3_{16}} = \dfrac{1}{35}\)</span></p>
+<p>Задача 10.</p>
+<p>Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = { шар окажется белым }.</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_1\)</span> = { Результат монеты - гебр }.</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_2\)</span> = { Результат монеты - цифра }.</p></li>
+</ul>
+<p>То <span class="math notranslate nohighlight">\(B_1\)</span> и <span class="math notranslate nohighlight">\(B_2\)</span> - полная группа событий, и <span class="math notranslate nohighlight">\(P(B_1) = P(B_2) = \dfrac{1}{2}\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Если первая урна выбрана, то вероятность того, что шар окажется белым будет <span class="math notranslate nohighlight">\(P(A | B_1) = \dfrac{4}{4+2} = \dfrac{4}{6}\)</span>.</p></li>
+<li><p>Если вторая урна выбрана, то вероятность того, что шар окажется белым будет <span class="math notranslate nohighlight">\(P(A | B_2) = \dfrac{3}{3 + 5} = \dfrac{3}{8}\)</span>.</p></li>
+</ol>
+<p>Ответ: <span class="math notranslate nohighlight">\(P(A) = P(B_1) \cdot P(A | B_1) + P(B_2) \cdot P(A | B_2) = \dfrac{1}{2} \cdot \dfrac{4}{6} + \dfrac{1}{2} \cdot \dfrac{3}{8} = \dfrac{25}{48}\)</span></p>
+<section id="id3">
+<h3>Занятия 5<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>Задача 1. Используем пример 5.1 и формулу Байеса:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B_i | A) = \dfrac{P(B_i) \cdot P(A | B_i)}{P(A)} = \dfrac{P(B_i) \cdot P(A | B_i)}{\sum_{j=1}^{3} P(B_j) \cdot P(A | B_j)}\]</div>
+</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(B_1) = \dfrac{\dfrac{1}{4} \cdot \dfrac{1}{4}}{\dfrac{17}{48}} = \dfrac{3}{17}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B_2) = \dfrac{\dfrac{1}{4} \cdot \dfrac{1}{2}}{\dfrac{17}{48}} = \dfrac{6}{17}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B_3) = \dfrac{\dfrac{1}{4} \cdot \dfrac{2}{3}}{\dfrac{17}{48}} = \dfrac{8}{17}\)</span></p></li>
+</ul>
+<p>Задача 3. Пусть <span class="math notranslate nohighlight">\(A_1\)</span> = { дефективные } и <span class="math notranslate nohighlight">\(A_2\)</span> = { не дефективные }.</p>
+<p><span class="math notranslate nohighlight">\(B\)</span> = { Признан дефективным }.</p>
+<p>Мы получим: <span class="math notranslate nohighlight">\(P(A_1) = 0,1\)</span>, <span class="math notranslate nohighlight">\(P(A_2) = 1-0,1=0,9\)</span>, <span class="math notranslate nohighlight">\(P(B | A_1) = 0,95\)</span>, <span class="math notranslate nohighlight">\(P(B | A_2) = 0,03\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P(B) = P(A_1) P(B | A_1) + P(A_2) P(B | A_2) = 0,1 \cdot 0,95 + 0,9 \cdot 0,03 = 0,122\)</span></p>
+<p>Задача 4. Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = { событие болты производятся из А }.</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> = { событие болты производятся из В }.</p></li>
+<li><p><span class="math notranslate nohighlight">\(C\)</span> = { событие болты производятся из С }.</p></li>
+<li><p><span class="math notranslate nohighlight">\(K\)</span> = { Болт оказался дефективным }.</p></li>
+</ul>
+<p>У нас есть: <span class="math notranslate nohighlight">\(P(A) = 0,25\)</span>, <span class="math notranslate nohighlight">\(P(B) = 0,35\)</span>, <span class="math notranslate nohighlight">\(P(C) = 0,4\)</span>, <span class="math notranslate nohighlight">\(P(K|A) = 0,05\)</span>, <span class="math notranslate nohighlight">\(P(K|B) = 0,04\)</span>, <span class="math notranslate nohighlight">\(P(K|C) = 0,02\)</span>.</p>
+<p>Ответ:.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} P(A|K) &amp; = \dfrac{P(A) P(K|A)}{P(A)P(K|A)+P(B)P(K|B)+P(C)P(K|C)} \\ &amp; = \dfrac{0,25 \cdot 0,05}{0,25 \cdot 0,05 + 0,35 \cdot 0,04 + 0,4 \cdot 0,02} = \dfrac{25}{69} \approx 0,36 \end{align*}\end{split}\]</div>
+</div>
+<p>Задача 5. Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = { вынуть белый шар из второй урны }</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> = { Вынуть два шара из первой урны }.</p></li>
+</ul>
+<p>У нас есть <span class="math notranslate nohighlight">\(B = B_1 + B_2 + B_3\)</span>, с.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(B_1\)</span> = { вынуть 1 белый и 1 черный }. <span class="math notranslate nohighlight">\(P(B_1) = \dfrac{C^1_4 \cdot C^1_2}{C^2_6} = \dfrac{8}{15}\)</span>. Теперь в второй урне есть 3 белых шара, поэтому <span class="math notranslate nohighlight">\(P(A | B_1) = \dfrac{3}{7}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_2\)</span> = { вынуть 2 белых }. <span class="math notranslate nohighlight">\(P(B_2) = \dfrac{C^2_4}{C^2_6} = \dfrac{2}{5}\)</span>. Теперь в второй урне есть 4 белых шара, поэтому <span class="math notranslate nohighlight">\(P(A | B_2) = \dfrac{4}{7}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_3\)</span> = { вынуть 2 черных }. <span class="math notranslate nohighlight">\(P(B_3) = \dfrac{C^2_2}{C^2_6} = \dfrac{1}{15}\)</span>. Теперь в второй урне есть 2 белых шара, поэтому <span class="math notranslate nohighlight">\(P(A | B_3) = \dfrac{2}{7}\)</span>.</p></li>
+</ul>
+<p>Ответ:.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} P(A) &amp; = P(B_1) \cdot P(A | B_1) + P(B_2) \cdot P(A | B_2) + P(B_3) \cdot P(A | B_3) \\ &amp; = \dfrac{8}{15} \cdot \dfrac{3}{7} + \dfrac{2}{5} \cdot \dfrac{4}{7} + \dfrac{1}{15} \cdot \dfrac{2}{7} = \dfrac{10}{21} \end{align*}\end{split}\]</div>
+</div>
+<p>Задача 6. Пусть <span class="math notranslate nohighlight">\(A_1\)</span> = { выбрать 2 белых шара }, <span class="math notranslate nohighlight">\(A_2\)</span> = { выбрать 2 черных шара } и <span class="math notranslate nohighlight">\(A_3\)</span> = { выбрать 2 шара разного цвета }.</p>
+<p><span class="math notranslate nohighlight">\(B\)</span> = { третий шар отказался белым }.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(P(A_3 | B) = \dfrac{P(A_3) \cdot P(B | A_3)}{P(A_1) + P(B|A_1) + P(A_2) \cdot P(B|A_2) + P(A_3) \cdot P(B | A_3)}\)</span> (формула Байеса)</p>
+<ol class="arabic simple">
+<li><p>C <span class="math notranslate nohighlight">\(A_1\)</span>, у нас есть <span class="math notranslate nohighlight">\(P(A_1) = \dfrac{5 \cdot 4}{8 \cdot 7} = \dfrac{5}{14}\)</span>. Значит третий шар имеет 3 варианта, чтобы получить белый шар, <span class="math notranslate nohighlight">\(P(B | A_1) = \dfrac{3}{6} = \dfrac{1}{2}\)</span>.</p></li>
+<li><p>C <span class="math notranslate nohighlight">\(A_2\)</span>, у нас есть <span class="math notranslate nohighlight">\(P(A_2) = \dfrac{3 \cdot 2}{8 \cdot 7} = \dfrac{3}{28}\)</span>. Значит третий шар имеет 5 варианта, чтобы получить белый шар, <span class="math notranslate nohighlight">\(P(B | A_2) = \dfrac{5}{6}\)</span>.</p></li>
+<li><p>C <span class="math notranslate nohighlight">\(A_3\)</span>, у нас есть <span class="math notranslate nohighlight">\(P(A_3) = \dfrac{2 \cdot 3 \cdot 5}{8 \cdot 7} = \dfrac{15}{28}\)</span> (2 значит белый-черный или черный белый). Значит третий шар имеет 4 варианта, чтобы получить белый шар, <span class="math notranslate nohighlight">\(P(B | A_3) = \dfrac{4}{6} = \dfrac{2}{3}\)</span>.</p></li>
+</ol>
+<p>Ответ: <span class="math notranslate nohighlight">\(P(A_3 | B) = \dfrac{15}{28} \cdot \dfrac{2}{3} : \left(\dfrac{5}{14} \cdot \dfrac{1}{2} + \dfrac{3}{28} \cdot \dfrac{5}{6} + \dfrac{15}{28} \cdot \dfrac{2}{3}\right) = \dfrac{4}{7}\)</span>.</p>
+<p>Задача 7. Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_1\)</span> = { выбрать красный шар из первой урны } и <span class="math notranslate nohighlight">\(A_2\)</span> = { выбрать черный шар из первой урны }.</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_1\)</span> = { выбрать красный шар из второй урны } и <span class="math notranslate nohighlight">\(B_2\)</span> = { выбрать черный шар из второй урны }.</p></li>
+</ul>
+<p>У нас есть <span class="math notranslate nohighlight">\(P(A_1) = P(A_2) = \dfrac{1}{2}\)</span>, <span class="math notranslate nohighlight">\(P(B_1 | A_1) = \dfrac{3}{6}\)</span>, <span class="math notranslate nohighlight">\(P(B_1 | A_2) = \dfrac{2}{6}\)</span>, <span class="math notranslate nohighlight">\(P(B_2 | A_1) = \dfrac{3}{6}\)</span>, <span class="math notranslate nohighlight">\(P(B_2 | A_2) = \dfrac{4}{6}\)</span>.</p>
+<ol class="loweralpha simple">
+<li><p>Пусть <span class="math notranslate nohighlight">\(C\)</span> = { вынуты шары одного цвета }.</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} \Longrightarrow P(C) &amp; = P(A_1 \cdot B_1 + A_2 \cdot B_2) = &amp; P(A_1) \cdot P(B_1 | A_1) + P(A_2) \cdot P(B_2 | A_2) \\ &amp; = \dfrac{1}{2} \cdot \dfrac{3}{6} + \dfrac{1}{2} \cdot \dfrac{4}{6} = \dfrac{7}{12} \end{align*}\end{split}\]</div>
+</div>
+<p>(б) Пусть <span class="math notranslate nohighlight">\(D\)</span> = { выбрать красный шар из первой урны и черный шар из второй урны }</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} P(D) = P(A_2 | B_1) &amp; = \dfrac{P(A_2) \cdot P(B_1 | A_2)}{P(A_1) \cdot P(B_1 | A_1) + P(A_2) \cdot P(B_1 | A_2)} \\ &amp; = \left(\dfrac{1}{2} \cdot \dfrac{2}{6}\right) : \left(\dfrac{1}{2} \cdot \dfrac{2}{6} + \dfrac{1}{2} \cdot \dfrac{3}{6}\right) = \dfrac{2}{5} \end{align*}\end{split}\]</div>
+</div>
+<p>Задача 8.</p>
+<p>Задача 9. Пусть <span class="math notranslate nohighlight">\(A_1\)</span> = { первый шар является белым } и <span class="math notranslate nohighlight">\(A_2\)</span> = { второй шар является черным }.</p>
+<p><span class="math notranslate nohighlight">\(B\)</span> = { два следующие шары - черные }.</p>
+<p>У нас есть, <span class="math notranslate nohighlight">\(P(A_1) = \dfrac{4}{7}\)</span>, <span class="math notranslate nohighlight">\(P(A_2) = \dfrac{3}{7}\)</span></p>
+<ol class="arabic simple">
+<li><p>Если первый шар является белым, то в урне есть 3 белых и 3 черных, поэтому <span class="math notranslate nohighlight">\(P(B | A_1) = \dfrac{C^2_3}{C^2_6} = \dfrac{1}{5}\)</span></p></li>
+<li><p>Если первый шар является черным, то в урне есть 4 белых и 2 черных, поэтому <span class="math notranslate nohighlight">\(P(B | A_2) = \dfrac{C^2_2}{C^2_6} = \dfrac{1}{15}\)</span></p></li>
+</ol>
+<p>Мы получим:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} P(A_1 | B) &amp; = \dfrac{P(A_1) \cdot P(B | A_1)}{P(A_1) \cdot P(B | A_1) + P(A_2) \cdot P(B | A_2)} \\ &amp; = \left(\dfrac{4}{7} \cdot \dfrac{1}{5}\right) : \left(\dfrac{4}{7} \cdot \dfrac{1}{5} + \dfrac{3}{7} \cdot \dfrac{1}{15}\right) = \dfrac{4}{5} = 0,8 \end{align*}\end{split}\]</div>
+</div>
+<p>Задача 10. Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_1\)</span> = { комбинация 11111 передана } и <span class="math notranslate nohighlight">\(A_2\)</span> = { комбинация 00000 передана }.</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> = { комбинация 10110 получена }.</p></li>
+</ul>
+<p>У нас есть: <span class="math notranslate nohighlight">\(P(A_1) = 0,7\)</span>, <span class="math notranslate nohighlight">\(P(A_2) = 0,3\)</span></p>
+<ol class="arabic simple">
+<li><p>Если комбинация 11111 передана, то первое, третье и пятое цифры правильно, а другие нет, поэтому <span class="math notranslate nohighlight">\(P(B | A_1) = 0,6 \cdot 0,4 \cdot 0,6 \cdot 0,6 \cdot 0,4 = 0,6^3 \cdot 0,4^2\)</span></p></li>
+<li><p>Если комбинация 00000 передана, то второе и четвертое цифры правильно, а другие нет, поэтому <span class="math notranslate nohighlight">\(P(B | A_2) = 0,4 \cdot 0,6 \cdot 0,4 \cdot 0,4 \cdot 0,6 = 0,4^3 \cdot 0,6^2\)</span></p></li>
+</ol>
+<p>Ответ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} P(A_1 | B) &amp; = \dfrac{P(A_1) \cdot P(B | A_1)}{P(A_1) \cdot P(B | A_1) + P(A_2) \cdot P(B | A_2)} \\ &amp; = \dfrac{0,7 \cdot 0,6^3 \cdot 0,4^2}{0,7 \cdot 0,6^3 \cdot 0,4^2 + 0,3 \cdot 0,4^3 \cdot 0,6^2} = \dfrac{7}{9} \approx 0,78 \end{align*}\end{split}\]</div>
+</div>
+</section>
+<section id="id4">
+<h3>Занятия 6<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<p>Задача 1. Пусть <span class="math notranslate nohighlight">\(A\)</span> = { Два раза выпадет шесть очков }.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(n = 5\)</span>, <span class="math notranslate nohighlight">\(p = \dfrac{1}{6}\)</span>, поэтому <span class="math notranslate nohighlight">\(q = 1-p = \dfrac{5}{6}\)</span>.</p>
+<p>Ответ: <span class="math notranslate nohighlight">\(P(A) = P_5(k=2) = C^2_5 \cdot \left(\dfrac{1}{6}\right)^2 \cdot \left(\dfrac{5}{6}\right)^3 = \dfrac{625}{3888} \approx 0,16\)</span>.</p>
+<p>Задача 2. У нас есть количество детей <span class="math notranslate nohighlight">\(n=4\)</span>, вероятность рождения мальчика <span class="math notranslate nohighlight">\(p = \dfrac{1}{2}\)</span>, поэтому вероятность рождения девочки <span class="math notranslate nohighlight">\(q = 1-p = \dfrac{1}{2}\)</span>.</p>
+<p>Ответ <span class="math notranslate nohighlight">\(P_4(k=2) = C^2_4 \cdot \left(\dfrac{1}{2}\right)^2 \cdot \left(\dfrac{1}{2}\right)^2 = \dfrac{3}{8}\)</span>.</p>
+<p>Задача 3. Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = { первый стрелок попадает в цель дважды }.</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> = { второй стрелок попадает в цель дважды }.</p></li>
+</ul>
+<p>У нас есть <span class="math notranslate nohighlight">\(n_A = 4\)</span>, <span class="math notranslate nohighlight">\(p_A = \dfrac{1}{3}\)</span>, поэтому <span class="math notranslate nohighlight">\(q_A = 1 - p_A = \dfrac{2}{3}\)</span>, <span class="math notranslate nohighlight">\(n_B = 3\)</span>, <span class="math notranslate nohighlight">\(p_B = \dfrac{1}{2}\)</span>. Отсюда <span class="math notranslate nohighlight">\(q_B = 1 - p_B = \dfrac{1}{2}\)</span>.</p>
+<p>Поэтому, <span class="math notranslate nohighlight">\(P(A) = P_4(k=2) = C^2_4 \cdot \left(\dfrac{1}{3}\right)^2 \cdot \left(\dfrac{2}{3}\right)^2 = \dfrac{8}{27}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P(B) = P_3(k=2) = C^2_3 \cdot \left(\dfrac{1}{2}\right)^2 \cdot \left(\dfrac{1}{2}\right) = \dfrac{3}{8}\)</span> так как <span class="math notranslate nohighlight">\(P(B) &gt; P(A)\)</span>, второго стрелка вероятнее.</p>
+<p>Задача 4. Здесь у нас есть <span class="math notranslate nohighlight">\(n=5\)</span>, вероятность узла <span class="math notranslate nohighlight">\(p = 1 - 0,9 = 0,1\)</span>, и вероятность надежности <span class="math notranslate nohighlight">\(q = 0,9\)</span>.</p>
+<ol class="loweralpha simple">
+<li><p><span class="math notranslate nohighlight">\(P_5(k=1) = C^1_5 \cdot (0,1)^1 \cdot (0,9)^4 = 0,32805\)</span>.</p></li>
+</ol>
+<p>(б) <span class="math notranslate nohighlight">\(P_5(k \geqslant 1) = 1 - P_5(k=0) = 1 - C^0_5 \cdot (0,9)^5 \approx 0,4\)</span>.</p>
+<p>(в) <span class="math notranslate nohighlight">\(P_5(k \geqslant 2) = 1 - P_5(k=0) - P_5(k=1) = 1 - C^0_5 \cdot 0,9^5 - C^1_5 \cdot 0,1 \cdot 0,9^4 = 0,08146 \approx 0,08\)</span>.</p>
+<p>Задача 5. У нас есть <span class="math notranslate nohighlight">\(n = 100\)</span> и <span class="math notranslate nohighlight">\(p=0,02\)</span> - мало, поэтому мы можем использовать формулу Пуассона с <span class="math notranslate nohighlight">\(\lambda = np = 100 \cdot 0,02 = 2\)</span>.</p>
+<ol class="loweralpha simple">
+<li><p><span class="math notranslate nohighlight">\(P_{100} (k=0) = \dfrac{e^{-2} \cdot 2^0}{0!} = e^{-2}\)</span>.</p></li>
+</ol>
+<p>(б) <span class="math notranslate nohighlight">\(P_{100} (k&gt;2) = 1-P_{100} (k = 0) - P_{100} (k = 1) = 1 - \dfrac{e^{-2} \cdot 2^0}{0!} - \dfrac{e^{-2} \cdot 2^1}{1!} - \dfrac{e^{-2} \cdot 2^2}{2!} = 1 - 5e^{-2}\)</span>.</p>
+<p>(в) <span class="math notranslate nohighlight">\(P_{100} (k = k_0)\)</span>, мы используем <span class="math notranslate nohighlight">\(k=0, 1, 2, \cdots\)</span> и видим, что <span class="math notranslate nohighlight">\(k=2\)</span> наиболее. Поэтому ответ <span class="math notranslate nohighlight">\(k_0 = 2\)</span>.</p>
+<p>Задача 6. Пусть <span class="math notranslate nohighlight">\(n\)</span> - количество изделий, чтобы с вероятностью не менее 0,95 обнаружить хотя бы одно изделие низкого качества</p>
+<p>Здесь <span class="math notranslate nohighlight">\(q = 1 - p = 0,9\)</span>, и мы хотем, чтобы <span class="math notranslate nohighlight">\(P_n(k \geqslant 1) \geqslant 0,95\)</span>.</p>
+<p>У нас есть</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} P_n(k \geqslant 1) &amp; = 1 - P_n(k = 0) = 1 (0,9)^n \geqslant 0,95 \\ &amp; \Longleftrightarrow (0,9)^n \leqslant 0,05 \\ &amp; \Longleftrightarrow n \ln{0,9} \leqslant \ln{0,05} \\ &amp; \Longleftrightarrow n \geqslant \dfrac{\ln{0,05}}{\ln{0,9}} \\ &amp; \Longleftrightarrow n \geqslant 28,43 \\ &amp; \Longrightarrow n \geqslant 29 \end{align*}\end{split}\]</div>
+</div>
+<p>Задача 7. В течение часа поступает в среднем 120 телефонных вызовов, значит в течение минуты <span class="math notranslate nohighlight">\(\lambda = \dfrac{1 \cdot 120}{60} = 2\)</span> вызовов.</p>
+<p>Поэтому ответ: <span class="math notranslate nohighlight">\(P(k=3) = \dfrac{e^{-2} \cdot 2^3}{3!} = \dfrac{2e^{-2}}{3} \approx 0,09\)</span></p>
+<p>Задача 8. У нас есть <span class="math notranslate nohighlight">\(n=400\)</span> и <span class="math notranslate nohighlight">\(p=0,005\)</span> - мало, поэтому мы можем используем формулу Пуассона с <span class="math notranslate nohighlight">\(\lambda = np = 2\)</span>.</p>
+<p>Получим</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{align*} P_{400} (k &gt; 2) &amp; = 1 - P_{400}(k=0) - P_{400}(k=1) - P_{400}(k=2) &amp; = 1 - \dfrac{e^{-2} \cdot 2^0}{0!} - \dfrac{e^{-2} \cdot 2^1}{1!} - \dfrac{e^{-2} \cdot 2^2}{2!} &amp; = 1 - 5e^{-2} \approx 0,31
+\end{align*}\]</div>
+</div>
+<p>Задача 9.
+У нас есть <span class="math notranslate nohighlight">\(n=800\)</span> и <span class="math notranslate nohighlight">\(p=0,0025\)</span> - вероятность цифра может быть принята неправильно.</p>
+<p>Чтобы получить текст, все цифры будут приняты правильно, <span class="math notranslate nohighlight">\(k=0\)</span> и <span class="math notranslate nohighlight">\(\lambda = np = 800 \cdot 0,0025 = 2\)</span>.</p>
+<p>Ответ: <span class="math notranslate nohighlight">\(P_{800}(k=0) = \dfrac{e^{-2} \cdot 2^0}{0!} = e^{-2} \approx 0,136\)</span></p>
+<p>Задача 10. Мы знаем только один выстрел из 200 достигает цели, тогда при 100 выстрелах <span class="math notranslate nohighlight">\(\lambda = 1 \cdot 100 : 200 = \dfrac{1}{2}\)</span>.</p>
+<p>Ответ <span class="math notranslate nohighlight">\(P_{100}(k \geqslant 1) = 1 - P_{100} (k = 0) = 1 - \dfrac{e^{\dfrac{-1}{2}} \cdot \left(\dfrac{1}{2}\right)^0}{0!} = 1 - e^{\dfrac{-1}{2} \approx 0,4}\)</span></p>
+<p>Задача 11. У нас есть <span class="math notranslate nohighlight">\(n=50\)</span> и <span class="math notranslate nohighlight">\(p=0,01\)</span> - мало, поэтому мы используем формулу Пуассона с <span class="math notranslate nohighlight">\(\lambda = np = 0,5\)</span>.</p>
+<p>Ответ <span class="math notranslate nohighlight">\(P_{50} (k \geqslant 1) = 1 - P_{50} (k = 0) = 1 - \dfrac{e^{-0,5} \cdot (0,5)^0}{0!} = 1 - e^{-0,5} \approx 0,4\)</span></p>
+<p>Задача 12. Пусть <span class="math notranslate nohighlight">\(A_i\)</span> = { монету 1 бросают герб <span class="math notranslate nohighlight">\(i\)</span> раз }, и <span class="math notranslate nohighlight">\(B_i\)</span> = { монету 2 бросают герб <span class="math notranslate nohighlight">\(i\)</span> раз }.</p>
+<p><span class="math notranslate nohighlight">\(C\)</span> = { у них выпадает одинаковое число гербов }</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(C = \sum_{i=0}^{5} A_i B_i\)</span></p>
+<p>Мы образуем, что <span class="math notranslate nohighlight">\(P_{A, 5}(k=k_0)\)</span> - вероятность того, что первая монета выпадает <span class="math notranslate nohighlight">\(k_0\)</span> герб.</p>
+<p><span class="math notranslate nohighlight">\(P_{B, 5}(k=k_0)\)</span> - вероятность того, что вторая монета выпадает <span class="math notranslate nohighlight">\(k_0\)</span> герб.</p>
+<p>Поэтому,.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{align*} P(C) &amp; = \sum_{i=0}^{5} P_{A, 5}(k=i) \cdot P_{B, 5}(k=i) &amp; = \sum_{i=0}^{5} \left[C^i_5 \left(\dfrac{1}{2}\right)^i \cdot \left(\dfrac{1}{2}\right)^{5-i}\right] \cdot \left[C^i_5 \left(\dfrac{1}{2}\right)^i \cdot \left(\dfrac{1}{2}\right)^{5-i}\right] &amp; = \sum_{i=0}^{5} \left[C^i_5 \left(\dfrac{1}{2}\right)^5\right]^2 = \dfrac{63}{256}
+\end{align*}\]</div>
+</div>
+<p>Задача 13. Пусть <span class="math notranslate nohighlight">\(x\)</span> - количество раз частица двигается вправо и <span class="math notranslate nohighlight">\(y\)</span> - количество раз частица двигается влево.</p>
+<p>Тогда, место частицы равна <span class="math notranslate nohighlight">\(x-y\)</span>.</p>
+<p>Поэтому у нас есть.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{align*} x - y \in [-2; 0] x + y = 5 x, y \in \mathbb{Z}\end{align*}\]</div>
+</div>
+<p>Среди { -2, -1, 0 }, мы получим цельные числа только когда -1. Значит
+$begin{cases}
+x - y = -1.</p>
+<p>x + y = 5
+end{cases}$</p>
+<p>Получим <span class="math notranslate nohighlight">\(x=2\)</span>, <span class="math notranslate nohighlight">\(y=3\)</span>. Пусть <span class="math notranslate nohighlight">\(A\)</span> = { через пять секунд частица двигается вправо 2 раза }.</p>
+<p>Ответ <span class="math notranslate nohighlight">\(P_5 (k = 2) = C^2_5 \left(\dfrac{1}{3}\right)^2 \cdot \left(\dfrac{2}{3}\right)^3 = \dfrac{80}{243}\)</span></p>
+<p>Задача 14. В биатлоне на каждом из трех огневых рубежей спортсмен должен поразить пять мишеней в пяти выстрелах. За каждую непораженную мишень спортсмен обязан пробежать штрафной круг. Пусть вероятность поражения мишени при одном выстреле равна 0,95. Какова вероятность того, что спортсмен все три огневых рубежа пройдет без штрафных кругов? какова вероятность того, что после каждого огневого рубежа спортсмен будет пробегать один штрафной круг?</p>
+<ol class="loweralpha simple">
+<li><p>Пусть <span class="math notranslate nohighlight">\(A_i\)</span> = { спортсмен пройдет без штрафной круг на <span class="math notranslate nohighlight">\(i\)</span>-ом рубеже }</p></li>
+</ol>
+<p>У нас есть <span class="math notranslate nohighlight">\(P(A_1) = P(A_2) = P(A_3)\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{align*}
+     \Longrightarrow P(A_1 A_2 A_3) &amp; = P(A_1) P(A_2) P(A_3) = (P(A_1))^3.\\&amp; = (P_5(k=0))^3 = [C^0_5 (0,95)^5]^3.\\&amp; \approx 0,46
+\end{align*}\end{aligned}\end{align} \]</div>
+</div>
+<p>(б) Пусть <span class="math notranslate nohighlight">\(B_i\)</span> = { спортсмен после <span class="math notranslate nohighlight">\(i\)</span>-ого огневого рубежа будет пробегать один штрафной круг }.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(P(B_1) = P(B_2) = P(B_3)\)</span> и <span class="math notranslate nohighlight">\(p=1-0,95=0,05\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{align*}
+     \Longrightarrow P(B_1 B_2 B_3) &amp; = P(B_1) P(B_2) P(B_3) = (P(B_1))^3.\\&amp; = [P_5 (k=1)]^3 = [C^1_5 (0,05)^1 (0,95)^4]^3.\\&amp; \approx 0,008
+\end{align*}\end{aligned}\end{align} \]</div>
+</div>
+<p>Задача 15.
+Пусть <span class="math notranslate nohighlight">\(A\)</span> = { к этому моменту у стрелка будет два промаха }</p>
+<p>Мы знаем, что последний выстрел будет попадание. Среди первые 4 выстрела, там есть два промаха с вероятностью <span class="math notranslate nohighlight">\(p=1-\dfrac{1}{3} = \dfrac{2}{3}\)</span>.</p>
+<p>Поэтому,
+.. math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">align</span><span class="o">*</span><span class="p">}</span>
+<span class="n">P</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span> \<span class="n">dfrac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">3</span><span class="p">}</span> \<span class="n">cdot</span> <span class="n">P_4</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> \<span class="n">dfrac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">3</span><span class="p">}</span> \<span class="n">cdot</span> <span class="n">C</span><span class="o">^</span><span class="mi">2_4</span> \<span class="n">cdot</span> \<span class="n">left</span><span class="p">(</span>\<span class="n">dfrac</span><span class="p">{</span><span class="mi">2</span><span class="p">}{</span><span class="mi">3</span><span class="p">}</span>\<span class="n">right</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> \<span class="n">cdot</span> \<span class="n">left</span><span class="p">(</span>\<span class="n">dfrac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">3</span><span class="p">}</span>\<span class="n">right</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span> <span class="o">=</span> \<span class="n">dfrac</span><span class="p">{</span><span class="mi">8</span><span class="p">}{</span><span class="mi">81</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">align</span><span class="o">*</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>Занятие 7<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<p>Задача 1. Если <span class="math notranslate nohighlight">\(x_1 = 1\)</span>, то только выбрать нужный ключ с вероятностью <span class="math notranslate nohighlight">\(p_1 = P(X=1) = \dfrac{1}{5}\)</span>.</p>
+<p>Если <span class="math notranslate nohighlight">\(x_2 = 2\)</span>, то <span class="math notranslate nohighlight">\(p_2 = P(X=2) = \dfrac{4}{5} \cdot \dfrac{1}{5}\)</span>.</p>
+<p>Если <span class="math notranslate nohighlight">\(x_3 = 3\)</span>, то <span class="math notranslate nohighlight">\(p_3 = P(X=3) = \left(\dfrac{4}{5}\right)^2 \cdot \dfrac{1}{5}\)</span>.</p>
+<p>И так далее.</p>
+<p>Если <span class="math notranslate nohighlight">\(x_n = n\)</span>, <span class="math notranslate nohighlight">\(p_n = P(X=n) = \left(\dfrac{4}{5}\right)^{n-1} \cdot \dfrac{1}{5}\)</span>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>| :math:`X` | :math:`1` | :math:`2` | :math:`3` | :math:`\cdots` | :math:`n` | :math:`\cdots` |
+|-----|-----|-----|-----|----------|-----|----------|
+| :math:`P` | :math:`1/5` | :math:`(4/5) \cdot (1/5)` | :math:`(4/5)^2 \cdot (1/5)` | :math:`\cdots` | :math:`(4/5)^{n-1} \cdot (1/5)` | :math:`\cdots` |
+</pre></div>
+</div>
+<p>Значит <span class="math notranslate nohighlight">\(M(X) = \sum_{i=1}^{n} i \cdot \left(\dfrac{4}{5}\right)^{i-1} \cdot \dfrac{1}{5}\)</span>, когда <span class="math notranslate nohighlight">\(n \Longrightarrow \infty\)</span></p>
+<p>Смотрим полином <span class="math notranslate nohighlight">\(1 + x + x^2 + \cdots + x^n\)</span>. У нас есть</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} 1 + x + x^2 + x^3 + \cdots + x^n &amp; = \dfrac{x^{n+1} - 1}{x-1} \\ \Longleftrightarrow (1 + x + x^2 + x^3 + \cdots + x^n)' &amp; = \left(\dfrac{x^{n+1} - 1}{x-1}\right)' \\ \Longleftrightarrow 0 + 1 + 2 \cdot x + 3 \cdot x^2 + \cdots + n \cdot x^{n-1} \\ &amp; = \dfrac{(n+1) \cdot x^n \cdot (x-1) (x^{n+1}-1) \cdot 1}{(x-1)^2} \\ \Longleftrightarrow 1 + 2 \cdot x + 3 \cdot x^2 + \cdots + n \cdot x^{n-1} \\ &amp; = \dfrac{n \cdot x^{n+1} (n+1) \cdot x^n + 1}{(x-1)^2} \end{align*}\end{split}\]</div>
+</div>
+<p>Пусть <span class="math notranslate nohighlight">\(x=4/5\)</span> и <span class="math notranslate nohighlight">\(n \Longrightarrow \infty\)</span>, мы получим</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} \lim_{n\to\infty} \sum_{i=1}^{n} i \cdot \left(\dfrac{4}{5}\right)^{i-1} \cdot \dfrac{1}{5} &amp; = \dfrac{1}{5} \lim_{n\to\infty} i \cdot \left(\dfrac{4}{5}\right)^{i-1} \\ &amp; = \dfrac{1}{5} \cdot \lim_{n\to\infty}\dfrac{n \cdot (4/5)^{n+1} (n+1) \cdot (4/5)^n + 1}{(4/5-1)^2} \end{align*}\end{split}\]</div>
+</div>
+<p>И у нас есть.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lim_{n\to\infty} n \cdot (4/5)^{n+1} = \lim_{n\to\infty} (n+1) \cdot (4/5)^n = 0,\]</div>
+</div>
+<p>поэтому</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\dfrac{1}{5} \lim_{n\to\infty} \dfrac{n \cdot (4/5)^{n+1} (n+1) \cdot (4/5)^n + 1}{(4/5-1)^2} = \dfrac{1}{5} \cdot \dfrac{1}{(1/5)^2} = 5\]</div>
+</div>
+<p>Задача 2. На электронное реле воздействует случайное напряжение, имеющее плотность вероятности <span class="math notranslate nohighlight">\(f(x) = \dfrac{x}{\sigma^2} \cdot \exp{ -\dfrac{x^2}{2\sigma^2} }\)</span>, <span class="math notranslate nohighlight">\(x \geqslant 0\)</span>. Реле срабатывает всякий раз, когда напряжение на его входе превышает 3 В. Какова вероятность срабатывания реле?</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(f(x) = \dfrac{x}{\sigma^2} \cdot \exp{ -\dfrac{x^2}{2\sigma^2} }\)</span>.</p>
+<p>Поэтому</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(X &gt; 3) = \int\limits_{3}^{+\infty} \dfrac{x}{\sigma^2} \cdot exp{ -\dfrac{x^2}{2\sigma^2} }\,dx.\]</div>
+</div>
+<p>Пусть <span class="math notranslate nohighlight">\(t=\dfrac{x^2}{2\sigma^2} \Longrightarrow \,dt = \dfrac{x}{\sigma^2} \,dx\)</span>. Если <span class="math notranslate nohighlight">\(x=+\infty \Longrightarrow t = +\infty\)</span> и если <span class="math notranslate nohighlight">\(x=3 \Longrightarrow t = \dfrac{9}{2\sigma^2}\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}\int\limits_{3}^{+\infty} \dfrac{x}{2\sigma^2} \cdot \exp{ -\dfrac{x^2}{\sigma^2} } \,dt &amp; = \int\limits_{9/(\sigma^2)}^{+\infty} e^{-t} \,dt. \\ &amp; = -e^{-t} |^{+\infty}_{9/(2\sigma^2)}. \\ &amp; = -e^{-\infty} + e^{-9/(2\sigma^2)}. \\ &amp; = 0 + e^{-9/(2\sigma^2)}. \\ &amp; = e^{-9/(2\sigma^2)} \end{align*}\end{split}\]</div>
+</div>
+<p>Задача 3. Пусть <span class="math notranslate nohighlight">\(x\)</span> - число монет по 10 копеек и <span class="math notranslate nohighlight">\(y\)</span> - число монет по 50 копеек. Отсюда <span class="math notranslate nohighlight">\(x + y = 4\)</span> и <span class="math notranslate nohighlight">\(0 \leqslant x \leqslant 5, 0 \leqslant y \leqslant 3\)</span>.</p>
+<p>Пусть <span class="math notranslate nohighlight">\(X\)</span> - сумма вынутых копеек <span class="math notranslate nohighlight">\(\Longrightarrow X = 10x + 50y\)</span>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>|   |     |     |    |    |
+|---|-----|-----|----|----|
+| x | 1   | 2   | 3  | 4  |
+| y | 3   | 2   | 1  | 0  |
+| X | 160 | 120 | 80 | 40 |
+</pre></div>
+</div>
+<p>Отсюда, мы получим закон распределения случайной <span class="math notranslate nohighlight">\(X\)</span></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>|     |      |      |       |       |
+|-----|:----:|:----:|:-----:|:-----:|
+| :math:`X` | :math:`40` | :math:`80` | :math:`120` | :math:`160` |
+| :math:`P` | :math:`\dfrac{C^4_5 \cdot C^0_3}{C^4_8} = \dfrac{1}{14}` | :math:`\dfrac{C^3_5 \cdot C^1_3}{C^4_8} = \dfrac{3}{7}` | :math:`\dfrac{C^2_5} \cdot C^2_3{C^4_8} = \dfrac{3}{7}` | :math:`\dfrac{C^1_5 \cdot C^3_3}{C^4_8} = \dfrac{1}{14}` |
+</pre></div>
+</div>
+<p>Задача 4.
+<span class="math notranslate nohighlight">\(f(x) = 0,002e^{-0,002x}\)</span> при <span class="math notranslate nohighlight">\(x \geqslant 0\)</span>, <span class="math notranslate nohighlight">\(f(x) = 0\)</span> при <span class="math notranslate nohighlight">\(x &lt; 0\)</span></p>
+<p>Найти функцию распределения:</p>
+<ol class="arabic simple">
+<li><p>При <span class="math notranslate nohighlight">\(x &lt; 0\)</span></p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[F(x) = P(X \leqslant 0) = \int\limits_{-\infty}^{0}f(x)\,dx = \int\limits_{-\infty}^{0}0\,dx = 0\]</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>При <span class="math notranslate nohighlight">\(x \geqslant 0\)</span></p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} F(x) = P(X \leqslant 0) &amp; = \int\limits_{-\infty}^{x}f(x)\,dx. \\ &amp; = \int\limits_{-\infty}^{0}0\,dx + \int\limits_{0}^{x}0,002e^{-0,002x}\,dx. \\ &amp; = 0 + \int\limits_{0}^{x}e^{-0,002x}\,d(0,002x). \\ &amp; = \left.-e^{-0,002x}\right|^{x}_{0}. \\ &amp; = -e^{-0,002x} + e^{0}. \\ &amp; = 1 - e^{-0,002x} \end{align*}\end{split}\]</div>
+</div>
+<p>Вероятность того, что предохранитель безотказно проработает 1000 часов</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[F(x) = P(X \geqslant 1000) = F(+\infty) - F(1000) = 1 (1 - e^{-0,002 \cdot 1000}) = e^{-2}.\]</div>
+</div>
+<p>Задача 5. Пусть <span class="math notranslate nohighlight">\(X\)</span> - сумма выпавших очков. Поэтому</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[X \in { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }\]</div>
+</div>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(X=2=1+1\)</span>, выбрать очку 1 (первый кубик) и очку 1 (второй кубик).</p>
+<p><span class="math notranslate nohighlight">\(P(X=2) = \dfrac{1}{6} \cdot \dfrac{1}{6} = \dfrac{1}{36}\)</span></p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(X=3=1+2=2+1\)</span>, выбрать очку 1 (первый кубик) и очку 2 (второй кубик), или обратно.</p>
+<p><span class="math notranslate nohighlight">\(P(X=3) = 2 \cdot \dfrac{1}{6} \cdot \dfrac{1}{6} = \dfrac{1}{18}\)</span></p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(X=4=2+2=1+3=(3+1)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P(X=4) = \dfrac{1}{6} \cdot \dfrac{1}{6} + 2 \cdot \dfrac{1}{6} \cdot \dfrac{1}{6} = \dfrac{1}{12}\)</span></p>
+</li>
+<li><p><span class="math notranslate nohighlight">\(X=5=2+3=(3+2)=1+4=(4+1)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P(X=5) = \dfrac{1}{9}\)</span></p>
+</li>
+<li><p>И далее <span class="math notranslate nohighlight">\(\cdots\)</span></p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>|     |     |     |     |     |     |     |     |     |      |      |        |
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|------|------|------|
+| :math:`X` | :math:`2` | :math:`3` | :math:`4` | :math:`5` | :math:`6` | :math:`7` | :math:`8` | :math:`9` | :math:`10` | :math:`11` | :math:`12` |
+| :math:`P` | :math:`\dfrac{1}{36}` | :math:`\dfrac{1}{18}` | :math:`\dfrac{1}{12}` | :math:`\dfrac{1}{9}` | :math:`\dfrac{5}{36}` | :math:`\dfrac{1}{6}` | :math:`\dfrac{5}{36}` | :math:`\dfrac{1}{9}` | :math:`\dfrac{1}{12}` | :math:`\dfrac{1}{18}` | :math:`\dfrac{1}{36}` |
+</pre></div>
+</div>
+<p>Математическое ожидание</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}M(\xi) &amp; = 2 \cdot \dfrac{1}{36} + 3 \cdot \dfrac{1}{18} + \cdots + 12 \cdot \dfrac{1}{36} \\ &amp; = 14 \cdot \left(\dfrac{1}{36} + \dfrac{1}{18} + \dfrac{1}{12} + \dfrac{1}{9} + \dfrac{5}{16}\right) + 7 \cdot \dfrac{1}{6} = 7.\end{split}\]</div>
+</div>
+<p>Задача 6.
+Чтобы выбирать шары до тех пор, пока не будет вынут черный шар, у нас есть 4 способа</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0\)</span> белых шара: <span class="math notranslate nohighlight">\(A^0_3 C^1_2\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(1\)</span> белый шар: <span class="math notranslate nohighlight">\(A^1_3 C^1_2\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(2\)</span> белых шара: <span class="math notranslate nohighlight">\(A^2_3 C^1_2\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(3\)</span> белых шара: <span class="math notranslate nohighlight">\(A^3_3 C^1_2\)</span>.</p></li>
+</ul>
+<p>Мы получим <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = A^0_3 C^1_2 + A^1_3 C^1_2 + A^2_3 C^1_2 + A^3_3 C^1_2 = 32\)</span>, и закон распределения с <span class="math notranslate nohighlight">\(X\)</span> - количество белых шара</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>| :math:`X` | :math:`0` | :math:`1` | :math:`2` | :math:`3` |
+|-----|-----|-----|-----|-----|
+| :math:`P` | :math:`\dfrac{A^0_3 C^1_2}{32} = \dfrac{1}{16}` | :math:`\dfrac{A^1_3 C^1_2}{32} = \dfrac{3}{16}` | :math:`\dfrac{A^2_3 C^1_2}{32} = \dfrac{3}{8}` | :math:`\dfrac{A^3_3 C^1_2}{32} = \dfrac{3}{8}` |
+</pre></div>
+</div>
+<p>Поэтому</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[M(\xi) = 0 \cdot \dfrac{1}{16} + 1 \cdot \dfrac{3}{16} + 2 \cdot \dfrac{3}{8} + 3 \cdot \dfrac{3}{8} = \dfrac{33}{16} \approx 2\]</div>
+</div>
+<p>Задача 7.</p>
+<ol class="loweralpha simple">
+<li><p>Функция распределения величины <span class="math notranslate nohighlight">\(X\)</span></p></li>
+</ol>
+<ol class="arabic simple">
+<li><p>При <span class="math notranslate nohighlight">\(x &lt; 0\)</span></p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[F(x) = P(X \leqslant x) = \int\limits_{-\infty}^{x}0\,dx = 0\]</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>При <span class="math notranslate nohighlight">\(x \in [0,\pi]\)</span></p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} F(x) = P(X \leqslant x) &amp; = \int\limits_{-\infty}^{x}f(x)\,dx. \\ &amp; = \int\limits_{-\infty}^{0}0\,dx + \int\limits_{0}^{x}0,5\sin x\,dx. \\ &amp; = 0 - 0,5\cos x\Big|^x_0 = -0,5(\cos x-\cos 0). \\ &amp; = 0,5(1-\cos x) \end{align*}\end{split}\]</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>При <span class="math notranslate nohighlight">\(x &gt; \pi\)</span></p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} F(x) = P(X \leqslant x) &amp; = \int\limits_{-\infty}^{x}f(x) \,dx. \\ &amp; = \int\limits_{-\infty}^{0}0\,dx + \int\limits_{0}^{\pi}0,5\sin x\,dx + \int\limits_{\pi}^{x}0\,dx. \\ &amp; = 0 + \int\limits_{0}^{\pi}0,5\sin x\,dx. \\ &amp; = -0,5 \cos x \Big|^{\pi}_0. \\ &amp; = -0,5(\cos \pi - \cos 0) = -0,5 (-1 - 1) = 1 \end{align*}\end{split}\]</div>
+</div>
+<p>(б) математическое ожидание этой величины.</p>
+<p>Так как <span class="math notranslate nohighlight">\(f(x) = 0\)</span> при <span class="math notranslate nohighlight">\(x \not\in [0, \pi]\)</span>, мы получим математическое ожидание <span class="math notranslate nohighlight">\(M(\xi) = \int\limits_{0}^{\pi}x \cdot 0,5\sin x\,dx = 0,5 \int\limits_{0}^{\pi} x \sin x\,dx\)</span>.</p>
+<p>Пусть <span class="math notranslate nohighlight">\(u = x\)</span> и <span class="math notranslate nohighlight">\(\sin x \,dx = \,dv \Longrightarrow \,du = \,dx\)</span> и <span class="math notranslate nohighlight">\(-\cos x = v\)</span>. Поэтому</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} \int\limits_{0}^{\pi} x \sin x\,dx &amp; = -x \cos x \Big|^{\pi}_{0} - \int\limits_{0}^{\pi} -\cos x \,dx. \\ &amp; = -(\pi \cos \pi - 0 \cos 0) + \int\limits_{0}^{\pi}\cos x\,dx. \\ &amp; = \pi + \sin x \Big|^{\pi}_{0} = \pi
+\end{align*}\end{split}\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow 0,5 \int\limits_{0}^{\pi}x \sin x\,dx = 0,5 \pi = \pi/2\]</div>
+</div>
+<p>(в) Вероятность попадания в интервал <span class="math notranslate nohighlight">\([0, \pi/3]\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P(0 \leqslant \xi \leqslant \pi/3) = F(\pi/3) - F(0) = 0,5(1-\cos \dfrac{\pi}{3}) - 0,5(1-\cos 0) = \dfrac{1}{4}\)</span></p>
+<p>Задача 8. Пусть <span class="math notranslate nohighlight">\(X\)</span> - количество раз бросают монету. У нас есть:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X=1\)</span>: выпадение герба. <span class="math notranslate nohighlight">\(P(X=1) = \dfrac{1}{2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X=2\)</span>: цифр - герб. <span class="math notranslate nohighlight">\(P(X=2) = \dfrac{1}{2^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X=3\)</span>: цифр - цифр - герб. <span class="math notranslate nohighlight">\(P(X=3) = \dfrac{1}{2^3}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X=4\)</span>: цифр - цифр - цифр - герб, либо цифр четыре раза ...</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(P(X=4) = 2 \cdot \dfrac{1}{2^4} = \dfrac{1}{2^3}\)</span></p>
+<p><span class="math notranslate nohighlight">\(M(\xi) = 1 \cdot \dfrac{1}{2} + 2 \cdot \dfrac{1}{2^2} + 3 \cdot \dfrac{1}{2^3} + 4 \cdot \dfrac{1}{2^3} = \dfrac{15}{8}\)</span></p>
+<p>Задача 9. <span class="math notranslate nohighlight">\(f(x) = \dfrac{1}{\pi} \cdot \dfrac{1}{1+x^2}\)</span>. За один раз</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} P(-1 &lt; x &lt; 1) &amp; = \int\limits_{-1}^{1}f(x)\,dx = \int\limits_{-1}^{1}\dfrac{1}{\pi} \cdot \dfrac{1}{1+x^2} \,dx. \\ &amp; = \dfrac{1}{\pi} \cdot \arctan x\Big|^{1}_{-1} = \dfrac{1}{\pi} \cdot \left(\dfrac{\pi}{4} - \dfrac{-\pi}{4}\right) = \dfrac{1}{2} \end{align*}\end{split}\]</div>
+</div>
+<p>Отсюда, вероятность того, что при трех независимых наблюдения этой случайной величины</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P = \left(\dfrac{1}{2}\right)^3 = \dfrac{1}{8}.\]</div>
+</div>
+<p>Задача 10. Случайная величина <span class="math notranslate nohighlight">\(X\)</span> - погрешность измерительного прибора распределена по нормальному закону распределения с дисперсией <span class="math notranslate nohighlight">\(\sigma^2 = 25\)</span> м:math:<cite>B^2</cite>. Систематическая погрешность прибора отсутствует. Найдите вероятность того, что при пяти независимых измерениях ошибка измерения хотя бы один раз превзойдет по модулю 10 мВ</p>
+<p>Пусть <span class="math notranslate nohighlight">\(A\)</span> = { при пяти независимых измерениях ошибка измерения хотя бы один раз превзойдет по модулю 10 мВ }.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}\)</span> = { при пяти раз нет ошибки }</p>
+<p>Используем <span class="math notranslate nohighlight">\(P(|X - m| &lt; \alpha) = 2 \Phi\left(\dfrac{\alpha}{\sigma}\right)\)</span>. Здесь <span class="math notranslate nohighlight">\(\alpha=10\)</span> и <span class="math notranslate nohighlight">\(\sigma^2 = 25\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow P(|X-m| &lt; 10) = 2 \Phi \left(\dfrac{10}{5}\right) = 2 \cdot 0,4773 = 0,9546\)</span></p>
+<p>Отсюда <span class="math notranslate nohighlight">\(P(A) = 1 - P(\overline{A}) = 1 - 0,9546^5 \approx 0,21\)</span>.</p>
+<p>Задача 11. <span class="math notranslate nohighlight">\(\sigma = 20\)</span>, <span class="math notranslate nohighlight">\(\alpha=50\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(|X - m| &lt; 50) = 2 \cdot \Phi \left(\dfrac{50}{20}\right) = 2 \cdot 0,4938 = 0,9876.\]</div>
+</div>
+<p>Задача 12. <span class="math notranslate nohighlight">\(\varphi(z) = M[\cos(zX) + i\sin(zX)]\)</span>.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(P(X=1) = \dfrac{1}{2}\)</span> и <span class="math notranslate nohighlight">\(P(X=-1) = \dfrac{1}{2}\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow \varphi(z) = \dfrac{1}{2} \cdot [\cos(z \cdot 1) + i \sin(z \cdot 1)] + \dfrac{1}{2} \cdot [\cos(z \cdot (-1)) + i\sin(z \cdot (-1))] = \dfrac{1}{2} \cdot (\cos z + \cos(-z) + i[\sin z + \sin(-z)]).\]</div>
+</div>
+<p>Но <span class="math notranslate nohighlight">\(\cos(z) = \cos(-z)\)</span> и <span class="math notranslate nohighlight">\(\sin(-z) = -\sin(z)\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow \varphi(z) = \dfrac{1}{2} \cdot (\cos z + \cos z) = \cos z.\]</div>
+</div>
+<p>Задача 13. Так как случайная величина равномерно распределена отрезке <span class="math notranslate nohighlight">\([a, b]\)</span>, у нас есть её функция плотности вероятности <span class="math notranslate nohighlight">\(f(x) = \dfrac{1}{b-a}\)</span>.</p>
+<p>Поэтому, характеристическая функция</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} \varphi(z) &amp; = \int\limits_{a}^{b} e^{izx}\,dF(x). \\ &amp; = \int\limits_{a}^{b} e^{izx} \cdot f(x) \,dx. \\ &amp; = \dfrac{1}{b-a} \int\limits_{a}^{b} e^{izx} \,dx. \\ &amp; = \dfrac{1}{b-a} \cdot \left.\dfrac{e^{izx}}{iz}\right|^{b}_{a}. \\ &amp; = \dfrac{1}{b-a} \cdot \dfrac{e^{biz} - e^{aiz}}{iz} \end{align*}\end{split}\]</div>
+</div>
+<p>Задача 14. <span class="math notranslate nohighlight">\(P(X=k) = \dfrac{\lambda^k \cdot e^{-\lambda}}{k!}\)</span> , <span class="math notranslate nohighlight">\(k=0,1,2,\cdots\)</span>.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(\psi(z) = M(z^X)=\sum_{k=0}^{\infty}p_k x^k = \sum_{k=0}^{\infty} \dfrac{e^{-\lambda} \cdot \lambda^k \cdot z^k}{k!}\)</span>,</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} \Longrightarrow \psi'(z) &amp; = e^{-\lambda} \left[\dfrac{\lambda^k \cdot k z^{k-1}}{k!} + \dfrac{\lambda^{k-1} \cdot (k-1) z^{k-2}}{(k-1)!} + \cdots + \dfrac{\lambda^1 \cdot 1 \cdot z^0}{1!} + 0\right] \\ &amp; = e^{-\lambda} \cdot \lambda \left[\dfrac{(\lambda z)^{k-1}}{(k-1)!} + \dfrac{(\lambda z)^{k-2}}{(k-2)!} + \cdots + \dfrac{(\lambda z)^0}{0!}\right] \\ &amp; = e^{-\lambda} \cdot \lambda \cdot e^{\lambda z}. \end{align*}\end{split}\]</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow M(X) = \psi'(1) = e^{-\lambda} \cdot \lambda \cdot e^{\lambda} = \lambda\)</span></p>
+<p>Аналогично, мы получим <span class="math notranslate nohighlight">\(\psi''(1)= \lambda^2\)</span> и <span class="math notranslate nohighlight">\(D(X) = \psi''(1) + \psi'(1) (\psi'(1))^2 = \lambda^2 + \lambda - \lambda^2 = \lambda\)</span></p>
+</section>
+<section id="id6">
+<h3>Занятие 8<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<p>Задача 1. <span class="math notranslate nohighlight">\(Y=(X-1)^2\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X=-1 \Longrightarrow Y=4\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(X=0 \Longrightarrow Y=1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(X=2 \Longrightarrow Y=1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(X=3 \Longrightarrow Y=4\)</span>.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow P(Y=1) = P(X=0)+P(X=2)=0,4+0,3=0,7\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P(Y=4) = P(X=-1) + P(X=3)=0,1+0,2=0,3\)</span></p>
+<p>Мы получим закон распределения</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>| :math:`Y` | :math:`1`   | :math:`4`   |
+|-----|-------|-------|
+| :math:`P` | :math:`0,7` | :math:`0,3` |
+</pre></div>
+</div>
+<p>Задача 2. <span class="math notranslate nohighlight">\(f(x) = \dfrac{1}{b-a}\)</span>, <span class="math notranslate nohighlight">\(0 &lt; a \leqslant x \leqslant b\)</span> и <span class="math notranslate nohighlight">\(Y=X^2\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow x=\sqrt{y}, a^2 \leqslant y \leqslant b^2.\]</div>
+</div>
+<p>Плотность вероятности случайной величины <span class="math notranslate nohighlight">\(Y\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[g(y) = \dfrac{1}{b-a} \cdot \left|(\sqrt{y})'\right| = \dfrac{1}{2(b-a)\cdot \sqrt{y}}, a^2 \leqslant y \leqslant b^2.\]</div>
+</div>
+<p>Задача 3. <span class="math notranslate nohighlight">\(f(x) = \dfrac{x}{\sigma^2} \exp{-\dfrac{x^2}{2\sigma^2}}\)</span>, <span class="math notranslate nohighlight">\(x \geqslant 0\)</span> и <span class="math notranslate nohighlight">\(Y=\sigma/X\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow x=\sigma/y\)</span> и <span class="math notranslate nohighlight">\(y &gt; 0\)</span>. Поэтому плотность распределения случайной величины <span class="math notranslate nohighlight">\(Y\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[g(y) = \dfrac{\sigma}{y\sigma^2} \exp\left(-\dfrac{\sigma^2}{y^2 \cdot 2 \sigma^2}\right) \left|\left(\dfrac{\sigma}{y}\right)'\right| = \dfrac{1}{y \sigma} \exp\left(-\dfrac{1}{2y^2}\right) \cdot \dfrac{\sigma}{y^2} = y^{-3} \exp\left(-\dfrac{1}{2y^2}\right).\]</div>
+</div>
+<p>Задача 4. Мы обозначим через <span class="math notranslate nohighlight">\(X\)</span> угол между осью абсцисс и направлением из начала координат на точку касания. Мы получим длину от точки касания до точки ее пересечения с осью <span class="math notranslate nohighlight">\(Ox\)</span>: <span class="math notranslate nohighlight">\(H=AC=\tg X\)</span>, <span class="math notranslate nohighlight">\(x \in [0, \pi/2]\)</span></p>
+<figure class="align-default">
+<img alt="../../_images/exercise4-8.png" src="../../_images/exercise4-8.png" />
+</figure>
+<p>У нас есть <span class="math notranslate nohighlight">\(H = \tg X\)</span>, <span class="math notranslate nohighlight">\(x \in [0, \pi/2]\)</span>. Следовательно, <span class="math notranslate nohighlight">\(X\)</span> имеет равномерное на <span class="math notranslate nohighlight">\([0, \pi/2]\)</span> распределения с функцией плотности вероятности <span class="math notranslate nohighlight">\(f(x)=\dfrac{2}{\pi}\)</span>. Поэтому <span class="math notranslate nohighlight">\(x = \arctg h\)</span>, <span class="math notranslate nohighlight">\(h \geqslant 0\)</span>.</p>
+<p>Мы получим <span class="math notranslate nohighlight">\(g(h)=\dfrac{2}{\pi} \cdot \left|(\arctg h)'\right| = \dfrac{2}{\pi \sqrt{1+h^2}}\)</span>, <span class="math notranslate nohighlight">\(h &gt; 0\)</span>.</p>
+<p>При <span class="math notranslate nohighlight">\(h \leqslant 0\)</span>, <span class="math notranslate nohighlight">\(F(h) = \int\limits_{-\infty}^{h}0\,dh = 0\)</span>.</p>
+<p>При <span class="math notranslate nohighlight">\(h &gt; 0\)</span>, <span class="math notranslate nohighlight">\(F(h) = \int\limits_{-\infty}^{h}g(h)\,dh = \int\limits_{0}^{h}\dfrac{2}{\pi \sqrt{1+h^2}}\,dh = \dfrac{2}{\pi} \cdot \arctg h\)</span>.</p>
+<p>Задача 5. Случайная величина <span class="math notranslate nohighlight">\(X\)</span> равномерно распределения на отрезке <span class="math notranslate nohighlight">\([0, 1]\)</span>, поэтому функция плотности вероятности <span class="math notranslate nohighlight">\(f(x) = 1\)</span>.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(Y=\ln(1/X) \Longrightarrow y=\varphi(x)=\ln(1/x) \Longrightarrow e^y = 1/x \Longrightarrow x = 1/e^y\)</span>, <span class="math notranslate nohighlight">\(y \geqslant 0\)</span>.</p>
+<p>Функция плотности вероятности случайной величины <span class="math notranslate nohighlight">\(Y\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[g(h) = 1 \cdot \left|(1/e^y)'\right| = 1/e^y.\]</div>
+</div>
+<p>Тогда функция распределения:</p>
+<p>При <span class="math notranslate nohighlight">\(y&lt;0\)</span>, <span class="math notranslate nohighlight">\(F(y)=0\)</span>.</p>
+<p>При <span class="math notranslate nohighlight">\(y \geqslant 0\)</span>, <span class="math notranslate nohighlight">\(F(y) = \int\limits_{-\infty}^{y}\,dy = \int\limits_{0}^{y}1/e^y\,dy = -e^{-y}\left.\right|^y_0=-e^{-y} + e^0 = 1 - e^{-y}\)</span>.</p>
+<p>Задача 6. <span class="math notranslate nohighlight">\(Y = X^2-X+1\)</span>.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X=1\)</span>, <span class="math notranslate nohighlight">\(Y=1^2-1+1=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X=2\)</span>, <span class="math notranslate nohighlight">\(Y=2^2-2+1=3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X=4\)</span>, <span class="math notranslate nohighlight">\(Y=4^2-4+1=13\)</span></p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>| :math:`Y` | :math:`1`   | :math:`3`   | :math:`13`  |
+|-----|-------|-------|-------|
+| :math:`P` | :math:`0,3` | :math:`0,5` | :math:`0,2` |
+</pre></div>
+</div>
+<p>Математическое ожидание <span class="math notranslate nohighlight">\(M\xi = 1 \cdot 0,3 + 3 \cdot 0,5 + 13 \cdot 0,2 = 4,4\)</span>.</p>
+<p>Задача 7. Так как <span class="math notranslate nohighlight">\(X\)</span> - число выпавших гербов при трех подбрасываниях монеты, вероятность равна по формуле Бернулли с <span class="math notranslate nohighlight">\(n=3\)</span>, <span class="math notranslate nohighlight">\(p=1/2\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X=0\)</span>, <span class="math notranslate nohighlight">\(P_3(X=0) = C^0_3 (1/2)^0 \cdot (1/2)^3=1/8\)</span> и <span class="math notranslate nohighlight">\(Y=X^2=0\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(X=1\)</span>, <span class="math notranslate nohighlight">\(P_3(X=1) = C^1_3 (1/2)^1 \cdot (1/2)^2 = 3/8\)</span> и <span class="math notranslate nohighlight">\(Y=X^2=1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(X=2\)</span>, <span class="math notranslate nohighlight">\(P_3(X=2) = C^2_3 (1/2)^2 \cdot (1/2)^1 = 3/8\)</span> и <span class="math notranslate nohighlight">\(Y=X^2=4\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(X=3\)</span>, <span class="math notranslate nohighlight">\(P_3(X=3) = C^1_3 (1/2)^3 \cdot (1/2)^0 = 1/8\)</span> и <span class="math notranslate nohighlight">\(Y=X^2=9\)</span>.</p></li>
+</ul>
+<p>Математическое ожидание случайной величины <span class="math notranslate nohighlight">\(Y\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[M\xi = 0 \cdot (1/8) + 1 \cdot (3/8) + 4 \cdot (3/8) + 9 \cdot (1/8) = 3\]</div>
+</div>
+<p>Задача 8. Случайная величина <span class="math notranslate nohighlight">\(X\)</span> равномерно распределения на отрезке <span class="math notranslate nohighlight">\([0, 1] \Longrightarrow\)</span> функция распределения <span class="math notranslate nohighlight">\(f(x)=1\)</span></p>
+<p>Мы найдем область значений <span class="math notranslate nohighlight">\(y=\varphi(x)\)</span></p>
+<p><span class="math notranslate nohighlight">\(Y=\sin(\pi X) \Longrightarrow y = \varphi(x) = \sin(\pi x) \Longrightarrow y' = \pi\cos(\pi x)\)</span></p>
+<p>Если <span class="math notranslate nohighlight">\(y'=0 \Longleftrightarrow \pi\cos(\pi x)=0 \Longleftrightarrow \pi x = \pi/2 \Longleftrightarrow x = 1/2\)</span></p>
+<figure class="align-default">
+<img alt="../../_images/prac08-exec08.svg" src="../../_images/prac08-exec08.svg" />
+</figure>
+<p>Поэтому <span class="math notranslate nohighlight">\(y \in [0,1]\)</span> и.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}x = \begin{cases} \dfrac{\arcsin y}{\pi} &amp; \text{, при } x \in [0,1/2] \\ \dfrac{\pi - \arcsin y}{\pi} &amp; \text{, при } x \in [1/2, 1] \end{cases}\end{split}\]</div>
+</div>
+<p>Функция плотности вероятности случайной величины <span class="math notranslate nohighlight">\(Y\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[g(y) = 1 \cdot \left|\left(\dfrac{\arcsin y}{\pi}\right)'\right| + 1 \cdot \left|\left(\dfrac{\pi - \arcsin y}{\pi}\right)'\right| = \dfrac{2}{\pi \sqrt{1-y^2}}.\]</div>
+</div>
+<p>Математическое ожидание</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[M\xi = \int\limits_{0}^{1}y \cdot \dfrac{2}{\pi \sqrt{1-y^2}} \,dy = \int\limits_{0}^{1} \dfrac{-1}{\pi \sqrt{1-y^2}}\,d(1-y^2) = \left.\dfrac{-2\sqrt{1-y^2}}{\pi}\right|^1_0 = \dfrac{2}{\pi}.\]</div>
+</div>
+<p>Задача 9. <span class="math notranslate nohighlight">\(f(x)=0,5\sin x\)</span> при <span class="math notranslate nohighlight">\(x \in [0, \pi]\)</span> и <span class="math notranslate nohighlight">\(f(x)=0\)</span> при остальных <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(Y = 2X \Longrightarrow y = \varphi(x) = 2x \Longrightarrow x = y/2\)</span> при <span class="math notranslate nohighlight">\(y \in [0, 2\pi]\)</span>.</p>
+<p>Функция плотности вероятности равна</p>
+<p><span class="math notranslate nohighlight">\(g(y) = 0,5\sin (y/2) \cdot \left|(y/2)'\right|=0,25 \sin(y/2)\)</span> при <span class="math notranslate nohighlight">\(y \in [0, 2\pi]\)</span> и <span class="math notranslate nohighlight">\(f(y)=0\)</span> при остальных <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>Математическое ожидание.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} M\xi &amp; = \int\limits_{-\infty}^{+\infty}y \cdot g(y)\,dy \\ &amp; = \int\limits_{0}^{2\pi} 0,25 y\sin(y/2)\,dy \\ &amp; = 0,25 \int\limits_{0}^{2\pi} y (-2\cos(y/2))' \,dy \\ &amp; = 0,25 \left(\left.-2y \cos(y/2)\right|^{2\pi}_0 - \int\limits_{0}^{2\pi}1 \cdot (-2\cos(y/2)\,dy)\right) \\ &amp; = 0,25\left(4\pi + \left. 4\sin(y/2) \right|^{2\pi}_0\right) \\ &amp; = 0,25\left(4\pi + 0\right) = \pi \end{align*}\end{split}\]</div>
+</div>
+<p>Задача 10. <span class="math notranslate nohighlight">\(f(x)=\dfrac{1}{\sqrt{2\pi}} e^{-x^2/2}\)</span>, при <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(Y=\dfrac{1}{2} X^2 \Longrightarrow |x|=\sqrt{2y}\)</span> и <span class="math notranslate nohighlight">\(y \geqslant 0\)</span>.</p>
+<ol class="arabic simple">
+<li><p>При <span class="math notranslate nohighlight">\(x&lt;0\)</span>, <span class="math notranslate nohighlight">\(x = x_1(y) = -\sqrt{2y}\)</span></p></li>
+<li><p>при <span class="math notranslate nohighlight">\(x\geqslant 0\)</span>, <span class="math notranslate nohighlight">\(x = x_2(y) = \sqrt{2y}\)</span></p></li>
+</ol>
+<p>Функция плотности вероятности</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} g(y) &amp; = f(x_1(y))\cdot \left|(-\sqrt{2y})'\right| + f(x_2(y)) \cdot \left|(\sqrt{2y})'\right|. \\ &amp; = \dfrac{1}{\sqrt{2\pi}}e^{-y} \cdot \left|\dfrac{-1}{\sqrt{2y}}\right| + \dfrac{1}{\sqrt{2\pi}}e^{-y} \cdot \left|\dfrac{1}{\sqrt{2y}}\right|. \\ &amp; = \dfrac{2}{\sqrt{2\pi} \cdot \sqrt{2y}} e^{-y} = \dfrac{1}{\sqrt{\pi y}} e^{-y} \end{align*}\end{split}\]</div>
+</div>
+<p>Задача 11. <span class="math notranslate nohighlight">\(f(x) = \lambda e^{-\lambda x}\)</span>, <span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span>, <span class="math notranslate nohighlight">\(x \geqslant 0\)</span>.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(Y=\varphi(x)\)</span>, где <span class="math notranslate nohighlight">\(\varphi (x)=0,5x\)</span> при <span class="math notranslate nohighlight">\(x \in [0,4]\)</span> и <span class="math notranslate nohighlight">\(\varphi \equiv 2\)</span> при <span class="math notranslate nohighlight">\(x \in (4, +\infty)\)</span>.</p>
+<ol class="arabic simple">
+<li><p>При <span class="math notranslate nohighlight">\(x \in [0, 4]\)</span>, <span class="math notranslate nohighlight">\(x=x(y)=2y\)</span>, <span class="math notranslate nohighlight">\(y \in [0,2]\)</span></p></li>
+<li><p>При <span class="math notranslate nohighlight">\(x \in (4, +\infty)\)</span>, <span class="math notranslate nohighlight">\(y \equiv 2\)</span></p></li>
+</ol>
+<p>Поэтому <span class="math notranslate nohighlight">\(y=0\)</span> при <span class="math notranslate nohighlight">\(y \not\in [0, 2]\)</span> и если <span class="math notranslate nohighlight">\(y=2 \Longrightarrow x=4\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow P(Y=2) = \int\limits_{4}^{+\infty} \lambda e^{-\lambda x}\,dx = -e^{-\lambda x}\Big|^{+\infty}_4 = 0 + e^{-4\lambda}.\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[g(y) = f(x(y)) \left|(2y)'\right| + P(Y=2) \cdot \delta(y-2) = 2 \lambda e^{-2\lambda y} + e^{-4\lambda}\delta(y-2).\]</div>
+</div>
+<p>Задача 12. <span class="math notranslate nohighlight">\(f(x)=\dfrac{1}{\sqrt{2\pi}}\exp\left(-\dfrac{x^2}{2}\right)\)</span>.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(Y=\varphi(X)\)</span>, где <span class="math notranslate nohighlight">\(\varphi(x)=0\)</span> при <span class="math notranslate nohighlight">\(x&lt;0\)</span> и <span class="math notranslate nohighlight">\(\varphi(x) = 2x\)</span> при <span class="math notranslate nohighlight">\(x \geqslant 0\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P(Y=0) = P(-\infty &lt; X &lt; 0) = \dfrac{1}{2}\)</span> (свойства стандартного нормального распределения).</p>
+<p>У нас также есть: при <span class="math notranslate nohighlight">\(x \geqslant 0\)</span>, <span class="math notranslate nohighlight">\(x = \dfrac{y}{2}\)</span></p>
+<p>Поэтому</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} g(y) &amp; = \dfrac{1}{\sqrt{2\pi}}\exp\left(-\dfrac{y^2}{4 \cdot 2}\right) \cdot \left|\left(\dfrac{y}{2}\right)'\right| + P(Y=0) \cdot \delta(y-0). \\ &amp; = \dfrac{1}{2\sqrt{2\pi}} \exp\left(-\dfrac{y^2}{8}\right) + \dfrac{1}{2} \delta(y) \end{align*}\end{split}\]</div>
+</div>
+</section>
+<section id="id7">
+<h3>Занятие 9<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<p>Задача 1.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>| :math:`X` | :math:`Y` | :math:`Z` | :math:`P` |
+|-----|-----|-----|-----|
+| :math:`2` | :math:`4` | :math:`6` | :math:`0,3 \cdot 0,4 = 0,12` |
+| :math:`2` | :math:`5` | :math:`7` | \multirow{2}{*}{:math:`0,3 \cdot 0,4 + 0,7 \cdot 0,4 = 0,46`} |
+| :math:`3` | :math:`4` | :math:`7` |     |
+| :math:`3` | :math:`5` | :math:`8` | :math:`0,7 \cdot 0,6 = 0,42` |
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>| :math:`Z` | :math:`6`    | :math:`7`    | :math:`8`    |
+|-----|--------|--------|--------|
+| :math:`P` | :math:`0,12` | :math:`0,46` | :math:`0,42` |
+</pre></div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow M(Z) = 6 \cdot 0,12 + 7 \cdot 0,46 + 8 \cdot 0,42 = 7,3.\]</div>
+</div>
+<p>Задача 2.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}f(x) = \begin{cases} \lambda e^{-\lambda x} \text{ при } x \geqslant 0 \\ 0 \text{ при } x &lt; 0 \end{cases}.\end{split}\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[Z = X+Y \Longrightarrow f(z) = \int\limits_{-\infty}^{+\infty}f_1(x) f_2(z-x)\,dx.\]</div>
+</div>
+<p>При <span class="math notranslate nohighlight">\(z \geqslant 0 \Longrightarrow f(z) = \int\limits_{0}^{z}\lambda e^{-\lambda x} \cdot \lambda e^{-\lambda (z-x)}\,dx = \int\limits_{0}^{z}\lambda^2 e^{-\lambda z}\,dx = \lambda^2 e^{-\lambda z}\)</span> \</p>
+<p>При <span class="math notranslate nohighlight">\(z &lt; 0\)</span>, <span class="math notranslate nohighlight">\(f(z) = 0\)</span>.</p>
+<p>Задача 3.</p>
+<p><span class="math notranslate nohighlight">\(Z=2X-Y+5\)</span>, <span class="math notranslate nohighlight">\(M(X)=3\)</span>, <span class="math notranslate nohighlight">\(M(Y)=5\)</span>, <span class="math notranslate nohighlight">\(D(X)=2\)</span>, <span class="math notranslate nohighlight">\(D(Y)=1\)</span></p>
+<p><span class="math notranslate nohighlight">\(M(Z)=2M(X)-M(Y)+5=6\)</span></p>
+<p><span class="math notranslate nohighlight">\(D(Z)=D(2X)+D(Y)=4D(X)+D(Y)=9=\sigma^2 \Longrightarrow \sigma=3\)</span></p>
+<p>Задача 4. <span class="math notranslate nohighlight">\(X\)</span> и <span class="math notranslate nohighlight">\(Y\)</span> независимы. <span class="math notranslate nohighlight">\(f_1(x) = f_2(y) = \dfrac{1}{2}\)</span>. <span class="math notranslate nohighlight">\(X, Y \sim U(0, 2)\)</span>. <span class="math notranslate nohighlight">\(Z=X+Y\)</span>.</p>
+<p>При <span class="math notranslate nohighlight">\(0 \leqslant z &lt; 2\)</span>, <span class="math notranslate nohighlight">\(f(z) = \int\limits_{0}^{z}\dfrac{1}{2} \cdot \dfrac{1}{2}\,dx = \dfrac{z}{4}\)</span>.</p>
+<p>При <span class="math notranslate nohighlight">\(2 \leqslant z &lt; 4\)</span>, <span class="math notranslate nohighlight">\(f(z) = \int\limits_{z-2}^{2}\dfrac{1}{2} \cdot \dfrac{1}{2}\,dx = \dfrac{1}{4}(2-z+2) = 1-0,25z\)</span>.</p>
+<p>При остальных <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(f(z) = 0\)</span>.</p>
+<p>Задача 6. Св <span class="math notranslate nohighlight">\(X\)</span> и <span class="math notranslate nohighlight">\(Y\)</span> независимы, равномерно на <span class="math notranslate nohighlight">\((0, 1)\)</span>. <span class="math notranslate nohighlight">\(Z=Y/X^2\)</span></p>
+<p>У нас есть <span class="math notranslate nohighlight">\(F(z) = P(Z \leqslant z) = P(Y/X^2 \leqslant z)\)</span>, <span class="math notranslate nohighlight">\(y/x^2\leqslant z \Longleftrightarrow y \leqslant zx^2\)</span>.</p>
+<ol class="arabic simple">
+<li><p>При <span class="math notranslate nohighlight">\(z \leqslant 0\)</span>, <span class="math notranslate nohighlight">\(f(z)=0\)</span></p></li>
+<li><p>При <span class="math notranslate nohighlight">\(0 &lt; z \leqslant 1\)</span>, <span class="math notranslate nohighlight">\(F(z) = \int\limits_{0}^{1}\,dx\int\limits_{0}^{zx^2}\,dy = \int\limits_{0}^{1}zx^2\,dx = \dfrac{z}{3}\)</span>.</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow f(z) = \dfrac{1}{3}.\]</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>При <span class="math notranslate nohighlight">\(z &gt; 1\)</span>, <span class="math notranslate nohighlight">\(y \leqslant zx^2 \Longrightarrow x \geqslant \sqrt{\dfrac{y}{z}}\)</span>.</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\Longrightarrow F(z) = \int\limits_{0}^{1}\,dy \int\limits_{\sqrt{y/z}}^{1}\,dx = \int\limits_{0}^{1}(1 - \sqrt{\dfrac{y}{z}})\,dy=1-\dfrac{2}{3\sqrt{z}}.\\
+:math:`\Longrightarrow f(z) = 1/(3z^{1,5})`\end{aligned}\end{align} \]</div>
+</div>
+<p>Задача 7. <span class="math notranslate nohighlight">\(U = min(X, Y)\)</span>.</p>
+<ol class="arabic simple">
+<li><p>При <span class="math notranslate nohighlight">\(u &lt; 0\)</span>, <span class="math notranslate nohighlight">\(F(u)=0\)</span></p></li>
+<li><p>При <span class="math notranslate nohighlight">\(0 \leqslant u &lt; 1\)</span>, <span class="math notranslate nohighlight">\(F(u) = P(min(X, Y) \leqslant u) = 1 - P(min(X, Y) &gt; u) = 1 - \int\limits_{u}^{1}\int\limits_{u}^{1}\,dx\,dy = 2u-u^2\)</span></p></li>
+<li><p>При <span class="math notranslate nohighlight">\(u&gt;1\)</span>, <span class="math notranslate nohighlight">\(F(u)=1\)</span></p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow M(U) = \int\limits_{0}^{1}u(2-2u)\,du=1/3\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow D(U) = \int\limits_{0}^{1}(u-\dfrac{1}{3})^2(2-2u)\,du = 1/18\)</span></p>
+<p><span class="math notranslate nohighlight">\(V=max(X, Y)\)</span></p>
+<ol class="arabic simple">
+<li><p>При <span class="math notranslate nohighlight">\(v &lt; 0\)</span>, <span class="math notranslate nohighlight">\(F(v) = 0\)</span>.</p></li>
+<li><p>При <span class="math notranslate nohighlight">\(0 \leqslant v &lt; 1\)</span>, <span class="math notranslate nohighlight">\(F(v) = P(max(X, Y) \leqslant v) = \int\limits_{0}^{v}\int\limits_{0}^{v}\,dx\,dy = v^2 \Longrightarrow f(v) = 2v\)</span>.</p></li>
+<li><p>При <span class="math notranslate nohighlight">\(v &gt; 1\)</span>, <span class="math notranslate nohighlight">\(F(v)=1\)</span></p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow M(v) = \int\limits_{0}^{1}v\cdot 2v\,dv = 2/3\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow D(v) = \int\limits_{0}^{1}(v-\dfrac{2}{3})^2\cdot 2v\,dv = 1/18\)</span></p>
+<p>Задача 9. Площадь треугольника <span class="math notranslate nohighlight">\(ABC\)</span> равна 1 <span class="math notranslate nohighlight">\(\Longrightarrow f(x, y) = 1\)</span>.</p>
+<p>Так как <span class="math notranslate nohighlight">\(y \leqslant \dfrac{x}{2}\)</span>,</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[0 \leqslant y \leqslant \dfrac{x}{2} \ \text{и} \ 2y \leqslant x \leqslant 2.\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f_1(x) = \int\limits_{0}^{x/2}1\,dy = \dfrac{2}{x}, f_2(y) = \int\limits_{2y}^{2}1\,dx = 2-2y.\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ccl} M(X) &amp; = &amp; \int\limits_{0}^{2}x \cdot \dfrac{x}{2}\,dx = \dfrac{4}{3} \\ M(X^2) &amp; = &amp; \int\limits_{0}^{2}x^2 \cdot \dfrac{x}{2}\,dx = 2 \\ M(Y) &amp; = &amp; \int\limits_{0}^{1}y(2-2y)\,dy = \dfrac{1}{3} \\ M(Y^2) &amp; = &amp; \int\limits_{0}^{1}y^2(2-2y)\,dy = \dfrac{1}{6} \\ M(\overset{\circ}{X} \cdot \overset{\circ}{Y}) &amp; = &amp; \int\limits_{0}^{2}\,dx\int\limits_{0}^{x/2}(x-\dfrac{4}{3})(y-\dfrac{1}{3})\,dy = \cdots = \dfrac{1}{18} \\ \sigma_x^2 &amp; = &amp; M(X^2)-M(X)^2=2-\dfrac{16}{9}=\dfrac{2}{9} \\ \sigma_y^2 &amp; = &amp; M(Y^2)-M(Y)^2=\dfrac{1}{6} - \dfrac{1}{9} = \dfrac{1}{18}.\end{array}\end{split}\]</div>
+</div>
+<p>Отсюда <span class="math notranslate nohighlight">\(r_{xy} = \dfrac{1}{2}\)</span>.</p>
+<p>Линия регрессии: <span class="math notranslate nohighlight">\(\dfrac{y-1/3}{\sigma_y} = r_{xy}\dfrac{x-4/3}{\sigma_x}\)</span>, или <span class="math notranslate nohighlight">\(y = \dfrac{x}{4}\)</span>.</p>
+<p>Задача 11. <span class="math notranslate nohighlight">\(f(x) \Longrightarrow g(y)\)</span>, <span class="math notranslate nohighlight">\(Y = min(X, X^2)\)</span>. У нас есть</p>
+<ol class="arabic simple">
+<li><p>При <span class="math notranslate nohighlight">\(x&lt;0\)</span> или <span class="math notranslate nohighlight">\(x \geqslant 1\)</span>, <span class="math notranslate nohighlight">\(min(X, X^2)=X\)</span></p></li>
+<li><p>При <span class="math notranslate nohighlight">\(0 \leqslant x &lt; 1\)</span>, <span class="math notranslate nohighlight">\(min(X, X^2)=X^2\)</span></p></li>
+</ol>
+<p>Поэтому</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(y) = P(Y \leqslant y) = P(min(X, X^2) \leqslant y).\]</div>
+</div>
+<ol class="arabic simple">
+<li><p>При <span class="math notranslate nohighlight">\(y &lt; 0\)</span>, <span class="math notranslate nohighlight">\(G(y) = P(X \leqslant y) = \int\limits_{-\infty}^{y}f(x)\,dx = F(y) \Longrightarrow g(y)=f(y)\)</span></p></li>
+<li><p>При <span class="math notranslate nohighlight">\(0 \leqslant y &lt; 1\)</span>, <span class="math notranslate nohighlight">\(G(y) = P(X^2 \leqslant y) = P(X \leqslant \sqrt{Y}) = \int\limits_{0}^{\sqrt{y}}f(x)\,dx = F(\sqrt{y}) \Longrightarrow g(y) = f(\sqrt{y})(\sqrt{y})'=\dfrac{f(\sqrt{y})}{2\sqrt{y}}\)</span></p></li>
+<li><p>При <span class="math notranslate nohighlight">\(y \geqslant 1\)</span>, <span class="math notranslate nohighlight">\(G(y) = P(X \leqslant y) = \int\limits_{1}^{y}f(x)\,dx = F(y) \Longrightarrow g(y)=f(y)\)</span></p></li>
+</ol>
+<p>Задача 12. <span class="math notranslate nohighlight">\(X_1, X_2 \Longrightarrow f(x_1, x_2) = \dfrac{2}{\pi^2(x_1^2+1)(x_2^2+4)}\)</span>, <span class="math notranslate nohighlight">\(g(y_1, y_2) \Longrightarrow Y_1, Y_2\)</span>, <span class="math notranslate nohighlight">\(X_1 = \tg(Y_1)\)</span>, <span class="math notranslate nohighlight">\(X_2 = 2 \tg(Y_2)\)</span>, <span class="math notranslate nohighlight">\(| Y_1 | &lt; \pi / 2\)</span>, <span class="math notranslate nohighlight">\(|Y_2| &lt; \pi/2\)</span></p>
+<p>При <span class="math notranslate nohighlight">\(|y_1| &lt; \pi/2\)</span>, <span class="math notranslate nohighlight">\(|y_2| &lt; \pi/2\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}G(y_1, y_2) &amp; = P(Y_1 \leqslant y_1, Y_2 \leqslant y_2) \\ &amp; = P(\arctg(X_1) \leqslant y_1, \arctg\left(X_2 / 2\right) \leqslant y_2) \\ &amp; = P(X_1 \leqslant \tg(y_1), X_2 \leqslant 2 \tg(y_2)) \\ &amp; = \int\limits_{-\infty}^{\tg y_1}\int\limits_{-\infty}^{2\tg y_2}\dfrac{2\,dx_1\,dx_2}{\pi^2(x_1^2+1)(x_2^2+4)} \\ &amp; = \int\limits_{-\infty}^{\tg y_1}\,dx_1 \cdot \dfrac{2}{\pi^2(x_1^2+1)} \cdot \dfrac{1}{2} \left.\arctg\left(\dfrac{x_2}{2}\right)\right|^{2\tg y_2}_{-\infty} \\ &amp; = \int\limits_{-\infty}^{\tg y_1}\left(y_2 + \dfrac{\pi}{2}\right)\dfrac{\,dx_1}{\pi^2(x_1^2+1)} \\ &amp; = \dfrac{1}{\pi^2}\left(y_1 + \dfrac{\pi}{2}\right)\left(y_2 + \dfrac{\pi}{2}\right).\end{split}\]</div>
+</div>
+<p>Отсюда</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[g(y_1, y_2) = \dfrac{\partial^2G(y_1, y_2)}{\partial y_1 \partial y_2} = \dfrac{1}{\pi^2}.\]</div>
+</div>
+<p>При остальных <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span>, <span class="math notranslate nohighlight">\(g(y_1, y_2) = 0\)</span>.</p>
+</section>
+<section id="id8">
+<h3>Занятие 10<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<p>Задача 3.</p>
+<ol class="loweralpha simple">
+<li><p>У нас есть <span class="math notranslate nohighlight">\(0,4 &lt; k/n &lt; 0,6 \Longrightarrow |k/n-0,5| &lt; 0,1 \Longrightarrow P(|k/n-0,5|&lt;0,1) &gt; 0,9\)</span>.</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow 2\Phi_0\left(\dfrac{0,1}{\sqrt{0,5 \cdot 0,5/n}}\right) &gt; 0,9\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longleftrightarrow \Phi_0\left(\dfrac{0,1\sqrt{n}}{0,5}\right) &gt; 0,45\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longleftrightarrow 0,2\sqrt{n} &gt; 1,65 \Longrightarrow n &gt; 68,0625\)</span>. Значит больше <span class="math notranslate nohighlight">\(68\)</span>.</p>
+<p>(б) <span class="math notranslate nohighlight">\(P(|k/n&lt;0,5|&lt;0,1) \geqslant 1 - \dfrac{0,25}{0,1^2 n} = 0,9 \Longleftrightarrow n \geqslant 250\)</span>. Значит больше <span class="math notranslate nohighlight">\(250\)</span>.</p>
+<p>Задача 4. Пусть <span class="math notranslate nohighlight">\(X_i\)</span> - время <span class="math notranslate nohighlight">\(i\)</span>-го.</p>
+<p><span class="math notranslate nohighlight">\(\sum_{i=1}^{20}X_i\)</span> - сумма времени</p>
+<p><span class="math notranslate nohighlight">\(y = \dfrac{1}{20} \sum_{i=1}^{20}X_i\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(M\left(\dfrac{1}{20}\sum_{i=1}^{20}X_i\right)=\dfrac{1}{20}\cdot 20 \cdot \dfrac{1}{\lambda} = 100\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(D\left(\dfrac{1}{20}\sum_{i=1}^{20}X_i\right) = \dfrac{1}{20^2} \cdot 20 \cdot \dfrac{1}{\lambda^2} = 500\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{1}{20}\sum_{i=1}^{20}X_i \geqslant 2500/20 = 125\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P\left(y \geqslant \dfrac{125-100}{\sqrt{500}}\right) = P(y \geqslant 1,12) = 0,5 - \Phi_0(1,12) = 0,1314\)</span></p>
+<p>Задача 5.
+<span class="math notranslate nohighlight">\(p=0,1\)</span>, <span class="math notranslate nohighlight">\(n=50\)</span>, <span class="math notranslate nohighlight">\(q=0,9\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P(X \leqslant 3) = P(0 \leqslant X \leqslant 3) = \Phi_0(\dfrac{3-50 \cdot 0,1}{\sqrt{50 \cdot 0,1 \cdot 0,9}}) - \Phi_0(\dfrac{0-50 \cdot 0,1}{\sqrt{50 \cdot 0,1 \cdot 0,9}}) = \Phi_0(-0,94) - \Phi_0(-2,36) = 0,1645 \approx 0,16\)</span></p>
+<p>Задача 6. <span class="math notranslate nohighlight">\(p=0,8\)</span>, <span class="math notranslate nohighlight">\(q=0,2\)</span>, <span class="math notranslate nohighlight">\(n=100\)</span></p>
+<ol class="loweralpha simple">
+<li><p><span class="math notranslate nohighlight">\(P_{100}(75 \leqslant k \leqslant 100) = \Phi_0\left(\dfrac{100-100\cdot 0,8}{\sqrt{100\cdot 0,8\cdot 0,2}}\right)-\Phi_0\left(\dfrac{75-100\cdot 0,8}{\sqrt{100\cdot 0,8\cdot 0,2}}\right) = \Phi_0(5)-\Phi_0(-1,25) = 0,8944\)</span>.</p></li>
+</ol>
+<p>(б) <span class="math notranslate nohighlight">\(P_{100}(70 \leqslant k \leqslant 90) = \Phi_0(2,5) - \Phi_0(-2,5) = 0,9876\)</span>.</p>
+<p>(в) <span class="math notranslate nohighlight">\(P_{100}(0 \leqslant k \leqslant 82) = \Phi_0(0,5) - \Phi_0(-20) = 0,1915 + 0,5 = 0,6915\)</span>.</p>
+</section>
+<section id="id9">
+<h3>Занятие 11<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p>Задача 1. <span class="math notranslate nohighlight">\(M(X) = 5,5\)</span>, <span class="math notranslate nohighlight">\(D(X) = 6,3\)</span>.</p>
+<p>Задача 2. <span class="math notranslate nohighlight">\(M(X) = 12\)</span>, <span class="math notranslate nohighlight">\(D(X) = 12,97\)</span>.</p>
+<p>Задача 3.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}L &amp; = \dfrac{x_1^{m-1}\lambda^m}{(m-1)!}\cdot e^{-\lambda x_1} \cdot \dfrac{x_2^{m-1}\lambda^m}{(m-1)!}\cdot e^{-\lambda x_2} \cdots \dfrac{x_n^{m-1}\lambda^m}{(m-1)!}\cdot e^{-\lambda x_n} \\ &amp; = \prod_{i=1}^{n}x_i^{m-1}\dfrac{\lambda^{mn}}{[(m-1)!]^n} \cdot e^{-\lambda(x_1 + x_2 + \cdots + x_n)} \\ &amp; \Longrightarrow \ln L = \ln \left(\prod_{i=1}^{n}x_i^{m-1}\right) + mn\ln \lambda - \lambda\sum_{i=1}^{n}x_i - n\ln (m-1)! \\ &amp; \Longrightarrow \dfrac{\partial \ln L}{\partial \lambda} = \dfrac{mn}{\lambda} - \sum_{i=1}^{n}x_i = 0 \Longrightarrow \lambda = \dfrac{mn}{\sum_{i=1}^{n}x_i}.\end{split}\]</div>
+</div>
+<p>Задача 4. <span class="math notranslate nohighlight">\(f(x) = F'(x) = \lambda e^{-\lambda x}\)</span>.</p>
+<p>Здесь</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}L &amp; = \lambda^{10} e^{-\lambda\sum_{i=1}^{10}x_i} = \lambda^{10} e^{-3000\lambda} \\ \ln L &amp; = 10 \ln \lambda - 3000 \lambda \\ \dfrac{\partial \ln L}{\partial \lambda} &amp; = \dfrac{10}{\lambda} - 3000 = 0 \\ \lambda &amp; = 1/300.\end{split}\]</div>
+</div>
+<p>Задача 5.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}L &amp; = \dfrac{x_1 x_2 x_3}{\sigma^6}\exp{ -\dfrac{x_1^2+x_2^2+x_3^2}{2\sigma^2} } = \dfrac{1,98}{\sigma^6}exp{ -\dfrac{4,9}{\sigma^2} } \\  \ln L &amp; = \ln 1,98 - 6\ln \sigma - \dfrac{4,9}{2\sigma^2} \\ \dfrac{\partial\ln L}{\partial \sigma} &amp; = -\dfrac{6}{\sigma}+\dfrac{4,9}{\sigma^3} = 0 \sigma^2 &amp; = \dfrac{49}{60} \approx 0,82.\end{split}\]</div>
+</div>
+<p>Задача 6. <span class="math notranslate nohighlight">\(L = C^1_k p (1-p)^{k-1} = kp(1-p)^{k-1}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow \ln L = \ln k + \ln p + (k-1)\ln(1-p)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow \dfrac{\partial \ln L}{\partial p} = \dfrac{1}{p} - \dfrac{k-1}{1-p} = 0\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow \dfrac{1-p-p(k-1)}{p(p-1)} = 0 \Longleftrightarrow pk = 1 \Longleftrightarrow p = 1/k\)</span></p>
+</section>
+<section id="id10">
+<h3>Занятие 12<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>Задача 1. Пусть <span class="math notranslate nohighlight">\(Y = pX + b\)</span>, у нас есть</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}F(p, b) &amp; = \sum_{k=1}^{n}(pX_k + b - Y_k)^2 \\ \dfrac{\partial F}{\partial p} &amp; = \sum_{k=1}^{n}2X_k(pX_k + b - Y_k) = 0, \dfrac{\partial F}{\partial b} = \sum_{k=1}^{n} 2(pX_k + b - Y_k) = 0.\end{split}\]</div>
+</div>
+<p>Откуда</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[p\sum_{k=1}^{n} X_k^2 + b \sum_{k=1}^{n} X_k = \sum_{k=1}^{n} X_k Y_k \Longleftrightarrow p \sum_{k=1}^{n} X_k + nb = \sum_{k=1}^{n} Y_k.\]</div>
+</div>
+<p>Мы вычисляем</p>
+<p><span class="math notranslate nohighlight">\(\sum_{k=1}^{n}X_k^2 = 6^2 + 10^2 + \cdots + 35^2 + 38^2 = 6463\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\sum_{k=1}^{n}X_k = 6 + 10 + \cdots + 35 + 38 = 233\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\sum_{k=1}^{n}X_k Y_k = 6 \cdot 0 + 10 \cdot 18 + \cdots + 38 \cdot 30 = 5133\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\sum_{k=1}^{n}Y_k = 0 + 18 + \cdots + 30 = 185\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow \tilde{p} \approx 0,8\)</span> и <span class="math notranslate nohighlight">\(\tilde{b} \approx -0,03\)</span></p>
+<p>Так как <span class="math notranslate nohighlight">\(\overline{X} = \dfrac{233}{10} = 23,3\)</span>,</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}s_x^2 = \dfrac{(6-23,3)^2 + (10 - 23,3)^2 + \cdots + (38 - 23,3)^2}{9} = 114,9 \\ \Longrightarrow s_x = \sqrt{114,9} \approx 10,72.\end{split}\]</div>
+</div>
+<p>Аналогично, <span class="math notranslate nohighlight">\(s_y = 11,47\)</span>. Поэтому коэффициент корреляции будет</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tilde{r}_{xy} = 0,8 \dfrac{10,72}{11,47} = 0,74.\]</div>
+</div>
+</section>
+<section id="id11">
+<h3>Занятие 13<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<p>Задача 1. <span class="math notranslate nohighlight">\(k=20\)</span>, <span class="math notranslate nohighlight">\(n=100\)</span>, <span class="math notranslate nohighlight">\(\gamma=0,90 \Longrightarrow k/n = 1/5\)</span>.</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(2\Phi_0(1,65)=0,9 \Longrightarrow t_\gamma=1,65\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow \dfrac{k}{n} - t_\gamma \sqrt{\dfrac{\dfrac{k}{n} \cdot \left(1-\dfrac{k}{n}\right)}{n}} &lt; p &lt; \dfrac{k}{n} + t_\gamma \sqrt{\dfrac{\dfrac{k}{n} \cdot \left(1-\dfrac{k}{n}\right)}{n}}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow \dfrac{1}{5} - 1,65 \sqrt{\dfrac{1/5 \cdot 4/5}{100}} &lt; p &lt; \dfrac{1}{5} + 1,65 \sqrt{\dfrac{1/5 \cdot 4/5}{100}}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow 0,134 &lt; p &lt; 0,266\)</span></p>
+<p>Задача 2. <span class="math notranslate nohighlight">\(k=810\)</span>, <span class="math notranslate nohighlight">\(n=900\)</span>, <span class="math notranslate nohighlight">\(\gamma=0,95 \Longrightarrow k/n = 9/10\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(2\Phi_0(1,96)=0,95 \Longrightarrow t_\gamma = 1,96\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow \dfrac{k}{n} - t_\gamma \sqrt{\dfrac{\dfrac{k}{n} \cdot \left(1-\dfrac{k}{n}\right)}{n}} &lt; p &lt; \dfrac{k}{n} + t_\gamma \sqrt{\dfrac{\dfrac{k}{n} \cdot \left(1-\dfrac{k}{n}\right)}{n}}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow 0,8804 &lt; p &lt; 0,9196\)</span></p>
+<p>Задача 3. <span class="math notranslate nohighlight">\(0,73 &lt; p &lt; 0,77\)</span></p>
+<p>Задача 4. <span class="math notranslate nohighlight">\(k=1200\)</span>, <span class="math notranslate nohighlight">\(\overline{X} = 15,6\)</span>, <span class="math notranslate nohighlight">\(s=0,4\)</span>, <span class="math notranslate nohighlight">\(\gamma=0,95 \Longrightarrow t_\gamma=1,96\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\overline{X} - t_\gamma \dfrac{s}{\sqrt{n}} &lt; M &lt; \overline{X} + t_\gamma \dfrac{s}{\sqrt{n}}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow 15,3869 &lt; M &lt; 15,8131\)</span></p>
+<p>Задача 5. По таблице 2, <span class="math notranslate nohighlight">\(t_\gamma = 1,96\)</span>, <span class="math notranslate nohighlight">\(8,363 &lt; M(X) &lt; 8,437\)</span></p>
+<p>Задача 6. <span class="math notranslate nohighlight">\(\Longrightarrow \dfrac{k}{n} - t_\gamma \sqrt{\dfrac{\dfrac{k}{n} \cdot \left(1-\dfrac{k}{n}\right)}{n}} &lt; p &lt; \dfrac{k}{n} + t_\gamma \sqrt{\dfrac{\dfrac{k}{n} \cdot \left(1-\dfrac{k}{n}\right)}{n}}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Longrightarrow 0,26592 &lt; p &lt; 0,45408\)</span></p>
+<p><strong>CHƯA GIẢI</strong>:</p>
+<ol class="arabic simple">
+<li><p>Занятие 3: 7б, 10</p></li>
+<li><p>Занятие 5: 2, 8</p></li>
+<li><p>Занятие 8: 13</p></li>
+<li><p>Занятие 9: 5</p></li>
+</ol>
+</section>
+<section id="id12">
+<h3>КМ 2 - 07/04/2021<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<section id="id13">
+<h4>Вариант 1<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h4>
+<p>Задача 1. Вероятность того, что радиоприемник проработает гарантийный срок без отказов равна 0,9. Какова вероятность того, что из данных пяти радиоприемников три проработают гарантийный срок без отказов?</p>
+<p>Здесь <span class="math notranslate nohighlight">\(n = 5\)</span>, <span class="math notranslate nohighlight">\(p = 0,9 \Longrightarrow q = 1 - p=0,1\)</span>. Мы получим</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P_5(3) = C^3_5 p^3 q^2 = C^3_5 \cdot (0,9)^3 \cdot (0,1)^2 = 0,0729.\]</div>
+</div>
+<p>Задача 2. Студент знает 20 из 25 вопросов программы. Студенту предлагается три вопроса. Какова вероятность того, что студент знает только один из предложенных ему вопросов? Какова вероятность того, что студент знает ответы на все три предложенных ему вопроса?</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(\lvert \Omega \rvert = C^3_{25}\)</span>.</p>
+<p>Пусть <span class="math notranslate nohighlight">\(A\)</span> = { студент знает только один из предложенных }.</p>
+<p>Выбрать 1 вопрос, который студент знает <span class="math notranslate nohighlight">\(\Longrightarrow C^1_{20}\)</span> вариантов.</p>
+<p>Выбрать 2 вопрос, которые студент не знает <span class="math notranslate nohighlight">\(\Longrightarrow C^2_5\)</span> вариантов.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow P(A) = \dfrac{C^1_{20} C^2_5}{C^3_{25}} = \dfrac{2}{23}.\]</div>
+</div>
+<p><span class="math notranslate nohighlight">\(B\)</span> = { студент знает все 3 вопроса }.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B) = \dfrac{C^3_{20}}{C^3_{25}} = \dfrac{57}{115}.\]</div>
+</div>
+<p>Задача 3. В двух урнах находятся шары отличающиеся только цветом причем в первой урне 5 белых, 11 черных и 6 красных шаров, а во второй соответственно 10, 8, 6. Из каждой урны извлекли по одному шару. Какова вероятность того, что оба шара одного цвета?</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lvert \Omega \rvert = C^1_{5+11+6} C^1_{10 + 8 + 6} = C^1_{22} C^1_{24}.\]</div>
+</div>
+<p>Пусть <span class="math notranslate nohighlight">\(A\)</span> = { оба шара одного цвета }. У нас есть 3 случая</p>
+<ul class="simple">
+<li><p>белый: <span class="math notranslate nohighlight">\(C^1_5 C^1_{10}\)</span> вариантов;</p></li>
+<li><p>черный: <span class="math notranslate nohighlight">\(C^1_{11} C^1_8\)</span> вариантов;</p></li>
+<li><p>красный: <span class="math notranslate nohighlight">\(C^1_6 C^1_6\)</span> вариантов.</p></li>
+</ul>
+<p>Ответ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A) = \dfrac{C^1_5 C^1_{10} + C^1_{11} C^1_8 + C^1_6 C^1_6}{C^1_{22} C^1_{24}} = \dfrac{29}{88}.\]</div>
+</div>
+<p>Задача 4. В одном из двух ящиков лежит  3  белых и  7  черных шаров, а в другом лежит 5  белых  и   4   черных шара. Наугад выбирается один из ящиков и вынимается из него шар, который оказался белым. Найти вероятность того, что следующий извлеченный из этого же ящика шар тоже белый.</p>
+<p>Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_1\)</span> = { первый ящик выбирается };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_2\)</span> = { второй ящик выбирается };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = { первый шар - белый }.</p></li>
+</ul>
+<p>У нас есть</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A) = P(A_1) P(A | A_1) + P(A_2) P(A | A_2) = \dfrac{1}{2} \cdot \dfrac{3}{10} + \dfrac{1}{2} \cdot \dfrac{5}{9} = \dfrac{77}{180}.\]</div>
+</div>
+<p>Отсюда, если пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(B_1\)</span> = { первый белый шар из первого ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_2\)</span> = { первый белый шар из второго ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> = { второй шар - белый };</p></li>
+</ul>
+<p>мы получим</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} P(B_1) &amp; = P(A_1 | A) = \dfrac{1/2 \cdot 3/10}{77/180} = \dfrac{27}{77} \\ P(B_2) &amp; = P(A_2 | A) = \dfrac{1/2 \cdot 5/9}{77/180} = \dfrac{50}{77} \end{align*}\end{split}\]</div>
+</div>
+<p>Если первый ящик выбирается, после мы взяли один белый шар, еще 8 белых, тогда <span class="math notranslate nohighlight">\(P(B | B_1) = \dfrac{2}{9}\)</span>. Аналогично, <span class="math notranslate nohighlight">\(P(B | B_2) = \dfrac{4}{8}\)</span>.</p>
+<p>Отсюда</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B) = P(B_1) P(B | B_1) + P(B_2) P(B | B_2) = \dfrac{27}{77} \cdot \dfrac{2}{9} + \dfrac{50}{77} \cdot \dfrac{4}{8} = \dfrac{31}{77}.\]</div>
+</div>
+<p>Задача 5. Имеется  5 ящиков, в каждом из которых   10  белых  и  30  черных шаров. Из первого ящика во второй перекладывается один шар, затем из второго в третий перекладывается один шар  и т.д. После чего из последнего ящика извлекается один шар. Найти вероятность того, что он белый.</p>
+<p>Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_1\)</span> = { белый шар из 1-ого ящика } <span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}_1\)</span> = { черный шар из 1-ого ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_2\)</span> = { белый шар из 2-ого ящика } <span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}_2\)</span> = { черный шар из 2-ого ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_3\)</span> = { белый шар из 3-ого ящика } <span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}_3\)</span> = { черный шар из 3-ого ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_4\)</span> = { белый шар из 4-ого ящика } <span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}_4\)</span> = { черный шар из 4-ого ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_5\)</span> = { белый шар из 5-ого ящика } <span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}_5\)</span> = { черный шар из 5-ого ящика }.</p></li>
+</ul>
+<p>Если мы выбираем белый шар из <span class="math notranslate nohighlight">\(i\)</span>-ого ящика, тогда в <span class="math notranslate nohighlight">\((i+1)\)</span>-ом ящике есть <span class="math notranslate nohighlight">\(8 + 1 = 9\)</span> белых ящиков. Значит <span class="math notranslate nohighlight">\(P(A_{i+1} | A_i) = \dfrac{11}{41}\)</span>. Аналогично, если мы выбираем черный шар из <span class="math notranslate nohighlight">\(i\)</span>-ого ящика, <span class="math notranslate nohighlight">\(P(A_{i+1} | \overline{A}_i) = \dfrac{10}{41}\)</span> и</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A_{i+1}) = P(A_i) P(A_{i+1} | A_i) + P(\overline{A}_i) P(A_{i+1} | \overline{A}_i).\]</div>
+</div>
+<p>По условию</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A_1) = \dfrac{10}{40} = \dfrac{1}{4}, P(\overline{A}_1) = \dfrac{30}{40} = \dfrac{3}{4},\]</div>
+</div>
+<p>у нас есть</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}P(A_2) = P(A_1) P(A_2 | A_1) + P(\overline{A}_1) P(A_2 | \overline{A}_1) = \dfrac{1}{4} \cdot \dfrac{11}{41} + \dfrac{3}{4} \cdot \dfrac{10}{41} = \dfrac{1}{4}, \\ P(\overline{A}_2) = 1 - \dfrac{1}{4} = \dfrac{3}{4}.\end{split}\]</div>
+</div>
+<p>Аналогично, <span class="math notranslate nohighlight">\(P(A_2) = P(A_3) = P(A_4) = P(A_5) = \dfrac{1}{4}\)</span>.</p>
+<p>Ответ: <span class="math notranslate nohighlight">\(\dfrac{1}{4}\)</span>.</p>
+</section>
+<section id="id14">
+<h4>Вариант 22<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h4>
+<p>Задача 1. Из колоды карт (36 штук) выбирают наугад две карты. Какова вероятность того, что обе они окажутся пиковой масти?</p>
+<p>У нас есть 36 карт и выбирать 2 карты <span class="math notranslate nohighlight">\(\Longrightarrow \lvert \Omega \rvert = C^2_{36}\)</span>.</p>
+<p>Пусть <span class="math notranslate nohighlight">\(A\)</span> = { обе они окажутся пиковой масти }.</p>
+<p>В колоде карт есть 9 пиковых мастей, поэтому <span class="math notranslate nohighlight">\(\lvert \Omega_A \rvert = C^2_9\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow P(A) = \dfrac{C^2_9}{C^2_{36}} = \dfrac{2}{35}.\]</div>
+</div>
+<p>Задача 2. Из урны, содержащей пять белых и четыре черных шара, извлекают шары по одному без возвращения, пока не будет извлечен белый шар. Какова вероятность того, что придется извлечь четыре шара?</p>
+<p>Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_i\)</span> = { выбрать <span class="math notranslate nohighlight">\(i\)</span> черных шаров, пока не будет извлечен белый шар }. Поэтому <span class="math notranslate nohighlight">\(i \in { 0, 1, 2, 3, 4 }\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> = { выбрать белый шар в последний раз }.</p></li>
+</ul>
+<p>У нас есть <span class="math notranslate nohighlight">\(P(B|A_0) = P(B|A_1) = \cdots = P(B|A_4) = \dfrac{1}{5}\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A_0) = \dfrac{A^0_4}{A^0_9} = 1, P(A_1) = \dfrac{A^1_4}{A^1_9} = \dfrac{4}{9}, P(A_2) = \dfrac{A^2_4}{A^2_9} = \dfrac{1}{6}, P(A_3) = \dfrac{A^3_4}{A^3_9} = \dfrac{1}{21}, P(A_4) = \dfrac{A^4_4}{A^4_9} = \dfrac{1}{126}.\]</div>
+</div>
+<p>Мы можем вычислять</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*} P(A_3 | B) &amp; = \dfrac{P(B|A_3)P(A_3)}{\sum\limits_{i=0}^{4}P(B|A_i) P(A_i)} \\ &amp; = \dfrac{1/5 \cdot 1/21}{1/5 \cdot (1 + 4/9 + 1/6 + 1/21 + 1/126)} = \dfrac{1}{35}.\end{align*}\end{split}\]</div>
+</div>
+<p>Задача 3. Для каждого из чисел <span class="math notranslate nohighlight">\(X\)</span> и <span class="math notranslate nohighlight">\(Y\)</span> равновозможно любое значение из отрезка <span class="math notranslate nohighlight">\([0;2]\)</span>. Какова вероятность того, что разность <span class="math notranslate nohighlight">\(X - Y\)</span> превосходит единицу?</p>
+<p>У нас есть <span class="math notranslate nohighlight">\(X-Y \geqslant 1\)</span> и <span class="math notranslate nohighlight">\(X, Y \in [0,2]\)</span>. Значит</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} X - Y \geqslant 1 \\ 0 \leqslant X, Y \leqslant 2 \end{cases}\end{split}\]</div>
+</div>
+<p>Отсюда мы получим вероятность равно <span class="math notranslate nohighlight">\(P = \dfrac{S_{\triangle AB}}{S_{OBMN}} = \dfrac{1/2}{4} = \dfrac{1}{8}\)</span>.</p>
+<p>Задача 4. В одном из двух ящиков лежит 9 белых и 3 черных шара, а в другом лежит 6 белых и 3 черных шара. Наугад выбирается один из ящиков и вынимается из него шар, который оказался белым. Найти вероятность того, что следующий извлеченный из этого же ящика шар тоже белый.</p>
+<p>Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_1\)</span> = { первый ящик выбирается };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_2\)</span> = { второй ящик выбирается };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> = { первый шар - белый }.</p></li>
+</ul>
+<p>Отсюда</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A) = P(A_1) P(A | A_1) + P(A_2) P(A | A_2) = \dfrac{1}{2} \cdot \dfrac{9}{12} + \dfrac{1}{2} \cdot \dfrac{6}{9} = \dfrac{17}{24}.\]</div>
+</div>
+<p>Далее, если пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(B_1\)</span> = { первый белый шар из первого ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_2\)</span> = { первый белый шар из второго ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(B\)</span> = { второй шар - белый };</p></li>
+</ul>
+<p>мы получим</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B_1) = P(A_1 | A) = \dfrac{1/2 \cdot 9/12}{17/24} = \dfrac{9}{17}, P(B_2) = P(A_2 | A) = \dfrac{1/2 \cdot 6/9}{17/24} = \dfrac{8}{17}.\]</div>
+</div>
+<p>Если первый ящик выбирается, после мы взяли один белый шар, еще 8 белых, тогда <span class="math notranslate nohighlight">\(P(B | B_1) = \dfrac{8}{11}\)</span>. Аналогично, <span class="math notranslate nohighlight">\(P(B | B_2) = \dfrac{5}{8}\)</span>.</p>
+<p>Поэтому</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(B) = P(B_1) P(B | B_1) + P(B_2) P(B | B_2) = \dfrac{9}{17} \cdot \dfrac{8}{11} + \dfrac{8}{17} \cdot \dfrac{5}{8} = \dfrac{127}{187}.\]</div>
+</div>
+<p>Задача 5. Имеется  5 ящиков, в каждом из которых   8  белых  и  16  черных шаров. Из первого ящика во второй перекладывается один шар, затем из второго в третий перекладывается один шар  и т.д. После чего из последнего ящика извлекается один шар. Найти вероятность того, что он белый.</p>
+<p>Пусть</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_1\)</span> = { белый шар из 1-ого ящика } <span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}_1\)</span> = { черный шар из 1-ого ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_2\)</span> = { белый шар из 2-ого ящика } <span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}_2\)</span> = { черный шар из 2-ого ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_3\)</span> = { белый шар из 3-ого ящика } <span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}_3\)</span> = { черный шар из 3-ого ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_4\)</span> = { белый шар из 4-ого ящика } <span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}_4\)</span> = { черный шар из 4-ого ящика };</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_5\)</span> = { белый шар из 5-ого ящика } <span class="math notranslate nohighlight">\(\Longrightarrow \overline{A}_5\)</span> = { черный шар из 5-ого ящика }.</p></li>
+</ul>
+<p>Если мы выбираем белый шар из <span class="math notranslate nohighlight">\(i\)</span>-ого ящика, тогда в <span class="math notranslate nohighlight">\((i+1)\)</span>-ом ящике есть <span class="math notranslate nohighlight">\(8 + 1 = 9\)</span> белых ящиков. Значит <span class="math notranslate nohighlight">\(P(A_{i+1} | A_i) = \dfrac{9}{25}\)</span>. Аналогично, если мы выбираем черный шар из <span class="math notranslate nohighlight">\(i\)</span>-ого ящика, <span class="math notranslate nohighlight">\(P(A_{i+1} | \overline{A}_i) = \dfrac{8}{25}\)</span> и</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A_{i+1}) = P(A_i) P(A_{i+1} | A_i) + P(\overline{A}_i) P(A_{i+1} | \overline{A}_i).\]</div>
+</div>
+<p>По условию</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(A_1) = \dfrac{8}{24} = \dfrac{1}{3}, P(\overline{A}_1) = \dfrac{16}{24} = \dfrac{2}{3}.\]</div>
+</div>
+<p>Отсюда</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Longrightarrow P(A_2) = P(A_1) P(A_2 | A_1) + P(\overline{A}_1) P(A_2 | \overline{A}_1) = \dfrac{1}{3} \cdot \dfrac{9}{25} + \dfrac{2}{3} \cdot \dfrac{8}{25} = \dfrac{1}{3},\]</div>
+</div>
+<p>или</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(\overline{A}_2) = 1 - 1/3 = 2/3.\]</div>
+</div>
+<p>Аналогично, <span class="math notranslate nohighlight">\(P(A_2) = P(A_3) = P(A_4) = P(A_5) = \dfrac{1}{3}\)</span>.</p>
+<p>Ответ: <span class="math notranslate nohighlight">\(\dfrac{1}{3}\)</span>.</p>
+</section>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../an-introduction-to-mathematical-cryptography/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">An Introduction to Mathematical Cryptography</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../Judson.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Abstract Algebra: Theory and Applications</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025-2026, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Курс высшей математики: Теория вероятностей</a><ul>
+<li><a class="reference internal" href="#xac-suat-khong-lien-tuc">Xác suất không liên tục</a></li>
+<li><a class="reference internal" href="#quy-tac-cong-va-nhan-xac-suat">Quy tắc cộng và nhân xác suất</a></li>
+<li><a class="reference internal" href="#quy-tac-cong-va-nhan-xac-suat-tiep-theo">Quy tắc cộng và nhân xác suất (tiếp theo)</a></li>
+<li><a class="reference internal" href="#cac-buoi-con-lai-va-bai-kiem-tra">Các buổi còn lại và bài kiểm tra</a><ul>
+<li><a class="reference internal" href="#id3">Занятия 5</a></li>
+<li><a class="reference internal" href="#id4">Занятия 6</a></li>
+<li><a class="reference internal" href="#id5">Занятие 7</a></li>
+<li><a class="reference internal" href="#id6">Занятие 8</a></li>
+<li><a class="reference internal" href="#id7">Занятие 9</a></li>
+<li><a class="reference internal" href="#id8">Занятие 10</a></li>
+<li><a class="reference internal" href="#id9">Занятие 11</a></li>
+<li><a class="reference internal" href="#id10">Занятие 12</a></li>
+<li><a class="reference internal" href="#id11">Занятие 13</a></li>
+<li><a class="reference internal" href="#id12">КМ 2 - 07/04/2021</a><ul>
+<li><a class="reference internal" href="#id13">Вариант 1</a></li>
+<li><a class="reference internal" href="#id14">Вариант 22</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Nhấp để hiển thị';</script>
+    <script>let toggleHintHide = 'Nhấp để ẩn';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1], "wt": "\\operatorname{wt}", "tr": "\\operatorname{tr}", "rank": "\\operatorname{rank}", "lcm": "\\mathrm{lcm}", "GL": "\\mathrm{GL}", "lex": "\\text{lex}", "grlex": "\\text{grlex}", "grevlex": "\\text{grevlex}", "CC": "\\mathbb{C}", "RR": "\\mathbb{R}", "QQ": "\\mathbb{Q}", "ZZ": "\\mathbb{Z}", "NN": "\\mathbb{N}", "FF": "\\mathbb{F}", "KK": "\\mathbb{K}"}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>

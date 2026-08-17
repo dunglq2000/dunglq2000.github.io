@@ -1,0 +1,571 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html"><link rel="search" title="Tìm Kiếm" href="../../../search.html"><link rel="next" title="Các cuộc thi năm 2020" href="../../../2020/index.html"><link rel="prev" title="AceBear" href="../../AceBear/index.html">
+        <link rel="prefetch" href="../../../_static/rhine_lab.jpg" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>EFIENS CTF 2019 Round 2 - Contests</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css?v=3a5ece24" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystyles.css?v=ca48935a" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Contests</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../_static/rhine_lab.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Contests</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">Các cuộc thi năm 2019</a><input aria-label="Toggle navigation of Các cuộc thi năm 2019" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../AceBear/index.html">AceBear</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">EFIENS CTF 2019 Round 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2020/index.html">Các cuộc thi năm 2020</a><input aria-label="Toggle navigation of Các cuộc thi năm 2020" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/MidnightsunCTF/index.html">Midnightsun CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/nsucrypto/index.html">NSUCRYPTO 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/AngstromCTF/index.html">angstromCTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/AsisCTF/index.html">ASIS CTF Quals 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/CryptoCTF/index.html">CryptoCTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/InCTF/index.html">InCTF 2019 Bài viết</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/NetwarkAcademyCTF/index.html">Netwark Academy CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/NetwarkAcademyCTF/index.html#error-2">6. Error 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/SpamAndFlagsCTF/index.html">SpamAndFlags CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/SunshineCTF/index.html">Sunshine CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/VIRSECCONCTF/index.html">VIRSECCON CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/VolgaCTF-Qualifier/index.html">VolgaCTF 2020 Qualifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/castorsCTF/index.html">Castor CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2020/efiensCTF/index.html">Efiens CTF 2020</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2021/index.html">Các cuộc thi năm 2021</a><input aria-label="Toggle navigation of Các cuộc thi năm 2021" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../2021/CryptoCTF/index.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2021/GoogleCTF/index.html">Google CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2021/nsucrypto/index.html">NSUCRYPTO 2021</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2022/index.html">Các cuộc thi năm 2022</a><input aria-label="Toggle navigation of Các cuộc thi năm 2022" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../2022/downunderCTF/index.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2022/nsucrypto.html">NSUCRYPTO 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2022/sekaiCTF/index.html">Sekai CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2022/ISITDTUCTF/index.html">ISITDTU Quals 2022</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2023/index.html">Các cuộc thi năm 2023</a><input aria-label="Toggle navigation of Các cuộc thi năm 2023" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../2023/nsucrypto/index.html">NSUCRYPTO 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2023/siberian-maths-contest/index.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2023/internet-olympiad/index.html">Internet Olympiad 2023 (Vòng 3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2023/AmateursCTF/index.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2023/backdoorCTF.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2023/googleCTF.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2023/diceCTF.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2023/UTCTF.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2023/wolvCTF.html">Wolv CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2023/cryptoCTF-2023.html">Crypto CTF 2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2024/index.html">Các cuộc thi năm 2024</a><input aria-label="Toggle navigation of Các cuộc thi năm 2024" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../2024/NSUCRYPTO/index.html">NSUCRYPTO 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2024/internet-olympiad/index.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2024/0xL4ughCTF-2024/index.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2024/ASISCTF-2024/index.html">ASIS CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2024/TJCTF/index.html">TJCTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2024/cryptofox/index.html">CryptoFox 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2024/isitdtu.html">ISITDTU Quals 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2025/index.html">Các cuộc thi năm 2025</a><input aria-label="Toggle navigation of Các cuộc thi năm 2025" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../2025/cryptofox/index.html">CryptoFox 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2025/tjctf.html">TJCTF 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2025/olympiad-algebra.html">Семнадцатая студенческая олимпиада по алгебре</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2025/CryptoFox2025/4/solve.html">Задача "РАЗНОСТИ ДЛЯ FOX128"</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../2026/index.html">Các cuộc thi năm 2026</a><input aria-label="Toggle navigation of Các cuộc thi năm 2026" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../2026/cryptofox/index.html">CryptoFox</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cryptohack/index.html">Wargame chill chill</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../solutions/index.html">Đáp án bài tập trong sách</a><input aria-label="Toggle navigation of Đáp án bài tập trong sách" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/Judson.html">Abstract Algebra: Theory and Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/Petrushko/index.html">Курс высшей математики: Теория вероятностей</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../solutions/an-introduction-to-mathematical-cryptography/index.html">An Introduction to Mathematical Cryptography</a><input aria-label="Toggle navigation of An Introduction to Mathematical Cryptography" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/an-introduction-to-mathematical-cryptography/chapter-2.html">Chapter 2. Discrete Logarithms and Diffie-Hellman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/an-introduction-to-mathematical-cryptography/chapter-3.html">Chapter 3. Integer Factorization and RSA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/an-introduction-to-mathematical-cryptography/chapter-4.html">Chapter 4. Digital Signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/an-introduction-to-mathematical-cryptography/chapter-7.html">Chapter 7. Lattices and Cryptography</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/symmetric-cryptography/index.html">Симметричная криптография</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/collection.html">Các bài toán sưu tầm</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../../_sources/2019/efiensCTF/round-2/index.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="efiens-ctf-2019-round-2">
+<h1>EFIENS CTF 2019 Round 2<a class="headerlink" href="#efiens-ctf-2019-round-2" title="Link to this heading">¶</a></h1>
+<section id="picture-cipher">
+<h2>Picture Cipher<a class="headerlink" href="#picture-cipher" title="Link to this heading">¶</a></h2>
+<p>Bài này đề cho file <code class="docutils literal notranslate"><span class="pre">PictureCipher.exe</span></code> là file mã hóa và file <code class="docutils literal notranslate"><span class="pre">encrypted.png</span></code> là file đã bị mã hóa. File mã hóa được viết bằng C# nên ta decompiler quen thuộc của C# là dnSpy để decompile và thu được ba hàm: Main, encrypt và decrypt.</p>
+<figure class="align-default" id="id1">
+<img alt="../../../_images/pic1.png" src="../../../_images/pic1.png" />
+<figcaption>
+<p><span class="caption-number">Hình 1 </span><span class="caption-text">Hàm Main</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="../../../_images/pic2.png" src="../../../_images/pic2.png" />
+<figcaption>
+<p><span class="caption-number">Hình 2 </span><span class="caption-text">Hàm encrypt</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="../../../_images/pic3.png" src="../../../_images/pic3.png" />
+<figcaption>
+<p><span class="caption-number">Hình 3 </span><span class="caption-text">Hàm decrypt</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Bây giờ ta cần xem thử file này đã encrypt như thế nào!</p>
+<p>Đầu tiên hàm này đọc tất cả các dòng (các dòng được hiểu là kết thúc bằng ký tự <code class="docutils literal notranslate"><span class="pre">\n</span></code> - ký tự xuống dòng) và lưu vào mảng các chuỗi <code class="docutils literal notranslate"><span class="pre">array</span></code>.</p>
+<p>Từ đó, biến <code class="docutils literal notranslate"><span class="pre">bitmap</span></code> - người đọc có thể tham khảo ở <a class="reference external" href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.bitmap?view=netframework-4.8">link</a> - được khởi tạo, có chiều rộng bằng độ dài dòng đầu chia <span class="math notranslate nohighlight">\(4\)</span> (<code class="docutils literal notranslate"><span class="pre">array[0]</span> <span class="pre">/</span> <span class="pre">4</span></code>), và chiều cao là số dòng (<code class="docutils literal notranslate"><span class="pre">array.Length</span></code>).</p>
+<p>Tiếp theo, chương trình duyệt qua từng dòng, trên mỗi dòng mỗi lần lấy bốn ký tự (<span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(j + 1\)</span>, <span class="math notranslate nohighlight">\(j + 2\)</span> và <span class="math notranslate nohighlight">\(j + 3`\)</span>) và đưa vào biến color ARGB để cài đặt màu tại vị trí (<span class="math notranslate nohighlight">\(j / 4, i\)</span>) cho ảnh <code class="docutils literal notranslate"><span class="pre">bitmap</span></code>.</p>
+<p>Bây giờ ta cần làm ngược lại quy trình trên, ta cần dựng lại mảng <code class="docutils literal notranslate"><span class="pre">array</span></code> như sau:</p>
+<ol class="arabic simple">
+<li><p>Số hàng = chiều cao (heigth) của ảnh</p></li>
+<li><p>Số cột = chiều rộng (width) của ảnh x 4</p></li>
+</ol>
+<p>Tiếp theo, ta cần lấy màu tại từng vị trí của file <code class="docutils literal notranslate"><span class="pre">encrypted.png</span></code>, duyệt giống lúc encrypt là duyệt từng hàng, trên từng hàng xét từng cột.</p>
+<p>Với mỗi vị trí <span class="math notranslate nohighlight">\((j, i)\)</span> ta đưa màu về dạng ARGB (số integer <span class="math notranslate nohighlight">\(4\)</span> bytes) bằng hàm <code class="docutils literal notranslate"><span class="pre">ToArgb()</span></code> và đưa vào một chuỗi bytes, đảo ngược chuỗi bytes này và ghép vào dòng <code class="docutils literal notranslate"><span class="pre">array[i]</span></code>. Mã nguồn thực hiện như sau:</p>
+<div class="highlight-C# notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">inputFile</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">outputFile</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">File</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">inputFile</span><span class="p">))</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">      </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Ciphertext file not found&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="n">Bitmap</span><span class="w"> </span><span class="n">cipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="n">inputFile</span><span class="p">);</span>
+<span class="w">   </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">string</span><span class="p">[</span><span class="n">cipher</span><span class="p">.</span><span class="n">Height</span><span class="p">];</span>
+<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cipher</span><span class="p">.</span><span class="n">Height</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">      </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cipher</span><span class="p">.</span><span class="n">Width</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">         </span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cipher</span><span class="p">.</span><span class="n">GetPixel</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">         </span><span class="kt">int</span><span class="w"> </span><span class="n">new_color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">ToArgb</span><span class="p">();</span>
+<span class="w">         </span><span class="kt">byte</span><span class="p">[]</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BitConverter</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">new_color</span><span class="p">);</span>
+<span class="w">         </span><span class="n">Array</span><span class="p">.</span><span class="n">Reverse</span><span class="p">(</span><span class="n">bytes</span><span class="p">);</span>
+<span class="w">         </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">bytes</span><span class="p">));</span>
+<span class="w">         </span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">bytes</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="n">File</span><span class="p">.</span><span class="n">WriteAllLines</span><span class="p">(</span><span class="n">outputFile</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="p">);</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">   </span><span class="c1">// throw new NotImplementedException();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ta decrypt ra file <code class="docutils literal notranslate"><span class="pre">result</span></code>, bật lên xem thì người đọc có thể thấy flag chính là ký tự đầu tiên của mỗi dòng.</p>
+<p>Code python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;result&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+   <span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+   <span class="k">while</span> <span class="n">line</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+      <span class="n">flag</span> <span class="o">+=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="taptap">
+<h2>TapTap<a class="headerlink" href="#taptap" title="Link to this heading">¶</a></h2>
+<p>Bài này nhìn có vẻ rất chua. Chạy thử file apk này (ta dùng Nox player) thì thấy rằng nếu click đủ số lần đề yêu cầu thì flag sẽ hiện ra, đâu đó khoảng 1600 tỷ lần thôi ...</p>
+<p>Sau khi decompile file apk thì ta tìm tới <code class="docutils literal notranslate"><span class="pre">sources/com/efiensctf/luibo/taptapflag</span></code> và kiểm tra các file. Ta thấy được các hàm sau <em>liên quan</em> tới &quot;những cú click&quot;</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getTableAndOffset</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Character</span><span class="p">.</span><span class="na">isLowerCase</span><span class="p">(</span><span class="n">it</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="s">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="p">.</span><span class="na">valueOf</span><span class="p">((</span><span class="kt">long</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">)));</span>
+<span class="w">   </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Character</span><span class="p">.</span><span class="na">isUpperCase</span><span class="p">(</span><span class="n">it</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="s">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="p">.</span><span class="na">valueOf</span><span class="p">((</span><span class="kt">long</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">)));</span>
+<span class="w">   </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Character</span><span class="p">.</span><span class="na">isDigit</span><span class="p">(</span><span class="n">it</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="p">.</span><span class="na">valueOf</span><span class="p">((</span><span class="kt">long</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">)));</span>
+<span class="w">   </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">String</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;!\&quot;#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~&quot;</span><span class="p">;</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">Long</span><span class="p">.</span><span class="na">valueOf</span><span class="p">((</span><span class="kt">long</span><span class="p">)</span><span class="w"> </span><span class="n">StringsKt</span><span class="p">.</span><span class="na">indexOf$default</span><span class="p">((</span><span class="n">CharSequence</span><span class="p">)</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">Object</span><span class="p">)</span><span class="w"> </span><span class="kc">null</span><span class="p">)));</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="nf">decodeChar</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">Pair</span><span class="w"> </span><span class="n">tableAndOffset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getTableAndOffset</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+<span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">tableAndOffset</span><span class="p">.</span><span class="na">component1</span><span class="p">();</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="na">charAt</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">((</span><span class="k">this</span><span class="p">.</span><span class="na">tapsLeft</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="n">Number</span><span class="p">)</span><span class="w"> </span><span class="n">tableAndOffset</span><span class="p">.</span><span class="na">component2</span><span class="p">()).</span><span class="na">longValue</span><span class="p">())</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">((</span><span class="kt">long</span><span class="p">)</span><span class="w"> </span><span class="n">table</span><span class="p">.</span><span class="na">length</span><span class="p">())));</span>
+<span class="p">}</span>
+
+<span class="cm">/* access modifiers changed from: private */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">calculateFlag</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BuildConfig</span><span class="p">.</span><span class="na">FLAVOR</span><span class="p">;</span>
+<span class="w">   </span><span class="n">CharSequence</span><span class="w"> </span><span class="n">$this$forEach$iv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">flagText</span><span class="p">;</span>
+<span class="w">   </span><span class="n">String</span><span class="w"> </span><span class="n">str2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">;</span>
+<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">$this$forEach$iv</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">char</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$this$forEach$iv</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">      </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span>
+<span class="w">      </span><span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">str2</span><span class="p">);</span>
+<span class="w">      </span><span class="n">sb</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">decodeChar</span><span class="p">(</span><span class="n">it</span><span class="p">));</span>
+<span class="w">      </span><span class="n">str2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sb</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">   </span><span class="k">this</span><span class="p">.</span><span class="na">flagText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str2</span><span class="p">;</span>
+<span class="w">   </span><span class="k">this</span><span class="p">.</span><span class="na">tapsLeft</span><span class="o">--</span><span class="p">;</span>
+<span class="w">   </span><span class="n">TextView</span><span class="w"> </span><span class="n">textView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">_$_findCachedViewById</span><span class="p">(</span><span class="n">C0373R</span><span class="p">.</span><span class="na">C0375id</span><span class="p">.</span><span class="na">flag</span><span class="p">);</span>
+<span class="w">   </span><span class="n">Intrinsics</span><span class="p">.</span><span class="na">checkExpressionValueIsNotNull</span><span class="p">(</span><span class="n">textView</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;flag&quot;</span><span class="p">);</span>
+<span class="w">   </span><span class="n">textView</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">getResources</span><span class="p">().</span><span class="na">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">flag</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="na">flagText</span><span class="p">}));</span>
+<span class="w">   </span><span class="n">TextView</span><span class="w"> </span><span class="n">textView2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">_$_findCachedViewById</span><span class="p">(</span><span class="n">C0373R</span><span class="p">.</span><span class="na">C0375id</span><span class="p">.</span><span class="na">hint</span><span class="p">);</span>
+<span class="w">   </span><span class="n">Intrinsics</span><span class="p">.</span><span class="na">checkExpressionValueIsNotNull</span><span class="p">(</span><span class="n">textView2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hint&quot;</span><span class="p">);</span>
+<span class="w">   </span><span class="n">textView2</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="n">getResources</span><span class="p">().</span><span class="na">getString</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">string</span><span class="p">.</span><span class="na">hint</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="p">{</span><span class="n">Long</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">tapsLeft</span><span class="p">)}));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Hàm <code class="docutils literal notranslate"><span class="pre">calculateFlag</span></code> chịu trách nhiệm ghi nhận &quot;các cú click&quot;: xử lý flag sau mỗi lần click và trừ số lần click (tapsLeft). Vòng lặp hơi loằng ngoằng chút, nhưng thực chất vẫn là duyệt qua chuỗi hiện tại, decode mỗi ký tự (bằng hàm <code class="docutils literal notranslate"><span class="pre">decodeChar</span></code>) và đưa vào chuỗi mới.</p>
+<p>Hàm <code class="docutils literal notranslate"><span class="pre">getTableAndOffset</span></code> kiểm tra xem ký tự đầu vào là chữ thường, chữ hoa, số hay ký tự khác và trả về một cặp table - offset của ký tự trong table.</p>
+<p>Hàm <code class="docutils literal notranslate"><span class="pre">decodeChar</span></code> nhận vào một ký tự, tìm table và offset của nó bằng hàm <code class="docutils literal notranslate"><span class="pre">getTableAndOffset</span></code>. Từ đó, ký tự nhận vào sẽ được decoder bằng cách:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\text{ký tự (mới)} = (\text{tapsLeft} + \text{offset của ký tự cũ trong table}) \bmod \text{độ dài table}.\]</div>
+</div>
+<p>Nhìn vào flag ta thấy chỉ có chữ hoa và số! Đỡ rồi Sau đây là flagText cần decode và tapsLeft.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">flagText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Q806R554767513UR32QS4Q4120T00V91&quot;</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">tapsLeft</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1628775989156L</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Liệu có cách nào giúp ta tính từ lần 1628775989156 về lần 1 trong 1 vài phép tính không nhỉ?</p>
+<p>Quay lại công thức decode trên:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{offset của ký tự (mới)} &amp; = (\text{tapsLeft} + \text{offset của ký tự cũ trong table}) \pmod{\text{độ dài table}} \\
+                              &amp; = (\text{tapsLeft} + (\text{tapsLeft} - 1 + \text{offset của ký tự cũ hơn trong table})) \pmod{\text{độ dài table}} \\
+                              &amp; = (\text{tapsLeft} + \text{tapsLeft} - 1 + (\text{tapsLeft} - 2 + \text{offset của ký tự cũ hơn nữa  trong table})) \pmod{\text{độ dài table}} \\
+                              &amp; = \ldots \\
+                              &amp; = ((\text{tổng từ tapsLeft tới 1}) + \text{ký tự cần tính}) \pmod{\text{độ dài table}}.\end{split}\]</div>
+</div>
+<p>Việc tính tổng từ tapsLeft tới 1 có thể dùng công thức toán là <code class="docutils literal notranslate"><span class="pre">(tapsLeft</span> <span class="pre">*</span> <span class="pre">(tapsLeft</span> <span class="pre">+</span> <span class="pre">1))</span> <span class="pre">/</span> <span class="pre">2</span></code> và ta đặt là <span class="math notranslate nohighlight">\(n\)</span>. Do flag chỉ có chữ hoa và số nên độ dài table lần lượt là <span class="math notranslate nohighlight">\(26\)</span> và <span class="math notranslate nohighlight">\(10\)</span>, nên ta sẽ modulo <span class="math notranslate nohighlight">\(n\)</span> cho đỡ phức tạp.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">flagText</span> <span class="o">=</span> <span class="s2">&quot;Q806R554767513UR32QS4Q4120T00V91&quot;</span>
+<span class="n">tapsLeft</span> <span class="o">=</span> <span class="mi">1628775989156</span>
+<span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="n">tapsLeft</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">tapsLeft</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">upper</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">26</span>
+<span class="n">digit</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">flagText</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
+      <span class="n">flag</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="mi">65</span> <span class="o">+</span> <span class="n">upper</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">))</span> <span class="c1"># offset nên người đọc nhớ cộng cho &quot;A&quot; để nó thành chữ hoa nhé</span>
+   <span class="k">elif</span> <span class="n">i</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+      <span class="n">flag</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="mi">48</span> <span class="o">+</span> <span class="n">digit</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">))</span> <span class="c1"># tương tự, để offset thành số</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;EFIENSCTF{&quot;</span> <span class="o">+</span> <span class="n">flag</span> <span class="o">+</span> <span class="s2">&quot;}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../../2020/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Các cuộc thi năm 2020</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../../AceBear/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">AceBear</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025-2026, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">EFIENS CTF 2019 Round 2</a><ul>
+<li><a class="reference internal" href="#picture-cipher">Picture Cipher</a></li>
+<li><a class="reference internal" href="#taptap">TapTap</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Nhấp để hiển thị';</script>
+    <script>let toggleHintHide = 'Nhấp để ẩn';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../../../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1], "wt": "\\operatorname{wt}", "tr": "\\operatorname{tr}", "rank": "\\operatorname{rank}", "lcm": "\\mathrm{lcm}", "GL": "\\mathrm{GL}", "lex": "\\text{lex}", "grlex": "\\text{grlex}", "grevlex": "\\text{grevlex}", "CC": "\\mathbb{C}", "RR": "\\mathbb{R}", "QQ": "\\mathbb{Q}", "ZZ": "\\mathbb{Z}", "NN": "\\mathbb{N}", "FF": "\\mathbb{F}", "KK": "\\mathbb{K}"}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>

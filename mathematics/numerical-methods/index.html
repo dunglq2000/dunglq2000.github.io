@@ -1,0 +1,980 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Tìm Kiếm" href="../search.html"><link rel="next" title="Xác suất thống kê" href="../probability/index.html"><link rel="prev" title="3. Chuỗi số" href="../calculus/series/index.html">
+        <link rel="prefetch" href="../_static/rhine_lab.jpg" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Phương pháp tính toán - Math Book</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=3a5ece24" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyles.css?v=ca48935a" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Math Book</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/rhine_lab.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Math Book</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/index.html">Những lời nói đầu</a><input aria-label="Toggle navigation of Những lời nói đầu" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-notebook.html">Cơ sở xây dựng notebook</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algebra/index.html">Đại số</a><input aria-label="Toggle navigation of Đại số" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/set/index.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../algebra/polynomial/index.html">2. Đa thức</a><input aria-label="Toggle navigation of 2. Đa thức" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc-mot-bien">2.2. So sánh, cộng, trừ và nhân hai đa thức một biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#phep-chia-da-thuc-mot-bien">2.3. Phép chia đa thức một biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#phep-chia-da-thuc-nhieu-bien">2.4. Phép chia đa thức nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/lagrange-interpolation.html">2.5. Đa thức nội suy Lagrange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/numerical-methods.html">2.6. Phương pháp tính giá trị đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/multivariate-polynomial.html">2.7. Đa thức nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/groebner-basis.html">2.8. Cơ sở Gröbner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/buchberger-algorithm.html">2.9. Thuật toán Buchberger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/f4-algorithm.html">2.10. Thuật toán F4 và ma trận Macaulay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/groebner-parallel-computing.html">2.11. Tính cơ sở Gröbner song song trên CPU và GPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../abstract-algebra/index.html">Lý thuyết nhóm</a><input aria-label="Toggle navigation of Lý thuyết nhóm" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/groups/index.html">1. Lý thuyết nhóm</a><input aria-label="Toggle navigation of 1. Lý thuyết nhóm" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/group.html">1.1. Nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/symmetric-group.html">1.2. Nhóm hoán vị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/quasigroup.html">1.3. Quasigroup</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/homomorphisms/index.html">2. Homomorphisms</a><input aria-label="Toggle navigation of 2. Homomorphisms" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/homomorphisms/group-homomorphism.html">2.1. Group homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/group-action/index.html">3. Tác động nhóm</a><input aria-label="Toggle navigation of 3. Tác động nhóm" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/group-action/group-action.html">3.1. Tác động nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/group-action/burnside.html">3.2. Bổ đề Burnside</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/rings/index.html">4. Vành</a><input aria-label="Toggle navigation of 4. Vành" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/rings/ring.html">4.1. Vành</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/fields/index.html">5. Trường</a><input aria-label="Toggle navigation of 5. Trường" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/field.html">5.1. Trường</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/ideal.html">5.2. Ideal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/ring-homomorphism.html">5.3. Ring kernel và ring homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/galois-theory/index.html">6. Lý thuyết Galois</a><input aria-label="Toggle navigation of 6. Lý thuyết Galois" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/galois-theory/extension-field.html">6.1. Extension Fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/index.html">Giải tích</a><input aria-label="Toggle navigation of Giải tích" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/calculus/index.html">1. Giải tích</a><input aria-label="Toggle navigation of 1. Giải tích" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/limits.html">1.1. Giới hạn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/continuity.html">1.2. Tính liên tục của hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/monotone.html">1.3. Tính đơn điệu và cực trị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/derivative.html">1.4. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/partial-derivative.html">1.5. Đạo hàm riêng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/partial-derivative.html#dao-ham-mot-so-ham-nhieu-bien">1.6. Đạo hàm một số hàm nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/avarage-value.html">1.7. Một số định lí về giá trị trung bình</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/concave.html">1.8. Tính lồi, lõm và điểm uốn của đồ thị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/line-integral.html">1.9. Tích phân đường</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/differential-equation/index.html">2. Phương trình vi phân</a><input aria-label="Toggle navigation of 2. Phương trình vi phân" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/differential-equation/numerical-methods/index.html">2.1. Phương pháp số cho bài toán giá trị ban đầu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series/index.html">3. Chuỗi số</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Phương pháp tính toán</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../probability/index.html">Xác suất thống kê</a><input aria-label="Toggle navigation of Xác suất thống kê" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../probability/intro.html">Xác suất thống kê</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probability/statistics-exercises/index.html">Bài tập thực hành thống kê toán học</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../probability/ML/index.html">Machine Learning</a><input aria-label="Toggle navigation of Machine Learning" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/linear-regression.html">Linear Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/kmeans.html">K-Means clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/gradient-descent.html">Gradient Descent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/perceptron.html">Perceptron Learning Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linalg/index.html">Đại số tuyến tính</a><input aria-label="Toggle navigation of Đại số tuyến tính" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../linalg/matrix/index.html">1. Ma trận</a><input aria-label="Toggle navigation of 1. Ma trận" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-determinant.html">1.1. Định thức ma trận</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-inversion.html">1.2. Ma trận nghịch đảo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-rank.html">1.3. Hạng của ma trận</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/system-of-equations.html">2. Hệ phương trình tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/linear-operator.html">3. Toán tử tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/eigen.html">4. Trị riêng và vector riêng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/linear-combination.html">5. Tổ hợp tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/vector-space.html">6. Không gian vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/euclidean-space.html">7. Không gian Euclide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/quadratic-form.html">8. Dạng toàn phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/hilbert-space.html">9. Không gian Hilbert</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../number-theory/index.html">Lý thuyết số</a><input aria-label="Toggle navigation of Lý thuyết số" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/euclidean.html">1. Phép chia Euclid. Thuật toán Euclid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/linear-congruence.html">2. Phương trình đồng dư tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/arithmetic-functions.html">3. Các hàm số học quan trọng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/arithmetic-theorems.html">4. Các định lí số học quan trọng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/quadratic-residue.html">5. Thặng dư chính phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/dirichlet-convolution.html">6. Tích chập Dirichlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/chinese-remainder-theorem.html">7. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/exercises.html">8. Bài tập số học sưu tầm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/index.html">Toán rời rạc</a><input aria-label="Toggle navigation of Toán rời rạc" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">Quan hệ hai ngôi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/partition.html">Phân hoạch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/discrete-fourier-transform.html">Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-equations-over-integers.html">Phương trình tuyến tính với nghiệm nguyên</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">Đại cương tổ hợp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/recurrence-relation.html">Công thức truy hồi</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../discrete-mathematics/graph/index.html">Lý thuyết đồ thị</a><input aria-label="Toggle navigation of Lý thuyết đồ thị" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/definitions.html">Các định nghĩa cơ bản</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/connection.html">Tính liên thông của đồ thị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/tree.html">Cây</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/exercises.html">Bài tập sưu tầm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/application-1.html">Ứng dụng 1: sắp xếp topo và bài toán xếp lịch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/application-2.html">Ứng dụng 2: tối ưu bằng thuật toán Kruskal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/application-3.html">Ứng dụng 3: mạng xã hội</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/euler_hamilton.html">Đồ thị Euler và đồ thị Hamilton</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../physics/index.html">Vật lý</a><input aria-label="Toggle navigation of Vật lý" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../physics/brachistochrone/brachistochrone.html">Đường đoản thời</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../boolean/index.html">Hàm Boolean và mật mã đối xứng</a><input aria-label="Toggle navigation of Hàm Boolean và mật mã đối xứng" class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/boolean-function/index.html">1. Hàm Boolean và các tính chất mật mã</a><input aria-label="Toggle navigation of 1. Hàm Boolean và các tính chất mật mã" class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/introduction.html">1.1. Giới thiệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/boolean-dnf-cnf.html">1.2. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/boolean-vectorial.html">1.3. Biểu diễn hàm Boolean vectorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/walsh-hadamard-spectre.html">1.4. Nonlinearity của hàm boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/cryptographic-properties.html">1.5. Các tính chất mật mã của hàm Boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/stream-cipher/index.html">2. Stream cipher</a><input aria-label="Toggle navigation of 2. Stream cipher" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/stream-cipher/linear-feedback-shift-register.html">2.1. Linear Feedback Shift Register</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/mac.html">3. Message Authentication Code</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/differential-attack/index.html">4. Phá mã vi sai</a><input aria-label="Toggle navigation of 4. Phá mã vi sai" class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/differential-attack/toycipher.html">4.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/differential-attack/tinydes.html">4.2. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/differential-attack/difference-and-differential.html">4.3. Difference và differential</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/linear-attack/index.html">5. Phá mã tuyến tính</a><input aria-label="Toggle navigation of 5. Phá mã tuyến tính" class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/linear-attack/tinydes.html">5.1. Phá mã tuyến tính trên TinyDES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/slide-attack/index.html">6. Slide attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/algebraic-attack/index.html">7. Algebraic cryptanalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/glossary.html">8. Bảng thuật ngữ hàm Boolean</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../stuff/index.html">Ngoài lề</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../myrefs.html">Tài liệu tham khảo</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/numerical-methods/index.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="phuong-phap-tinh-toan">
+<h1>Phương pháp tính toán<a class="headerlink" href="#phuong-phap-tinh-toan" title="Link to this heading">¶</a></h1>
+<p>Tài liệu này giới thiệu các phương pháp số cơ bản để giải những bài toán thường gặp: tìm nghiệm, tối ưu, vi phân, tích phân, nội suy, hồi quy và giải phương trình vi phân. Mỗi phương pháp chỉ cho nghiệm gần đúng; vì vậy cần quan tâm đến giả thiết áp dụng, sai số và tiêu chuẩn dừng.</p>
+<section id="sai-so-trong-phuong-phap-tinh">
+<h2>Sai số trong phương pháp tính<a class="headerlink" href="#sai-so-trong-phuong-phap-tinh" title="Link to this heading">¶</a></h2>
+<p>Gọi <span class="math notranslate nohighlight">\(x\)</span> là giá trị đúng của một đại lượng và <span class="math notranslate nohighlight">\(\widetilde{x}\)</span> là giá trị gần đúng thu được bằng tính toán số.</p>
+<section id="sai-so-tuyet-doi">
+<h3>Sai số tuyệt đối<a class="headerlink" href="#sai-so-tuyet-doi" title="Link to this heading">¶</a></h3>
+<p>Sai số tuyệt đối đo độ chênh lệch trực tiếp giữa giá trị gần đúng và giá trị đúng:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Delta x = \left|x - \widetilde{x}\right|.\]</div>
+</div>
+<p>Nếu biết <span class="math notranslate nohighlight">\(\Delta x \leqslant \varepsilon\)</span>, ta nói <span class="math notranslate nohighlight">\(\widetilde{x}\)</span> xấp xỉ <span class="math notranslate nohighlight">\(x\)</span> với sai số tuyệt đối không vượt quá <span class="math notranslate nohighlight">\(\varepsilon\)</span>.</p>
+<p><strong>Ví dụ.</strong> Lấy <span class="math notranslate nohighlight">\(x = \sqrt{2} \approx 1.41421356\)</span> và <span class="math notranslate nohighlight">\(\widetilde{x} = 1.4142\)</span>. Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Delta x \approx \left|1.41421356 - 1.4142\right| = 1.356 \times 10^{-5}.\]</div>
+</div>
+</section>
+<section id="sai-so-tuong-doi">
+<h3>Sai số tương đối<a class="headerlink" href="#sai-so-tuong-doi" title="Link to this heading">¶</a></h3>
+<p>Khi <span class="math notranslate nohighlight">\(x \ne 0\)</span>, sai số tương đối cho biết sai số tuyệt đối lớn đến đâu so với độ lớn của giá trị đúng:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\delta x = \frac{|x - \widetilde{x}|}{|x|}.\]</div>
+</div>
+<p>Thường biểu diễn dưới dạng phần trăm:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\delta_{\%}x = 100\, \delta x\%.\]</div>
+</div>
+<p>Với ví dụ trên,</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\delta x \approx 9.59 \times 10^{-6}, \qquad
+\delta_{\%}x \approx 0.000959\%.\]</div>
+</div>
+<p>Sai số tương đối không phù hợp khi <span class="math notranslate nohighlight">\(x = 0\)</span> hoặc rất gần <span class="math notranslate nohighlight">\(0\)</span>; khi đó sai số tuyệt đối thường có ý nghĩa hơn.</p>
+</section>
+<section id="lan-truyen-sai-so">
+<h3>Lan truyền sai số<a class="headerlink" href="#lan-truyen-sai-so" title="Link to this heading">¶</a></h3>
+<p>Giả sử đại lượng đầu ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[y = f(x_1, \ldots, x_n)\]</div>
+</div>
+<p>được tính từ các giá trị gần đúng <span class="math notranslate nohighlight">\(x_i\)</span>, mỗi giá trị có chặn sai số
+tuyệt đối <span class="math notranslate nohighlight">\(\Delta x_i\)</span>. Nếu <span class="math notranslate nohighlight">\(f\)</span> khả vi và các sai số đủ nhỏ,
+khai triển bậc nhất cho chặn gần đúng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Delta y
+\lesssim
+\sum_{i = 1}^{n}
+\left|\frac{\partial f}{\partial x_i}\right|\Delta x_i.\]</div>
+</div>
+<p>Khi <span class="math notranslate nohighlight">\(f\)</span> khác <span class="math notranslate nohighlight">\(0\)</span>, sai số tương đối có thể được ước lượng bằng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\delta y
+\lesssim
+\sum_{i = 1}^{n}
+\left|\frac{\partial \ln |f|}{\partial x_i}\right|\Delta x_i.\]</div>
+</div>
+<p>Đây là xấp xỉ bậc nhất: các số hạng chứa tích hoặc lũy thừa của
+<span class="math notranslate nohighlight">\(\Delta x_i\)</span> đã bị bỏ qua.</p>
+<p><strong>Ví dụ.</strong> Cho</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[y_1 = \frac{a^3}{b \sqrt{c}},
+\qquad
+y_2 = a^3 - b \sqrt{c}.\]</div>
+</div>
+<p>Đối với <span class="math notranslate nohighlight">\(y_1\)</span>, ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Delta y_1
+\lesssim
+\left|\frac{3 a^2}{b \sqrt{c}}\right| \Delta a
++ \left|\frac{a^3}{b^2 \sqrt{c}}\right| \Delta b
++ \left|\frac{a^3}{2 b c^{3/2}}\right| \Delta c,\]</div>
+</div>
+<p>và</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\delta y_1
+\lesssim
+3 \delta a + \delta b + \frac{1}{2} \delta c.\]</div>
+</div>
+<p>Đối với hiệu <span class="math notranslate nohighlight">\(y_2\)</span>, nên dùng sai số tuyệt đối:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Delta y_2
+\lesssim
+3 |a|^2 \Delta a
++ \sqrt{c}\, \Delta b
++ \left|\frac{b}{2 \sqrt{c}}\right|\Delta c.\]</div>
+</div>
+<p>Ví dụ này cũng cho thấy phép trừ hai đại lượng gần nhau có thể tạo sai số
+tương đối lớn, dù sai số tuyệt đối của từng đầu vào nhỏ.</p>
+</section>
+<section id="cac-nguon-sai-so">
+<h3>Các nguồn sai số<a class="headerlink" href="#cac-nguon-sai-so" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Sai số dữ liệu</strong> phát sinh khi số liệu đầu vào đã là số đo hoặc số gần đúng.</p></li>
+<li><p><strong>Sai số cắt cụt</strong> xuất hiện khi thay một quá trình vô hạn bằng hữu hạn, chẳng hạn cắt chuỗi vô hạn hoặc thay đạo hàm bằng công thức sai phân với bước <span class="math notranslate nohighlight">\(h\)</span>.</p></li>
+<li><p><strong>Sai số làm tròn</strong> do máy tính chỉ lưu được hữu hạn chữ số có nghĩa. Phép trừ hai số gần nhau có thể làm mất nhiều chữ số chính xác.</p></li>
+<li><p><strong>Sai số phương pháp</strong> là sai số do mô hình hoặc thuật toán xấp xỉ bài toán gốc.</p></li>
+</ul>
+<p>Tổng sai số của kết quả thường là sự kết hợp của các nguồn trên. Giảm bước <span class="math notranslate nohighlight">\(h\)</span> trong vi phân số có thể làm giảm sai số cắt cụt, nhưng đến một mức nào đó lại làm sai số làm tròn tăng lên; vì vậy không phải cứ chọn <span class="math notranslate nohighlight">\(h\)</span> càng nhỏ càng tốt.</p>
+</section>
+<section id="sai-so-phan-du-va-tieu-chuan-dung">
+<h3>Sai số, phần dư và tiêu chuẩn dừng<a class="headerlink" href="#sai-so-phan-du-va-tieu-chuan-dung" title="Link to this heading">¶</a></h3>
+<p>Trong thực tế thường không biết nghiệm đúng <span class="math notranslate nohighlight">\(x\)</span>, nên không thể tính trực tiếp <span class="math notranslate nohighlight">\(\Delta x\)</span>. Thay vào đó, ta dùng một đại lượng có thể quan sát được để dừng thuật toán.</p>
+<p>Với bài toán tìm nghiệm <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, phần dư là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[r(\widetilde{x}) = f(\widetilde{x}).\]</div>
+</div>
+<p>Điều kiện <span class="math notranslate nohighlight">\(|r(\widetilde{x})| \leqslant \varepsilon\)</span> cho thấy giá trị gần đúng gần thỏa phương trình, nhưng không luôn bảo đảm sai số nghiệm nhỏ: điều này còn phụ thuộc độ nhạy của bài toán. Với phương pháp chia đôi, độ rộng khoảng kẹp trực tiếp cho một chặn sai số:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[|\alpha - m_k| \leqslant \frac{b_k - a_k}{2}.\]</div>
+</div>
+<p>Một tiêu chuẩn dừng phổ biến khác là so sánh hai nghiệm lặp liên tiếp:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\left|x_{k + 1} - x_k\right| \leqslant \varepsilon_{\mathrm{abs}}
+ + \varepsilon_{\mathrm{rel}} \left|x_{k + 1}\right|.\]</div>
+</div>
+<p>Trong đó <span class="math notranslate nohighlight">\(\varepsilon_{\mathrm{abs}}\)</span> kiểm soát độ chính xác gần <span class="math notranslate nohighlight">\(0\)</span>, còn <span class="math notranslate nohighlight">\(\varepsilon_{\mathrm{rel}}\)</span> giữ mức chính xác tỷ lệ với độ lớn nghiệm. Nên đặt dung sai phù hợp với độ chính xác thực sự cần thiết của bài toán, thay vì nhỏ hơn khả năng biểu diễn của dữ liệu đầu vào.</p>
+</section>
+</section>
+<section id="tim-nghiem-phuong-trinh-mot-an">
+<h2>1. Tìm nghiệm phương trình một ẩn<a class="headerlink" href="#tim-nghiem-phuong-trinh-mot-an" title="Link to this heading">¶</a></h2>
+<p>Cho hàm liên tục <span class="math notranslate nohighlight">\(f(x)\)</span>, mục tiêu là tìm <span class="math notranslate nohighlight">\(\alpha\)</span> sao cho</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f(\alpha) = 0.\]</div>
+</div>
+<section id="phuong-phap-chia-doi">
+<h3>1.1. Phương pháp chia đôi<a class="headerlink" href="#phuong-phap-chia-doi" title="Link to this heading">¶</a></h3>
+<p>Giả sử <span class="math notranslate nohighlight">\(f\)</span> liên tục trên <span class="math notranslate nohighlight">\([a, b]\)</span> và <span class="math notranslate nohighlight">\(f(a)f(b) &lt; 0\)</span>. Khi đó, theo định lý giá trị trung gian, đoạn này chứa ít nhất một nghiệm. Đặt</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[m_k = \frac{a_k + b_k}{2}.\]</div>
+</div>
+<p>Nếu <span class="math notranslate nohighlight">\(f(a_k)f(m_k) &lt; 0\)</span> thì chọn <span class="math notranslate nohighlight">\([a_{k + 1}, b_{k + 1}] = [a_k, m_k]\)</span>; ngược lại chọn <span class="math notranslate nohighlight">\([m_k, b_k]\)</span>. Dừng khi</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[b_k - a_k \leqslant \varepsilon.\]</div>
+</div>
+<p>Sau <span class="math notranslate nohighlight">\(k\)</span> bước, sai số bị chặn bởi</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[|\alpha - m_k| \leqslant \frac{b - a}{2^{k + 1}}.\]</div>
+</div>
+<p>Phương pháp hội tụ chắc chắn nếu giả thiết đổi dấu được thỏa, nhưng tốc độ hội tụ tuyến tính.</p>
+<p><strong>Ví dụ.</strong> Tìm nghiệm của <span class="math notranslate nohighlight">\(f(x) = x^2 - 2\)</span> trên <span class="math notranslate nohighlight">\([1, 2]\)</span>. Ta có <span class="math notranslate nohighlight">\(f(1) = -1\)</span> và <span class="math notranslate nohighlight">\(f(2) = 2\)</span>. Sau các bước chia đôi, trung điểm tiến đến</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\alpha = \sqrt{2} \approx 1.41421356.\]</div>
+</div>
+</section>
+<section id="phuong-phap-day-cung">
+<h3>1.2. Phương pháp dây cung<a class="headerlink" href="#phuong-phap-day-cung" title="Link to this heading">¶</a></h3>
+<p>Phương pháp dây cung thay đồ thị hàm số gần hai điểm <span class="math notranslate nohighlight">\(a_k, b_k\)</span> bằng đường thẳng qua hai điểm đó. Hoành độ giao điểm với trục hoành là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[c_k = b_k - \frac{f(b_k)(b_k - a_k)}{f(b_k) - f(a_k)}.\]</div>
+</div>
+<p>Trong biến thể kẹp nghiệm, giữ lại khoảng con mà tại đó hàm đổi dấu. Có thể dừng khi <span class="math notranslate nohighlight">\(|f(c_k)| \leqslant \varepsilon\)</span> hoặc khi khoảng kẹp đủ nhỏ.</p>
+<p>Phương pháp thường nhanh hơn chia đôi, song cần tránh <span class="math notranslate nohighlight">\(f(b_k) - f(a_k)\)</span> quá gần <span class="math notranslate nohighlight">\(0\)</span> và không có bảo đảm hội tụ chung mạnh bằng chia đôi.</p>
+<p><strong>Ví dụ.</strong> Với <span class="math notranslate nohighlight">\(f(x) = x^2 - 2\)</span>, chọn <span class="math notranslate nohighlight">\(a_0 = 1\)</span>, <span class="math notranslate nohighlight">\(b_0 = 2\)</span>. Lần dây cung đầu tiên cho</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[c_0 = 2 - \frac{2(2 - 1)}{2 - (-1)} = \frac{4}{3}.\]</div>
+</div>
+<p>Tiếp tục lặp cho nghiệm gần đúng <span class="math notranslate nohighlight">\(\sqrt{2} \approx 1.41421356\)</span>.</p>
+</section>
+</section>
+<section id="tim-cuc-tri-cua-ham-mot-bien">
+<h2>2. Tìm cực trị của hàm một biến<a class="headerlink" href="#tim-cuc-tri-cua-ham-mot-bien" title="Link to this heading">¶</a></h2>
+<p>Mục tiêu là tìm điểm <span class="math notranslate nohighlight">\(x_*\)</span> sao cho <span class="math notranslate nohighlight">\(f(x_*)\)</span> là cực tiểu hoặc cực đại trên đoạn <span class="math notranslate nohighlight">\([a, b]\)</span>. Các phương pháp sau thường giả sử hàm đơn đỉnh khi tìm cực đại, hoặc đơn đáy khi tìm cực tiểu.</p>
+<section id="thu-hep-khoang-bang-ba-diem">
+<h3>2.1. Thu hẹp khoảng bằng ba điểm<a class="headerlink" href="#thu-hep-khoang-bang-ba-diem" title="Link to this heading">¶</a></h3>
+<p>Từ khoảng hiện tại <span class="math notranslate nohighlight">\([a_k, b_k]\)</span>, đặt</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[c_k = \frac{a_k + b_k}{2}, \qquad
+d_{1, k} = \frac{a_k + c_k}{2}, \qquad
+d_{2, k} = \frac{c_k + b_k}{2}.\]</div>
+</div>
+<p>So sánh các giá trị tại <span class="math notranslate nohighlight">\(d_{1, k}, c_k, d_{2, k}\)</span> và giữ khoảng bao quanh điểm có giá trị nhỏ nhất khi tìm cực tiểu, hoặc lớn nhất khi tìm cực đại. Dừng khi <span class="math notranslate nohighlight">\(b_k - a_k \leqslant \varepsilon\)</span>.</p>
+<p><strong>Ví dụ.</strong> Tìm cực tiểu của <span class="math notranslate nohighlight">\(f(x) = (x - 2)^2 + 1\)</span> trên <span class="math notranslate nohighlight">\([0, 4]\)</span>. Ở bước đầu, <span class="math notranslate nohighlight">\(d_1 = 1\)</span>, <span class="math notranslate nohighlight">\(c = 2\)</span>, <span class="math notranslate nohighlight">\(d_2 = 3\)</span>; vì <span class="math notranslate nohighlight">\(f(2) = 1\)</span> nhỏ nhất, khoảng mới là <span class="math notranslate nohighlight">\([1, 3]\)</span>. Quá trình thu hẹp về</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x_* = 2, \qquad f(x_*) = 1.\]</div>
+</div>
+</section>
+<section id="phuong-phap-ti-le-vang">
+<h3>2.2. Phương pháp tỉ lệ vàng<a class="headerlink" href="#phuong-phap-ti-le-vang" title="Link to this heading">¶</a></h3>
+<p>Đặt tỉ lệ vàng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\varphi = \frac{1 + \sqrt{5}}{2}.\]</div>
+</div>
+<p>Trong đoạn <span class="math notranslate nohighlight">\([a_k, b_k]\)</span>, chọn</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x_{1, k} = b_k - \frac{b_k - a_k}{\varphi}, \qquad
+x_{2, k} = a_k + \frac{b_k - a_k}{\varphi}.\]</div>
+</div>
+<p>Khi tìm cực tiểu, nếu <span class="math notranslate nohighlight">\(f(x_{1, k}) \geqslant f(x_{2, k})\)</span> thì bỏ phần bên trái; nếu không thì bỏ phần bên phải. Khi tìm cực đại, đảo chiều bất đẳng thức. Ưu điểm là một giá trị hàm được dùng lại sau mỗi bước.</p>
+<p><strong>Ví dụ.</strong> Tìm cực đại của <span class="math notranslate nohighlight">\(f(x) = -(x - 3)^2 + 5\)</span> trên <span class="math notranslate nohighlight">\([0, 6]\)</span>. Các khoảng tỉ lệ vàng co dần quanh</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x_* = 3, \qquad f(x_*) = 5.\]</div>
+</div>
+</section>
+</section>
+<section id="vi-phan-so">
+<h2>3. Vi phân số<a class="headerlink" href="#vi-phan-so" title="Link to this heading">¶</a></h2>
+<p>Vi phân số xấp xỉ đạo hàm từ giá trị hàm tại các điểm gần <span class="math notranslate nohighlight">\(x\)</span>. Bước <span class="math notranslate nohighlight">\(h\)</span> cần đủ nhỏ để giảm sai số cắt cụt, nhưng không quá nhỏ để tránh sai số làm tròn.</p>
+<section id="sai-phan-tien">
+<h3>3.1. Sai phân tiến<a class="headerlink" href="#sai-phan-tien" title="Link to this heading">¶</a></h3>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f'(x) \approx \frac{f(x + h) - f(x)}{h},\]</div>
+</div>
+<p>với sai số cắt cụt bậc <span class="math notranslate nohighlight">\(O(h)\)</span>.</p>
+<p><strong>Ví dụ.</strong> Với <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>, <span class="math notranslate nohighlight">\(x = 1\)</span>, <span class="math notranslate nohighlight">\(h = 0.01\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f'(1) \approx \frac{1.01^2 - 1}{0.01} = 2.01.\]</div>
+</div>
+<p>Giá trị đúng là <span class="math notranslate nohighlight">\(f'(1) = 2\)</span>.</p>
+</section>
+<section id="sai-phan-trung-tam-cho-dao-ham-cap-mot">
+<h3>3.2. Sai phân trung tâm cho đạo hàm cấp một<a class="headerlink" href="#sai-phan-trung-tam-cho-dao-ham-cap-mot" title="Link to this heading">¶</a></h3>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f'(x) \approx \frac{f(x + h) - f(x - h)}{2 h},\]</div>
+</div>
+<p>với sai số cắt cụt <span class="math notranslate nohighlight">\(O(h^2)\)</span>.</p>
+<p><strong>Ví dụ.</strong> Với <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>, <span class="math notranslate nohighlight">\(x = 1\)</span>, <span class="math notranslate nohighlight">\(h = 0.01\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f'(1) \approx \frac{1.01^2 - 0.99^2}{0.02} = 2.\]</div>
+</div>
+</section>
+<section id="sai-phan-trung-tam-cho-dao-ham-cap-hai">
+<h3>3.3. Sai phân trung tâm cho đạo hàm cấp hai<a class="headerlink" href="#sai-phan-trung-tam-cho-dao-ham-cap-hai" title="Link to this heading">¶</a></h3>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f''(x) \approx \frac{f(x + h) - 2 f(x) + f(x - h)}{h^2},\]</div>
+</div>
+<p>với sai số cắt cụt <span class="math notranslate nohighlight">\(O(h^2)\)</span>.</p>
+<p><strong>Ví dụ.</strong> Với <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>, <span class="math notranslate nohighlight">\(x = 1\)</span>, <span class="math notranslate nohighlight">\(h = 0.01\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f''(1) \approx \frac{1.01^2 - 2 + 0.99^2}{0.01^2} = 2,\]</div>
+</div>
+<p>trùng với giá trị đúng <span class="math notranslate nohighlight">\(f''(1) = 2\)</span>.</p>
+</section>
+</section>
+<section id="tich-phan-simpson-thich-nghi">
+<h2>4. Tích phân Simpson thích nghi<a class="headerlink" href="#tich-phan-simpson-thich-nghi" title="Link to this heading">¶</a></h2>
+<p>Ta cần xấp xỉ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[I = \int_a^b f(x)\, dx.\]</div>
+</div>
+<p>Trên đoạn <span class="math notranslate nohighlight">\([x, x + h]\)</span>, quy tắc Simpson một panel là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[I_1 = \frac{h}{6} \left[f(x) + 4 f\!\left(x + \frac{h}{2}\right) + f(x + h)\right].\]</div>
+</div>
+<p>Chia đôi đoạn để có xấp xỉ tinh hơn <span class="math notranslate nohighlight">\(I_2\)</span>. Một ước lượng sai số là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Delta = \frac{I_2 - I_1}{15}.\]</div>
+</div>
+<p>Đoạn được chấp nhận khi <span class="math notranslate nohighlight">\(|\Delta| \leqslant \varepsilon\)</span>; nếu không, tiếp tục giảm bước. Vì Simpson có sai số bậc bốn, kích thước bước thường được điều chỉnh theo lũy thừa <span class="math notranslate nohighlight">\(1/5\)</span> của tỷ số sai số.</p>
+<p><strong>Ví dụ.</strong> Tính</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\int_0^1 x^2\, dx.\]</div>
+</div>
+<p>Simpson với <span class="math notranslate nohighlight">\(h = 1\)</span> cho</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{1}{6} \left[0 + 4 \left(\frac{1}{2}\right)^2 + 1\right] = \frac{1}{3},\]</div>
+</div>
+<p>đúng bằng giá trị tích phân chính xác.</p>
+</section>
+<section id="noi-suy-da-thuc-lagrange">
+<h2>5. Nội suy đa thức Lagrange<a class="headerlink" href="#noi-suy-da-thuc-lagrange" title="Link to this heading">¶</a></h2>
+<p>Với <span class="math notranslate nohighlight">\(n\)</span> điểm có hoành độ phân biệt <span class="math notranslate nohighlight">\((X_i, Y_i)\)</span>, đa thức nội suy Lagrange là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}P_{n - 1}(x) = \sum_{i = 0}^{n - 1} Y_i L_i(x), \qquad
+L_i(x) = \prod_{\substack{0 \leqslant j \leqslant n - 1\\j \ne i}} \frac{x - X_j}{X_i - X_j}.\end{split}\]</div>
+</div>
+<p>Đa thức có bậc không quá <span class="math notranslate nohighlight">\(n - 1\)</span> và thỏa <span class="math notranslate nohighlight">\(P_{n - 1}(X_i) = Y_i\)</span>. Khi số điểm lớn, dạng Lagrange trực tiếp có thể kém ổn định về số.</p>
+<p><strong>Ví dụ.</strong> Nội suy các điểm <span class="math notranslate nohighlight">\((0, 1)\)</span> và <span class="math notranslate nohighlight">\((2, 5)\)</span>. Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P_1(x) = 1 \cdot \frac{x - 2}{0 - 2} + 5 \cdot \frac{x - 0}{2 - 0} = 1 + 2 x.\]</div>
+</div>
+<p>Vì vậy <span class="math notranslate nohighlight">\(P_1(1) = 3\)</span>.</p>
+</section>
+<section id="hoi-quy-tuyen-tinh-theo-binh-phuong-toi-thieu">
+<h2>6. Hồi quy tuyến tính theo bình phương tối thiểu<a class="headerlink" href="#hoi-quy-tuyen-tinh-theo-binh-phuong-toi-thieu" title="Link to this heading">¶</a></h2>
+<p>Ta tìm đường thẳng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[y = ax + b\]</div>
+</div>
+<p>sao cho tổng bình phương sai số <span class="math notranslate nohighlight">\(\sum_i(Y_i - a X_i - b)^2\)</span> nhỏ nhất. Đặt</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[S_x = \sum_i X_i, \quad S_y = \sum_i Y_i, \quad S_{xx} = \sum_i X_i^2, \quad S_{xy} = \sum_i X_i Y_i.\]</div>
+</div>
+<p>Nếu <span class="math notranslate nohighlight">\(n S_{xx} - S_x^2 \ne 0\)</span>, các hệ số là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a = \frac{n S_{xy} - S_x S_y}{n S_{xx} - S_x^2}, \qquad
+b = \frac{S_y - a S_x}{n}.\]</div>
+</div>
+<p><strong>Ví dụ.</strong> Với ba điểm <span class="math notranslate nohighlight">\((1, 2)\)</span>, <span class="math notranslate nohighlight">\((2, 3)\)</span>, <span class="math notranslate nohighlight">\((3, 5)\)</span>, ta có <span class="math notranslate nohighlight">\(S_x = 6\)</span>, <span class="math notranslate nohighlight">\(S_y = 10\)</span>, <span class="math notranslate nohighlight">\(S_{xx} = 14\)</span>, <span class="math notranslate nohighlight">\(S_{xy} = 23\)</span>. Suy ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a = \frac{3}{2}, \qquad b = \frac{1}{3}.\]</div>
+</div>
+<p>Đường hồi quy là <span class="math notranslate nohighlight">\(y = \frac{3}{2}x + \frac{1}{3}\)</span>.</p>
+</section>
+<section id="giai-he-phuong-trinh-tuyen-tinh-bang-khu-gauss">
+<h2>7. Giải hệ phương trình tuyến tính bằng khử Gauss<a class="headerlink" href="#giai-he-phuong-trinh-tuyen-tinh-bang-khu-gauss" title="Link to this heading">¶</a></h2>
+<p>Xét hệ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[A \boldsymbol{x} = \boldsymbol{y}.\]</div>
+</div>
+<p>Khử Gauss dùng các phép biến đổi sơ cấp trên hàng để đưa ma trận về dạng tam giác trên. Sau đó thế ngược:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x_i = \frac{y_i - \sum_{j = i + 1}^{n - 1} A_{ij}x_j}{A_{ii}}.\]</div>
+</div>
+<p>Trong thực hành nên dùng pivot từng phần để tránh chia cho pivot quá nhỏ và tăng ổn định số.</p>
+<p><strong>Ví dụ.</strong> Giải hệ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+2 x + y = 5, \\
+x - y = 1.
+\end{cases}\end{split}\]</div>
+</div>
+<p>Từ phương trình thứ hai, <span class="math notranslate nohighlight">\(x = 1 + y\)</span>. Thế vào phương trình đầu được <span class="math notranslate nohighlight">\(3 y = 3\)</span>, nên</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x = 2, \qquad y = 1.\]</div>
+</div>
+</section>
+<section id="newton-cho-he-phuong-trinh-phi-tuyen">
+<h2>8. Newton cho hệ phương trình phi tuyến<a class="headerlink" href="#newton-cho-he-phuong-trinh-phi-tuyen" title="Link to this heading">¶</a></h2>
+<p>Với hệ <span class="math notranslate nohighlight">\(F(\boldsymbol{x}) = \boldsymbol{0}\)</span>, tại nghiệm gần đúng <span class="math notranslate nohighlight">\(\boldsymbol{x}_k\)</span>, phương pháp Newton giải hệ tuyến tính</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[J_F(\boldsymbol{x}_k)\boldsymbol{s}_k = -F(\boldsymbol{x}_k),\]</div>
+</div>
+<p>rồi cập nhật</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\boldsymbol{x}_{k + 1} = \boldsymbol{x}_k + \boldsymbol{s}_k.\]</div>
+</div>
+<p>Jacobian có thể được xấp xỉ bằng sai phân tiến:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{\partial F_j}{\partial x_i}(\boldsymbol{x}) \approx
+\frac{F_j(\boldsymbol{x} + \delta \boldsymbol{e}_i) - F_j(\boldsymbol{x})}{\delta}.\]</div>
+</div>
+<p>Phương pháp hội tụ nhanh gần nghiệm nếu Jacobian không suy biến, nhưng phụ thuộc mạnh vào giá trị khởi tạo.</p>
+<p><strong>Ví dụ.</strong> Giải <span class="math notranslate nohighlight">\(F(x) = x^2 - 2 = 0\)</span> bằng Newton, bắt đầu từ <span class="math notranslate nohighlight">\(x_0 = 1.5\)</span>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x_{k + 1} = x_k - \frac{x_k^2 - 2}{2 x_k}.\]</div>
+</div>
+<p>Ta được <span class="math notranslate nohighlight">\(x_1 \approx 1.41666667\)</span>, <span class="math notranslate nohighlight">\(x_2 \approx 1.41421569\)</span>, tiến nhanh đến <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>.</p>
+</section>
+<section id="phuong-trinh-vi-phan-thuong-dormand-prince-4-5">
+<h2>9. Phương trình vi phân thường: Dormand-Prince 4(5)<a class="headerlink" href="#phuong-trinh-vi-phan-thuong-dormand-prince-4-5" title="Link to this heading">¶</a></h2>
+<p>Xét bài toán Cauchy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[y' = f(x, y), \qquad y(x_0) = y_0.\]</div>
+</div>
+<p>Dormand-Prince là một cặp Runge-Kutta nhúng: trong mỗi bước, nó dùng các độ dốc trung gian <span class="math notranslate nohighlight">\(k_1, \ldots, k_7\)</span> để tạo một nghiệm bậc năm <span class="math notranslate nohighlight">\(y^{(5)}\)</span> và một nghiệm bậc bốn <span class="math notranslate nohighlight">\(y^{(4)}\)</span>. Sai số cục bộ được ước lượng bởi</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathrm{err} = \left|y^{(5)} - y^{(4)}\right|.\]</div>
+</div>
+<p>Nếu sai số đạt dung sai, bước được chấp nhận. Kích thước bước mới có dạng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[h_{\mathrm{new}} = h \cdot \min \left(s_{\max}, \max \left(s_{\min}, 0.8 \left(\frac{\mathrm{tol}}{\mathrm{err}}\right)^{1/5}\right)\right).\]</div>
+</div>
+<p><strong>Ví dụ.</strong> Với <span class="math notranslate nohighlight">\(y' = y\)</span>, <span class="math notranslate nohighlight">\(y(0) = 1\)</span>, nghiệm đúng là <span class="math notranslate nohighlight">\(y(1) = e \approx 2.71828183\)</span>. Dormand-Prince tự giảm hoặc tăng bước để đạt dung sai đặt trước và cho xấp xỉ của <span class="math notranslate nohighlight">\(e\)</span> tại <span class="math notranslate nohighlight">\(x = 1\)</span>.</p>
+</section>
+<section id="ham-gamma-duoi-khong-day-du">
+<h2>10. Hàm gamma dưới không đầy đủ<a class="headerlink" href="#ham-gamma-duoi-khong-day-du" title="Link to this heading">¶</a></h2>
+<p>Hàm gamma dưới không đầy đủ không chuẩn hoá được định nghĩa bởi</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma(a, x) = \int_0^x t^{a - 1}e^{-t}\, dt.\]</div>
+</div>
+<p>Một biểu diễn chuỗi là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma(a, x) = x^ae^{-x} \sum_{n = 0}^{\infty} \frac{x^n}{a(a + 1)\cdots(a + n)}.\]</div>
+</div>
+<p>Ta cộng các hạng liên tiếp cho đến khi độ lớn hạng mới nhỏ hơn dung sai. Chuỗi đặc biệt hiệu quả khi các hạng giảm nhanh.</p>
+<p><strong>Ví dụ.</strong> Với <span class="math notranslate nohighlight">\(a = 1\)</span>, ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma(1, x) = \int_0^x e^{-t}\, dt = 1 - e^{-x}.\]</div>
+</div>
+<p>Do đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma(1, 1) = 1 - e^{-1} \approx 0.63212056.\]</div>
+</div>
+</section>
+<section id="ghi-nho-khi-ap-dung-phuong-phap-so">
+<h2>Ghi nhớ khi áp dụng phương pháp số<a class="headerlink" href="#ghi-nho-khi-ap-dung-phuong-phap-so" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Kiểm tra giả thiết của phương pháp trước khi tính: liên tục và đổi dấu cho chia đôi; đơn đỉnh hoặc đơn đáy cho tìm kiếm cực trị; hoành độ phân biệt cho nội suy Lagrange.</p></li>
+<li><p>Chọn dung sai phù hợp với độ chính xác cần thiết và thang đo của bài toán.</p></li>
+<li><p>Đối chiếu nghiệm bằng cách thay ngược vào phương trình, kiểm tra phần dư hoặc so sánh với nghiệm giải tích khi có thể.</p></li>
+<li><p>Với bài toán kém điều kiện, sai số dữ liệu đầu vào và sai số làm tròn có thể bị khuếch đại đáng kể.</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../probability/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Xác suất thống kê</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../calculus/series/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><span class="section-number">3. </span>Chuỗi số</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025-2026, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Phương pháp tính toán</a><ul>
+<li><a class="reference internal" href="#sai-so-trong-phuong-phap-tinh">Sai số trong phương pháp tính</a><ul>
+<li><a class="reference internal" href="#sai-so-tuyet-doi">Sai số tuyệt đối</a></li>
+<li><a class="reference internal" href="#sai-so-tuong-doi">Sai số tương đối</a></li>
+<li><a class="reference internal" href="#lan-truyen-sai-so">Lan truyền sai số</a></li>
+<li><a class="reference internal" href="#cac-nguon-sai-so">Các nguồn sai số</a></li>
+<li><a class="reference internal" href="#sai-so-phan-du-va-tieu-chuan-dung">Sai số, phần dư và tiêu chuẩn dừng</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tim-nghiem-phuong-trinh-mot-an">1. Tìm nghiệm phương trình một ẩn</a><ul>
+<li><a class="reference internal" href="#phuong-phap-chia-doi">1.1. Phương pháp chia đôi</a></li>
+<li><a class="reference internal" href="#phuong-phap-day-cung">1.2. Phương pháp dây cung</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tim-cuc-tri-cua-ham-mot-bien">2. Tìm cực trị của hàm một biến</a><ul>
+<li><a class="reference internal" href="#thu-hep-khoang-bang-ba-diem">2.1. Thu hẹp khoảng bằng ba điểm</a></li>
+<li><a class="reference internal" href="#phuong-phap-ti-le-vang">2.2. Phương pháp tỉ lệ vàng</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vi-phan-so">3. Vi phân số</a><ul>
+<li><a class="reference internal" href="#sai-phan-tien">3.1. Sai phân tiến</a></li>
+<li><a class="reference internal" href="#sai-phan-trung-tam-cho-dao-ham-cap-mot">3.2. Sai phân trung tâm cho đạo hàm cấp một</a></li>
+<li><a class="reference internal" href="#sai-phan-trung-tam-cho-dao-ham-cap-hai">3.3. Sai phân trung tâm cho đạo hàm cấp hai</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tich-phan-simpson-thich-nghi">4. Tích phân Simpson thích nghi</a></li>
+<li><a class="reference internal" href="#noi-suy-da-thuc-lagrange">5. Nội suy đa thức Lagrange</a></li>
+<li><a class="reference internal" href="#hoi-quy-tuyen-tinh-theo-binh-phuong-toi-thieu">6. Hồi quy tuyến tính theo bình phương tối thiểu</a></li>
+<li><a class="reference internal" href="#giai-he-phuong-trinh-tuyen-tinh-bang-khu-gauss">7. Giải hệ phương trình tuyến tính bằng khử Gauss</a></li>
+<li><a class="reference internal" href="#newton-cho-he-phuong-trinh-phi-tuyen">8. Newton cho hệ phương trình phi tuyến</a></li>
+<li><a class="reference internal" href="#phuong-trinh-vi-phan-thuong-dormand-prince-4-5">9. Phương trình vi phân thường: Dormand-Prince 4(5)</a></li>
+<li><a class="reference internal" href="#ham-gamma-duoi-khong-day-du">10. Hàm gamma dưới không đầy đủ</a></li>
+<li><a class="reference internal" href="#ghi-nho-khi-ap-dung-phuong-phap-so">Ghi nhớ khi áp dụng phương pháp số</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Nhấp để hiển thị';</script>
+    <script>let toggleHintHide = 'Nhấp để ẩn';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1], "wt": "\\operatorname{wt}", "tr": "\\operatorname{tr}", "rank": "\\operatorname{rank}", "lcm": "\\mathrm{lcm}", "GL": "\\mathrm{GL}", "lex": "\\text{lex}", "grlex": "\\text{grlex}", "grevlex": "\\text{grevlex}", "CC": "\\mathbb{C}", "RR": "\\mathbb{R}", "QQ": "\\mathbb{Q}", "ZZ": "\\mathbb{Z}", "NN": "\\mathbb{N}", "FF": "\\mathbb{F}", "KK": "\\mathbb{K}"}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>

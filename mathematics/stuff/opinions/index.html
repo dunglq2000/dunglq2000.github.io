@@ -1,0 +1,1993 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Tìm Kiếm" href="../../search.html"><link rel="next" title="Tài liệu tham khảo" href="../../myrefs.html"><link rel="prev" title="Ngoài lề" href="../index.html">
+        <link rel="prefetch" href="../../_static/rhine_lab.jpg" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Những điều mình nghĩ - Math Book</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=3a5ece24" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystyles.css?v=ca48935a" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Math Book</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/rhine_lab.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Math Book</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../introduction/index.html">Những lời nói đầu</a><input aria-label="Toggle navigation of Những lời nói đầu" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/about-notebook.html">Cơ sở xây dựng notebook</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../algebra/index.html">Đại số</a><input aria-label="Toggle navigation of Đại số" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../algebra/set/index.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../algebra/polynomial/index.html">2. Đa thức</a><input aria-label="Toggle navigation of 2. Đa thức" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc-mot-bien">2.2. So sánh, cộng, trừ và nhân hai đa thức một biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/polynomial.html#phep-chia-da-thuc-mot-bien">2.3. Phép chia đa thức một biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/polynomial.html#phep-chia-da-thuc-nhieu-bien">2.4. Phép chia đa thức nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/lagrange-interpolation.html">2.5. Đa thức nội suy Lagrange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/numerical-methods.html">2.6. Phương pháp tính giá trị đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/multivariate-polynomial.html">2.7. Đa thức nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/groebner-basis.html">2.8. Cơ sở Gröbner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/buchberger-algorithm.html">2.9. Thuật toán Buchberger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/f4-algorithm.html">2.10. Thuật toán F4 và ma trận Macaulay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../algebra/polynomial/groebner-parallel-computing.html">2.11. Tính cơ sở Gröbner song song trên CPU và GPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../abstract-algebra/index.html">Lý thuyết nhóm</a><input aria-label="Toggle navigation of Lý thuyết nhóm" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/groups/index.html">1. Lý thuyết nhóm</a><input aria-label="Toggle navigation of 1. Lý thuyết nhóm" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/groups/group.html">1.1. Nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/groups/symmetric-group.html">1.2. Nhóm hoán vị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/groups/quasigroup.html">1.3. Quasigroup</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/homomorphisms/index.html">2. Homomorphisms</a><input aria-label="Toggle navigation of 2. Homomorphisms" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/homomorphisms/group-homomorphism.html">2.1. Group homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/group-action/index.html">3. Tác động nhóm</a><input aria-label="Toggle navigation of 3. Tác động nhóm" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/group-action/group-action.html">3.1. Tác động nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/group-action/burnside.html">3.2. Bổ đề Burnside</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/rings/index.html">4. Vành</a><input aria-label="Toggle navigation of 4. Vành" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/rings/ring.html">4.1. Vành</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/fields/index.html">5. Trường</a><input aria-label="Toggle navigation of 5. Trường" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/fields/field.html">5.1. Trường</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/fields/ideal.html">5.2. Ideal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/fields/ring-homomorphism.html">5.3. Ring kernel và ring homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../abstract-algebra/galois-theory/index.html">6. Lý thuyết Galois</a><input aria-label="Toggle navigation of 6. Lý thuyết Galois" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../abstract-algebra/galois-theory/extension-field.html">6.1. Extension Fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../calculus/index.html">Giải tích</a><input aria-label="Toggle navigation of Giải tích" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../calculus/calculus/index.html">1. Giải tích</a><input aria-label="Toggle navigation of 1. Giải tích" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/limits.html">1.1. Giới hạn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/continuity.html">1.2. Tính liên tục của hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/monotone.html">1.3. Tính đơn điệu và cực trị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/derivative.html">1.4. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/partial-derivative.html">1.5. Đạo hàm riêng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/partial-derivative.html#dao-ham-mot-so-ham-nhieu-bien">1.6. Đạo hàm một số hàm nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/avarage-value.html">1.7. Một số định lí về giá trị trung bình</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/concave.html">1.8. Tính lồi, lõm và điểm uốn của đồ thị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/calculus/line-integral.html">1.9. Tích phân đường</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../calculus/differential-equation/index.html">2. Phương trình vi phân</a><input aria-label="Toggle navigation of 2. Phương trình vi phân" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../calculus/differential-equation/numerical-methods/index.html">2.1. Phương pháp số cho bài toán giá trị ban đầu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../calculus/series/index.html">3. Chuỗi số</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../numerical-methods/index.html">Phương pháp tính toán</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../probability/index.html">Xác suất thống kê</a><input aria-label="Toggle navigation of Xác suất thống kê" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../probability/intro.html">Xác suất thống kê</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../probability/statistics-exercises/index.html">Bài tập thực hành thống kê toán học</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../probability/ML/index.html">Machine Learning</a><input aria-label="Toggle navigation of Machine Learning" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/linear-regression.html">Linear Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/kmeans.html">K-Means clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/gradient-descent.html">Gradient Descent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../probability/ML/perceptron.html">Perceptron Learning Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../linalg/index.html">Đại số tuyến tính</a><input aria-label="Toggle navigation of Đại số tuyến tính" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../linalg/matrix/index.html">1. Ma trận</a><input aria-label="Toggle navigation of 1. Ma trận" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linalg/matrix/matrix-determinant.html">1.1. Định thức ma trận</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linalg/matrix/matrix-inversion.html">1.2. Ma trận nghịch đảo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linalg/matrix/matrix-rank.html">1.3. Hạng của ma trận</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/system-of-equations.html">2. Hệ phương trình tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/linear-operator.html">3. Toán tử tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/eigen.html">4. Trị riêng và vector riêng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/linear-combination.html">5. Tổ hợp tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/vector-space.html">6. Không gian vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/euclidean-space.html">7. Không gian Euclide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/quadratic-form.html">8. Dạng toàn phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linalg/hilbert-space.html">9. Không gian Hilbert</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../number-theory/index.html">Lý thuyết số</a><input aria-label="Toggle navigation of Lý thuyết số" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/euclidean.html">1. Phép chia Euclid. Thuật toán Euclid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/linear-congruence.html">2. Phương trình đồng dư tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/arithmetic-functions.html">3. Các hàm số học quan trọng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/arithmetic-theorems.html">4. Các định lí số học quan trọng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/quadratic-residue.html">5. Thặng dư chính phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/dirichlet-convolution.html">6. Tích chập Dirichlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/chinese-remainder-theorem.html">7. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../number-theory/exercises.html">8. Bài tập số học sưu tầm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../discrete-mathematics/index.html">Toán rời rạc</a><input aria-label="Toggle navigation of Toán rời rạc" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/binary-relation.html">Quan hệ hai ngôi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/partition.html">Phân hoạch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/discrete-fourier-transform.html">Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/linear-equations-over-integers.html">Phương trình tuyến tính với nghiệm nguyên</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/combinatoric.html">Đại cương tổ hợp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discrete-mathematics/recurrence-relation.html">Công thức truy hồi</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../discrete-mathematics/graph/index.html">Lý thuyết đồ thị</a><input aria-label="Toggle navigation of Lý thuyết đồ thị" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../discrete-mathematics/graph/definitions.html">Các định nghĩa cơ bản</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../discrete-mathematics/graph/connection.html">Tính liên thông của đồ thị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../discrete-mathematics/graph/tree.html">Cây</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../discrete-mathematics/graph/exercises.html">Bài tập sưu tầm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../discrete-mathematics/graph/application-1.html">Ứng dụng 1: sắp xếp topo và bài toán xếp lịch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../discrete-mathematics/graph/application-2.html">Ứng dụng 2: tối ưu bằng thuật toán Kruskal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../discrete-mathematics/graph/application-3.html">Ứng dụng 3: mạng xã hội</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../discrete-mathematics/graph/euler_hamilton.html">Đồ thị Euler và đồ thị Hamilton</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../physics/index.html">Vật lý</a><input aria-label="Toggle navigation of Vật lý" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../physics/brachistochrone/brachistochrone.html">Đường đoản thời</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../boolean/index.html">Hàm Boolean và mật mã đối xứng</a><input aria-label="Toggle navigation of Hàm Boolean và mật mã đối xứng" class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/boolean-function/index.html">1. Hàm Boolean và các tính chất mật mã</a><input aria-label="Toggle navigation of 1. Hàm Boolean và các tính chất mật mã" class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-function/introduction.html">1.1. Giới thiệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-function/boolean-dnf-cnf.html">1.2. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-function/boolean-vectorial.html">1.3. Biểu diễn hàm Boolean vectorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-function/walsh-hadamard-spectre.html">1.4. Nonlinearity của hàm boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/boolean-function/cryptographic-properties.html">1.5. Các tính chất mật mã của hàm Boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/block-cipher/index.html">2. Block cipher</a><input aria-label="Toggle navigation of 2. Block cipher" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block-cipher/spnet.html">2.1. SP network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block-cipher/aes.html">2.2. AES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block-cipher/kuznyechik.html">2.3. Kuznyechik</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block-cipher/present.html">2.4. PRESENT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block-cipher/feistel.html">2.5. Mô hình Feistel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block-cipher/magma.html">2.6. Magma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block-cipher/sms4.html">2.7. SMS4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/block-cipher/arx.html">2.8. ARX</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/stream-cipher/index.html">3. Stream cipher</a><input aria-label="Toggle navigation of 3. Stream cipher" class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/stream-cipher/linear-feedback-shift-register.html">3.1. Linear Feedback Shift Register</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../boolean/mac.html">4. Message Authentication Code</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/differential-attack/index.html">5. Phá mã vi sai</a><input aria-label="Toggle navigation of 5. Phá mã vi sai" class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/differential-attack/toycipher.html">5.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/differential-attack/tinydes.html">5.2. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/differential-attack/difference-and-differential.html">5.3. Difference và differential</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../boolean/linear-attack/index.html">6. Phá mã tuyến tính</a><input aria-label="Toggle navigation of 6. Phá mã tuyến tính" class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../boolean/linear-attack/tinydes.html">6.1. Phá mã tuyến tính trên TinyDES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../boolean/slide-attack/index.html">7. Slide attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../boolean/algebraic-attack/index.html">8. Algebraic cryptanalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../boolean/glossary.html">9. Bảng thuật ngữ hàm Boolean</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Ngoài lề</a><input aria-label="Toggle navigation of Ngoài lề" checked="" class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Những điều mình nghĩ</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../myrefs.html">Tài liệu tham khảo</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/stuff/opinions/index.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="nhung-dieu-minh-nghi">
+<h1>Những điều mình nghĩ<a class="headerlink" href="#nhung-dieu-minh-nghi" title="Link to this heading">¶</a></h1>
+<section id="gioi-thieu">
+<h2>Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Link to this heading">¶</a></h2>
+<p>Mình không giỏi toán. Tuy nhiên toán lại là môn mình dành nhiều thời gian nhất kể từ cấp 2 và có vẻ sẽ còn tiếp diễn trong tương lai. Đây là mối lương duyên không tầm thường, nhưng chắc chắn không hề lãng mạn.</p>
+<p>Vào thời điểm gần kì thi THPT quốc gia năm 2026 mình thấy khá nhiều các bài viết hoặc video về chương trình học môn toán. Điều này không hề mới, mà diễn ra gần như trong mọi thời kì. Kể từ thời mình học phổ thông (2015-2018) các ý kiến trái chiều về chương trình học và nội dung thi xuất hiện rất nhiều trên mạng.</p>
+<p>Giờ đây, năm 2026, mình quyết định viết một loạt các bài viết về suy nghĩ của mình về ý nghĩa của toán học đối với bản thân, các ý kiến của cộng đồng mạng về chương trình dạy và thi toán ở nước ta, cũng như một số suy nghĩ về cách học toán từ trung bình tới khá (vì mình không phải học sinh giỏi). Ngoài ra, đôi khi mình sẽ chỉ ra một số điều mà những người khác viết sai liên quan đến toán học (ví dụ như điều kiện áp dụng công thức). Các trang web hoặc bài viết trên mạng xã hội có thể sẽ biến mất vào một ngày nào đó nên mình sẽ trích dẫn nguyên văn nội dung mình muốn xem xét kèm đường dẫn. Do đó nếu trong tương lai các bạn không thể tìm được bài viết đó thông qua đường dẫn mình đính kèm thì mong các bạn hiểu rằng bài viết hoặc trang web đó đã bị xóa, và mong các bạn thông cảm cho mình.</p>
+</section>
+<section id="toan-hoc-la-gi-voi-minh">
+<h2>Toán học là gì với mình?<a class="headerlink" href="#toan-hoc-la-gi-voi-minh" title="Link to this heading">¶</a></h2>
+<p>Ở đây mình muốn chia sẻ một số điều mình nghiệm ra khi học toán như:</p>
+<ol class="arabic simple">
+<li><p>Cái gì gọi là &quot;rèn luyện tư duy&quot; khi học toán?</p></li>
+<li><p>Điều gì quan trọng khi học toán?</p></li>
+</ol>
+<p>Ngoài ra, vì toán là môn bắt buộc trong rất nhiều kì thi chuyển cấp (từ thcs lên thpt, nhiều khối thi vào đại học/cao đẳng, ...) nên có rất nhiều vấn đề xoay quanh việc học và thi như chương trình học, cấu trúc đề thi, dạy/học thêm, ... Ở đây mình chia sẻ góc nhìn của một sinh viên - đã dành rất nhiều thời gian học và thi các cuộc thi toán (mặc dù chả có thành tích gì nổi bật) - về các ý kiến cả hay lẫn vớ vẩn của cộng đồng mạng.</p>
+<section id="hoc-toan-de-ren-luyen-tu-duy-la-gi">
+<h3>Học toán để rèn luyện tư duy là gì?<a class="headerlink" href="#hoc-toan-de-ren-luyen-tu-duy-la-gi" title="Link to this heading">¶</a></h3>
+<p>Khi gặp các bình luận như &quot;Học nhiều toán làm gì, sau này cũng có dùng đâu&quot;, câu trả lời mà chúng ta thường gặp nhất là &quot;Để rèn luyện tư duy&quot;. Tuy nhiên mình có thắc mắc. Cái gì gọi là rèn luyện tư duy?.</p>
+<p>Theo mình thấy, môn toán được giảng dạy ở các cấp học đi theo ba bước:</p>
+<ol class="arabic simple">
+<li><p>Giáo viên giảng lý thuyết.</p></li>
+<li><p>Giáo viên cho bài tập.</p></li>
+<li><p>Học sinh hoặc giáo viên sửa bài bằng cách chép bài giải lên bảng.</p></li>
+</ol>
+<p>Nếu học sinh giải ra thì không nói, còn nếu không giải ra thì khi sửa bài chỉ có thể cắm cúi chép lại bài giải vào tập và ... không quan tâm nữa. Các bạn chịu khó hơn thì sẽ đặt câu hỏi: <em>tại sao ra được cách làm này</em>?.</p>
+<p>Một trường hợp tương tự là khi một bạn nào đó trong lớp giải ra bài mà các bạn khác chưa giải ra. Tất nhiên, khi bạn kia chia sẻ đáp án thì câu hỏi phổ biến nhất vẫn là <em>làm sao nghĩ ra cách này</em>.</p>
+<p>Mỗi bài toán đều gồm một tập hợp các điều kiện cho trước (còn gọi là <em>giả thiết</em>). Sau đó, bằng các biến đổi số học hoặc suy luận logic, chúng ta phải tính giá trị nào đó hoặc chứng minh điều gì đó. Nhưng mà, vấn đề là chúng ta sẽ biến đổi như thế nào, suy luận như thế nào, sử dụng công thức gì để đi đến kết quả cuối cùng?</p>
+<p>Các bạn có thể nhận thấy, ở phần bài tập cuối mỗi bài học, các câu hỏi thường đơn giản tới trung bình. Các câu hỏi này giúp củng cố lại các định lí, công thức trong bài học. Tuy nhiên, khi kiểm tra 15 phút, 1 tiết, giữa kì, cuối kì, ... thì các câu hỏi trở nên dài, phức tạp và phải phối hợp rất nhiều định lí, công thức từ nhiều bài học để đi tới lời giải.</p>
+<p>Vấn đề là, chúng ta được học về các định nghĩa, định lí, nhưng không thực sự học cách suy nghĩ logic để đưa tới kết quả. Trên thực tế, chúng ta đã sử dụng các kĩ thuật suy luận rất thường xuyên nhưng không nhận ra, và từ đó thiếu khả năng áp dụng vào giải toán. Sau đây mình xin chia sẻ một số phương pháp suy luận trong giải toán.</p>
+<section id="suy-luan-nguoc">
+<h4>Suy luận ngược<a class="headerlink" href="#suy-luan-nguoc" title="Link to this heading">¶</a></h4>
+<p>Trong trường hợp này, giả sử chúng ta có các điều kiện (A1), (A2), (A3), và cần chứng minh (D). Khi trình bày lời giải chúng ta viết như minh họa ở hình dưới:</p>
+<ul class="simple">
+<li><p>từ (A1) và (A2) suy ra (B1);</p></li>
+<li><p>từ (A3) suy ra (B2);</p></li>
+<li><p>từ (B1) suy ra (C1);</p></li>
+<li><p>từ (B2) và (C1) suy ra (D) là điều cần chứng minh.</p></li>
+</ul>
+<p>Đối với suy luận ngược, chúng ta cần đặt câu hỏi ngược lại: &quot;Để chứng minh D, ta cần chứng minh điều gì trước?&quot;.</p>
+<p>Ví dụ, trong chứng minh hình học, nếu chúng ta cần chứng minh hình tứ giác <span class="math notranslate nohighlight">\(ABCD\)</span> là hình thoi (D) thì chúng ta có thể bắt đầu từ một trong các <em>dấu hiệu nhận biết</em>:</p>
+<ol class="arabic simple">
+<li><p>Hình bình hành có hai cạnh kề bằng nhau.</p></li>
+<li><p>Tứ giác có bốn cạnh bằng nhau.</p></li>
+</ol>
+<p>Chúng ta tiếp tục đi ngược lại với câu hỏi:</p>
+<ol class="arabic simple">
+<li><p>Nếu theo hướng thứ nhất thì để chứng minh <span class="math notranslate nohighlight">\(ABCD\)</span> là hình thoi thì ta cần phải chứng minh:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(ABCD\)</span> là hình bình hành (C1);</p></li>
+<li><p>hai cạnh kề <span class="math notranslate nohighlight">\(AB\)</span> và <span class="math notranslate nohighlight">\(AD\)</span> bằng nhau (B2).</p></li>
+</ul>
+</li>
+<li><p>Nếu theo hướng thứ hai chúng ta cần chứng minh:</p>
+<ul class="simple">
+<li><p>hai cạnh kề <span class="math notranslate nohighlight">\(AB\)</span> và <span class="math notranslate nohighlight">\(AD\)</span> bằng nhau (B2);</p></li>
+<li><p>hai cạnh kề <span class="math notranslate nohighlight">\(AB\)</span> và <span class="math notranslate nohighlight">\(BC\)</span> bằng nhau (B3);</p></li>
+<li><p>hai cạnh kề <span class="math notranslate nohighlight">\(BC\)</span> và <span class="math notranslate nohighlight">\(CD\)</span> bằng nhau (B4).</p></li>
+</ul>
+</li>
+</ol>
+<p>Lúc này, chúng ta phải quay lại các giả thiết (A1), (A2) và (A3) và suy ra những
+điều đơn giản:</p>
+<ul class="simple">
+<li><p>(A1) và (A2) suy ra (B1);</p></li>
+<li><p>(A1) và (A3) suy ra (B3);</p></li>
+<li><p>(A3) suy ra (B3);</p></li>
+<li><p>(A3) suy ra (B4).</p></li>
+</ul>
+<p>Ở đây chúng ta có điểm giao nhau giữa suy luận xuôi và suy luận ngược:</p>
+<ul class="simple">
+<li><p>từ suy luận xuôi ta có (A1) và (A2) suy ra (B1), và từ suy luận ngược ta có (B1) suy ra (C1);</p></li>
+<li><p>từ suy luận xuôi ta có (A3) suy ra (B3).</p></li>
+</ul>
+<p>Kết hợp các kết quả lại ta có sơ đồ chứng minh hoàn chỉnh.</p>
+<p>Suy luận ngược có một số nhược điểm:</p>
+<ul class="simple">
+<li><p>nếu quá trình chứng minh quá dài, khả năng &quot;giao nhau&quot; giữa suy luận xuôi và suy luận ngược sẽ thấp vì sẽ có nhiều trường hợp có thể xảy ra, đôi khi chúng ta sẽ không tìm được điểm chung và dẫn tới bế tắc;</p></li>
+<li><p>nhiều trường hợp khi suy luận ngược chúng ta đi đến việc chứng minh một điều gì đó thực chất lại được suy ra từ điều cần chứng minh, tức là chúng ta đi ngược chiều.</p></li>
+</ul>
+<p>Suy luận ngược có các ưu điểm:</p>
+<ul class="simple">
+<li><p>cho phép chúng ta xác định phương hướng giải quyết bài toán: để chứng minh cái này, chúng ta phải chứng minh cái kia trước.</p></li>
+</ul>
+</section>
+<section id="su-dung-mo-hinh-don-gian-cho-bai-toan-phuc-tap">
+<h4>Sử dụng mô hình đơn giản cho bài toán phức tạp<a class="headerlink" href="#su-dung-mo-hinh-don-gian-cho-bai-toan-phuc-tap" title="Link to this heading">¶</a></h4>
+<p>Trong trường hợp này, chúng ta sử dụng kết quả của các bài toán đơn giản, được học trên lớp hoặc trong các sách tham khảo, làm tiền đề để giải các bài toán phức tạp.</p>
+</section>
+</section>
+<section id="nhung-ngay-dau-hoc-toan">
+<h3>Những ngày đầu học toán<a class="headerlink" href="#nhung-ngay-dau-hoc-toan" title="Link to this heading">¶</a></h3>
+<p>Câu hỏi 1: <strong>Khi học toán hoặc đọc sách toán thì điều gì cần quan tâm đầu tiên</strong>?</p>
+<p>Thông thường học sinh chúng mình bám theo các tính chất để giải bài toán. Ví dụ, đường phân giác của một góc thường được hiểu là đường chia đôi góc đó. Tuy nhiên thầy nói đó là tính chất, không phải định nghĩa. Đường phân giác của góc là <strong>tập hợp các điểm cách đều hai cạnh của góc</strong>.</p>
+<p>Càng học nhiều toán thì mình càng nhận thấy định nghĩa là nơi bắt đầu mọi thứ, là điểm quan trọng nhất của các vấn đề toán học. Các tính chất giúp chúng ta tìm lời giải nhanh hơn, nhưng khi bế tắc thì định nghĩa là nơi để chúng ta bám vào và tìm hướng giải. Trong trường hợp hình học, mỗi đối tượng hình học đều là <strong>một tập hợp điểm</strong>. Do đó chúng ta có thể nói <strong>điểm</strong> là đơn vị cơ bản nhất. Các định nghĩa đóng vai trò xây dựng nên nền tảng toán học mà về sau mình mới hiểu được ý nghĩa của chúng và hậu quả nếu chúng &quot;có vấn đề&quot;. Phần sau mình sẽ nói rõ hơn về điều này.</p>
+<p>Một điều quan trọng mình được thầy nhắc là <strong>không nên bám vào
+các phương pháp giải toán</strong>. Thông thường các sách tham khảo,
+khóa học ở cấp 3 sẽ theo dạng <code class="docutils literal notranslate"><span class="pre">Bài</span> <span class="pre">1.</span> <span class="pre">Chủ</span> <span class="pre">đề</span> <span class="pre">A.</span> <span class="pre">Phương</span> <span class="pre">pháp</span> <span class="pre">1</span></code>
+rồi lại <code class="docutils literal notranslate"><span class="pre">Bài</span> <span class="pre">2.</span> <span class="pre">Chủ</span> <span class="pre">đề</span> <span class="pre">A.</span> <span class="pre">Phương</span> <span class="pre">pháp</span> <span class="pre">2</span></code>. Theo mình, các phương
+pháp rất hữu ích khi gặp bài đúng dạng, chỉ cần &quot;áp dụng công
+thức&quot; là xong. Tuy nhiên việc học theo phương pháp cũng là con
+dao hai lưỡi. Nếu chúng ta gặp dạng chưa học thì khả năng cao
+là chịu chết. Việc đọc các phương pháp giải bài là cần thiết để
+có nhiều phương án giải quyết khác nhau, nhưng quan trọng là
+khả năng tư duy để kết nối những cái mới gặp với những điều đã
+biết. Một bài hình học gồm dữ kiện và học sinh cần giải quyết
+bốn câu hỏi nhỏ (a), (b), (c), (d). Đây thường là cấu trúc
+của câu hình học trong đề tuyển sinh lớp 10 ở thời mình.
+Tất nhiên là dù đề chung hay đề thi chuyên toán luôn có những
+bạn làm trọn vẹn bốn câu. Vấn đề là, khi cắt bỏ ba câu hỏi (a),
+(b), (c) và chỉ bảo giải câu (d) thì bài toán trở thành tầm quốc
+gia, quốc tế (VMO, IMO). Lý do rất đơn giản, những câu (a), (b),
+(c), (d) được tăng dần theo độ khó và câu trước thường là tiền
+đề để giải hoặc làm gợi ý cho câu sau. Khi chúng ta mất gợi ý
+thì chúng ta sẽ tiếp cận ra sao để giải quyết câu (d)? Đây
+chính là thực tế của toán học nói chung. Nhiều công thức, định
+lí được phát biểu đơn giản, ngắn gọn như câu (d) của đề tuyển
+sinh, nhưng để chứng minh chúng thì mất mấy trăm năm nỗ lực
+của con người chứ không phải một lề sách là đủ.</p>
+<p>Hai điều thầy nói có thể thấy rõ trong các cuộc thi olympiad
+toán, và cũng là thực tế trong toán học. Câu khó thường có dạng:</p>
+<blockquote>
+<div><p>Số <span class="math notranslate nohighlight">\(A\)</span> được gọi là số như này nếu nó thỏa mãn các
+điều kiện như kia. Hãy chứng minh nếu <span class="math notranslate nohighlight">\(A\)</span> là số
+như này thì nó sẽ có các tính chất như nọ.</p>
+</div></blockquote>
+<p>Đây là một dạng toán rất khó nhằn vì chúng ta đụng phải một
+khái niệm, định nghĩa mới lạ. Lúc này chúng ta phải bám sát
+định nghĩa vì đó là thứ duy nhất đề cho chúng ta để chứng minh
+tính chất. Vấn đề là chỉ với mỗi định nghĩa không giúp chúng
+ta tìm phương pháp giải. Việc dựa trên các phương pháp đã
+biết còn tùy vào chúng ta liên kết được định nghĩa đó với kiến
+thức, kinh nghiệm và trải nghiệm của bản thân tới mức nào.
+Điều thú vị là kiến thức, kinh nghiệm và trải nghiệm có
+thể được nâng cao nhờ sự chăm chỉ và rèn luyện &quot;trực giác&quot;.
+Đối với người không giỏi toán như mình thì việc nâng khả năng
+của trực giác rất có lợi, cho phép mình &quot;phán đoán&quot; cách
+tiếp cận sẽ đưa tới lời giải. Làm càng nhiều, sự thấu
+hiểu và cảm nhận của mình với những bài toán càng nhạy.</p>
+<p>Một giáo viên dạy toán khác của lớp mình cũng đã để lại nhiều
+bài học quý giá. Một lần nữa, câu chữ trong toán học rất quan
+trọng và chúng ta phải cẩn thận khi xử lý. Các bạn có thể thấy
+hai cách viết <span class="math notranslate nohighlight">\(\mathbb{R} \setminus \{ 0 \}\)</span> và
+<span class="math notranslate nohighlight">\((-\infty, 0) \cup (0, +\infty)\)</span> giống nhau vì đều chỉ
+việc bỏ số <span class="math notranslate nohighlight">\(0\)</span> khỏi tập số thực <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
+Tuy nhiên khi xét đến <strong>các khoảng (đoạn) xác định của hàm số</strong>
+thì đây là vấn đề rất quan trọng. Khi xét tính đồng biến,
+nghịch biến bằng đạo hàm, giả sử hàm số <span class="math notranslate nohighlight">\(f(x) = \dfrac{1}{x}\)</span>
+với đạo hàm <span class="math notranslate nohighlight">\(f'(x) = -\dfrac{1}{x^2} &lt; 0\)</span> với
+mọi <span class="math notranslate nohighlight">\(x \in \mathbb{R} \setminus \{ 0 \}\)</span>. Khi đó chúng
+ta có thể nói rằng <strong>hàm số</strong> <span class="math notranslate nohighlight">\(f(x)\)</span> <strong>xác định
+trên tập</strong> <span class="math notranslate nohighlight">\(\mathbb{R} \setminus \{ 0 \}\)</span>. Tuy nhiên,
+nếu chúng ta kết luận rằng <span class="math notranslate nohighlight">\(f(x)\)</span> nghịch biến trên
+<span class="math notranslate nohighlight">\(\mathbb{R} \setminus \{ 0 \}\)</span> thì đây là kết luận <strong>sai
+hoàn toàn</strong>. Kết luận đúng phải dựa trên các khoảng xác định,
+nghĩa là <strong>hàm số nghịch biến trên hai khoảng</strong> <span class="math notranslate nohighlight">\((-\infty, 0)\)</span>
+<strong>và</strong> <span class="math notranslate nohighlight">\((0, +\infty)\)</span>. Ở <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../../myrefs.html#id18" title="Đoàn Quỳnh, Trần Nam Dũng, Nguyễn Vũ Lương, and Đặng Hùng Thắng. Tài liệu chuyên toán. Đại số và Giải tích 11. Nhà xuất bản giáo dục Việt Nam, 2010.">7</a>]</span> (trang 220, định
+lí 2) ghi rằng:</p>
+<blockquote>
+<div><p>Giả sử hàm số <span class="math notranslate nohighlight">\(f\)</span> có đạo hàm trên khoảng
+<span class="math notranslate nohighlight">\(\mathbb{I}\)</span>. Khi đó</p>
+<ol class="loweralpha simple">
+<li><p>Nếu <span class="math notranslate nohighlight">\(f'(x) &gt; 0\)</span> với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{I}\)</span>
+thì <span class="math notranslate nohighlight">\(f\)</span> đồng biến trên <span class="math notranslate nohighlight">\(\mathbb{I}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(f'(x) &lt; 0\)</span> với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{I}\)</span>
+thì <span class="math notranslate nohighlight">\(f\)</span> nghịch biến trên <span class="math notranslate nohighlight">\(\mathbb{I}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(f'(x) = 0\)</span> với mọi <span class="math notranslate nohighlight">\(x \in \mathbb{I}\)</span>
+thì <span class="math notranslate nohighlight">\(f\)</span> có giá trị không đổi trên <span class="math notranslate nohighlight">\(\mathbb{I}\)</span>.</p></li>
+</ol>
+</div></blockquote>
+<p>Ở đây, sách giáo khoa ghi rõ ràng khoảng xác định mà trên đó
+hàm số có đạo hàm, nghĩa là không được nói <span class="math notranslate nohighlight">\(f(x)\)</span> ở trên
+nghịch biến trên một khoảng &quot;hụt&quot; ở giữa như
+<span class="math notranslate nohighlight">\((-\infty, 0) \cup (0, +\infty)\)</span> hay
+<span class="math notranslate nohighlight">\(\mathbb{R} \setminus \{ 0 \}\)</span>, mà phải là nghịch biến
+trên hai khoảng xác định: <span class="math notranslate nohighlight">\((-\infty, 0)\)</span> và
+<span class="math notranslate nohighlight">\((0, +\infty)\)</span>.</p>
+<p>Một vấn đề quan trọng dễ bị sai sót là các mệnh đề &quot;<strong>Nếu</strong> như
+này <strong>thì</strong> như kia&quot;. Theo ngôn ngữ logic thì đây là phép kéo theo.</p>
+<blockquote>
+<div><p>Phép kéo theo &quot;Nếu <span class="math notranslate nohighlight">\(P\)</span> thì <span class="math notranslate nohighlight">\(Q\)</span>&quot; hay &quot;<span class="math notranslate nohighlight">\(P \Rightarrow Q\)</span>&quot;,
+trong đó <span class="math notranslate nohighlight">\(P\)</span> và <span class="math notranslate nohighlight">\(Q\)</span> là hai mệnh đề, sai khi <span class="math notranslate nohighlight">\(P\)</span>
+đúng và <span class="math notranslate nohighlight">\(Q\)</span> sai, và đúng trong các trường hợp còn lại.</p>
+</div></blockquote>
+<p>Thông thường có hai điểm dễ bị hiểu nhầm hoặc cố tình hiểu
+nhầm (khi đánh tráo khái niệm, bẻ cong logic, ...).</p>
+<ol class="arabic simple">
+<li><p>Đây là phép kéo theo, nghĩa là phải hội tụ đủ tất cả điều
+kiện <span class="math notranslate nohighlight">\(P\)</span> thì chúng ta mới có <span class="math notranslate nohighlight">\(Q\)</span>.</p></li>
+<li><p>Khi phủ định hai mệnh đề ta không thu được mệnh đề cùng tính
+đúng sai với mệnh đề ban đầu, tức là khi có <span class="math notranslate nohighlight">\(\overline{P}\)</span>
+chưa chắc có <span class="math notranslate nohighlight">\(\overline{Q}\)</span>. Mình thấy việc này xảy ra
+gần như trong tất cả lĩnh vực không riêng toán, không biết do vô
+tình hay cố ý. Ví dụ mình có mệnh đề &quot;Nếu trời mưa thì đường ướt&quot;.
+Như vậy có thể suy ra &quot;Nếu trời không mưa thì đường không ướt&quot;? Câu
+trả lời là <strong>chưa chắc</strong>, đường vẫn có thể ướt vì lý do khác,
+ví dụ như nước bị rò rỉ ở đường ống gần đó.</p></li>
+</ol>
+<p>Về mặt logic thì phép kéo theo <span class="math notranslate nohighlight">\(P \Rightarrow Q\)</span> sẽ <strong>hoàn
+toàn tương đương</strong> phép kéo theo <span class="math notranslate nohighlight">\(\overline{Q} \Rightarrow \overline{P}\)</span>,
+trong đó <span class="math notranslate nohighlight">\(\overline{P}\)</span> và <span class="math notranslate nohighlight">\(\overline{Q}\)</span> là mệnh đề
+phủ định của <span class="math notranslate nohighlight">\(P\)</span> và <span class="math notranslate nohighlight">\(Q\)</span>. Với ví dụ trên, chúng ta suy
+ra được &quot;Nếu đường không ướt thì trời không mưa&quot;. Mệnh đề này có
+cùng giá trị logic với mệnh đề ban đầu &quot;Nếu trời mưa thì đường ướt&quot;:
+đúng thì đúng chung, sai thì sai chung. Đây là vấn đề khi lên đại
+học và đối chiếu sách vở mình rút ra được. Ở cấp 3 mình chỉ được
+nhắc rằng việc phủ định chưa chắc đúng còn lý do đằng sau (như
+mình vừa trình bày) thuộc khuôn khổ nội dung về logic và được giảm
+tải ở thời mình. Khi lên đại học thì môn toán rời rạc thường sẽ có
+phần cơ sở logic chính là nền tảng của phép kéo theo.</p>
+</section>
+<section id="dai-hoc-tinh-yeu-khong-thanh-voi-toan">
+<h3>Đại học, tình yêu không thành với toán<a class="headerlink" href="#dai-hoc-tinh-yeu-khong-thanh-voi-toan" title="Link to this heading">¶</a></h3>
+<p>Khi được tiếp cận các kiến thức toán cao hơn ở đại học thì mình
+nhận ra một vấn đề thú vị của bản thân: mình học toán rời rạc (lý
+thuyết số, hàm Boolean, lý thuyết nhóm) tốt hơn toán liên tục (các
+loại giải tích). Hệ quả là mình dở tệ môn vật lý vì nhiều kiến thức
+về giải tích được áp dụng để giải quyết các bài toán vật lý.
+Artificial Intelligence (AI) và Machine Learning (ML) là những từ khóa
+&quot;hot trend&quot; nhất lúc mình học đại học, nhưng vì khả năng toán liên
+tục yếu kém mà mình sớm đuối sức và không đi sâu nữa. Tuy nhiên mình
+vẫn có hy vọng sẽ hiểu một ngày nào đó ^-^. Do đó thay vì AI/ML mình
+đã chọn theo mật mã học (cryptography), cụ thể là mã hóa khóa đối xứng
+(symmetric key cryptography) dựa trên các hàm Boolean. Mình thấy mình
+theo lĩnh vực này bớt thảm hơn AI/ML nên là mình theo tới tận bây giờ
+(2025).</p>
+<p>Khi lên đại học, các kiến thức trở nên phức tạp hơn cả về bề rộng lẫn
+chiều sâu. Chúng ta thường sẽ học nhiều kiến thức hơn (mở rộng) nhưng
+đồng thời học sâu bản chất (chiều sâu). Mình thích ham vui nên mình học
+rất nhiều loại toán: giải tích, xác suất thống kê, hình học giải tích,
+hình học affine, hình học phi Euclid, lý thuyết số, đại số Booelan, đại
+số tuyến tính, lý thuyết đồ thị, lý thuyết tập hợp, ...</p>
+<p>Đa phần trong đó là ... cưỡi ngựa xem hoa. :) Các bạn có thể thấy những
+môn về toán rời rạc mình học rất nhiều và viết rất kỹ ở notebook này, mỗi
+tội đa phần vẫn là cơ bản. :) Các kiến thức về toán liên tục ở notebook
+này vào thời điểm hiện tại còn ít.</p>
+</section>
+<section id="quan-niem-cua-minh-ve-toan-hoc">
+<h3>Quan niệm của mình về toán học<a class="headerlink" href="#quan-niem-cua-minh-ve-toan-hoc" title="Link to this heading">¶</a></h3>
+<p>Mình thích toán vì sự logic và chặt chẽ của nó. Khi học những môn trừu
+tượng như lý thuyết nhóm, số phức, ... thì mình còn thích hơn vì khi đó có
+một nền tảng chung, trừu tượng hơn cho những gì chi tiết. Ví dụ, hình học
+Euclid được xây dựng dựa trên các tiên đề của Euclid từ <strong>quan sát trực
+quan</strong>. Về sau, các nhà toán học xây dựng một nền tảng cao hơn mà với một
+điều kiện nhất định thì Euclid đúng, nhưng với một điều kiện khác thì
+Euclid nhường chỗ cho người khác. Lúc này trực quan không còn đúng nữa mà
+phụ thuộc vào trí tưởng tượng, sáng tạo của con người. Cách tiếp cận tổng
+quát hóa này giúp làm đơn giản vấn đề nhưng cũng là cơ sở cho những &quot;hạt
+giống&quot; khác phát triển ở nhiều lĩnh vực khác.</p>
+<p>Năm 2024 mình có xem một series trên Youtube của kênh
+<a class="reference external" href="https://www.youtube.com/&#64;NhanThucMoi/">Nhận thức mới</a> về định lí bất toàn
+của Godel do giáo sư Phạm Việt Hưng trình bày. Mình thấy series rất thú vị
+và mình có nhiều quan điểm giống giáo sư, nhưng cũng có nhiều quan điểm
+trái ngược.</p>
+<p>Mặc dù toán học logic và chặt chẽ, nhưng định lí bất toàn đã chứng minh
+được rằng toán học không hoàn hảo. Quan trọng hơn là tính đúng đắn của
+toán học nằm ngoài toán học và có nhiều điều, kể cả trong toán học, chúng
+ta không thể biết là đúng hay sai. Điều này mình đồng ý với Godel lẫn giáo
+sư. Tuy nhiên một vấn đề là nếu toán học sai thì sẽ hậu quả sẽ rất khủng
+khiếp. Ví dụ, trước khi khái niệm &quot;giới hạn&quot; ra đời thì người xưa có những
+lập luận đúng về mặt logic nhưng sai trên thực tế như nghịch lý nổi tiếng
+của Zeno. Ở thời của Zeno thì các khái niệm trừu tượng như &quot;vô hạn&quot;, &quot;vô
+cùng lớn&quot;, &quot;vô cùng bé&quot; chưa xuất hiện. Do đó khi làm việc với những đại
+lượng vô hạn đã gây ra những hiểu lầm mà về mặt trực quan chúng ta lại thấy
+&quot;có vẻ đúng&quot;. Euclid cho rằng &quot;Một phần thì nhỏ hơn toàn bộ&quot;. Tuy nhiên lý
+thuyết tập hợp của Cantor đã chứng minh được một phần (của tập vô hạn) cũng
+bằng toàn bộ, thậm chí có nhiều kiểu vô hạn với &quot;kích thước&quot; lớn nhỏ khác nhau.</p>
+<p>Trước thế kỉ 18, toán học được sử dụng làm công cụ chính để nghiên cứu các
+lĩnh vực khác, nhất là vật lí. Điều này phù hợp khi giải thích các hiện tượng
+<strong>quan sát được</strong> vào thời đó như mặt phẳng Euclid. Vấn đề là vật lí dựa
+trên nền tảng toán học, nhưng toán học lại dựa trên các quan sát hiện tượng vật
+lí. Đây là một vòng luẩn quẩn và chỉ cần sai sót nhỏ trong toán sẽ gây ra ảnh
+hưởng rất nghiêm trọng. Từ đó toán học cần phải đúng đắn từ nội tại.</p>
+<p>Các nhà toán học thế kỉ 18, 19 như Cauchy, Hilbert, ... đã xây dựng lại toán
+học không dựa trên quan sát vật lí mà dựa trên các định nghĩa chặt chẽ. Trong
+series về định lí bất toàn, giáo sư Phạm Việt Hưng có nói các nhà toán học thời
+kì này tôn sùng và thần thánh hóa toán học quá mức. Điều này mình vừa đồng ý
+vừa không đồng ý với giáo sư. Rõ ràng việc các nhà toán học làm lúc đó là rất
+cần thiết để đảm bảo nội tại toán học thống nhất, không mâu thuẫn, và chặt chẽ.
+Việc họ tôn sùng quá mức cho thấy họ hiểu sự quan trọng của việc họ làm và rất
+nhiều những điều bị bác bỏ trước đó đã được đưa trở lại toán học. Từ đây mở ra
+rất nhiều khả năng phát triển, mở rộng tới những nơi chúng ta chưa thể thấy,
+sửa chữa những sai lầm của người đi trước. Bằng việc để trí tưởng tượng bay xa,
+kết hợp với logic chặt chẽ, đã giúp nhiều lĩnh vực đoán trước sự tồn tại của
+nhiều đối tượng trước cả khi phát hiện ra chúng.</p>
+<p>Tuy nhiên quan niệm của mình về các nhà toán học thời kì đó có chút khác. Mình
+công nhận là những đóng góp của họ đã đưa tới sự phát triển đáng kinh ngạc
+trong nhiều lĩnh vực, nhưng bản thân mình thấy đó là công việc ... rất nhàm
+chán. Mục tiêu quan trọng nhất của họ là làm chặt chẽ và đảm bảo tính đúng
+đắn của toán học từ những khái niệm có thể gọi là cơ bản nhất làm nền tảng.
+Những khái niệm như điểm, đường, ... đã được định nghĩa từ rất lâu ở bộ sách
+huyền thoại Elements của Euclid <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../../myrefs.html#id14" title="Euclid. Euclid's Elements of Geometry. Richard Fitzpatrick, revised and corrected edition, 2007. ISBN 978-0-6151-7984-1.">34</a>]</span>, nhưng trong sách lại định nghĩa chung chung
+kiểu:</p>
+<ul class="simple">
+<li><p>mặt là thứ có bề dài và có bề rộng;</p></li>
+<li><p>đường là thứ chỉ có bề dài mà không có bề rộng;</p></li>
+<li><p>điểm là thứ không có bề dài lẫn bề rộng.</p></li>
+</ul>
+<p>Ở đây, &quot;thứ&quot; là gì? Nhiều hình thù kì quặc đã được xây dựng, vừa có thể được
+xem là đường mà cũng vừa có thể được xem là mặt theo định nghĩa của Euclid, ví
+dụ như tấm thảm Sierpinski. Rõ ràng những nhà toán học hiện đại đã làm công việc
+chán ngắt là định hình lại toán học nhân loại trong 2000 năm. Cộng 1 respect
+cho các nhà toán học chứ mình thấy là oải rồi. :&gt;&gt;&gt;</p>
+<p>Đối với mình, toán học là bộ môn của đam mê, logic, và cả toxic. =)))
+Các nhà toán học không quan tâm kết quả của mình có ứng dụng thực tiễn gì.
+Họ quan tâm tính đúng đắn của từng mệnh đề, từng chứng minh. Họ cố gắng
+bảo vệ niềm tin của mình đến nỗi dám đương đầu mọi thứ, thậm chí tử thần.</p>
+<p>Ở thời Trung Cổ nơi những tòa án dị giáo đàn áp dã man các nhà khoa học
+ủng hộ thuyết nhật tâm của Copernicus, các nhà khoa học (đa phần là toán
+và thiên văn) thậm chí còn bác bỏ những điểm chưa đúng của Copernicus -
+cho rằng Trái Đất quay xung quanh Mặt Trời - và bổ sung rằng bản thân
+Mặt Trời cũng quay quanh cái gì đó khác nữa. Cauchy tin tưởng cách xây
+dựng giới hạn dựa trên ngôn ngữ <span class="math notranslate nohighlight">\(\delta-\varepsilon\)</span> tới nỗi năm
+lần bảy lượt chơi trò &quot;mèo vờn chuột&quot; với định chế khoa học cao nhất nước
+Pháp là Viện Hàn lâm và Đại học Bách khoa (Ecole Polytechnique) <span class="bibtex-citation" id="id3">[<a class="reference internal" href="../../myrefs.html#id10" title="Lê Quang Ánh. Thiên tài và số phận. Chuyện kể về các nhà toán học. Volume 35 of Tủ sách Sputnik. Nhà xuất bản Thế Giới, 2018.">35</a>]</span>.
+Tất nhiên Cauchy đã có cuộc đời không dễ dàng gì và nhiều lần rơi vào
+tình cảnh khó khăn. Cantor tin tưởng lý thuyết tập hợp của mình là vững
+như đá tảng, nếu mũi tên nào bắn vào thì mũi tên sẽ bật ngược lại người
+bắn <span class="bibtex-citation" id="id4">[<a class="reference internal" href="../../myrefs.html#id10" title="Lê Quang Ánh. Thiên tài và số phận. Chuyện kể về các nhà toán học. Volume 35 of Tủ sách Sputnik. Nhà xuất bản Thế Giới, 2018.">35</a>]</span>. Tuy nhiên phe đối lập với Cantor có các nhà toán học
+vĩ đại Poincare và Kronecker với quan điểm bảo thủ luôn cố gắng vùi dập ý
+tưởng của ông. Về sau, những người ủng hộ ông như Hilbert, Dedekind, ...
+đã thắng thế, và lý thuyết tập hợp của Cantor đã được truyền bá rộng rãi.
+Đáng tiếc thay, Cantor đã ra đi mãi mãi trước đó do đột quỵ từ trầm cảm
+bởi sức ép từ phe Kronecker và nỗi đau mất người thân.</p>
+</section>
+<section id="ket-luan">
+<h3>Kết luận<a class="headerlink" href="#ket-luan" title="Link to this heading">¶</a></h3>
+<p>Các bạn thấy đó, bản thân toán học không hoàn hảo và thậm chí các nhà
+toán học nhiều lần xung đột với nhau về logic. Về mặt logic thì ai cũng
+đúng, nhưng éo le là người khác không chấp nhận bạn đúng và bác bỏ nó. :'(
+Lúc này, hệ thống định nghĩa là điều cực kì quan trọng và cần được thống
+nhất trên toàn thế giới, giữa các cộng đồng khoa học. Trong các công
+trình của mình thì hệ thống định nghĩa phải rõ ràng, thống nhất và không
+mâu thuẫn. Khi đó những kiến thức được xây dựng trên đó sẽ hợp lý về logic.</p>
+<p>Toán học đã, đang và sẽ luôn là niềm đam mê của mình bất chấp khả năng có
+hạn. ^)^ Mình hy vọng notebook này sẽ lưu trữ đam mê tuổi trẻ của mình,
+và nếu trong khả năng có hạn, tiếp thêm sức mạnh cho những người theo đuổi
+toán học.</p>
+</section>
+</section>
+<section id="van-dung-toan-hay-ung-dung-toan-trong-chuong-trinh-pho-thong">
+<h2>Vận dụng toán hay ứng dụng toán trong chương trình phổ thông?<a class="headerlink" href="#van-dung-toan-hay-ung-dung-toan-trong-chuong-trinh-pho-thong" title="Link to this heading">¶</a></h2>
+<p>Rất nhiều người đăng các bài viết về việc chương trình môn toán hoặc đề thi
+không có tính ứng dụng thực tiễn, hoặc học toán nhiều chả để làm gì sau này.
+Tuy nhiên, theo mình, mọi người đang nhầm lẫn giữa việc <strong>vận dụng</strong> toán để
+giải quyết các bài toán thực tế, và <strong>ứng dụng</strong> toán cho các bài toán thực tế.</p>
+<section id="van-dung-toan-la-lam-gi">
+<h3>Vận dụng toán là làm gì?<a class="headerlink" href="#van-dung-toan-la-lam-gi" title="Link to this heading">¶</a></h3>
+<p>Ví dụ, các nhà vật lý, sau khi khảo sát các yếu tố tác động lên chuyển động của
+một vật, thu được phương trình hoành độ và tung độ theo thời gian lần lượt là
+<span class="math notranslate nohighlight">\(x = x(t)\)</span> và <span class="math notranslate nohighlight">\(y = y(t)\)</span> với <span class="math notranslate nohighlight">\(t\)</span> là thời gian, bắt
+đầu từ <span class="math notranslate nohighlight">\(0\)</span>. Họ cần biết:</p>
+<ul class="simple">
+<li><p>tại thời điểm nào thì vật đạt độ cao lớn nhất, tức là <span class="math notranslate nohighlight">\(y_{\max}\)</span>;</p></li>
+<li><p>tại thời điểm nào vật sẽ chạm đất, tức là <span class="math notranslate nohighlight">\(y = 0\)</span>.</p></li>
+</ul>
+<p>Lúc này, bài toán do vật lý đặt ra là khảo sát tính chất của hàm số <span class="math notranslate nohighlight">\(x(t)\)</span>
+và <span class="math notranslate nohighlight">\(y(t)\)</span> để tìm được thời điểm vật đạt độ cao lớn nhất và thời điểm
+vật chạm đất. Tùy thuộc vào phương trình chúng ta có thể có nhiều phương pháp
+giải khác nhau. Đây là ví dụ của <strong>vận dụng</strong> toán để giải vấn đề thực tế: chúng
+ta có (hoặc chưa có) rất nhiều phương pháp để khảo sát các hàm số, và chúng ta
+cần xem xét:</p>
+<ul class="simple">
+<li><p>chúng ta sẽ sử dụng các phương pháp nào để giải?</p></li>
+<li><p>chúng ta sẽ kết hợp các phương pháp đó theo thứ tự nào?</p></li>
+</ul>
+<p>Trong một video trên youtube của kênh KTTV nhưng đã bị xóa, họ chỉ ra một
+bài toán trong đề thi đại học của Mỹ với ý đại khái là: khi ném xiên một vật
+thì phương trình phụ thuộc giữa tung độ vào thời gian là <span class="math notranslate nohighlight">\(y = -4t^2 + 12t + 25\)</span>,
+tìm thời điểm vật đạt độ cao lớn nhất và xác định độ cao lớn nhất đó. Ở đây
+chúng ta có hai cách giải đơn giản:</p>
+<p>Cách 1 sử dụng tính chất <span class="math notranslate nohighlight">\(a^2 \geqslant 0\)</span> với mọi <span class="math notranslate nohighlight">\(a \in \RR\)</span>. Ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[-4t^2 + 12t + 25 = -(2t - 3)^2 + 34 \leqslant 34,\]</div>
+</div>
+<p>như vậy <span class="math notranslate nohighlight">\(y_{\max} = 34\)</span> (đơn vị dài) khi <span class="math notranslate nohighlight">\(2t - 3 = 0\)</span>, hay
+<span class="math notranslate nohighlight">\(t = 3/2\)</span> (đơn vị thời gian).</p>
+<p>Cách 2 sử dụng đạo hàm: <span class="math notranslate nohighlight">\(y'(t) = -(8t - 12)\)</span>. Cho <span class="math notranslate nohighlight">\(y'(t) = 0\)</span> thì
+<span class="math notranslate nohighlight">\(t = 3/2\)</span>. Khảo sát sự biến thiên của hàm số ta có bảng sau:</p>
+<figure class="align-default">
+<img alt="../../_images/applied-maths-var-1.svg" src="../../_images/applied-maths-var-1.svg" />
+</figure>
+<p>Nói cách khác <span class="math notranslate nohighlight">\(t = 3/2\)</span> là cực đại và <span class="math notranslate nohighlight">\(y(3/2) = 34\)</span> là giá trị lớn nhất
+của hàm số.</p>
+<p>Như vậy có thể nói rằng, <strong>vận dụng</strong> là việc sử dụng bất kì phương pháp nào mà
+bản thân biết để giải một bài toán cụ thể. Từ đó, tất cả dạng đề liên quan vật lý,
+hóa học, thậm chí kinh tế, xuất hiện trong đề thi có chức năng đánh giá khả năng
+<strong>vận dụng</strong> các kiến thức học sinh được học, chứ <strong>KHÔNG PHẢI ỨNG DỤNG</strong>.</p>
+<p>Ngoài ra, việc vận dụng linh hoạt các kiến thức toán học cho phép chúng ta đánh
+giá đề có đúng không hoặc việc giải phương trình/hệ phương trình có khả thi không.</p>
+<p>Lấy ví dụ trên, đồ thị của hàm số <span class="math notranslate nohighlight">\(y(t) = -4t^2 + 12t + 25\)</span> là một parabol úp
+xuống, phù hợp với việc chúng ta ném xiên (chếch lên) một vật và vật đó sẽ từ từ hạ
+độ cao đến khi chạm đất. Do đó, khi đề cho phương trình phụ thuộc giữa tung độ và
+thời gian là một hàm số bậc hai <span class="math notranslate nohighlight">\(y(t) = at^2 + bt + c\)</span> thì chắc chắn <span class="math notranslate nohighlight">\(a &lt; 0\)</span>,
+vì nếu <span class="math notranslate nohighlight">\(a &gt; 0\)</span> thì đồ thị là parabol ngửa lên, không hợp lí. Thêm nữa, do đạo
+hàm là <span class="math notranslate nohighlight">\(y'(t) = 2at + b = 0\)</span>, tương đương <span class="math notranslate nohighlight">\(t = -b/2a\)</span>, mà <span class="math notranslate nohighlight">\(t &gt; 0\)</span>
+nên chắc chắn <span class="math notranslate nohighlight">\(b\)</span> và <span class="math notranslate nohighlight">\(a\)</span> trái dấu, tức là <span class="math notranslate nohighlight">\(b &gt; 0\)</span>. Nói cách khác,
+khi nhìn vào hàm số đề cho ta có thể biết đề có đúng hay không.</p>
+</section>
+<section id="ung-dung-toan-la-lam-gi">
+<h3>Ứng dụng toán là làm gì?<a class="headerlink" href="#ung-dung-toan-la-lam-gi" title="Link to this heading">¶</a></h3>
+<p>Ngược lại, <strong>ứng dụng</strong> là việc sử dụng một kiến thức toán nhất định để mô hình hóa
+hoặc giải quyết một/nhiều vấn đề thực tế. Đây là điểm khiến chúng ta nghĩ rằng toán
+học không có ứng dụng.</p>
+<p>Ví dụ, định lí Pythagoras nói lên quan hệ giữa các cạnh trong tam giác vuông. Trong
+thời cổ đại người Ai Cập đã ứng dụng định lí Pythagoras trong xây dựng. Về sau, khi
+nhà toán học Fermat đặt ra câu hỏi mà sau này trở thành định lí cuối cùng của Fermat,
+rằng phương trình <span class="math notranslate nohighlight">\(x^n + y^n = z^n\)</span> không có nghiệm nguyên với mọi <span class="math notranslate nohighlight">\(n\)</span>
+nguyên lớn hơn <span class="math notranslate nohighlight">\(2\)</span>, thì nhân loại đã tốn hơn 300 năm để giải. Vấn đề là, định
+lí của Fermat chả có ứng dụng gì trong cuộc sống cả, trong khi dạng cơ bản hơn là
+định lí Pythagoras thì có.</p>
+<p>Tuy nhiên nếu chỉ như vậy mà đánh giá học toán không có ứng dụng thì có đúng không? Theo
+mình đây là ý kiến sai hoàn toàn. Mặc dù định lí cuối cùng của Fermat không có ứng
+dụng thực tiễn, nhưng con đường mà toán học đã đi để dẫn tới chứng minh cho định lí
+này đã thúc đẩy rất nhiều phương pháp toán học ra đời và chúng có ứng dụng rộng rãi trong
+thực tế.</p>
+<p>Tiêu biểu nhất là lý thuyết đồ thị, xuất hiện từ bài toán du lịch qua 7 cây cầu của
+thành phố Kenigsberg, lại trở thành nền tảng quan trọng trong các mô hình thực tế như
+giao thông, mạng xã hội.</p>
+<p>Tiếp theo là đường cong elliptic, nền tảng trong chứng minh của định lí cuối cùng của
+Fermat, lại là một trong phương pháp mật mã học quan trọng, đảm bảo sự an toàn của thông
+tin trên Internet.</p>
+</section>
+<section id="tong-ket">
+<h3>Tổng kết<a class="headerlink" href="#tong-ket" title="Link to this heading">¶</a></h3>
+<p>Như vậy, các bạn có thể thấy rằng, mối liên hệ của toán học với thực tế sẽ theo các bước:</p>
+<ol class="arabic simple">
+<li><p>Các nhà vật lý, hóa học, sinh học, kinh tế, ... đặt ra một bài toán dựa trên các
+quan sát, thí nghiệm ... của họ.</p></li>
+<li><p>Họ cùng các nhà toán học phát triển các phương pháp toán học để mô hình hóa, tức
+là biểu diễn các bài toán đó dưới ngôn ngữ toán học, hoặc <strong>vận dụng</strong> các phương pháp
+đã biết để giải mô hình đó.</p></li>
+<li><p>Người đi sau xác định được rằng các phương pháp toán học đó có <strong>ứng dụng</strong>
+trong vật lý, hóa học, sinh học, kinh tế, ...</p></li>
+<li><p>Người đi sau chưa xác định được các phương pháp toán học khác có ứng
+dụng gì trong thực tế, hoặc không có ứng dụng thực tế.</p></li>
+</ol>
+<p>Do đó, việc đòi hỏi Bộ Giáo dục và Đào tạo cho thêm các bài toán thực tiễn vào
+chương trình học hay đề thi không có ý nghĩa gì.</p>
+</section>
+</section>
+<section id="viec-su-dung-ki-hieu-va-cong-thuc-toan">
+<h2>Việc sử dụng kí hiệu và công thức toán<a class="headerlink" href="#viec-su-dung-ki-hieu-va-cong-thuc-toan" title="Link to this heading">¶</a></h2>
+<p>Khi tham khảo các tài liệu về mật mã thì mình gặp chút khó
+khăn vì mỗi tác giả kí hiệu mỗi kiểu cho cùng khái niệm toán
+học. Hơn nữa, trong cộng đồng toxic CH mình cũng thấy được
+nhiều người kí hiệu mà không hiểu rõ nó là gì. Trong bài viết
+này mình sẽ nói về các kí hiệu toán học mà mình sẽ dùng trong
+các bài viết của mình, cũng như quan điểm về chúng.</p>
+<p>Câu hỏi: có nên sử dụng kí hiệu mọi lúc, mọi nơi?</p>
+<p>Trong toán học, kí hiệu được sử dụng nhằm mô tả những định
+nghĩa, định lí. Thông qua kí hiệu, các nhà toán học của nhiều
+quốc gia khác nhau có thể &quot;thấu hiểu&quot; nhau bất chấp rào cản
+ngôn ngữ. Tuy nhiên trong các bài viết của mình thì mình sẽ
+không sử dụng kí hiệu mọi lúc, mọi nơi.</p>
+<p>Ví dụ, định nghĩa giới hạn hàm số theo kiểu
+<span class="math notranslate nohighlight">\(\delta-\varepsilon\)</span> được ghi như sau</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\forall \varepsilon &gt; 0, \exists \delta &gt; 0: \forall \left|x - x_0\right| &lt; \delta \Rightarrow \left|f(x) - L\right| &lt; \varepsilon.\]</div>
+</div>
+<p>Đây là định nghĩa giới hạn hữu hạn của hàm số, nói rằng hàm
+số <span class="math notranslate nohighlight">\(f(x)\)</span> tiến tới <span class="math notranslate nohighlight">\(L\)</span> khi <span class="math notranslate nohighlight">\(x\)</span> tiến tới
+<span class="math notranslate nohighlight">\(x_0\)</span>. Mình thấy việc kí hiệu đôi khi khiến mình bị
+rối khi theo dõi các phần (có lẽ do mình không giỏi toán). =(((</p>
+<p>Do đó định nghĩa giới hạn hàm số ở trên được viết lại theo
+tiếng Việt như sau:</p>
+<ul class="simple">
+<li><p>với mọi <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span></p></li>
+<li><p>tồn tại <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> sao cho:</p>
+<ul>
+<li><p>với mọi <span class="math notranslate nohighlight">\(x\)</span> mà <span class="math notranslate nohighlight">\(\left|x - x_0\right| &lt; \delta\)</span></p></li>
+<li><p>ta sẽ có <span class="math notranslate nohighlight">\(\left|f(x) - L\right| &lt; \varepsilon\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Khi này, việc chứng minh giới hạn hàm số theo định nghĩa sẽ
+&quot;thông&quot; hơn. Mình sẽ theo từng câu chữ ở trên:</p>
+<ul class="simple">
+<li><p>lấy <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span> bất kì (tương ứng lượng từ <em>với mọi</em>)</p></li>
+<li><p>tìm <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> (chứng minh tồn tại, thường sẽ liên
+hệ với <span class="math notranslate nohighlight">\(\varepsilon\)</span> ở trên) thỏa mãn:</p>
+<ul>
+<li><p>nếu với mọi <span class="math notranslate nohighlight">\(x\)</span> thỏa mãn <span class="math notranslate nohighlight">\(\left|x - x_0\right| &lt; \delta\)</span></p></li>
+<li><p>mình sẽ suy ra được <span class="math notranslate nohighlight">\(\left|f(x) - L\right| &lt; \varepsilon\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Kết luận: việc viết ra đầy đủ giúp mình biết được các bước
+cần thực hiện theo định nghĩa, định lí nào đó.</p>
+<p>Câu hỏi: <span class="math notranslate nohighlight">\(\mathbb{Z}_n\)</span> hay <span class="math notranslate nohighlight">\(\mathbb{Z} / n \mathbb{Z}\)</span>?</p>
+<p>Thông thường, việc kí hiệu <span class="math notranslate nohighlight">\(\mathbb{Z}_n\)</span> được hiểu
+là tập hợp các số dư có thể có khi chia một số nguyên bất
+kì cho <span class="math notranslate nohighlight">\(n\)</span>, nói cách khác</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathbb{Z}_n = \{ 0, 1, 2, \ldots, n - 1 \}.\]</div>
+</div>
+<p>Đối với <span class="math notranslate nohighlight">\(\mathbb{Z} / n \mathbb{Z}\)</span>, chúng ta có thể
+dùng hai cách lí giải: bằng lý thuyết nhóm và bằng quan hệ
+tương đương (quan hệ hai ngôi).</p>
+<p>Nếu sử dụng lý thuyết nhóm, nếu ta nhân mỗi phần tử trong
+<span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> với <span class="math notranslate nohighlight">\(n\)</span> thì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n\mathbb{Z} = \{ \ldots, -2n, -n, 0, n, 2n, \ldots \}.\]</div>
+</div>
+<p>Ta lần lượt cộng <span class="math notranslate nohighlight">\(i\)</span> cho các phần tử của
+<span class="math notranslate nohighlight">\(n\mathbb{Z}\)</span> với <span class="math notranslate nohighlight">\(i = 0, 1, \ldots, n - 1\)</span>.
+Khi đó ta sẽ có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ccc}
+  0 + n\mathbb{Z} &amp; = &amp; \{ \ldots, -2n, -n, {\color{red}0}, n, 2n, \ldots, \}, \\
+  1 + n\mathbb{Z} &amp; = &amp; \{ \ldots, -2n + 1, -n + 1, {\color{red}1}, n + 1, 2n + 1 \ldots \}, \\
+  \vdots &amp; \\
+  (n - 1) + n\mathbb{Z} &amp; = &amp; \{ \ldots, -n + 1, -1, {\color{red}n - 1}, 2n-1, 3n-1, \ldots \}.
+\end{array}\end{split}\]</div>
+</div>
+<p>Các tập <span class="math notranslate nohighlight">\(0 + n\mathbb{Z}\)</span>, <span class="math notranslate nohighlight">\(1 + n\mathbb{Z}\)</span>,
+..., <span class="math notranslate nohighlight">\((n - 1) + n\mathbb{Z}\)</span> rời nhau nên chúng ta có
+đúng <span class="math notranslate nohighlight">\(n\)</span> coset. Hơn nữa phép cộng số nguyên có tính
+giao hoán nên <span class="math notranslate nohighlight">\(i + n\mathbb{Z} = n\mathbb{Z} + i\)</span>.
+Như vậy tập <span class="math notranslate nohighlight">\(n\mathbb{Z}\)</span> là <strong>nhóm con chuẩn tắc</strong>
+(hay <strong>normal subgroup</strong>) của <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>. Khi đó
+<span class="math notranslate nohighlight">\(\mathbb{Z} / n\mathbb{Z}\)</span> được gọi là <strong>nhóm thương</strong>
+(hay <strong>quotient group</strong>) và kí hiệu</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathbb{Z} / n\mathbb{Z} = \{ 0 + n\mathbb{Z}, 1 + n\mathbb{Z}, \ldots, (n-1) + n\mathbb{Z} \}.\]</div>
+</div>
+<p>Đối với cách giải thích sử dụng quan hệ tương đương,
+chúng ta kí hiệu</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\overline{x} = \{ y \in \mathbb{Z} : x \equiv y \bmod n \}.\]</div>
+</div>
+<p>Nói cách khác, <span class="math notranslate nohighlight">\(x\)</span> và <span class="math notranslate nohighlight">\(y\)</span> có quan hệ nếu
+<span class="math notranslate nohighlight">\(x\)</span> và <span class="math notranslate nohighlight">\(y\)</span> có cùng số dư khi chia cho
+<span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Dễ thấy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ccc}
+   \overline{0} &amp; = &amp; \{ \ldots, -2n, -n, {\color{red}0}, n, 2n, \ldots, \}, \\
+   \overline{1} &amp; = &amp; \{ \ldots, -2n + 1, -n + 1, {\color{red}1}, n + 1, 2n + 1 \ldots \}, \\
+   \vdots &amp; \\
+   \overline{n-1} &amp; = &amp; \{ \ldots, -n + 1, -1, {\color{red}n - 1}, 2n-1, 3n-1, \ldots \}.
+\end{array}\end{split}\]</div>
+</div>
+<p>Đây là ví dụ hoặc bài tập phổ biến trong các bài giảng
+về quan hệ tương đương. Ở đây, quan hệ tương đương chia
+(phân hoạch) tập <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> thành <span class="math notranslate nohighlight">\(n\)</span> tập
+con không giao nhau, gọi là các <strong>lớp tương đương</strong>.
+Chúng ta lấy số nguyên không âm nhỏ nhất của mỗi lớp
+làm đại diện cho lớp đó, tức là <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>,
+..., <span class="math notranslate nohighlight">\(n-1\)</span> như trên.</p>
+<p>Khi đó, <strong>tập thương</strong> là tập hợp các lớp tương đương</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathbb{Z} / n\mathbb{Z} = \{ \overline{0}, \overline{1}, \ldots, \overline{n-1} \}.\]</div>
+</div>
+<p>Như vậy, dù giải thích theo lý thuyết nhóm hay quan hệ
+tương đương đều chỉ ra rằng <span class="math notranslate nohighlight">\(n\mathbb{Z}\)</span> chia tập
+<span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> thành <span class="math notranslate nohighlight">\(n\)</span> tập con không giao
+nhau, và chúng ta lấy số nguyên không âm nhỏ nhất của mỗi
+tập làm đại diện cho tập đó. Lúc này, các phép cộng, trừ
+và nhân (không có chia) trên tập <span class="math notranslate nohighlight">\(\mathbb{Z} / n\mathbb{Z}\)</span>
+sẽ cho các phần tử vẫn thuộc <span class="math notranslate nohighlight">\(\mathbb{Z} / n\mathbb{Z}\)</span>.</p>
+<p>Tuy nhiên phép tính trên <span class="math notranslate nohighlight">\(\mathbb{Z}_n\)</span> phải chỉ
+định phép modulo <span class="math notranslate nohighlight">\(n\)</span>, chẳng hạn là <span class="math notranslate nohighlight">\(a + b \bmod n\)</span>
+với <span class="math notranslate nohighlight">\(a, b \in \mathbb{Z}_n\)</span>.</p>
+<p>Lý do hai tập này có thể dùng như nhau là tính đẳng cấu,
+kí hiệu là <span class="math notranslate nohighlight">\(\mathbb{Z}_n \cong \mathbb{Z} / n\mathbb{Z}\)</span>.
+Trong nhiều tài liệu, tập <span class="math notranslate nohighlight">\(\mathbb{Z}_n\)</span> được định nghĩa là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathbb{Z}_n = \{ \overline{0}, \overline{1}, \ldots, \overline{n-1} \}\]</div>
+</div>
+<p>chỉ vành các số dư (resuide ring, кольцо вычётов). Ý
+nghĩa vẫn giống <span class="math notranslate nohighlight">\(\mathbb{Z} / n\mathbb{Z}\)</span>, ta
+xét tất cả phần tử của <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> dưới <span class="math notranslate nohighlight">\(n\)</span>
+lớp rời nhau. Do đó mình nghĩ rằng cần hiểu rõ ý nghĩa
+của <span class="math notranslate nohighlight">\(\mathbb{Z} / n\mathbb{Z}\)</span> trước khi phán
+<span class="math notranslate nohighlight">\(\mathbb{Z}_n\)</span> ở bất cứ đâu.</p>
+<p>Câu hỏi: <span class="math notranslate nohighlight">\(\mathbb{Z}_p\)</span> hay <span class="math notranslate nohighlight">\(\mathbb{F}_p\)</span>?</p>
+<p>Khi <span class="math notranslate nohighlight">\(p\)</span> là số nguyên tố thì chúng ta có thể
+thực hiện phép chia khác <span class="math notranslate nohighlight">\(0\)</span> (nhân nghịch đảo)
+trong modulo <span class="math notranslate nohighlight">\(p\)</span>. Khi đó tập <span class="math notranslate nohighlight">\(\mathbb{Z}_p\)</span>
+trở thành trường và chúng ta có thể dùng <span class="math notranslate nohighlight">\(\mathbb{F}_p\)</span>
+để thể hiện rõ ý này (F = Field). Cách kí hiệu <span class="math notranslate nohighlight">\(\mathbb{Z}_p\)</span>
+không sai nhưng mình nghĩ sẽ khó theo dõi xem đâu là trường,
+đâu không phải là trường (mới chỉ là vành).</p>
+<p>Câu hỏi: <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> hay <span class="math notranslate nohighlight">\(\mathrm{GF}(256)\)</span>?</p>
+<p>Rõ ràng <span class="math notranslate nohighlight">\(2^8 = 256\)</span>, và hai cách kí hiệu là một.
+Tuy nhiên mình chọn viết cách đầu.</p>
+<p>Đầu tiên, việc kí hiệu <span class="math notranslate nohighlight">\(2^8\)</span> sẽ dễ liên hệ tới
+phần tử của trường, tức là các đa thức bậc <span class="math notranslate nohighlight">\(8\)</span> và
+có dạng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a_0 + a_1 x + \cdots + a_7 x^7\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(a_i \in \mathrm{GF}(2)\)</span>.</p>
+<p>Nếu viết <span class="math notranslate nohighlight">\(\mathrm{GF}(256)\)</span>, chúng ta phải nhớ
+xem <span class="math notranslate nohighlight">\(256\)</span> phân tích thành thừa số nguyên tố ra
+sao. Điều này đơn giản nếu chúng ta làm việc với các
+số quen thuộc như <span class="math notranslate nohighlight">\(2^8 = 256\)</span>. Tuy nhiên nếu
+chúng ta nghiên cứu trên số nguyên tố khác, chẳng hạn</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathrm{GF}(6561), \mathrm{GF}(625), \ldots\]</div>
+</div>
+<p>thì không phải ai cũng nhớ. Chúng ta phải mất công phân
+tích số <span class="math notranslate nohighlight">\(6561\)</span> thành <span class="math notranslate nohighlight">\(3^8\)</span>, hay <span class="math notranslate nohighlight">\(625\)</span>
+thành <span class="math notranslate nohighlight">\(5^3\)</span>, rồi mới làm tiếp.</p>
+<p>Một ví dụ khác là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathrm{GF}(340282366920938463463374607431768211456),\]</div>
+</div>
+<p>thì cũng là <span class="math notranslate nohighlight">\(\mathrm{GF}(2^{128})\)</span> thôi, được dùng
+khi tính message authentication code (MAC) của thuật toán
+mã hóa đối xứng. Ở đây chắc chắn mình sẽ chọn viết
+<span class="math notranslate nohighlight">\(\mathrm{GF}(2^{128})\)</span> thay vì con số dài ngoằn kia.</p>
+<p>Như vậy, việc viết <span class="math notranslate nohighlight">\(\mathrm{GF}(256)\)</span> không sai,
+nhưng mình nghĩ viết <span class="math notranslate nohighlight">\(\mathrm{GF}(2^8)\)</span> có nhiều
+ưu điểm hơn và sẽ giúp tạo thói quen tốt.</p>
+<p>Câu hỏi: <span class="math notranslate nohighlight">\(\mathbb{F}_{2^8}\)</span> hay <span class="math notranslate nohighlight">\(\mathbb{F}_2^8\)</span>?</p>
+<p>Hai tập hợp này có cùng số phần tử là <span class="math notranslate nohighlight">\(2^8 = 256\)</span>.
+Tuy nhiên ý nghĩa của chúng khác nhau hoàn toàn.</p>
+<p>Đầu tiên, <span class="math notranslate nohighlight">\(\mathbb{F}_{2^8}\)</span> chỉ trường các đa thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a_0 + a_1 x + \cdots + a_7 x^7,\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(a_i \in \mathbb{F}_2\)</span>. Các phép tính cộng, trừ,
+nhân, chia hai đa thức được thực hiện trong modulo <span class="math notranslate nohighlight">\(m(x)\)</span> -
+là một đa thức tối giản bậc <span class="math notranslate nohighlight">\(8\)</span> với hệ số trong <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span>.</p>
+<p>Trong khi đó, <span class="math notranslate nohighlight">\(\mathbb{F}_2^8\)</span> chỉ các vector</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\bm{a} = (a_0, a_1, a_2, a_3, a_4, a_5, a_6, a_7) \in \mathbb{F}_2^8\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(a_i \in \mathbb{F}_2\)</span>. Ta xem <span class="math notranslate nohighlight">\(\mathbb{F}_2^8\)</span>
+là một không gian vector. Khi đó chúng ta chỉ có hai phép tính
+trên tập <span class="math notranslate nohighlight">\(\mathbb{F}_2^8\)</span> là cộng hai vector và nhân
+vector với một phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span>. Nếu các
+bạn mở rộng lên không gian Euclid hay gì đó thì vẫn không
+giống <span class="math notranslate nohighlight">\(\mathbb{F}_{2^8}\)</span>.</p>
+<p>Câu hỏi: <span class="math notranslate nohighlight">\(\mathrm{GF}(p^n)\)</span> hay <span class="math notranslate nohighlight">\(\mathbb{F}_{p^n}\)</span>?</p>
+<p>Hai cách kí hiệu đều có ý nghĩa như nhau.</p>
+<p>Khi <span class="math notranslate nohighlight">\(n = 1\)</span> thì mình thấy dùng <span class="math notranslate nohighlight">\(\mathrm{GF}(p)\)</span>
+hay <span class="math notranslate nohighlight">\(\mathbb{F}_p\)</span> đều được.</p>
+<p>Khi <span class="math notranslate nohighlight">\(n \geqslant 2\)</span> thì mỗi cách kí hiệu đều có
+ưu điểm và nhược điểm riêng. Cả hai cách đều chỉ trường
+số với các phần tử là đa thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a_0 + a_1 x + a_2 x^2 + \cdots + a_{n-1} x^{n-1},\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(a_i \in \mathbb{F}_p\)</span>, hay cũng có thể
+viết <span class="math notranslate nohighlight">\(a_i \in \mathrm{GF}(p)\)</span>.</p>
+<p>Việc viết <span class="math notranslate nohighlight">\(\mathbb{F}_{p^n}\)</span> có nhược điểm là
+làm đại lượng <span class="math notranslate nohighlight">\(p^n\)</span> hơi nhỏ, khó nhìn nên sử
+dụng <span class="math notranslate nohighlight">\(\mathrm{GF}(p^n)\)</span> sẽ tốt hơn. Tuy nhiên
+một ưu điểm của <span class="math notranslate nohighlight">\(\mathbb{F}_{p^n}\)</span> là có thể
+chỉ tập các vector mà mỗi vị trí là một phần tử
+trong <span class="math notranslate nohighlight">\(\mathbb{F}_{p^n}\)</span>. Ví dụ</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\bm{f} = (f_1(x), f_2(x), \ldots, f_m(x)) \in \mathbb{F}_{p^n}^m\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(f_i(x)\)</span> là các phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_{p^n}\)</span>.
+Nếu sử dụng <span class="math notranslate nohighlight">\(\mathrm{GF}(p^n)\)</span> thì phải viết
+<span class="math notranslate nohighlight">\(\mathrm{GF}(p^n)^m\)</span> khá rối. Khi chúng ta xét
+tới ma trận có phần tử trong <span class="math notranslate nohighlight">\(\mathbb{F}_{p^n}\)</span>
+thì còn rối hơn nữa. Thay vào đó ta có thể viết</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\bm{A} = \begin{pmatrix}
+   a_{1, 1}(x) &amp; a_{1, 2}(x) &amp; \cdots &amp; a_{1, d}(x) \\
+   a_{2, 1}(x) &amp; a_{2, 2}(x) &amp; \cdots &amp; a_{2, d}(x) \\
+   \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+   a_{m, 1}(x) &amp; a_{m, 2}(x) &amp; \cdots &amp; a_{m, d}(x)
+\end{pmatrix} \in \mathbb{F}_{p^n}^{m \times d}\end{split}\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(a_{i, j}(x)\)</span> là phần tử thuộc <span class="math notranslate nohighlight">\(\mathbb{F}_{p^n}\)</span>.</p>
+<p>Từ các lý do trên có thể thấy <span class="math notranslate nohighlight">\(\mathbb{F}_{p^n}\)</span>
+đa dụng hơn nên mình sẽ dùng cách kí hiệu này.</p>
+</section>
+<section id="nhung-cau-noi-hay">
+<h2>Những câu nói hay<a class="headerlink" href="#nhung-cau-noi-hay" title="Link to this heading">¶</a></h2>
+<blockquote class="epigraph">
+<div><p>There is no royal road to geometry.</p>
+<p>Không có con đường hoàng gia đến hình học.</p>
+<p class="attribution">—Euclid</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>Học, học nữa, học mãi.</p>
+<p class="attribution">—Vladimir Ilich, Lenin (1870 - 1924)</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>We must know. We will know.</p>
+<p>Chúng ta phải biết. Chúng ta sẽ biết.</p>
+<p class="attribution">—David, Hilbert (1862 - 1943)</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>Không thể là một nhà toán học mà không có tâm hồn thi sĩ.</p>
+<p class="attribution">—Sofia, Kovalevskaya (1850 - 1891)</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>Đường đi ngàn dặm, khởi đầu bởi một bước chân.</p>
+<p class="attribution">—Lão Tử</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>Không có việc gì khó.</p>
+<p>Chỉ sợ lòng không bền.</p>
+<p>Đào núi và lấp biển.</p>
+<p>Quyết chí ắt làm nên.</p>
+<p class="attribution">—Hồ Chí Minh (1890 - 1969)</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>Luôn yêu để sống. Luôn sống để học toán. Luôn học toán để yêu.</p>
+<p class="attribution">—Diễn đàn toán học Việt Nam</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>Những thứ đích thực có giá trị không sinh ra từ tham
+vọng hoặc ý thức trách nhiệm đơn thuần, mà đến từ tình
+yêu và sự hiến dâng cho nhân loại và những điều khách quan.</p>
+<p class="attribution">—Albert Einstein</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>Tôi tư duy nên tôi tồn tại.</p>
+<p class="attribution">—René Descartes</p>
+</div></blockquote>
+</section>
+<section id="nhung-cau-noi-vo-van">
+<h2>Những câu nói vớ vẩn<a class="headerlink" href="#nhung-cau-noi-vo-van" title="Link to this heading">¶</a></h2>
+<p>Einstein (được cho là) đã nói câu: &quot;Nếu bạn không thể giải thích vấn đề để
+đứa trẻ 5 tuổi cũng hiểu thì chứng tỏ bạn đang không hiểu vấn đề&quot;.</p>
+<p>Đối với mình đây là câu nói rất vớ vẩn vì những lý do sau.</p>
+<p>Thứ nhất, tại sao phải là đứa trẻ 5 tuổi? Con người trưởng thành theo từng giai
+đoạn, do đó chương trình học cũng được thiết kế thành các cấp, thường là ba cấp
+từ tiểu học, thcs và thpt. Độ khó của chương trình học mỗi môn cũng tăng dần
+theo từng lớp. Vì vậy, chúng ta chỉ có thể giải thích một vấn đề cho những
+người đã có một lượng kiến thức nền tảng nhất định liên quan vấn đề đó. Trong khi đó, việc giải thích
+một vấn đề phức tạp cho người không có nền tảng đòi hỏi chúng ta giải thích các
+kiến thức nền tảng ở dạng giản lược và có thể đánh mất bản chất của kiến thức
+nền tảng. Ngoài ra, khả năng hấp thụ kiến thức và thấu hiểu của mỗi người khác
+nhau. Nếu đứa trẻ 5 tuổi trong câu nói trên là Einstein tái sinh ở thế kỉ 21 thì
+việc giải thích các lý thuyết vật lí hiện đại là khả thi. Tuy nhiên nếu chọn
+một đứa trẻ bất kì ngoài đường và giải thích về phân rã nguyên tử thì khả năng cao
+bạn sẽ bị phụ huynh của đứa trẻ dẫn lên công an vì tội quấy rối, trong khi bản
+thân đứa trẻ thì ngơ ngác vì không hiểu chuyện gì xảy ra.</p>
+<p>Thứ hai, tại sao phải giải thích cho đứa trẻ, hay thậm chí là người lớn khác? Nếu
+chúng ta muốn trình bày một vấn đề nào đó, chúng ta sẽ trình bày cho những người
+quan tâm và những người chúng ta muốn họ quan tâm tới, ví dụ khách hàng, đối tác.</p>
+<p>Trong trường hợp nghiên cứu khoa học, chúng ta trình bày vấn đề và phương pháp
+giải quyết vấn đề đó, với mặc định rằng người đọc đã hoàn thành một trình độ văn
+hóa nhất định. Thông thường, phần giới thiệu sẽ được viết bởi ngôn ngữ phổ thông
+để giúp người không cùng lĩnh vực cũng nắm được (phần nào đó) vấn đề và phương
+pháp chúng ta dùng để giải quyết vấn đề. Ở phần chính của nghiên cứu, các kiến
+thức đa phần mặc định là bạn đã học xong các môn đại cương ở đại học, chứ không
+giải thích mọi chi tiết như &quot;phép nhân ma trận được thực hiện như thế nào&quot; hay
+&quot;chuyển vị của ma trận là gì&quot;.</p>
+<p>Trong trường hợp khách hàng, đối tác, chúng ta trình bày những điểm chung với họ
+và có thể bỏ qua các chi tiết phức tạp.</p>
+</section>
+<section id="ve-mot-vi-giao-su-va-dinh-ly-godel">
+<h2>Về một vị giáo sư và định lý Godel<a class="headerlink" href="#ve-mot-vi-giao-su-va-dinh-ly-godel" title="Link to this heading">¶</a></h2>
+<div class="danger admonition">
+<p class="admonition-title">Cảnh báo</p>
+<p>Mình sẽ không sử dụng từ ngữ khó nghe nhưng nội dung sẽ gây khó chịu.
+Độc giả cân nhắc trước khi xem!!!</p>
+</div>
+<p>Dạo gần đây mình xem một loạt video trên Youtube của kênh <em>Nhận thức mới</em>
+về định lí bất toàn của Godel do giáo sư Phạm Việt Hưng (PVHg) trình bày.</p>
+<p>Đây là một chủ đề khá thú vị và mới mẻ với mình. Sau khi xem xong series
+video và đọc các bài viết trên blog cá nhân của giáo sư thì mình vừa thấy
+buồn cười vừa thấy khó chịu. Do đó mình quyết định viết bài này.</p>
+<section id="he-qua-dinh-li-godel">
+<h3>Hệ quả định lí Godel<a class="headerlink" href="#he-qua-dinh-li-godel" title="Link to this heading">¶</a></h3>
+<p>Theo giáo sư, việc một sự vật tác động lên chính nó là không thể xảy ra.
+Điều này có thể xem là hệ quả của định lí Godel.</p>
+<p>Giáo sư đưa ra ví dụ về hạt Higgs ở tập 2 của series. Mình không biết
+hạt Higgs là hạt gì vì kiến thức phổ thông của mình với vật lí chỉ dừng
+lại ở proton, electron và neutron. Giáo sư giải thích rằng, hạt Higgs
+là hạt truyền khối lượng cho các hạt khác lớn hơn, nhưng tiếp tục đặt
+vấn đề là hạt nào truyền khối lượng cho hạt Higgs? Theo định lí Godel,
+hạt Higgs không thể truyền khối lượng cho chính nó, vì khi đó hạt Higgs
+là một hệ tự quy chiếu. Như vậy đưa tới hệ quả là Lý thuyết về mọi thứ
+(TOE, Theory Of Everything) vẫn đang bế tắc, suy ra việc lí giải nguồn
+gốc khối lượng các vật cũng không thể đạt được.</p>
+<p>Tiếp theo, ở tập 3, giáo sư nói về việc trí tuệ nhân tạo (AI, Artificial
+Intelligence) không thể trở nên giống con người. Con người chúng ta sử
+dụng ý thức, là bộ não, để tạo ra một &quot;bộ não&quot; máy móc. Như vậy, cũng
+theo định lí Godel, vì con người không thể hiểu chính bộ não của bản
+thân, thì làm sao có thể tạo ra một &quot;bộ não&quot; giống bản thân, có trực
+giác, có cảm xúc, có ý thức?</p>
+<p>Hai vấn đề trên cho thấy một hệ quả quan trọng của định lí Godel do giáo
+sư trình bày</p>
+<blockquote>
+<div><p>Một hệ tự quy chiếu hoặc mâu thuẫn, hoặc không thể kiểm
+chứng được tính đúng sai.</p>
+</div></blockquote>
+<p>Đến đoạn này mình vẫn nghĩ mọi thứ bình thường, nhưng hai tập tiếp theo
+về việc tìm nguồn gốc sự sống của giáo sư làm mình thấy rất khó hiểu.</p>
+<p>Trước đó, giáo sư có nhiều bài viết trên trang cá nhân có nội dung giống
+hai tập tiếp theo trên Youtube cũng về nguồn gốc sự sống. Nói đơn giản
+thì giáo sư phê phán thuyết tiến hóa của Darwin và đưa ra vấn đề về nguồn
+gốc sự sống, thậm chí gọi đó là &quot;sự dối trá&quot;. Tới đây mình
+có một thắc mắc. Nếu hạt Higgs không thể truyền khối lượng cho chính nó,
+con người không thể sử dụng bộ não của bản thân để tạo ra &quot;bộ não&quot; nhân
+tạo (AI), thì sự sống cũng không thể giải thích nguồn gốc sự sống?</p>
+<p>Logic ở đây là, theo định lí Godel, một lý thuyết giải thích nguồn gốc
+mọi thứ, là không tồn tại đối với hệ tự quy chiếu. Vì vậy việc truy tìm
+nguồn gốc của một hiện tượng nào đó luôn đi tới bế tắc.</p>
+<p>Nguồn gốc khối lượng là từ hạt nào? Nếu hạt Higgs truyền khối lượng cho
+các hạt khác thì hạt nào truyền khối lượng cho nó? Vấn đề ở đây là bản
+thân hạt Higgs không thể truyền khối lượng cho chính nó.</p>
+<p>Nguồn gốc tư duy của AI là từ tư duy con người. Nhưng con người không
+thể giải thích bộ não của bản thân, hay nói cách khác là nguồn gốc ý
+thức và tư duy của bản thân, thì làm sao tạo ra &quot;bộ não&quot; nhân tạo cũng
+có ý thức và tư duy giống bản thân?</p>
+<p>Nguồn gốc sự sống là từ một sự sống trước đó mà thành (tiến hóa, thoái
+hóa, ...). Như vậy, sự sống có thể giải thích nguồn gốc của sự sống không? Thuyết
+tiến hóa của Darwin nói rằng sự sống đều bắt nguồn từ một &quot;gốc&quot; (gốc
+của cây sự sống). Nhưng qua lời giáo sư thì &quot;gốc&quot; đó không tồn tại. Giáo sư đề cập
+tới một giải thích khác về thuyết tiến hóa của Darwin là sự sống bắt đầu
+từ một &quot;thảm&quot; (thảm cỏ của sự sống). Trong đó sự sống bắt nguồn từ nhiều vị trí
+trong thảm cỏ đó, không phải từ một gốc đơn thuần như thuyết của Darwin.
+Thậm chí như vậy vẫn không làm hài lòng các nhà
+khoa học (thực ra là giáo sư). Như vậy, theo logic của mình ở trước, mọi
+thuyết tiến hóa giải thích nguồn gốc sự sống đều sai, theo những ví dụ
+giáo sư đưa ra, và thông qua định lí Godel?</p>
+<p>Theo trải nghiệm cá nhân của mình, việc phê phán hay châm biếm thuyết tiến hóa của Darwin
+không phải điều gì mới mẻ. Từ nhiều năm trước mình đã từng nghe một thầy
+cà khịa kiểu &quot;thế quái nào khỉ và người lại có cùng tổ tiên&quot;. Mình không
+biết nhiều về các thuyết tiến hóa, nhưng video của giáo sư thật sự cung
+cấp cho mình nhiều kiến thức và bài học. Bài học quan trọng nhất mình
+rút ra là:</p>
+<blockquote>
+<div><p>Chúng ta có thể ứng dụng định lí Godel để bác bỏ những rất nhiều
+cố gắng của các nhà khoa học.</p>
+</div></blockquote>
+<p>Mình không biết giáo sư có tôn sùng quá mức định lí Godel hay không,
+nhưng việc bác bỏ nỗ lực của người khác mà không đưa ra một lý thuyết
+tiến bộ hơn hay có chứng minh vững chắc mà chỉ dựa vào một định lí
+TOÁN HỌC để giải thích tính TRIẾT HỌC thì mình thấy khá buồn cười.</p>
+</section>
+<section id="ve-cantor">
+<h3>Về Cantor<a class="headerlink" href="#ve-cantor" title="Link to this heading">¶</a></h3>
+<p>Phần này không nói về tính đúng sai cả về triết học lẫn toán học. Mình
+chỉ có ý kiến về cách trình bày của giáo sư.</p>
+<p>Về bài viết <a class="reference external" href="https://viethungpham.com/2017/11/22/on-the-undecidability-ve-cai-bat-kha-quyet-dinh/">Về Cái Bất khả Quyết định</a>.</p>
+<p>Trong bài viết, giáo sư nhắc rằng &quot;người đời gán cho Cantor là điên rồ&quot;,
+nhưng sau đó giáo sư lại mở ngoặc &quot;thực tế cuối cùng ông đã mắc bệnh thần
+kinh&quot;. Ở đây mình rất khó chịu vì cách viết không đầu đuôi (không nói lý
+do Cantor bị bệnh thần kinh) dễ khiến người khác nghĩ ông ấy đưa ra quá
+nhiều ý kiến kì lạ tới nỗi bị thần kinh.</p>
+<p>Câu chuyện thực sự là khi cố gắng chứng minh giả thuyết Continuum mà
+không có tiến triển (mà giáo sư cũng đề cập trong bài viết) thì Cantor
+cũng đang bị chèn ép rất mạnh bởi phe chống đối Lý thuyết tập hợp của
+ông (do Kronecker và Poincare đứng đầu). Hậu quả là những bài báo của ông đã không
+thể công bố trên các tạp chí uy tín do quyền lực ngầm từ phe Kronecker
+và Poincare, nên ông chỉ có thể đăng trên các tạp chí thường, uy tín
+thấp. Điều này khiến ông không thể có vị trí công việc tốt tại các đại
+học lớn ở nước Đức thời bấy giờ khiến cuộc sống khó khăn.</p>
+<p>Ngoài ra một bi kịch đã xảy ra với Cantor là đứa con trai út mà ông rất
+yêu thương đã qua đời. Quá nhiều biến cố ập đến khiến tinh thần Cantor
+rơi vào hỗn loạn và cuối cùng là bị bệnh.</p>
+<p>Mình không biết giáo sư có thật sự biết về cuộc đời Cantor hay không
+trước khi viết những dòng đó. Mình rất hy vọng là có vì văn phong như vậy
+không thể biết giáo sư nói đùa hay nói thật.</p>
+<p>Một lần nữa, việc tôn sùng định lí Godel quá mức là niềm tin của giáo sư
+và mình không bận tâm. Nhưng Cantor là idol của mình, và những người động
+tới idol của bản thân thì ... các bạn biết rồi đó. (^_^)</p>
+<p>Viết tới đây mình bỗng dưng nhớ lại một phân cảnh trong phim Pirates of the Caribbean (Cướp biển vùng Caribbean) phần 5. Trong đó, khi nữ chính gặp một nhà thiên văn và nói lên ý tưởng của mình, thì nhà thiên văn đã cười và nói lại nữ chính là đồ điên. Nữ chính cũng không vừa, nói là thiên văn là đồ ngu.</p>
+<p>Trong bài viết trên, giáo sư PVHg nói Cantor là đồ điên. Đáng tiếc là Cantor đã qua đời từ lâu nên Cantor không thể gọi giáo sư là đồ ng... được (cũng có thể Cantor không muốn nói?). Mình thì không ở vị thế có khả năng nói giáo sư ng... (nhưng mình rất muốn) (^^).</p>
+<p>Thương thay Cantor, đời sau, người thì xem thường và chửi ông, người muốn bảo vệ ông thì lực hèn sức mọn!!!</p>
+</section>
+<section id="ve-su-vo-han">
+<h3>Về sự vô hạn<a class="headerlink" href="#ve-su-vo-han" title="Link to this heading">¶</a></h3>
+<p>Vẫn là bài viết <a class="reference external" href="https://viethungpham.com/2017/11/22/on-the-undecidability-ve-cai-bat-kha-quyet-dinh/">Về Cái Bất khả Quyết định</a>.</p>
+<p>Giáo sư trích dẫn hai câu nói: &quot;Con người ta đã nghĩ ra khái niệm vô hạn,
+nhưng chẳng có gì là vô hạn trên thế gian này, ngoài sự ngu xuẩn của con
+người&quot;, &quot;Chỉ có hai thứ vô hạn: vũ trụ và CÁI NGU của con người; tôi
+không chắc về cái thứ nhất&quot;. Câu sau thì chắc các bạn cũng khá quen thuộc
+rồi vì là câu nói (hay được mang ra làm meme) của Einstein.</p>
+<p>Mình không biết quan niệm của giáo sư về sự vô hạn (hay Lý thuyết tập
+hợp) của Cantor là gì, nhưng hai câu trích dẫn trên cho thấy một sự châm
+biếm về điều này. Mình xin phép phản biện lại như sau.</p>
+<p>Ví dụ đầu tiên về sự vô hạn bắt nguồn từ phép <strong>đếm</strong>.</p>
+<p>Con người từ xa xưa đã biết đếm. Hết <span class="math notranslate nohighlight">\(1\)</span>, rồi <span class="math notranslate nohighlight">\(2\)</span>, rồi lại
+<span class="math notranslate nohighlight">\(3\)</span>, cứ thế cho đến mãi mãi. Từ đó, tập hợp vô hạn đầu tiên xuất
+hiện, tập <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>. Vì các con số cứ xuất hiện một cách tự
+nhiên, số sau là số trước cộng thêm <span class="math notranslate nohighlight">\(1\)</span>, nên ta gọi là <em>tập hợp
+số tự nhiên</em>.</p>
+<p>Như vậy có thể thấy, bản thân tập hợp vô hạn TỰ NHIÊN XUẤT HIỆN chứ
+không phải là ảo tưởng của các nhà toán học.</p>
+<p>Tiếp theo, con người dần chấp nhận sự xuất hiện của số âm. Từ gốc
+<span class="math notranslate nohighlight">\(0\)</span>, làm ngược lại quá trình trên, ta trừ <span class="math notranslate nohighlight">\(1\)</span> thay vì cộng.
+Khi đó ta cũng có <span class="math notranslate nohighlight">\(-1\)</span>, <span class="math notranslate nohighlight">\(-2\)</span>, và cứ như vậy tới mãi mãi. Ta
+đã xây dựng xong tập vô hạn thứ hai, tập số nguyên <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>.</p>
+<p>Trong bộ sách kinh điển <em>Elements</em> của Euclid, ông nói rằng: &quot;Một phần
+luôn nhỏ hơn toàn bộ&quot;. Nhìn lại hai anh bạn <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> và
+<span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> thì chúng ta thấy rõ ràng rằng <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> là
+một phần của <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>, hay nói kiểu toán học là <strong>tập hợp con</strong>.
+Như vậy phải chăng <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> có ít &quot;phần tử&quot; hơn <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>?
+Nếu chúng ta sống ở thời Euclid, thì việc này được cho là &quot;hiển nhiên&quot;,
+nhưng tới thời Cantor thì cái &quot;hiển nhiên&quot; đó mới được kiểm chứng.</p>
+<p>Ví dụ thứ hai là nghịch lí của Zeno. Nghịch lí này khá nổi tiếng và mình
+đã có giới thiệu trong bài viết về các tập vô hạn rồi. Đại ý là nếu anh
+hùng Archilles trong thần thoại Hy Lạp chạy đua với con rùa nhưng xuất
+phát sau thì không bao giờ bắt kịp được con rùa.</p>
+<p>Nghịch lí này cho thấy người thời xưa có những quan niệm chưa đúng về sự
+vô hạn, chưa có các khái niệm như vô cùng nhỏ, vô cùng lớn.</p>
+<p>Ví dụ thứ ba về sự vô hạn bắt nguồn từ số vô tỉ.</p>
+<p>Pythagoras đã quá quen thuộc với chúng ta về định lí mang tên ông cho tam
+giác vuông. Thời đó, khi cho hai cạnh góc vuông có độ dài bằng <span class="math notranslate nohighlight">\(1\)</span>
+thì độ dài cạnh huyền là một số vô tỉ <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>. Tuy nhiên các số
+vô tỉ, ngoài phần thập phân không tuần hoàn ra, trong nhiều trường hợp
+còn có một điểm khó chịu
+khác là <strong>ta không thể biểu diễn nó</strong>, thậm chí tệ hơn là <strong>ta không biết
+tới sự tồn tại của nó</strong>.</p>
+<p>Tỉ lệ giữa chu vi hình tròn với hai lần bán kính của nó, cho ta số <span class="math notranslate nohighlight">\(\pi\)</span>.
+Giới hạn đặc biệt <span class="math notranslate nohighlight">\(\lim\limits_{n \to \infty}\left(1 + \dfrac{1}{n}\right)^n\)</span>
+cho ta số <span class="math notranslate nohighlight">\(e\)</span>. Số <span class="math notranslate nohighlight">\(\pi\)</span> và <span class="math notranslate nohighlight">\(e\)</span> là hai ví dụ về <strong>số
+siêu việt</strong>, còn những số có thể biểu diễn qua các phép tính cộng, trừ,
+nhân, chia và khai căn được gọi là <strong>số đại số</strong>. Vấn đề là số lượng số
+siêu việt nhiều hơn số đại số rất nhiều và chính chúng mới giúp &quot;làm đầy&quot;
+trục số thực <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+<p>Ý nghĩa của việc &quot;làm đầy&quot; ở đây là <strong>tính liên tục</strong> của tập hợp số thực. Nhờ
+có tính liên tục, chúng ta mới có thể đạo hàm và tích phân, hai công cụ
+mạnh mẽ cho phép khảo sát các hàm số. Mình cần lưu ý rằng nếu hàm số có
+đạo hàm tại một điểm thì nó chắc chắn liên tục tại điểm đó, nhưng ngược
+lại chưa chắc, liên tục chưa chắc có đạo hàm. Nói cách khác tính liên tục
+là nền tảng cho những phép tính khó hơn. Nếu hàm số không liên tục tại một
+điểm, thì việc đạo hàm là không thể, nên quay xe tìm cách khác thì hơn!!!</p>
+<p>Vấn đề là nếu các giáo sư chối bỏ sự vô hạn của tập hợp số thực, vậy các
+giáo sư có thể không dùng những công cụ mạnh mẽ của toán học như đạo hàm,
+tích phân trong nghiên cứu vật lí được không?</p>
+<p>Trùng hợp thay, các bài toán về mật mã học đang bế tắc vì làm việc với
+các tập rời rạc, nơi không có tính liên tục, thậm chí còn hữu hạn. Các
+bạn, thậm chí giáo sư, có thể nói mình rằng: &quot;Tập hữu hạn còn không xử lý
+được mà muốn dây vào tập vô hạn&quot;. Trên thực tế, tập vô hạn như <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>
+và <span class="math notranslate nohighlight">\(\mathbb{C}\)</span> cho chúng ta những công cụ mạnh mẽ: giới hạn, sau
+đó là tính liên tục, sau đó là vi tích phân. Khi mất đi những công cụ đó,
+mà các tập rời rạc là một ví dụ, thì bài toán trở nên khó khủng khiếp.
+Anh Vũ Hữu Tiệp (blog Machine Learning cơ bản) cũng có nói rằng &quot;còn đạo hàm
+được là còn hy vọng&quot;. Như vậy mới thấy, tập vô hạn cho chúng ta nhiều
+điều kiện thuận lợi, những công cụ mạnh mẽ để khảo sát chúng, nhưng sẽ
+gây ra nghịch lý nếu không biết cách &quot;chế ngự&quot; chúng như trường hợp của nghịch lý Zeno.</p>
+<p>Tổng kết lại, từ việc đếm rất bình thường, cho tới những tập hợp có phần
+tử khó nhằn, thì sự vô hạn sẽ đưa chúng ta tới nhiều trường hợp dở khóc
+dở cười. Như mình đã nói ở trên, người ng... hay nói những ý tưởng kì quặc
+là điên, nhưng tiếc thay người &quot;điên&quot; đó đã mất nên không thể bật lại người ng...
+Thật đáng tiếc!!!</p>
+</section>
+<section id="ve-giao-duc">
+<h3>Về giáo dục<a class="headerlink" href="#ve-giao-duc" title="Link to this heading">¶</a></h3>
+<p>Nếu đã tới bậc giáo sư thì chắc hẳn công bố khoa học phải rất nhiều. Ngoài
+ra, nghiệp vụ sư phạm là một phần bắt buộc để thành giáo sư nên ý kiến
+của giáo sư PVHg về giáo dục rất đáng để tâm. Tuy nhiên, theo mình, có
+một số điểm chưa thỏa đáng.</p>
+<p>Giáo sư có bài viết về việc Ấn Độ đã loại bỏ thuyết tiến hóa của Darwin
+ra khỏi chương trình phổ thông. Đối với giáo sư, đây là tin mừng. Mừng
+vì các thế hệ học sinh, sinh viên tiếp theo sẽ không bị thuyết tiến hóa
+dối trá ấy (theo lời giáo sư) làm lu mờ nhận thức.</p>
+<p>Tuy nhiên, đối với học sinh thuộc thế hệ sau như mình thì mình nhận
+thấy một số vấn đề trong cách nghĩ của giáo sư.</p>
+<p>Một là, nếu loại bỏ thuyết tiến hóa của Darwin thì chắc chắn phải có một
+nội dung khác (ví dụ, một thuyết tiến hóa khác) bù vào phần đó. Nói cách khác, khối
+lượng chương trình học KHÔNG THAY ĐỔI. Trong quyển sách
+<em>Lời than vãn của một nhà toán học</em> của Paul Lockhart, trên trường các học
+sinh thấy tiết toán ... chán òm. Hầu hết chúng mình thấy chán vì những kiến
+thức khô khan, học thuộc lòng, công thức xào đi nấu lại của những môn khoa
+học tự nhiên. Như vậy, vấn đề là nếu thay thuyết tiến hóa của Darwin thành
+một nội dung khác, mà theo giáo sư PVHg là giúp các thế hệ sau &quot;không bị lừa
+dối&quot; nữa, thì kết quả có thực sự màu hồng vậy không?</p>
+<p>Bao nhiêu học sinh sau này sẽ tiếp tục học tập hay làm việc trên các lĩnh vực
+liên quan sinh học? Tiếp theo, khi nghiên cứu sâu về sinh học, điều gì đảm bảo các bạn sẽ
+vẫn tiếp tục &quot;bị lừa&quot; như giáo sư nói? Rõ ràng khi trình độ các bạn tăng
+lên, khi các bạn tìm tòi tài liệu, thì các bạn sẽ nhận ra có nhiều thuyết
+tiến hóa đang tồn tại, và thuyết của Darwin mà ngày ấy được học ở trường
+chỉ là một ví dụ.</p>
+<p>Việc giáo sư bác bỏ Darwin là một ví dụ cho <strong>tư duy địch-ta</strong>, trong đó địch sai,
+còn ta đúng. Darwin sai, nên vứt Darwin đi mà học cái khác. Đây
+là một lối tư duy nguy hiểm vì nó khiến sự đa dạng, nhiều chiều trong tư duy
+bị mất đi. Thay vào đó, sao chúng ta không bắt đầu với những câu hỏi đơn giản như:
+điểm nào trong thuyết tiến hóa của Darwin không hợp lý (ở đây giáo sư đã giải
+thích, chính là cây sự sống, tồn tại một cái &quot;gốc&quot; của sự sống). Tiếp theo,
+câu hỏi mở rộng hơn, chẳng hạn như: có thể &quot;chữa&quot; chỗ không hợp lý này không
+(giáo sư cũng có đề cập tới thảm cỏ sự sống). Giáo sư đã nghĩ được tới vậy,
+tại sao lại cổ xúy các bạn trẻ bỏ đi Darwin? Thay vào đó, chúng ta có thể
+xem xét tới các thuyết tiến hóa khác, điểm mạnh, điểm yếu, những chỗ chưa
+hợp lý, những vùng xám trong mỗi thuyết tiến hóa? Khoa học phát triển trên
+nguyên lý <strong>Đứng trên vai người đi trước</strong> (khẩu hiệu của Google Scholar
+cũng là <strong>Stand on the shoulders of giants</strong>). Mình nghĩ rằng việc xem xét
+các ý tưởng khác nhau sẽ tốt hơn việc cứ chê bai mãi một lý thuyết.</p>
+<p>Giáo sư cho rằng giáo dục hiện tại trên nhiều nước đang giết chết tư duy,
+không đi vào bản chất. Đối với đứa mới qua những ngày tháng cử nhân như
+mình, ký ức của 12 năm phổ thông vẫn còn cháy bỏng lắm. Nếu môn nào mà
+mình cũng hiểu rõ bản chất, chắc não mình sẽ vỡ làm đôi mất. (^_^)</p>
+<p>Einstein nói rằng: &quot;Ai cũng là thiên tài, nhưng nếu bạn bắt con cá leo
+cây thì nó suốt đời sẽ nghĩ mình đần độn&quot;. Thiên tính của mỗi người mỗi
+khác. Có người học tốt khoa học tự nhiên, có bạn lại học tốt khoa học xã
+hội. Kể cả mình thiên về khoa học tự nhiên, thì mình cũng chỉ
+hiểu bản chất toán, còn vật lí, hóa học, sinh học thì mình bó tay. Vấn
+đề là, hiểu bản chất toán để làm gì nếu không gặp lại toán trên đường
+đời? Vi tích phân xuất phát từ các bài toán chuyển động cơ học trong vật
+lí. Nhưng việc hiểu rõ ý nghĩa vật lí của đạo hàm và tích phân có tác
+dụng gì nếu các bạn thi đại học khối C?</p>
+<p>Thứ nhất, giáo dục cung cấp những kiến thức cơ sở cho mọi người ở tất cả
+môn để làm nền tảng cho những hướng đi trong tương lai. Mình lấy ví dụ là
+môn toán. Cái quan trọng nhất chúng ta cần học là TÍNH TOÁN. Đi chợ, biết
+tính tiền. Đi học các ngành kĩ thuật, biết tính toán số liệu. Đi học bác
+sĩ, biết tính toán lâm sàng (số ca mắc bệnh, tỉ lệ chữa khỏi, ...). Mình
+không thấy nhiều trường hợp thực sự cần hiểu bản chất vi tích phân, mà
+thực tế là cần CÁCH TÍNH ĐẠO HÀM và TÍCH PHÂN.</p>
+<p>Thứ hai, giáo sư cũng nói đúng về một vấn đề (may quá ít ra vẫn có phần
+mình đồng tình với giáo sư). Đó là câu chuyện về tuổi của vị thuyền trưởng.
+Khi toán học xa rời thế giới thực, mà điều dễ thấy nhất chính là đơn vị
+tính, thì sẽ xảy ra câu chuyện dở khóc dở cười.</p>
+<p>Câu chuyện về tuổi của vị thuyền trưởng là một bài toán đơn giản của bậc
+tiểu học. Ví dụ như, cho số lượng quả táo trên thuyền là <span class="math notranslate nohighlight">\(15\)</span>, cho
+số lượng thủy thủ trên thuyền là <span class="math notranslate nohighlight">\(10\)</span>, hỏi tuổi của vị thuyền trưởng
+là bao nhiêu? Các đại lượng không hề cùng đơn vị đo, nhưng những bạn học sinh
+ở Pháp những năm đầu thế kỉ 20 đã không ngần ngại tính tuổi của vị thuyền
+trưởng là <span class="math notranslate nohighlight">\(15 + 10 = 25\)</span>. Khi gắn các đơn vị vào chúng ta sẽ thấy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[15 \ \text{(quả táo)} + 10 \ \text{(thủy thủ)} = 25 \ \text{(tuổi)}.\]</div>
+</div>
+<p>Rất may là chương trình hiện nay ở Việt Nam đã giáo dục kĩ khi còn ở
+bậc tiểu học. Những phép tính chu vi, diện tích, thể tích luôn được
+kiểm tra cẩn thận về đơn vị đo. Điều này vẫn được duy trì trong
+chương trình ở cấp 2 và 3.</p>
+<p>Tuy nhiên, vấn đề là nếu bó buộc vào trong các bài toán vật lí thì cần
+gì phải học môn toán nữa? Như vậy chẳng phải đang bó buộc tư duy lại sao?
+Rằng mọi thứ phải liên quan đến bài toán cụ thể, vấn đề cụ thể, mà không
+quan tâm đến tính trừu tượng, sự tưởng tượng, tính sáng tạo? Như vậy
+khi những hiện tượng mà chúng ta không thấy bằng mắt thường như vũ trụ,
+lượng tử, làm sao chúng ta biết tới sự tồn tại của nó? Thần Athena sẽ đưa
+lời sấm cho chúng ta chăng?</p>
+<p>Tổng kết lại, giáo dục là một vấn đề có sự tham gia của rất nhiều thành phần
+và tác động đến nhiều người nên rất khó để phù hợp cho tất cả các bên. Giáo
+sư nghĩ theo cách của người học giỏi, còn mình thì dốt nên chỉ thấy phương
+án của giáo sư tạo thêm áp lực. (^_^)</p>
+</section>
+<section id="chu-nghia-duy-ly-va-tu-duy-chu-quan">
+<h3>Chủ nghĩa duy lý và tư duy chủ quan<a class="headerlink" href="#chu-nghia-duy-ly-va-tu-duy-chu-quan" title="Link to this heading">¶</a></h3>
+<p>Trong tập 3 (?) giáo sư PVHg có châm biếm một câu nói của Hilbert. Hilbert
+nói rằng &quot;Tôi nghĩ là ...&quot;. Chúng ta thấy rằng đây là tư duy chủ quan của
+Hilbert, và vì ông là tượng đài, người đi đầu của chủ nghĩa hình thức trong
+toán học, nên giáo sư PVHg đã nhấn mạnh cụm từ &quot;Tôi nghĩ&quot; của Hilbert và
+có phần châm biếm ông.</p>
+<p>Vẫn là bài viết <a class="reference external" href="https://viethungpham.com/2017/11/22/on-the-undecidability-ve-cai-bat-kha-quyet-dinh/">Về Cái Bất khả Quyết định</a>,
+giáo sư đề cập rằng &quot;..., thầy Bửu cho rằng Định lý Cuối cùng của Fermat không
+thuộc phạm trù bất khả quyết định, vì thầy tin Fermat nói thật ...&quot;. Vâng, ở
+đây giáo sư PVHg không châm biếm quan điểm và niềm tin của giáo sư Tạ Quang Bửu.</p>
+<p>Vấn đề là, tại sao ông Hilbert NGHĨ thì giáo sư châm biếm, còn giáo sư Bửu CHO RẰNG,
+giáo sư Bửu TIN, thì giáo sư PVHg không ý kiến gì, thậm chí có phần còn đồng tình, mặc dù cả
+Hilbert lẫn giáo sư Bửu đều đưa ra suy nghĩ chủ quan, không có bằng chứng về
+logic nào cả?</p>
+<p>Phải chăng, giáo sư PVHg cũng giống nhiều trường hợp &quot;chỉ nghe những gì mình
+muốn nghe&quot;? Nhận thức của giáo sư Tạ Quang Bửu ăn khớp với định lí Godel, mà
+giáo sư PVHg lại rất tôn sùng định lí đó. Đây có phải nguyên nhân khiến giáo
+sư Hưng đồng tình với giáo sư Bửu?</p>
+</section>
+</section>
+<section id="loi-tong-ket">
+<h2>Lời tổng kết<a class="headerlink" href="#loi-tong-ket" title="Link to this heading">¶</a></h2>
+<p>Một lần nữa, mình cần nhắc lại rằng khoa học phát triển theo nguyên lí <strong>Đứng
+trên vai người đi trước</strong>. Các nghiên cứu khoa học, hoặc phải dựa trên những
+nghiên cứu có trước, nếu không thì những ý tưởng đột phá cần phải chờ thời
+gian kiểm chứng (như các giả thuyết mới, phương pháp mới).</p>
+<p>Không quan trọng định lí Godel có tác động mạnh mẽ tới logic, triết học, nhận
+thức luận, ... tới mức nào. Điều quan trọng là không thể chỉ sử dụng định lí
+Godel để bác bỏ những lý thuyết trước đó. Điều này chỉ làm trì trệ khoa học
+vì không những ném hết những công sức của những người đi trước mà còn không có
+điểm gì tiến bộ.</p>
+<p>Giáo sư PVHg đã tổng quát hóa một định lí toán học lên tầm vóc triết học, thể
+hiện sự suy diễn liên ngành. Sau đó giáo sư lại dùng lí luận triết học đó
+để &quot;quy chụp&quot; cho những ngành khoa học khác. Giáo sư cũng rất dày công,
+chê Darwin, Cantor, Hilbert, ... từ năm này sang năm khác, tháng này sang tháng khác,
+nền tảng này sang nền tảng khác. Các bạn có thể thấy giáo sư có nhiều bài viết
+từ nhiều năm trước, xuất bản cả sách, và năm 2024 thì lên cả Youtube, chỉ để truyền
+bá tính &quot;độc hại&quot; trong các tư tưởng kia.</p>
+<p>Như vậy, giáo sư PVHg thực chất chỉ là suy diễn ý nghĩa triết học từ định lí
+Godel trong toán học, mà ngày nay chúng ta gọi là nhét chữ. Việc các nhà khoa học
+thời trước đưa ra lý thuyết mới, họ cũng đâu bắt ai phải tin lý thuyết của mình?
+Có người tin, có người không tin. Có người tìm cách chứng minh lý thuyết của họ đúng,
+cũng có người tìm cách bác bỏ lý thuyết của họ, tất nhiên là bằng lập luận chặt chẽ
+hay bằng chứng xác thực. Dù cách này hay cách khác, cộng đồng khoa học luôn tiến bộ
+và đi lên. Ở một số trường hợp, lý thuyết của người này giải thích được hiện tượng,
+nhưng ở một số trường hợp khác, họ nhường chỗ cho lý thuyết khác hiệu quả hơn.</p>
+<p>Cuối cùng, việc giáo sư PVHg đang làm chỉ đơn giản là chê bai những lý thuyết đi
+trước, cổ xúy chúng ta đừng tin chúng, nhưng giáo sư không hề nói chúng ta cần tin gì.
+Nhận thức của con người dù có hạn, và chúng ta cần chấp nhận, thì cũng không việc
+gì phải ngừng học tập, ngừng tư duy, rồi đi chê bai người đi trước cả!!!</p>
+<p>Cám ơn các bạn đã xem.</p>
+</section>
+<section id="chu-nghia-khac-ky-va-phan-phoi-nhi-thuc">
+<h2>Chủ nghĩa khắc kỷ và phân phối nhị thức<a class="headerlink" href="#chu-nghia-khac-ky-va-phan-phoi-nhi-thuc" title="Link to this heading">¶</a></h2>
+<section id="phan-phoi-nhi-thuc">
+<h3>Phân phối nhị thức<a class="headerlink" href="#phan-phoi-nhi-thuc" title="Link to this heading">¶</a></h3>
+<p>Sự tiêu cực trong chủ nghĩa khắc kỷ và phân phối
+nhị thức có liên hệ mật thiết nhau tới mức không
+ngờ.</p>
+<p>Mình xin phép nhắc lại về phân phối nhị nhức
+(binomial distribution).</p>
+<p>Nếu một sự kiện có khả năng xảy ra là <span class="math notranslate nohighlight">\(p\)</span>
+với <span class="math notranslate nohighlight">\(0 \leqslant p \leqslant 1\)</span> thì trong
+một dãy <span class="math notranslate nohighlight">\(n\)</span> sự kiện như vậy độc lập nhau,
+xác suất để có <span class="math notranslate nohighlight">\(k\)</span> sự kiện xảy ra là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P(\xi = k) = C^k_n \cdot p^k \cdot (1 - p)^{n-k}.\]</div>
+</div>
+<p>Một ví dụ đơn giản của phân phối nhị thức là bài kiểm
+tra trắc nghiệm. Giả sử một đề thi có <span class="math notranslate nohighlight">\(10\)</span> câu,
+mỗi câu có bốn đáp án A, B, C, D, và chỉ có một đáp án
+đúng cho mỗi câu.</p>
+<p>Khi đó, <span class="math notranslate nohighlight">\(n = 10\)</span> và xác suất để chọn ngẫu nhiên
+đáp án đúng cho mỗi câu là <span class="math notranslate nohighlight">\(p = 1/4\)</span>. Gọi
+<span class="math notranslate nohighlight">\(k\)</span> là số câu trả lời đúng khi chọn ngẫu nhiên
+đáp án từng câu.</p>
+<p>Mình sẽ thử lập bảng phân bố xác suất với <span class="math notranslate nohighlight">\(k = 0, 1, \ldots, 10\)</span>.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(k\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(P(\xi = k)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.056314\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.187712\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.281568\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.250282\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.145998\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.058399\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(k\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(7\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(8\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(9\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10\)</span></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(P(\xi = k)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.016222\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.003090\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.000386\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(29 \cdot 10^{-5}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{-6}\)</span></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Đối với trường hợp <span class="math notranslate nohighlight">\(k = 10\)</span>, tức là lúc chúng ta
+&quot;lụi&quot; đúng hết cả <span class="math notranslate nohighlight">\(10\)</span> câu, các bạn có thấy xác
+suất nhỏ tới mức chán chả buồn nói không? Như vậy có
+thể thấy xác suất một điều tốt xảy ra luôn rất thấp.</p>
+</section>
+</section>
+<section id="nhin-lai-giao-duc-tu-2018-ve-truoc">
+<h2>Nhìn lại giáo dục từ 2018 về trước<a class="headerlink" href="#nhin-lai-giao-duc-tu-2018-ve-truoc" title="Link to this heading">¶</a></h2>
+<p>Một ngày đẹp trời, mình nhìn lại những ngày tháng phổ thông. Sau nhiều năm rời ghế nhà trường, gia nhập xã hội hơn (một tí?) thì mình có nhiều nhìn nhận và suy nghĩ khác so với khi còn học phổ thông.</p>
+<p>Ngành giáo dục có lẽ là ngành gây tranh cãi nhiều nhất, thậm chí xuất hiện nhiều tư tưởng cực đoan về nó. Vấn đề là, bản thân ngành giáo dục có sự tham gia của rất nhiều thành phần xã hội, một số thậm chí còn không thực sự làm việc trong ngành giáo dục hay sư phạm.</p>
+<p>Ở bài viết này mình sẽ đưa ra một số quan điểm cá nhân về ngành giáo dục từ 2018 về trước vì 2018 là năm mình tốt nghiệp phổ thông.</p>
+<section id="day-hoc-them-va-quy-luat-cung-cau">
+<h3>Dạy học thêm và quy luật cung cầu<a class="headerlink" href="#day-hoc-them-va-quy-luat-cung-cau" title="Link to this heading">¶</a></h3>
+<p>Giáo dục cung cấp cho mọi người một chương trình đào tạo giống nhau nhằm đảm bảo tính công bằng. Chúng ta học chung chương trình sách giáo khoa, chúng ta đảm bảo số tiết trên lớp trong một kì, ...</p>
+<p>Tuy nhiên, câu chuyện khác đi khi chúng ta thi đại học/cao đẳng. Tuyển sinh đại học chỉ lấy một lượng chỉ tiêu nhất định, và nếu số người dự thi nhiều hơn lượng chỉ tiêu thì phải có người không được nhận. Ở đây, theo cách phổ thông nhất là sử dụng điểm thi đại học ba môn để xét từ trên xuống dưới. Nếu tổng ba môn của chúng ta từ điểm chuẩn trở lên thì chúng ta đậu, không thì rớt.</p>
+<p>Vấn đề ở đây là, chúng ta có một chương trình học giống nhau, nhưng để vào đại học thì chúng ta cần phải có điểm cao hơn người khác để đảm bảo khả năng được nhận. Đây là một cuộc tranh đấu mà phải có người thua.</p>
+<p>Như vậy, dễ thấy rằng ở đây xuất hiện nhu CẦU: các bạn học sinh muốn chuẩn bị tốt hơn cho kì thi vì việc học trên lớp không đảm bảo khả năng cạnh tranh với người khác. Phụ huynh cũng muốn con mình chuẩn bị tốt hơn cho kì thi đại học, đôi khi còn là thể diện của bản thân, nên CẦU cũng xuất hiện ở phụ huynh.</p>
+<p>Có cầu thì sẽ có cung là nội dung của quy luật cung cầu. Các thầy cô sẽ CUNG cấp cho học sinh và phụ huynh những buổi kèm ngoài giờ học trên trường để giúp các bạn học tốt hơn. Giáo viên bỏ thời gian và công sức để soạn bài tập, giảng giải cách làm bài, ... và nhận lại tiền công. Một mối quan hệ đôi bên cùng có lợi.</p>
+<p>Vấn đề từ đây mới trở nên rắc rối. Rõ ràng là những môn cần thiết để thi đại học sẽ được học sinh tập trung đầu tư hơn, còn những môn văn hóa (mà chúng ta hay gọi là môn phụ) thường bị xem nhẹ. Những môn như toán, lý, hóa, tiếng Anh số lượng giáo viên dạy thêm rất nhiều, tới mức áp đảo các môn khác. Giáo viên nào có nhiều học sinh thi đạt thủ khoa hay chỉ cần điểm cao thì sẽ nổi tiếng, được nhiều người biết tới, và kiếm được nhiều tiền. Ngược lại, những môn mà ít người quan tâm (hoặc thậm chí không quan tâm) như công nghệ, tin học, ... thì các thầy cô gần như chỉ có lương trên trường chứ không hề có khái niệm dạy thêm, vì chả ai theo học thêm. Đây chính là quy luật cung cầu đơn giản trong ngành giáo dục.</p>
+</section>
+<section id="banh-truong-lanh-dia-day-hoc-them">
+<h3>Bành trướng lãnh địa dạy học thêm<a class="headerlink" href="#banh-truong-lanh-dia-day-hoc-them" title="Link to this heading">¶</a></h3>
+<p>Phần trên mình chỉ nói về việc ôn luyện để thi đại học/cao đẳng. Tuy nhiên hiện nay việc dạy học thêm có đủ ở mọi cấp, thậm chí từ mẫu giáo để chuẩn bị lên lớp 1 và cũng có nhiều ý kiến trái chiều trên mạng.</p>
+</section>
+<section id="cac-hinh-thuc-day-hoc-them-ma-minh-biet">
+<h3>Các hình thức dạy học thêm (mà mình biết)<a class="headerlink" href="#cac-hinh-thuc-day-hoc-them-ma-minh-biet" title="Link to this heading">¶</a></h3>
+<p>Mình chia việc dạy học thêm thành ba loại dựa theo quy mô:</p>
+<ul class="simple">
+<li><p>học thêm tại trung tâm luyện thi: đôi khi chúng ta gọi là lò luyện thi. Theo như mình đọc trên sách báo và xem trên Internet thì hình thức này phổ biến ở các nước châu Á khác như Trung Quốc, Nhật Bản, Hàn Quốc, ... Trung tâm luyện thi gồm nhiều môn và do nhiều giáo viên đảm nhận, mỗi môn cũng có thể do nhiều giáo viên dạy;</p></li>
+<li><p>học thêm tại chỗ dạy thêm của giáo viên: các giáo viên sẽ thuê mặt bằng là một căn phòng đủ lớn để học sinh theo học. Theo mình thì hình thức này phổ biến nhất tại Việt Nam. Mỗi giáo viên dạy một môn (có thể nhiều môn hơn nhưng mình chưa thấy);</p></li>
+<li><p>học thêm với gia sư: gia đình thuê một gia sư kèm tại nhà cho học sinh. Tùy vào khả năng của gia sư mà có thể kèm một hay nhiều môn.</p></li>
+</ul>
+<p>Ở đây, trung tâm luyện thi có thể xem là một cơ sở kinh doanh hợp pháp, ở đó giáo viên bán kiến thức và học sinh trả tiền để được học nhiều hơn những gì được học trên trường. Điển hình nhất của hình thức này là các trung tâm tiếng Anh, giúp chúng ta chuẩn bị cho các kì thi chứng chỉ tiếng Anh như TOEIC, IELTS, TOEFL, ...</p>
+<p>Hai hình thức dạy học thêm ở sau không có cơ sở pháp lý nhưng không có gì sai trái vì chỉ đơn giản là trao đổi giữa người quen với nhau. Do đó vào năm học 2016-2017 có một đợt cấm dạy học thêm là nhắm vào cá nhân giáo viên mở lớp dạy, nhưng vấp phải sự phản đối và cũng không có cơ sở pháp lý hay xã hội để cấm. Phụ huynh và học sinh cần những lớp này (vì gần nhà, giáo viên cùng trường, giáo viên có tiếng, ...), và không có nhiều điều kiện chuyển sang học ở trung tâm, nói cách khác là CẦU ở phần trên. Từ đó, chính sách cấm dạy học thêm, với mục tiêu là giảm sự phụ thuộc của học sinh vào việc học thêm và đảm bảo tính công bằng, là điều không tưởng. Chừng nào vẫn còn CẦU thì giáo viên vẫn cứ CUNG.</p>
+</section>
+</section>
+<section id="cac-loi-thuong-gap-trong-giai-tich">
+<h2>Các lỗi thường gặp trong giải tích<a class="headerlink" href="#cac-loi-thuong-gap-trong-giai-tich" title="Link to this heading">¶</a></h2>
+<p>Trong một lần đọc lại các bài viết cũ của một bạn cùng lớp cấp 3 thì mình nhận ra một số lỗi mà người học toán (kể cả các bạn chuyên toán) cũng có thể gặp phải khi làm việc với giới hạn, liên tục và đạo hàm.</p>
+<section id="co-dao-ham-thi-lien-tuc-nguoc-lai-chua-chac">
+<h3>Có đạo hàm thì liên tục, ngược lại chưa chắc<a class="headerlink" href="#co-dao-ham-thi-lien-tuc-nguoc-lai-chua-chac" title="Link to this heading">¶</a></h3>
+<p>Ở bài viết <a class="reference external" href="https://minhrongcon2000.github.io/gradient-descent">Toán học đằng sau thuật toán Gradient Descent</a> <span class="bibtex-citation" id="id7">[<a class="reference internal" href="../../myrefs.html#id32" title="Phạm Hoàng Minh. Wi-tech's blog. https://minhrongcon2000.github.io/, 2021.">36</a>]</span>, trong phần &quot;Ý tưởng của thuật toán&quot; bạn mình nói rằng cách tìm cực trị bằng đạo hàm được dạy ở phổ thông có nhiều bước dư thừa. Định lí 1 được bạn phát biểu như sau:</p>
+<div class="admonition note">
+<p class="admonition-title">Ghi chú</p>
+<p>Định lí 1 (có lỗi). Cho một hàm số <span class="math notranslate nohighlight">\(f(x)\)</span> liên tục trên <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. Khi đó điểm <span class="math notranslate nohighlight">\(x_0\)</span> được gọi là:</p>
+<ul class="simple">
+<li><p>điểm cực tiểu nếu <span class="math notranslate nohighlight">\(f'(x_0) = 0\)</span> và <span class="math notranslate nohighlight">\(f''(x_0) &gt; 0\)</span>;</p></li>
+<li><p>điểm cực đại nếu <span class="math notranslate nohighlight">\(f'(x_0) = 0\)</span> và <span class="math notranslate nohighlight">\(f''(x_0) &lt; 0\)</span>.</p></li>
+</ul>
+</div>
+<p>Vấn đề ở đây là bạn mình đã ghi sai, không phải hàm số <span class="math notranslate nohighlight">\(f(x)\)</span> liên tục trên <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, mà phải là <strong>khả vi</strong> (có đạo hàm) trên <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+<p>Để giải thích vì sao bạn mình ghi sai, đầu tiên mình xin ghi lại định nghĩa cực trị, sau đó là các điều kiện (cần và đủ) để hàm số có cực trị (tham khảo từ <span class="bibtex-citation" id="id8">[<a class="reference internal" href="../../myrefs.html#id18" title="Đoàn Quỳnh, Trần Nam Dũng, Nguyễn Vũ Lương, and Đặng Hùng Thắng. Tài liệu chuyên toán. Đại số và Giải tích 11. Nhà xuất bản giáo dục Việt Nam, 2010.">7</a>]</span>).</p>
+<div class="admonition note">
+<p class="admonition-title">Ghi chú</p>
+<p>Định nghĩa cực trị. Cho hàm số <span class="math notranslate nohighlight">\(f\)</span> xác định trên <span class="math notranslate nohighlight">\(J\)</span>. Xét điểm <span class="math notranslate nohighlight">\(x_0\)</span>. Một khoảng mở chứa <span class="math notranslate nohighlight">\(x_0\)</span> được gọi là một <em>lân cận</em> của <span class="math notranslate nohighlight">\(x_0\)</span>. Điểm <span class="math notranslate nohighlight">\(x_0\)</span> được gọi là <em>điểm cực đại</em> của hàm số <span class="math notranslate nohighlight">\(f\)</span> nếu tồn tại một lân cận <span class="math notranslate nohighlight">\(U\)</span> của <span class="math notranslate nohighlight">\(x_0\)</span> sao cho</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[f(x) \leqslant f(x_0) \ \text{với mọi} \ x \in U.\]</div>
+</div>
+<p>Tương tự, điểm <span class="math notranslate nohighlight">\(x_0\)</span> được gọi là <em>điểm cực tiểu</em> của hàm số <span class="math notranslate nohighlight">\(f\)</span> nếu tồn tại một lân cận <span class="math notranslate nohighlight">\(U\)</span> của <span class="math notranslate nohighlight">\(x_0\)</span> sao cho <span class="math notranslate nohighlight">\(f(x) \geqslant f(x_0)\)</span> với mọi <span class="math notranslate nohighlight">\(x \in U\)</span>.</p>
+</div>
+<p>Giá trị hàm số <span class="math notranslate nohighlight">\(f\)</span> tại điểm cực đại được gọi là <em>giá trị cực đại</em>, giá trị hàm số <span class="math notranslate nohighlight">\(f\)</span> tại điểm cực tiểu được gọi là <em>giá trị cực tiểu</em>.</p>
+<p>Các điểm cực đại, cực tiểu được gọi chung là các <em>điểm cực trị</em>. Các giá trị cực đại, cực tiểu được gọi chung là <em>cực trị</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Cảnh báo</p>
+<p>Cực trị của <span class="math notranslate nohighlight">\(f\)</span> trên <span class="math notranslate nohighlight">\(J\)</span> nói chung không phải giá trị lớn nhất (GTLN) hay giá trị nhỏ nhất (GTNN) trên <span class="math notranslate nohighlight">\(J\)</span>. Chúng chỉ là giá trị lớn nhất hay giá trị nhỏ nhất của hàm số <span class="math notranslate nohighlight">\(f\)</span> trong lân cận <span class="math notranslate nohighlight">\(U\)</span>. Vì thế người ta còn dùng thuật ngữ <em>cực trị địa phương</em> để mô tả tình huống này.</p>
+</div>
+<p>Ở đây các bạn sẽ thấy lỗi đầu tiên của bạn mình trong bài viết qua ví dụ tìm GTNN của hàm số <span class="math notranslate nohighlight">\(y = x^2\)</span>. Việc tìm cực trị rất đơn giản vì đạo hàm <span class="math notranslate nohighlight">\(y' = 2x\)</span> chỉ có một nghiệm, và cực trị ở đây cũng chính là GTNN của hàm số trên <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.</p>
+<p>Tuy nhiên, một số vấn đề rất dễ nhận biết như sau:</p>
+<ol class="arabic simple">
+<li><p>Dấu của hàm số gốc ảnh hưởng đến việc hàm số có GTLN hay GTNN. Nếu mình xét <span class="math notranslate nohighlight">\(y = -x^2\)</span> thì <span class="math notranslate nohighlight">\(y' = 0\)</span> cũng cho chúng ta một cực trị tại <span class="math notranslate nohighlight">\(x = 0\)</span>. Tuy nhiên ở đây chúng ta có cực đại (và cũng là GTLN), và hàm số này không có GTNN. Như vậy, <strong>khảo sát hàm số cho phép ta biết tính biến thiên để xác định cực trị là cực đại hay cực tiểu, từ đó suy ra GTLN hay GTNN</strong>.</p></li>
+<li><p>Nếu hàm số có nhiều điểm cực trị thì sao? Ví dụ đơn giản là các hàm trùng phương (các hàm có dạng <span class="math notranslate nohighlight">\(y = a x^4 + b x^2 + c\)</span> với <span class="math notranslate nohighlight">\(a \neq 0\)</span>). Khi đó nếu giải phương trình <span class="math notranslate nohighlight">\(y' = 0\)</span> chúng ta có một hoặc ba cực trị. Một lần nữa, việc khảo sát hàm số để hiểu tính biến thiên sẽ cho ta biết điểm nào là cực đại, điểm nào là cực tiểu. Đối với nhiều bạn giỏi thì việc này khá đơn giản, thậm chí có thể nhẩm được, nhưng cũng có thể vì chủ quan mà bỏ qua điều này.</p></li>
+<li><p>Hàm số có thể không có đạo hàm tại một điểm nhưng vẫn đạt GTNN tại điểm đó. Ví dụ đơn giản là hàm chứa dấu giá trị tuyệt đối <span class="math notranslate nohighlight">\(y = \lvert x \rvert\)</span>. Hàm số này đạt cực tiểu, và cũng là GTNN, tại <span class="math notranslate nohighlight">\(x = 0\)</span>. Điểm đặc biệt là hàm số này liên tục trên <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> nhưng chỉ có đạo hàm trên hai khoảng là <span class="math notranslate nohighlight">\((-\infty; 0)\)</span> và <span class="math notranslate nohighlight">\((0; +\infty)\)</span>, chứ không có đạo hàm tại <span class="math notranslate nohighlight">\(x = 0\)</span>.</p></li>
+</ol>
+<p>Như vậy việc khảo sát hàm số, mặc dù dài dòng, nhưng là bước cực kì quan trọng để xác định tính biến thiên của hàm số, từ đó có thể xác định đầu là cực đại, đâu là cực tiểu. Do đó việc bạn mình nói rằng có nhiều bước quá dư thừa là <strong>sai hoàn toàn</strong>, thậm chí có thể gây ra hậu quả xấu cho những bạn không học sâu về toán vì những bước quá tắt, quá rút gọn.</p>
+<p>Từ đây, với ví dụ về hàm số chứa dấu giá trị tuyệt đối ở trên, các bạn có thể thấy được điểm sai trong định lí 1 mà bạn mình viết ở trên. Rõ ràng, hàm <span class="math notranslate nohighlight">\(y = \lvert x \rvert\)</span> liên tục trên <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, nhưng đâu có tồn tại <span class="math notranslate nohighlight">\(f'(0)\)</span> đâu mà có <span class="math notranslate nohighlight">\(f'(0) = 0\)</span>, thậm chí <span class="math notranslate nohighlight">\(f''(0)\)</span>?</p>
+<p>Định lí được sửa lại như sau (theo <span class="bibtex-citation" id="id9">[<a class="reference internal" href="../../myrefs.html#id18" title="Đoàn Quỳnh, Trần Nam Dũng, Nguyễn Vũ Lương, and Đặng Hùng Thắng. Tài liệu chuyên toán. Đại số và Giải tích 11. Nhà xuất bản giáo dục Việt Nam, 2010.">7</a>]</span>, trang 228).</p>
+<div class="admonition note">
+<p class="admonition-title">Ghi chú</p>
+<p>Định lí 1 (đã sửa). Giả sử hàm số <span class="math notranslate nohighlight">\(f\)</span> có đạo hàm cấp một trên khoảng <span class="math notranslate nohighlight">\((a; b)\)</span> chứa điểm <span class="math notranslate nohighlight">\(x_0\)</span>, <span class="math notranslate nohighlight">\(f'(x_0) = 0\)</span> và <span class="math notranslate nohighlight">\(f\)</span> có đạo hàm cấp hai khác <span class="math notranslate nohighlight">\(0\)</span> tại <span class="math notranslate nohighlight">\(x_0\)</span>. Khi đó:</p>
+<ol class="arabic simple">
+<li><p>Nếu <span class="math notranslate nohighlight">\(f''(x_0) &lt; 0\)</span> thì <span class="math notranslate nohighlight">\(f\)</span> đạt cực đại tại <span class="math notranslate nohighlight">\(x_0\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(f''(x_0) &gt; 0\)</span> thì <span class="math notranslate nohighlight">\(f\)</span> đạt cực tiểu tại <span class="math notranslate nohighlight">\(x_0\)</span>.</p></li>
+</ol>
+</div>
+<p>Đây chỉ là một điều kiện đủ để hàm số có cực trị, không áp dụng cho tất cả hàm số mà chỉ dành cho các hàm số thỏa các yêu cầu trên.</p>
+</section>
+</section>
+<section id="phuong-phap-chung-minh-toan-hoc">
+<h2>Phương pháp chứng minh toán học<a class="headerlink" href="#phuong-phap-chung-minh-toan-hoc" title="Link to this heading">¶</a></h2>
+<section id="chung-minh-truc-tiep">
+<h3>Chứng minh trực tiếp<a class="headerlink" href="#chung-minh-truc-tiep" title="Link to this heading">¶</a></h3>
+<p>Giả sử chúng ta có điều kiện ban đầu là <span class="math notranslate nohighlight">\(P\)</span> và ta cần chứng minh mệnh đề <span class="math notranslate nohighlight">\(Q\)</span>.</p>
+<p>Đối với chứng minh trực tiếp, từ <span class="math notranslate nohighlight">\(P\)</span> chúng ta suy ra <span class="math notranslate nohighlight">\(P_1\)</span> nào đó, rồi lại suy ra <span class="math notranslate nohighlight">\(P_2\)</span> từ <span class="math notranslate nohighlight">\(P_1\)</span>. Chúng ta làm vậy cho đến khi nhận được mệnh đề <span class="math notranslate nohighlight">\(Q\)</span>.</p>
+<p>Chứng minh trực tiếp hữu dụng đối với những lời giải tuần tự từng bước.</p>
+<div class="proof example admonition" id="exp-direct-proof">
+<p class="admonition-title"><span class="caption-number">Ví dụ 24 </span></p>
+<section class="example-content" id="proof-content">
+<p>Cho tam giác <span class="math notranslate nohighlight">\(ABC\)</span> với <span class="math notranslate nohighlight">\(G\)</span>, <span class="math notranslate nohighlight">\(H\)</span>, <span class="math notranslate nohighlight">\(O\)</span> lần lượt là trọng tâm, trực tâm và tâm đường tròn ngoại tiếp tam giác <span class="math notranslate nohighlight">\(ABC\)</span>. Chứng minh rằng ba điểm <span class="math notranslate nohighlight">\(G\)</span>, <span class="math notranslate nohighlight">\(H\)</span> và <span class="math notranslate nohighlight">\(O\)</span> thẳng hàng.</p>
+</section>
+</div><p>Ở đây, với <span class="math notranslate nohighlight">\(O\)</span> là tâm đường tròn ngoại tiếp tam giác, ta vẽ đường tròn đó trước (<a class="reference internal" href="#euler-line"><span class="std std-numref">Hình 24</span></a>).</p>
+<p>Tiếp theo, ta vẽ đường kính <span class="math notranslate nohighlight">\(AD\)</span>.</p>
+<p>Lúc này, vì góc <span class="math notranslate nohighlight">\(\widehat{ACD}\)</span> chắn nửa đường tròn (<span class="math notranslate nohighlight">\(AD\)</span> là đường kính) nên <span class="math notranslate nohighlight">\(\widehat{ACD}\)</span> là <strong>góc vuông</strong>, hay <span class="math notranslate nohighlight">\(CD\)</span> vuông góc <span class="math notranslate nohighlight">\(AC\)</span>.</p>
+<p>Tiếp theo, vì <span class="math notranslate nohighlight">\(H\)</span> là trực tâm nên <span class="math notranslate nohighlight">\(BH\)</span> vuông góc cạnh đối diện <span class="math notranslate nohighlight">\(AC\)</span>.</p>
+<p>Từ hai kết quả trên suy ra <span class="math notranslate nohighlight">\(BH // CD\)</span> vì cùng vuông góc <span class="math notranslate nohighlight">\(AC\)</span>.</p>
+<p>Tương tự ta cũng có <span class="math notranslate nohighlight">\(CH // BD\)</span>.</p>
+<p>Tứ giác <span class="math notranslate nohighlight">\(BHCD\)</span> có hai cặp cạnh song song là <span class="math notranslate nohighlight">\(BH // CD\)</span> và <span class="math notranslate nohighlight">\(CH // BD\)</span> nên <span class="math notranslate nohighlight">\(BHCD\)</span> là hình bình hành.</p>
+<p>Giao điểm hai đường chéo của hình bình hành là trung điểm mỗi đường chéo. Gọi <span class="math notranslate nohighlight">\(I_1\)</span> là trung điểm <span class="math notranslate nohighlight">\(BC\)</span> thì <span class="math notranslate nohighlight">\(I_1\)</span> cũng là trung điểm <span class="math notranslate nohighlight">\(HD\)</span>.</p>
+<p>Vì <span class="math notranslate nohighlight">\(O\)</span> là trung điểm <span class="math notranslate nohighlight">\(AD\)</span>, <span class="math notranslate nohighlight">\(I_1\)</span> là trung điểm <span class="math notranslate nohighlight">\(HD\)</span> nên <span class="math notranslate nohighlight">\(OI_1\)</span> là đường trung bình tam giác <span class="math notranslate nohighlight">\(DHA\)</span>, hay <span class="math notranslate nohighlight">\(\overrightarrow{OI_1} = \dfrac{1}{2}\overrightarrow{AH}\)</span>.</p>
+<p>Do <span class="math notranslate nohighlight">\(G\)</span> là trọng tâm <span class="math notranslate nohighlight">\(\triangle ABC\)</span> và <span class="math notranslate nohighlight">\(AI_1\)</span> là trung tuyến (<span class="math notranslate nohighlight">\(I_1\)</span> là trung điểm <span class="math notranslate nohighlight">\(BC\)</span>) nên <span class="math notranslate nohighlight">\(G\)</span> chia đoạn thẳng <span class="math notranslate nohighlight">\(AI_1\)</span> theo tỉ lệ <span class="math notranslate nohighlight">\(2:1\)</span>, nghĩa là <span class="math notranslate nohighlight">\(\overrightarrow{AG} = 2\overrightarrow{GI_1}\)</span>.</p>
+<p>Tiếp theo chúng ta biến đổi</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\overrightarrow{AH} &amp; = 2 \overrightarrow{OI_1} \\
+\cancel{\overrightarrow{AG}} + \overrightarrow{GH} &amp; = 2 (\overrightarrow{OG} + \overrightarrow{GI_1}) = 2\overrightarrow{OG} + \cancel{2\overrightarrow{GI_1}} \\
+\overrightarrow{GH} &amp; = 2\overrightarrow{OG}.\end{split}\]</div>
+</div>
+<p>Biểu thức cuối cùng chứng tỏ <span class="math notranslate nohighlight">\(G\)</span>, <span class="math notranslate nohighlight">\(H\)</span> và <span class="math notranslate nohighlight">\(O\)</span> thẳng hàng, ngoài ra <span class="math notranslate nohighlight">\(G\)</span> chia đoạn thẳng <span class="math notranslate nohighlight">\(HO\)</span> theo tỉ lệ <span class="math notranslate nohighlight">\(2:1\)</span>.</p>
+<figure class="align-default" id="id10">
+<span id="euler-line"></span><img alt="../../_images/euler_line.svg" src="../../_images/euler_line.svg" />
+<figcaption>
+<p><span class="caption-number">Hình 24 </span><span class="caption-text">Đường thẳng Euler</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="quy-nap-toan-hoc-co-ban">
+<h3>Quy nạp toán học (cơ bản)<a class="headerlink" href="#quy-nap-toan-hoc-co-ban" title="Link to this heading">¶</a></h3>
+<p>Giả sử ta muốn chứng minh một mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với mọi <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>. Phép quy nạp toán học hoạt động theo ba bước như sau:</p>
+<ol class="arabic simple">
+<li><p>Chứng minh mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n=1\)</span>. Đây gọi là <em>bước cơ sở</em>.</p></li>
+<li><p>Giả sử mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n = k \geqslant 1\)</span>. Đây gọi là <em>giả thiết quy nạp</em>.</p></li>
+<li><p>Chứng minh mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n = k+1\)</span> từ giả thiết quy nạp ở bước 2.</p></li>
+</ol>
+<p>Như vậy phép <strong>quy nạp toán học</strong> (hay <strong>mathematical induction</strong>, <strong>математическая индукция</strong>) hoạt động theo bậc thang. Từ giả thiết quy nạp mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n = 1\)</span>, theo chứng minh ở bước 3 thì mệnh đề <span class="math notranslate nohighlight">\(P\)</span> cũng đúng ở bước <span class="math notranslate nohighlight">\(n = 1+1 = 2\)</span>. Do <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n = 2\)</span> nên cũng đúng ở <span class="math notranslate nohighlight">\(n = 3\)</span>. Cứ tiếp tục như vậy <span class="math notranslate nohighlight">\(P\)</span> sẽ đúng với mọi <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>. Đây là sự hiệu quả đáng kinh ngạc của phép quy nạp toán học.</p>
+<div class="proof example admonition" id="exp-induction">
+<p class="admonition-title"><span class="caption-number">Ví dụ 25 </span></p>
+<section class="example-content" id="proof-content">
+<p>Chứng minh công thức tổng quát cho tổng <span class="math notranslate nohighlight">\(1 + 2 + \ldots + n\)</span> là <span class="math notranslate nohighlight">\(\dfrac{n(n+1)}{2}\)</span>.</p>
+</section>
+</div><p>Với <span class="math notranslate nohighlight">\(n = 1\)</span> thì <span class="math notranslate nohighlight">\(1 = \dfrac{1 (1 + 1)}{2}\)</span>. Như vậy công thức đúng cho <span class="math notranslate nohighlight">\(n = 1\)</span>. Đây là bước cơ sở.</p>
+<p>Giả sử mệnh đề đúng với <span class="math notranslate nohighlight">\(n = k \geqslant 1\)</span>. Nghĩa là <span class="math notranslate nohighlight">\(1 + 2 + \ldots + k = \dfrac{k(k+1)}{2}\)</span>. Đây là giả thiết quy nạp.</p>
+<p>Bây giờ ta cần chứng minh mệnh đề đúng với <span class="math notranslate nohighlight">\(n = k+1\)</span>, nghĩa là ta cần chứng minh</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[1 + 2 + \ldots + k + (k+1) = \dfrac{(k+1)(k+2)}{2}.\]</div>
+</div>
+<p>Từ giả thiết quy nạp ta suy ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}1 + 2 + \ldots + k + (k+1) = &amp; \dfrac{k(k+1)}{2} + (k+1) \\ = &amp; \dfrac{k(k+1) + 2(k+1)}{2} \\ = &amp; \dfrac{(k+1)(k+2)}{2}.\end{split}\]</div>
+</div>
+<p>Vậy là ta đã có điều cần chứng minh, và công thức đã được chứng minh đúng với mọi <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>.</p>
+<div class="proof remark admonition" id="rmk-induction">
+<p class="admonition-title"><span class="caption-number">Chú ý 11 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Tùy thuộc bài toán, bước cơ sở có thể không phải bắt đầu từ <span class="math notranslate nohighlight">\(1\)</span> mà là một số nguyên dương nào đó khác.</p>
+</section>
+</div></section>
+<section id="quy-nap-toan-hoc-manh">
+<h3>Quy nạp toán học (mạnh)<a class="headerlink" href="#quy-nap-toan-hoc-manh" title="Link to this heading">¶</a></h3>
+<p>Quy nạp toán học mạnh (strong induction) là một phiên bản mạnh hơn của phép quy nạp toán học ở trên.</p>
+<p>Trong phép quy nạp toán học mạnh, <em>giả thiết quy nạp</em> sẽ được thay bằng: Giả sử mệnh đề <span class="math notranslate nohighlight">\(P\)</span> ĐÚNG TỚI <span class="math notranslate nohighlight">\(n = k \geqslant 1\)</span>.</p>
+<p>Điểm khác biệt của quy nạp mạnh với quy nạp ban đầu là việc giả thiết quy nạp đúng với mọi <span class="math notranslate nohighlight">\(n\)</span> nhỏ hơn hoặc bằng <span class="math notranslate nohighlight">\(k\)</span> và chúng ta sẽ chứng minh mệnh đề đúng với <span class="math notranslate nohighlight">\(n = k + 1\)</span>. Trong khi đó ở quy nạp ban đầu thì giả thiết quy nạp chỉ đúng với <span class="math notranslate nohighlight">\(n = k\)</span> thôi.</p>
+<p>Tính đúng đắn của quy nạp mạnh vẫn giống như quy nạp thông thường, nghĩa là vẫn hoạt động theo bậc thang. Khi mệnh đề đúng với <span class="math notranslate nohighlight">\(n = 1\)</span> (bước cơ sở) thì chứng minh ở bước 3 cho kết quả mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n = 2\)</span>. Do mệnh đề <span class="math notranslate nohighlight">\(P\)</span> đúng với <span class="math notranslate nohighlight">\(n = 1, 2\)</span> nên sẽ đúng với <span class="math notranslate nohighlight">\(n = 3\)</span>. Cứ tiếp tục như vậy thì <span class="math notranslate nohighlight">\(P\)</span> sẽ đúng với mọi <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>.</p>
+<p>Tại sao chúng ta cần dùng quy nạp toán học mạnh khi bản chất vẫn giống quy nạp thông thường?</p>
+<p>Lý do là đôi khi chúng ta chứng minh <span class="math notranslate nohighlight">\(n = k + 1\)</span> không dựa trên <span class="math notranslate nohighlight">\(n = k\)</span>, mà là một điểm nào đó nhỏ hơn, nghĩa là trong khoảng <span class="math notranslate nohighlight">\([1, k]\)</span>.</p>
+<div class="proof example admonition" id="exp-induction-strong">
+<p class="admonition-title"><span class="caption-number">Ví dụ 26 </span></p>
+<section class="example-content" id="proof-content">
+<p>Dãy số Fibonacci định nghĩa bởi <span class="math notranslate nohighlight">\(F_1 = F_2 = 1\)</span> và <span class="math notranslate nohighlight">\(F_{n+2} = F_{n+1} + F_n\)</span> với mọi <span class="math notranslate nohighlight">\(n \geqslant 1\)</span>. Chứng minh rằng công thức tổng quát của dãy Fibonacci là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[F_n = \frac{1}{\sqrt{5}} \left[ \left(\frac{1 + \sqrt{5}}{2}\right)^n - \left(\frac{1 - \sqrt{5}}{2}\right)^n \right].\]</div>
+</div>
+</section>
+</div><p>Khi <span class="math notranslate nohighlight">\(n = 1\)</span> thì ta có <span class="math notranslate nohighlight">\(F_1 = 1\)</span>, đúng với điều kiện ban đầu.</p>
+<p>Khi <span class="math notranslate nohighlight">\(n = 2\)</span> thì ta có <span class="math notranslate nohighlight">\(F_2 = 1\)</span>, đúng với điều kiện ban đầu.</p>
+<p><em>Giả thiết quy nạp</em>: giả sử với mọi <span class="math notranslate nohighlight">\(n = k \geqslant 1\)</span> ta đều có <span class="math notranslate nohighlight">\(F_k = \dfrac{1}{\sqrt{5}} \left[ \left(\dfrac{1 + \sqrt{5}}{2}\right)^k - \left(\dfrac{1 - \sqrt{5}}{2}\right)^k \right]\)</span>.</p>
+<p>Khi đó, với <span class="math notranslate nohighlight">\(n = k+1\)</span>, ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}F_{k+1} &amp; = F_{k} + F_{k-1} \\
+&amp; = \dfrac{1}{\sqrt{5}} \left[ \left(\dfrac{1 + \sqrt{5}}{2}\right)^k - \left(\dfrac{1 - \sqrt{5}}{2}\right)^k \right]
++ \dfrac{1}{\sqrt{5}} \left[ \left(\dfrac{1 + \sqrt{5}}{2}\right)^{k-1} - \left(\dfrac{1 - \sqrt{5}}{2}\right)^{k-1} \right] \\
+&amp; = \dfrac{1}{\sqrt{5}} \left[ \left(\dfrac{1 + \sqrt{5}}{2}\right)^k + \left(\dfrac{1 + \sqrt{5}}{2}\right)^{k-1} \right]
+- \dfrac{1}{\sqrt{5}} \left[ \left(\dfrac{1 - \sqrt{5}}{2}\right)^k + \left(\dfrac{1 - \sqrt{5}}{2}\right)^{k-1} \right] \\
+&amp; = \dfrac{1}{\sqrt{5}} \left(\dfrac{1 + \sqrt{5}}{2}\right)^{k-1} \left(\dfrac{1 + \sqrt{5}}{2} + 1\right)
+- \dfrac{1}{\sqrt{5}} \left(\dfrac{1 - \sqrt{5}}{2}\right)^{k-1} \left(\dfrac{1 - \sqrt{5}}{2} + 1\right).\end{split}\]</div>
+</div>
+<p>Để ý rằng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\dfrac{1 + \sqrt{5}}{2} + 1 &amp; = \dfrac{3 + \sqrt{5}}{2} = \dfrac{6 + 2\sqrt{5}}{4} = \dfrac{1 + 2\sqrt{5} + \left(\sqrt{5}\right)^2}{4} \\
+&amp; = \dfrac{\left(1 + \sqrt{5}\right)^2}{2^2} = \left(\dfrac{1 + \sqrt{5}}{2}\right)^2,\end{split}\]</div>
+</div>
+<p>tương tự ta cũng có <span class="math notranslate nohighlight">\(\dfrac{1 - \sqrt{5}}{2} + 1 = \left(\dfrac{1 - \sqrt{5}}{2}\right)^2\)</span>, nên ở trên suy ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}F_{k+1} &amp; = \dfrac{1}{\sqrt{5}} \left(\dfrac{1 + \sqrt{5}}{2}\right)^{k-1} \left(\dfrac{1 + \sqrt{5}}{2}\right)^2
++ \dfrac{1}{\sqrt{5}} \left(\dfrac{1 - \sqrt{5}}{2}\right)^{k-1} \left(\dfrac{1 - \sqrt{5}}{2}\right)^2 \\
+&amp; = \dfrac{1}{\sqrt{5}} \left[ \left(\dfrac{1 + \sqrt{5}}{2}\right)^{k+1} - \left(\dfrac{1 - \sqrt{5}}{2}\right)^{k+1} \right].\end{split}\]</div>
+</div>
+<p>Như vậy mệnh đề đúng với <span class="math notranslate nohighlight">\(n = k+1\)</span> và ta có điều phải chứng minh.</p>
+<p>Ở đây quy nạp mạnh thể hiện ở việc ta cần giả thiết đúng với <span class="math notranslate nohighlight">\(n = k\)</span> và <span class="math notranslate nohighlight">\(n = k-1\)</span> để chứng minh cho <span class="math notranslate nohighlight">\(n = k+1\)</span>.</p>
+</section>
+<section id="chung-minh-bang-phan-chung">
+<h3>Chứng minh bằng phản chứng<a class="headerlink" href="#chung-minh-bang-phan-chung" title="Link to this heading">¶</a></h3>
+<p>Giả sử chúng ta có điều kiện <span class="math notranslate nohighlight">\(P\)</span> và cần chứng minh kết quả <span class="math notranslate nohighlight">\(Q\)</span>. Điều này tương đương với mệnh đề logic <span class="math notranslate nohighlight">\(P \Rightarrow Q\)</span>. Chứng minh bằng phản chứng dựa trên sự tương đương của các mệnh đề logic, nghĩa là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(P \Rightarrow Q) \Longleftrightarrow (\bar{Q} \Rightarrow \bar{P}).\]</div>
+</div>
+<p>Khi đó, từ kết quả <span class="math notranslate nohighlight">\(Q\)</span> cần chứng minh, chúng ta giả sử rằng đang có <span class="math notranslate nohighlight">\(\bar{Q}\)</span>, tức là phủ định của mệnh đề cần chứng minh. Bằng các lập luận logic chúng ta sẽ suy ra được điều trái với điều kiện ban đầu, tức là <span class="math notranslate nohighlight">\(\bar{P}\)</span>. Đây là cơ sở của phép chứng minh bằng phản chứng.</p>
+<div class="proof example admonition" id="exp-phan-chung">
+<p class="admonition-title"><span class="caption-number">Ví dụ 27 </span></p>
+<section class="example-content" id="proof-content">
+<p>Chứng minh rằng với mọi số tự nhiên <span class="math notranslate nohighlight">\(n\)</span>, nếu <span class="math notranslate nohighlight">\(n^3\)</span> chia hết cho <span class="math notranslate nohighlight">\(3\)</span> thì <span class="math notranslate nohighlight">\(n\)</span> chia hết cho <span class="math notranslate nohighlight">\(3\)</span>.</p>
+</section>
+</div><p>Ở đây:</p>
+<ol class="arabic simple">
+<li><p>Điều kiện, tức mệnh đề <span class="math notranslate nohighlight">\(P\)</span>, là &quot;<span class="math notranslate nohighlight">\(n^3\)</span> chia hết cho <span class="math notranslate nohighlight">\(3\)</span>&quot;.</p></li>
+<li><p>Mệnh đề cần chứng minh <span class="math notranslate nohighlight">\(Q\)</span> là &quot;<span class="math notranslate nohighlight">\(n\)</span> chia hết cho <span class="math notranslate nohighlight">\(3\)</span>&quot;.</p></li>
+</ol>
+<p>Ta suy ra:</p>
+<ol class="arabic simple">
+<li><p>Phủ định của mệnh đề <span class="math notranslate nohighlight">\(P\)</span> là &quot;<span class="math notranslate nohighlight">\(n^3\)</span> không chia hết cho <span class="math notranslate nohighlight">\(3\)</span>&quot;, tức mệnh đề <span class="math notranslate nohighlight">\(\bar{P}\)</span>.</p></li>
+<li><p>Phủ định của mệnh đề <span class="math notranslate nohighlight">\(Q\)</span> là &quot;<span class="math notranslate nohighlight">\(n\)</span> không chia hết cho <span class="math notranslate nohighlight">\(3\)</span>&quot;, tức mệnh đề <span class="math notranslate nohighlight">\(\bar{Q}\)</span>.</p></li>
+</ol>
+<p>Như vậy phép phản chứng đưa ta tới việc chứng minh: nếu số tự nhiên <span class="math notranslate nohighlight">\(n\)</span> không chia hết cho <span class="math notranslate nohighlight">\(3\)</span> thì <span class="math notranslate nohighlight">\(n^3\)</span> không chia hết cho <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(n\)</span> không chia hết cho <span class="math notranslate nohighlight">\(3\)</span> thì <span class="math notranslate nohighlight">\(n\)</span> có dạng <span class="math notranslate nohighlight">\(3k+1\)</span> hoặc <span class="math notranslate nohighlight">\(3k+2\)</span> với <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span>.</p>
+<ul class="simple">
+<li><p>nếu <span class="math notranslate nohighlight">\(n = 3k+1\)</span> thì <span class="math notranslate nohighlight">\(n^3 = 27k^3 + 27k^2 + 9k + 1\)</span>, khi chia <span class="math notranslate nohighlight">\(3\)</span> sẽ dư <span class="math notranslate nohighlight">\(1\)</span>. Khi đó <span class="math notranslate nohighlight">\(n^3\)</span> không chia hết cho <span class="math notranslate nohighlight">\(3\)</span>;</p></li>
+<li><p>nếu <span class="math notranslate nohighlight">\(n = 3k+2\)</span> thì <span class="math notranslate nohighlight">\(n^3 = 27k^3 + 54k^2 + 36k + 8\)</span>, khi chia <span class="math notranslate nohighlight">\(3\)</span> sẽ dư <span class="math notranslate nohighlight">\(2\)</span> (vì <span class="math notranslate nohighlight">\(8\)</span> chia <span class="math notranslate nohighlight">\(3\)</span> dư <span class="math notranslate nohighlight">\(2\)</span>). Khi đó <span class="math notranslate nohighlight">\(n^3\)</span> cũng không chia hết cho <span class="math notranslate nohighlight">\(3\)</span>.</p></li>
+</ul>
+<p>Như vậy khi <span class="math notranslate nohighlight">\(n\)</span> không chia hết cho <span class="math notranslate nohighlight">\(3\)</span> (mệnh đề <span class="math notranslate nohighlight">\(\bar{Q}\)</span>) thì <span class="math notranslate nohighlight">\(n^3\)</span> cũng không chia hết cho <span class="math notranslate nohighlight">\(3\)</span> (mệnh đề <span class="math notranslate nohighlight">\(\bar{P}\)</span>). Theo phản chứng ta có, nếu <span class="math notranslate nohighlight">\(n^3\)</span> chia hết cho <span class="math notranslate nohighlight">\(3\)</span> (mệnh đề <span class="math notranslate nohighlight">\(P\)</span>) thì <span class="math notranslate nohighlight">\(n\)</span> chia hết cho <span class="math notranslate nohighlight">\(3\)</span> (mệnh đề <span class="math notranslate nohighlight">\(Q\)</span>). Đây là điều phải chứng minh.</p>
+</section>
+</section>
+<section id="cac-phuong-phap-khoa-hoc">
+<h2>Các phương pháp khoa học<a class="headerlink" href="#cac-phuong-phap-khoa-hoc" title="Link to this heading">¶</a></h2>
+<p>Đầu tiên chúng ta nói về toán học. Thông thường các vấn đề toán học được chia thành hai loại:</p>
+<ol class="arabic simple">
+<li><p><strong>Chứng minh</strong>. Các vấn đề này trả lời cho việc một đối tượng (hàm số, hình vẽ, mô hình, ...) có thỏa tính chất nào đó hay không, hoặc có tồn tại đối tượng thỏa tính chất cho trước hay không.</p></li>
+<li><p><strong>Tính toán</strong>. Khi tồn tại đối tượng thỏa tính chất cho trước, chúng ta cần chỉ rõ cách xây dựng đối tượng đó hoặc tính toán cụ thể.</p></li>
+</ol>
+<p>Ví dụ, một nhà vật lý sau khi xem xét các yếu tố ảnh hưởng tới chuyển động của một vật thì thiết lập được một phương trình. Nhà vật lý <em>nghi ngờ</em> rằng phương trình có nghiệm thuộc một khoảng nào đó. Lúc này, việc vận dụng toán học để giải quyết bài toán vật lý gồm hai bước: <strong>chứng minh</strong> rằng phương trình có nghiệm thuộc khoảng đó, và <strong>tính toán</strong> giá trị của nghiệm (chính xác hoặc xấp xỉ).</p>
+<p>Trong khoa học, tương tự, các phương pháp được chia thành hai dạng:</p>
+<ol class="arabic simple">
+<li><p><strong>Các phương pháp định tính</strong>. Các phương pháp định tính giúp xác định tính chất của sự vật hoặc hiện tượng, trả lời cho các câu hỏi: hiện tượng này xảy ra dựa trên nguyên lý gì, những yếu tố nào tác động lên hiện tượng, yếu tố nào đó có ảnh hưởng lên hiện tượng không.</p></li>
+<li><p><strong>Các phương pháp định lượng</strong>. Các phương pháp định lượng trả lời cụ thể hơn các tính chất hoặc yếu tố thu được từ các phương pháp định tính, trả lời cho các câu hỏi: nguyên lý gây ra hiện tượng được mô hình hóa thành toán học như thế nào, các yếu tố tác động lên hiện tượng có liên hệ gì với nhau (về khối lượng, thể tích, tỉ lệ, ...).</p></li>
+</ol>
+<p>Ví dụ, trong môn hóa học, bài tập phân biệt các lọ mất nhãn gây ám ảnh cho bao thế hệ học sinh là một ví dụ của phương pháp định tính. Trên thực tế, đa phần các chất sẽ đứng chung với nhau dưới dạng hỗn hợp hoặc quặng. Các phương pháp hóa học cho phép xác định trong hỗn hợp có các nguyên tố nào và tách các nguyên tố đó ra. Tiếp theo, các phương pháp định lượng cho phép xác định tỉ lệ các nguyên tố trong hỗn hợp.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../myrefs.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Tài liệu tham khảo</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Ngoài lề</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025-2026, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Những điều mình nghĩ</a><ul>
+<li><a class="reference internal" href="#gioi-thieu">Giới thiệu</a></li>
+<li><a class="reference internal" href="#toan-hoc-la-gi-voi-minh">Toán học là gì với mình?</a><ul>
+<li><a class="reference internal" href="#hoc-toan-de-ren-luyen-tu-duy-la-gi">Học toán để rèn luyện tư duy là gì?</a><ul>
+<li><a class="reference internal" href="#suy-luan-nguoc">Suy luận ngược</a></li>
+<li><a class="reference internal" href="#su-dung-mo-hinh-don-gian-cho-bai-toan-phuc-tap">Sử dụng mô hình đơn giản cho bài toán phức tạp</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nhung-ngay-dau-hoc-toan">Những ngày đầu học toán</a></li>
+<li><a class="reference internal" href="#dai-hoc-tinh-yeu-khong-thanh-voi-toan">Đại học, tình yêu không thành với toán</a></li>
+<li><a class="reference internal" href="#quan-niem-cua-minh-ve-toan-hoc">Quan niệm của mình về toán học</a></li>
+<li><a class="reference internal" href="#ket-luan">Kết luận</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#van-dung-toan-hay-ung-dung-toan-trong-chuong-trinh-pho-thong">Vận dụng toán hay ứng dụng toán trong chương trình phổ thông?</a><ul>
+<li><a class="reference internal" href="#van-dung-toan-la-lam-gi">Vận dụng toán là làm gì?</a></li>
+<li><a class="reference internal" href="#ung-dung-toan-la-lam-gi">Ứng dụng toán là làm gì?</a></li>
+<li><a class="reference internal" href="#tong-ket">Tổng kết</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#viec-su-dung-ki-hieu-va-cong-thuc-toan">Việc sử dụng kí hiệu và công thức toán</a></li>
+<li><a class="reference internal" href="#nhung-cau-noi-hay">Những câu nói hay</a></li>
+<li><a class="reference internal" href="#nhung-cau-noi-vo-van">Những câu nói vớ vẩn</a></li>
+<li><a class="reference internal" href="#ve-mot-vi-giao-su-va-dinh-ly-godel">Về một vị giáo sư và định lý Godel</a><ul>
+<li><a class="reference internal" href="#he-qua-dinh-li-godel">Hệ quả định lí Godel</a></li>
+<li><a class="reference internal" href="#ve-cantor">Về Cantor</a></li>
+<li><a class="reference internal" href="#ve-su-vo-han">Về sự vô hạn</a></li>
+<li><a class="reference internal" href="#ve-giao-duc">Về giáo dục</a></li>
+<li><a class="reference internal" href="#chu-nghia-duy-ly-va-tu-duy-chu-quan">Chủ nghĩa duy lý và tư duy chủ quan</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#loi-tong-ket">Lời tổng kết</a></li>
+<li><a class="reference internal" href="#chu-nghia-khac-ky-va-phan-phoi-nhi-thuc">Chủ nghĩa khắc kỷ và phân phối nhị thức</a><ul>
+<li><a class="reference internal" href="#phan-phoi-nhi-thuc">Phân phối nhị thức</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nhin-lai-giao-duc-tu-2018-ve-truoc">Nhìn lại giáo dục từ 2018 về trước</a><ul>
+<li><a class="reference internal" href="#day-hoc-them-va-quy-luat-cung-cau">Dạy học thêm và quy luật cung cầu</a></li>
+<li><a class="reference internal" href="#banh-truong-lanh-dia-day-hoc-them">Bành trướng lãnh địa dạy học thêm</a></li>
+<li><a class="reference internal" href="#cac-hinh-thuc-day-hoc-them-ma-minh-biet">Các hình thức dạy học thêm (mà mình biết)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cac-loi-thuong-gap-trong-giai-tich">Các lỗi thường gặp trong giải tích</a><ul>
+<li><a class="reference internal" href="#co-dao-ham-thi-lien-tuc-nguoc-lai-chua-chac">Có đạo hàm thì liên tục, ngược lại chưa chắc</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#phuong-phap-chung-minh-toan-hoc">Phương pháp chứng minh toán học</a><ul>
+<li><a class="reference internal" href="#chung-minh-truc-tiep">Chứng minh trực tiếp</a></li>
+<li><a class="reference internal" href="#quy-nap-toan-hoc-co-ban">Quy nạp toán học (cơ bản)</a></li>
+<li><a class="reference internal" href="#quy-nap-toan-hoc-manh">Quy nạp toán học (mạnh)</a></li>
+<li><a class="reference internal" href="#chung-minh-bang-phan-chung">Chứng minh bằng phản chứng</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cac-phuong-phap-khoa-hoc">Các phương pháp khoa học</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Nhấp để hiển thị';</script>
+    <script>let toggleHintHide = 'Nhấp để ẩn';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1], "wt": "\\operatorname{wt}", "tr": "\\operatorname{tr}", "rank": "\\operatorname{rank}", "lcm": "\\mathrm{lcm}", "GL": "\\mathrm{GL}", "lex": "\\text{lex}", "grlex": "\\text{grlex}", "grevlex": "\\text{grevlex}", "CC": "\\mathbb{C}", "RR": "\\mathbb{R}", "QQ": "\\mathbb{Q}", "ZZ": "\\mathbb{Z}", "NN": "\\mathbb{N}", "FF": "\\mathbb{F}", "KK": "\\mathbb{K}"}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>

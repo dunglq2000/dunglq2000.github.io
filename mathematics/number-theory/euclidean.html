@@ -1,0 +1,909 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Tìm Kiếm" href="../search.html"><link rel="next" title="2. Phương trình đồng dư tuyến tính" href="linear-congruence.html"><link rel="prev" title="Lý thuyết số" href="index.html">
+        <link rel="prefetch" href="../_static/rhine_lab.jpg" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>1. Phép chia Euclid. Thuật toán Euclid - Math Book</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=3a5ece24" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyles.css?v=ca48935a" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Math Book</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/rhine_lab.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Math Book</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/index.html">Những lời nói đầu</a><input aria-label="Toggle navigation of Những lời nói đầu" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-notebook.html">Cơ sở xây dựng notebook</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algebra/index.html">Đại số</a><input aria-label="Toggle navigation of Đại số" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/set/index.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../algebra/polynomial/index.html">2. Đa thức</a><input aria-label="Toggle navigation of 2. Đa thức" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc-mot-bien">2.2. So sánh, cộng, trừ và nhân hai đa thức một biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#phep-chia-da-thuc-mot-bien">2.3. Phép chia đa thức một biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#phep-chia-da-thuc-nhieu-bien">2.4. Phép chia đa thức nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/lagrange-interpolation.html">2.5. Đa thức nội suy Lagrange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/numerical-methods.html">2.6. Phương pháp tính giá trị đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/multivariate-polynomial.html">2.7. Đa thức nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/groebner-basis.html">2.8. Cơ sở Gröbner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/buchberger-algorithm.html">2.9. Thuật toán Buchberger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/f4-algorithm.html">2.10. Thuật toán F4 và ma trận Macaulay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/groebner-parallel-computing.html">2.11. Tính cơ sở Gröbner song song trên CPU và GPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../abstract-algebra/index.html">Lý thuyết nhóm</a><input aria-label="Toggle navigation of Lý thuyết nhóm" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/groups/index.html">1. Lý thuyết nhóm</a><input aria-label="Toggle navigation of 1. Lý thuyết nhóm" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/group.html">1.1. Nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/symmetric-group.html">1.2. Nhóm hoán vị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/quasigroup.html">1.3. Quasigroup</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/homomorphisms/index.html">2. Homomorphisms</a><input aria-label="Toggle navigation of 2. Homomorphisms" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/homomorphisms/group-homomorphism.html">2.1. Group homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/group-action/index.html">3. Tác động nhóm</a><input aria-label="Toggle navigation of 3. Tác động nhóm" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/group-action/group-action.html">3.1. Tác động nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/group-action/burnside.html">3.2. Bổ đề Burnside</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/rings/index.html">4. Vành</a><input aria-label="Toggle navigation of 4. Vành" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/rings/ring.html">4.1. Vành</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/fields/index.html">5. Trường</a><input aria-label="Toggle navigation of 5. Trường" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/field.html">5.1. Trường</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/ideal.html">5.2. Ideal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/ring-homomorphism.html">5.3. Ring kernel và ring homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/galois-theory/index.html">6. Lý thuyết Galois</a><input aria-label="Toggle navigation of 6. Lý thuyết Galois" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/galois-theory/extension-field.html">6.1. Extension Fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/index.html">Giải tích</a><input aria-label="Toggle navigation of Giải tích" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/calculus/index.html">1. Giải tích</a><input aria-label="Toggle navigation of 1. Giải tích" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/limits.html">1.1. Giới hạn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/continuity.html">1.2. Tính liên tục của hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/monotone.html">1.3. Tính đơn điệu và cực trị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/derivative.html">1.4. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/partial-derivative.html">1.5. Đạo hàm riêng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/partial-derivative.html#dao-ham-mot-so-ham-nhieu-bien">1.6. Đạo hàm một số hàm nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/avarage-value.html">1.7. Một số định lí về giá trị trung bình</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/concave.html">1.8. Tính lồi, lõm và điểm uốn của đồ thị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/line-integral.html">1.9. Tích phân đường</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/differential-equation/index.html">2. Phương trình vi phân</a><input aria-label="Toggle navigation of 2. Phương trình vi phân" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/differential-equation/numerical-methods/index.html">2.1. Phương pháp số cho bài toán giá trị ban đầu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series/index.html">3. Chuỗi số</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../numerical-methods/index.html">Phương pháp tính toán</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../probability/index.html">Xác suất thống kê</a><input aria-label="Toggle navigation of Xác suất thống kê" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../probability/intro.html">Xác suất thống kê</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probability/statistics-exercises/index.html">Bài tập thực hành thống kê toán học</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../probability/ML/index.html">Machine Learning</a><input aria-label="Toggle navigation of Machine Learning" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/linear-regression.html">Linear Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/kmeans.html">K-Means clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/gradient-descent.html">Gradient Descent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/perceptron.html">Perceptron Learning Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linalg/index.html">Đại số tuyến tính</a><input aria-label="Toggle navigation of Đại số tuyến tính" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../linalg/matrix/index.html">1. Ma trận</a><input aria-label="Toggle navigation of 1. Ma trận" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-determinant.html">1.1. Định thức ma trận</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-inversion.html">1.2. Ma trận nghịch đảo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-rank.html">1.3. Hạng của ma trận</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/system-of-equations.html">2. Hệ phương trình tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/linear-operator.html">3. Toán tử tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/eigen.html">4. Trị riêng và vector riêng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/linear-combination.html">5. Tổ hợp tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/vector-space.html">6. Không gian vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/euclidean-space.html">7. Không gian Euclide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/quadratic-form.html">8. Dạng toàn phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/hilbert-space.html">9. Không gian Hilbert</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Lý thuyết số</a><input aria-label="Toggle navigation of Lý thuyết số" checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">1. Phép chia Euclid. Thuật toán Euclid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-congruence.html">2. Phương trình đồng dư tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetic-functions.html">3. Các hàm số học quan trọng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetic-theorems.html">4. Các định lí số học quan trọng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quadratic-residue.html">5. Thặng dư chính phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dirichlet-convolution.html">6. Tích chập Dirichlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chinese-remainder-theorem.html">7. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">8. Bài tập số học sưu tầm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../discrete-mathematics/index.html">Toán rời rạc</a><input aria-label="Toggle navigation of Toán rời rạc" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/binary-relation.html">Quan hệ hai ngôi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/partition.html">Phân hoạch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/discrete-fourier-transform.html">Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/linear-equations-over-integers.html">Phương trình tuyến tính với nghiệm nguyên</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/combinatoric.html">Đại cương tổ hợp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discrete-mathematics/recurrence-relation.html">Công thức truy hồi</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../discrete-mathematics/graph/index.html">Lý thuyết đồ thị</a><input aria-label="Toggle navigation of Lý thuyết đồ thị" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/definitions.html">Các định nghĩa cơ bản</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/connection.html">Tính liên thông của đồ thị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/tree.html">Cây</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/exercises.html">Bài tập sưu tầm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/application-1.html">Ứng dụng 1: sắp xếp topo và bài toán xếp lịch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/application-2.html">Ứng dụng 2: tối ưu bằng thuật toán Kruskal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/application-3.html">Ứng dụng 3: mạng xã hội</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../discrete-mathematics/graph/euler_hamilton.html">Đồ thị Euler và đồ thị Hamilton</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../physics/index.html">Vật lý</a><input aria-label="Toggle navigation of Vật lý" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../physics/brachistochrone/brachistochrone.html">Đường đoản thời</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../boolean/index.html">Hàm Boolean và mật mã đối xứng</a><input aria-label="Toggle navigation of Hàm Boolean và mật mã đối xứng" class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/boolean-function/index.html">1. Hàm Boolean và các tính chất mật mã</a><input aria-label="Toggle navigation of 1. Hàm Boolean và các tính chất mật mã" class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/introduction.html">1.1. Giới thiệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/boolean-dnf-cnf.html">1.2. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/boolean-vectorial.html">1.3. Biểu diễn hàm Boolean vectorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/walsh-hadamard-spectre.html">1.4. Nonlinearity của hàm boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/cryptographic-properties.html">1.5. Các tính chất mật mã của hàm Boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/stream-cipher/index.html">2. Stream cipher</a><input aria-label="Toggle navigation of 2. Stream cipher" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/stream-cipher/linear-feedback-shift-register.html">2.1. Linear Feedback Shift Register</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/mac.html">3. Message Authentication Code</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/differential-attack/index.html">4. Phá mã vi sai</a><input aria-label="Toggle navigation of 4. Phá mã vi sai" class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/differential-attack/toycipher.html">4.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/differential-attack/tinydes.html">4.2. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/differential-attack/difference-and-differential.html">4.3. Difference và differential</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/linear-attack/index.html">5. Phá mã tuyến tính</a><input aria-label="Toggle navigation of 5. Phá mã tuyến tính" class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/linear-attack/tinydes.html">5.1. Phá mã tuyến tính trên TinyDES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/slide-attack/index.html">6. Slide attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/algebraic-attack/index.html">7. Algebraic cryptanalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/glossary.html">8. Bảng thuật ngữ hàm Boolean</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../stuff/index.html">Ngoài lề</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../myrefs.html">Tài liệu tham khảo</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/number-theory/euclidean.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="phep-chia-euclid-thuat-toan-euclid">
+<h1><span class="section-number">1. </span>Phép chia Euclid. Thuật toán Euclid<a class="headerlink" href="#phep-chia-euclid-thuat-toan-euclid" title="Link to this heading">¶</a></h1>
+<section id="phep-chia-euclid">
+<h2><span class="section-number">1.1. </span>Phép chia Euclid<a class="headerlink" href="#phep-chia-euclid" title="Link to this heading">¶</a></h2>
+<p>Đây là nền tảng, cơ sở của số học. Từ khi biết tới phép chia hai số nguyên, ta có thể tìm <strong>thương</strong> và <strong>số dư</strong>. Nói theo toán học, nếu ta có hai số nguyên dương <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span> thì tồn tại cặp số <span class="math notranslate nohighlight">\(q\)</span>, <span class="math notranslate nohighlight">\(r\)</span> sao cho <span class="math notranslate nohighlight">\(a = qb + r\)</span> với <span class="math notranslate nohighlight">\(0 \leqslant r &lt; b\)</span>.</p>
+<p>Khi đó, <span class="math notranslate nohighlight">\(a\)</span> gọi là số bị chia, <span class="math notranslate nohighlight">\(b\)</span> gọi là số chia, <span class="math notranslate nohighlight">\(q\)</span> là thương (q trong quotient) và <span class="math notranslate nohighlight">\(r\)</span> là số dư (r trong remainder).</p>
+<p>Đặc biệt, sự tồn tại của cặp số <span class="math notranslate nohighlight">\(q\)</span> và <span class="math notranslate nohighlight">\(r\)</span> là duy nhất. Thật vậy, nếu ta giả sử tồn tại hai cặp số <span class="math notranslate nohighlight">\((q_1, r_1)\)</span> và <span class="math notranslate nohighlight">\((q_2, r_2)\)</span> đều thỏa đẳng thức trên, nghĩa là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a = q_1 b + r_1, \quad a = q_2 b + r_2.\]</div>
+</div>
+<p>Trừ hai đẳng thức vế theo vế ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(q_1 - q_2) b + (r_1 - r_2) = 0,\]</div>
+</div>
+<p>tương đương <span class="math notranslate nohighlight">\((r_2 - r_1) = (q_1 - q_2) b\)</span>, mà <span class="math notranslate nohighlight">\(0 \leqslant r_1, r_2 &lt; b\)</span> nên <span class="math notranslate nohighlight">\(-b &lt; r_2 - r_1 &lt; b\)</span>.</p>
+<p>Như vậy chỉ có thể xảy ra trường hợp <span class="math notranslate nohighlight">\(r_2 - r_1 = 0\)</span> (vì giá trị tuyệt đối của vế phải là bội của <span class="math notranslate nohighlight">\(b\)</span> nên sẽ lớn hơn <span class="math notranslate nohighlight">\(b\)</span>, còn vế trái lại có giá trị tuyệt đối nhỏ hơn <span class="math notranslate nohighlight">\(b\)</span>) hay <span class="math notranslate nohighlight">\(r_2 = r_1\)</span>, kéo theo <span class="math notranslate nohighlight">\(q_1 = q_2\)</span>.</p>
+<div class="proof theorem admonition" id="thm-principal-arith">
+<p class="admonition-title"><span class="caption-number">Định lý 1.16 </span> (Định lí cơ bản của số học)</p>
+<section class="theorem-content" id="proof-content">
+<p>Mỗi số nguyên lớn hơn <span class="math notranslate nohighlight">\(1\)</span> đều có thể phân tích thành tích các số nguyên tố theo một cách duy nhất.</p>
+</section>
+</div></section>
+<section id="vanh-modulo-so-nguyen">
+<h2><span class="section-number">1.2. </span>Vành modulo số nguyên (кольца вычётов)<a class="headerlink" href="#vanh-modulo-so-nguyen" title="Link to this heading">¶</a></h2>
+<p>Cố định <span class="math notranslate nohighlight">\(m \in \NN\)</span> với <span class="math notranslate nohighlight">\(m &gt; 1\)</span>.</p>
+<p>Hai số <span class="math notranslate nohighlight">\(a, b \in \ZZ\)</span> được gọi là <strong>đồng dư modulo</strong> <span class="math notranslate nohighlight">\(m\)</span> (hay <strong>сравнимы по модулю</strong> <span class="math notranslate nohighlight">\(m\)</span>) nếu <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span> có cùng số dư khi chia cho <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p>Nói cách khác, <span class="math notranslate nohighlight">\(m \mid (a - b)\)</span>. Khi đó ta kí hiệu</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a \equiv b \pmod{m}.\]</div>
+</div>
+<p><strong>Lớp thương</strong> (hay <strong>класс вычётов</strong>) của số nguyên <span class="math notranslate nohighlight">\(k\)</span> theo modulo <span class="math notranslate nohighlight">\(m\)</span> là tập</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[k \bmod m = \{ l \in \ZZ : l \equiv k \bmod m \} = \{ l = k + m \cdot n : n \in \ZZ \} = k + m \ZZ.\]</div>
+</div>
+<p>Kí hiệu ngắn gọn là <span class="math notranslate nohighlight">\(k \bmod m = \overline{k}\)</span>.</p>
+<p>Tính chất của lớp thương:</p>
+<ol class="arabic simple">
+<li><p>Trong một lớp thương mọi số đều đồng dư với nhau theo modulo <span class="math notranslate nohighlight">\(m\)</span>, tức là đều có cùng số dư khi chia cho <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+<li><p>Các số nguyên từ các lớp thương khác nhau thì không đồng dư theo modulo <span class="math notranslate nohighlight">\(m\)</span>.</p></li>
+<li><p>Các lớp thương khác nhau thì không giao nhau.</p></li>
+<li><p>Mọi lớp thương modulo <span class="math notranslate nohighlight">\(m\)</span> phân chia tập <span class="math notranslate nohighlight">\(\ZZ\)</span> thành các tập con không giao nhau.</p></li>
+</ol>
+<p>Tập hợp tất cả lớp thương modulo <span class="math notranslate nohighlight">\(m\)</span> được kí hiệu là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\ZZ_m = \{ \overline{0}, \overline{1}, \ldots, \overline{m-1} \}.\]</div>
+</div>
+<p>Các toán tử trên <span class="math notranslate nohighlight">\(\ZZ_m\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Phép cộng: <span class="math notranslate nohighlight">\(\overline{k} + \overline{l} = \overline{k + l}\)</span>.</p></li>
+<li><p>Phép nhân: <span class="math notranslate nohighlight">\(\overline{k} \cdot \overline{l} = \overline{k \cdot l}\)</span>.</p></li>
+</ol>
+<p>Lớp <span class="math notranslate nohighlight">\(\overline{a} \in \ZZ_m\)</span> được gọi là <strong>khả nghịch</strong> (hay <strong>обратимый</strong>) nếu tồn tại <span class="math notranslate nohighlight">\(\overline{b} \in \ZZ_m\)</span> sao cho <span class="math notranslate nohighlight">\(\overline{a} \cdot \overline{b} = 1\)</span>.</p>
+<p>Khi đó <span class="math notranslate nohighlight">\(\overline{b}\)</span> được gọi là <strong>nghịch đảo</strong> (hay <strong>обратый</strong>) của <span class="math notranslate nohighlight">\(\overline{a}\)</span>.</p>
+<p>Dễ thấy, nghịch đảo, nếu tồn tại, của <span class="math notranslate nohighlight">\(\overline{a}\)</span> là duy nhất. Ta có thể chứng minh bằng phản chứng.</p>
+<p>Lớp khác không <span class="math notranslate nohighlight">\(\overline{a} \in \ZZ_m\)</span> được gọi là <strong>делитель нуля</strong> nếu tồn tại <span class="math notranslate nohighlight">\(\overline{b} \neq \overline{0} \in \ZZ_m\)</span> sao cho <span class="math notranslate nohighlight">\(\overline{a} \cdot \overline{b} = \overline{0}\)</span>.</p>
+<p>Ví dụ, <span class="math notranslate nohighlight">\(\overline{2} \in \ZZ_4\)</span> có <span class="math notranslate nohighlight">\(\overline{2} \cdot \overline{2} = \overline{4}\)</span> nên <span class="math notranslate nohighlight">\(\overline{2}\)</span> là делитель нуля trong của <span class="math notranslate nohighlight">\(\ZZ_4\)</span>.</p>
+<p>Chú ý rằng, khi <span class="math notranslate nohighlight">\(\overline{a} \cdot \overline{b} = \overline{0}\)</span> trong <span class="math notranslate nohighlight">\(\ZZ_m\)</span> thì ta không thể suy ra <span class="math notranslate nohighlight">\(\overline{a} = \overline{0}\)</span> hay <span class="math notranslate nohighlight">\(\overline{b} = \overline{0}\)</span>.</p>
+<p>Nếu <span class="math notranslate nohighlight">\(p\)</span> là số nguyên tố thì trong <span class="math notranslate nohighlight">\(\ZZ_p\)</span> không có делитель нуля.</p>
+<p>Tập hợp tất cả lớp khả nghịch trong <span class="math notranslate nohighlight">\(\ZZ_m\)</span> được kí hiệu là <span class="math notranslate nohighlight">\(\ZZ_m^{\times}\)</span>.</p>
+<p>Ta có tính chất trên <span class="math notranslate nohighlight">\(\ZZ_m\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Với mọi <span class="math notranslate nohighlight">\(a \in \ZZ\)</span>, <span class="math notranslate nohighlight">\(a \equiv a \pmod{m}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(a \equiv b \pmod{m}\)</span> thì <span class="math notranslate nohighlight">\(b \equiv a \pmod{m}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(a \equiv b \pmod{m}\)</span> và <span class="math notranslate nohighlight">\(b \equiv c \pmod{m}\)</span> thì <span class="math notranslate nohighlight">\(a \equiv c \pmod{m}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(a \equiv b \pmod{m}\)</span> thì <span class="math notranslate nohighlight">\(a \cdot c \equiv b \cdot c \pmod{m}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(c \cdot a \equiv c \cdot b \pmod{m}\)</span> và <span class="math notranslate nohighlight">\(\gcd(c, m) = 1\)</span> thì <span class="math notranslate nohighlight">\(a \equiv b \pmod{m}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(a \equiv b \pmod{m}\)</span> thì <span class="math notranslate nohighlight">\(c \cdot a \equiv c \cdot b \pmod{cm}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(a \equiv b \pmod{m}\)</span> và <span class="math notranslate nohighlight">\(c \equiv d \pmod{m}\)</span> thì <span class="math notranslate nohighlight">\(a \pm c \equiv b \pm d \pmod{m}\)</span> và <span class="math notranslate nohighlight">\(a \cdot c \equiv b \cdot d \pmod{m}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(a \equiv b \pmod{m}\)</span> thì <span class="math notranslate nohighlight">\(a^n \equiv b^n \pmod{m}\)</span>.</p></li>
+<li><p>Nếu <span class="math notranslate nohighlight">\(a \equiv b \pmod{m}\)</span> và <span class="math notranslate nohighlight">\(f(x)\)</span> là đa thức với hệ số nguyên thì <span class="math notranslate nohighlight">\(f(a) \equiv f(b) \pmod{m}\)</span>.</p></li>
+</ol>
+</section>
+<section id="thuat-toan-euclid">
+<h2><span class="section-number">1.3. </span>Thuật toán Euclid<a class="headerlink" href="#thuat-toan-euclid" title="Link to this heading">¶</a></h2>
+<p>Dựa trên phép chia Euclid, ta có một thuật toán hiệu quả để tìm ước chung lớn nhất giữa hai số <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>Kí hiệu <span class="math notranslate nohighlight">\(\gcd(a, b)\)</span> là ước chung lớn nhất của <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span>. Chúng ta thực hiện đệ quy như sau:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\gcd(a, b) = \begin{cases}
+    a, \ &amp; \text{nếu} \, b = 0 \\
+    \gcd(b, a \bmod b), \ &amp; \text{nếu} \, b \neq 0.
+\end{cases}\end{split}\]</div>
+</div>
+<p>Điểm quan trọng ở thuật toán Euclid là thuật toán chắc chắn sẽ dừng sau một số hữu hạn bước, và kết quả sẽ là ước chung lớn nhất của hai số <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Đặt <span class="math notranslate nohighlight">\(r_0 = a\)</span> và <span class="math notranslate nohighlight">\(r_1 = b\)</span>. Theo phép chia Euclid tồn tại các số <span class="math notranslate nohighlight">\(q_0\)</span> và <span class="math notranslate nohighlight">\(r_2\)</span> sao cho <span class="math notranslate nohighlight">\(r_0 = r_1 q_0 + r_2\)</span> với <span class="math notranslate nohighlight">\(0 \leqslant r_2 &lt; r_1\)</span>.</p>
+<p>Trong thuật toán Euclid, ở bước thứ <span class="math notranslate nohighlight">\(i\)</span> (<span class="math notranslate nohighlight">\(i = 1, 2, \ldots\)</span>) vì đã biết <span class="math notranslate nohighlight">\(r_i\)</span> và <span class="math notranslate nohighlight">\(r_{i+1}\)</span> nên ta tìm được thương <span class="math notranslate nohighlight">\(q_i\)</span> và số dư <span class="math notranslate nohighlight">\(r_{i+2}\)</span> trong phép chia <span class="math notranslate nohighlight">\(r_i\)</span> cho <span class="math notranslate nohighlight">\(r_{i+1}\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}r_0 &amp; = r_1 q_0 + r_2 \\
+r_1 &amp; = r_2 q_1 + r_3 \\
+r_2 &amp; = r_3 q_2 + r_4 \\
+\ldots &amp; = \ldots \\
+r_i &amp; = r_{i+1} q_i + r_{i+2} \\
+\ldots &amp; = \ldots \\
+r_k &amp; = r_{k+1} q_k + 0 \\\end{split}\]</div>
+</div>
+<p>Ở mỗi bước, <span class="math notranslate nohighlight">\(r_{i+2}\)</span> luôn nhỏ hơn <span class="math notranslate nohighlight">\(r_{i+1}\)</span>. Do đó cuối cùng sẽ bằng <span class="math notranslate nohighlight">\(0\)</span>, và khi đó ta có ước chung lớn nhất là <span class="math notranslate nohighlight">\(r_{k+1}\)</span> như trên.</p>
+</div>
+<div class="proof corollary admonition" id="cor-gcd">
+<p class="admonition-title"><span class="caption-number">Hệ quả 1.2 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>Tồn tại các số <span class="math notranslate nohighlight">\(u\)</span> và <span class="math notranslate nohighlight">\(v\)</span> sao cho</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u \cdot a + v \cdot b = \gcd(a, b).\]</div>
+</div>
+</section>
+</div><div class="proof lemma admonition" id="lem-gcd">
+<p class="admonition-title"><span class="caption-number">Bổ đề 1.1 </span></p>
+<section class="lemma-content" id="proof-content">
+<p>Giả sử <span class="math notranslate nohighlight">\(p\)</span> là số nguyên tố. Khi đó nếu <span class="math notranslate nohighlight">\(a \cdot b\)</span> chia hết cho <span class="math notranslate nohighlight">\(p\)</span> thì <span class="math notranslate nohighlight">\(a\)</span> chia hết cho <span class="math notranslate nohighlight">\(p\)</span> hoặc <span class="math notranslate nohighlight">\(b\)</span> chia hết cho <span class="math notranslate nohighlight">\(p\)</span>.</p>
+</section>
+</div><div class="danger dropdown admonition">
+<p class="admonition-title">Chứng minh</p>
+<p>Nếu <span class="math notranslate nohighlight">\(a\)</span> không chia hết cho <span class="math notranslate nohighlight">\(p\)</span> thì <span class="math notranslate nohighlight">\(\gcd(a, p) = 1\)</span>, hay tồn tại <span class="math notranslate nohighlight">\(u\)</span> và <span class="math notranslate nohighlight">\(v \in \ZZ\)</span> sao cho <span class="math notranslate nohighlight">\(u \cdot a + v \cdot p = 1\)</span>. Khi đó nhân hai vế cho <span class="math notranslate nohighlight">\(b\)</span> ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u \cdot ab + v \cdot bp = b,\]</div>
+</div>
+<p>mà <span class="math notranslate nohighlight">\(p \mid ab\)</span> và <span class="math notranslate nohighlight">\(p \mid p\)</span> nên <span class="math notranslate nohighlight">\(p \mid b\)</span>.</p>
+</div>
+<p>Hai số <span class="math notranslate nohighlight">\(a\)</span> và <span class="math notranslate nohighlight">\(b\)</span> được gọi là <strong>nguyên tố cùng nhau</strong> (hay <strong>coprime</strong>, <strong>взаимо простые</strong>) nếu <span class="math notranslate nohighlight">\(\gcd(a, b) = 1\)</span>.</p>
+<p>Số tự nhiên <span class="math notranslate nohighlight">\(p\)</span> được gọi là <strong>số nguyên tố</strong> (hay <strong>prime</strong>, <strong>простой</strong>) nếu nó chỉ có hai ước là <span class="math notranslate nohighlight">\(1\)</span> và chính nó.</p>
+<div class="proof example admonition" id="exp-gcd">
+<p class="admonition-title"><span class="caption-number">Ví dụ 1.29 </span></p>
+<section class="example-content" id="proof-content">
+<p>Tìm ước chung lớn nhất của <span class="math notranslate nohighlight">\(784\)</span> và <span class="math notranslate nohighlight">\(74\)</span>.</p>
+</section>
+</div><div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ccccc}
+   r_i &amp; = &amp; r_{i+1} \cdot q_i &amp; + &amp; r_{i+2} \\
+   784 &amp; = &amp; {\color{red}{74}} \cdot 10 &amp; + &amp; {\color{blue}{44}} \\
+   {\color{red}74} &amp; = &amp; {\color{blue}{44}} \cdot 1 &amp; + &amp; {\color{green}{30}} \\
+   {\color{blue}{44}} &amp; = &amp; {\color{green}{30}} \cdot 1 &amp; + &amp; {\color{magenta}{14}} \\
+   {\color{green}{30}} &amp; = &amp; {\color{magenta}{14}} \cdot 2 &amp; + &amp; {\color{orange}{2}} \\
+   {\color{magenta}{14}} &amp; = &amp; {\color{orange}{2}} \cdot 7 &amp; + &amp; {\boxed{\color{purple}{0}}}
+\end{array}\end{split}\]</div>
+</div>
+<p>Vậy <span class="math notranslate nohighlight">\(\gcd(784, 74) = 2\)</span>.</p>
+</section>
+<section id="thuat-toan-euclid-mo-rong">
+<h2><span class="section-number">1.4. </span>Thuật toán Euclid mở rộng<a class="headerlink" href="#thuat-toan-euclid-mo-rong" title="Link to this heading">¶</a></h2>
+<div class="proof definition admonition" id="def-diophantus-eq">
+<p class="admonition-title"><span class="caption-number">Định nghĩa 1.56 </span> (Phương trình Diophantus)</p>
+<section class="definition-content" id="proof-content">
+<p>Cho trước các số nguyên <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> và <span class="math notranslate nohighlight">\(c\)</span>. Phương trình  Diophantus là phương trình có dạng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[ax + by = c\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> là các số nguyên.</p>
+</section>
+</div><div class="proof example admonition" id="exp-solve-diophantus-eq">
+<p class="admonition-title"><span class="caption-number">Ví dụ 1.30 </span></p>
+<section class="example-content" id="proof-content">
+<p>Giải phương trình <span class="math notranslate nohighlight">\(5x+3y = 1\)</span>.</p>
+<p>Ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[y = \dfrac{1-5x}{3} = \dfrac{1-2x-3x}{3} = \dfrac{1-2x}{3} - x.\]</div>
+</div>
+<p>Như vậy nếu <span class="math notranslate nohighlight">\(y \in \mathbb{Z}\)</span> thì <span class="math notranslate nohighlight">\(\dfrac{1-2x}{3} \in \mathbb{Z}\)</span>, nghĩa là <span class="math notranslate nohighlight">\(1-2x\)</span> chia hết cho <span class="math notranslate nohighlight">\(3\)</span>. Vậy <span class="math notranslate nohighlight">\(1-2x = 3k\)</span> với <span class="math notranslate nohighlight">\(k \in \mathbb{Z}\)</span>.</p>
+<p>Tiếp tục, <span class="math notranslate nohighlight">\(1-2x = 3k\)</span>, suy ra</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x = \dfrac{1-3k}{2} = \dfrac{1-k-2k}{2} = \dfrac{1-k}{2} - k.\]</div>
+</div>
+<p>Do <span class="math notranslate nohighlight">\(x\)</span> nguyên nên tương tự <span class="math notranslate nohighlight">\(\dfrac{1-k}{2}\)</span> cũng nguyên, hay <span class="math notranslate nohighlight">\(1-k = 2t\)</span>, tương đương với <span class="math notranslate nohighlight">\(k = 1-2t\)</span>.</p>
+<p>Thay ngược lại ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x = \dfrac{1-3k}{2} = \dfrac{1-3(1-2t)}{2} = {-1+3t}.\]</div>
+</div>
+<p>Tiếp tục thay vào để tìm <span class="math notranslate nohighlight">\(y\)</span> thì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[y = \dfrac{1-5x}{3} = \dfrac{1-5(-1+3t)}{3} = 2 - 5t.\]</div>
+</div>
+<p>Như vậy nghiệm của phương trình là tất cả các nghiệm <span class="math notranslate nohighlight">\((x, y)\)</span> mà <span class="math notranslate nohighlight">\(x = -1+3t\)</span>, <span class="math notranslate nohighlight">\(y = 2-5t\)</span> với <span class="math notranslate nohighlight">\(t \in \mathbb{Z}\)</span>.</p>
+</section>
+</div><p>Ở đây chúng ta đã thực hiện phép chia có dư liên tiếp để tìm nghiệm. Nói cách khác ta đã thực hiện thuật toán Euclid ở bên trên để làm giảm độ phức tạp ở mỗi bước giải.</p>
+<p>Tổng quát ta có thuật toán Euclid mở rộng để tìm ước chung lớn nhất <span class="math notranslate nohighlight">\(\gcd(a, b)\)</span> của hai số <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, và <strong>một</strong> nghiệm của phương trình <span class="math notranslate nohighlight">\(ax + by = \gcd(a, b)\)</span>.</p>
+<p>Ở ví dụ trên, ta đã tìm được một nghiệm của phương trình <span class="math notranslate nohighlight">\(5x + 3y = 1\)</span> là <span class="math notranslate nohighlight">\((-1, 2)\)</span> khi <span class="math notranslate nohighlight">\(t = 0\)</span>. Khi đó ta có thể suy ra tất cả nghiệm (họ nghiệm) của phương trình có dạng <span class="math notranslate nohighlight">\((-1+3t, 2-5t)\)</span> với <span class="math notranslate nohighlight">\(t \in \mathbb{Z}\)</span>.</p>
+<div class="proof algorithm admonition" id="algo-xgcd">
+<p class="admonition-title"><span class="caption-number">Thuật toán 1.1 </span> (Thuật toán Euclid mở rộng)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Input:</strong> <span class="math notranslate nohighlight">\(a, b \in \mathbb{Z}\)</span></p>
+<p><strong>Output:</strong> <span class="math notranslate nohighlight">\(\gcd(a, b)\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(r_0 \gets a\)</span>, <span class="math notranslate nohighlight">\(r_1 \gets b\)</span>, <span class="math notranslate nohighlight">\(r_2 \gets 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_0 \gets 1\)</span>, <span class="math notranslate nohighlight">\(x_1 \gets 0\)</span>, <span class="math notranslate nohighlight">\(x_2 \gets 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_0 \gets 0\)</span>, <span class="math notranslate nohighlight">\(y_1 \gets 1\)</span>, <span class="math notranslate nohighlight">\(y_2 \gets 0\)</span></p></li>
+<li><p>While <span class="math notranslate nohighlight">\(r_1 \neq 0\)</span></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(q \gets r_0 \;\text{div}\; r_1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(r_2 \gets r_0 - q * r_1\)</span>, <span class="math notranslate nohighlight">\(r_0 \gets r_1\)</span>, <span class="math notranslate nohighlight">\(r_1 \gets r_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_2 \gets x_0 - q * x_1\)</span>, <span class="math notranslate nohighlight">\(x_0 \gets x_1\)</span>, <span class="math notranslate nohighlight">\(x_1 \gets x_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_2 \gets y_0 - q * y_1\)</span>, <span class="math notranslate nohighlight">\(y_0 \gets y_1\)</span>, <span class="math notranslate nohighlight">\(y_1 \gets y_2\)</span></p></li>
+</ol>
+</li>
+<li><p>EndWhile</p></li>
+<li><p>Return <span class="math notranslate nohighlight">\(r_0\)</span>, <span class="math notranslate nohighlight">\(x_0\)</span>, <span class="math notranslate nohighlight">\(y_0\)</span></p></li>
+</ol>
+</section>
+</div><p>Ở thuật toán trên, <span class="math notranslate nohighlight">\(r_0\)</span>, <span class="math notranslate nohighlight">\(r_1\)</span> và <span class="math notranslate nohighlight">\(r_2\)</span> hoạt động như thuật toán Euclid chuẩn.</p>
+<p>Ở mỗi bước, <span class="math notranslate nohighlight">\(q\)</span> là thương của phép chia <span class="math notranslate nohighlight">\(r_0\)</span> cho <span class="math notranslate nohighlight">\(r_1\)</span>, và ta sử dụng <span class="math notranslate nohighlight">\(q\)</span> đó để tính <span class="math notranslate nohighlight">\(x_0\)</span> và <span class="math notranslate nohighlight">\(y_0\)</span> mới. Kết quả cuối cùng <span class="math notranslate nohighlight">\((r_0, x_0, y_0)\)</span> lần lượt là ước chung lớn nhất <span class="math notranslate nohighlight">\(r_0\)</span>, và hai số <span class="math notranslate nohighlight">\(x_0\)</span>, <span class="math notranslate nohighlight">\(y_0\)</span> thỏa mãn <span class="math notranslate nohighlight">\(a x_0 + y b_0 = r_0\)</span>.</p>
+<p>Tại sao chúng ta lại có <span class="math notranslate nohighlight">\((x_0, x_1) = (1, 0)\)</span> và <span class="math notranslate nohighlight">\((y_0, y_1) = (0, 1)\)</span>? Thêm nữa, làm sao biết thuật toán hoạt động đúng?</p>
+<p>Mục đích của chúng ta là tìm các số <span class="math notranslate nohighlight">\((x, y)\)</span> sao cho <span class="math notranslate nohighlight">\(ax + by = \gcd(a, b)\)</span>. Khi đó, dựa trên thuật toán Euclid cơ bản ở trên, ta xây dựng dãy số <span class="math notranslate nohighlight">\(\{ x_n \}\)</span> và <span class="math notranslate nohighlight">\(\{ y_n \}\)</span> sao cho ở mọi bước thứ <span class="math notranslate nohighlight">\(n\)</span> ta đều có</p>
+<div class="math-wrapper docutils container" id="equation-euclid-1">
+<div class="math notranslate nohighlight" id="equation-euclid-1">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-euclid-1" title="Link to this equation">¶</a></span>\[a x_n + b y_n = r_n.\]</div>
+</div>
+<p>Từ thuật toán Euclid, với <span class="math notranslate nohighlight">\(r_i\)</span> và <span class="math notranslate nohighlight">\(r_{i+1}\)</span> ở bước thứ <span class="math notranslate nohighlight">\(i\)</span> ta thực hiện phép chia Euclid <span class="math notranslate nohighlight">\(r_i = r_{i+1} q_i + r_{i+2}\)</span> để tìm <span class="math notranslate nohighlight">\(q_i\)</span> và <span class="math notranslate nohighlight">\(r_{i+2}\)</span>. Từ <span class="math notranslate nohighlight">\(q_i\)</span> ở mỗi bước ta tính</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x_{i+2} = x_i - x_{i+1} q_i, \quad y_{i+2} =  y_i - y_{i+1} q_i.\]</div>
+</div>
+<p>Chuyển vế hai phương trình trên ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x_i = x_{i+1} q_i + x_{i+2}, \quad y_i = y_{i+1} q_i + y_{i+2}.\]</div>
+</div>
+<p>Nếu thay hai phương trình vừa rồi vào <a class="reference internal" href="#equation-euclid-1">(1.3)</a> ta được</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a (x_{i+1} q_i + x_{i+2}) + b (y_{i+1} q_i + y_{i+2}) = r_i,\]</div>
+</div>
+<p>tương đương với</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(a x_{i+1} + b y_{i+1}) \cdot q_i + (a x_{i+2} + b x_{i+2}) = r_i.\]</div>
+</div>
+<p>Do</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a x_{i+1} + b y_{i+1} = r_{i+1}, \quad a x_{i+2} + b y_{i+2} = r_{i+2},\]</div>
+</div>
+<p>nên <span class="math notranslate nohighlight">\(r_{i+1} q_i + r_{i+2} = r_i\)</span>, đúng với thuật toán Euclid chuẩn ban đầu. Như vậy thuật toán mở rộng hoạt động đúng.</p>
+<p>Bây giờ ta cần chọn <span class="math notranslate nohighlight">\((x_0, x_1)\)</span> và <span class="math notranslate nohighlight">\((y_0, y_1)\)</span> vì chúng ta đã đặt <span class="math notranslate nohighlight">\(r_0 = a\)</span> và <span class="math notranslate nohighlight">\(r_1 = b\)</span>.</p>
+<p>Ở bước thứ <span class="math notranslate nohighlight">\(0\)</span>, vì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[r_0 = a = a x_0 + b y_0,\]</div>
+</div>
+<p>và ở bước thứ <span class="math notranslate nohighlight">\(1\)</span>,</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[r_1 = b = a x_1 + b y_1.\]</div>
+</div>
+<p>Dễ thấy ở bước <span class="math notranslate nohighlight">\(0\)</span> ta chọn <span class="math notranslate nohighlight">\(x_0 = 1\)</span> và <span class="math notranslate nohighlight">\(x_1 = 0\)</span>, còn ở bước <span class="math notranslate nohighlight">\(1\)</span> ta chọn <span class="math notranslate nohighlight">\(y_0 = 0\)</span> và <span class="math notranslate nohighlight">\(y_1 = 1\)</span> là được.</p>
+<div class="proof example admonition" id="exp-xgcd">
+<p class="admonition-title"><span class="caption-number">Ví dụ 1.31 </span></p>
+<section class="example-content" id="proof-content">
+<p>Tìm một nghiệm nguyên của phương trình <span class="math notranslate nohighlight">\(784 x + 74 y = 2\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{ccccc|ccccc|ccccc}
+    r_i &amp; = &amp; r_{i+1} \cdot q_i &amp; + &amp; r_{i+2} &amp; x_{i+2} &amp; = &amp; x_i &amp; - &amp; x_{i+1} \cdot q_i &amp; y_{i+2} &amp; = &amp; y_i &amp; - &amp; y_{i+1} \cdot q_i \\
+    784 &amp; = &amp; {\color{red}{74}} \cdot 10 &amp; + &amp; {\color{blue}{44}} &amp; {\color{blue}1} &amp; = &amp; 1 &amp; - &amp; {\color{red}0} \cdot 10 &amp; {\color{blue}-10} &amp; = &amp; 0 &amp; - &amp; {\color{red}1} \cdot 10 \\
+    {\color{red}74} &amp; = &amp; {\color{blue}{44}} \cdot 1 &amp; + &amp; {\color{green}{30}} &amp; {\color{green}-1} &amp; = &amp; {\color{red}0} &amp; - &amp; {\color{blue}1} \cdot 1 &amp; {\color{green}11} &amp; = &amp; {\color{red}1} &amp; - &amp; {\color{blue}(-10)} \cdot 1 \\
+    {\color{blue}{44}} &amp; = &amp; {\color{green}{30}} \cdot 1 &amp; + &amp; {\color{magenta}{14}} &amp; {\color{magenta}2} &amp; = &amp; {\color{blue}1} &amp; - &amp; {\color{green}(-1)} \cdot 1 &amp; {\color{magenta}-21} &amp; = &amp; {\color{blue}-10} &amp; - &amp; {\color{green}11} \cdot 1 \\
+    {\color{green}{30}} &amp; = &amp; {\color{magenta}{14}} \cdot 2 &amp; + &amp; {\color{orange}{2}} &amp; {\color{orange}-5} &amp; = &amp; {\color{green}(-1)} &amp; - &amp; {\color{magenta}2} \cdot 2 &amp; {\color{orange}53} &amp; = &amp; {\color{green}11} &amp; - &amp; {\color{magenta}(-21)} \cdot 2\\
+    {\color{magenta}{14}} &amp; = &amp; {\color{orange}{2}} \cdot 7 &amp; + &amp; {\boxed{\color{purple}{0}}}
+\end{array}\end{split}\]</div>
+</div>
+<p>Các bạn có thể thấy ước chung lớn nhất là số màu cam. Do đó các số <span class="math notranslate nohighlight">\(x_{i+2}\)</span> và <span class="math notranslate nohighlight">\(y_{i+2}\)</span> cũng chính là điểm dừng và mình không cần tính toán thêm.</p>
+<p>Như vậy một nghiệm của phương trình <span class="math notranslate nohighlight">\(784 x + 74 y = 2\)</span> là <span class="math notranslate nohighlight">\((-5, 53)\)</span>.</p>
+</section>
+</div><p>Chúng ta cũng có một cách trình bày khác để giải phương trình nghiệm nguyên trên là sử dụng biến đổi tương đương của ma trận.</p>
+<p>Ví dụ, để tìm một nghiệm nguyên <span class="math notranslate nohighlight">\((x, y)\)</span> của phương trình <span class="math notranslate nohighlight">\(a x + b y = c\)</span> với <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> là các số cho trước, chúng ta viết ma trận</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(\begin{array}{cc|c}
+    1 &amp; 0 &amp; a \\ 0 &amp; 1 &amp; b
+\end{array}\right)\end{split}\]</div>
+</div>
+<p>và biến đổi tương đương về dạng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split} \left(\begin{array}{cc|c}
+    * &amp; * &amp; c \\ * &amp; * &amp; 0
+\end{array}\right)\end{split}\]</div>
+</div>
+<p>Khi đó hai số ở hàng trên sẽ là nghiệm cần tìm.</p>
+<div class="proof example admonition" id="exp-xgcd-matrix">
+<p class="admonition-title"><span class="caption-number">Ví dụ 1.32 </span></p>
+<section class="example-content" id="proof-content">
+<p>Sử dụng bài toán ở trên làm ví dụ: tìm một nghiệm nguyên của phương trình <span class="math notranslate nohighlight">\(784 x + 74 y = 2\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\left(\begin{array}{cc|c}
+    1 &amp; 0 &amp; 784 \\ 0 &amp; 1 &amp; 74
+\end{array}\right) \sim \left(\begin{array}{cc|c}
+    {\color{blue}1} &amp; {\color{blue}-10} &amp; {\color{blue}44} \\ 0 &amp; 1 &amp; 74
+\end{array}\right) \sim \left(\begin{array}{cc|c}
+    {\color{blue}1} &amp; {\color{blue}-10} &amp; {\color{blue}44} \\ {\color{green}-1} &amp; {\color{green}11} &amp; {\color{green}30}
+\end{array}\right) \\ \sim \left(\begin{array}{cc|c}
+    {\color{magenta}2} &amp; {\color{magenta}-21} &amp; {\color{magenta}14} \\ {\color{green}-1} &amp; {\color{green}11} &amp; {\color{green}30}
+\end{array}\right) \sim \left(\begin{array}{cc|c}
+    {\color{magenta}2} &amp; {\color{magenta}-21} &amp; {\color{magenta}14} \\ {\color{orange}-5} &amp; {\color{orange}53} &amp; {\color{orange}2}
+\end{array}\right) \sim \left(\begin{array}{cc|c}
+    37 &amp; -392 &amp; 0 \\ {\color{orange}-5} &amp; {\color{orange}53} &amp; {\color{orange}2}
+\end{array}\right)\end{split}\]</div>
+</div>
+</section>
+</div><p>Về bản chất thì hai cách trình bày là giống nhau.</p>
+</section>
+<section id="bai-tap-suu-tam">
+<h2><span class="section-number">1.5. </span>Bài tập sưu tầm<a class="headerlink" href="#bai-tap-suu-tam" title="Link to this heading">¶</a></h2>
+<p><strong>Câu 1</strong> (đề kiểm tra, ITMO). Tính</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gcd(61^{610} + 1, 61^{671} - 1).\]</div>
+</div>
+<p>Mình thay <span class="math notranslate nohighlight">\(61\)</span> bởi biến <span class="math notranslate nohighlight">\(x\)</span> và thực hiện phép chia đa thức theo thuật toán Euclid.</p>
+<p>Đầu tiên, xét phép chia <span class="math notranslate nohighlight">\(x^{671} - 1\)</span> cho <span class="math notranslate nohighlight">\(x^{610} + 1\)</span>. Kết quả phép chia là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x^{671} - 1 = (x^{610} + 1) \cdot x^{61} - x^{61} - 1.\]</div>
+</div>
+<p>Tiếp theo, xét phép chia <span class="math notranslate nohighlight">\(x^{610} + 1\)</span> cho <span class="math notranslate nohighlight">\(-x^{61} - 1\)</span>. Kết quả là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x^{610} + 1 = (-x^{61} - 1) \cdot (-x^{549} + x^{488} - \cdots + 1) + 2.\]</div>
+</div>
+<p>Như vậy, ước chung lớn nhất của hai đa thức là <span class="math notranslate nohighlight">\(2\)</span>.</p>
+<p><strong>Câu 2</strong> (đề kiểm tra, ITMO). Chứng minh rằng với mọi <span class="math notranslate nohighlight">\(a, b, c \in \mathbb{N}\)</span> thì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[[a, b, c] = \frac{a \cdot b \cdot c \cdot (a, b, c)}{(a, b) \cdot (a, c) \cdot (b, c)},\]</div>
+</div>
+<p>trong đó</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\([a, b, c]\)</span> là bội chung nhỏ nhất của ba số <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((a, b, c)\)</span> là ước chung lớn nhất của ba số <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((a, b)\)</span> là ước chung lớn nhất của hai số <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
+</ul>
+<p><em>Chưa làm ra.</em></p>
+<p><strong>Câu 3</strong> (đề kiểm tra, ITMO). Tìm ít nhất một nghiệm nguyên của phương trình</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[311 x - 28 y = 2.\]</div>
+</div>
+<p>Sử dụng thuật toán Euclid:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; \left(\begin{array}{cc|c}
+1 &amp; 0 &amp; 311 \\ 0 &amp; 1 &amp; -28
+\end{array}\right) \stackrel{(1) \to (1) + 11 \cdot (2)}{\sim}
+\left(\begin{array}{cc|c}
+1 &amp; 11 &amp; 3 \\ 0 &amp; 1 &amp; -28
+\end{array}\right) \stackrel{(2) \to (2) + 10 \cdot (1)}{\sim}
+\left(\begin{array}{cc|c}
+1 &amp; 11 &amp; 3 \\ 10 &amp; 111 &amp; 2
+\end{array}\right) \\
+\stackrel{(1) \to (1) - (2)}{\sim}
+&amp; \left(\begin{array}{cc|c}
+-9 &amp; -100 &amp; 1 \\ 10 &amp; 111 &amp; 2
+\end{array}\right) \stackrel{(2) \to (2) - 2 \cdot (1)}{\sim}
+\left(\begin{array}{cc|c}
+-9 &amp; -100 &amp; 1 \\ 28 &amp; 311 &amp; 0
+\end{array}\right)\end{split}\]</div>
+</div>
+<p>Như vậy mình có <span class="math notranslate nohighlight">\((-9, -100)\)</span> là một nghiệm của phương trình</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[311 x - 28 y = 1.\]</div>
+</div>
+<p>Từ đó suy ra một nghiệm của phương trình</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[311 x - 28 y = 2\]</div>
+</div>
+<p>là <span class="math notranslate nohighlight">\((2 \cdot (-9), 2 \cdot (-100)) = (-18, -200)\)</span>.</p>
+<hr class="docutils" />
+<p>Cho <span class="math notranslate nohighlight">\(n\)</span> là số tự nhiên lớn hơn <span class="math notranslate nohighlight">\(4\)</span>. Chứng minh rằng <span class="math notranslate nohighlight">\(n\)</span> là số nguyên tố khi và chỉ khi <span class="math notranslate nohighlight">\(n \nmid (n - 1)!\)</span>.</p>
+<hr class="docutils" />
+<p>Cho <span class="math notranslate nohighlight">\(n &gt; 1\)</span>, <span class="math notranslate nohighlight">\(p \nmid n\)</span> với <span class="math notranslate nohighlight">\(p\)</span> là số nguyên tố sao cho <span class="math notranslate nohighlight">\(p \leqslant \sqrt{n}\)</span>. Chứng minh rằng <span class="math notranslate nohighlight">\(n\)</span> là số nguyên tố.</p>
+<hr class="docutils" />
+<p>Cho <span class="math notranslate nohighlight">\(\gcd(a, b) = 1\)</span>. Chứng minh rằng <span class="math notranslate nohighlight">\(\gcd(7a + 6b, 8a + 7b) = 1\)</span>.</p>
+<p>Ta có <span class="math notranslate nohighlight">\(\gcd(a, b) = \gcd(a, ka + b)\)</span> với <span class="math notranslate nohighlight">\(k \in \ZZ\)</span>. Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gcd(7a + 6b, 8a + 7b) = \gcd(7a + 6b, a + b) = \gcd(a + b, a) = \gcd(b, a) = 1.\]</div>
+</div>
+<hr class="docutils" />
+<p>Giải phương trình <span class="math notranslate nohighlight">\(3x^2 - 2 = y^2\)</span> trên <span class="math notranslate nohighlight">\(\ZZ\)</span>.</p>
+<p>Giải theo modulo 3.</p>
+<hr class="docutils" />
+<p>Chứng minh rằng tồn tại vô hạn số nguyên tố dạng <span class="math notranslate nohighlight">\(3k + 2\)</span> với <span class="math notranslate nohighlight">\(k \in \ZZ\)</span>.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="linear-congruence.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><span class="section-number">2. </span>Phương trình đồng dư tuyến tính</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Lý thuyết số</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025-2026, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">1. Phép chia Euclid. Thuật toán Euclid</a><ul>
+<li><a class="reference internal" href="#phep-chia-euclid">1.1. Phép chia Euclid</a></li>
+<li><a class="reference internal" href="#vanh-modulo-so-nguyen">1.2. Vành modulo số nguyên (кольца вычётов)</a></li>
+<li><a class="reference internal" href="#thuat-toan-euclid">1.3. Thuật toán Euclid</a></li>
+<li><a class="reference internal" href="#thuat-toan-euclid-mo-rong">1.4. Thuật toán Euclid mở rộng</a></li>
+<li><a class="reference internal" href="#bai-tap-suu-tam">1.5. Bài tập sưu tầm</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Nhấp để hiển thị';</script>
+    <script>let toggleHintHide = 'Nhấp để ẩn';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1], "wt": "\\operatorname{wt}", "tr": "\\operatorname{tr}", "rank": "\\operatorname{rank}", "lcm": "\\mathrm{lcm}", "GL": "\\mathrm{GL}", "lex": "\\text{lex}", "grlex": "\\text{grlex}", "grevlex": "\\text{grevlex}", "CC": "\\mathbb{C}", "RR": "\\mathbb{R}", "QQ": "\\mathbb{Q}", "ZZ": "\\mathbb{Z}", "NN": "\\mathbb{N}", "FF": "\\mathbb{F}", "KK": "\\mathbb{K}"}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>

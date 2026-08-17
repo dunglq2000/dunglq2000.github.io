@@ -1,0 +1,521 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Tìm Kiếm" href="../../search.html"><link rel="next" title="VIRSECCON CTF 2020" href="../VIRSECCONCTF/index.html"><link rel="prev" title="SpamAndFlags CTF 2020" href="../SpamAndFlagsCTF/index.html">
+        <link rel="prefetch" href="../../_static/rhine_lab.jpg" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Sunshine CTF 2020 - Contests</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=3a5ece24" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystyles.css?v=ca48935a" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Contests</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/rhine_lab.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Contests</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2019/index.html">Các cuộc thi năm 2019</a><input aria-label="Toggle navigation of Các cuộc thi năm 2019" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2019/AceBear/index.html">AceBear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2019/efiensCTF/round-2/index.html">EFIENS CTF 2019 Round 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Các cuộc thi năm 2020</a><input aria-label="Toggle navigation of Các cuộc thi năm 2020" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../MidnightsunCTF/index.html">Midnightsun CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nsucrypto/index.html">NSUCRYPTO 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../AngstromCTF/index.html">angstromCTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../AsisCTF/index.html">ASIS CTF Quals 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CryptoCTF/index.html">CryptoCTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../InCTF/index.html">InCTF 2019 Bài viết</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../NetwarkAcademyCTF/index.html">Netwark Academy CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../NetwarkAcademyCTF/index.html#error-2">6. Error 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpamAndFlagsCTF/index.html">SpamAndFlags CTF 2020</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Sunshine CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VIRSECCONCTF/index.html">VIRSECCON CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VolgaCTF-Qualifier/index.html">VolgaCTF 2020 Qualifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../castorsCTF/index.html">Castor CTF 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../efiensCTF/index.html">Efiens CTF 2020</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2021/index.html">Các cuộc thi năm 2021</a><input aria-label="Toggle navigation of Các cuộc thi năm 2021" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/CryptoCTF/index.html">Crypto CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/GoogleCTF/index.html">Google CTF 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2021/nsucrypto/index.html">NSUCRYPTO 2021</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/index.html">Các cuộc thi năm 2022</a><input aria-label="Toggle navigation of Các cuộc thi năm 2022" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/downunderCTF/index.html">DownUnder CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/nsucrypto.html">NSUCRYPTO 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sekaiCTF/index.html">Sekai CTF 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/ISITDTUCTF/index.html">ISITDTU Quals 2022</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2023/index.html">Các cuộc thi năm 2023</a><input aria-label="Toggle navigation of Các cuộc thi năm 2023" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/nsucrypto/index.html">NSUCRYPTO 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/siberian-maths-contest/index.html">Siberian Mathematical Contest 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/internet-olympiad/index.html">Internet Olympiad 2023 (Vòng 3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/AmateursCTF/index.html">Amateurs CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/backdoorCTF.html">Backdoor CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/googleCTF.html">Google CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/diceCTF.html">Dice CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/UTCTF.html">UTCTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/wolvCTF.html">Wolv CTF 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2023/cryptoCTF-2023.html">Crypto CTF 2023</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2024/index.html">Các cuộc thi năm 2024</a><input aria-label="Toggle navigation of Các cuộc thi năm 2024" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/NSUCRYPTO/index.html">NSUCRYPTO 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/internet-olympiad/index.html">Internet Olympiad 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/0xL4ughCTF-2024/index.html">0xL4ugh CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/ASISCTF-2024/index.html">ASIS CTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/TJCTF/index.html">TJCTF 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/cryptofox/index.html">CryptoFox 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/isitdtu.html">ISITDTU Quals 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2025/index.html">Các cuộc thi năm 2025</a><input aria-label="Toggle navigation of Các cuộc thi năm 2025" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/cryptofox/index.html">CryptoFox 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/tjctf.html">TJCTF 2025</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/olympiad-algebra.html">Семнадцатая студенческая олимпиада по алгебре</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2025/CryptoFox2025/4/solve.html">Задача "РАЗНОСТИ ДЛЯ FOX128"</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2026/index.html">Các cuộc thi năm 2026</a><input aria-label="Toggle navigation of Các cuộc thi năm 2026" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2026/cryptofox/index.html">CryptoFox</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cryptohack/index.html">Wargame chill chill</a></li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../solutions/index.html">Đáp án bài tập trong sách</a><input aria-label="Toggle navigation of Đáp án bài tập trong sách" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/Judson.html">Abstract Algebra: Theory and Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/Petrushko/index.html">Курс высшей математики: Теория вероятностей</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/index.html">An Introduction to Mathematical Cryptography</a><input aria-label="Toggle navigation of An Introduction to Mathematical Cryptography" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/chapter-2.html">Chapter 2. Discrete Logarithms and Diffie-Hellman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/chapter-3.html">Chapter 3. Integer Factorization and RSA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/chapter-4.html">Chapter 4. Digital Signatures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/an-introduction-to-mathematical-cryptography/chapter-7.html">Chapter 7. Lattices and Cryptography</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/symmetric-cryptography/index.html">Симметричная криптография</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/collection.html">Các bài toán sưu tầm</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/2020/SunshineCTF/index.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="sunshine-ctf-2020">
+<h1>Sunshine CTF 2020<a class="headerlink" href="#sunshine-ctf-2020" title="Link to this heading">¶</a></h1>
+<section id="crypto">
+<h2>1. Crypto<a class="headerlink" href="#crypto" title="Link to this heading">¶</a></h2>
+<p>Giải này chỉ có 1 bài crypto, và đây là bài viết của ta:</p>
+<section id="magically-delicious">
+<h3>Magically Delicious<a class="headerlink" href="#magically-delicious" title="Link to this heading">¶</a></h3>
+<p><strong>Mô tả</strong></p>
+<p>Can you help me decipher this message?</p>
+<p>⭐🌈🍀 ⭐🌈🦄 ⭐🦄🌈 ⭐🎈🍀 ⭐🦄🌑 ⭐🌈🦄 ⭐🌑🍀 ⭐🦄🍀 ⭐🎈⭐ 🦄🦄 ⭐🦄🎈 ⭐🌑🍀 ⭐🌈🌑 ⭐🌑⭐ ⭐🦄🌑 🦄🦄 ⭐🌑🦄 ⭐🦄🌈 ⭐🌑🍀 ⭐🦄🎈 ⭐🌑🌑 ⭐🦄⭐ ⭐🦄🌈 ⭐🌑🎈 🦄🦄 ⭐🦄⭐ ⭐🌈🍀 🦄🦄 ⭐🌈🌑 ⭐🦄💜 ⭐🌑🦄 🦄🦄 ⭐🌑🐴 ⭐🌑🦄 ⭐🌈🍀 ⭐🌈🌑 🦄🦄 ⭐🌑🦄 ⭐🦄🌈 ⭐🌑🍀 ⭐🦄🎈 ⭐🌑🌑 ⭐🦄⭐ ⭐🦄🌈 ⭐🌑🎈 🦄🦄 ⭐🦄🦄 ⭐🌑🦄 ⭐🌈🌑 ⭐🦄💜 ⭐🦄🎈 ⭐🌑🌑 ⭐🎈🦄</p>
+<p>Note: If you don't see a message above, make sure your browser can render emojis.</p>
+<p><strong>Lời giải</strong></p>
+<p>Ta thống kê thấy ở đây có 8 loại emojis khác nhau, và được phân bố thành từng cụm 3 (hoặc 2), nên ta nghĩ tới base 8. Ta biểu diễn các ký tự in được (ascii từ 32 tới 127) thì thấy đúng là các cụm 3 (hoặc 2), và các cụm 3 bắt đầu là <em>1</em>. Tức là emoji <strong>⭐</strong> là 1. Rồi từ format flag là <em>sun{....}</em> thì ta dùng 4 cụm đầu và cụm cuối, suy ra <strong>🍀</strong> là 3, <strong>🎈</strong> là 7, <strong>🌈</strong> là 6, <strong>🦄</strong> là 5. Tiếp tục dò các ký tự tiếp theo dễ đoán rằng là từ <em>lucky</em> và ta có thêm <strong>🌑</strong> là 4. Còn 2 emojis tương ứng 0 và 2. Ta thử sai luôn và ta có flag: <strong>sun{lucky-octal-encoding-is-the-best-encoding-method}</strong></p>
+</section>
+</section>
+<section id="reversing">
+<h2>2.  Reversing<a class="headerlink" href="#reversing" title="Link to this heading">¶</a></h2>
+<section id="hotel-door-puzzle">
+<h3>Hotel Door Puzzle<a class="headerlink" href="#hotel-door-puzzle" title="Link to this heading">¶</a></h3>
+<p><strong>Mô tả</strong>:</p>
+<p>I thought I'd come down to Orlando on a vacation. I thought I left work behind me! What's at my hotel door when I show up? A Silly reverse engineering puzzle to get into my hotel room! I thought I was supposed to relax this weekend. Instead of me doing it, I hired you to solve it for me. Let me into my hotel room and you'll get some free internet points!</p>
+<p><a class="reference external" href="hotel_key_puzzle">hotel_key_puzzle</a></p>
+<p><strong>Lời giải</strong></p>
+<p>Phân tích chương trình bằng <em>Ghidra</em> cho thấy khóa được lưu tại <code class="docutils literal notranslate"><span class="pre">local_58</span></code> và được kiểm tra bởi hàm <code class="docutils literal notranslate"><span class="pre">check_flag</span></code>. Ta lần lượt giải các điều kiện, đồng thời ghi lại những vị trí đã xét để tránh lặp lại. Kết quả là <strong>sun{b3llh0p5-runn1n6-qu1ckly}</strong>.</p>
+<img alt="Hotel" src="../../_images/re1.png" />
+</section>
+</section>
+<section id="speedrun">
+<h2>3. Speedrun<a class="headerlink" href="#speedrun" title="Link to this heading">¶</a></h2>
+<section id="speedrun-00">
+<h3>speedrun-00<a class="headerlink" href="#speedrun-00" title="Link to this heading">¶</a></h3>
+<p><strong>Mô tả</strong>:</p>
+<p>nc chal.2020.sunshinectf.org 30000</p>
+<p><a class="reference external" href="chall_00">chall_00</a></p>
+<p><strong>Lời giải</strong></p>
+<p>Khi dùng <em>Ghidra</em> ta thấy rằng ta sẽ nhập 1 chuỗi vào bằng hàm <strong>gets</strong> và đây là bài buffer overflow cơ bản. Ta cần ghi đè lên biến <em>local_c</em> hoặc <em>local_10</em> (cái nào gần <em>local_48</em> là chuỗi của ta hơn thì ghi đè cho tiện). Bây giờ nhìn vào mã assembly</p>
+<img alt="speedrun-00" src="../../_images/sr1.png" />
+<p>Từ hàm <strong>gets</strong> dò ngược lên, ta thấy <em>local_48</em> (chuỗi ta nhập) ở bị trí [rbp-0x40]. Và nếu bạn click vào chữ <em>local_c</em> và nhìn góc dưới phải cửa sổ sẽ thấy lệnh <strong>cmp dword ptr [rbp-0x4], 0xfacade</strong>. Vậy tức là <em>local_c</em> nằm ở vị trí [rbp-0x4]. Làm tương tự, ta có <em>local_10</em> nằm ở vị trí [rbp-0x8].</p>
+<p>Như vậy, stack của ta từ cao xuống thấp sẽ là:</p>
+<p>[rbp cũ] - [<em>local_c</em> (4 bytes)] - [<em>local_10</em> (4 bytes)] - [<em>local_48</em> (56 bytes)]</p>
+<p>Như vậy, ta cần truyền vào 56 bytes để lấp đầy <em>local_48</em>, và 4 bytes cho <em>local_10</em> sao cho đúng bằng 0xfacade (theo dạng little endian tức là decafa).</p>
+<p>Code exploit ở <a class="reference external" href="chall00.py">chall00.py</a></p>
+<img alt="exploit" src="../../_images/sr0solve.png" />
+<p>Flag: <strong>sun{burn-it-down-6208bbc96c9ffce4}</strong></p>
+</section>
+<section id="speedrun-01">
+<h3>speedrun-01<a class="headerlink" href="#speedrun-01" title="Link to this heading">¶</a></h3>
+<p><strong>Mô tả</strong></p>
+<p>nc chal.2020.sunshinectf.org 30001</p>
+<p><a class="reference external" href="chall_01">chall_01</a></p>
+<p><strong>Lời giải</strong></p>
+<p>Bài này tương tự bài trước, có thêm 1 biến <em>local_28</em> và chỉ được nhập 0x13 bytes. Bug vẫn là ở biến <em>local_68</em></p>
+<img alt="speedrun-01" src="../../_images/sr1.png" />
+<p>Lần này ta nhập cho <em>local_28</em> vài bytes đại thôi vì cuối cùng hàm <strong>fgets</strong> sẽ chỉ lấy tối đa 0x13 byte. Ở biến <em>local_68</em>, ta nhập cho đủ 0x60-0x8 (để tới <em>local_10</em>), và ghi đè lên <em>local_10</em> bằng giá trị decafa.</p>
+<p>Code exploit ở <a class="reference external" href="chall01.py">chall01.py</a></p>
+<img alt="exploit" src="../../_images/sr1solve.png" />
+<p>Flag: <strong>sun{eternal-rest-6a5ee49d943a053a}</strong></p>
+</section>
+<section id="speedrun-02">
+<h3>speedrun-02<a class="headerlink" href="#speedrun-02" title="Link to this heading">¶</a></h3>
+<p><strong>Mô tả</strong></p>
+<p>nc chal.2020.sunshinectf.org 30002</p>
+<p><a class="reference external" href="chall_02">chall_02</a></p>
+<p><strong>Lời giải</strong>:</p>
+<p>Ở hàm main ta cần nhập 1 chuỗi nhưng không exploit được, hàm <strong>fgets</strong> an toàn. Ta xem hàm <strong>vuln</strong>. Ở đây ta có thể khai thác hàm <strong>gets</strong>, và việc cần làm là ghi đè return address, nằm trên rbp cũ. Người đọc có thể xem ở quyển <em>Nghệ thuật tận dụng lỗi phần mềm</em> để có cơ sở về 32 bit. Bài này cũng là 32 bit</p>
+<p>Ta có địa chỉ hàm <strong>win</strong> là 080484d6, và ta cần overflow 0x3a bytes (từ <em>local_3a</em> tới ebp), 4 bytes cho ebp cũ, và ghi đè lên return address là little endian của địa chỉ hàm <strong>win</strong></p>
+<p>Code exploit ở <a class="reference external" href="chall02.py">chall02.py</a></p>
+<img alt="exploit" src="../../_images/sr2solve.png" />
+<p>Flag: <strong>sun{warmness-on-the-soul-3b6aad1d8bb54732}</strong></p>
+</section>
+<section id="speedrun-04">
+<h3>speedrun-04<a class="headerlink" href="#speedrun-04" title="Link to this heading">¶</a></h3>
+<p><strong>Mô tả</strong></p>
+<p>nc chal.2020.sunshinectf.org 30004</p>
+<p><a class="reference external" href="chall_04">chall_04</a></p>
+<p><strong>Lời giải</strong>:</p>
+<p>Tương tự <strong>speedrun-02</strong>, ta sẽ exploit hàm <strong>vuln</strong>. Ở đây hàm <strong>fgets</strong> lấy 100 byte trong khi <em>local_48</em> chỉ có 56 byte. Vậy ta có thể ghi đè <em>local_10</em>. Ta thấy ở mã assembly rằng, giá trị ở <em>local_10</em> sẽ được gán vào <em>rdx</em> và gọi hàm có địa chỉ này. Như vậy, ta cần ghi đè lên <em>local_10</em> giá trị địa chỉ hàm <strong>win</strong> (004005b7 theo little endian)</p>
+<p>Code exploit ở <a class="reference external" href="chall04.py">chall04.py</a></p>
+<img alt="exploit" src="../../_images/sr4solve.png" />
+<p>Flag: <strong>sun{critical-acclaim-96cfde3d068e77bf}</strong></p>
+</section>
+<section id="speedrun-05">
+<h3>speedrun-05<a class="headerlink" href="#speedrun-05" title="Link to this heading">¶</a></h3>
+<p><strong>Mô tả</strong></p>
+<p>nc chal.2020.sunshinectf.org 30005</p>
+<p><a class="reference external" href="chall_05">chall_05</a></p>
+<p><strong>Lời giải</strong></p>
+<p>Tương tự bài <strong>speedrun-04</strong>, ta sẽ ghi đè <em>local_10</em> địa chỉ hàm <strong>win</strong>. Nhưng lần này do có PIE, tức là địa chỉ sẽ thay đổi mỗi lần chạy nên không thể overflow như bài trước. Tuy nhiên bài này lại cho địa chỉ hàm <strong>main</strong>. Nhìn trong <em>Ghidra</em>, hàm <strong>main</strong> có địa chỉ là 0010076d, còn hàm <strong>win</strong> thì là 0010075a, tức là (địa chỉ main) - (địa chỉ win) = 19. Nói cách khác, dù có PIE hay không thì hiệu số này luôn là 19. Nên ở đây ta có địa chỉ main từ server, trừ đi 19 và ghi đè địa chỉ đó lên <em>local_10</em> là có thể gọi hàm <strong>win</strong></p>
+<p>Code exploit ở <a class="reference external" href="chall05.py">chall05.py</a></p>
+<img alt="exploit" src="../../_images/sr5solve.png" />
+<p>Flag: <strong>sun{chapter-four-9ca97769b74345b1}</strong></p>
+<blockquote>
+<div><p>bài viết của ta</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../VIRSECCONCTF/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">VIRSECCON CTF 2020</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../SpamAndFlagsCTF/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">SpamAndFlags CTF 2020</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025-2026, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Sunshine CTF 2020</a><ul>
+<li><a class="reference internal" href="#crypto">1. Crypto</a><ul>
+<li><a class="reference internal" href="#magically-delicious">Magically Delicious</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reversing">2.  Reversing</a><ul>
+<li><a class="reference internal" href="#hotel-door-puzzle">Hotel Door Puzzle</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#speedrun">3. Speedrun</a><ul>
+<li><a class="reference internal" href="#speedrun-00">speedrun-00</a></li>
+<li><a class="reference internal" href="#speedrun-01">speedrun-01</a></li>
+<li><a class="reference internal" href="#speedrun-02">speedrun-02</a></li>
+<li><a class="reference internal" href="#speedrun-04">speedrun-04</a></li>
+<li><a class="reference internal" href="#speedrun-05">speedrun-05</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Nhấp để hiển thị';</script>
+    <script>let toggleHintHide = 'Nhấp để ẩn';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    </body>
+</html>

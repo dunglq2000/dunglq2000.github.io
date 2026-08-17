@@ -1,0 +1,1341 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html"><link rel="search" title="Tìm Kiếm" href="search.html">
+        <link rel="prefetch" href="_static/rhine_lab.jpg" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 --><title>Proof Index - Math Book</title>
+<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=3a5ece24" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyles.css?v=ca48935a" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Math Book</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/rhine_lab.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Math Book</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="block-cipher/index.html">1. Block cipher</a><input aria-label="Toggle navigation of 1. Block cipher" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/spnet.html">1.1. SP network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/aes.html">1.2. AES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/kuznyechik.html">1.3. Kuznyechik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/present.html">1.4. PRESENT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/feistel.html">1.5. Mô hình Feistel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/magma.html">1.6. Magma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/sms4.html">1.7. SMS4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="block-cipher/arx.html">1.8. ARX</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lattice-based/index.html">2. Lattice-based cryptography</a><input aria-label="Toggle navigation of 2. Lattice-based cryptography" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/intro.html">2.1. Nhập môn mật mã dựa trên lattice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/hard-problems.html">2.2. Các bài toán khó</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/heuristic.html">2.3. Các heuristic cho lattice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/lattice-reduction-algorithms.html">2.4. Thuật toán rút gọn lattice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/congruential-pubkey.html">2.5. Congruential public key cryptosystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/ntru.html">2.6. NTRU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/falcon.html">2.7. FALCON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lattice-based/coppersmith.html">2.8. Phương pháp Coppersmith</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="code-based/index.html">3. Code-based cryptography</a><input aria-label="Toggle navigation of 3. Code-based cryptography" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="code-based/intro.html">3.1. Nhập môn mật mã dựa trên mã sửa sai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/decode-problem.html">3.2. Bài toán decode tổng quát</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/linear-code.html">3.3. Mã tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/weight.html">3.4. Bài toán phổ trọng số của mã tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/decode-on-linear-code.html">3.5. Bài toán decode trên linear code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/equivalence.html">3.6. Bài toán tương đương các linear code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/cryptosystem.html">3.7. Ý tưởng xây dựng các hệ mật mã dựa trên mã sửa sai</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/pubkey-algo.html">3.8. Các hệ mật mã khóa công khai dựa trên lý thuyết code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-based/goppa-code.html">3.9. Goppa Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="elliptic/index.html">4. Đường cong elliptic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Kerckhoffs-principle/index.html">5. Nguyên tắc Kerckhoffs và mật mã học</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantum-computing.html">6. Quantum computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discrete-logarithm.html">7. Logarithm rời rạc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hash-based.html">8. Hash-based cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stega/TONG_HOP.html">9. Tổng hợp bài lab môn Bảo vệ thông tin bằng kỹ thuật giấu tin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="protocols/TONG_HOP.html">10. Tổng hợp bài tập môn Giao thức an toàn thông tin cho hệ thống cyber-physical</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examen.html">11. Câu hỏi ôn thi mật mã học</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="zero-knowledge-proof/index.html">12. Zero Knowledge Proof</a><input aria-label="Toggle navigation of 12. Zero Knowledge Proof" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="zero-knowledge-proof/intro.html">12.1. Giới thiệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zero-knowledge-proof/plonk.html">12.2. Giao thức PLONK</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          
+<section class="domainindex-section">
+  <h1>Proof Index</h1>
+  <div class="domainindex-jumpbox"><a href="#cap-alg-bsgs"><strong>alg-bsgs</strong></a> | <a href="#cap-alg-pohlig-hellman-general"><strong>alg-pohlig-hellman-general</strong></a> | <a href="#cap-alg-pohlig-hellman-prime-order"><strong>alg-pohlig-hellman-prime-order</strong></a> | <a href="#cap-algo-AES-expand-key"><strong>algo-AES-expand-key</strong></a> | <a href="#cap-algo-PRESENT"><strong>algo-PRESENT</strong></a> | <a href="#cap-algo-gaussian-lattice-reduction"><strong>algo-gaussian-lattice-reduction</strong></a> | <a href="#cap-algorithm-1"><strong>algorithm-1</strong></a> | <a href="#cap-def-aut-code"><strong>def-aut-code</strong></a> | <a href="#cap-def-block-code"><strong>def-block-code</strong></a> | <a href="#cap-def-card-code"><strong>def-card-code</strong></a> | <a href="#cap-def-coder"><strong>def-coder</strong></a> | <a href="#cap-def-codeword"><strong>def-codeword</strong></a> | <a href="#cap-def-cyclotomic-poly"><strong>def-cyclotomic-poly</strong></a> | <a href="#cap-def-dec-lincode-1"><strong>def-dec-lincode-1</strong></a> | <a href="#cap-def-dec-lincode-2"><strong>def-dec-lincode-2</strong></a> | <a href="#cap-def-dec-prob-1"><strong>def-dec-prob-1</strong></a> | <a href="#cap-def-dec-prob-2"><strong>def-dec-prob-2</strong></a> | <a href="#cap-def-dec-prob-3"><strong>def-dec-prob-3</strong></a> | <a href="#cap-def-decoder"><strong>def-decoder</strong></a> | <a href="#cap-def-dim-lincode"><strong>def-dim-lincode</strong></a> | <a href="#cap-def-dual-code"><strong>def-dual-code</strong></a> | <a href="#cap-def-equiv-codes"><strong>def-equiv-codes</strong></a> | <a href="#cap-def-equiv-mat-perm"><strong>def-equiv-mat-perm</strong></a> | <a href="#cap-def-genmat-lincode"><strong>def-genmat-lincode</strong></a> | <a href="#cap-def-info-set"><strong>def-info-set</strong></a> | <a href="#cap-def-inner-prod-code"><strong>def-inner-prod-code</strong></a> | <a href="#cap-def-lambda-i"><strong>def-lambda-i</strong></a> | <a href="#cap-def-lattice"><strong>def-lattice</strong></a> | <a href="#cap-def-lattice-det"><strong>def-lattice-det</strong></a> | <a href="#cap-def-lattice-fundamental-domain"><strong>def-lattice-fundamental-domain</strong></a> | <a href="#cap-def-len-code"><strong>def-len-code</strong></a> | <a href="#cap-def-len-lincode"><strong>def-len-lincode</strong></a> | <a href="#cap-def-lincode"><strong>def-lincode</strong></a> | <a href="#cap-def-mat-incidence"><strong>def-mat-incidence</strong></a> | <a href="#cap-def-min-dist"><strong>def-min-dist</strong></a> | <a href="#cap-def-min-dist-lincode"><strong>def-min-dist-lincode</strong></a> | <a href="#cap-def-nk-code"><strong>def-nk-code</strong></a> | <a href="#cap-def-nkd-code"><strong>def-nkd-code</strong></a> | <a href="#cap-def-nm-code"><strong>def-nm-code</strong></a> | <a href="#cap-def-nmd-code"><strong>def-nmd-code</strong></a> | <a href="#cap-def-op-quan-control"><strong>def-op-quan-control</strong></a> | <a href="#cap-def-op-quan-control-not"><strong>def-op-quan-control-not</strong></a> | <a href="#cap-def-op-quan-hadamard"><strong>def-op-quan-hadamard</strong></a> | <a href="#cap-def-op-quan-id"><strong>def-op-quan-id</strong></a> | <a href="#cap-def-op-quan-not"><strong>def-op-quan-not</strong></a> | <a href="#cap-def-parity-mat"><strong>def-parity-mat</strong></a> | <a href="#cap-def-parity-vec"><strong>def-parity-vec</strong></a> | <a href="#cap-def-perm"><strong>def-perm</strong></a> | <a href="#cap-def-prob-equiv-bin-lincode"><strong>def-prob-equiv-bin-lincode</strong></a> | <a href="#cap-def-prob-graph-iso"><strong>def-prob-graph-iso</strong></a> | <a href="#cap-def-redudancy-lincode"><strong>def-redudancy-lincode</strong></a> | <a href="#cap-def-spec-code"><strong>def-spec-code</strong></a> | <a href="#cap-def-spec-lincode"><strong>def-spec-lincode</strong></a> | <a href="#cap-def-spec-lincode-reg"><strong>def-spec-lincode-reg</strong></a> | <a href="#cap-def-speed-lincode"><strong>def-speed-lincode</strong></a> | <a href="#cap-def-syndrom"><strong>def-syndrom</strong></a> | <a href="#cap-def-syndrom-decode"><strong>def-syndrom-decode</strong></a> | <a href="#cap-def-syndrom-recognize"><strong>def-syndrom-recognize</strong></a> | <a href="#cap-def-syndrom-search"><strong>def-syndrom-search</strong></a> | <a href="#cap-def-systematic-code"><strong>def-systematic-code</strong></a> | <a href="#cap-def-systematic-lincode"><strong>def-systematic-lincode</strong></a> | <a href="#cap-def-systematic-mat"><strong>def-systematic-mat</strong></a> | <a href="#cap-exp-cyclotomic-poly"><strong>exp-cyclotomic-poly</strong></a> | <a href="#cap-exp-op-quan-hadamard"><strong>exp-op-quan-hadamard</strong></a> | <a href="#cap-exp-perm"><strong>exp-perm</strong></a> | <a href="#cap-exp-qubit"><strong>exp-qubit</strong></a> | <a href="#cap-lem-coppersmith"><strong>lem-coppersmith</strong></a> | <a href="#cap-lem-nm-code"><strong>lem-nm-code</strong></a> | <a href="#cap-rmk-code-T"><strong>rmk-code-T</strong></a> | <a href="#cap-rmk-cyclotomic-poly"><strong>rmk-cyclotomic-poly</strong></a> | <a href="#cap-rmk-cyclotomic-poly-Q"><strong>rmk-cyclotomic-poly-Q</strong></a> | <a href="#cap-rmk-dec-prob"><strong>rmk-dec-prob</strong></a> | <a href="#cap-rmk-dim-lattice"><strong>rmk-dim-lattice</strong></a> | <a href="#cap-rmk-dual-code"><strong>rmk-dual-code</strong></a> | <a href="#cap-rmk-genmat-lincode"><strong>rmk-genmat-lincode</strong></a> | <a href="#cap-rmk-lattice-fundamental-domain"><strong>rmk-lattice-fundamental-domain</strong></a> | <a href="#cap-rmk-op-quan-control"><strong>rmk-op-quan-control</strong></a> | <a href="#cap-rmk-parity-mat"><strong>rmk-parity-mat</strong></a> | <a href="#cap-rmk-parity-matvec"><strong>rmk-parity-matvec</strong></a> | <a href="#cap-rmk-sum-code"><strong>rmk-sum-code</strong></a> | <a href="#cap-theorem-0"><strong>theorem-0</strong></a> | <a href="#cap-theorem-1"><strong>theorem-1</strong></a> | <a href="#cap-thm-hadamard-ineq"><strong>thm-hadamard-ineq</strong></a> | <a href="#cap-thm-syndrome-dec"><strong>thm-syndrome-dec</strong></a></div>
+</section>
+<table class="domainindex-table">
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-alg-bsgs">
+    <td></td><td><strong>alg-bsgs</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="discrete-logarithm.html#alg-bsgs"><code class="xref">alg-bsgs</code></a> <em>(discrete-logarithm)</em></td><td>
+    <em>algorithm</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-alg-pohlig-hellman-general">
+    <td></td><td><strong>alg-pohlig-hellman-general</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="discrete-logarithm.html#alg-pohlig-hellman-general"><code class="xref">alg-pohlig-hellman-general</code></a> <em>(discrete-logarithm)</em></td><td>
+    <em>algorithm</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-alg-pohlig-hellman-prime-order">
+    <td></td><td><strong>alg-pohlig-hellman-prime-order</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="discrete-logarithm.html#alg-pohlig-hellman-prime-order"><code class="xref">alg-pohlig-hellman-prime-order</code></a> <em>(discrete-logarithm)</em></td><td>
+    <em>algorithm</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-algo-AES-expand-key">
+    <td></td><td><strong>algo-AES-expand-key</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="block-cipher/aes.html#algo-AES-expand-key"><code class="xref">algo-AES-expand-key</code></a> <em>(block-cipher/aes)</em></td><td>
+    <em>algorithm</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-algo-PRESENT">
+    <td></td><td><strong>algo-PRESENT</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="block-cipher/present.html#algo-PRESENT"><code class="xref">algo-PRESENT</code></a> <em>(block-cipher/present)</em></td><td>
+    <em>algorithm</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-algo-gaussian-lattice-reduction">
+    <td></td><td><strong>algo-gaussian-lattice-reduction</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/lattice-reduction-algorithms.html#algo-gaussian-lattice-reduction"><code class="xref">algo-gaussian-lattice-reduction</code></a> <em>(lattice-based/lattice-reduction-algorithms)</em></td><td>
+    <em>algorithm</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-algorithm-1">
+    <td></td><td><strong>algorithm-1</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/hard-problems.html#algorithm-1"><code class="xref">algorithm-1</code></a> <em>(lattice-based/hard-problems)</em></td><td>
+    <em>algorithm</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-aut-code">
+    <td></td><td><strong>def-aut-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/equivalence.html#def-aut-code"><code class="xref">def-aut-code</code></a> <em>(code-based/equivalence)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-block-code">
+    <td></td><td><strong>def-block-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/intro.html#def-block-code"><code class="xref">def-block-code</code></a> <em>(code-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-card-code">
+    <td></td><td><strong>def-card-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/intro.html#def-card-code"><code class="xref">def-card-code</code></a> <em>(code-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-coder">
+    <td></td><td><strong>def-coder</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-coder"><code class="xref">def-coder</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-codeword">
+    <td></td><td><strong>def-codeword</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/intro.html#def-codeword"><code class="xref">def-codeword</code></a> <em>(code-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-cyclotomic-poly">
+    <td></td><td><strong>def-cyclotomic-poly</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#def-cyclotomic-poly"><code class="xref">def-cyclotomic-poly</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-dec-lincode-1">
+    <td></td><td><strong>def-dec-lincode-1</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-on-linear-code.html#def-dec-lincode-1"><code class="xref">def-dec-lincode-1</code></a> <em>(code-based/decode-on-linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-dec-lincode-2">
+    <td></td><td><strong>def-dec-lincode-2</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-on-linear-code.html#def-dec-lincode-2"><code class="xref">def-dec-lincode-2</code></a> <em>(code-based/decode-on-linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-dec-prob-1">
+    <td></td><td><strong>def-dec-prob-1</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-problem.html#def-dec-prob-1"><code class="xref">def-dec-prob-1</code></a> <em>(code-based/decode-problem)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-dec-prob-2">
+    <td></td><td><strong>def-dec-prob-2</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-problem.html#def-dec-prob-2"><code class="xref">def-dec-prob-2</code></a> <em>(code-based/decode-problem)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-dec-prob-3">
+    <td></td><td><strong>def-dec-prob-3</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-problem.html#def-dec-prob-3"><code class="xref">def-dec-prob-3</code></a> <em>(code-based/decode-problem)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-decoder">
+    <td></td><td><strong>def-decoder</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-problem.html#def-decoder"><code class="xref">def-decoder</code></a> <em>(code-based/decode-problem)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-dim-lincode">
+    <td></td><td><strong>def-dim-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-dim-lincode"><code class="xref">def-dim-lincode</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-dual-code">
+    <td></td><td><strong>def-dual-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-dual-code"><code class="xref">def-dual-code</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-equiv-codes">
+    <td></td><td><strong>def-equiv-codes</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/equivalence.html#def-equiv-codes"><code class="xref">def-equiv-codes</code></a> <em>(code-based/equivalence)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-equiv-mat-perm">
+    <td></td><td><strong>def-equiv-mat-perm</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/equivalence.html#def-equiv-mat-perm"><code class="xref">def-equiv-mat-perm</code></a> <em>(code-based/equivalence)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-genmat-lincode">
+    <td></td><td><strong>def-genmat-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-genmat-lincode"><code class="xref">def-genmat-lincode</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-info-set">
+    <td></td><td><strong>def-info-set</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-info-set"><code class="xref">def-info-set</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-inner-prod-code">
+    <td></td><td><strong>def-inner-prod-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-inner-prod-code"><code class="xref">def-inner-prod-code</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-lambda-i">
+    <td></td><td><strong>def-lambda-i</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#def-lambda-i"><code class="xref">def-lambda-i</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-lattice">
+    <td></td><td><strong>def-lattice</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#def-lattice"><code class="xref">def-lattice</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-lattice-det">
+    <td></td><td><strong>def-lattice-det</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#def-lattice-det"><code class="xref">def-lattice-det</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-lattice-fundamental-domain">
+    <td></td><td><strong>def-lattice-fundamental-domain</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#def-lattice-fundamental-domain"><code class="xref">def-lattice-fundamental-domain</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-len-code">
+    <td></td><td><strong>def-len-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/intro.html#def-len-code"><code class="xref">def-len-code</code></a> <em>(code-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-len-lincode">
+    <td></td><td><strong>def-len-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-len-lincode"><code class="xref">def-len-lincode</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-lincode">
+    <td></td><td><strong>def-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-lincode"><code class="xref">def-lincode</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-mat-incidence">
+    <td></td><td><strong>def-mat-incidence</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/equivalence.html#def-mat-incidence"><code class="xref">def-mat-incidence</code></a> <em>(code-based/equivalence)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-min-dist">
+    <td></td><td><strong>def-min-dist</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/intro.html#def-min-dist"><code class="xref">def-min-dist</code></a> <em>(code-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-min-dist-lincode">
+    <td></td><td><strong>def-min-dist-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-min-dist-lincode"><code class="xref">def-min-dist-lincode</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-nk-code">
+    <td></td><td><strong>def-nk-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-nk-code"><code class="xref">def-nk-code</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-nkd-code">
+    <td></td><td><strong>def-nkd-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-nkd-code"><code class="xref">def-nkd-code</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-nm-code">
+    <td></td><td><strong>def-nm-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/intro.html#def-nm-code"><code class="xref">def-nm-code</code></a> <em>(code-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-nmd-code">
+    <td></td><td><strong>def-nmd-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/intro.html#def-nmd-code"><code class="xref">def-nmd-code</code></a> <em>(code-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-op-quan-control">
+    <td></td><td><strong>def-op-quan-control</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="quantum-computing.html#def-op-quan-control"><code class="xref">def-op-quan-control</code></a> <em>(quantum-computing)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-op-quan-control-not">
+    <td></td><td><strong>def-op-quan-control-not</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="quantum-computing.html#def-op-quan-control-not"><code class="xref">def-op-quan-control-not</code></a> <em>(quantum-computing)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-op-quan-hadamard">
+    <td></td><td><strong>def-op-quan-hadamard</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="quantum-computing.html#def-op-quan-hadamard"><code class="xref">def-op-quan-hadamard</code></a> <em>(quantum-computing)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-op-quan-id">
+    <td></td><td><strong>def-op-quan-id</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="quantum-computing.html#def-op-quan-id"><code class="xref">def-op-quan-id</code></a> <em>(quantum-computing)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-op-quan-not">
+    <td></td><td><strong>def-op-quan-not</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="quantum-computing.html#def-op-quan-not"><code class="xref">def-op-quan-not</code></a> <em>(quantum-computing)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-parity-mat">
+    <td></td><td><strong>def-parity-mat</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-parity-mat"><code class="xref">def-parity-mat</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-parity-vec">
+    <td></td><td><strong>def-parity-vec</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-parity-vec"><code class="xref">def-parity-vec</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-perm">
+    <td></td><td><strong>def-perm</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/equivalence.html#def-perm"><code class="xref">def-perm</code></a> <em>(code-based/equivalence)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-prob-equiv-bin-lincode">
+    <td></td><td><strong>def-prob-equiv-bin-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/equivalence.html#def-prob-equiv-bin-lincode"><code class="xref">def-prob-equiv-bin-lincode</code></a> <em>(code-based/equivalence)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-prob-graph-iso">
+    <td></td><td><strong>def-prob-graph-iso</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/equivalence.html#def-prob-graph-iso"><code class="xref">def-prob-graph-iso</code></a> <em>(code-based/equivalence)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-redudancy-lincode">
+    <td></td><td><strong>def-redudancy-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-redudancy-lincode"><code class="xref">def-redudancy-lincode</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-spec-code">
+    <td></td><td><strong>def-spec-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/intro.html#def-spec-code"><code class="xref">def-spec-code</code></a> <em>(code-based/intro)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-spec-lincode">
+    <td></td><td><strong>def-spec-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-spec-lincode"><code class="xref">def-spec-lincode</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-spec-lincode-reg">
+    <td></td><td><strong>def-spec-lincode-reg</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/weight.html#def-spec-lincode-reg"><code class="xref">def-spec-lincode-reg</code></a> <em>(code-based/weight)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-speed-lincode">
+    <td></td><td><strong>def-speed-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-speed-lincode"><code class="xref">def-speed-lincode</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-syndrom">
+    <td></td><td><strong>def-syndrom</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-syndrom"><code class="xref">def-syndrom</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-syndrom-decode">
+    <td></td><td><strong>def-syndrom-decode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-on-linear-code.html#def-syndrom-decode"><code class="xref">def-syndrom-decode</code></a> <em>(code-based/decode-on-linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-syndrom-recognize">
+    <td></td><td><strong>def-syndrom-recognize</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-on-linear-code.html#def-syndrom-recognize"><code class="xref">def-syndrom-recognize</code></a> <em>(code-based/decode-on-linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-syndrom-search">
+    <td></td><td><strong>def-syndrom-search</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-on-linear-code.html#def-syndrom-search"><code class="xref">def-syndrom-search</code></a> <em>(code-based/decode-on-linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-systematic-code">
+    <td></td><td><strong>def-systematic-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-systematic-code"><code class="xref">def-systematic-code</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-systematic-lincode">
+    <td></td><td><strong>def-systematic-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-systematic-lincode"><code class="xref">def-systematic-lincode</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-def-systematic-mat">
+    <td></td><td><strong>def-systematic-mat</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#def-systematic-mat"><code class="xref">def-systematic-mat</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>definition</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-exp-cyclotomic-poly">
+    <td></td><td><strong>exp-cyclotomic-poly</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#exp-cyclotomic-poly"><code class="xref">exp-cyclotomic-poly</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>example</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-exp-op-quan-hadamard">
+    <td></td><td><strong>exp-op-quan-hadamard</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="quantum-computing.html#exp-op-quan-hadamard"><code class="xref">exp-op-quan-hadamard</code></a> <em>(quantum-computing)</em></td><td>
+    <em>example</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-exp-perm">
+    <td></td><td><strong>exp-perm</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/equivalence.html#exp-perm"><code class="xref">exp-perm</code></a> <em>(code-based/equivalence)</em></td><td>
+    <em>example</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-exp-qubit">
+    <td></td><td><strong>exp-qubit</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="quantum-computing.html#exp-qubit"><code class="xref">exp-qubit</code></a> <em>(quantum-computing)</em></td><td>
+    <em>example</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-lem-coppersmith">
+    <td></td><td><strong>lem-coppersmith</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/coppersmith.html#lem-coppersmith"><code class="xref">lem-coppersmith</code></a> <em>(lattice-based/coppersmith)</em></td><td>
+    <em>lemma</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-lem-nm-code">
+    <td></td><td><strong>lem-nm-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/intro.html#lem-nm-code"><code class="xref">lem-nm-code</code></a> <em>(code-based/intro)</em></td><td>
+    <em>lemma</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-code-T">
+    <td></td><td><strong>rmk-code-T</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#rmk-code-T"><code class="xref">rmk-code-T</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-cyclotomic-poly">
+    <td></td><td><strong>rmk-cyclotomic-poly</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#rmk-cyclotomic-poly"><code class="xref">rmk-cyclotomic-poly</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-cyclotomic-poly-Q">
+    <td></td><td><strong>rmk-cyclotomic-poly-Q</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#rmk-cyclotomic-poly-Q"><code class="xref">rmk-cyclotomic-poly-Q</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-dec-prob">
+    <td></td><td><strong>rmk-dec-prob</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-problem.html#rmk-dec-prob"><code class="xref">rmk-dec-prob</code></a> <em>(code-based/decode-problem)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-dim-lattice">
+    <td></td><td><strong>rmk-dim-lattice</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#rmk-dim-lattice"><code class="xref">rmk-dim-lattice</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-dual-code">
+    <td></td><td><strong>rmk-dual-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#rmk-dual-code"><code class="xref">rmk-dual-code</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-genmat-lincode">
+    <td></td><td><strong>rmk-genmat-lincode</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#rmk-genmat-lincode"><code class="xref">rmk-genmat-lincode</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-lattice-fundamental-domain">
+    <td></td><td><strong>rmk-lattice-fundamental-domain</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#rmk-lattice-fundamental-domain"><code class="xref">rmk-lattice-fundamental-domain</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-op-quan-control">
+    <td></td><td><strong>rmk-op-quan-control</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="quantum-computing.html#rmk-op-quan-control"><code class="xref">rmk-op-quan-control</code></a> <em>(quantum-computing)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-parity-mat">
+    <td></td><td><strong>rmk-parity-mat</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#rmk-parity-mat"><code class="xref">rmk-parity-mat</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-parity-matvec">
+    <td></td><td><strong>rmk-parity-matvec</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#rmk-parity-matvec"><code class="xref">rmk-parity-matvec</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-rmk-sum-code">
+    <td></td><td><strong>rmk-sum-code</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/linear-code.html#rmk-sum-code"><code class="xref">rmk-sum-code</code></a> <em>(code-based/linear-code)</em></td><td>
+    <em>remark</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-theorem-0">
+    <td></td><td><strong>theorem-0</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/hard-problems.html#theorem-0"><code class="xref">theorem-0</code></a> <em>(lattice-based/hard-problems)</em></td><td>
+    <em>theorem</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-theorem-1">
+    <td></td><td><strong>theorem-1</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/weight.html#theorem-1"><code class="xref">theorem-1</code></a> <em>(code-based/weight)</em></td><td>
+    <em>theorem</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-thm-hadamard-ineq">
+    <td></td><td><strong>thm-hadamard-ineq</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="lattice-based/intro.html#thm-hadamard-ineq"><code class="xref">thm-hadamard-ineq</code></a> <em>(lattice-based/intro)</em></td><td>
+    <em>theorem</em></td>
+  </tr>
+  <tr class="pcap">
+    <td></td><td>&#160;</td><td></td>
+  </tr>
+  <tr class="cap" id="cap-thm-syndrome-dec">
+    <td></td><td><strong>thm-syndrome-dec</strong></td><td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+        <a href="code-based/decode-on-linear-code.html#thm-syndrome-dec"><code class="xref">thm-syndrome-dec</code></a> <em>(code-based/decode-on-linear-code)</em></td><td>
+    <em>theorem</em></td>
+  </tr>
+</table>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025-2026, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Nhấp để hiển thị';</script>
+    <script>let toggleHintHide = 'Nhấp để ẩn';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    
+    <script>DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true</script></body>
+</html>

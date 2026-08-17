@@ -1,0 +1,12 @@
+*****************
+Phá mã tuyến tính
+*****************
+
+Phá mã tuyến tính (linear cryptanalysis) đã làm chuẩn mã hóa DES không còn đủ an toàn.
+
+Trong các chuẩn mã hóa hiện đại về sau, khả năng kháng phá mã vi sai và phá mã tuyến tính trở thành tiêu chuẩn đánh giá độ an toàn của thuật toán mã hóa.
+
+.. toctree:: 
+    :maxdepth: 2
+
+    tinydes

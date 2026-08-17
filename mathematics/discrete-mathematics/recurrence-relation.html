@@ -1,0 +1,926 @@
+<!doctype html>
+<html class="no-js" lang="vi" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Tìm Kiếm" href="../search.html"><link rel="next" title="Lý thuyết đồ thị" href="graph/index.html"><link rel="prev" title="Đại cương tổ hợp" href="combinatoric.html">
+        <link rel="prefetch" href="../_static/rhine_lab.jpg" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Công thức truy hồi - Math Book</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=3a5ece24" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystyles.css?v=ca48935a" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Math Book</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/rhine_lab.jpg" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Math Book</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Tìm Kiếm" name="q" aria-label="Tìm Kiếm">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/index.html">Những lời nói đầu</a><input aria-label="Toggle navigation of Những lời nói đầu" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/about-notebook.html">Cơ sở xây dựng notebook</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algebra/index.html">Đại số</a><input aria-label="Toggle navigation of Đại số" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algebra/set/index.html">1. Đại cương về tập hợp</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../algebra/polynomial/index.html">2. Đa thức</a><input aria-label="Toggle navigation of 2. Đa thức" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html">2.1. Giới thiệu về đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#so-sanh-cong-tru-va-nhan-hai-da-thuc-mot-bien">2.2. So sánh, cộng, trừ và nhân hai đa thức một biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#phep-chia-da-thuc-mot-bien">2.3. Phép chia đa thức một biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/polynomial.html#phep-chia-da-thuc-nhieu-bien">2.4. Phép chia đa thức nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/lagrange-interpolation.html">2.5. Đa thức nội suy Lagrange</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/numerical-methods.html">2.6. Phương pháp tính giá trị đa thức</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/multivariate-polynomial.html">2.7. Đa thức nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/groebner-basis.html">2.8. Cơ sở Gröbner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/buchberger-algorithm.html">2.9. Thuật toán Buchberger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/f4-algorithm.html">2.10. Thuật toán F4 và ma trận Macaulay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../algebra/polynomial/groebner-parallel-computing.html">2.11. Tính cơ sở Gröbner song song trên CPU và GPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../abstract-algebra/index.html">Lý thuyết nhóm</a><input aria-label="Toggle navigation of Lý thuyết nhóm" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/groups/index.html">1. Lý thuyết nhóm</a><input aria-label="Toggle navigation of 1. Lý thuyết nhóm" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/group.html">1.1. Nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/symmetric-group.html">1.2. Nhóm hoán vị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/groups/quasigroup.html">1.3. Quasigroup</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/homomorphisms/index.html">2. Homomorphisms</a><input aria-label="Toggle navigation of 2. Homomorphisms" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/homomorphisms/group-homomorphism.html">2.1. Group homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/group-action/index.html">3. Tác động nhóm</a><input aria-label="Toggle navigation of 3. Tác động nhóm" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/group-action/group-action.html">3.1. Tác động nhóm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/group-action/burnside.html">3.2. Bổ đề Burnside</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/rings/index.html">4. Vành</a><input aria-label="Toggle navigation of 4. Vành" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/rings/ring.html">4.1. Vành</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/fields/index.html">5. Trường</a><input aria-label="Toggle navigation of 5. Trường" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/field.html">5.1. Trường</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/ideal.html">5.2. Ideal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/fields/ring-homomorphism.html">5.3. Ring kernel và ring homomorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../abstract-algebra/galois-theory/index.html">6. Lý thuyết Galois</a><input aria-label="Toggle navigation of 6. Lý thuyết Galois" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../abstract-algebra/galois-theory/extension-field.html">6.1. Extension Fields</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../calculus/index.html">Giải tích</a><input aria-label="Toggle navigation of Giải tích" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/calculus/index.html">1. Giải tích</a><input aria-label="Toggle navigation of 1. Giải tích" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/limits.html">1.1. Giới hạn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/continuity.html">1.2. Tính liên tục của hàm số</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/monotone.html">1.3. Tính đơn điệu và cực trị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/derivative.html">1.4. Đạo hàm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/partial-derivative.html">1.5. Đạo hàm riêng</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/partial-derivative.html#dao-ham-mot-so-ham-nhieu-bien">1.6. Đạo hàm một số hàm nhiều biến</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/avarage-value.html">1.7. Một số định lí về giá trị trung bình</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/concave.html">1.8. Tính lồi, lõm và điểm uốn của đồ thị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/calculus/line-integral.html">1.9. Tích phân đường</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../calculus/differential-equation/index.html">2. Phương trình vi phân</a><input aria-label="Toggle navigation of 2. Phương trình vi phân" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../calculus/differential-equation/numerical-methods/index.html">2.1. Phương pháp số cho bài toán giá trị ban đầu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../calculus/series/index.html">3. Chuỗi số</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../numerical-methods/index.html">Phương pháp tính toán</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../probability/index.html">Xác suất thống kê</a><input aria-label="Toggle navigation of Xác suất thống kê" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../probability/intro.html">Xác suất thống kê</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../probability/statistics-exercises/index.html">Bài tập thực hành thống kê toán học</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../probability/ML/index.html">Machine Learning</a><input aria-label="Toggle navigation of Machine Learning" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/linear-regression.html">Linear Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/kmeans.html">K-Means clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/gradient-descent.html">Gradient Descent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../probability/ML/perceptron.html">Perceptron Learning Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linalg/index.html">Đại số tuyến tính</a><input aria-label="Toggle navigation of Đại số tuyến tính" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../linalg/matrix/index.html">1. Ma trận</a><input aria-label="Toggle navigation of 1. Ma trận" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-determinant.html">1.1. Định thức ma trận</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-inversion.html">1.2. Ma trận nghịch đảo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../linalg/matrix/matrix-rank.html">1.3. Hạng của ma trận</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/system-of-equations.html">2. Hệ phương trình tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/linear-operator.html">3. Toán tử tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/eigen.html">4. Trị riêng và vector riêng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/linear-combination.html">5. Tổ hợp tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/vector-space.html">6. Không gian vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/euclidean-space.html">7. Không gian Euclide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/quadratic-form.html">8. Dạng toàn phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linalg/hilbert-space.html">9. Không gian Hilbert</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../number-theory/index.html">Lý thuyết số</a><input aria-label="Toggle navigation of Lý thuyết số" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/euclidean.html">1. Phép chia Euclid. Thuật toán Euclid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/linear-congruence.html">2. Phương trình đồng dư tuyến tính</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/arithmetic-functions.html">3. Các hàm số học quan trọng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/arithmetic-theorems.html">4. Các định lí số học quan trọng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/quadratic-residue.html">5. Thặng dư chính phương</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/dirichlet-convolution.html">6. Tích chập Dirichlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/chinese-remainder-theorem.html">7. Định lý số dư Trung Hoa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../number-theory/exercises.html">8. Bài tập số học sưu tầm</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Toán rời rạc</a><input aria-label="Toggle navigation of Toán rời rạc" checked="" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binary-relation.html">Quan hệ hai ngôi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="partition.html">Phân hoạch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discrete-fourier-transform.html">Biến đổi Fourier rời rạc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear-equations-over-integers.html">Phương trình tuyến tính với nghiệm nguyên</a></li>
+<li class="toctree-l2"><a class="reference internal" href="combinatoric.html">Đại cương tổ hợp</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Công thức truy hồi</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="graph/index.html">Lý thuyết đồ thị</a><input aria-label="Toggle navigation of Lý thuyết đồ thị" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="graph/definitions.html">Các định nghĩa cơ bản</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph/connection.html">Tính liên thông của đồ thị</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph/tree.html">Cây</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph/exercises.html">Bài tập sưu tầm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph/application-1.html">Ứng dụng 1: sắp xếp topo và bài toán xếp lịch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph/application-2.html">Ứng dụng 2: tối ưu bằng thuật toán Kruskal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph/application-3.html">Ứng dụng 3: mạng xã hội</a></li>
+<li class="toctree-l3"><a class="reference internal" href="graph/euler_hamilton.html">Đồ thị Euler và đồ thị Hamilton</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../physics/index.html">Vật lý</a><input aria-label="Toggle navigation of Vật lý" class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../physics/brachistochrone/brachistochrone.html">Đường đoản thời</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../boolean/index.html">Hàm Boolean và mật mã đối xứng</a><input aria-label="Toggle navigation of Hàm Boolean và mật mã đối xứng" class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/boolean-function/index.html">1. Hàm Boolean và các tính chất mật mã</a><input aria-label="Toggle navigation of 1. Hàm Boolean và các tính chất mật mã" class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/introduction.html">1.1. Giới thiệu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/boolean-dnf-cnf.html">1.2. Disjunctive và Conjunctive Normal Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/boolean-vectorial.html">1.3. Biểu diễn hàm Boolean vectorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/walsh-hadamard-spectre.html">1.4. Nonlinearity của hàm boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/boolean-function/cryptographic-properties.html">1.5. Các tính chất mật mã của hàm Boolean</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/stream-cipher/index.html">2. Stream cipher</a><input aria-label="Toggle navigation of 2. Stream cipher" class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/stream-cipher/linear-feedback-shift-register.html">2.1. Linear Feedback Shift Register</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/mac.html">3. Message Authentication Code</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/differential-attack/index.html">4. Phá mã vi sai</a><input aria-label="Toggle navigation of 4. Phá mã vi sai" class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/differential-attack/toycipher.html">4.1. Nhập môn phá mã vi sai</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/differential-attack/tinydes.html">4.2. Phá mã vi sai trên TinyDES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/differential-attack/difference-and-differential.html">4.3. Difference và differential</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../boolean/linear-attack/index.html">5. Phá mã tuyến tính</a><input aria-label="Toggle navigation of 5. Phá mã tuyến tính" class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../boolean/linear-attack/tinydes.html">5.1. Phá mã tuyến tính trên TinyDES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/slide-attack/index.html">6. Slide attack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/algebraic-attack/index.html">7. Algebraic cryptanalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boolean/glossary.html">8. Bảng thuật ngữ hàm Boolean</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../stuff/index.html">Ngoài lề</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../myrefs.html">Tài liệu tham khảo</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/discrete-mathematics/recurrence-relation.rst" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="cong-thuc-truy-hoi">
+<h1>Công thức truy hồi<a class="headerlink" href="#cong-thuc-truy-hoi" title="Link to this heading">¶</a></h1>
+<p>Dãy số là một ánh xạ từ <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> tới <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u : \mathbb{N} \to \mathbb{R}, \quad n \mapsto u(n).\]</div>
+</div>
+<p>Khi đó các giá trị <span class="math notranslate nohighlight">\(u(1)\)</span>, <span class="math notranslate nohighlight">\(u(2)\)</span>, ... được gọi là <strong>số hạng</strong> của dãy số. Chúng ta cũng có thể viết <span class="math notranslate nohighlight">\(u_1\)</span>, <span class="math notranslate nohighlight">\(u_2\)</span>, ... thay vì <span class="math notranslate nohighlight">\(u(1)\)</span>, <span class="math notranslate nohighlight">\(u(2)\)</span>, ..., hoặc thậm chí là <span class="math notranslate nohighlight">\(\{ u_ n \}\)</span>.</p>
+<section id="cap-so-cong-va-cong-thuc-truy-hoi-bac-nhat">
+<h2>Cấp số cộng và công thức truy hồi bậc nhất<a class="headerlink" href="#cap-so-cong-va-cong-thuc-truy-hoi-bac-nhat" title="Link to this heading">¶</a></h2>
+<p>Cho dãy số <span class="math notranslate nohighlight">\(\{ u_n \}\)</span> với phần tử đầu <span class="math notranslate nohighlight">\(u_0\)</span> và công sai <span class="math notranslate nohighlight">\(d\)</span>. Khi đó các phần tử sau đó được tính với công thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_{n} = u_{n-1} + d\]</div>
+</div>
+<p>với mọi <span class="math notranslate nohighlight">\(n \geqslant 1\)</span> thì <span class="math notranslate nohighlight">\(\{ u_n \}\)</span> được gọi là <strong>cấp số cộng</strong>.</p>
+<p>Như vậy cấp số cộng là một dãy số có dạng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = \varphi(n, u_{n-1}).\]</div>
+</div>
+<p>Dãy số có dạng như trên gọi là <strong>truy hồi bậc nhất</strong> (hay <strong>first order</strong>).</p>
+<div class="proof example admonition" id="recurr-1-order-1">
+<p class="admonition-title"><span class="caption-number">Ví dụ 18 </span></p>
+<section class="example-content" id="proof-content">
+<p>Dãy số <span class="math notranslate nohighlight">\(\{ u_n \}\)</span> xác định bởi</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = a u_{n-1} + b n + c\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(u_0\)</span> là số hạng đầu; <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> và <span class="math notranslate nohighlight">\(c\)</span> là các số thực.</p>
+</section>
+</div><div class="proof example admonition" id="recurr-1-order-2">
+<p class="admonition-title"><span class="caption-number">Ví dụ 19 </span></p>
+<section class="example-content" id="proof-content">
+<p>Dãy số <span class="math notranslate nohighlight">\(\{ u_ n \}\)</span> xác định bởi</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = a u_{n-1}^2 + b u_{n-1} + c\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(u_0\)</span> là số hạng đầu; <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> và <span class="math notranslate nohighlight">\(c\)</span> là các số thực.</p>
+</section>
+</div><p>Ta cần chú ý rằng việc nói truy hồi bậc nhất mang nghĩa là số hạng thứ <span class="math notranslate nohighlight">\(n\)</span> chỉ phụ thuộc vào số hạng thứ <span class="math notranslate nohighlight">\(n - 1\)</span>, chứ không phải các số hạng trước đó như số hạng thứ <span class="math notranslate nohighlight">\(n - 2\)</span>, <span class="math notranslate nohighlight">\(n - 3\)</span>, vân vân và mây mây.</p>
+<p>Ở ví dụ thứ hai thì số hạng thứ <span class="math notranslate nohighlight">\(n\)</span> là hàm bậc hai theo số hạng thứ <span class="math notranslate nohighlight">\(n - 1\)</span> nhưng đây là công thức truy hồi bậc nhất.</p>
+</section>
+<section id="day-so-fibonacci-va-cong-thuc-truy-hoi-bac-hai">
+<h2>Dãy số Fibonacci và công thức truy hồi bậc hai<a class="headerlink" href="#day-so-fibonacci-va-cong-thuc-truy-hoi-bac-hai" title="Link to this heading">¶</a></h2>
+<p>Đây có lẽ là dãy số nổi tiếng nhất trong toán học. Công thức của dãy số là với hai phần tử ban đầu <span class="math notranslate nohighlight">\(u_0 = 0\)</span> và <span class="math notranslate nohighlight">\(u_1 = 1\)</span>, các phần tử sau sẽ được tính với công thức</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = u_{n-1} + u_{n-2}\]</div>
+</div>
+<p>với mọi <span class="math notranslate nohighlight">\(n \geqslant 2\)</span>.</p>
+<p>Ở đây, số hạng thứ <span class="math notranslate nohighlight">\(n\)</span> được tính bởi hai số hạng trước nó nên đây là ví dụ của <strong>truy hồi bậc hai</strong>. Dãy số truy hồi bậc hai là dãy số có dạng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = \varphi(n, u_{n-1}, u_{n-2}).\]</div>
+</div>
+<div class="proof example admonition" id="recurr-2-order">
+<p class="admonition-title"><span class="caption-number">Ví dụ 20 </span></p>
+<section class="example-content" id="proof-content">
+<p>Dãy số <span class="math notranslate nohighlight">\(\{ u_n \}\)</span> được xác định bởi</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = a u_{n-1} + b u_{n-2} + c\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(u_0\)</span> và <span class="math notranslate nohighlight">\(u_1\)</span> là số hạng đầu; <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> và <span class="math notranslate nohighlight">\(c\)</span> là các số thực.</p>
+</section>
+</div></section>
+<section id="cong-thuc-truy-hoi-bac-cao">
+<h2>Công thức truy hồi bậc cao<a class="headerlink" href="#cong-thuc-truy-hoi-bac-cao" title="Link to this heading">¶</a></h2>
+<p>Tổng quát, nếu số hạng thứ <span class="math notranslate nohighlight">\(n\)</span> của dãy số <span class="math notranslate nohighlight">\(\{ u_n \}\)</span> được tính bởi <span class="math notranslate nohighlight">\(k\)</span> số hạng trước nó, nghĩa là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = \varphi(n, u_{n-1}, u_{n-2}, \ldots, u_{n-k})\]</div>
+</div>
+<p>thì ta gọi là <strong>công thức truy hồi bậc</strong> <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>Các dãy truy hồi có ứng dụng rộng rãi trong toán học và các ngành khoa học khác, tiêu biểu nhất là dãy Fibonacci ở trên. Trong khoa học máy tính, công thức truy hồi có một ứng dụng để sinh một dãy số cho nhiều mục đích khác nhau như sinh số giả ngẫu nhiên (pseudo-random), sinh khóa cho thuật toán mã hóa dòng (stream cipher). Các ứng dụng này thường sử dụng dãy truy hồi <strong>tuyến tính</strong>, tức là bậc của các hạng tử <span class="math notranslate nohighlight">\(u_{n-1}\)</span>, <span class="math notranslate nohighlight">\(u_{n-2}\)</span>, ..., <span class="math notranslate nohighlight">\(u_{n-k}\)</span> không quá <span class="math notranslate nohighlight">\(1\)</span>. Nói cách khác thì</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = a_{n-1} u_{n-1} + a_{n-2} u_{n-2} + \cdots + a_{n-k} u_{n-k} + \phi(n),\]</div>
+</div>
+<p>trong đó <span class="math notranslate nohighlight">\(\phi(n)\)</span> là một hàm số nào đó không phụ thuộc các hạng tử <span class="math notranslate nohighlight">\(u_{n-1}\)</span>, ..., <span class="math notranslate nohighlight">\(u_{n-k}\)</span>. Các hệ số <span class="math notranslate nohighlight">\(a_{n-1}\)</span>, ..., <span class="math notranslate nohighlight">\(a_{n-k}\)</span> nằm trong trường số nào đó tùy thuộc bài toán. Ví dụ với các dãy LFSR (Linear Feedback Shift Register) để sinh dãy trong tin học ở trên thì các phép tính được thực trên trên trường <span class="math notranslate nohighlight">\(\mathbb{F}_2\)</span>. Hiện tại chúng ta sẽ khảo sát dãy số với hệ số thực.</p>
+<p>Chúng ta quan tâm đến công thức tổng quát của dãy số truy hồi. Dễ thấy rằng, để tính số hạng thứ <span class="math notranslate nohighlight">\(n\)</span> theo truy hồi thì ta phải biết đủ <span class="math notranslate nohighlight">\(k\)</span> số hạng trước đó. Nhưng với mỗi số hạng trong <span class="math notranslate nohighlight">\(k\)</span> số hạng đó ta lại cần đi ngược về trước đó nữa cho đến khi tới các số hạng ban đầu <span class="math notranslate nohighlight">\(u_0\)</span>, <span class="math notranslate nohighlight">\(u_1\)</span>, ..., <span class="math notranslate nohighlight">\(u_{k-1}\)</span>. Tuy nhiên đôi khi chúng ta quan tâm một số tính chất đại số mà cần công thức tổng quát cho <span class="math notranslate nohighlight">\(\{ u_n \}\)</span> và chỉ phụ thuộc <span class="math notranslate nohighlight">\(n\)</span>, nghĩa là <span class="math notranslate nohighlight">\(u_n = f(n)\)</span>. Khi đó chúng ta sẽ sử dụng <strong>phương pháp hàm sinh</strong> (hay <strong>generating function method</strong>, hay <strong>метод проводящих функций</strong>).</p>
+</section>
+<section id="phuong-phap-ham-sinh">
+<h2>Phương pháp hàm sinh<a class="headerlink" href="#phuong-phap-ham-sinh" title="Link to this heading">¶</a></h2>
+<p>Phương pháp hàm sinh thực hiện theo các bước sau:</p>
+<ol class="arabic simple">
+<li><p>Xác định các số hạng ban đầu <span class="math notranslate nohighlight">\(u_0\)</span>, <span class="math notranslate nohighlight">\(u_1\)</span>, ..., <span class="math notranslate nohighlight">\(u_{k-1}\)</span>.</p></li>
+<li><p>Gọi <span class="math notranslate nohighlight">\(G(x)\)</span> là đa thức với hệ số là các số hạng của dãy số, tức là</p></li>
+</ol>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) = u_0 + u_1 x + u_2 x^2 + \cdots + u_n x^n + \cdots\]</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Phân tích <span class="math notranslate nohighlight">\(G(x)\)</span> thành tổng các phân thức dạng <span class="math notranslate nohighlight">\(\dfrac{1}{H(x)}\)</span>. Sau đó ta gom các số hạng có cùng lũy thừa của <span class="math notranslate nohighlight">\(x\)</span> lại để được công thức tổng quát của <span class="math notranslate nohighlight">\(\{ u_n \}\)</span>. Các hàm <span class="math notranslate nohighlight">\(H(x)\)</span> sẽ được trình bày ở phần cuối với các ví dụ, và ta gọi chúng là <strong>hàm sinh</strong>.</p></li>
+</ol>
+<p>Một ví dụ hay dùng của hàm sinh là khai triển sau.</p>
+<div class="math-wrapper docutils container" id="equation-eq-mx">
+<div class="math notranslate nohighlight" id="equation-eq-mx">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq-mx" title="Link to this equation">¶</a></span>\[\dfrac{1}{1 - mx} = 1 + mx + m^2 x^2 + \cdots + m^n x^n + \cdots\]</div>
+</div>
+<p>Công thức trên có thể thu được từ khai triển Taylor-Maclaurin hoặc bằng quy nạp.</p>
+<section id="vi-du-i">
+<h3>Ví dụ I<a class="headerlink" href="#vi-du-i" title="Link to this heading">¶</a></h3>
+<p>Xét dãy số <span class="math notranslate nohighlight">\(\{ u_n \}\)</span> với <span class="math notranslate nohighlight">\(u_0 = 0\)</span>, <span class="math notranslate nohighlight">\(u_1 = 1\)</span>, và</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = 5 u_{n-1} - 6 u_{n-2} \ \text{với mọi} \ n \geqslant 2.\]</div>
+</div>
+<p>Đặt</p>
+<div class="math-wrapper docutils container" id="equation-eq-g">
+<div class="math notranslate nohighlight" id="equation-eq-g">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eq-g" title="Link to this equation">¶</a></span>\[G(x) = u_0 + u_1 x + u_2 x^2 + \cdots + u_n x^n + \cdots\]</div>
+</div>
+<p>Khi đó, ta nhân <span class="math notranslate nohighlight">\(G(x)\)</span> với <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(x^2\)</span> và nhân thêm số hạng để khử các hạng tử theo công thức truy hồi</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n - 5 u_{n-1} + 6 u_{n-2} = 0.\]</div>
+</div>
+<p>Cụ thể, ta tính</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x \cdot G(x) = u_0 x + u_1 x^2 + u_2 x^3 + \cdots + u_{n-1} x^n + \cdots,\]</div>
+</div>
+<p>và</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x^2 \cdot G(x) = u_0 x^2 + u_1 x^3 + u_2 x^4 + \cdots + u_{n-2} x^n + \cdots\]</div>
+</div>
+<p>Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}G(x) - 5 x \cdot G(x) + 6 x^2 \cdot G(x) &amp; = u_0 + u_1 x + {\color{blue} u_2 x^2} + {\color{green} u_3 x^3} + \cdots {\color{red} + u_n x^n} + \cdots \\
+                                        &amp; - 5 u_0 x {\color{blue} - 5 u_1 x^2} {\color{green} - 5 u_2 x^3} -  \cdots {\color{red} - 5 u_{n-1} x^n} + \cdots \\
+                                        &amp; {\color{blue} + 6 u_0 x^2} {\color{green} + 6 u_1 x^3} + \cdots {\color{red} + 6 u_{n-2} x^n} + \cdots\end{split}\]</div>
+</div>
+<p>Các bạn có thấy điều gì không? Các số hạng trước <span class="math notranslate nohighlight">\(x^2\)</span>, <span class="math notranslate nohighlight">\(x^3\)</span>, ... đều bằng <span class="math notranslate nohighlight">\(0\)</span> theo công thức truy hồi. Như vậy thu gọn vế trái và thay <span class="math notranslate nohighlight">\(u_0\)</span>, <span class="math notranslate nohighlight">\(u_1\)</span> vào vế phải ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(1 - 5x + 6x^2) \cdot G(x) = u_0 + u_1 x - 5 u_0 x = x,\]</div>
+</div>
+<p>tương đương với</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) = \dfrac{x}{1 - 5x + 6x^2}.\]</div>
+</div>
+<p>Vì <span class="math notranslate nohighlight">\(1 - 5x + 6x^2\)</span> phân tích thành nhân tử là <span class="math notranslate nohighlight">\((1 - 2x)(1 - 3x)\)</span> nên ta muốn phân tích <span class="math notranslate nohighlight">\(G(x)\)</span> thành tổng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) = \dfrac{\alpha}{1 - 2x} + \dfrac{\beta}{1 - 3x} = \dfrac{(\alpha + \beta) + (-3\alpha  -2\beta) x}{(1 - 2x)(1 - 3x)},\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(\alpha\)</span> và <span class="math notranslate nohighlight">\(\beta\)</span> là hệ số cần tìm để</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(\alpha + \beta) + (-3\alpha - 2\beta)x \equiv x.\]</div>
+</div>
+<p>Như vậy, đồng nhất hệ số ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\alpha + \beta = 0, \quad -3\alpha - 2\beta = 1,\]</div>
+</div>
+<p>giải hệ ta có <span class="math notranslate nohighlight">\(\alpha = -1\)</span> và <span class="math notranslate nohighlight">\(\beta = 1\)</span>. Ta thu được</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) = \dfrac{-1}{1 - 2x} + \dfrac{1}{1 - 3x}.\]</div>
+</div>
+<p>Theo công thức <a class="reference internal" href="#equation-eq-mx">(17)</a>, ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\dfrac{1}{1 - 2x} = 1 + 2x + 2^2 x^2 + \cdots + 2^n x^n + \cdots,\]</div>
+</div>
+<p>và</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\dfrac{1}{1 - 3x} = 1 + 3x + 3^2 x^2 + \cdots + 3^n x^n + \cdots.\]</div>
+</div>
+<p>Thay hai khai triển trên vào <span class="math notranslate nohighlight">\(G(x)\)</span> ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}G(x) = &amp; - (1 + 2x + 2^2 x^2 + \cdots + 2^n x^n + \cdots) \\
+&amp; + (1 + 3x + 3^2 x^2 + \cdots + 3^n x^n + \cdots) \\
+= &amp; 0 + (3 - 2) x + (3^2 - 2^2) x^2 + \cdots + (3^n - 2^n) x^n + \cdots\end{split}\]</div>
+</div>
+<p>Đồng nhất hệ số với <a class="reference internal" href="#equation-eq-g">(18)</a> ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = 3^n - 2^n.\]</div>
+</div>
+<p>Đây chính là công thức tổng quát của dãy <span class="math notranslate nohighlight">\(\{ u_n \}\)</span>.</p>
+<p>Tất nhiên là ví dụ trên có thể được giải bằng cách khác là <em>đa thức đặc trưng</em> và đây là phương pháp phổ biến ở phổ thông. Tuy nhiên một số bài toán khác không thể sử dụng đa thức đặc trưng. Trước khi đến với các bài toán như vậy thì mình sẽ liệt kê một số hàm sinh thông dụng để giải quyết các bài toán đó.</p>
+</section>
+<section id="mot-so-ham-sinh-thong-dung">
+<h3>Một số hàm sinh thông dụng<a class="headerlink" href="#mot-so-ham-sinh-thong-dung" title="Link to this heading">¶</a></h3>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\boxed{\dfrac{1}{1 - mx} = 1 + mx + m^2 x^2 + \cdots + m^n x^n + \cdots}\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\boxed{\dfrac{1}{(1-x)^t} = \sum_{i=0}^{\infty} C^i_{t+i-1} x^i.}\]</div>
+</div>
+<p>Khi <span class="math notranslate nohighlight">\(t = 2\)</span> thì <span class="math notranslate nohighlight">\(C^i_{i+1} = \dfrac{(i+1)!}{i! \cdot 1!} = i + 1\)</span> nên ta có kết quả</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\boxed{\dfrac{1}{(1-x)^2} = \sum_{i=0}^\infty (i+1) x^i.}\]</div>
+</div>
+<p>Kết hợp hai công thức trên</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\boxed{\dfrac{1}{(1 - mx)^t} = \sum_{i=0}^\infty C^i_{t+i-1} m^i x^i.}\]</div>
+</div>
+</section>
+<section id="vi-du-ii">
+<h3>Ví dụ II<a class="headerlink" href="#vi-du-ii" title="Link to this heading">¶</a></h3>
+<p>Cho dãy số <span class="math notranslate nohighlight">\(\{ u_n \}\)</span> xác định bởi <span class="math notranslate nohighlight">\(u_0 = 1\)</span>, <span class="math notranslate nohighlight">\(u_1 = 2\)</span> và</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = 6 u_{n-1} - 8 u_{n-2} + n, \ \text{với mọi} \ n \geqslant 2.\]</div>
+</div>
+<p>Tương tự, đầu tiên ta đặt <span class="math notranslate nohighlight">\(G(x)\)</span> là đa thức có hệ số là dãy <span class="math notranslate nohighlight">\(\{ u_n \}\)</span>, nghĩa là</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) = u_0 + u_1 x + u_2 x^2 + \cdots + u_n x^n + \cdots\]</div>
+</div>
+<p>Ta cũng nhân <span class="math notranslate nohighlight">\(x\)</span> và <span class="math notranslate nohighlight">\(x^2\)</span> cho <span class="math notranslate nohighlight">\(G(x)\)</span> và thu được</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x \cdot G(x) = u_0 x + u_1 x^2 + u_2 x^3 + \cdots + u_{n-1} x^n + \cdots,\]</div>
+</div>
+<p>và</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x^2 \cdot G(x) = u_0 x^2 + u_1 x^3 + u_2 x^4 + \cdots + u_{n-2} x^n + \cdots\]</div>
+</div>
+<p>Như vậy, hoàn toàn tương tự ví dụ I, mình tính được</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}G(x) - 6x \cdot G(x) + 8x^2 \cdot G(x) &amp; = u_0 \\
+&amp; + (u_1 - 6 u_0) x \\
+&amp; + (u_2 - 6 u_1 + 8 u_0) x^2 \\
+&amp; + (u_3 - 6 u_2 + 8 u_1) x^3 \\
+&amp; + \cdots \\
+&amp; + (u_n - 6 u_{n-1} + 8 u_{n-2}) x^n \\
+&amp; + \cdots\end{split}\]</div>
+</div>
+<p>Cơ mà ở đây <span class="math notranslate nohighlight">\(u_n - 6 u_{n-1} + 8 u_{n-2}\)</span> không đủ để triệt tiêu thành <span class="math notranslate nohighlight">\(0\)</span> mà cần thêm <span class="math notranslate nohighlight">\(n\)</span> nữa. Vậy phải làm sao?</p>
+<p>Chúng ta sẽ cần một hàm <span class="math notranslate nohighlight">\(F(x)\)</span> sao cho</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}G(x) - 6x \cdot G(x) + 8x^2 \cdot G(x) + F(x) &amp; = u_0 \\
+&amp; + (u_1 - 6 u_0) x \\
+&amp; + (u_2 - 6 u_1 + 8 u_0 {\color{red} - 2}) x^2 \\
+&amp; + (u_3 - 6 u_2 + 8 u_1 {\color{red} - 3}) x^3 \\
+&amp; + \cdots \\
+&amp; + (u_n - 6 u_{n-1} + 8 u_{n-2} {\color{red} - n}) x^n \\
+&amp; + \cdots\end{split}\]</div>
+</div>
+<p>Như vậy mình gom các hệ số màu đỏ lại sẽ được</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[F(x) = -2x^2 - 3x^3 + \cdots - nx^n + \cdots\]</div>
+</div>
+<p>Khi đó</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) - 6x \cdot G(x) + 8x^2 \cdot G(x) + F(x) = u_0 + (u_1 - 6 u_0) x,\]</div>
+</div>
+<p>và việc của chúng ta là tìm một hàm sinh biểu thị cho <span class="math notranslate nohighlight">\(F(x)\)</span> nữa để có thể biểu diễn <span class="math notranslate nohighlight">\(G(x)\)</span> như ở ví dụ I.</p>
+<p>Ta có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}F(x) &amp; = -2x^2 - 3x^3 - \cdots - nx^n + \cdots \\
+&amp; = 1 x - x (1 + 2x + 3x^2 + \cdots + nx^{n-1} + \cdots) \\
+&amp; = x - x (1 + x + x^2 + x^3 + \cdots + x^n + \cdots)' \\
+&amp; = x - x \cdot \left(\dfrac{1}{1-x}\right)' \\
+&amp; = x - x \cdot \dfrac{1}{(1-x)^2} \\
+&amp; = \dfrac{x(1 - 2x + x^2) + x}{(1-x)^2} = -\dfrac{x^2(2 - x)}{(1-x)^2}.\end{split}\]</div>
+</div>
+<p>Thay <span class="math notranslate nohighlight">\(u_0\)</span>, <span class="math notranslate nohighlight">\(u_1\)</span> và <span class="math notranslate nohighlight">\(F(x)\)</span> vào ta tính được <span class="math notranslate nohighlight">\(G(x)\)</span> là hàm</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(1 - 6x + 8x^2) \cdot G(x) - \dfrac{x^2 (2 - x)}{(1-x)^2} = 1 - 4x,\]</div>
+</div>
+<p>tương đương với</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}G(x) &amp; = \dfrac{1}{1 - 6x + 8x^2} \left[ 1 - 4x + \dfrac{x^2(2-x)}{(1-x)^2} \right] \\
+&amp; = \dfrac{(1 - 4x)(1 - 2x + x^2) - 2x^2 + x^3}{(1 - 6x + 8x^2)(1-x)^2} \\
+&amp; = \dfrac{1 - 2x + x^2 - 4x + 8x^2 - 4x^3 + 2x^2 - x^3}{(1 - 6x + 8x^2)(1-x)^2} \\
+&amp; = \dfrac{1 - 6x + 11x^2 - 5x^3}{(1 - 6x + 8x^2)(1 - x)^2}.\end{split}\]</div>
+</div>
+<p>Bây giờ, <span class="math notranslate nohighlight">\(1 - 6x + 8x^2\)</span> phân tích thành nhân tử <span class="math notranslate nohighlight">\((1 - 2x)(1 - 4x)\)</span>. Vậy mình sẽ cần tách <span class="math notranslate nohighlight">\(G(x)\)</span> thành</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) = \dfrac{A}{1 - 2x} + \dfrac{B}{1 - 4x} + \dfrac{C}{1 - x} + \dfrac{D}{(1-x)^2}\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> và <span class="math notranslate nohighlight">\(D\)</span> là các hệ số cần tìm. Quy đồng mẫu số mình có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) = \dfrac{A(1-4x)(1-x)^2 + B(1-2x)(1-x)^2 + C(1-2x)(1-4x)(1-x) + D(1-2x)(1-4x)}{(1 - 6x + 8x^2)(1-x)^2}.\]</div>
+</div>
+<p>Thu gọn tử số lại mình được</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(A + B + C + D) + (-6A - 4B - 7C - 6D) x + (9A + 5B + 14C + 8D) x^2 + (-4A - 2B - 8C) x^3,\]</div>
+</div>
+<p>và đồng nhất hệ số thì mình cần giải hệ phương trình</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    A + B + C + D &amp; = 1 \\
+    -6A - 4B - 7C - 6D &amp; = -6 \\
+    9A + 5B + 14C + 8D &amp; = 11 \\
+    -4A - 2B - 8C &amp; = -5
+\end{cases} \Longleftrightarrow \begin{cases}
+    A = -1/2 \\
+    B = 7/18 \\
+    C = 7/9 \\
+    D = 1/3
+\end{cases}\end{split}\]</div>
+</div>
+<p>Bây giờ thay các hàm sinh vào <span class="math notranslate nohighlight">\(G(x)\)</span> (chưa cần thay <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> và <span class="math notranslate nohighlight">\(D\)</span> vội) thì mình có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}G(x) &amp; = A \cdot \left( 1 + 2x + 2^2 x^2 + \cdots + 2^n x^n + \cdots \right) \\
+&amp; + B \cdot \left( 1 + 4x + 4^2 x^2 + \cdots + 4^n x^n + \cdots \right) \\
+&amp; + C \cdot \left( 1 + x + x^2 + \cdots + x^n + \cdots \right) \\
+&amp; + D \cdot \left( 1 + 2x + 3x + \cdots + (n+1) x^n + \cdots \right).\end{split}\]</div>
+</div>
+<p>Nhìn vào hệ số của <span class="math notranslate nohighlight">\(x^n\)</span> mình có công thức tổng quát</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = A \cdot 2^n + B \cdot 4^n + C + D \cdot (n + 1) = -2^{n-1} + \dfrac{7 \cdot 4^n}{18} + \dfrac{7}{9} + \dfrac{n+1}{3}.\]</div>
+</div>
+</section>
+<section id="vi-du-iii">
+<h3>Ví dụ III<a class="headerlink" href="#vi-du-iii" title="Link to this heading">¶</a></h3>
+<p>Trong một số trường hợp &quot;hơi lú&quot;, ví dụ như</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = 4u_{n-1} - 4u_{n-2}\]</div>
+</div>
+<p>thì nếu sử dụng đa thức đặc trưng ta có một phương trình bậc hai với nghiệm kép. Khi đó công thức tổng quát không còn ở dạng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = \alpha \cdot z_1^n + \beta \cdot z_2^n\]</div>
+</div>
+<p>với <span class="math notranslate nohighlight">\(z_1\)</span> và <span class="math notranslate nohighlight">\(z_2\)</span> là hai nghiệm phân biệt của phương trình đặc trưng, mà ở một dạng khác. Phương pháp hàm sinh sẽ giúp chúng ta tìm công thức tổng quát ở trường hợp này.</p>
+<p>Xét đa thức <span class="math notranslate nohighlight">\(G(x)\)</span> với hệ số là các số hạng của dãy <span class="math notranslate nohighlight">\(\{ u_n \}\)</span> cho bởi công thức truy hồi ở trên:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) = u_0 + u_1 x + u_2 x^2 + \cdots + u_n x^n + \cdots\]</div>
+</div>
+<p>Thực hiện tương tự bên trên, mình tính</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x \cdot G(x) = u_0 x + u_1 x^2 + u_2 x^3 + \cdots + u_{n-1} x^n + \cdots\]</div>
+</div>
+<p>và</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x^2 \cdot G(x) = u_0 x^2 + u_1 x^3 + u_2 x^4 + \cdots + u_{n-2} x^n + \cdots\]</div>
+</div>
+<p>Như vậy</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}G(x) - 4x \cdot G(x) + 4x^2 \cdot G(x) &amp; = u_0 \\
+&amp; + (u_1 - 4u_0) x \\
+&amp; + \cancelto{0}{(u_2 - 4u_1 + 4u_0)} x^2 \\
+&amp; + \cdots \\
+&amp; + \cancelto{0}{(u_n - 4u_{n-1} + 4u_{n-2})} x^n \\
+&amp; + \cdots \\
+&amp; = u_0 + (u_1 - 4u_0) x.\end{split}\]</div>
+</div>
+<p>Đặt <span class="math notranslate nohighlight">\(G(x)\)</span> làm nhân tử chung và chuyển vế mình có</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) = \dfrac{u_0 + (u_1 - 4u_0) x}{(1 - 2x)^2}.\]</div>
+</div>
+<p>Mình cần tách <span class="math notranslate nohighlight">\(G(x)\)</span> thành tổng</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(x) = \dfrac{A}{1 - 2x} + \dfrac{B}{(1-2x)^2}.\]</div>
+</div>
+<p>Quy đồng mẫu số và đồng nhất hệ số mình cần tìm <span class="math notranslate nohighlight">\(A\)</span> và <span class="math notranslate nohighlight">\(B\)</span> thỏa mãn hệ phương trình</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases}
+    A + B = u_0 \\
+    -2A = (u_1 - 4u_0)
+\end{cases} \Longleftrightarrow \begin{cases}
+    A = (-u_1 + 4u_0) / 2 \\
+    B = (u_1 - 2u_0) / 2
+\end{cases}\end{split}\]</div>
+</div>
+<p>Thay hàm sinh vào <span class="math notranslate nohighlight">\(G(x)\)</span> mình được</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}G(x) &amp; = A \cdot (1 + 2x + 2^2 x^2 + \cdots + 2^n x^n + \cdots) \\
+&amp; + B \cdot \left[1 + 2 \cdot 2x + 3 \cdot 2^2 x^2 + \cdots + (n+1) \cdot 2^n x^n \right].\end{split}\]</div>
+</div>
+<p>Hệ số trước <span class="math notranslate nohighlight">\(x^n\)</span> cho ta công thức tổng quát của dãy số</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_n = A \cdot 2^n + B \cdot (n+1) \cdot 2^n = 2^{n-1} \cdot \left[ 2u_0 + (u_1 - 2u_0) \cdot n \right].\]</div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="graph/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Lý thuyết đồ thị</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="combinatoric.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Đại cương tổ hợp</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025-2026, Lê Quốc Dũng
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Công thức truy hồi</a><ul>
+<li><a class="reference internal" href="#cap-so-cong-va-cong-thuc-truy-hoi-bac-nhat">Cấp số cộng và công thức truy hồi bậc nhất</a></li>
+<li><a class="reference internal" href="#day-so-fibonacci-va-cong-thuc-truy-hoi-bac-hai">Dãy số Fibonacci và công thức truy hồi bậc hai</a></li>
+<li><a class="reference internal" href="#cong-thuc-truy-hoi-bac-cao">Công thức truy hồi bậc cao</a></li>
+<li><a class="reference internal" href="#phuong-phap-ham-sinh">Phương pháp hàm sinh</a><ul>
+<li><a class="reference internal" href="#vi-du-i">Ví dụ I</a></li>
+<li><a class="reference internal" href="#mot-so-ham-sinh-thong-dung">Một số hàm sinh thông dụng</a></li>
+<li><a class="reference internal" href="#vi-du-ii">Ví dụ II</a></li>
+<li><a class="reference internal" href="#vi-du-iii">Ví dụ III</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=dd9e4a14"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Nhấp để hiển thị';</script>
+    <script>let toggleHintHide = 'Nhấp để ẩn';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script src="../_static/translations.js?v=4c1d55b0"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["{\\boldsymbol{#1}}", 1], "wt": "\\operatorname{wt}", "tr": "\\operatorname{tr}", "rank": "\\operatorname{rank}", "lcm": "\\mathrm{lcm}", "GL": "\\mathrm{GL}", "lex": "\\text{lex}", "grlex": "\\text{grlex}", "grevlex": "\\text{grevlex}", "CC": "\\mathbb{C}", "RR": "\\mathbb{R}", "QQ": "\\mathbb{Q}", "ZZ": "\\mathbb{Z}", "NN": "\\mathbb{N}", "FF": "\\mathbb{F}", "KK": "\\mathbb{K}"}}, "chtml": {"mtextInheritFont": "true"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>
