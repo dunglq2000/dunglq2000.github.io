@@ -4,7 +4,7 @@ author = "Lê Quốc Dũng"
 
 language = "vi"
 html_theme = "furo"
-html_title = "Lê Quốc Dũng"
+html_title = "My site"
 
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
